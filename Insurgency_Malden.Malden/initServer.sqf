@@ -1,0 +1,1 @@
+[missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
