@@ -1,0 +1,1 @@
+#include "sys_forwardBase\init.sqf";

@@ -1,0 +1,1 @@
+execVM "Insurgency_Core\client\init.sqf";
