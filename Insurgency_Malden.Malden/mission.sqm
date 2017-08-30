@@ -8,7 +8,7 @@ class EditorData
 	toggles=1033;
 	class ItemIDProvider
 	{
-		nextID=63;
+		nextID=65;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8062.894,63.38298,10146.697};
-		dir[]={0.022633029,-0.2128741,-0.97694558};
-		up[]={0.0049344255,0.97704142,-0.21298945};
-		aside[]={-0.99985898,1.404449e-006,-0.02316591};
+		pos[]={3037.5925,228.93288,6208.4419};
+		dir[]={0.14187799,-0.60420144,-0.78417778};
+		up[]={0.10757764,0.79679292,-0.59460181};
+		aside[]={-0.98409164,5.052425e-008,-0.1780477};
 	};
 };
 binarizationWanted=0;
@@ -27,6 +27,7 @@ addons[]=
 {
 	"A3_Ui_F",
 	"twc_ammoboxes",
+	"twc_objects",
 	"A3_Soft_F_Gamma_Truck_01",
 	"ace_realisticnames",
 	"ace_cargo",
@@ -34,13 +35,14 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Mil_Flags",
-	"A3_Signs_F_Signs_Ad"
+	"A3_Signs_F_Signs_Ad",
+	"CUP_WheeledVehicles_HMMWV"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=12;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -55,57 +57,67 @@ class AddonsMetaData
 		};
 		class Item2
 		{
+			className="twc_objects";
+			name="twc_objects";
+		};
+		class Item3
+		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item4
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item5
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item5
+		class Item6
 		{
 			className="twc_modern";
 			name="twc_modern";
 		};
-		class Item6
+		class Item7
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="CUP_WheeledVehicles_HMMWV";
+			name="CUP_WheeledVehicles_HMMWV";
 		};
 	};
 };
@@ -140,7 +152,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=17;
 		class Item0
 		{
 			dataType="Marker";
@@ -155,41 +167,43 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8078.9819,30.951878,10013.991};
+				position[]={8078.6323,30.961567,10013.179};
 				angles[]={0,4.6921902,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=18;
 			type="twc_forwardBase_BritishAmmoBox";
-			atlOffset=0.61484528;
+			atlOffset=0.0096874237;
 		};
 		class Item2
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8078.5659,30.469505,10009.274};
-				angles[]={0,4.6699777,0};
+				position[]={3049.2278,218.74863,6196.4751};
+				angles[]={6.236021,4.8802514,0.025594741};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				name="PB_RadioTable";
 			};
 			id=26;
 			type="twc_radioTable";
-			atlOffset=0.62799835;
+			atlOffset=0.013916016;
 		};
 		class Item3
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8071.7651,31.971167,10032.327};
-				angles[]={6.2816033,0,6.2751846};
+				position[]={3042.1843,220.18797,6190.2681};
+				angles[]={6.2408113,0,0.0207968};
 			};
 			side="Empty";
 			flags=4;
@@ -199,7 +213,7 @@ class Mission
 			};
 			id=27;
 			type="B_Truck_01_box_F";
-			atlOffset=5.7220459e-006;
+			atlOffset=-0.0028839111;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -236,8 +250,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8050.2134,29.868935,10027.263};
-						angles[]={0,5.7146173,0};
+						position[]={3038.2837,218.06624,6196.7124};
+						angles[]={0,2.9207823,0};
 					};
 					side="West";
 					flags=7;
@@ -247,26 +261,26 @@ class Mission
 					};
 					id=32;
 					type="Modern_British_Squadleader";
-					atlOffset=-9.5367432e-006;
+					atlOffset=1.5258789e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=31;
-			atlOffset=-9.5367432e-006;
+			atlOffset=1.5258789e-005;
 		};
 		class Item5
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8068.3242,29.690945,10038.529};
-				angles[]={0.0023920804,0,6.2751846};
+				position[]={8085.8691,29.375067,10027.045};
+				angles[]={6.271987,0,6.269588};
 			};
 			id=42;
 			type="ModuleCurator_F";
-			atlOffset=9.5367432e-006;
+			atlOffset=-1.7166138e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -368,7 +382,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8078.8262,30.418476,10016.242};
+				position[]={3037.301,218.77364,6191.1255};
 				angles[]={0,4.7283936,0};
 			};
 			side="Empty";
@@ -379,7 +393,7 @@ class Mission
 			};
 			id=46;
 			type="Land_Portable_generator_F";
-			atlOffset=0.60199928;
+			atlOffset=0.60168457;
 		};
 		class Item8
 		{
@@ -418,32 +432,36 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8081.8877,31.100512,10013.383};
-				angles[]={0,1.5487801,0};
+				position[]={8081.125,31.126177,10013.045};
+				angles[]={0,1.5487877,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
+				init="call{this setObjectTexture [0,""Insurgency_Core\imgs\ammoSpawn.jpg""];}";
 			};
 			id=50;
 			type="SignAd_Sponsor_F";
+			atlOffset=0.025665283;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8081.0405,31.100512,10009.326};
-				angles[]={0,1.5487801,0};
+				position[]={8053.4658,30.898285,10023.441};
+				angles[]={0,3.6889746,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
+				init="call{this setObjectTexture [0,""Insurgency_Core\imgs\radio.jpg""];}";
 			};
 			id=51;
 			type="SignAd_Sponsor_F";
+			atlOffset=0.0014915466;
 		};
 		class Item12
 		{
@@ -483,17 +501,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8063.8018,31.950346,10031.984};
-				angles[]={0.0023920804,0,6.2711854};
+				position[]={3034.2205,219.95253,6189.9263};
+				angles[]={6.2392135,0,0.0080084298};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="PB_MedicalTruck";
 			};
 			id=59;
 			type="B_Truck_01_medical_F";
-			atlOffset=-3.8146973e-006;
+			atlOffset=-0.0028076172;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -573,6 +592,64 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item15
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8080.6982,31.108156,10009.63};
+				angles[]={0,1.5487801,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=63;
+			type="SignAd_Sponsor_F";
+			atlOffset=0.0076446533;
+		};
+		class Item16
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8045.7407,32.460789,10035.309};
+				angles[]={0.0047996556,0,6.2767973};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				name="vehicle1";
+			};
+			id=64;
+			type="CUP_B_HMMWV_Unarmed_USA";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
