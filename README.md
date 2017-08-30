@@ -1,4 +1,4 @@
-# Insurgency
+<h1>Insurgency <a href="https://travis-ci.org/TheWreckingCrewUK/Insurgency"><img src="https://travis-ci.org/TheWreckingCrewUK/Insurgency.svg?branch=master" alt="Insurgency Build Status"></a></h1>
 Insurgency Public Mission - Framework & Maps
 
 ## Preparing the Environment
