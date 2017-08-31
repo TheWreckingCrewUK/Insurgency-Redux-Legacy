@@ -50,7 +50,15 @@ while{_run}do{
 		};
 	};
 	if(_pos distance _respawnPos > 10 && ({alive _x} count crew _veh == 0) && (getDammage _veh < 0.8))then{
-		if(_forwardBaseCheck)exitWith{hint str _forwardBaseCheck};
+		_nearBluefor = false;
+		{
+			if((getPos _x) distance2D _pos < _respawnDistancePlayers)then{
+				_nearBluefor = true;
+			};
+			
+		}forEach playableUnits + switchableUnits;
+		if(_nearBluefor)exitWith{};
+		if(_forwardBaseCheck)exitWith{};
 		systemChat str _forwardBaseCheck;
 		_timeout = time + _desertedTime;
 		sleep 0.1;
