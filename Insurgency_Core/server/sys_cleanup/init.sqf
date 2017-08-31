@@ -1,0 +1,1 @@
+execVM "Insurgency_Core\server\sys_cleanup\deadbodies.sqf";

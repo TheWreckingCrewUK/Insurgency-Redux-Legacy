@@ -1,0 +1,1 @@
+player CreateDiaryRecord ["Diary",["Rules","You may not fire within 200M of the base"]];
