@@ -8,7 +8,7 @@ class EditorData
 	toggles=1033;
 	class ItemIDProvider
 	{
-		nextID=69;
+		nextID=72;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3037.9531,240.00121,6218.7866};
-		dir[]={-0.022198183,-0.66698337,-0.74476081};
-		up[]={-0.019871725,0.74506861,-0.6666922};
-		aside[]={-0.99956954,-1.1677912e-009,0.02979451};
+		pos[]={8074.2524,37.899769,10089.45};
+		dir[]={0.71772391,-0.69156349,-0.081372716};
+		up[]={0.68716335,0.72231352,-0.077907734};
+		aside[]={-0.11265466,-1.1707016e-007,-0.99363834};
 	};
 };
 binarizationWanted=0;
@@ -56,13 +56,14 @@ addons[]=
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Signs_F_Signs_Ad",
-	"CUP_WheeledVehicles_HMMWV"
+	"CUP_WheeledVehicles_HMMWV",
+	"CUP_Weapons_AmmoBoxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=32;
+		items=33;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -273,6 +274,11 @@ class AddonsMetaData
 			className="CUP_WheeledVehicles_HMMWV";
 			name="CUP_WheeledVehicles_HMMWV";
 		};
+		class Item32
+		{
+			className="CUP_Weapons_AmmoBoxes";
+			name="CUP_Weapons_AmmoBoxes";
+		};
 	};
 };
 randomSeed=16337384;
@@ -306,7 +312,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			dataType="Marker";
@@ -404,7 +410,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3030.8245,217.94206,6195.1758};
+						position[]={8081.4556,29.590776,10084.965};
 						angles[]={6.2184753,0.33840421,0.032789111};
 					};
 					side="West";
@@ -604,14 +610,14 @@ class Mission
 					};
 					id=32;
 					type="Modern_British_Squadleader";
-					atlOffset=1.5258789e-005;
+					atlOffset=-5.7220459e-006;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=31;
-			atlOffset=1.5258789e-005;
+			atlOffset=-5.7220459e-006;
 		};
 		class Item5
 		{
@@ -725,10 +731,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3037.301,218.77364,6191.1255};
-				angles[]={0,4.7283936,0};
+				position[]={3037.301,218.1787,6191.1255};
+				angles[]={6.2408113,4.7283936,0.006394445};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="call{[this, true, [0, 1, 0], 270] call ace_dragging_fnc_setDraggable; this setVariable [""ace_cargo_size"",1]; this setVariable [""ace_cargo_canLoad"",1];}";
@@ -736,7 +743,7 @@ class Mission
 			};
 			id=46;
 			type="Land_Portable_generator_F";
-			atlOffset=0.60168457;
+			atlOffset=0.0067443848;
 		};
 		class Item8
 		{
@@ -855,7 +862,7 @@ class Mission
 			};
 			id=59;
 			type="B_Truck_01_medical_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=-0.0011138916;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1006,6 +1013,23 @@ class Mission
 			b=823.73499;
 			id=67;
 			atlOffset=-28.837057;
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8084.686,31.302126,10087.709};
+				angles[]={0.00077204045,4.6783962,6.2799835};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=69;
+			type="CUP_BAF_VehicleBox";
+			atlOffset=-7.6293945e-006;
 		};
 	};
 };

@@ -10,4 +10,4 @@ player addEventHandler ["InventoryOpened", {
 			player removeWeapon (secondaryWeapon player);
 		};
 	};
-}]
+}];

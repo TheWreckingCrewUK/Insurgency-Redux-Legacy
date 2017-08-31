@@ -1,5 +1,5 @@
-while {true} do{
-	_Deadbodies = nearestObjects [getmarkerpos "base", ["man"], 200];
-	{if (not alive _x) then {deleteVehicle _x};} forEach _Deadbodies;
-	sleep 5;
-};
+_handle = addMissionEventHandler ["HandleDisconnect",{
+	if((_this select 0) distance2D (getMarkerPos "base") < 200) then{
+		deleteVehicle (_this select 0);
+	};
+}];
