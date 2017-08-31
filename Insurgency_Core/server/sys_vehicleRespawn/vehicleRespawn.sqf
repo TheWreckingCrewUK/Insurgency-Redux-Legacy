@@ -25,6 +25,7 @@ _type = typeOf _veh;
 _dead = false;
 _nodelay = false;
 _forwardBaseCheck = false;
+_playersNear = false;
 _run = true;
 
 clearWeaponCargoGlobal _veh;
@@ -35,19 +36,22 @@ clearBackpackCargoGlobal _veh;
 while{_run}do{
 	sleep 5;
 	_pos = getPosASL _veh;
+	_forwardBaseCheck = false;
 	
 	//Check if the vehicle is dead and players have abandoned it.
 	if ((getDammage _veh > 0.8) and ({alive _x} count crew _veh == 0)) then {_dead = true};
 	
 	//Check if the vehicle is deserted
-	if(isNil "respawn_forwardBase")then{
+	if(getMarkerColor "respawn_forwardBase" == "")then{
 		_forwardBaseCheck = false;
 	}else{
 		if(_pos distance2D (getMarkerPos "respawn_forwardBase") < _respawnDistanceForwardBase)then{
 			_forwardBaseCheck = true;			
 		};
 	};
-	if(_pos distance _respawnPos > 10 && !(_forwardBaseCheck) && ({alive _x} count crew _veh == 0) && (getDammage _veh < 0.8))then{
+	if(_pos distance _respawnPos > 10 && ({alive _x} count crew _veh == 0) && (getDammage _veh < 0.8))then{
+		if(_forwardBaseCheck)exitWith{hint str _forwardBaseCheck};
+		systemChat str _forwardBaseCheck;
 		_timeout = time + _desertedTime;
 		sleep 0.1;
 		waitUntil{_timeout < time || !alive _veh || {alive _x} count crew _veh > 0};
