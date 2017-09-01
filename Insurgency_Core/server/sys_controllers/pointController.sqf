@@ -27,7 +27,7 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 	};
 }] call CBA_fnc_addEventHandler;
 
-playerConnectedHandle = addMissionEventHandler ["PlayerConnected", {
+["playerConnectedEHandler", "PlayerConnected", {
 	_playerCount = count (allPlayers - entities "HeadlessClient_F");
 	
 	if (_playerCount > _highestPlayerCountReached) then {
@@ -37,4 +37,4 @@ playerConnectedHandle = addMissionEventHandler ["PlayerConnected", {
 			_pointLimit = _pointLimit + 50;
 		};
 	};
-}];
+}] call BIS_fnc_addStackedEventHandler;
