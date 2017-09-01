@@ -33,7 +33,7 @@ playerConnectedHandle = addMissionEventHandler ["PlayerConnected", {
 	if (_playerCount > _highestPlayerCountReached) then {
 		_highestPlayerCountReached = _playerCount;
 		
-		if (_highestPlayerCountReached > 8) {
+		if (_highestPlayerCountReached > 8) then {
 			_pointLimit = _pointLimit + 50;
 		};
 	};
