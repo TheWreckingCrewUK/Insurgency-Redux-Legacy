@@ -17,8 +17,8 @@ townLocationArray = townLocationArray;
 	_marker setMarkerText (text _x);
 	};
 	
-	_trg = createTrigger ["EmptyDetector", getPos player];
+	_trg = createTrigger ["EmptyDetector", getPos _x];
 	_trg setTriggerArea [800, 800, 0, false];
-	_trg setTriggerActivation ["WEST", "PRESENT", false];
-	_trg setTriggerStatements ["this", "[(getPos thisTrigger)] call twc_fnc_townInit", ""];
+	_trg setTriggerActivation ["West", "PRESENT", False];
+	_trg setTriggerStatements ["(((objectParent (thisList call bis_fnc_selectRandom)) isKindOf 'air') || (getPosATL (thisList call 	bis_fnc_selectRandom)) select 2 < 25)","[(getPos thisTrigger)] call twc_fnc_townInit",""];
 }forEach townLocationArray;

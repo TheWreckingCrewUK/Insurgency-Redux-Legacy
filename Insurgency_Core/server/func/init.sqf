@@ -1,0 +1,1 @@
+TWC_fnc_spawnCiv = compile preprocessFileLineNumbers "Insurgency_Core\server\func\fnc_spawnCiv.sqf";
