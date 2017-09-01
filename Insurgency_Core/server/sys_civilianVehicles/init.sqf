@@ -1,0 +1,1 @@
+[(sqrt 2 *(worldSize / 2)), 100] execVM "Insurgency_Core\server\sys_civilianVehicles\vehicleSetupRoads.sqf";

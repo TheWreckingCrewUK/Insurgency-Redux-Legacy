@@ -1,3 +1,5 @@
+#include "sys_civilianVehicles\init.sqf";
 #include "sys_vehicleRespawn\init.sqf";
 #include "sys_cleanup\init.sqf";
 #include "sys_ied\init.sqf";
+#include "sys_townLocations\init.sqf";

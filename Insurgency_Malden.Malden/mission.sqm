@@ -8,7 +8,7 @@ class EditorData
 	toggles=1033;
 	class ItemIDProvider
 	{
-		nextID=72;
+		nextID=92;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8074.2524,37.899769,10089.45};
-		dir[]={0.71772391,-0.69156349,-0.081372716};
-		up[]={0.68716335,0.72231352,-0.077907734};
-		aside[]={-0.11265466,-1.1707016e-007,-0.99363834};
+		pos[]={3016.3923,241.92931,6167.9307};
+		dir[]={0.50078046,-0.42518109,0.75395054};
+		up[]={0.23524529,0.90510756,0.3541739};
+		aside[]={0.83299446,-2.7008355e-008,-0.55328208};
 	};
 };
 binarizationWanted=0;
@@ -53,11 +53,11 @@ addons[]=
 	"acre_sys_prc117f",
 	"ace_explosives",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Signs_F_Signs_Ad",
 	"CUP_WheeledVehicles_HMMWV",
-	"CUP_Weapons_AmmoBoxes"
+	"CUP_Weapons_AmmoBoxes",
+	"twc_framework"
 };
 class AddonsMetaData
 {
@@ -250,34 +250,32 @@ class AddonsMetaData
 		};
 		class Item28
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item29
-		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item29
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
+		class Item30
 		{
 			className="CUP_WheeledVehicles_HMMWV";
 			name="CUP_WheeledVehicles_HMMWV";
 		};
-		class Item32
+		class Item31
 		{
 			className="CUP_Weapons_AmmoBoxes";
 			name="CUP_Weapons_AmmoBoxes";
+		};
+		class Item32
+		{
+			className="twc_framework";
+			name="twc_framework";
 		};
 	};
 };
@@ -312,7 +310,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			dataType="Marker";
@@ -410,7 +408,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8081.4556,29.590776,10084.965};
+						position[]={3040.2957,218.12941,6197.2153};
 						angles[]={6.2184753,0.33840421,0.032789111};
 					};
 					side="West";
@@ -610,14 +608,14 @@ class Mission
 					};
 					id=32;
 					type="Modern_British_Squadleader";
-					atlOffset=-5.7220459e-006;
+					atlOffset=1.5258789e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=31;
-			atlOffset=-5.7220459e-006;
+			atlOffset=1.5258789e-005;
 		};
 		class Item5
 		{
@@ -731,25 +729,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3037.301,218.1787,6191.1255};
-				angles[]={6.2408113,4.7283936,0.006394445};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, true, [0, 1, 0], 270] call ace_dragging_fnc_setDraggable; this setVariable [""ace_cargo_size"",1]; this setVariable [""ace_cargo_canLoad"",1];}";
-				name="PB_Generator";
-			};
-			id=46;
-			type="Land_Portable_generator_F";
-			atlOffset=0.0067443848;
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={8082.5952,33.42334,10026.676};
 			};
 			side="Empty";
@@ -761,7 +740,7 @@ class Mission
 			type="Flag_NATO_F";
 			atlOffset=6.1035156e-005;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Object";
 			class PositionInfo
@@ -777,7 +756,7 @@ class Mission
 			id=49;
 			type="SignAd_Sponsor_F";
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
@@ -795,7 +774,7 @@ class Mission
 			type="SignAd_Sponsor_F";
 			atlOffset=0.025665283;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Object";
 			class PositionInfo
@@ -813,7 +792,7 @@ class Mission
 			type="SignAd_Sponsor_F";
 			atlOffset=0.0014915466;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
@@ -829,7 +808,7 @@ class Mission
 			id=52;
 			type="SignAd_Sponsor_F";
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
@@ -846,7 +825,7 @@ class Mission
 			type="SignAd_Sponsor_F";
 			atlOffset=0.71329689;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
@@ -944,7 +923,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -961,7 +940,7 @@ class Mission
 			type="SignAd_Sponsor_F";
 			atlOffset=0.0076446533;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1002,7 +981,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Marker";
 			position[]={8190.7642,0,10242.894};
@@ -1014,7 +993,7 @@ class Mission
 			id=67;
 			atlOffset=-28.837057;
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1030,6 +1009,94 @@ class Mission
 			id=69;
 			type="CUP_BAF_VehicleBox";
 			atlOffset=-7.6293945e-006;
+		};
+		class Item18
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8061.1802,29.635811,10085.847};
+			};
+			id=90;
+			type="twc_moduelCache";
+			atlOffset=-1.9073486e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="twc_moduelCache_vehicleRange";
+					expression="_this setVariable ['vehicleRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2000;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="twc_moduelCache_aiRange";
+					expression="_this setVariable ['aiRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="twc_moduelCache_enabled";
+					expression="_this setVariable ['enabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3038.4897,218.2439,6192.3052};
+				angles[]={6.2408113,0,0.0207968};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=91;
+			type="twc_portableGenerator";
 		};
 	};
 };

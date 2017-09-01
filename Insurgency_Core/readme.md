@@ -4,3 +4,4 @@ This is the underlying frame work for our Insurgency Missions. All files contain
 
 Mission.SQM Requirments:
 1. Base marker named "base";
+2. TWC Cache Module with Vehicle cache above 0
