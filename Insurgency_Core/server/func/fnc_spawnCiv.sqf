@@ -37,3 +37,8 @@ for "_i" from 1 to _civnum do {
 	_individualCiv disableAI "path";
 	_individualCiv setVariable ["unitsHome",_pos,false];
 };
+
+_trg = createTrigger ["EmptyDetector", _pos];
+_trg setTriggerArea [900, 900, 0, false];
+_trg setTriggerActivation ["WEST", "NOT PRESENT", false];
+_trg setTriggerStatements ["this", format["{deleteVehicle _x}forEach %1",(units _group)], ""];

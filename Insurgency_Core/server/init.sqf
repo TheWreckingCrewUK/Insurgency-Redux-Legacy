@@ -5,3 +5,8 @@
 #include "sys_ied\init.sqf";
 #include "sys_townLocations\init.sqf";
 #include "sys_controllers\init.sqf";
+#include "sys_cache\init.sqf";
+
+
+nonQuestionableList = [];
+publicVariable "nonQuestionableList";

@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1033;
+	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=92;
+		nextID=93;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class Camera
 	{
-		pos[]={3016.3923,241.92931,6167.9307};
-		dir[]={0.50078046,-0.42518109,0.75395054};
-		up[]={0.23524529,0.90510756,0.3541739};
-		aside[]={0.83299446,-2.7008355e-008,-0.55328208};
+		pos[]={2981.5322,250.81813,6223.7188};
+		dir[]={0.74549729,-0.65262365,-0.13615938};
+		up[]={0.64199769,0.75769764,-0.11725361};
+		aside[]={-0.17968749,-1.7048442e-006,-0.9838323};
 	};
 };
 binarizationWanted=0;
@@ -310,7 +310,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=20;
+		items=21;
 		class Item0
 		{
 			dataType="Marker";
@@ -1097,6 +1097,15 @@ class Mission
 			};
 			id=91;
 			type="twc_portableGenerator";
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={789.22498,0,12282};
+			name="cacheSpawn";
+			type="Empty";
+			id=92;
+			atlOffset=-28.921381;
 		};
 	};
 };
