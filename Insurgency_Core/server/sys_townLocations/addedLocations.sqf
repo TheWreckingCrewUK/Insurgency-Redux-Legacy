@@ -1,12 +1,4 @@
-/*
-* Creates extra locations in order to fill out the map more. To add or remove just simply edit the 
-* _addedLocations array
-* 
-* It get the location off of a marker by the same name so add a marker then add to array
-*/
-/*
-_addedLocations = [];
-
+_addedLocations = ["Rasman", "Zavarak", "Shamali", "Nur", "Nagara", "Gospandi", "Lalezar", "Mulladost", "Khushab", "Shukuralay", "Chaman", "Jilavur", "Zavarak", "Karachinar", "Garmarud", "Garmsar", "Timurkalay", "Feruzabad", "Ana", "Loymanara", "Chakchak", "Sultansafe", "Chardarakht"];
 {
 	_location = createLocation ["nameVillage",getMarkerPos _x,30,30];
 	_location setText _x;
