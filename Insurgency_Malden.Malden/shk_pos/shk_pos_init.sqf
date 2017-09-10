@@ -63,7 +63,6 @@
 */
 // Functions
 SHK_pos_getPos = compile preprocessfilelinenumbers "shk_pos\shk_pos_getpos.sqf";
-SHK_pos_getPosMarker = compile preprocessfilelinenumbers "shk_pos\shk_pos_getposmarker.sqf";
 
 // Sub functions
 SHK_pos_fnc_findClosestPosition = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_findclosestposition.sqf";
