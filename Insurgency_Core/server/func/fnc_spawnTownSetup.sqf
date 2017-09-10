@@ -15,7 +15,28 @@
 						  
 params["_pos","_civnum","_civradius","_waves","_groupradius","_thisList"];
 
-[_pos] call twc_spawnDefend;
 [_pos, _civnum, _civradius] call twc_spawnCiv;
+_enemies = 0;
 
-[_pos, _waves, _groupradius,_thisList] spawn twc_spawnAIUnits;
+_random = random 100;
+if(_random > (1.5 * TWC_insMorale))then{
+
+}else{
+	_enemies = 1;
+	[_pos] call twc_spawnDefend;
+};
+
+_random = random 100;
+if(_random > (1.5 * TWC_insMorale))then{
+
+}else{
+	_enemies = 1;
+	[_pos, _waves, _groupradius,_thisList] spawn twc_spawnAIUnits;
+};
+if(_enemies == 0)exitWith{};
+
+_trg = createTrigger ["EmptyDetector", _pos];
+_trg setTriggerArea [300, 300, 0, false];
+_trg setTriggerActivation ["EAST", "NOT PRESENT", False];
+_trg setTriggerTimeout [5,5,5, true];
+_trg setTriggerStatements ["this","['TWC_Insurgency_adjustPoints', 25] call CBA_fnc_serverEvent",""];

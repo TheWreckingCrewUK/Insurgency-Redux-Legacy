@@ -14,27 +14,28 @@
 *
 * Public: No
 */
-_pointLimit = 1000;
-_totalPoints = 0;
+pointLimit = 1000;
+totalPoints = 0;
 
 _highestPlayerCountReached = 0; // the highest count reached of total connected players
 
 ["TWC_Insurgency_adjustPoints", {
-	totalPoints + (this select 0);
+	totalPoints = totalPoints + _this;
 	
 	if (totalPoints >= pointLimit) then {
 		"pointVictory" call BIS_fnc_endMissionServer;
 	};
+	publicVariable "totalPoints";
 }] call CBA_fnc_addEventHandler;
 
-["playerConnectedEHandler", "PlayerConnected", {
+["playerConnectedEHandler", "onPlayerConnected", {
 	_playerCount = count (allPlayers - entities "HeadlessClient_F");
 	
-	if (_playerCount > _highestPlayerCountReached) then {
-		_highestPlayerCountReached = _playerCount;
+	if (_playerCount > highestPlayerCountReached) then {
+		highestPlayerCountReached = _playerCount;
 		
-		if (_highestPlayerCountReached > 8) then {
-			_pointLimit = _pointLimit + 50;
+		if (highestPlayerCountReached > 8) then {
+			pointLimit = pointLimit + 50;
 		};
 	};
 }] call BIS_fnc_addStackedEventHandler;

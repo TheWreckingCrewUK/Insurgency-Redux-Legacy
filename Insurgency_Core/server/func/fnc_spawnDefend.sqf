@@ -16,9 +16,6 @@
 
 params["_pos"];
 
-_random = random 100;
-if(_random > (1.5 * TWC_insMorale))exitWith{};
-
 [_pos]spawn{
 _pos = (_this select 0);
 _num = 0;
