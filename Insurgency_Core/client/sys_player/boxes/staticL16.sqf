@@ -8,7 +8,7 @@
 */
 
 
-_boxClass = "UK3CB_BAF_Box_L16;
+_boxClass = "UK3CB_BAF_Box_L16";
 
 _box = _boxClass createVehicle (getPos ammoCrateSpawnPad);
 
