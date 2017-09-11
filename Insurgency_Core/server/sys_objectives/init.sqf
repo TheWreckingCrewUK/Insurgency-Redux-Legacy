@@ -27,10 +27,18 @@ searchAndDestroyObjs = [
 	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]
 ];
 
-// Don't alter, used for OBJ tracking.
+// KRAKENS BELOW, BEWARE (don't edit pls)
 _currentHAMObj = "";
 _currentSADObj = "";
 _currentRANObj = "";
+
+// Mission Start, let's get crackin'
+_currentHAMObj = [1] call TWC_ObjSelect;
+[_currentHAMObj] call TWC_ObjSpawn;
+_currentSADObj = [2] call TWC_ObjSelect;
+[_currentSADObj] call TWC_ObjSpawn;
+_currentRANObj = [0] call TWC_ObjSelect;
+[_currentRANObj] call TWC_ObjSpawn;
 
 TWC_ObjCanSpawn = {
 	params ["_objID"];
@@ -72,7 +80,7 @@ TWC_ObjSpawn = {
 };
 
 TWC_ObjSelect = {
-	params ["_objType"];
+	params [["_objType", 0]];
 
 	_currentSelectedObj = "";
 	_currentObjectiveType = _objType;
@@ -99,17 +107,17 @@ TWC_ObjSelect = {
 	_finishedObjType = "_currentRANObj";
 	
 	if (_currentHAMObj == _objID) then {
-		_currentHAMObj = [_finishedObjType] call TWC_ObjSelect;
+		_currentHAMObj = [1] call TWC_ObjSelect;
 		[_currentHAMObj] call TWC_ObjSpawn;
 	};
 	
 	if (_currentSADObj == _objID) then {
-		_currentSADObj = [_finishedObjType] call TWC_ObjSelect;
+		_currentSADObj = [2] call TWC_ObjSelect;
 		[_currentSADObj] call TWC_ObjSpawn;
 	};
 	
 	if (_currentRANObj == _objID) then {
-		_currentRANObj = [_finishedObjType] call TWC_ObjSelect;
+		_currentRANObj = [0] call TWC_ObjSelect;
 		[_currentRANObj] call TWC_ObjSpawn;
 	};
 }] call CBA_fnc_addEventHandler;
