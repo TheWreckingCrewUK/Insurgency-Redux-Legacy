@@ -26,11 +26,13 @@ publicVariable "TWC_insMorale";
 ["TWC_Insurgency_adjustCivilianMorale", {
 	_mod = (_this select 0);
 	TWC_civMorale = ((TWC_civMorale + _mod) max 0) min 100;
+	
 	publicVariable "TWC_civMorale";
 }] call CBA_fnc_addEventHandler;
 
 ["TWC_Insurgency_adjustInsurgentMorale", {
 	_mod = (_this select 0);
 	TWC_insMorale = ((TWC_insMorale + _mod) max 0) min 100;
+	
 	publicVariable "TWC_insMorale";
 }] call CBA_fnc_addEventHandler;

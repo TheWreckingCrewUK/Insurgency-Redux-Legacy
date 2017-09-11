@@ -16,6 +16,7 @@
 */
 pointLimit = 1000;
 totalPoints = 0;
+publicVariable "totalPoints"; // init once
 
 _highestPlayerCountReached = 0; // the highest count reached of total connected players
 
@@ -25,6 +26,7 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 	if (totalPoints >= pointLimit) then {
 		"pointVictory" call BIS_fnc_endMissionServer;
 	};
+	
 	publicVariable "totalPoints";
 }] call CBA_fnc_addEventHandler;
 

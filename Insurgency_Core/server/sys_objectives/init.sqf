@@ -4,41 +4,71 @@
 *
 * Public: No
 *
-*
-* STEPS FOR ADDING A NEW OBJECTIVE:
-* 1) Add an OBJ ID to the best matched OBJ genre
-* 2) Add its can spawn check, both the reference to the file and its check inside TWC_ObjCanSpawn switch statement.
-* 3) Add its init TODO
-*
+* // ["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
 */
 
-// OBJ ID arrays
-// Might want to shift to a map-specific config later
-// heartsAndMindsObjs = ["CrashedHeli"]; // 1
-// searchAndDestroyObjs = ["IEDFactory"]; // 2
+_ROOT = "Insurgency_Core\server\sys_objectives\";
+
+if (!isServer) exitWith {};
+
+_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
+_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
+
+_canSpawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_canSpawn.sqf");
+_spawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_spawn.sqf");
+
+heartsAndMindsObjs = [
+	["Blank", _canSpawn_Blank, _spawn_Blank],
+	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli]
+];
+
+searchAndDestroyObjs = [
+	["Blank", _canSpawn_Blank, _spawn_Blank]
+	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]
+];
 
 // Don't alter, used for OBJ tracking.
-// _currentHAMObj = "";
-// _currentSADObj = "";
-// _currentRANObj = "";
-
-// ["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
-
-// refer to issue: https://github.com/TheWreckingCrewUK/Insurgency/issues/9
-
-TWC_Obj_canSpawn_CrashedHeli = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_objectives\CrashedHeli\crashedHeli_canSpawn.sqf";
+_currentHAMObj = "";
+_currentSADObj = "";
+_currentRANObj = "";
 
 TWC_ObjCanSpawn = {
 	params ["_objID"];
 	_return = false;
 	
-	switch (_objID) do {
-		case "CrashedHeli": { _return = call TWC_Obj_canSpawn_CrashedHeli; };
-		case "IEDFactory": { };
-		default { _return = false; };
+	{
+		if ((_x select 0) == _objID) then {
+			_return = call (_x select 1);
+		};
+	} forEach heartsAndMindsObjs;
+	
+	if (!(_return)) then {
+		{
+			if ((_x select 0) == _objID) then {
+				_return = call (_x select 1);
+			};
+		} forEach searchAndDestroyObjs;
 	};
 	
 	_return;
+};
+
+TWC_ObjSpawn = {
+	params ["_objID"];
+	
+	{
+		if ((_x select 0) == _objID) then {
+			_return = call (_x select 2);
+		};
+	} forEach heartsAndMindsObjs;
+	
+	if (!(_return)) then {
+		{
+			if ((_x select 0) == _objID) then {
+				_return = call (_x select 2);
+			};
+		} forEach searchAndDestroyObjs;
+	};
 };
 
 TWC_ObjSelect = {
@@ -62,3 +92,35 @@ TWC_ObjSelect = {
 	
 	_currentSelectedObj
 };
+
+["TWC_Insurgency_objCompleted", {
+	params [["_objID", ""]];
+	
+	if (_objID == "") then {
+		// uhoh
+		_objID = "Blank";
+	};
+	
+	_finishedObjType = "_currentRANObj";
+	
+	if (_currentHAMObj == _objID) then { _currentHAMObj = ""; _finishedObjType = "_currentHAMObj"; };
+	if (_currentSADObj == _objID) then { _currentSADObj = ""; _finishedObjType = "_currentSADObj"; };
+	if (_currentRANObj == _objID) then { _currentRANObj = ""; };
+	
+	switch (_finishedObjType) do {
+			case "_currentHAMObj": {
+				_currentHAMObj = [_finishedObjType] call TWC_ObjSelect;
+				[_currentHAMObj] call TWC_ObjSpawn;
+			};
+			
+			case "_currentSADObj": { 
+				_currentSADObj = [_finishedObjType] call TWC_ObjSelect;
+				[_currentSADObj] call TWC_ObjSpawn;
+			};
+			
+			default {
+				_currentRANObj = [_finishedObjType] call TWC_ObjSelect;
+				[_currentRANObj] call TWC_ObjSpawn;
+			};
+	};
+}] call CBA_fnc_addEventHandler;
