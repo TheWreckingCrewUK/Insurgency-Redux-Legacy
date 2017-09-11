@@ -55,6 +55,7 @@ TWC_ObjCanSpawn = {
 
 TWC_ObjSpawn = {
 	params ["_objID"];
+	_return = false;
 	
 	{
 		if ((_x select 0) == _objID) then {
@@ -69,6 +70,8 @@ TWC_ObjSpawn = {
 			};
 		} forEach searchAndDestroyObjs;
 	};
+	
+	_return
 };
 
 TWC_ObjSelect = {
