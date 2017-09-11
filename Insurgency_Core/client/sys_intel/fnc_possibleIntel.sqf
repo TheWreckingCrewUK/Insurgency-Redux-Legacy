@@ -82,7 +82,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			case (floor TWC_civMorale <= 15):{hintSilent "I wish nothing but death upon scum like you. The moment you invaded our country you showed your true selves as inbred worthless cowards. Nothing would give me more pleasure than seeing your bleeding corpse on the side of the road."};
 			case (floor TWC_civMorale <= 20):{hintSilent "You've done bad things here, I've heard tales. Even if I did happen to know something I wouldn't tell you."};
 			case (floor TWC_civMorale <= 30):{hintSilent "I can't help you, I don't know what to think about you people coming here but please leave our village."};
-			case (floor TWC_civMorale <= 35):{hintSilent "I know you people have done well but I don't know anything."};
+			case (floor TWC_civMorale <= 40):{hintSilent "I know you people have done well but I don't know anything."};
 			case (floor TWC_civMorale <= 50):{hintSilent "I'd help you if I could but I'm afraid I don't know anything, sorry. I've heard stories of the good you've done here, but unfortunately nothing of use about our enemies."};
 			case (floor TWC_civMorale <= 70):{hintSilent "I've heard a lot of good things about you people but I'm afraid I don't have any information for you"};
 			case (floor TWC_civMorale <= 90):{hintSilent "I've heard many stories of all the good things that have been achieved since you came. However, I'm afraid I have nothing of use to you personally."};
