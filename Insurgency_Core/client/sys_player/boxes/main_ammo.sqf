@@ -58,9 +58,9 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["itemCTAB",1]
     ];
 };
-/*
+
 //BAF Rifleman Pointman
- if (g_class == "BAF_RF") then {
+ if (typeOf vehicle player == "Modern_British_Pointman") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS",1],
@@ -100,7 +100,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Grenadier
- if (g_class == "BAF_GRN") then {
+ if (typeOf vehicle player == "Modern_British_Grenadier_COIN") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_UGL",1],
@@ -142,7 +142,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Automatic Rifleman
- if (g_class == "BAF_AR") then {
+ if (typeOf vehicle player == "Modern_British_Autorifleman_COIN") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L110A2",1],
@@ -175,7 +175,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF 2IC
- if (g_class == "BAF_2") then {
+ if (typeOf vehicle player == "Modern_British_2IC_COIN") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS",1],
@@ -232,7 +232,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Machine Gunner
- if (g_class == "BAF_MG") then {
+ if (typeOf vehicle player == "Modern_British_Machinegunner") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L7A2",1],
@@ -259,7 +259,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
  
 //BAF Marksman
- if (g_class == "BAF_MARK") then {
+ if (typeOf vehicle player == "Modern_British_Marksman_COIN") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L129A1_FGrip",1],
@@ -289,7 +289,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACRE_PRC343",1]
 	];	
 };
-
+/*
 //BAF Medic
  if (g_class == "BAF_MED") then {
     _tmp_weapons =
@@ -535,10 +535,9 @@ if (g_class == "BAF_EOD_TECH") then {
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 };
-
-
+*/
 //US Section Leader
-if (g_class == "US_SL") then {
+if (typeOf vehicle player == "TWC_Modern_US_Army_SectionCommander") then {
     _tmp_weapons =
     [
 		["rhs_weap_m4_carryhandle_pmag",1],
@@ -576,7 +575,7 @@ if (g_class == "US_SL") then {
 };
 
 //US Team Leader
-if (g_class == "US_TL") then {
+if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
     _tmp_weapons =
     [
 		["rhs_weap_m4a1_carryhandle_m203",1],
@@ -625,7 +624,7 @@ if (g_class == "US_TL") then {
 };
 
 //US Rifleman
- if (g_class == "US_RF") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_Rifleman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m4a1_carryhandle_grip",1],
@@ -667,7 +666,7 @@ if (g_class == "US_TL") then {
 };
 
 //US Automatic Rifleman
- if (g_class == "US_AR") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_AutomaticRifleman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m249_pip",1],
@@ -700,7 +699,7 @@ if (g_class == "US_TL") then {
 };
 
 //US Grenadier
- if (g_class == "US_GRN") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_Grenadier") then {
     _tmp_weapons =
     [
         ["rhs_weap_m4a1_carryhandle_m203",1],
@@ -741,7 +740,7 @@ if (g_class == "US_TL") then {
 };
 
 //US Marksmen
- if (g_class == "US_MARK") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_Marksman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m14ebrri",1],
@@ -780,7 +779,7 @@ if (g_class == "US_TL") then {
 	];
 };
 //US Medic
- if (g_class == "US_MED") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_Medic") then {
     _tmp_weapons =
     [
 		["rhs_weap_m4a1_carryhandle_grip",1],
@@ -820,7 +819,7 @@ if (g_class == "US_TL") then {
 		["ACRE_PRC148",1]
 	];
 };
-
+/*
 //US Sniper
  if (g_class == "US_SN") then {
     _tmp_weapons =
@@ -1448,9 +1447,9 @@ if (g_class == "ANA_TL") then {
 		["ACE_tourniquet", 5]
 	];
 };
- 
+*/
 //BAF Pilot
- if (g_class == "PLT") then {
+ if (typeOf vehicle player == "Modern_British_heliPilot") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L22A2",1],
@@ -1478,6 +1477,7 @@ if (g_class == "ANA_TL") then {
 		["UK3CB_BAF_SUSAT",1]
 	];
 };
+/*
  //BAF Crew Cheif
  if (g_class == "PLT_CREW") then {
     _tmp_weapons =
@@ -1507,9 +1507,9 @@ if (g_class == "ANA_TL") then {
 		
 	];
 };
-
+*/
  //US Pilot
- if (g_class == "USPLT") then {
+ if (typeOf vehicle player == "TWC_Modern_US_Army_HeliPilot") then {
     _tmp_weapons =
     [
         ["rhs_weap_m4_carryhandle",1],
@@ -1536,7 +1536,7 @@ if (g_class == "ANA_TL") then {
 		
 	];
 };
-
+/*
  //US Crew Cheif
  if (g_class == "USPLT_CREW") then {
     _tmp_weapons =
