@@ -50,7 +50,7 @@ TWC_ObjCanSpawn = {
 		} forEach searchAndDestroyObjs;
 	};
 	
-	_return;
+	_return
 };
 
 TWC_ObjSpawn = {
