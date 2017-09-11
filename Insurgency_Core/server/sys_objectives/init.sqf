@@ -94,33 +94,22 @@ TWC_ObjSelect = {
 };
 
 ["TWC_Insurgency_objCompleted", {
-	params [["_objID", ""]];
-	
-	if (_objID == "") then {
-		// uhoh
-		_objID = "Blank";
-	};
+	params [["_objID", "Blank"]];
 	
 	_finishedObjType = "_currentRANObj";
 	
-	if (_currentHAMObj == _objID) then { _currentHAMObj = ""; _finishedObjType = "_currentHAMObj"; };
-	if (_currentSADObj == _objID) then { _currentSADObj = ""; _finishedObjType = "_currentSADObj"; };
-	if (_currentRANObj == _objID) then { _currentRANObj = ""; };
+	if (_currentHAMObj == _objID) then {
+		_currentHAMObj = [_finishedObjType] call TWC_ObjSelect;
+		[_currentHAMObj] call TWC_ObjSpawn;
+	};
 	
-	switch (_finishedObjType) do {
-			case "_currentHAMObj": {
-				_currentHAMObj = [_finishedObjType] call TWC_ObjSelect;
-				[_currentHAMObj] call TWC_ObjSpawn;
-			};
-			
-			case "_currentSADObj": { 
-				_currentSADObj = [_finishedObjType] call TWC_ObjSelect;
-				[_currentSADObj] call TWC_ObjSpawn;
-			};
-			
-			default {
-				_currentRANObj = [_finishedObjType] call TWC_ObjSelect;
-				[_currentRANObj] call TWC_ObjSpawn;
-			};
+	if (_currentSADObj == _objID) then {
+		_currentSADObj = [_finishedObjType] call TWC_ObjSelect;
+		[_currentSADObj] call TWC_ObjSpawn;
+	};
+	
+	if (_currentRANObj == _objID) then {
+		_currentRANObj = [_finishedObjType] call TWC_ObjSelect;
+		[_currentRANObj] call TWC_ObjSpawn;
 	};
 }] call CBA_fnc_addEventHandler;
