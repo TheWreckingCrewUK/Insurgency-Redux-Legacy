@@ -55,23 +55,20 @@ TWC_ObjCanSpawn = {
 
 TWC_ObjSpawn = {
 	params ["_objID"];
-	_return = false;
 	
 	{
 		if ((_x select 0) == _objID) then {
-			_return = call (_x select 2);
+			call (_x select 2);
 		};
 	} forEach heartsAndMindsObjs;
 	
 	if (!(_return)) then {
 		{
 			if ((_x select 0) == _objID) then {
-				_return = call (_x select 2);
+				call (_x select 2);
 			};
 		} forEach searchAndDestroyObjs;
 	};
-	
-	_return
 };
 
 TWC_ObjSelect = {
