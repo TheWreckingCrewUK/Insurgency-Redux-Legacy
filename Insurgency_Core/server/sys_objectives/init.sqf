@@ -33,6 +33,7 @@ _currentSADObj = "";
 _currentRANObj = "";
 
 // Mission Start, let's get crackin'
+systemChat ["sys_objectives init..."];
 _currentHAMObj = [1] call TWC_ObjSelect;
 [_currentHAMObj] call TWC_ObjSpawn;
 _currentSADObj = [2] call TWC_ObjSelect;
@@ -47,6 +48,7 @@ TWC_ObjCanSpawn = {
 	{
 		if ((_x select 0) == _objID) then {
 			_return = call (_x select 1);
+			systemChat format ["TWC_ObjCanSpawn matched HAM %1 and returned %2", _objID, _return];
 		};
 	} forEach heartsAndMindsObjs;
 	
@@ -54,6 +56,7 @@ TWC_ObjCanSpawn = {
 		{
 			if ((_x select 0) == _objID) then {
 				_return = call (_x select 1);
+				systemChat format ["TWC_ObjCanSpawn matched SAD %1 and returned %2", _objID, _return];
 			};
 		} forEach searchAndDestroyObjs;
 	};
@@ -67,6 +70,7 @@ TWC_ObjSpawn = {
 	{
 		if ((_x select 0) == _objID) then {
 			call (_x select 2);
+			systemChat format ["TWC_ObjSpawn called HAM %1", (_x select 0)];
 		};
 	} forEach heartsAndMindsObjs;
 	
@@ -74,6 +78,7 @@ TWC_ObjSpawn = {
 		{
 			if ((_x select 0) == _objID) then {
 				call (_x select 2);
+				systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
 			};
 		} forEach searchAndDestroyObjs;
 	};
@@ -88,13 +93,14 @@ TWC_ObjSelect = {
 	if (_currentObjectiveType == 0) then { _currentObjectiveType = 1 + (floor(random 1)); };
 
 	switch (_currentObjectiveType) do {
-		case 1: { _currentSelectedObj = selectRandom heartsAndMindsObjs; };
-		case 2: { _currentSelectedObj = selectRandom searchAndDestroyObjs; };
-		default { _currentSelectedObj = selectRandom heartsAndMindsObjs; }; // should never fire
+		case 1: { _currentSelectedObj = (selectRandom heartsAndMindsObjs) select 0; };
+		case 2: { _currentSelectedObj = (selectRandom searchAndDestroyObjs) select 0; };
+		default { _currentSelectedObj = (selectRandom heartsAndMindsObjs) select 0; }; // should never fire
 	};
 	
 	// recursive call if bad-select
 	if (!([_currentSelectedObj] call TWC_ObjCanSpawn)) then {
+		systemChat format ["Couldn't spawn %1, searching again...", _currentSelectedObj];
 		_currentSelectedObj = (_objType call TWC_ObjSelect);
 	};
 	
@@ -103,8 +109,6 @@ TWC_ObjSelect = {
 
 ["TWC_Insurgency_objCompleted", {
 	params [["_objID", "Blank"]];
-	
-	_finishedObjType = "_currentRANObj";
 	
 	if (_currentHAMObj == _objID) then {
 		_currentHAMObj = [1] call TWC_ObjSelect;
