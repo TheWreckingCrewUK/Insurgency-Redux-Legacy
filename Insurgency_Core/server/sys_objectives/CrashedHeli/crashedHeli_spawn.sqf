@@ -44,8 +44,8 @@ call{
 };
 _time = time + 1200;
 waitUntil{time > _time || [_helo,200] call CBA_fnc_nearPlayer};
-if([_helo,200] call CBA_fnc_nearPlayer)then{
-	[_helo,_group,_cratesArray,_markerstr,_markerstr2] spawn{waitUntil {![_helo,200] call CBA_fnc_nearPlayer}; deleteVehicle (_this select 0); {deleteVehicle _x}forEach (units (_this select 1) + (_this select 2)); deleteMarker (_this select 3); deleteMarker (_this select 4)};
+if (([_helo,200] call CBA_fnc_nearPlayer)) then {
+	[_helo,_group,_cratesArray,_markerstr,_markerstr2] spawn{waitUntil {!([_helo,200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {deleteVehicle _x}forEach (units (_this select 1) + (_this select 2)); deleteMarker (_this select 3); deleteMarker (_this select 4)};
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 }else{
 	["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;

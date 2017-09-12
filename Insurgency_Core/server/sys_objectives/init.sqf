@@ -33,7 +33,7 @@ _currentSADObj = "";
 _currentRANObj = "";
 
 // Mission Start, let's get crackin'
-systemChat ["sys_objectives init..."];
+systemChat "sys_objectives init...";
 _currentHAMObj = [1] call TWC_ObjSelect;
 [_currentHAMObj] call TWC_ObjSpawn;
 _currentSADObj = [2] call TWC_ObjSelect;
