@@ -8,13 +8,18 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
+		nextID=225;
 	};
 	class MarkerIDProvider
 	{
-		nextID=6;
+		nextID=9;
 	};
 	class Camera
 	{
+		pos[]={8106.0205,48.041939,10130.05};
+		dir[]={-0.83936083,-0.54321975,0.022980029};
+		up[]={-0.54307544,0.83954811,0.014866862};
+		aside[]={0.027367158,1.3384124e-008,0.99968958};
 	};
 };
 binarizationWanted=0;
@@ -54,7 +59,9 @@ addons[]=
 	"r_unfold_RHS",
 	"rhsusf_c_RG33L",
 	"A3_Structures_F_Civ_InfoBoards",
-	"A3_Structures_F_Mil_Fortification"
+	"A3_Structures_F_Mil_Fortification",
+	"A3_Structures_F_Mil_Cargo",
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
@@ -321,7 +328,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=42;
+		items=48;
 		class Item0
 		{
 			dataType="Marker";
@@ -384,6 +391,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
+						position[]={8088.5288,29.566986,10128.555};
 						angles[]={0,1.0018746,0};
 					};
 					side="West";
@@ -583,12 +591,14 @@ class Mission
 					};
 					id=32;
 					type="Modern_British_Squadleader";
+					atlOffset=-1.9073486e-006;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=31;
+			atlOffset=-1.9073486e-006;
 		};
 		class Item3
 		{
@@ -1624,8 +1634,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8078.667,30.801201,10099.175};
-				angles[]={0,3.2480266,6.2807932};
+				position[]={8078.7886,30.800911,10099.308};
+				angles[]={-0,3.2480266,6.2807932};
 			};
 			side="Empty";
 			flags=4;
@@ -1634,7 +1644,124 @@ class Mission
 			};
 			id=137;
 			type="Land_HBarrier_Big_F";
+			atlOffset=3.8146973e-006;
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8107.3608,30.244112,10137.556};
+				angles[]={0,4.705111,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="medicalTent";
+			};
+			id=213;
+			type="Land_Medevac_house_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8092.6138,29.841528,10130.432};
+				angles[]={0.00077204045,0,6.2816033};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=214;
+			type="Box_NATO_Ammo_F";
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8091.3604,29.750666,10130.562};
+				angles[]={0.00077204045,0,6.2816033};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=215;
+			type="ACE_medicalSupplyCrate";
 			atlOffset=1.9073486e-006;
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8092.0923,29.84313,10129.469};
+				angles[]={0.00077204045,0,6.2816033};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=217;
+			type="Box_NATO_AmmoOrd_F";
+			atlOffset=-1.9073486e-006;
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8104.5791,30.58407,10148.827};
+				angles[]={0,5.4897699,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0,""Insurgency_Core\imgs\radio.jpg""];}";
+			};
+			id=218;
+			type="SignAd_Sponsor_F";
+			atlOffset=-0.00059509277;
+		};
+		class Item47
+		{
+			dataType="Marker";
+			position[]={8105.5439,0,10143.948};
+			name="crateDropOff";
+			type="Empty";
+			id=219;
+			atlOffset=-29.545565;
 		};
 	};
 };

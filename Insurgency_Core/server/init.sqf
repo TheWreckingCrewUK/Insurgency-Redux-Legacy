@@ -7,6 +7,7 @@
 #include "sys_townLocations\init.sqf";
 #include "sys_controllers\init.sqf";
 #include "sys_cache\init.sqf";
+#include "sys_score\init.sqf";
 
 
 nonQuestionableList = [];
