@@ -26,16 +26,18 @@ _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "Crashed Helicopter";
 
 _random = random 100;
+_unit1 = true;
+_unit2 = true;
+_cratesArray = [];
 call{
 	if(_random < 101)exitWith{
 		_group = createGroup West;
-		_unit = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
-		_unit moveInDriver _helo;
-		_unit setDamage 1;
-		_unit = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
-		_unit setDamage 1;
-		_cratesArray = [];
-		for "_i" from 0 to 3 do{
+		_unit1 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
+		_unit1 moveInDriver _helo;
+		_unit1 setDamage 1;
+		_unit2 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
+		_unit2 setDamage 1;
+		for "_i" from 1 to 3 do{
 			_crateString = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F"] call bis_fnc_selectRandom;
 			_crate = _crateString createVehicle _pos;
 			_cratesArray pushBack _crate;
@@ -45,15 +47,15 @@ call{
 _time = time + 1200;
 waitUntil{time > _time || [_helo,200] call CBA_fnc_nearPlayer};
 if (([_helo,200] call CBA_fnc_nearPlayer)) then {
-	[_helo,_group,_cratesArray,_markerstr,_markerstr2] spawn{waitUntil {!([_helo,200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {deleteVehicle _x}forEach (units (_this select 1) + (_this select 2)); deleteMarker (_this select 3); deleteMarker (_this select 4)};
+	[_helo,[_unit1,_unit2],_cratesArray,_markerstr,_markerstr2] spawn{waitUntil {!([(_this select 0),200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {if([_x,200] call CBA_fnc_nearPlayer)then{}else{deleteVehicle _x}}forEach (_this select 1) + (_this select 2); deleteMarker (_this select 3); deleteMarker (_this select 4); ["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;};
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 }else{
 	["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
 	deleteVehicle _helo;
 	{
 		deleteVehicle _x;
-	}forEach ((units _group) + _cratesArray);
+	}forEach ([_unit1,_unit2] + _cratesArray);
 	deleteMarker _markerstr;
 	deleteMarker _markerstr2;
+	["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
 };
-["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
