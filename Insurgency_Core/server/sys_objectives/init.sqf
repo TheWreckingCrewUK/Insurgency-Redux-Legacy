@@ -21,13 +21,13 @@ _canSpawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_canSpawn.sqf
 _spawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_spawn.sqf");
 
 heartsAndMindsObjs = [
-	["BlankHAM", _canSpawn_Blank, _spawn_Blank],
-	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
-	["HVT", _canSpawn_HVT,_spawn_CrashedHeli]
+	["Blank", _canSpawn_Blank, _spawn_Blank],
+	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli]
 ];
 
 searchAndDestroyObjs = [
-	["BlankSAD", _canSpawn_Blank, _spawn_Blank]
+	["Blank", _canSpawn_Blank, _spawn_Blank],
+	["HVT", _canSpawn_HVT, _spawn_HVT]
 	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]
 ];
 
@@ -55,21 +55,41 @@ TWC_ObjCanSpawn = {
 };
 
 TWC_ObjSpawn = {
-	params ["_objID"];
+	params ["_objID", ["_objType", -1]];
 	
-	{
-		if ((_x select 0) == _objID) then {
-			[] spawn (_x select 2);
-			systemChat format ["TWC_ObjSpawn called HAM %1", (_x select 0)];
+	if (_objType == -1) then {
+		{
+			if ((_x select 0) == _objID) then {
+				[] spawn (_x select 2);
+				systemChat format ["TWC_ObjSpawn called HAM %1", (_x select 0)];
+			};
+		} forEach heartsAndMindsObjs;
+
+		{
+			if ((_x select 0) == _objID) then {
+				[] spawn (_x select 2);
+				systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
+			};
+		} forEach searchAndDestroyObjs;
+	} else {
+		_done = false;
+		{
+			if ((_x select 0) == _objID) then {
+				[_objType] spawn (_x select 2);
+				systemChat format ["TWC_ObjSpawn called HAM %1 with _objType %2", (_x select 0), _objType];
+				_done = true;
+			};
+		} forEach heartsAndMindsObjs;
+
+		if !(_done) then {
+			{
+				if ((_x select 0) == _objID) then {
+					[_objType] spawn (_x select 2);
+					systemChat format ["TWC_ObjSpawn called SAD %1 with _objType %2", (_x select 0), _objType];
+				};
+			} forEach searchAndDestroyObjs;
 		};
-	} forEach heartsAndMindsObjs;
-	
-	{
-		if ((_x select 0) == _objID) then {
-			[] spawn (_x select 2);
-			systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
-		};
-	} forEach searchAndDestroyObjs;
+	};
 };
 
 TWC_ObjSelect = {
@@ -101,30 +121,45 @@ currentSADObj = "";
 currentRANObj = "";
 
 ["TWC_Insurgency_objCompleted", {
-	params [["_objID", "BlankHAM"]];
+	params [["_objID", "Blank"], ["_objType", -1]];
 	
-	if (currentHAMObj == _objID) then {
+	if (currentHAMObj == _objID && (_objType == -1 || _objType == 1)) then {
 		currentHAMObj = [1] call TWC_ObjSelect;
-		[currentHAMObj] call TWC_ObjSpawn;
+		
+		if (currentHAMObj != "Blank") then {
+			[currentHAMObj] call TWC_ObjSpawn;
+		} else {
+			[currentHAMObj, 1] call TWC_ObjSpawn;
+		};
 	};
 	
-	if (currentSADObj == _objID) then {
+	if (currentSADObj == _objID && (_objType == -1 || _objType == 2)) then {
 		currentSADObj = [2] call TWC_ObjSelect;
-		[currentSADObj] call TWC_ObjSpawn;
+		
+		if (currentSADObj != "Blank") then {
+			[currentSADObj] call TWC_ObjSpawn;
+		} else {
+			[currentSADObj, 2] call TWC_ObjSpawn;
+		};
 	};
 	
-	if (currentRANObj == _objID) then {
+	if (currentRANObj == _objID && (_objType == -1 || _objType == 0)) then {
 		currentRANObj = [0] call TWC_ObjSelect;
-		[currentRANObj] call TWC_ObjSpawn;
+		
+		if (currentRANObj != "Blank") then {
+			[currentRANObj] call TWC_ObjSpawn;
+		} else {
+			[currentRANObj, 0] call TWC_ObjSpawn;
+		};
 	};
 	
-	systemChat format ["Obj completed, objs are now: %1 - %2 - %3", str currentHAMObj, str currentSADObj, str currentRANObj];
+	systemChat format ["objCompleted, objs are now: %1 - %2 - %3", str currentHAMObj, str currentSADObj, str currentRANObj];
 }] call CBA_fnc_addEventHandler;
 
 // Mission Start, let's get crackin'
-currentHAMObj = [1] call TWC_ObjSelect;
-[currentHAMObj] call TWC_ObjSpawn;
-currentSADObj = [2] call TWC_ObjSelect;
-[currentSADObj] call TWC_ObjSpawn;
-currentRANObj = [0] call TWC_ObjSelect;
-[currentRANObj] call TWC_ObjSpawn;
+currentHAMObj = "Blank";
+["Blank", 1] call TWC_ObjSpawn;
+currentSADObj = "Blank";
+["Blank", 2] call TWC_ObjSpawn;
+currentRANObj = "Blank";
+["Blank", 0] call TWC_ObjSpawn;
