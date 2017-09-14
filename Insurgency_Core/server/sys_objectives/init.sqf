@@ -17,9 +17,13 @@ _spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_spawn.sqf
 _canSpawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_canSpawn.sqf");
 _spawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_spawn.sqf");
 
+_canSpawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_canSpawn.sqf");
+_spawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_spawn.sqf");
+
 heartsAndMindsObjs = [
 	["BlankHAM", _canSpawn_Blank, _spawn_Blank],
-	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli]
+	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
+	["HVT", _canSpawn_HVT,_spawn_CrashedHeli]
 ];
 
 searchAndDestroyObjs = [
