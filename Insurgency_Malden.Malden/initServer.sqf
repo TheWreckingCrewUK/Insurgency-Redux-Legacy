@@ -16,4 +16,6 @@ civilianType = "c_man_1";
 ["AllVehicles","init",{
 	[false,(_this select 0),1000] spawn twc_fnc_initVehicleCache
 }, true, ["Man","Static"], true] call CBA_fnc_addClassEventHandler;
-[] execVM "Insurgency_Core\server\init.sqf";
+
+// event handlers run in the non-scheduled environment (can't be execVM)
+[] call compile preprocessFile "Insurgency_Core\server\init.sqf";

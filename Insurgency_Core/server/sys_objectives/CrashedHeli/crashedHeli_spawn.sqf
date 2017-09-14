@@ -57,5 +57,5 @@ if (([_helo,200] call CBA_fnc_nearPlayer)) then {
 	}forEach ([_unit1,_unit2] + _cratesArray);
 	deleteMarker _markerstr;
 	deleteMarker _markerstr2;
-	["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_objCompleted", ["CrashedHeli"]] call CBA_fnc_serverEvent;
 };

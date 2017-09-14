@@ -18,12 +18,12 @@ _canSpawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\
 _spawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_spawn.sqf");
 
 heartsAndMindsObjs = [
-	["Blank", _canSpawn_Blank, _spawn_Blank],
+	["BlankHAM", _canSpawn_Blank, _spawn_Blank],
 	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli]
 ];
 
 searchAndDestroyObjs = [
-	["Blank", _canSpawn_Blank, _spawn_Blank]
+	["BlankSAD", _canSpawn_Blank, _spawn_Blank]
 	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]
 ];
 
@@ -55,17 +55,17 @@ TWC_ObjSpawn = {
 	
 	{
 		if ((_x select 0) == _objID) then {
-			call (_x select 2);
+			[] spawn (_x select 2);
 			systemChat format ["TWC_ObjSpawn called HAM %1", (_x select 0)];
 		};
 	} forEach heartsAndMindsObjs;
 	
-		{
-			if ((_x select 0) == _objID) then {
-				call (_x select 2);
-				systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
-			};
-		} forEach searchAndDestroyObjs;
+	{
+		if ((_x select 0) == _objID) then {
+			[] spawn (_x select 2);
+			systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
+		};
+	} forEach searchAndDestroyObjs;
 };
 
 TWC_ObjSelect = {
@@ -81,45 +81,46 @@ TWC_ObjSelect = {
 		case 2: { _currentSelectedObj = (selectRandom searchAndDestroyObjs) select 0; };
 		default { _currentSelectedObj = (selectRandom heartsAndMindsObjs) select 0; }; // should never fire
 	};
-	
+
 	// recursive call if bad-select
 	if (!([_currentSelectedObj] call TWC_ObjCanSpawn)) then {
 		systemChat format ["Couldn't spawn %1, searching again...", _currentSelectedObj];
-		_currentSelectedObj = (_objType call TWC_ObjSelect);
+		_currentSelectedObj = ([_objType] call TWC_ObjSelect);
 	};
-	
+
 	_currentSelectedObj
 };
 
+// Global, other scripts can now poll this (might be needed for canSpawns for example)
+currentHAMObj = "";
+currentSADObj = "";
+currentRANObj = "";
+
 ["TWC_Insurgency_objCompleted", {
-	params [["_objID", "Blank"]];
+	params [["_objID", "BlankHAM"]];
 	
-	if (_currentHAMObj == _objID) then {
-		_currentHAMObj = [1] call TWC_ObjSelect;
-		[_currentHAMObj] call TWC_ObjSpawn;
+	if (currentHAMObj == _objID) then {
+		currentHAMObj = [1] call TWC_ObjSelect;
+		[currentHAMObj] call TWC_ObjSpawn;
 	};
 	
-	if (_currentSADObj == _objID) then {
-		_currentSADObj = [2] call TWC_ObjSelect;
-		[_currentSADObj] call TWC_ObjSpawn;
+	if (currentSADObj == _objID) then {
+		currentSADObj = [2] call TWC_ObjSelect;
+		[currentSADObj] call TWC_ObjSpawn;
 	};
 	
-	if (_currentRANObj == _objID) then {
-		_currentRANObj = [0] call TWC_ObjSelect;
-		[_currentRANObj] call TWC_ObjSpawn;
+	if (currentRANObj == _objID) then {
+		currentRANObj = [0] call TWC_ObjSelect;
+		[currentRANObj] call TWC_ObjSpawn;
 	};
+	
+	systemChat format ["Obj completed, objs are now: %1 - %2 - %3", str currentHAMObj, str currentSADObj, str currentRANObj];
 }] call CBA_fnc_addEventHandler;
 
-// KRAKENS BELOW, BEWARE (don't edit pls)
-_currentHAMObj = "";
-_currentSADObj = "";
-_currentRANObj = "";
-
 // Mission Start, let's get crackin'
-systemChat "sys_objectives init...";
-_currentHAMObj = [1] call TWC_ObjSelect;
-[_currentHAMObj] call TWC_ObjSpawn;
-_currentSADObj = [2] call TWC_ObjSelect;
-[_currentSADObj] call TWC_ObjSpawn;
-_currentRANObj = [0] call TWC_ObjSelect;
-[_currentRANObj] call TWC_ObjSpawn;
+currentHAMObj = [1] call TWC_ObjSelect;
+[currentHAMObj] call TWC_ObjSpawn;
+currentSADObj = [2] call TWC_ObjSelect;
+[currentSADObj] call TWC_ObjSpawn;
+currentRANObj = [0] call TWC_ObjSelect;
+[currentRANObj] call TWC_ObjSpawn;
