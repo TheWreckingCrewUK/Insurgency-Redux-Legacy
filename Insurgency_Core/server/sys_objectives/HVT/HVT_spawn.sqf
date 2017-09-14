@@ -17,7 +17,7 @@ _group = createGroup East;
 _unitString = ["c_man_1"] call bis_fnc_selectRandom
 _hvt = _group createUnit [_unitString,[0,0,0],[],0,"NONE"];
 
-while {_x distance [0,0,0] < 100 || (_x distance (getmarkerpos "base")) < 500 || [_hvt,500 call CBA_fnc_nearPlayer} do {			
+while {_x distance [0,0,0] < 100 || (_x distance (getmarkerpos "base")) < 500 || [_hvt,500] call CBA_fnc_nearPlayer} do {			
 
 	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	sleep .25;
