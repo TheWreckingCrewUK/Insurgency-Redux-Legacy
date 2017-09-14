@@ -66,3 +66,4 @@ if(!alive _hvt)then{
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
 deleteVehicle _hvt;
+["TWC_Insurgency_objCompleted", ["HVT"]] call CBA_fnc_serverEvent;
