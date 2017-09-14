@@ -15,7 +15,7 @@
 * Public: No
 */
 
-params["_veh",["_delay",2],["_respawnDistancePlayers",1000],["_respawnDistanceForwardBase",1000],["_desertedTime",10]];
+params["_veh",["_delay",10],["_respawnDistancePlayers",1000],["_respawnDistanceForwardBase",1000],["_desertedTime",10]];
 
 if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehicle. Exiting..."};
 
