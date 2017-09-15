@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=225;
+		nextID=234;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7964.5781,104.52499,10136.213};
-		dir[]={0.83767337,-0.54347974,-0.055774368};
-		up[]={0.54234606,0.83937478,-0.036109153};
-		aside[]={-0.066437282,2.6472844e-007,-0.9978658};
+		pos[]={8084.4263,77.438553,10197.67};
+		dir[]={0.032997243,-0.82726604,-0.56101722};
+		up[]={0.048578542,0.56165117,-0.82593977};
+		aside[]={-0.99837154,-3.0526498e-006,-0.058726929};
 	};
 };
 binarizationWanted=0;
@@ -60,14 +60,14 @@ addons[]=
 	"rhsusf_c_RG33L",
 	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Structures_F_Mil_Fortification",
-	"A3_Structures_F_Mil_Cargo",
-	"A3_Weapons_F_Ammoboxes"
+	"CUP_WarfareBuildings",
+	"CUP_StandaloneTerrains_Core_Faction"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=34;
+		items=36;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -295,6 +295,16 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item34
+		{
+			className="CUP_WarfareBuildings";
+			name="CUP_WarfareBuildings";
+		};
+		class Item35
+		{
+			className="CUP_StandaloneTerrains_Core_Faction";
+			name="CUP_StandaloneTerrains_Core_Faction";
+		};
 	};
 };
 randomSeed=16337384;
@@ -328,7 +338,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=44;
 		class Item0
 		{
 			dataType="Marker";
@@ -389,7 +399,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8057.1855,29.614101,10127.037};
+						position[]={8056.4595,29.614443,10127.346};
 						angles[]={0,1.0018746,0};
 					};
 					side="West";
@@ -589,14 +599,14 @@ class Mission
 					};
 					id=32;
 					type="Modern_British_Squadleader";
-					atlOffset=1.9073486e-006;
+					atlOffset=7.6293945e-006;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=31;
-			atlOffset=1.9073486e-006;
+			atlOffset=7.6293945e-006;
 		};
 		class Item3
 		{
@@ -729,7 +739,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8106.313,31.73818,10174.488};
+				position[]={8105.2651,31.743124,10174.018};
 				angles[]={0.0015822123,4.7229524,6.2791886};
 			};
 			side="Empty";
@@ -742,7 +752,7 @@ class Mission
 			};
 			id=59;
 			type="B_Truck_01_medical_F";
-			atlOffset=-5.7220459e-006;
+			atlOffset=-9.5367432e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1423,8 +1433,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8087.3823,30.77,10194.606};
-				angles[]={0,4.7655087,0};
+				position[]={8087.2524,30.77,10194.708};
+				angles[]={-0,4.7655087,0};
 			};
 			side="Empty";
 			flags=4;
@@ -1641,96 +1651,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8040.6924,30.300001,10176.033};
-				angles[]={0,4.705111,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				name="medicalTent";
-			};
-			id=213;
-			type="Land_Medevac_house_V1_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item42
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8092.6138,29.841528,10130.432};
-				angles[]={0.00077204045,0,6.2816033};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=214;
-			type="Box_NATO_Ammo_F";
-		};
-		class Item43
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8091.3604,29.750666,10130.562};
-				angles[]={0.00077204045,0,6.2816033};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=215;
-			type="ACE_medicalSupplyCrate";
-			atlOffset=1.9073486e-006;
-		};
-		class Item44
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8092.0923,29.84313,10129.469};
-				angles[]={0.00077204045,0,6.2816033};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=217;
-			type="Box_NATO_AmmoOrd_F";
-			atlOffset=-1.9073486e-006;
-		};
-		class Item45
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={8104.5791,30.58407,10148.827};
 				angles[]={0,5.4897699,0};
 			};
@@ -1744,7 +1664,7 @@ class Mission
 			type="SignAd_Sponsor_F";
 			atlOffset=-0.00059509277;
 		};
-		class Item46
+		class Item42
 		{
 			dataType="Marker";
 			position[]={8105.5439,0,10143.948};
@@ -1752,6 +1672,24 @@ class Mission
 			type="Empty";
 			id=219;
 			atlOffset=-29.545565;
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8086.439,28.505526,10158.357};
+				angles[]={0,1.5776728,6.2824869};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="twc_baseHospital";
+			};
+			id=233;
+			type="USMC_WarfareBFieldhHospital";
+			atlOffset=-1.9073486e-006;
 		};
 	};
 };

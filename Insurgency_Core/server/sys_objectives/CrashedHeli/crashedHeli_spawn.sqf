@@ -42,6 +42,8 @@ call{
 			_crate = _crateString createVehicle _pos;
 			_cratesArray pushBack _crate;
 		};
+		_taskID = str (random 1000);
+		[WEST,[_taskID],["A friendly helicopter has crashed dropping supplies. We should secure them before the insurgents do.","Helicopter Crash"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 	};
 };
 _time = time + 1200;
@@ -59,3 +61,4 @@ if (([_helo,200] call CBA_fnc_nearPlayer)) then {
 	deleteMarker _markerstr2;
 	["TWC_Insurgency_objCompleted", ["CrashedHeli"]] call CBA_fnc_serverEvent;
 };
+[_taskID] call bis_fnc_deleteTask;

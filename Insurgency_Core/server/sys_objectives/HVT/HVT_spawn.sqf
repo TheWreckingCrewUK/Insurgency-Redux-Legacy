@@ -14,10 +14,10 @@
 * Public: No
 */
 _group = createGroup East;
-_unitString = ["c_man_1"] call bis_fnc_selectRandom;
+_unitString = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"] call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,[0,0,0],[],0,"NONE"];
 
-while {_x distance [0,0,0] < 100 || (_x distance (getmarkerpos "base")) < 500 || [_hvt,500] call CBA_fnc_nearPlayer} do {			
+while {_hvt distance [0,0,0] < 100 || (_hvt distance (getmarkerpos "base")) < 500 || [_hvt,500] call CBA_fnc_nearPlayer} do {			
 
 	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	sleep .25;
@@ -26,7 +26,7 @@ while {_x distance [0,0,0] < 100 || (_x distance (getmarkerpos "base")) < 500 ||
 	while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
 	if (_c > 0) then {
 		_ranNum = floor(random _c);
-		_x setPos (_house buildingPos _ranNum);
+		_hvt setPos (_house buildingPos _ranNum);
 		sleep 1;
 	};
 	sleep 0.25;
@@ -48,8 +48,31 @@ _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "High Value Target";
 
-//Add Hostiles
+_taskID = str (random 1000);
+[WEST,[_taskID],["We have located a high ranking insurgent. Killing him send ripples through the whole insurgency.","High Value Target"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
+//add Hostiles
+
+[_pos]spawn{
+_pos = (_this select 0);
+_num = 0;
+_total = 10;
+_group = createGroup East;
+	for "_i" from 1 to _total do{
+		_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+			if (side (_this select 1) == WEST) then{
+				InsP_enemyMorale = InsP_enemyMorale + 0.06; publicVariable "InsP_enemyMorale";
+			};
+		}];
+		_unit addMagazines ["handGrenade",2];
+		_unit setVariable ["unitsHome",_pos,false];
+		_num = _num + 1;
+		sleep 0.2;
+	};
+	[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
+};
 //Add WaitUntil
 _time = time + 1200;
 waitUntil{time > _time || !alive _hvt};
@@ -65,5 +88,6 @@ if(!alive _hvt)then{
 };
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
-deleteVehicle _hvt;
+[_hvt]spawn{waitUntil {[(_this select 0),200] call CBA_fnc_nearPlayer}; deleteVehicle (_this select 0);};
 ["TWC_Insurgency_objCompleted", ["HVT"]] call CBA_fnc_serverEvent;
+[_taskID] call bis_fnc_deleteTask;
