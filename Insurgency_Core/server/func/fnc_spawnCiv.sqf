@@ -38,6 +38,7 @@ for "_i" from 1 to _civnum do {
 		};
 
 		_unit removeAllEventHandlers "FiredNear";
+		_unit removeAllEventHandlers "Killed";
 	}];
 
 	_individualCiv setVariable ["unitsHome", _pos, false];
