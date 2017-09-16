@@ -37,7 +37,7 @@ for "_i" from 1 to _civnum do {
 			["TWC_Insurgency_adjustCivilianMorale", [-1]] call CBA_fnc_serverEvent;
 		};
 
-		_unit removeAllEventHandlers;
+		_unit removeAllEventHandlers "FiredNear";
 	}];
 
 	_individualCiv setVariable ["unitsHome", _pos, false];
