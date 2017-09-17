@@ -36,3 +36,13 @@ publicVariable "TWC_insMorale";
 	
 	publicVariable "TWC_insMorale";
 }] call CBA_fnc_addEventHandler;
+
+addMissionEventHandler ["buildingChanged", {
+	params ["_from", "_to", "_isRuin"];
+	
+	// In the future, there could be a (map specific) list of objects that have higher affect
+	// Such as a mosque, or a bridge etc. Would need to be a hardcoded check list, sadly.
+	if (_isRuin) then {
+		["TWC_Insurgency_adjustCivilianMorale", [-2.5]] call CBA_fnc_serverEvent;
+	};
+}];
