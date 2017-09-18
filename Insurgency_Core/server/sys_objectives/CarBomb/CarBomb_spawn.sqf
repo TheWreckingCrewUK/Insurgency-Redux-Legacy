@@ -40,7 +40,6 @@ for "_i" from 1 to 5 do{
 		["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 	}];
 	[_unit,true,600,true] call ace_medical_fnc_setUnconscious;
-	[_unit] spawn{waitUntil {(_this select 0) distance2D baseHospital < 5}; ["TWC_Insurgency_adjustPoints", 10] call CBA_fnc_serverEvent; deleteVehicle (_this select 0)};
 };
 //Add Enemies
 

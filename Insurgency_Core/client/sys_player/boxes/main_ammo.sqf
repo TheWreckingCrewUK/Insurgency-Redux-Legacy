@@ -892,9 +892,9 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 		["itemCTAB",1]
 	];
 };
-
+*/
 //USMC Squad Leader
- if (g_class == "USMC_SL") then {
+ if (typeOf vehicle player == "Modern_USMC_Squadleader") then {
     _tmp_weapons =
     [
         ["rhs_weap_m16a4_carryhandle_pmag",1],
@@ -938,7 +938,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 	];
 };
 //USMC Team Leader
- if (g_class == "USMC_TL") then {
+ if (typeOf vehicle player == "Modern_USMC_Teamleader") then {
     _tmp_weapons =
     [
         ["rhs_weap_m16a4_carryhandle_M203",1],
@@ -982,7 +982,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 };
 
 //USMC Rifleman
- if (g_class == "USMC_RF") then {
+ if (typeOf vehicle player == "Modern_USMC_Rifleman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m16a4_grip",1],
@@ -1027,7 +1027,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 };
 
 //USMC Auto Rifleman
-if (g_class == "USMC_AR") then {
+if (typeOf vehicle player == "Modern_USMC_AsstAutorifleman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m249_pip",1],
@@ -1066,7 +1066,7 @@ if (g_class == "USMC_AR") then {
 };
 
 //USMC Auto Rifleman Assistant
-if (g_class == "USMC_AAR") then {
+if (typeOf vehicle player == "twc_Modern_US_Army_AutomaticRifleman") then {
     _tmp_weapons =
     [
         ["rhs_weap_m16a4_grip",1],
@@ -1101,7 +1101,7 @@ if (g_class == "USMC_AAR") then {
 		["ACRE_PRC148",1]
 	];
 };
-
+/*
 //USMC Machine Gunner
  if (g_class == "USMC_MG") then {
     _tmp_weapons =
@@ -1168,7 +1168,7 @@ if (g_class == "USMC_AAR") then {
 };
 
 //USMC Medic
- if (g_class == "USMC_MED") then {
+ if (typeOf vehicle player == "Modern_USMC_Ass") then {
     _tmp_weapons =
     [
         ["rhs_weap_m16a4_grip",1],
