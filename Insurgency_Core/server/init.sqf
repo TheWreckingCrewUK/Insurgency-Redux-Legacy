@@ -1,4 +1,3 @@
-#include "defines.sqf";
 #include "func\init.sqf";
 //#include "sys_civilianVehicles\init.sqf";
 #include "sys_vehicleRespawn\init.sqf";
