@@ -2,6 +2,7 @@
 
 twc_fnc_healing = {
 	params["_player","_civ"];
+	if(side _civ != "CIV")exitWith{};
 	_damageSource = _deadGuy getVariable ["ace_medical_lastDamageSource", objNull];
 	if(side _damageSource == "WEST")then{
 		
