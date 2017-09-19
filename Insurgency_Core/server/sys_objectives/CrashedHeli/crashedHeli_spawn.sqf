@@ -63,8 +63,8 @@ call{
 	};
 	if(_random < 101)exitWith{
 		_group = createGroup West;
-		_unit1 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
-		_unit1 moveInDriver _helo;
+		_unit = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
+		_unit moveInDriver _helo;
 		for "_i" from 1 to 5 do {
 			[_unit,random 0.8,["vehiclecrash"]] call twc_fnc_aiWounds;
 		};
@@ -81,11 +81,14 @@ call{
 		}];
 		[_unit,true,600,true] call ace_medical_fnc_setUnconscious;
 		
+		_taskID = str (random 1000);
+		[WEST,[_taskID],["A friendly helicopter has crashed, but the crew survived. We should rescue them before the insurgents get to them.","Helicopter Crash"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+		
 		_time = time + 1200;
 		waitUntil{time > _time || [_helo,200] call CBA_fnc_nearPlayer};
 		if (([_helo,200] call CBA_fnc_nearPlayer)) then {
 			["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
-			[_helo,_markerstr,_markerstr2] spawn {waitUntil {![_this select 0,200] call CBA_fnc_nearPlayer}; deleteMarker (_this select 1); deleteMarker (_this select 2);deleteVehicle (_this select 0)};
+			[_helo,_markerstr,_markerstr2] spawn {waitUntil {!([_this select 0,200] call CBA_fnc_nearPlayer)}; deleteMarker (_this select 1); deleteMarker (_this select 2);deleteVehicle (_this select 0)};
 		}else{
 			["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
 			deleteVehicle _helo;

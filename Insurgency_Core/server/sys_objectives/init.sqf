@@ -23,10 +23,14 @@ _spawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_spawn.sqf");
 _canSpawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_canSpawn.sqf");
 _spawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_spawn.sqf");
 
+_canSpawn_VIP = compile preprocessFileLineNumbers (_ROOT + "VIP\VIP_canSpawn.sqf");
+_spawn_VIP = compile preprocessFileLineNumbers (_ROOT + "VIP\VIP_spawn.sqf");
+
 heartsAndMindsObjs = [
 	["Blank", _canSpawn_Blank, _spawn_Blank],
 	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
-	["CarBomb", _canSpawn_CarBomb, _spawn_CarBomb]
+	["CarBomb", _canSpawn_CarBomb, _spawn_CarBomb],
+	["VIP", _canSpawn_CarBomb, _spawn_CarBomb]
 ];
 
 searchAndDestroyObjs = [
