@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=257;
+		nextID=266;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8019.855,48.664284,10125.736};
-		dir[]={0.87581927,-0.48222467,-0.021029426};
-		up[]={0.48210886,0.87603557,-0.011575739};
-		aside[]={-0.024003981,2.3172106e-008,-0.99973518};
+		pos[]={8021.7466,37.130547,10113.288};
+		dir[]={0.60639238,-0.2921544,0.73959285};
+		up[]={0.1852382,0.95636845,0.22592945};
+		aside[]={0.77332866,1.092325e-006,-0.63405246};
 	};
 };
 binarizationWanted=0;
@@ -42,7 +42,7 @@ addons[]=
 	"A3_Structures_F_Mil_Fortification",
 	"CUP_WarfareBuildings",
 	"CUP_StandaloneTerrains_Core_Faction",
-	"twc_framework_public_modern_us"
+	"twc_modern"
 };
 class AddonsMetaData
 {
@@ -156,8 +156,8 @@ class AddonsMetaData
 		};
 		class Item16
 		{
-			className="twc_framework_public_modern_us";
-			name="twc_framework_public_modern_us";
+			className="twc_modern";
+			name="twc_modern";
 		};
 	};
 };
@@ -1352,13 +1352,13 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=13;
+				items=8;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8043.0913,29.622522,10130.604};
+						position[]={8027.4814,29.639595,10124.871};
 					};
 					side="West";
 					flags=7;
@@ -1368,15 +1368,15 @@ class Mission
 						rank="CORPORAL";
 						isPlayer=1;
 					};
-					id=244;
-					type="Modern_USMC_Squadleader";
+					id=258;
+					type="Modern_British_Squadleader";
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8046.0913,29.622522,10127.604};
+						position[]={8030.4814,29.639595,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1384,15 +1384,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=245;
-					type="Modern_USMC_Teamleader";
+					id=259;
+					type="Modern_British_Pointman";
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8048.0913,29.620924,10127.604};
+						position[]={8032.4814,29.637995,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1400,15 +1400,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=246;
-					type="Modern_USMC_Rifleman";
+					id=260;
+					type="Modern_British_Grenadier_COIN";
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8050.0913,29.619324,10127.604};
+						position[]={8034.4814,29.636395,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1416,15 +1416,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=247;
-					type="Modern_USMC_AsstAutorifleman";
+					id=261;
+					type="Modern_British_Autorifleman_COIN";
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8052.0913,29.617723,10127.604};
+						position[]={8036.4814,29.634794,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1432,15 +1432,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=248;
-					type="TWC_Modern_US_Army_AutomaticRifleman";
+					id=262;
+					type="Modern_British_2IC_COIN";
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8054.0913,29.616123,10127.604};
+						position[]={8038.4814,29.633194,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1448,15 +1448,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=249;
-					type="Modern_USMC_Teamleader";
+					id=263;
+					type="Modern_British_Autorifleman_COIN";
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8056.0913,29.614523,10127.604};
+						position[]={8040.4814,29.631594,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1464,15 +1464,15 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=250;
-					type="Modern_USMC_Rifleman";
+					id=264;
+					type="Modern_British_Machinegunner";
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8058.0913,29.612923,10127.604};
+						position[]={8042.4814,29.629995,10121.871};
 					};
 					side="West";
 					flags=5;
@@ -1480,94 +1480,14 @@ class Mission
 					{
 						skill=0.40000001;
 					};
-					id=251;
-					type="Modern_USMC_Autorifleman";
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8060.0913,29.611322,10127.604};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=252;
-					type="Modern_USMC_AsstAutorifleman";
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8054.0913,29.616123,10127.604};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=253;
-					type="Modern_USMC_Teamleader";
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8056.0913,29.614523,10127.604};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=254;
-					type="Modern_USMC_Rifleman";
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8058.0913,29.612923,10127.604};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=255;
-					type="Modern_USMC_Autorifleman";
-				};
-				class Item12
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8060.0913,29.611322,10127.604};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=256;
-					type="Modern_USMC_Medic";
+					id=265;
+					type="Modern_British_Marksman_COIN";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=243;
+			id=257;
 		};
 	};
 };
