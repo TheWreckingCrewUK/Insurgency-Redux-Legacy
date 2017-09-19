@@ -73,7 +73,7 @@ _taskID = str (random 1000);
 
 _time = time + 1200;
 waitUntil {_vip distance (getMarkerPos "base") < 20 || !alive _vip || time < _time};
-if(time < _time && (![_vip,200] call CBA_fnc_nearPlayer))then {
+if(time < _time && !([_vip,200] call CBA_fnc_nearPlayer))then {
 	[_vip, true, false] call ace_medical_fnc_setDead
 };
 sleep 2;
