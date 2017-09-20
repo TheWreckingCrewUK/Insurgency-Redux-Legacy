@@ -13,11 +13,8 @@
 *
 * Public: No
 */
-_group = createGroup East;
-_unitString = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"] call bis_fnc_selectRandom;
-_hvt = _group createUnit [_unitString,[0,0,0],[],0,"NONE"];
-
-while {_hvt distance [0,0,0] < 100 || (_hvt distance (getmarkerpos "base")) < 500 || [_hvt,500] call CBA_fnc_nearPlayer} do {			
+_pos = [0,0,0];
+while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || ([_pos,500] call twc_fnc_posNearPlayers)} do {			
 
 	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	sleep .25;
@@ -26,14 +23,17 @@ while {_hvt distance [0,0,0] < 100 || (_hvt distance (getmarkerpos "base")) < 50
 	while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
 	if (_c > 0) then {
 		_ranNum = floor(random _c);
-		_hvt setPos (_house buildingPos _ranNum);
+		_pos = (_house buildingPos _ranNum);
 		sleep 1;
 	};
 	sleep 0.25;
 };
+
+_group = createGroup East;
+_unitString = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"] call bis_fnc_selectRandom;
+_hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
 
-_pos = getPos _hvt;
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];

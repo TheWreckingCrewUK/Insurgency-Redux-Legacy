@@ -1,13 +1,6 @@
-_badPos = true;
-_pos = [0,0,0];
-while{_badPos}do{
-	_badPos = false;
+_pos = [[worldSize/2,worldSize/2,0],[0,5000],[0,360],0] call SHK_pos;
+while{([_pos,1000] call twc_fnc_posNearPlayers)}do{
 	_pos = [[worldSize/2,worldSize/2,0],[0,5000],[0,360],0] call SHK_pos;
-	{
-		if(_pos distance2D _x < 1000) then{
-			_badPos = true;
-		};
-	}forEach (allPlayers - entities "HeadlessClient_F");
 };
 _heloString = ["RHS_UH60M","UK3CB_BAF_Wildcat_Ah1_CAS_8A","CUP_B_UH1Y_UNA_USMC"] call bis_fnc_selectRandom;
 _helo = _heloString createVehicle _pos;

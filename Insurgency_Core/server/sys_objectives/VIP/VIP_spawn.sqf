@@ -13,10 +13,8 @@
 *
 * Public: No
 */
-_group = createGroup civilian;
-_vip = _group createUnit ["C_journalist_F",[0,0,0],[],0,"NONE"];
-
-while {_vip distance [0,0,0] < 100 || (_vip distance (getmarkerpos "base")) < 500 || [_vip,500] call CBA_fnc_nearPlayer} do {			
+_pos = [0,0,0];
+while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || [_pos,500] call twc_fnc_posNearPlayers} do {			
 
 	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	sleep .25;
@@ -25,15 +23,15 @@ while {_vip distance [0,0,0] < 100 || (_vip distance (getmarkerpos "base")) < 50
 	while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
 	if (_c > 0) then {
 		_ranNum = floor(random _c);
-		_vip setPos (_house buildingPos _ranNum);
+		_pos = (_house buildingPos _ranNum);
 		sleep 1;
 	};
 	sleep 0.25;
 };
-
+_group = createGroup civilian;
+_vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
 [_vip, true] call ACE_captives_fnc_setSurrendered;
 
-_pos = getPos _vip;
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];

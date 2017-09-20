@@ -1,10 +1,11 @@
 _town = townLocationArray call bis_fnc_selectRandom;
-_veh = "CUP_C_Datsun_Plain" createVehicle (getPos _town);
-while{[_veh,500] call CBA_fnc_nearPlayer}do{
+_pos = getPos _town;
+while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
-	_veh setPos (getPos _town);
+	_pos = getPos _town;
 };
 _pos = [getPos _town,[0,300],[0,360],0] call SHK_pos;
+_veh = "CUP_C_Datsun_Plain" createVehicle _pos;
 
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 

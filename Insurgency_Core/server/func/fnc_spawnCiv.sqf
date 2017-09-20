@@ -26,6 +26,7 @@ for "_i" from 1 to _civnum do {
 	_civHeading = (random 360);
 	_individualCiv setFormDir _civHeading;
 	_individualCiv setDir _civHeading;
+	doStop _individualCiv;
 	
 	_westKilled = _individualCiv addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
@@ -59,14 +60,17 @@ for "_i" from 1 to _civnum do {
 			_civ setSpeedMode "FULL";
 
 			switch (round(random 2)) do {
-				case 0: { 
-					[(group _civ), (position _civ)] call CBA_fnc_waypointGarrison;
-				};
+				case 0;
 				case 1: {
-					_buildingLocations = nearestObjects [_civ, ["House", "Building"], 100];
-					if ((count _buildingLocations) > 0) then {
-						_civ doMove (_buildingLocations select 0);
+					_houseList = (getPos _civ) nearObjects ["House",100];
+					_house = _houseList call bis_fnc_selectRandom;
+					_count = 0;
+					while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
+					if (_c > 0) then {
+						_ranNum = floor(random _c);
+						_pos = (_house buildingPos _ranNum);
 					};
+					_civ doMove (_buildingLocations buildingPos 1);
 				};
 				case 2: {
 					_newHideyHole = [(position _civ), 100] call CBA_fnc_randPos;
@@ -74,19 +78,15 @@ for "_i" from 1 to _civnum do {
 				};
 				default {};
 			};
-			
-			[
-				{
-					_civ = _this select 0;
-					_civ switchMove "";
-					_civ doMove (_civ getVariable ["unitsHome", [0, 0, 0]]);
-					_civ setVariable ["unitIsBrickingIt", false, false];
-				},
-				[_civ],
-				30 + (round(random (60)))
-			] call CBA_fnc_waitAndExecute;
-			
 			_civ setVariable ["unitIsBrickingIt", true, false];
+			[_civ] spawn{
+				_civ = _this select 0;
+				sleep 2;
+				waitUntil {unitReady _civ};
+				_civ setVariable ["unitIsBrickingIt", false, false];
+				_civ switchMove "";
+				doStop _civ;
+			};
 		};
 	}];
 	
