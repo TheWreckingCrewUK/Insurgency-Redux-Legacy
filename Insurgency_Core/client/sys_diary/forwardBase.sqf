@@ -1,0 +1,1 @@
+player CreateDiaryRecord ["Diary",["Forward Base","Group Leaders may request the forward base equipment. By bringing the medical truck, Radio Table, and the generator to a position 1KM out of base you an set up a new respawn point. Be careful though as you will be away from supplies as well as succeptable to enemy attacks"]];

@@ -24,5 +24,9 @@ _pos = _road getRelPos [_spawnRadius, _dir];
 _ied = createVehicle [_iedType, _pos, [], 0, "NONE"];
 _ied setPos (getPos _ied vectorAdd [0,0,0]);
 
+_ied addEventHandler ["Killed",{
+	["TWC_Insurgency_adjustPoints", -1] call CBA_fnc_serverEvent;
+}];
+
 InsP_iedGroup pushback _ied;
 publicVariable "InsP_iedGroup";

@@ -1,1 +1,1 @@
-player CreateDiaryRecord ["Diary",["IEDS","Insurgents place IEDS which can be defused with a defusal kit. If you do defuse them take them back to the MAIN Ammocrate and you will recieve points."]];
+player CreateDiaryRecord ["Diary",["IEDS","Insurgents place IEDS which can be defused with a defusal kit. Having them explode awards no points. Diffusing them allows for points and you get a few for returning them to the base Ammo-Crate"]];
