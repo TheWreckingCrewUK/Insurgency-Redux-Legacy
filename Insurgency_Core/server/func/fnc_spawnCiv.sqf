@@ -16,7 +16,7 @@
 *
 * ["bastam", 7] spawn twc_fnc_SpawnCiv;
 *
-* Author: [TWC] Fakematty / [TWC] Jayman / [TWC] Bosenator
+* Author: [TWC] Jayman / [TWC] Bosenator
 */
 _group = createGroup civilian;
 params["_pos", "_civnum", "_civradius"];
@@ -26,24 +26,31 @@ for "_i" from 1 to _civnum do {
 	_civHeading = (random 360);
 	_individualCiv setFormDir _civHeading;
 	_individualCiv setDir _civHeading;
+	
+	_random = random 100;
+	if(_random < 66)then{
+		_house = nearestBuilding (position _individualCiv);
+		_count = 0;
+		while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
+		if (_c > 0) then {
+			_ranNum = floor(random _c);
+			_individualCiv setPos (_house buildingPos _ranNum);
+		};		
+	};
 	doStop _individualCiv;
 	
 	_westKilled = _individualCiv addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		[_unit] call twc_fnc_deleteDead;
-		//[_this select 0, _this select 1, _intelCache] call InsP_fnc_civKill;
 
 		_instigator = _unit getVariable ["ace_medical_lastDamageSource", _instigator];
 		if (isPlayer _instigator) then {
 			["TWC_Insurgency_adjustPoints", [-5]] call CBA_fnc_serverEvent;
 			["TWC_Insurgency_adjustCivilianMorale", [-1]] call CBA_fnc_serverEvent;
 		};
-
-		_unit removeAllEventHandlers "FiredNear";
-		_unit removeAllEventHandlers "Killed";
 	}];
 
-	_individualCiv setVariable ["unitsHome", _pos, false];
+	_individualCiv setVariable ["unitsHome", [_pos,(getPos _individualCiv)], false];
 
 	_individualCiv addEventHandler["FiredNear", {
 		_civ = _this select 0;
@@ -62,8 +69,7 @@ for "_i" from 1 to _civnum do {
 			switch (round(random 2)) do {
 				case 0;
 				case 1: {
-					_houseList = (getPos _civ) nearObjects ["House",100];
-					_house = _houseList call bis_fnc_selectRandom;
+					_house = nearestBuilding (getPos _civ);
 					_count = 0;
 					while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
 					if (_c > 0) then {
@@ -85,20 +91,12 @@ for "_i" from 1 to _civnum do {
 				waitUntil {unitReady _civ};
 				_civ setVariable ["unitIsBrickingIt", false, false];
 				_civ switchMove "";
+				_civ doMove ((_civ getVariable "unitsHome") select 1);
+				_civ setSpeedMode "LIMITED";
+				waitUntil {unitReady _civ || _civ getVariable "unitIsBrickingIt"};
+				if(_civ getVariable "unitIsBrickingIt")exitWith{};
 				doStop _civ;
 			};
 		};
 	}];
-	
-	_clothes =
-	[
-		"CUP_O_TKI_Khet_Partug_03",
-		"CUP_O_TKI_Khet_Partug_05",
-		"CUP_O_TKI_Khet_Partug_06",
-		"CUP_O_TKI_Khet_Partug_07",
-		"CUP_O_TKI_Khet_Partug_02",
-		"CUP_O_TKI_Khet_Partug_08"
-	] call BIS_fnc_selectRandom;
-	
-	_individualCiv forceadduniform _clothes;
 };
