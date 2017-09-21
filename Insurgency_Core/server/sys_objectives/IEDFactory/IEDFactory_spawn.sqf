@@ -25,7 +25,7 @@ private _lastPos = missionNamespace getVariable ["IEDFactoryLastPosition", [0, 0
 private _minDistanceFromLast = (worldSize / 10) max 500;
 
 // cap at 5 place searches, after 5 attempts we'll give up and make it close to the last pos
-while (_inNeedOfPos && _searches < 5) do {
+while {_inNeedOfPos && _searches < 5} do {
 	private _tryPos = [[(worldSize / 2), (worldSize / 2), 0], 0, (worldSize / 2), 30, 0, 0.2, 0, [], [[0, 0, 0], [0, 0, 0]]] call BIS_fnc_findSafePos;
 	
 	call {
