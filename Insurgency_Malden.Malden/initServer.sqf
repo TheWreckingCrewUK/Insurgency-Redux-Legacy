@@ -37,7 +37,7 @@ badTownList = ["Karida Dam", "Zaleekah Fields"];
 //Towns specified with a marker
 specialTowns = [];
 
-_script = execVM "SHK_pos\shk_pos_init.sqf";
+_script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 

@@ -62,23 +62,23 @@
       pos = [parameters] call SHK_pos;
 */
 // Functions
-SHK_pos_getPos = compile preprocessfilelinenumbers "shk_pos\shk_pos_getpos.sqf";
+SHK_pos_getPos = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_getpos.sqf";
 
 // Sub functions
-SHK_pos_fnc_findClosestPosition = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_findclosestposition.sqf";
-SHK_pos_fnc_getMarkerCorners = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getmarkercorners.sqf";
-SHK_pos_fnc_getMarkerShape = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getmarkershape.sqf";
-SHK_pos_fnc_getPos = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getpos.sqf";
-SHK_pos_fnc_getPosFromCircle = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getposfromcircle.sqf";
-SHK_pos_fnc_getPosFromEllipse = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getposfromellipse.sqf";
-SHK_pos_fnc_getPosFromRectangle = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getposfromrectangle.sqf";
-SHK_pos_fnc_getPosFromSquare = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_getposfromsquare.sqf";
-SHK_pos_fnc_isBlacklisted = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_isblacklisted.sqf";
-SHK_pos_fnc_isInCircle = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_isincircle.sqf";
-SHK_pos_fnc_isInEllipse = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_isinellipse.sqf";
-SHK_pos_fnc_isInRectangle = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_isinrectangle.sqf";
-SHK_pos_fnc_isSamePosition = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_issameposition.sqf";
-SHK_pos_fnc_rotatePosition = compile preprocessfilelinenumbers "shk_pos\shk_pos_fnc_rotateposition.sqf";
+SHK_pos_fnc_findClosestPosition = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_findclosestposition.sqf";
+SHK_pos_fnc_getMarkerCorners = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getmarkercorners.sqf";
+SHK_pos_fnc_getMarkerShape = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getmarkershape.sqf";
+SHK_pos_fnc_getPos = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getpos.sqf";
+SHK_pos_fnc_getPosFromCircle = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getposfromcircle.sqf";
+SHK_pos_fnc_getPosFromEllipse = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getposfromellipse.sqf";
+SHK_pos_fnc_getPosFromRectangle = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getposfromrectangle.sqf";
+SHK_pos_fnc_getPosFromSquare = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_getposfromsquare.sqf";
+SHK_pos_fnc_isBlacklisted = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_isblacklisted.sqf";
+SHK_pos_fnc_isInCircle = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_isincircle.sqf";
+SHK_pos_fnc_isInEllipse = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_isinellipse.sqf";
+SHK_pos_fnc_isInRectangle = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_isinrectangle.sqf";
+SHK_pos_fnc_isSamePosition = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_issameposition.sqf";
+SHK_pos_fnc_rotatePosition = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_rotateposition.sqf";
 
 // Wrapper function
 // Decide which function to call based on parameters.
