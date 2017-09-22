@@ -50,7 +50,10 @@ missionNamespace setVariable ["IEDFactoryIsAlive", true, false];
 
 // Spawn the IED Factory 
 
+
 // Commence IED production and placing them around the map (make it interruptable)
+missionNamespace setVariable ["IEDFactoryIsFunctional", true, false];
+[] call twc_fnc_startIEDPlantLoop;
 
 // Create map marker & non-location specific task, about the general area it's suspected to be in (3km area? calculation based on map size?)
 

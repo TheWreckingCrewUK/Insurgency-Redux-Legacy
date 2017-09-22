@@ -15,7 +15,7 @@
 params ["_amount", ["_exclusionMarkers", [], [[]]]];
 
 // IED types to be populated.
-_iedTypes = ["ACE_IEDLandBig_Range"];
+_iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range"];
 
 // All roads on the map
 _allRoads = [worldSize / 2, worldSize / 2] nearRoads (sqrt 2 *(worldSize / 2));
