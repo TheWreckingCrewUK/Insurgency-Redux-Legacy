@@ -9,3 +9,4 @@ twc_fnc_deleteDead = compile preprocessfilelinenumbers "Insurgency_Core\server\f
 twc_fnc_aiWounds= compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aiWounds.sqf";
 
 twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
+twc_fnc_getRandomNearbyRoad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_getRandomNearbyRoad.sqf";
