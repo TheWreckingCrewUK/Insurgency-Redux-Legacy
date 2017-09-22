@@ -16,4 +16,6 @@ if (isNil "InsP_iedDestroyed") then {
 	publicVariable "InsP_iedDestroyed";
 };
 
-[100, ["iedRestrictionZone"]] call TWC_fnc_INSpopulateIeds;
+private _startingIEDCount = (ceil (worldSize / 100)) max 100; // 100 or higher, depending on map size
+
+[_startingIEDCount, ["iedRestrictionZone"]] call TWC_fnc_INSpopulateIeds;
