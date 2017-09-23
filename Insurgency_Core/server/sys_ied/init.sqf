@@ -21,5 +21,5 @@ private _startingIEDCount = (ceil (worldSize / 100)) max 100; // 100 or higher, 
 
 [_startingIEDCount, ["iedRestrictionZone"]] call TWC_fnc_INSpopulateIeds;
 
-// repopulate an IED, every 300 seconds / 5 minutes
+// repopulate an IED, start after 5 minutes
 [300] call twc_fnc_startIEDPlantLoop;

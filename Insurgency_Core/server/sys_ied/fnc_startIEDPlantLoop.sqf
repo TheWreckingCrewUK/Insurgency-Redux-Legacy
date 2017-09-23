@@ -41,4 +41,13 @@ if ((random 1) >= 0.2) then {
 	[_iedType, _roadPos, 0, 0.5] call TWC_fnc_spawnIed;
 };
 
+if (!(_iedFactoryControlled)) then {
+	if (!(isNil "TWC_insMorale")) then {
+		if (TWC_insMorale > 0) then {
+		} else {
+			_delay = 300;
+		};
+	};
+};
+
 [twc_fnc_startIEDPlantLoop, _iedFactoryControlled, _delay] call CBA_fnc_waitAndExecute;
