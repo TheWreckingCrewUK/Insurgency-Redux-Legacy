@@ -44,6 +44,7 @@ if ((random 1) >= 0.2) then {
 if (!(_iedFactoryControlled)) then {
 	if (!(isNil "TWC_insMorale")) then {
 		if (TWC_insMorale > 0) then {
+			_delay = 300 + (round ((TWC_insMorale / 100) * 900));
 		} else {
 			_delay = 300;
 		};
