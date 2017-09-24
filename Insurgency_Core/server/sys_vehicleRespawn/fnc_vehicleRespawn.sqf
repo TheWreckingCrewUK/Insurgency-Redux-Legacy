@@ -23,7 +23,7 @@ _veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh)]];
 _veh addEventHandler ["GetOut",{
 	_veh = _this select 0;
 	if((getPos _veh) distance2D ((_veh getVariable "respawnInfo") select 1) < 50) exitWith{};
-//	if((getPos _veh) distance2D (getMarkerPos "respawn_forwardBase") < vehicleRespawnDistanceForwardBase) exitWith{hint "player dismounted near forward base. Exiting..."};
+	if((getPos _veh) distance2D (getMarkerPos "respawn_forwardBase") < vehicleRespawnDistanceForwardBase) exitWith{};
 	
 	[_veh]spawn{
 		_veh = _this select 0;

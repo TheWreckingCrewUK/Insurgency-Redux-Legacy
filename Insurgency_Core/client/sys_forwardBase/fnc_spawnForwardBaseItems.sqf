@@ -1,7 +1,6 @@
 params["_player",["_marker","forwardBase_itemSpawn"]];
 _return = "";
 _pos = getMarkerPos _marker;
-if!(typeOf _player in twc_FOAllowedPlayers)exitWith{_return = "You are not permitted to spawn the Items"; _return};
 if(getMarkerColor "respawn_forwardBase" != "")exitWith{_return = "Forward Base is already Setup"; _return};
 
 {

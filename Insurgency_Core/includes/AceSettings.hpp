@@ -278,6 +278,12 @@ class ace_medical_menu_maxRange {
 	typeName = "SCALAR";
 	force = 1;
 };
+//ACE Logistics Cargo
+class ace_cargo_paradropTimeCoefficent{
+	value = 1000;
+	typeName = "SCALAR";
+	force = 1;
+};
 
 //ACE Logistics Rearm
 class ace_rearm_level {
