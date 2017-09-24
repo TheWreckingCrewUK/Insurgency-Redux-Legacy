@@ -10,3 +10,6 @@ In order to edit an existing map, you need to clone the repo and run `prep_envir
 In order to add a map, you need to edit `prep_environment.cmd`. Open the file with notepad and add a new line `mklink /j ".\#NEW MAP FOLDER#\Insurgency_Core" ".\Insurgency_Core\"` replacing `#NEW MAP FOLDER#` with the name of the new map folder, be sure to include the '.Map' name. 
 
 For example, if I want to add a new Insurgency map on Malden. I add the following: `mklink /j ".\Insurgency_Malden.Malden\Insurgency_Core" ".\Insurgency_Core\"`. 
+
+## Building
+You'll need makePbo from Mikero installed in order to build. Once installed, run `prep_missions.cmd` and copy over PBOs to the server. Done.
