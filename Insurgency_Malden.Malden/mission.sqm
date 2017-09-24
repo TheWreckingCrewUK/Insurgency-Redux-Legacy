@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7906.6621,93.580513,10144.822};
-		dir[]={0.85829359,-0.48708779,-0.16154991};
-		up[]={0.47868863,0.87335086,-0.090098046};
-		aside[]={-0.18497497,1.1400552e-006,-0.9827553};
+		pos[]={7997.0049,94.268112,10081.084};
+		dir[]={0.76464403,-0.5735141,0.29399109};
+		up[]={0.53543907,0.81909835,0.2058661};
+		aside[]={0.35887504,1.2107193e-007,-0.93340254};
 	};
 };
 binarizationWanted=0;
@@ -213,7 +213,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=27;
 			type="B_Truck_01_box_F";
@@ -372,20 +372,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8105.2651,31.743124,10174.018};
-				angles[]={0.0015822123,4.7229524,6.2791886};
+				position[]={8105.2646,31.743134,10174.018};
+				angles[]={0.0015882496,4.7229486,6.2791882};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				health=0.89999998;
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 				name="PB_MedicalTruck";
 			};
 			id=59;
 			type="B_Truck_01_medical_F";
-			atlOffset=-9.5367432e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -502,18 +501,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8093.7026,31.497473,10084.694};
-				angles[]={6.2816033,4.6868849,6.2807932};
+				position[]={8093.7031,31.497631,10084.694};
+				angles[]={6.2815971,4.6868896,6.2807941};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=94;
 			type="UK3CB_BAF_LandRover_Soft_Green_A";
-			atlOffset=-0.18815994;
+			atlOffset=-0.18799973;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -543,18 +542,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8093.4468,31.493092,10079.933};
-				angles[]={0,4.6868849,6.2791886};
+				position[]={8093.4463,31.493231,10079.933};
+				angles[]={0,4.6868896,6.2791882};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=95;
 			type="UK3CB_BAF_LandRover_Soft_Green_A";
-			atlOffset=-0.18813896;
+			atlOffset=-0.18799973;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -584,18 +583,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8092.7896,32.036896,10072.964};
-				angles[]={6.2791886,4.6868849,6.2791886};
+				position[]={8092.7891,32.036469,10072.964};
+				angles[]={6.2791882,4.6868896,6.2791882};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=96;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
-			atlOffset=-0.2525692;
+			atlOffset=-0.25299644;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -625,18 +624,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8092.9639,31.569351,10069.063};
-				angles[]={6.2824135,4.6868849,6.2759843};
+				position[]={8092.9634,31.569235,10069.063};
+				angles[]={6.2824173,4.6868896,6.2759771};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=97;
 			type="UK3CB_BAF_Jackal2_L134A1_W";
-			atlOffset=-0.25387764;
+			atlOffset=-0.25399971;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -666,18 +665,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8093.3442,31.734888,10065.238};
-				angles[]={6.2824135,4.6868849,6.2759843};
+				position[]={8093.3442,31.734951,10065.238};
+				angles[]={6.2824173,4.6868896,6.2759771};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=100;
 			type="rhsusf_m1025_w_m2";
-			atlOffset=-6.2942505e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -745,18 +743,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8093.4688,31.532806,10060.856};
-				angles[]={6.2751846,4.6868849,6.2759843};
+				position[]={8093.4688,31.533108,10060.856};
+				angles[]={6.2751913,4.6868896,6.2759771};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=101;
 			type="rhsusf_m1025_w_mk19";
-			atlOffset=-0.00030136108;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -824,18 +821,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8091.9839,30.975779,10055.466};
-				angles[]={6.2816033,4.6868849,6.269588};
+				position[]={8091.9839,30.975889,10055.466};
+				angles[]={6.2815971,4.6868896,6.2695894};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=105;
 			type="rhsusf_M1237_M2_usarmy_wd";
-			atlOffset=-0.00011062622;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -865,18 +861,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8092.0986,30.777531,10049.913};
-				angles[]={6.269588,4.6868849,6.269588};
+				position[]={8092.0986,30.777765,10049.913};
+				angles[]={6.2695894,4.6868896,6.2695894};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\vehicleRespawn.sqf"";}";
+				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=106;
 			type="rhsusf_M1237_MK19_usarmy_wd";
-			atlOffset=-0.00023460388;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1359,7 +1354,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8048.4404,29.622805,10124.901};
+						position[]={8084.0864,29.582363,10080.645};
 					};
 					side="West";
 					flags=7;
@@ -1371,6 +1366,7 @@ class Mission
 					};
 					id=269;
 					type="Modern_British_Squadleader";
+					atlOffset=1.9073486e-006;
 				};
 				class Item1
 				{
@@ -1489,6 +1485,7 @@ class Mission
 			{
 			};
 			id=268;
+			atlOffset=1.9073486e-006;
 		};
 	};
 };

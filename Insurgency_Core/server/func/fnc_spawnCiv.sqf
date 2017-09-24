@@ -31,6 +31,7 @@ for "_i" from 1 to _civnum do {
 	if(_random < 66)then{
 		_house = nearestBuilding (position _individualCiv);
 		_count = 0;
+		_c = 0;
 		while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
 		if (_c > 0) then {
 			_ranNum = floor(random _c);
