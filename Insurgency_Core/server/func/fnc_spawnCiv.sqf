@@ -54,10 +54,11 @@ for "_i" from 1 to _civnum do {
 	_individualCiv setVariable ["unitsHome", [_pos,(getPos _individualCiv)], false];
 
 	_individualCiv addEventHandler["FiredNear", {
-		_civ = _this select 0;
+		params["_civ"];
 		_isBrickingIt = _civ getVariable ["unitIsBrickingIt", false];
 		
 		if (!(_isBrickingIt) && alive _civ) then {
+		_civ setVariable ["unitIsBrickingIt", true, false];
 			switch (round(random 2)) do {
 				case 0:{_civ switchMove "ApanPercMstpSnonWnonDnon_G01";};
 				case 1:{_civ playMoveNow "ApanPknlMstpSnonWnonDnon_G01";};
@@ -85,11 +86,10 @@ for "_i" from 1 to _civnum do {
 				};
 				default {};
 			};
-			_civ setVariable ["unitIsBrickingIt", true, false];
 			[_civ] spawn{
-				_civ = _this select 0;
-				sleep 2;
-				waitUntil {unitReady _civ};
+				params["_civ"];
+				_time = time + 120;
+				waitUntil {unitReady _civ || _time < time};
 				_civ setVariable ["unitIsBrickingIt", false, false];
 				_civ switchMove "";
 				_civ doMove ((_civ getVariable "unitsHome") select 1);

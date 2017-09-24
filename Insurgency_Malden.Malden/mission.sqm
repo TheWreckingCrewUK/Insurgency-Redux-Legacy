@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7986.3496,102.29858,10108.023};
-		dir[]={0.77467448,-0.63136756,0.037970152};
-		up[]={0.63075715,0.77535915,0.030915061};
-		aside[]={0.048958622,3.4556433e-007,-0.99889117};
+		pos[]={8032.2559,58.808552,10068.891};
+		dir[]={0.5967344,-0.37356442,0.71018773};
+		up[]={0.24031569,0.92760223,0.28600547};
+		aside[]={0.76561469,-3.1525269e-007,-0.64330685};
 	};
 };
 binarizationWanted=0;
@@ -219,7 +219,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=27;
 			type="B_Truck_01_box_F";
@@ -386,7 +386,7 @@ class Mission
 			class Attributes
 			{
 				health=0.89999998;
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 				name="PB_MedicalTruck";
 			};
 			id=59;
@@ -514,7 +514,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=94;
 			type="UK3CB_BAF_LandRover_Soft_Green_A";
@@ -555,7 +555,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=95;
 			type="UK3CB_BAF_LandRover_Soft_Green_A";
@@ -596,7 +596,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=96;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
@@ -637,7 +637,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=97;
 			type="UK3CB_BAF_Jackal2_L134A1_W";
@@ -678,7 +678,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=100;
 			type="rhsusf_m1025_w_m2";
@@ -756,7 +756,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=101;
 			type="rhsusf_m1025_w_mk19";
@@ -834,7 +834,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=105;
 			type="rhsusf_M1237_M2_usarmy_wd";
@@ -874,7 +874,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=106;
 			type="rhsusf_M1237_MK19_usarmy_wd";
@@ -1360,7 +1360,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8068.2959,29.593491,10148.395};
-						angles[]={0,1.917537,0};
+						angles[]={0,1.9175408,0};
 					};
 					side="West";
 					flags=7;
@@ -1368,6 +1368,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=283;
@@ -2748,7 +2749,6 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=302;
@@ -3135,64 +3135,312 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8054.731,29.639563,10094.125};
+						position[]={8052.1841,29.650955,10090.825};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						isPlayable=1;
 					};
 					id=307;
 					type="Modern_USMC_Teamleader";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8056.731,29.635408,10094.125};
+						position[]={8054.1841,29.646154,10090.825};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						isPlayable=1;
 					};
 					id=308;
 					type="Modern_USMC_Rifleman";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male04ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8058.731,29.632208,10094.125};
+						position[]={8056.1841,29.641356,10090.825};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						isPlayable=1;
 					};
 					id=309;
 					type="Modern_USMC_Autorifleman";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item8
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8060.731,29.629009,10094.125};
+						position[]={8058.1841,29.636555,10090.825};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
+						isPlayable=1;
 					};
 					id=310;
 					type="Modern_USMC_AsstAutorifleman";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 				class Item9
 				{

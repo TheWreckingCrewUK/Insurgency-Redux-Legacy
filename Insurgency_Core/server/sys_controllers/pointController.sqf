@@ -27,6 +27,8 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 		"pointVictory" call BIS_fnc_endMissionServer;
 	};
 	
+	if(totalPoints < 0)then{totalPoints = 0};
+	
 	publicVariable "totalPoints";
 }] call CBA_fnc_addEventHandler;
 
@@ -40,4 +42,5 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 			pointLimit = pointLimit + 50;
 		};
 	};
+	publicVariable "pointLimit";
 }] call BIS_fnc_addStackedEventHandler;
