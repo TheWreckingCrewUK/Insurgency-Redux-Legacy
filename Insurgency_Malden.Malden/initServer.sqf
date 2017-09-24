@@ -6,10 +6,6 @@ server\sys_cache\cacheLoadout.sqf
 server\sys_vehicles\VBIED.sqf
 */
 
-vehicleRespawnDistancePlayers = 1000;
-vehicleRespawnDistanceForwardBase = 300;
-vehicleRespawnDelay = 10;
-
 civilianType = "C_man_1";
 
 homeEnemy = ["CUP_O_TK_INS_Soldier"];

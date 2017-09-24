@@ -46,8 +46,8 @@ for "_i" from 1 to _civnum do {
 
 		_instigator = _unit getVariable ["ace_medical_lastDamageSource", _instigator];
 		if (isPlayer _instigator) then {
-			["TWC_Insurgency_adjustPoints", [-5]] call CBA_fnc_serverEvent;
-			["TWC_Insurgency_adjustCivilianMorale", [-1]] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustCivilianMorale", -1] call CBA_fnc_serverEvent;
 		};
 	}];
 
