@@ -14,6 +14,9 @@
 * Public: No
 */
 
+_ROOT = "Insurgency_Core\server\sys_objectives\";
+TWC_fnc_IEDFactory_loop = compile preprocessFileLineNumbers (_ROOT + "IEDFactory\IEDFactory_loop.sqf");
+
 missionNamespace setVariable ["IEDFactoryLastCompleted", time, false];
 
 // Find location that's at least a km from last position and is in the opening
@@ -58,7 +61,7 @@ missionNamespace setVariable ["IEDFactoryIsFunctional", true, false];
 [120, true] call twc_fnc_startIEDPlantLoop;
 
 // Create map marker & non-location specific task, about the general area it's suspected to be in (3km area? calculation based on map size?)
-private _markerDistance = (((TWC_civMorale / 100) * (worldSize / 250)) min 800) max 5000;
+private _markerDistance = (((TWC_civMorale / 100) * (worldSize / 250)) max 800) min 5000;
 private _markerPos = [_lastPos, round (_markerDistance), (random 360)] call BIS_fnc_relPos;
 // use co-ords to name, so if we need to delete, it's easy to do
 private _newIEDFactoryMarker = createMarker [(text _markerPos), _markerPos];
@@ -77,4 +80,4 @@ _newIEDFactoryMarker setMarkerText (text _markerPos);
 
 // set a function to periodically check there's no players in range, once they've fucked off, remove all remaining elements of it (except for the completed marker)
 // vollah
-
+[TWC_fnc_IEDFactory_loop, [], 30] call CBA_fnc_waitAndExecute;
