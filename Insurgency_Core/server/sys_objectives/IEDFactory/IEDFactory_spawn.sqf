@@ -49,13 +49,23 @@ while {_inNeedOfPos && _searches < 5} do {
 missionNamespace setVariable ["IEDFactoryIsAlive", true, false];
 
 // Spawn the IED Factory 
-
+spawn {
+	
+};
 
 // Commence IED production and placing them around the map (make it interruptable)
 missionNamespace setVariable ["IEDFactoryIsFunctional", true, false];
 [120, true] call twc_fnc_startIEDPlantLoop;
 
 // Create map marker & non-location specific task, about the general area it's suspected to be in (3km area? calculation based on map size?)
+private _markerDistance = (((TWC_civMorale / 100) * (worldSize / 250)) min 800) max 5000;
+private _markerPos = [_lastPos, round (_markerDistance), (random 360)] call BIS_fnc_relPos;
+// use co-ords to name, so if we need to delete, it's easy to do
+private _newIEDFactoryMarker = createMarker [(text _markerPos), _markerPos];
+_newIEDFactoryMarker setMarkerShape "ICON";
+_newIEDFactoryMarker setMarkerType "hd_unknown";
+_newIEDFactoryMarker setMarkerColor "ColorUNKNOWN";
+_newIEDFactoryMarker setMarkerText (text _markerPos);
 
 // Add EventHandlers to spawned defenders to track killed
 // Once all killed, consider it cleared (award points as mentioned in #36)
