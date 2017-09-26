@@ -49,7 +49,7 @@ while {_inNeedOfPos && _searches < 5} do {
 missionNamespace setVariable ["IEDFactoryIsAlive", true, false];
 
 // Spawn the IED Factory 
-spawn {
+[] spawn {
 	
 };
 
