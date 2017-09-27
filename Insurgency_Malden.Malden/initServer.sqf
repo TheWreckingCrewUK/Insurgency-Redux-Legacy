@@ -8,6 +8,8 @@ server\sys_vehicles\VBIED.sqf
 
 civilianType = "C_man_1";
 
+iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range"];
+
 homeEnemy = ["CUP_O_TK_INS_Soldier"];
 
 AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";

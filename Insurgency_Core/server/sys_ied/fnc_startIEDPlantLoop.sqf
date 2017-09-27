@@ -34,11 +34,11 @@ while {([_roadPos, 1000] call twc_fnc_posNearPlayers) || (_road isEqualTo objNul
 	_road = [_roadPos, 500] call twc_fnc_getRandomNearbyRoad;
 };
 
-// chance it also spawns in the middle of nowhere, but not as likely
+// chance it also spawns them within 500 meters of a road (bit randomnly like though)
 if ((random 1) >= 0.2) then {
-	[_iedType, _road, 0, 0.5] call TWC_fnc_spawnIed;
+	[_iedType, _road] call TWC_fnc_spawnIEDOnRoad;
 } else {
-	[_iedType, _roadPos, 0, 0.5] call TWC_fnc_spawnIed;
+	[_iedType, _roadPos] call TWC_fnc_spawnIED;
 };
 
 if (!(_iedFactoryControlled)) then {
