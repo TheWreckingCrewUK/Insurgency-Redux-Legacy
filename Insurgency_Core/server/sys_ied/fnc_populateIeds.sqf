@@ -16,7 +16,7 @@ params ["_amount", ["_exclusionMarkers", [], [[]]]];
 
 // fall back if not defined
 if (isNil "iedTypes") then {
-	iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range"];
+	iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
 };
 
 // All roads on the map

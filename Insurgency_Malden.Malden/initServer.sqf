@@ -8,7 +8,11 @@ server\sys_vehicles\VBIED.sqf
 
 civilianType = "C_man_1";
 
-iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range"];
+// A list of IEDs and decoys, that are spawned over time and at start.
+iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+
+// A list of vehicle class names that are okay to paradrop items
+paradropVehicleWhitelist = ["CUP_B_C130J_GB", "CUP_B_C130J_Cargo_GB"];
 
 homeEnemy = ["CUP_O_TK_INS_Soldier"];
 
