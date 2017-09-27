@@ -22,17 +22,18 @@ _bbr1 = _bb select 1;
 _bbr0Fixed = [_bbr0 select 0, _bbr0 select 1, .1];
 _bbr1Fixed = [_bbr1 select 0, _bbr1 select 1, .1];
 
-// Now we know the width, we can halve it, to add later to the center point
+// Now we know the width, we can quarter it, to add later to the center point
 _halfOfWidth = (abs ((_bbr1Fixed select 0) - (_bbr0Fixed select 0))) / 2;
 
 // let's get the direction of the road, and choose either the left or right side
 _roadDirection = getDir _road;
 _leftOrRight = [90, 270] call BIS_fnc_selectRandom;
-_dir = _roadDirection + _leftOrRight;
+_leftOrRight = _roadDirection + _leftOrRight;
 
 // let's find a cosy nice warm home for this brand new IED on the side of the road
-_position = _road getRelPos [_halfOfWidth, _dir];
+_position = _road getRelPos [_halfOfWidth, _leftOrRight];
 _ied = createVehicle [_iedType, _position, [], 0, "NONE"];
+_ied setDir (random 360);
 _ied setPos (getPos _ied vectorAdd [0,0,0]); // Still no idea why Mike did this
 
 _ied addEventHandler ["Killed", {
