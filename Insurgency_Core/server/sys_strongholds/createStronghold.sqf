@@ -24,7 +24,7 @@ for "_i" from 1 to _total do{
 	_num = _num + 1;
 	sleep 0.2;
 };
-[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
+_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 for "_i" from 1 to 3 do{
 	_num = 0;

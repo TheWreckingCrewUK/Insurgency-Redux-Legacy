@@ -9,6 +9,7 @@
 #include "sys_cache\init.sqf";
 #include "sys_score\init.sqf";
 #include "sys_objectives\init.sqf";
+#include "sys_forwardBase\init.sqf";
 
 // List of civilians who were already questioned
 nonQuestionableList = [];

@@ -13,6 +13,8 @@
 *
 * Public: No
 */
+
+//Finding a position that is far enough from base and not near players
 _pos = [0,0,0];
 while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || ([_pos,500] call twc_fnc_posNearPlayers)} do {			
 

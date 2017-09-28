@@ -1,5 +1,8 @@
 _handle = addMissionEventHandler ["HandleDisconnect",{
-	if((_this select 0) distance2D (getMarkerPos "base") < 200) then{
-		deleteVehicle (_this select 0);
+	params["_unit","_id","_uid","_name"];
+	if(_unit distance2D (getMarkerPos "base") < 200) then{
+		deleteVehicle _unit;
+	}else{
+		[_unit] spawn twc_fnc_deleteDead;
 	};
 }];

@@ -1,1 +1,0 @@
-execVM "Insurgency_Core\server\sys_score\crateDropOff.sqf";

@@ -25,21 +25,14 @@ townSquadWave = ["CUP_O_TK_INS_Soldier","CUP_O_TK_INS_Soldier_AT","CUP_O_TK_INS_
 
 vehicleList = ["CUP_C_UAZ_Unarmed_TK_CIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Datsun_Plain", "CUP_C_Ural_Open_Civ_03"];
 
-//Run Jayman's location finder script and add towns here
-townMarkerArray = ["Kallista", "Farhannah", "Binnaz", "Afaf", "Temirah", "Asra", "Khaatir", "Usaimah", "Dimah", "Salimah", "Labibah", "Derya", "Wahbiyah", "Dilshad", "Dahab", "Elmas", "Rufaidah", "Jabirah", "Ishfaq", "Ahlam", "Futun", "Efsane", "Ghufran", "Ghazal", "I'timad", "Kifah", "Yafiah", "Bahijah", "Adawiyah", "Najibah", "Power Plant", "Johari", "Bushra", "Marzuqah", "Jalilah", "Kezban", "Ghadir", "Durrishahwar", "Rafi'ah", "Zaleekah", "Hadassah", "Faaria", "Husna", "Sa´diyah", "Wadi'ah", "Yaprak"];
-publicVariable "townMarkerArray";
-
 enemyTechnical = ["CUP_O_LR_MG_TKM", "CUP_O_LR_SPG9_TKM"];
-
-//Towns specified with a marker
-specialTowns = [];
 
 _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
 badTownArray = ["Airport","harbor","Moray","Pegasus Air Co.", "military base", "Saint Martin","Bosquet","Faro","Guran"];
-civilianType = "c_man_1";
+
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
 /*
