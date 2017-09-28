@@ -48,9 +48,9 @@ for "_i" from 0 to _amount step 1 do {
 
 	// chance it's off the road a bit, but within 100~ meters at the start of the game
 	if ((random 1) >= 0.2) then {
-		[_iedType, _road, true] call TWC_fnc_spawnIEDOnRoad;
+		[_iedType, _road, true] call INS_fnc_spawnIEDOnRoad;
 	} else {
-		[_iedType, getPos _road, ((random 1) * 100), true] call TWC_fnc_spawnIED;
+		[_iedType, getPos _road, ((random 1) * 100), true] call INS_fnc_spawnIED;
 	};
 
 	// still remove road regardless, don't want it to be crowded

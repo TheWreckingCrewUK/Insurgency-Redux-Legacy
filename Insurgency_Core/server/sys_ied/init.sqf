@@ -1,6 +1,7 @@
-TWC_fnc_INSspawnIed = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIed.sqf";
-TWC_fnc_INSpopulateIeds = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_populateIeds.sqf";
-twc_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_startIEDPlantLoop.sqf";
+INS_fnc_spawnIED = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIED.sqf";
+INS_fnc_spawnIEDOnRoad = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIEDOnRoad.sqf";
+INS_fnc_populateIEDs = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_populateIEDs.sqf";
+INS_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_startIEDPlantLoop.sqf";
 
 if (isNil "InsP_iedGroup") then {
 	InsP_iedGroup = [];
@@ -19,7 +20,7 @@ if (isNil "InsP_iedDestroyed") then {
 
 private _startingIEDCount = (ceil (worldSize / 100)) max 100; // 100 or higher, depending on map size
 
-[_startingIEDCount, ["iedRestrictionZone"]] call TWC_fnc_INSpopulateIeds;
+[_startingIEDCount, ["iedRestrictionZone"]] call INS_fnc_populateIEDs;
 
-// repopulate an IED, start after 5 minutes
-[300] call twc_fnc_startIEDPlantLoop;
+// repopulate an IED, start after 10 minutes
+[600] call INS_fnc_startIEDPlantLoop;
