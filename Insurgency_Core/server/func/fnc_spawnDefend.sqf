@@ -26,7 +26,8 @@ _group = createGroup East;
 		_unit addEventHandler ["Killed",{
 			[(_this select 0)] call twc_fnc_deleteDead;
 			if (side (_this select 1) == WEST) then{
-				InsP_enemyMorale = InsP_enemyMorale + 0.06; publicVariable "InsP_enemyMorale";
+				["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+				["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 			};
 		}];
 		_unit addMagazines ["handGrenade",2];

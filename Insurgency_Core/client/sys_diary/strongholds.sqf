@@ -1,0 +1,1 @@
+player CreateDiaryRecord ["Diary",["Strongholds","See those red circles on the map. Those are enemy strongholds. Expect a ton of enemies as well as a lot of supplies, trucks, and ammoboxes. Destroy them all."]];

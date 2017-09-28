@@ -25,6 +25,10 @@ for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select _num), _spawnPos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
+		if (side (_this select 1) == WEST) then{
+			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
 	_num = _num + 1;

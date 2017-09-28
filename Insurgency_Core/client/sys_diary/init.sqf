@@ -4,3 +4,4 @@
 #include "civilians.sqf";
 #include "situations.sqf";
 #include "strategy.sqf";
+#include "strongholds.sqf";

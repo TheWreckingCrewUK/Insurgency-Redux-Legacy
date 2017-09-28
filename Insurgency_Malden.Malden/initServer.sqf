@@ -32,7 +32,7 @@ publicVariable "townMarkerArray";
 enemyTechnical = ["CUP_O_LR_MG_TKM", "CUP_O_LR_SPG9_TKM"];
 
 //Enemy will not spawn in these towns
-badTownList = ["Karida Dam", "Zaleekah Fields"];
+badTownList = ["Karida Dam", "Zaleekah Fields","Faro","Guran"];
 
 //Towns specified with a marker
 specialTowns = [];
@@ -41,7 +41,7 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
-badTownArray = ["Airport","harbor","Moray","Pegasus Air Co.", "military base", "Saint Martin"];
+badTownArray = ["Airport","harbor","Moray","Pegasus Air Co.", "military base", "Saint Martin","Bosquet"];
 civilianType = "c_man_1";
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
