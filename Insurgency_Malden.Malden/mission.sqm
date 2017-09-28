@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=315;
+		nextID=316;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8117.1128,90.314705,10167.359};
-		dir[]={-0.46650401,-0.6255272,-0.62545818};
-		up[]={-0.37399998,0.78020036,-0.50143814};
-		aside[]={-0.80164272,2.6188791e-006,0.59791231};
+		pos[]={7975.6201,115.08102,10179.904};
+		dir[]={0.78668886,-0.50824863,-0.35061827};
+		up[]={0.46422857,0.8612076,-0.20690192};
+		aside[]={-0.40711594,-4.1921157e-007,-0.91345334};
 	};
 };
 binarizationWanted=0;
@@ -43,13 +43,14 @@ addons[]=
 	"CUP_WarfareBuildings",
 	"CUP_StandaloneTerrains_Core_Faction",
 	"twc_modern",
-	"twc_framework_public_modern_us"
+	"twc_framework_public_modern_us",
+	"twc_framework"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -165,6 +166,11 @@ class AddonsMetaData
 			className="twc_framework_public_modern_us";
 			name="twc_framework_public_modern_us";
 		};
+		class Item18
+		{
+			className="twc_framework";
+			name="twc_framework";
+		};
 	};
 };
 randomSeed=16337384;
@@ -198,7 +204,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=45;
+		items=46;
 		class Item0
 		{
 			dataType="Marker";
@@ -3743,6 +3749,79 @@ class Mission
 			};
 			id=301;
 			atlOffset=1.9073486e-006;
+		};
+		class Item45
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8067.2417,29.628473,10078.97};
+				angles[]={0.0015822123,0,6.2799835};
+			};
+			id=315;
+			type="twc_moduelCache";
+			atlOffset=-1.9073486e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="twc_moduelCache_vehicleRange";
+					expression="_this setVariable ['vehicleRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1000;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="twc_moduelCache_aiRange";
+					expression="_this setVariable ['aiRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1500;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="twc_moduelCache_enabled";
+					expression="_this setVariable ['enabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
+			};
 		};
 	};
 };

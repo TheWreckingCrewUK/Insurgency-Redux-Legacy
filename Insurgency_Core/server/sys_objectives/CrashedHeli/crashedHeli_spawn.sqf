@@ -4,6 +4,7 @@ while{([_pos,1000] call twc_fnc_posNearPlayers)}do{
 };
 _heloString = ["RHS_UH60M","UK3CB_BAF_Wildcat_Ah1_CAS_8A","CUP_B_UH1Y_UNA_USMC"] call bis_fnc_selectRandom;
 _helo = _heloString createVehicle _pos;
+_helo setVariable ["ace_cookoff_enable",false];
 
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 _markerstr = createMarker [str (random 1000),_markerPos];
