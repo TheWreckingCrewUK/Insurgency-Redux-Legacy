@@ -1,5 +1,5 @@
 /*
- * Author: MikeMatrix
+ * Author: MikeMatrix | [TWC] Bosenator 
  * Populate Map with IEDs on roads.
  *
  * Arguments:
@@ -10,48 +10,50 @@
  * None
  *
  * Example:
- * [50] call TWC_fnc_populateIeds
+ * [50] call TWC_fnc_populateIEDs
  */
 params ["_amount", ["_exclusionMarkers", [], [[]]]];
 
-// IED types to be populated.
-_iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range"];
+// fall back if not defined
+if (isNil "iedTypes") then {
+	iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+};
 
 // All roads on the map
-_allRoads = [worldSize / 2, worldSize / 2] nearRoads (sqrt 2 *(worldSize / 2));
+_allRoads = [worldSize / 2, worldSize / 2] nearRoads (sqrt 2 * (worldSize / 2));
 
 // Filter function for limiting roads to exclude any roads in marker areas of _exlcusionMarkers
 _fnc_filterRoadPositions = {
-    if (_exclusionMarkers isEqualTo []) exitWith {_x};
-    _value = _x;
-    _position = getPos _x;
-    {
-        // Oriented Bounding Box check
-		_x setMarkerAlpha 0;
-        _min = getMarkerPos _x vectorAdd ((getMarkerSize _x + [0]) vectorMultiply -1);
-        _max = getMarkerPos _x vectorAdd (getMarkerSize _x + [0]);
-        _relativePosition = [getMarkerPos _x, _position, markerDir _x] call CBA_fnc_vectRotate2D;
-        _relativePosition params ["_posX", "_posY"];
-        _min params ["_minX", "_minY"];
-        _max params ["_maxX", "_maxY"];
-
-        // Make value nil if inbounds
-        if (_posX >= _minX && _posX <= _maxX && _posY >= _minY && _posY <= _maxY) exitWith {nil};
-        _value
-    } forEach _exclusionMarkers
+	if (_exclusionMarkers isEqualTo []) exitWith {_x};
+	
+	_value = _x;
+	_position = getPos _x;
+	
+	{
+		if (_position inArea _x) exitWith {nil};
+		_value
+	} forEach _exclusionMarkers;
 };
 
 // Filter roads and trim nils
-_allRoads = [_allRoads, _fnc_filterRoadPositions] call CBA_fnc_filter;
+[_allRoads, _fnc_filterRoadPositions, true] call CBA_fnc_filter;
 _allRoads = _allRoads arrayIntersect _allRoads;
 
 if (count _allRoads <= 0) exitWith {};
 
 // Spawn IEDs
 for "_i" from 0 to _amount step 1 do {
-    _road = _allRoads call BIS_fnc_selectRandom;
-    _iedType = _iedTypes call BIS_fnc_selectRandom;
-    [_iedType,_road, getPos _road, 5] call TWC_fnc_INSspawnIed;
-    _allRoads = _allRoads - [_road];
-    if (count _allRoads <= 0) exitWith {};
+	_road = _allRoads call BIS_fnc_selectRandom;
+	_iedType = iedTypes call BIS_fnc_selectRandom;
+
+	// chance it's off the road a bit, but within 100~ meters at the start of the game
+	if ((random 1) >= 0.2) then {
+		[_iedType, _road, true] call TWC_fnc_spawnIEDOnRoad;
+	} else {
+		[_iedType, getPos _road, ((random 1) * 100), true] call TWC_fnc_spawnIED;
+	};
+
+	// still remove road regardless, don't want it to be crowded
+	_allRoads = _allRoads - [_road];
+	if (count _allRoads <= 0) exitWith {};
 };

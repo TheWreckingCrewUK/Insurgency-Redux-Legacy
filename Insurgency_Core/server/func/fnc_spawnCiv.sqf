@@ -48,6 +48,7 @@ for "_i" from 1 to _civnum do {
 		if (isPlayer _instigator) then {
 			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 			["TWC_Insurgency_adjustCivilianMorale", -1] call CBA_fnc_serverEvent;
+			diag_log format ["%1 - %2 killed a civilian", time, _instigator];
 		};
 	}];
 
