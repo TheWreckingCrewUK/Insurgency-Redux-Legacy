@@ -10,7 +10,7 @@ twc_FOAllowedPlayers = ["Modern_British_Squadleader"];
 // ["vehicle class name", ["slot name", ["acceptable person 1", ...]]],
 // known slot names (verbatim): "driver", "gunner", "commander", "Turret", or "cargo"
 twc_restrictedVehicleSlots = [
-	["CUP_B_C130J_Cargo_GB", 
+	["CUP_B_C130J_GB", 
 		["driver", 
 			["Modern_British_JetPilot"]
 		],
