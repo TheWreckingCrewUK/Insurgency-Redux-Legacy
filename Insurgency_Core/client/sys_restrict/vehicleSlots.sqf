@@ -41,7 +41,7 @@ TWC_fnc_checkVehicleSlot = {
 				};
 			} forEach _slotsAndRoles;
 		};
-	} forEach restrictedVehicleSlots;
+	} forEach twc_restrictedVehicleSlots;
 };
 
 [player, "GetInMan", {
