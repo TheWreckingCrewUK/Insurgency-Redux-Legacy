@@ -14,8 +14,10 @@ AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";
 AATeams = 6;
 AATeam = ["CUP_O_TK_INS_Soldier", "CUP_O_TK_INS_Soldier_AA", "CUP_O_TK_INS_Soldier_AA", "CUP_O_TK_INS_Soldier_AA"];
 
-// list of IEDs, and spoof objects
-iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+// list of IEDs and Spoof Objects
+iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_Range", "ACE_IEDLandSmall_Range","Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+//List of Spoof Objects
+iedSpoofs = ["Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
 
 paradropVehicleWhitelist = ["CUP_B_C130J_GB", "CUP_B_C130J_Cargo_GB"];
 

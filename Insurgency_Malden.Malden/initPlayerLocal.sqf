@@ -21,7 +21,7 @@ twc_restrictedVehicleSlots = [
 	
 	["CUP_B_C130J_Cargo_GB",
 		["driver",
-			["Modern_British_JetPilot"],
+			["Modern_British_JetPilot"]
 		],
 		["commander", 
 			["Modern_British_JetPilot"]
