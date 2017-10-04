@@ -57,23 +57,23 @@ call{
 	};
 	if(_random < 101)exitWith{
 		_group = createGroup West;
-		_unit = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
-		_unit moveInDriver _helo;
+		_unit1 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
+		_unit1 moveInDriver _helo;
 		for "_i" from 1 to 5 do {
 			[_unit,random 0.8,["vehiclecrash"]] call twc_fnc_aiWounds;
 		};
-		_unit addEventHandler ["killed",{
+		_unit1 addEventHandler ["killed",{
 			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 		}];
-		[_unit,true,600,true] call ace_medical_fnc_setUnconscious;
+		[_unit1,true,1800,true] call ace_medical_fnc_setUnconscious;
 		_unit2 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
 		for "_i" from 1 to 5 do {
-			[_unit,random 0.8,["vehiclecrash"]] call twc_fnc_aiWounds;
+			[_unit2,random 0.8,["vehiclecrash"]] call twc_fnc_aiWounds;
 		};
-		_unit addEventHandler ["killed",{
+		_unit2 addEventHandler ["killed",{
 			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 		}];
-		[_unit,true,600,true] call ace_medical_fnc_setUnconscious;
+		[_unit2,true,1800,true] call ace_medical_fnc_setUnconscious;
 		
 		_taskID = str (random 1000);
 		[WEST,[_taskID],["A friendly helicopter has crashed, but the crew survived. We should rescue them before the insurgents get to them.","Helicopter Crash"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;

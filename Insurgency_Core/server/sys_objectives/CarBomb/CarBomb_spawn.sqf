@@ -1,12 +1,15 @@
+//Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
 _pos = getPos _town;
 while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	_pos = getPos _town;
 };
+//Creating the truck
 _pos = [getPos _town,[0,300],[0,360],0] call SHK_pos;
 _veh = "CUP_C_Datsun_Plain" createVehicle _pos;
 
+//Adds a marker with a bit of an ofset
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];
@@ -21,9 +24,11 @@ _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "CarBomb";
 
+//Creating the task
 _taskID = str (random 1000);
 [WEST,[_taskID],["A Suspicious Vehicle has been left in the area. We need to investigate it.","Car Bomb"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
+//Waits until blufor is near then BoOM
 waitUntil{[_veh,200] call CBA_fnc_nearPlayer};
 "Bo_GBU12_LGB" createVehicle (getPos _veh);
 _veh setDamage 1;

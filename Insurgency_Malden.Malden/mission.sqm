@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=317;
+		nextID=318;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7976.1426,145.93893,10093.975};
-		dir[]={0.56991971,-0.78746331,0.23480938};
-		up[]={0.72815144,0.61627299,0.30000168};
-		aside[]={0.38094649,-5.5774581e-007,-0.92461663};
+		pos[]={7931.3535,98.826912,10080.811};
+		dir[]={0.92048949,-0.23748314,0.31051987};
+		up[]={0.22523056,0.97133726,0.075979926};
+		aside[]={0.31966269,1.7271668e-007,-0.94758862};
 	};
 };
 binarizationWanted=0;
@@ -44,7 +44,8 @@ addons[]=
 	"CUP_StandaloneTerrains_Core_Faction",
 	"twc_modern",
 	"twc_framework_public_modern_us",
-	"twc_framework"
+	"twc_framework",
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
@@ -204,7 +205,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=48;
 		class Item0
 		{
 			dataType="Marker";
@@ -3277,7 +3278,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8045.3159,29.622158,10128.838};
+						position[]={8056.0098,29.641666,10090.892};
 					};
 					side="West";
 					flags=5;
@@ -3288,7 +3289,7 @@ class Mission
 					};
 					id=309;
 					type="Modern_USMC_Autorifleman";
-					atlOffset=3.8146973e-006;
+					atlOffset=-1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4046,6 +4047,18 @@ class Mission
 				};
 				nAttributes=11;
 			};
+		};
+		class Item47
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8056.5762,29.677593,10075.211};
+			};
+			name="HC1";
+			isPlayable=1;
+			id=317;
+			type="HeadlessClient_F";
 		};
 	};
 };

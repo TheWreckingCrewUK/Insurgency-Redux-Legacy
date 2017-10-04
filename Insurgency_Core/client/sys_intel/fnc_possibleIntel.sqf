@@ -13,7 +13,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			case (floor TWC_civMorale <= 70):{hintSilent "I'm glad you're here but I''ve told you what I know already."};
 			case (floor TWC_civMorale <= 90):{hintSilent "I'm really happy that you guys are helping us, but I don't have any more information than last time you asked."};
 			case (floor TWC_civMorale > 90):{hintSilent "I really wish I could tell you more, but I'm afraid I've said everything I know already."};
-			};
+		};
 }else{
 	nonQuestionableList pushBack _civilianQuestioned;
 	publicVariable "nonQuestionableList";
@@ -31,7 +31,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			default {hintSilent "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
 		};
 		_rand = (floor (random 4));
-		if (_rand <= 1)then{
+		if (_rand <= 2)then{
 			_color = "ColorOrange";
 			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
 			_distance = [250,500,500,750,750,1000,1000,1500,2000] call BIS_fnc_selectRandom;
@@ -49,6 +49,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 				default {hint "Something went wrong";};
 			};
 		};
+/*
 		if (_rand == 2)then{
 			_color = "ColorBlue";
 			_object = InsP_aaGroup call BIS_fnc_selectRandom;
@@ -66,6 +67,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 				default {hint "Something went wrong";};
 			};
 		};
+*/
 		if (_rand >= 3)then{
 			_color = "ColorYellow";
 			_object = InsP_iedGroup call BIS_fnc_selectRandom;
