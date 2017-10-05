@@ -1,7 +1,7 @@
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
 _pos = getPos _town;
-while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000}do{
+while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000 && _town in badTownArray}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	_pos = getPos _town;
 };
@@ -45,7 +45,7 @@ for "_i" from 1 to 5 do{
 	_unit addEventHandler ["killed",{
 		["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 	}];
-	[_unit,true,600,true] call ace_medical_fnc_setUnconscious;
+	[_unit,true,1800,true] call ace_medical_fnc_setUnconscious;
 };
 //Add Enemies
 

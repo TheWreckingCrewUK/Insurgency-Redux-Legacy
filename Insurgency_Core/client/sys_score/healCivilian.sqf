@@ -5,4 +5,6 @@ twc_fnc_healing = {
 	if(side _target != Civilian)exitWith{};
 	if(_className == "Morphine" || _className == "Epinephrine")exitWith{};
 	[_target] remoteExecCall ["twc_fnc_checkLastDamage",2];
+	
+	[_target, true] call ace_medical_fnc_setUnconscious;
 };

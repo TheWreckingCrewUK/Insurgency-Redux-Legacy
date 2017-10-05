@@ -19,7 +19,7 @@ params["_pos","_civnum","_civradius","_waves","_groupradius","_thisList"];
 _enemies = 0;
 
 _random = random 100;
-if(_random > (1.5 * TWC_insMorale))then{
+if(_random > (2.5 * TWC_insMorale))then{
 
 }else{
 	_enemies = 1;
@@ -27,11 +27,11 @@ if(_random > (1.5 * TWC_insMorale))then{
 };
 
 _random = random 100;
-if(_random > (1.5 * TWC_insMorale))then{
+if(_random > (2.5 * TWC_insMorale))then{
 
 }else{
 	_enemies = 1;
-	[_pos, _waves, _groupradius,_thisList] spawn twc_spawnAIUnits;
+	[_pos, _groupradius,_thisList] spawn twc_spawnAIUnits;
 };
 if(_enemies == 0)exitWith{};
 

@@ -5,6 +5,7 @@
 #include "sys_restrict\init.sqf";
 #include "sys_score\init.sqf";
 #include "sys_player\init.sqf";
+#include "func\init.sqf";
 
 
 

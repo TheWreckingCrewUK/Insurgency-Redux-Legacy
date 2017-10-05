@@ -32,8 +32,9 @@ call{
 		_unit2 = _group createUnit ["B_Helipilot_F",_pos,[],0,"NONE"];
 		_unit2 setDamage 1;
 		for "_i" from 1 to 3 do{
-			_crateString = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F"] call bis_fnc_selectRandom;
+			_crateString = twc_scoreableAmmoBoxes call bis_fnc_selectRandom;
 			_crate = _crateString createVehicle _pos;
+			[_crate,_helo] call ace_cargo_fnc_loadItem;
 			_cratesArray pushBack _crate;
 		};
 		_taskID = str (random 1000);
