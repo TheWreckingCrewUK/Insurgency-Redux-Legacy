@@ -7,6 +7,4 @@
 #include "sys_player\init.sqf";
 #include "func\init.sqf";
 
-
-
 "iedRestrictionZone" setMarkerAlpha 0;

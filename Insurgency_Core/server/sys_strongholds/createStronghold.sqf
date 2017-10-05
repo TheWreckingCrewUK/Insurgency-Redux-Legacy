@@ -1,5 +1,6 @@
 params["_town"];
 
+//Trigger to identify town
 _pos = getPos _town;
 _marker = createMarker [str _pos,_pos];
 _marker setMarkerShape "Ellipse";
@@ -7,6 +8,7 @@ _marker setMarkerBrush "Grid";
 _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 
+//Spawning a load of hostiles and the civs
 _num = 0;
 _total = 21;
 _group = createGroup East;
