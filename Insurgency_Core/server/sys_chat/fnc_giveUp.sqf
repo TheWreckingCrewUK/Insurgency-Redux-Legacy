@@ -1,7 +1,7 @@
 //Function that runs when players are attempting to give up
 
 //Exit if a vote is already occuring
-if(twc_surrenderVote == true)exitWith{};
+if(twc_surrenderVote)exitWith{};
 hint "A vote to surrender has begun. You have 5 minutes to use #giveup to end the mission.";
 twc_surrenderVote = true;
 
