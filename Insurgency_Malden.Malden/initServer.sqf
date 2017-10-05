@@ -9,6 +9,8 @@ server\sys_vehicles\VBIED.sqf
 //Enable or Disable Debug
 twc_serverDebug = false;
 
+twc_surrenderVote = false;
+
 civilianType = "C_man_1";
 
 homeEnemy = ["CUP_O_TK_INS_Soldier"];

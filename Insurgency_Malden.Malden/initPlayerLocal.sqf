@@ -1,6 +1,8 @@
 //Enable or Disable Debug
 twc_playerDebug = false;
 
+player setVariable ["wantingSurrender",false];
+
 twc_restrictedPrimaryWeapons = [""];
 twc_restrictedSecondaryWeapons = [""];
 twc_restrictedHangunWeapons = [""];
