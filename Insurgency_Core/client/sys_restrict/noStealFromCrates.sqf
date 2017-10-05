@@ -11,10 +11,10 @@ player addEventHandler ["Take", {
 			case(isClass(configFile >> "CfgWeapons" >> _item)): {_cfgType = "CfgWeapons"};
 		};
 		if(_cfgType == "CfgWeapons")then{
-			removeWeapon _item;
+			_unit removeWeapon _item;
 			_container addWeaponCargo [_item,1];
 		}else{
-			removeItem _item;
+			_unit removeItem _item;
 			_container addItemCargo [_item,1];
 		};
 	};

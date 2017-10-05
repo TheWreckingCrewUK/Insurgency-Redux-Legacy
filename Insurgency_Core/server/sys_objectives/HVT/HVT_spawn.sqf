@@ -87,6 +87,6 @@ if(!alive _hvt)then{
 };
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
-[_hvt,_group]spawn{waitUntil {!([(_this select 0),200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {deleteVehicl _x}forEach units (_this select 1)};
+[_hvt,_group]spawn{waitUntil {!([(_this select 0),200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {deleteVehicle _x}forEach units (_this select 1)};
 ["TWC_Insurgency_objCompleted", ["HVT"]] call CBA_fnc_serverEvent;
 [_taskID] call bis_fnc_deleteTask;
