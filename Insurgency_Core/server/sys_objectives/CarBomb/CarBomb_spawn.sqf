@@ -57,7 +57,7 @@ _nearestdist=300;
 		_nearest=_x;
 		_nearestdist=_dist;
 	};
-} forEach playableUnits;
+} forEach allPlayers;
 [_pos,2,[200,300],[_nearest]] spawn twc_spawnAIUnits;
 
 //Complete or fail

@@ -47,6 +47,7 @@ if (isNil "InsP_cacheGroup") then {
 		_num = 0;
 		_total = 21;
 		_group = createGroup East;
+		_pos = getPos _x;
 		for "_i" from 1 to _total do{
 			_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
 			_unit addEventHandler ["Killed",{

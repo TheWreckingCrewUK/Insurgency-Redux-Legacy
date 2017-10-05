@@ -15,26 +15,21 @@
 */
 
 params["_pos"];
-
-[_pos]spawn{
-_pos = (_this select 0);
 _num = 0;
 _total = 10;
 _group = createGroup East;
-	for "_i" from 1 to _total do{
-		_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
-		_unit addEventHandler ["Killed",{
-			[(_this select 0)] call twc_fnc_deleteDead;
-			if (side (_this select 1) == WEST) then{
-				["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
-				["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
-			};
-		}];
-		_unit addMagazines ["handGrenade",2];
-		_unit setVariable ["unitsHome",_pos,false];
-		_num = _num + 1;
-		sleep 0.2;
-	};
-	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+for "_i" from 1 to _total do{
+	_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+	_unit addEventHandler ["Killed",{
+		[(_this select 0)] call twc_fnc_deleteDead;
+		if (side (_this select 1) == WEST) then{
+			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+		};
+	}];
+	_unit addMagazines ["handGrenade",2];
+	_unit setVariable ["unitsHome",_pos,false];
+	_num = _num + 1;
+	sleep 0.2;
 };
-
+_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;

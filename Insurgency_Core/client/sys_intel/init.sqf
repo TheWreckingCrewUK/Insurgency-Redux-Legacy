@@ -9,7 +9,7 @@ InsP_fnc_questionDisplay = compile preProcessFileLineNumbers "Insurgency_Core\cl
 InsP_fnc_possibleIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_possibleIntel.sqf";
 InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_evidence.sqf";
 
-QuestionPersonAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && (_this select 0) getVariable "ACE_isUnconscious"}] call ace_interact_menu_fnc_createAction;
+QuestionPersonAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && !((_this select 0) getVariable "ACE_isUnconscious")}] call ace_interact_menu_fnc_createAction;
 ["C_man_1", 0, ["ACE_MainActions"], QuestionPersonAction] call ace_interact_menu_fnc_addActionToClass;
 
 EvidenceAction = ["CollectEvidence","Collect Evidence","",{[5, [_this select 0], {[_this select 0] spawn InsP_fnc_Evidence;}, {}, "Examining Evidence..."] call ace_common_fnc_progressBar;},{alive (_this select 0)}] call ace_interact_menu_fnc_createAction;
