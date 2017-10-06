@@ -6,6 +6,6 @@ vehicleRespawnDelay = 10;
 //Stops non-blufor from triggering ieds
 [{
     params ["_unit", "_range", "_explosive", "_fuzeTime", "_triggerItem"];
-    if (side _unit != "WEST") exitWith { false };
+    if (side _unit != WEST) exitWith { false };
     true
 }] call ace_explosives_fnc_addDetonateHandler;
