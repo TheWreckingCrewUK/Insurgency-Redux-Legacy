@@ -11,6 +11,17 @@ twc_serverDebug = false;
 
 twc_surrenderVote = false;
 
+/*
+* Denotes the style of building to be used, for dynamic compositions.
+* For example: the IED factory.
+*
+* Known Types:
+* "Med" - Mediterranean
+* "MidEast" - Middle East
+* "IRA" - Irish
+*/
+TWC_Building_Style = "Med";
+
 civilianType = "C_man_1";
 
 homeEnemy = ["CUP_O_TK_INS_Soldier"];
