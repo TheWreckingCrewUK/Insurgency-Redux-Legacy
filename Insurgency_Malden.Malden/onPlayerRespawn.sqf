@@ -8,6 +8,11 @@ if(side player != west)then{
 	call BIS_fnc_endMission;
 };
 
+//Make sure medics are medics
+if(typeOf player in ["Modern_British_Medic"])then{
+	player setVariable ["ace_medical_medicClass",1];
+};
+
 //Code to run if player spawns on forWardBase
 if((getMarkerPos "respawn_forwardBase") distance2D (getPos player) < 200)then{
 

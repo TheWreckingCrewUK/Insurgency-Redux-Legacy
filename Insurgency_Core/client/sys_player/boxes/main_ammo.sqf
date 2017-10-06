@@ -289,9 +289,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACRE_PRC343",1]
 	];	
 };
-/*
-//BAF Medic
- if (g_class == "BAF_MED") then {
+ if (typeOf vehicle player == "Modern_British_Medic") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS",1],
@@ -331,7 +329,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 };
-
+/*
 //BAF Sniper
  if (g_class == "BAF_SN") then {
     _tmp_weapons =
