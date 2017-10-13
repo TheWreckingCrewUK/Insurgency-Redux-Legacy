@@ -14,6 +14,8 @@
 * Public: No
 */
 
+private TWC_IEDFactory_spawnFactory = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_objectives\IEDFactory\IEDFactory_spawnBuilding.sqf";
+
 missionNamespace setVariable ["IEDFactoryLastCompleted", time, false];
 
 // Find location that's at least a km from last position and is in the opening
@@ -48,8 +50,9 @@ while {_inNeedOfPos && _searches < 5} do {
 // Set that it's alive
 missionNamespace setVariable ["IEDFactoryIsAlive", true, false];
 
-// Spawn the IED Factory 
-
+// Spawn the IED Factory
+private _size = floor (random (2));
+[_size] call TWC_IEDFactory_spawnFactory;
 
 // Commence IED production and placing them around the map (make it interruptable)
 missionNamespace setVariable ["IEDFactoryIsFunctional", true, false];

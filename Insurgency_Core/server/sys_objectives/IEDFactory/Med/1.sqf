@@ -1,4 +1,3 @@
 /*
-* Building Composition for Mediterranean Building One
+* Returns a random medium sized IEDFactory
 */
-
