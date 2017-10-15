@@ -9,7 +9,7 @@ if(side player != west)then{
 };
 
 //Make sure medics are medics
-if(typeOf player in ["Modern_British_Medic"])then{
+if(typeOf player in ["Modern_British_Medic","Modern_USMC_Medic"])then{
 	player setVariable ["ace_medical_medicClass",1];
 };
 
