@@ -13,6 +13,7 @@
 *
 * Public: No
 */
+params ["_objType"];
 
 //Finding a position that is far enough from base and not near players
 _pos = [0,0,0];
@@ -88,5 +89,5 @@ if(!alive _hvt)then{
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
 [_hvt,_group]spawn{waitUntil {!([(_this select 0),200] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0); {deleteVehicle _x}forEach units (_this select 1)};
-["TWC_Insurgency_objCompleted", ["HVT"]] call CBA_fnc_serverEvent;
+["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
 [_taskID] call bis_fnc_deleteTask;

@@ -13,6 +13,7 @@
 *
 * Public: No
 */
+params ["_objType"];
 
 private _IEDFactory_spawnFactory = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_objectives\IEDFactory\IEDFactory_spawnBuilding.sqf";
 

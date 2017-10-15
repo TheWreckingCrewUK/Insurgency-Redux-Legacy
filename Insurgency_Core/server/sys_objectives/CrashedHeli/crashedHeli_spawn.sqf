@@ -13,7 +13,7 @@
 *
 * Public: No
 */
-
+params ["_objType"];
 //Starts by finding a suitable spawn position. Far from players as well as the main base
 _pos = [[worldSize/2,worldSize/2,0],[0,5000],[0,360],0] call SHK_pos;
 while{([_pos,1000] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000}do{
@@ -153,4 +153,4 @@ deleteMarker _markerstr;
 deleteMarker _markerstr2;
 {deleteGroup _x}forEach allGroups;
 [_taskID] call bis_fnc_deleteTask;
-["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
+["TWC_Insurgency_objCompleted", ["CrashedHeli", _objType]] call CBA_fnc_serverEvent;

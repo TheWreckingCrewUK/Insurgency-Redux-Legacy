@@ -4,7 +4,12 @@
 *
 * Public: No
 *
-* // ["TWC_Insurgency_objCompleted", "CrashedHeli"] call CBA_fnc_serverEvent;
+* Spawn is passed "_objType". This needs to be passed back to the completion event, to track correctly.
+* For Example:
+*
+* `someSituation_Spawn.sqf`
+* params ["_objType"];
+* ["TWC_Insurgency_objCompleted", ["SomeSituationID", _objType]] call CBA_fnc_serverEvent;
 */
 
 _ROOT = "Insurgency_Core\server\sys_objectives\";
@@ -68,48 +73,32 @@ TWC_ObjCanSpawn = {
 TWC_ObjSpawn = {
 	params ["_objID", ["_objType", -1]];
 	
-	if (_objType == -1) then {
-		{
-			if ((_x select 0) == _objID) then {
-				[] spawn (_x select 2);
-				systemChat format ["TWC_ObjSpawn called HAM %1", (_x select 0)];
-			};
-		} forEach heartsAndMindsObjs;
+	_done = false;
+	{
+		if ((_x select 0) == _objID) then {
+			[_objType] spawn (_x select 2);
+			systemChat format ["TWC_ObjSpawn called HAM %1 with _objType %2", (_x select 0), _objType];
+			_done = true;
+		};
+	} forEach heartsAndMindsObjs;
 
-		{
-			if ((_x select 0) == _objID) then {
-				[] spawn (_x select 2);
-				systemChat format ["TWC_ObjSpawn called SAD %1", (_x select 0)];
-			};
-		} forEach searchAndDestroyObjs;
-	} else {
-		_done = false;
+	if !(_done) then {
 		{
 			if ((_x select 0) == _objID) then {
 				[_objType] spawn (_x select 2);
-				systemChat format ["TWC_ObjSpawn called HAM %1 with _objType %2", (_x select 0), _objType];
-				_done = true;
+				systemChat format ["TWC_ObjSpawn called SAD %1 with _objType %2", (_x select 0), _objType];
 			};
-		} forEach heartsAndMindsObjs;
-
-		if !(_done) then {
-			{
-				if ((_x select 0) == _objID) then {
-					[_objType] spawn (_x select 2);
-					systemChat format ["TWC_ObjSpawn called SAD %1 with _objType %2", (_x select 0), _objType];
-				};
-			} forEach searchAndDestroyObjs;
-		};
+		} forEach searchAndDestroyObjs;
 	};
 };
 
 TWC_ObjSelect = {
-	params [["_objType", 0]];
+	params [["_objType", -1]];
 
 	_currentSelectedObj = "";
 	_currentObjectiveType = _objType;
 
-	if (_currentObjectiveType == 0) then { _currentObjectiveType = 1 + (floor(random 1)); };
+	if (_currentObjectiveType == -1) then { _currentObjectiveType = 1 + (floor(random 1)); };
 
 	switch (_currentObjectiveType) do {
 		case 1: { _currentSelectedObj = (selectRandom heartsAndMindsObjs) select 0; };
@@ -134,37 +123,20 @@ currentRANObj = "";
 ["TWC_Insurgency_objCompleted", {
 	params [["_objID", "Blank"], ["_objType", -1]];
 	
-	if (currentHAMObj == _objID && (_objType == -1 || _objType == 1)) then {
-		currentHAMObj = [1] call TWC_ObjSelect;
-		
-		if (currentHAMObj != "Blank") then {
-			[currentHAMObj] call TWC_ObjSpawn;
-		} else {
-			[currentHAMObj, 1] call TWC_ObjSpawn;
-		};
+	if (currentHAMObj == _objID && (_objType == 1)) exitWith {
+		currentHAMObj = [_objType] call TWC_ObjSelect;
+		[currentHAMObj, _objType] call TWC_ObjSpawn;
 	};
 	
-	if (currentSADObj == _objID && (_objType == -1 || _objType == 2)) then {
-		currentSADObj = [2] call TWC_ObjSelect;
-		
-		if (currentSADObj != "Blank") then {
-			[currentSADObj] call TWC_ObjSpawn;
-		} else {
-			[currentSADObj, 2] call TWC_ObjSpawn;
-		};
+	if (currentSADObj == _objID && (_objType == 2)) exitWith {
+		currentSADObj = [_objType] call TWC_ObjSelect;
+		[currentSADObj, _objType] call TWC_ObjSpawn;
 	};
 	
-	if (currentRANObj == _objID && (_objType == -1 || _objType == 0)) then {
-		currentRANObj = [0] call TWC_ObjSelect;
-		
-		if (currentRANObj != "Blank") then {
-			[currentRANObj] call TWC_ObjSpawn;
-		} else {
-			[currentRANObj, 0] call TWC_ObjSpawn;
-		};
+	if (currentRANObj == _objID && (_objType == -1)) exitWith {
+		currentRANObj = [_objType] call TWC_ObjSelect;
+		[currentRANObj, _objType] call TWC_ObjSpawn;
 	};
-	
-	systemChat format ["objCompleted, objs are now: %1 - %2 - %3", str currentHAMObj, str currentSADObj, str currentRANObj];
 }] call CBA_fnc_addEventHandler;
 
 // Mission Start, let's get crackin'
@@ -173,4 +145,4 @@ currentHAMObj = "Blank";
 currentSADObj = "Blank";
 ["Blank", 2] call TWC_ObjSpawn;
 currentRANObj = "Blank";
-["Blank", 0] call TWC_ObjSpawn;
+["Blank", -1] call TWC_ObjSpawn;
