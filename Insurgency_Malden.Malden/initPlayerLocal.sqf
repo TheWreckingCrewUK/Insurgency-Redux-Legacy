@@ -1,3 +1,6 @@
+//Disable hearing ai talk
+enableSentences false;
+ 
 //Enable or Disable Debug
 twc_playerDebug = false;
 

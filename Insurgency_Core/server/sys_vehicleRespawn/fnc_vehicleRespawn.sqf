@@ -17,6 +17,11 @@ params["_veh"];
 
 if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehicle. Exiting..."};
 
+clearWeaponCargoGlobal _veh;
+clearMagazineCargoGlobal _veh;
+clearItemCargoGlobal _veh;
+clearBackpackCargoGlobal _veh;
+
 _veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh)]];
 
 
@@ -43,11 +48,6 @@ _veh addEventHandler ["GetOut",{
 					_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 					_veh setPosASL (_respawnInfo select 1);
 					_veh setDir (_respawnInfo select 2);
-
-					clearWeaponCargoGlobal _veh;
-					clearMagazineCargoGlobal _veh;
-					clearItemCargoGlobal _veh;
-					clearBackpackCargoGlobal _veh;
 			
 					[_veh] call twc_fnc_vehicleRespawn;
 					_true = false;
@@ -69,11 +69,6 @@ _veh addEventHandler ["Killed",{
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
 		_veh setDir (_respawnInfo select 2);
-
-		clearWeaponCargoGlobal _veh;
-		clearMagazineCargoGlobal _veh;
-		clearItemCargoGlobal _veh;
-		clearBackpackCargoGlobal _veh;
 			
 		[_veh] call twc_fnc_vehicleRespawn;
 	};

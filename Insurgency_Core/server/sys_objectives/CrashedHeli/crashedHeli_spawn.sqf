@@ -22,6 +22,8 @@ while{([_pos,1000] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos
 //Spawning the random helicopter
 _heloString = ["RHS_UH60M","UK3CB_BAF_Wildcat_Ah1_CAS_8A","CUP_B_UH1Y_UNA_USMC"] call bis_fnc_selectRandom;
 _helo = _heloString createVehicle _pos;
+_helo setFuel 0;
+_helo setHit ["motor",1];
 _helo setVariable ["ace_cookoff_enable",false];
 
 //Creating the markers with their standard ofset
