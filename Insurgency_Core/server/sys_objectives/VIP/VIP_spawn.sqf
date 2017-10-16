@@ -13,7 +13,7 @@
 *
 * Public: No
 */
-
+params ["_objType"];
 //Finds the random building position away from base and not near players
 _pos = [0,0,0];
 while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || [_pos,500] call twc_fnc_posNearPlayers} do {			
@@ -81,7 +81,7 @@ _time = time + 1200;
 waitUntil {(!alive _vip || time < _time) && [_vip,100] call CBA_fnc_nearPlayer};
 
 //End of Tasks tuff
-["TWC_Insurgency_objCompleted", ["VIP"]] call CBA_fnc_serverEvent;
+["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
 deleteVehicle _vip;

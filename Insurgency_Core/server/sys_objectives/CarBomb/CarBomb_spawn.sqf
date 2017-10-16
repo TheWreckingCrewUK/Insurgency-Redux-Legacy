@@ -1,3 +1,5 @@
+params ["_objType"];
+
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
 _pos = getPos _town;
@@ -63,6 +65,6 @@ _nearestdist=300;
 //Complete or fail
 
 [_taskID] call bis_fnc_deleteTask;
-["TWC_Insurgency_objCompleted", ["CarBomb"]] call CBA_fnc_serverEvent;
+["TWC_Insurgency_objCompleted", ["CarBomb", _objType]] call CBA_fnc_serverEvent;
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
