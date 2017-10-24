@@ -40,6 +40,10 @@ twc_restrictedVehicleSlots = [
 		]
 	]
 ];
-
+//Slot Restrictions. TBA when we are doing more then just testing
+_justPlayers = count(allPlayers - entities "HeadlessClient_F");
+if(false)then{
+	["End2", false, 0] call BIS_fnc_endMission;
+};
 
 execVM "Insurgency_Core\client\init.sqf";
