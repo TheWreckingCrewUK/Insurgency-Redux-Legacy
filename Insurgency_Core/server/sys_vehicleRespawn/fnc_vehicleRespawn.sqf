@@ -17,13 +17,14 @@ params["_veh"];
 
 if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehicle. Exiting..."};
 
-clearWeaponCargoGlobal _veh;
-clearMagazineCargoGlobal _veh;
-clearItemCargoGlobal _veh;
-clearBackpackCargoGlobal _veh;
+if(isNil {_veh getVariable "respawnInfo"})then{
+	_weapons = getWeaponCargo _veh;
+	_items = getitemCargo _veh;
+	_magazines = getmagazineCargo _veh;
+	_backpacks = getBackpackCargo _veh;
 
-_veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh)]];
-
+	_veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh),_weapons,_items,_magazines,_backpacks]];
+};
 
 _veh addEventHandler ["GetOut",{
 	_veh = _this select 0;
@@ -48,7 +49,24 @@ _veh addEventHandler ["GetOut",{
 					_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 					_veh setPosASL (_respawnInfo select 1);
 					_veh setDir (_respawnInfo select 2);
-			
+					clearWeaponCargoGlobal _veh;
+					clearMagazineCargoGlobal _veh;
+					clearItemCargoGlobal _veh;
+					clearBackpackCargoGlobal _veh;
+					{
+						_veh addweaponCargoGlobal [_x,_respawnInfo select 3 select 1 select _forEachIndex];
+					}forEach (_respawnInfo select 3 select 0);
+					{
+						_veh addItemCargoGlobal [_x,_respawnInfo select 4 select 1 select _forEachIndex];
+					}forEach (_respawnInfo select 4 select 0);
+					{
+						_veh addmagazineCargoGlobal [_x,_respawnInfo select 5 select 1 select _forEachIndex];
+					}forEach (_respawnInfo select 5 select 0);
+					{
+						_veh addbackpackCargoGlobal [_x,_respawnInfo select 6 select 1 select _forEachIndex];
+					}forEach (_respawnInfo select 6 select 0);
+					
+					_veh setVariable ["respawnInfo",_respawnInfo];
 					[_veh] call twc_fnc_vehicleRespawn;
 					_true = false;
 				};			
@@ -69,7 +87,24 @@ _veh addEventHandler ["Killed",{
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
 		_veh setDir (_respawnInfo select 2);
-			
+		clearWeaponCargoGlobal _veh;
+		clearMagazineCargoGlobal _veh;
+		clearItemCargoGlobal _veh;
+		clearBackpackCargoGlobal _veh;
+		{
+			_veh addweaponCargoGlobal [_x,_respawnInfo select 3 select 1 select _forEachIndex];
+		}forEach (_respawnInfo select 3 select 0);
+		{
+			_veh addItemCargoGlobal [_x,_respawnInfo select 4 select 1 select _forEachIndex];
+		}forEach (_respawnInfo select 4 select 0);
+		{
+			_veh addmagazineCargoGlobal [_x,_respawnInfo select 5 select 1 select _forEachIndex];
+		}forEach (_respawnInfo select 5 select 0);
+		{
+			_veh addbackpackCargoGlobal [_x,_respawnInfo select 6 select 1 select _forEachIndex];
+		}forEach (_respawnInfo select 6 select 0);
+		
+		_veh setVariable ["respawnInfo",_respawnInfo];		
 		[_veh] call twc_fnc_vehicleRespawn;
 	};
 }];
