@@ -31,7 +31,7 @@ _taskID = str (random 1000);
 [WEST,[_taskID],["A Suspicious Vehicle has been left in the area. We need to investigate it.","Car Bomb"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 //Waits until blufor is near then BoOM
-waitUntil{[_veh,200] call CBA_fnc_nearPlayer};
+waitUntil{[_veh, 100] call CBA_fnc_nearPlayer};
 "Bo_GBU12_LGB" createVehicle (getPos _veh);
 _veh setDamage 1;
 
@@ -41,13 +41,16 @@ for "_i" from 1 to 5 do{
 	_unitPos = [(getPos _veh), 30] call CBA_fnc_randPos;
 	_group = createGroup civilian;
 	_unit = _group createUnit ["c_man_1",_unitPos,[],0,"NONE"];
+	
 	for "_i" from 1 to 5 do {
 		[_unit,random 0.8,["stab"]] call twc_fnc_aiWounds;
 	};
+	
 	_unit addEventHandler ["killed",{
 		["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 	}];
-	[_unit,true,1800,true] call ace_medical_fnc_setUnconscious;
+	
+	[_unit, true, 1800, true] call ace_medical_fnc_setUnconscious;
 };
 //Add Enemies
 
