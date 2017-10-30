@@ -2,7 +2,6 @@ player addEventHandler ["Take", {
 	params["_unit","_container","_item"];
 	if(typeOf _container in twc_restrictedCrates)then{
 		closeDialog 602;
-		hint format["You are to retrive the supplies. Not Steal them. Don't take the %1",[_item] call twc_fnc_getDsiplayName];
 		
 		_cfgType = "unknown";
 		switch true do
@@ -17,5 +16,8 @@ player addEventHandler ["Take", {
 			_unit removeItem _item;
 			_container addItemCargo [_item,1];
 		};
+		_title = "<t color='#ff0000' size='1.2' shadow='1' shadowColor='#000000' align='center'>RESTRICTED</t><br />";
+		_text = format["The %1 has been put back in the %2",([_item] call twc_fnc_getDisplayName),getText (configFile >> "cfgVehicles" >> (typeOf _container) >> "displayName")];
+		hint parseText (_title + _text);
 	};
 }];

@@ -15,7 +15,7 @@
 
 params[["_pos",[(worldSize / 2),(worldSize / 2)]],["_radius",(sqrt 2 *(worldSize / 2))]];
 
-_houseList = [_pos] nearObjects ["House",_radius];
+_houseList = _pos nearObjects ["House",_radius];
 _c = 0;
 _house = _houseList call BIS_fnc_selectRandom;
 while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
