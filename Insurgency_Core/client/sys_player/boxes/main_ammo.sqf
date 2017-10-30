@@ -685,9 +685,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
     [
 		["rhsusf_100Rnd_556x45_soft_pouch",20],
 		["rhsusf_200Rnd_556x45_soft_pouch",10],
-		["rhs_200rnd_556x45_M_SAW",10],
 		["rhsusf_mag_15Rnd_9x19_JHP",15],
-		["rhsusf_mag_7x45acp_MHP",15],
 		["HandGrenade",5]
     ];
 
@@ -1035,7 +1033,6 @@ if (typeOf vehicle player == "Modern_USMC_Autorifleman") then {
     _tmp_magazines =
     [
         ["rhsusf_100Rnd_556x45_soft_pouch",20],
-		["rhs_200rnd_556x45_M_SAW",10],
 		["rhsusf_200Rnd_556x45_soft_pouch",10],
 		["30Rnd_556x45_Stanag",50],
 		["30Rnd_556x45_Stanag_Tracer_Red",20],
@@ -1070,7 +1067,6 @@ if (typeOf vehicle player == "Modern_USMC_AsstAutorifleman") then {
 		["30Rnd_556x45_Stanag_Tracer_Red",20],
 		["rhsusf_100Rnd_556x45_soft_pouch",10],
 		["rhsusf_200Rnd_556x45_soft_pouch",10],
-		["rhs_200rnd_556x45_M_SAW",5],
         ["rhsusf_mag_7x45acp_MHP",15],
 		["HandGrenade",5]
     ];

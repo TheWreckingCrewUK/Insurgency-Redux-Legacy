@@ -10,7 +10,7 @@ _marker setMarkerColor "colorOpfor";
 
 //Spawning a load of hostiles and the civs
 _num = 0;
-_total = 21;
+_total = 16;
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
@@ -28,7 +28,7 @@ for "_i" from 1 to _total do{
 };
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
-for "_i" from 1 to 3 do{
+for "_i" from 1 to 2 do{
 	_num = 0;
 	_total = 8;
 	_group = createGroup East;
