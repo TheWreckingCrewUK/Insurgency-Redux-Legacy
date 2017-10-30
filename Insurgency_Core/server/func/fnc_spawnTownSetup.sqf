@@ -13,30 +13,30 @@
 * Creates a trigger to spawn the town capture and cleanup
 */ 
 						  
-params["_pos","_civnum","_civradius","_groupradius","_thisList"];
+params["_pos","_civnum","_civradius","_groupradius","_thisList",["_spawnCivs",true],["_forceSpawn",false]];
 
-[_pos, _civnum, _civradius] call twc_spawnCiv;
+if(_spawnCivs)then{
+	[_pos, _civnum, _civradius] call twc_spawnCiv;
+};
+
 _enemies = 0;
-
 _random = random 100;
-if(_random > (2.5 * TWC_insMorale))then{
-
-}else{
+if(_random < (2.5 * TWC_insMorale) || _forceSpawn)then{
 	_enemies = 1;
 	[_pos] spawn twc_spawnDefend;
 };
 
 _random = random 100;
-if(_random > (2.5 * TWC_insMorale))then{
-
-}else{
+if(_random < (2.5 * TWC_insMorale) || _forceSpawn)then{
 	_enemies = 1;
 	[_pos, _groupradius,_thisList] spawn twc_spawnAIUnits;
 };
 if(_enemies == 0)exitWith{};
 
 _trg = createTrigger ["EmptyDetector", _pos];
-_trg setTriggerArea [300, 300, 0, false];
-_trg setTriggerActivation ["EAST", "NOT PRESENT", False];
-_trg setTriggerTimeout [5,5,5, true];
-_trg setTriggerStatements ["this","['TWC_Insurgency_adjustPoints', 25] call CBA_fnc_serverEvent",""];
+_trg setTriggerArea [700, 700, 0, false];
+_trg setTriggerActivation ["ANY", "PRESENT", False];
+_trg setTriggerTimeout [7,7,7, true];
+_trg setTriggerStatements ["{side (group _x) == WEST} count thisList == 0 || {side (group _x) == EAST && (str (_x getVariable 'unitsHome') == str (thisTrigger getVariable 'unitsHome'))} count thisList < 5","[(thisTrigger getVariable 'unitsHome'),thisList] spawn twc_fnc_townDeciding",""];
+
+_trg setVariable ["unitsHome",_pos];

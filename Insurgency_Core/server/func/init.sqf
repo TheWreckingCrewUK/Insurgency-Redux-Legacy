@@ -4,6 +4,7 @@ twc_spawnFOB = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fn
 twc_spawnCiv = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_spawnCiv.sqf";
 twc_townSetup = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_spawnTownSetup.sqf";
 twc_deadCleanup = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deadCleanup.sqf";
+twc_fnc_townDeciding = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_townDeciding.sqf";
 twc_fnc_deleteDead = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deleteDead.sqf";
 
 twc_fnc_aiWounds = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aiWounds.sqf";
