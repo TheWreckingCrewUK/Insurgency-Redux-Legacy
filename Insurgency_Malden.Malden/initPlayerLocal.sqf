@@ -38,6 +38,24 @@ twc_restrictedVehicleSlots = [
 		["commander", 
 			["Modern_British_JetPilot"]
 		]
+	],
+	
+	["UK3CB_BAF_Wildcat_AH1_CAS_8A", 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["commander", 
+			["Modern_British_JetPilot","Modern_USMC_HeliPilot"]
+		]
+	],
+	
+	["RHS_UH60M_D", 
+		["driver", 
+			["Modern_USMC_HeliPilot"]
+		],
+		["commander", 
+			["Modern_British_JetPilot","Modern_USMC_HeliPilot"]
+		]
 	]
 ];
 //Slot Restrictions. TBA when we are doing more then just testing
