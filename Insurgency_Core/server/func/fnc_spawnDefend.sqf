@@ -17,7 +17,7 @@
 params["_pos"];
 _spawnPos = [_pos, 50] call CBA_fnc_randPos;
 _num = 0;
-_total = 10;
+_total = (([_pos] call twc_fnc_calculateSpawnAmount) * 2) max 20;
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select _num), _spawnPos,[], 5,"NONE"];

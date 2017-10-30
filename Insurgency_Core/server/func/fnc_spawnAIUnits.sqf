@@ -27,7 +27,7 @@ _dir2 = _dir + 30;
 //Calculating total enemies to spawn
 _playerCount = count (allPlayers - entities "HeadlessClient_F");
 _num = 0;
-_total = (round(3 * (_playerCount * (TWC_insMorale / 100))) max 4) min 20;
+_total = [_pos] call twc_fnc_calculateSpawnAmount;
 
 //Spawning hostiles
 _group = createGroup East;
