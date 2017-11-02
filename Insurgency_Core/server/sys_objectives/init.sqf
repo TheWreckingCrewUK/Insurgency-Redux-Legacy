@@ -31,6 +31,9 @@ _spawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_spa
 _canSpawn_VIP = compile preprocessFileLineNumbers (_ROOT + "VIP\VIP_canSpawn.sqf");
 _spawn_VIP = compile preprocessFileLineNumbers (_ROOT + "VIP\VIP_spawn.sqf");
 
+_canSpawn_DefendForwardBase = compile preprocessFileLineNumbers (_ROOT + "VIP\DefendForwardBase_canSpawn.sqf");
+_spawn_DefendForwardBase = compile preprocessFileLineNumbers (_ROOT + "VIP\DefendForwardBase_spawn.sqf");
+
 //_canSpawn_IEDFactory = compile preprocessFileLineNumbers (_ROOT + "IEDFactory\IEDFactory_canSpawn.sqf");
 //_spawn_IEDFactory = compile preprocessFileLineNumbers (_ROOT + "IEDFactory\IEDFactory_spawn.sqf");
 

@@ -29,5 +29,5 @@ if((west countSide _thisList) == 0)then{
 	_trg setTriggerStatements ["(((objectParent (thisList call bis_fnc_selectRandom)) isKindOf 'air') && (getPosATL (thisList call bis_fnc_selectRandom)) select 2 < 25) || !((objectParent (thisList call bis_fnc_selectRandom)) isKindOf 'air')","[(getPos thisTrigger),0,100,[100,200],thisList,false,true] spawn twc_townSetup",""];
 	
 }else{
-	
+	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 };
