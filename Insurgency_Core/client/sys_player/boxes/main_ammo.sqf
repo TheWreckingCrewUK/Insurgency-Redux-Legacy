@@ -40,7 +40,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
     _tmp_items = 
 	[
-        ["ACE_MapTools",1],
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_LLM_IR",1],
@@ -82,7 +81,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_items = 
 	[
-		["ACE_MapTools",1],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_LLM_IR",1],
 		["UK3CB_BAF_Eotech",1],
@@ -120,7 +118,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_items =
 	[
-		["ACE_MapTools",1],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_LLM_IR",1],
 		["ACRE_PRC343",1],
@@ -147,7 +144,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_items =
 	[
-        ["ACE_MapTools",1],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["ACRE_PRC343",1]
 	];
@@ -195,7 +191,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_items = 
 	[
-		["ACE_MapTools",1],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_LLM_IR",1],
 		["ACRE_PRC343",1],
@@ -223,7 +218,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	
 	_tmp_items = 
 	[
-		["ACE_MapTools",1],
 		["ACRE_PRC343",1]
 	];
 };
@@ -249,9 +243,9 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		
 	_tmp_items = 
 	[
-		["ACE_MapTools",1],
 		["UK3CB_BAF_TA648_308",1],
 		["UK3CB_BAF_LLM_IR",1],
+		["UK3CB_underbarrel_acc_bipod",1],
 		["ACRE_PRC343",1]
 	];	
 };
