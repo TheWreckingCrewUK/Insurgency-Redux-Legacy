@@ -43,7 +43,7 @@ for "_i" from 1 to 3 do{
 	[_group, (_pos), 40] call CBA_fnc_taskAttack;
 };
 }else{
-	//No sleep spawn enemies inside the base
+	[_pos] call twc_fnc_spawnDefend;
 };
 
 _time = time;
