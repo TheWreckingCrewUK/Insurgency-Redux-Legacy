@@ -20,7 +20,28 @@ if([_pos,400] call twc_fnc_posNearPlayers)then{
 
 if(_BluInBase)then{
 	sleep 240;
-	//Spawn enemies away then attack
+	//Calculating total enemies to spawn
+	_num = 0;
+	_total = [_pos] call twc_fnc_calculateSpawnAmount;
+for "_i" from 1 to 3 do{
+	//Spawning hostiles
+	_group = createGroup East;
+	_spawnPos = [_pos,300,[0,360]] call SHK_pos;
+	for "_i" from 1 to _total do{
+		_unit = _group createUnit [(townSpawn select _num), _spawnPos,[], 5,"NONE"];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+			if (side (_this select 1) == WEST) then{
+				["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+				["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+			};
+		}];
+		_unit setVariable ["unitsHome",_pos,false];
+		_num = _num + 1;
+		sleep 0.2;
+	};
+	[_group, (_pos), 40] call CBA_fnc_taskAttack;
+};
 }else{
 	//No sleep spawn enemies inside the base
 };
@@ -52,7 +73,12 @@ if(_baseControl == 1)then{
 	_return = [_table] call twc_fnc_tearDownForwardBase;
 	
 };
-
+{
+	if( str (_x getVariable "unitsHome") == str _pos)then{
+		deleteVehicle _x;
+		sleep 0.2;
+	};
+}forEach allUnits;
 
 ["TWC_Insurgency_objCompleted", ["DefendForwardBase", _objType]] call CBA_fnc_serverEvent;
 [_taskID] call bis_fnc_deleteTask;

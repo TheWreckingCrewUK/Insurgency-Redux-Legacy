@@ -25,7 +25,6 @@ _dir1 = _dir - 30;
 _dir2 = _dir + 30;
 
 //Calculating total enemies to spawn
-_playerCount = count (allPlayers - entities "HeadlessClient_F");
 _num = 0;
 _total = [_pos] call twc_fnc_calculateSpawnAmount;
 
