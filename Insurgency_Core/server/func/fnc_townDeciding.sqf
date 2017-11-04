@@ -31,3 +31,5 @@ if((west countSide _thisList) == 0)then{
 }else{
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 };
+
+{deleteGroup _x}forEach allGroups;

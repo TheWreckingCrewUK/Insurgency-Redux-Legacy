@@ -3,7 +3,7 @@ params ["_objType"];
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
 _pos = getPos _town;
-while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000 && _town in badTownArray}do{
+while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000 || _town in badTownArray}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	_pos = getPos _town;
 };

@@ -82,7 +82,7 @@ _veh addEventHandler ["Killed",{
 		_veh = _this select 0;
 		
 		_respawnInfo = _veh getVariable "respawnInfo";
-		deleteVehicle _veh;
+		[_veh]spawn{waitUntil {!([(getPos (_this select 0)),500] call twc_fnc_posNearPlayers)}; deleteVehicle (_this select 0)};
 		sleep 2;
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);

@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=465;
+		nextID=473;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8069.4053,82.378288,10154.443};
-		dir[]={-0.12959975,-0.63462591,-0.76203859};
-		up[]={-0.1064015,0.77282012,-0.62563348};
-		aside[]={-0.98596966,-1.3877871e-006,0.16768293};
+		pos[]={7995.9009,256.46207,10005.192};
+		dir[]={0.27011696,-0.58281249,0.76656574};
+		up[]={0.1936944,0.81259316,0.54968923};
+		aside[]={0.94327199,-8.9057721e-007,-0.33238018};
 	};
 };
 binarizationWanted=0;
@@ -48,13 +48,15 @@ addons[]=
 	"ace_advanced_fatigue",
 	"twc_objects",
 	"twc_modern",
-	"twc_framework_public_modern_us"
+	"twc_framework_public_modern_us",
+	"A3_Signs_F_Signs_Ad",
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -194,6 +196,13 @@ class AddonsMetaData
 			className="twc_framework_public_modern_us";
 			name="twc_framework_public_modern_us";
 		};
+		class Item22
+		{
+			className="A3_Signs_F";
+			name="Arma 3 - Signs";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=16337384;
@@ -227,7 +236,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=46;
+		items=53;
 		class Item0
 		{
 			dataType="Marker";
@@ -1409,7 +1418,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
 						};
 					};
 				};
@@ -1469,7 +1478,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
 						};
 					};
 				};
@@ -3711,6 +3720,126 @@ class Mission
 			};
 			id=432;
 			atlOffset=-3.8146973e-006;
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8094.9731,30.599096,10115.613};
+				angles[]={0,0.85936517,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\radio.jpg""]; this allowDamage False;}";
+			};
+			id=465;
+			type="SignAd_Sponsor_F";
+		};
+		class Item47
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8065.8311,30.606237,10202.688};
+				angles[]={0,6.2629747,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\patrolbase.jpg""]; this allowDamage False;}";
+			};
+			id=466;
+			type="SignAd_Sponsor_F";
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8107.5708,30.82588,10317.199};
+				angles[]={0,1.5776728,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\ammospawn.jpg""]; this allowDamage False;}";
+			};
+			id=467;
+			type="SignAd_Sponsor_F";
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8100.1743,29.815514,10317.313};
+				angles[]={6.2735858,1.5834383,6.2791886};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=468;
+			type="Land_HelipadSquare_F";
+			atlOffset=1.9073486e-006;
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8093.3979,30.331955,10311.888};
+				angles[]={6.2735863,1.5888081,0.0015882496};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=470;
+			type="Land_InfoStand_V1_F";
+			atlOffset=0.0030021667;
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8095.4019,30.59841,10100.824};
+				angles[]={0,2.1588438,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\radio.jpg""]; this allowDamage False;}";
+			};
+			id=471;
+			type="SignAd_Sponsor_F";
+		};
+		class Item52
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8081.1802,30.626225,10109.006};
+				angles[]={0,1.5982254,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\banner.jpg""]; this allowDamage False;}";
+			};
+			id=472;
+			type="SignAd_Sponsor_F";
+			atlOffset=1.9073486e-006;
 		};
 	};
 };

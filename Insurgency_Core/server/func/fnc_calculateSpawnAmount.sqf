@@ -14,7 +14,7 @@
 */
 params[["_loc", [0,0,0]], ["_mod", 1]];
 
-//_defaultAmount = 4;
+_defaultAmount = 0;
 _playerCount = (count (allPlayers - entities "HeadlessClient_F")) max 1;
 
 // 9 with 10 online for example
