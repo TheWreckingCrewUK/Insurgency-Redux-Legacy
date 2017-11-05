@@ -920,7 +920,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_anpeq15A",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1],
 		["SatchelCharge_Remote_Mag",1],
@@ -963,7 +963,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_anpeq15A",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1],
 		["UK3CB_BAF_Javelin_CLU",1],
@@ -1026,7 +1026,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstAutorifleman") then {
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_anpeq15A",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1]
 	];
@@ -1082,7 +1082,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_anpeq15A",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1]
 	];
@@ -1119,7 +1119,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
 		["ACE_tourniquet", 5],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_anpeq15A",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1]
 	];
