@@ -75,7 +75,7 @@ _veh addEventHandler ["GetOut",{
 	};
 }];
 
-_veh addEventHandler ["Killed",{
+_veh addEventHandler ["MPKilled",{
 	_veh = _this select 0;
 	
 	[_veh] spawn{
