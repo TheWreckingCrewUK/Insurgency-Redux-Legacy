@@ -244,7 +244,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	[
 		["UK3CB_BAF_TA648_308",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
-		["UK3CB_underbarrel_acc_bipod",1],
+		["UK3CB_underbarrel_acc_fgrip_bipod",1],
 		["UK3CB_BAF_MaxiKite",1],
 		["ACRE_PRC343",1]
 	];	
@@ -278,8 +278,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_bodyBag",10],
 		["ACE_surgicalKit", 50],
 		["ACE_tourniquet", 5],
-		["ACRE_PRC343",1],
-		["UK3CB_BAF_LLM_IR_Black",1]
+		["ACRE_PRC343",1]
 	];
 };
 /*

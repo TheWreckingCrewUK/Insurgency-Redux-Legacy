@@ -1,1 +1,1 @@
-onLoadName = "Insurgency Redux - Sun 11-05-2017"; 
+onLoadName = "Insurgency Redux - Mon 11-06-2017"; 
