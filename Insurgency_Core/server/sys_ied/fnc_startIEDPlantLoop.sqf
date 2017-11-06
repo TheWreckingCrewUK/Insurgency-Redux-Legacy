@@ -41,10 +41,15 @@ if ((random 1) >= 0.2) then {
 
 if (!(_iedFactoryControlled)) then {
 	if (!(isNil "TWC_insMorale")) then {
+		_delay = 1800; // every 30 minutes, when no one is online
+		_justPlayers = count (allPlayers - entities "HeadlessClient_F");
+	
+		if (_justPlayers > 0) then {
+			_delay = 150 + ((round (_delay / _justPlayers)) max 150);
+		};
+		
 		if (TWC_insMorale > 0) then {
-			_delay = 300 + (round ((TWC_insMorale / 100) * 900));
-		} else {
-			_delay = 300;
+			_delay = _delay + (round ((TWC_insMorale / 100) * 900));
 		};
 	};
 };
