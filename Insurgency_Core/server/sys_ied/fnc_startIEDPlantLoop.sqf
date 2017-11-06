@@ -45,7 +45,7 @@ if (!(_iedFactoryControlled)) then {
 		_justPlayers = count (allPlayers - entities "HeadlessClient_F");
 	
 		if (_justPlayers > 0) then {
-			_delay = 150 + ((round (_delay / _justPlayers)) max 150);
+			_delay = ((round (_delay / _justPlayers)) max 150);
 		};
 		
 		if (TWC_insMorale > 0) then {
