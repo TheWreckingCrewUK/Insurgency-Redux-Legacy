@@ -41,7 +41,7 @@ heartsAndMindsObjs = [
 	["Blank", _canSpawn_Blank, _spawn_Blank],
 //	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
 	["CarBomb", _canSpawn_CarBomb, _spawn_CarBomb],
-	["VIP", _canSpawn_CarBomb, _spawn_CarBomb]
+	["VIP", _canSpawn_VIP, _spawn_VIP]
 ];
 
 searchAndDestroyObjs = [

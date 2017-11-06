@@ -15,7 +15,7 @@
 */ 
 _weapons = [];
 _magazines = [["SmokeShell",5], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",5], ["Chemlight_yellow",5], ["Chemlight_red",5], ["Chemlight_blue",5],["ACE_Chemlight_IR",5]];
-_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1]];
+_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1]];
 
 _tmp_weapons = [];
 _tmp_magazines = [];
@@ -205,6 +205,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L7A2",1],
+		["UK3CB_BAF_Tripod",1],
 		["rhsusf_weap_glock17g4",1]
 	];
        
@@ -918,6 +919,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
     _tmp_items = 
 	[
         ["ACE_MapTools",1],
+		["ACE_microDAGR",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
@@ -1389,7 +1391,6 @@ if (g_class == "ANA_TL") then {
 		["rhsusf_ANPVS_14",1],
 		["itemCTAB",1],
 		["ACE_microDAGR",1],
-		["UK3CB_BAF_SUSAT",1],
 		["ACRE_PRC117F",1]
 	];
 };

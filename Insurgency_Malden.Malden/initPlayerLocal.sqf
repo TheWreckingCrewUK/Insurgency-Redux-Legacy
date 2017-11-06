@@ -65,3 +65,8 @@ if(false)then{
 };
 
 execVM "Insurgency_Core\client\init.sqf";
+
+
+_radioID = [((player getVariable "twc_setRadio") select 0)] call acre_api_fnc_getRadioByType;
+_switchChannel = [_radioID, ((player getVariable "twc_setRadio") select 1)] call acre_api_fnc_setRadioChannel;
+Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",((player getVariable "twc_setRadio") select 0),((player getVariable "twc_setRadio") select 1)];

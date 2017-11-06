@@ -17,13 +17,15 @@ params["_veh"];
 
 if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehicle. Exiting..."};
 
+_veh setVariable ["twc_cacheDisabled",true];
+
 if(isNil {_veh getVariable "respawnInfo"})then{
 	_weapons = getWeaponCargo _veh;
 	_items = getitemCargo _veh;
 	_magazines = getmagazineCargo _veh;
 	_backpacks = getBackpackCargo _veh;
 
-	_veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh),_weapons,_items,_magazines,_backpacks]];
+	_veh setVariable ["respawnInfo",[(typeOf _veh),(getPosASL _veh),(getDir _veh),_weapons,_items,_magazines,_backpacks],true];
 };
 
 _veh addEventHandler ["GetOut",{
@@ -32,7 +34,7 @@ _veh addEventHandler ["GetOut",{
 	if((getPos _veh) distance2D (getMarkerPos "respawn_forwardBase") < vehicleRespawnDistanceForwardBase) exitWith{};
 	
 	[_veh]spawn{
-		_veh = _this select 0;
+		params["_veh"];
 		
 		_true = true;
 		_time = time + vehicleRespawnDelay;
@@ -75,14 +77,14 @@ _veh addEventHandler ["GetOut",{
 	};
 }];
 
-_veh addEventHandler ["MPKilled",{
-	_veh = _this select 0;
+_veh addEventHandler ["Killed",{
+	params["_veh"];
 	
 	[_veh] spawn{
-		_veh = _this select 0;
+		params["_veh"];
 		
 		_respawnInfo = _veh getVariable "respawnInfo";
-		[_veh]spawn{waitUntil {!([(getPos (_this select 0)),500] call twc_fnc_posNearPlayers)}; deleteVehicle (_this select 0)};
+		[_veh]spawn{waitUntil {!([(_this select 0),500] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0)};
 		sleep 2;
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
