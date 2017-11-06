@@ -42,7 +42,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["UK3CB_BAF_LLM_IR",1],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",1],
 		["ACE_M26_Clacker",1],
@@ -82,7 +81,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items = 
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["UK3CB_BAF_LLM_IR",1],
 		["UK3CB_BAF_Eotech",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
@@ -119,7 +117,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items =
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["UK3CB_BAF_LLM_IR",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
@@ -129,7 +126,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
  if (typeOf vehicle player == "Modern_British_Autorifleman_COIN") then {
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L110A2",1],
+        ["UK3CB_BAF_L110A2RIS",1],
 		["rhsusf_weap_glock17g4",1],
 		["rhs_weap_m72a7",4]
 	];
@@ -145,6 +142,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items =
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["UK3CB_BAF_LLM_IR_Black",1],
+		["UK3CB_BAF_Kite",1],
 		["ACRE_PRC343",1]
 	];
 };
@@ -192,7 +191,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items = 
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["UK3CB_BAF_LLM_IR",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_wirecutter", 1],
@@ -245,8 +243,9 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items = 
 	[
 		["UK3CB_BAF_TA648_308",1],
-		["UK3CB_BAF_LLM_IR",1],
+		["UK3CB_BAF_LLM_IR_Black",1],
 		["UK3CB_underbarrel_acc_bipod",1],
+		["UK3CB_BAF_MaxiKite",1],
 		["ACRE_PRC343",1]
 	];	
 };
@@ -279,8 +278,6 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_bodyBag",10],
 		["ACE_surgicalKit", 50],
 		["ACE_tourniquet", 5],
-		["RKSL_optic_LDS",1],
-		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
