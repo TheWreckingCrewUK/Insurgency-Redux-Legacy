@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=588;
+		nextID=589;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8004.4302,54.570602,10056.015};
-		dir[]={0.88781756,-0.45201892,-0.086897209};
-		up[]={0.44989547,0.89199245,-0.044034488};
-		aside[]={-0.097414009,-2.5326881e-007,-0.99528962};
+		pos[]={8044.1577,81.633484,10097.47};
+		dir[]={0.25084192,-0.52100432,0.8159222};
+		up[]={0.15310892,0.85353822,0.49802226};
+		aside[]={0.95589393,-3.9255247e-007,-0.29387173};
 	};
 };
 binarizationWanted=0;
@@ -287,7 +287,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=66;
+		items=67;
 		class Item0
 		{
 			dataType="Marker";
@@ -2745,7 +2745,6 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=538;
@@ -2832,8 +2831,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8071.3472,29.596144,10126.474};
-						angles[]={0,1.5738508,0};
+						position[]={8066.1953,29.57131,10184.016};
+						angles[]={0,0.10859139,0};
 					};
 					side="West";
 					flags=7;
@@ -2841,6 +2840,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=540;
@@ -4567,6 +4567,23 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item66
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8093.9102,29.975925,10187.487};
+				angles[]={0,0,6.282495};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=588;
+			type="twc_Land_BagFence_Corner_F";
+			atlOffset=-4.0054321e-005;
 		};
 	};
 };

@@ -14,3 +14,28 @@ iedTypes = ["ACE_IEDLandBig_Range", "ACE_IEDUrbanBig_Range", "ACE_IEDUrbanSmall_
     if (side _unit != WEST) exitWith { false };
     true
 }] call ace_explosives_fnc_addDetonateHandler;
+
+
+twc_fnc_showSandBagItems = {
+	disableSerialization;
+	
+	_sandBags = ["twc_Land_BagFence_Corner_F","twc_Land_BagFence_Long_F","twc_Land_BagFence_Short_F","twc_Land_BagFence_End_F","twc_Land_BagFence_Round_F"];
+	
+	createDialog "twc_sandBag_Dialog";
+	
+	waitUntil{!isNull (findDisplay 9999);};
+	
+	_ctrl = (findDisplay 9999) displayCtrl 1500;
+	
+	{
+		_index = _ctrl lbAdd (getText (configFile >> "cfgVehicles" >> _x >> "displayName"));
+		_ctrl lbSetData [_index, _x];
+	}forEach _sandBags;
+	
+	while{!isNull (findDisplay 9999);}do{
+		_index = lbCurSel _ctrl;
+		_classname = _ctrl lbData _index;
+		
+		ctrlSetText [1201,getText (configFile >> "cfgVehicles" >> _classname >> "editorPreview")];
+	};
+};
