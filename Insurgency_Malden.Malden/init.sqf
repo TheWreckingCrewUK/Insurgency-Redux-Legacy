@@ -38,11 +38,13 @@ twc_fnc_showSandBagItems = {
 	
 	_classname = "";
 	_selectedIndex = "";
+	_ctrl lbSetCurSel 0;
 	while{!isNull (findDisplay 9999);}do{
 		_selectedIndex = lbCurSel _ctrl;
 		_classname = _ctrl lbData _selectedIndex;
-		
+			
 		ctrlSetText [1201,getText (configFile >> "cfgVehicles" >> _classname >> "editorPreview")];
+		ctrlSetText [1001,"Cost = " + str (_sandBags select _selectedIndex select 1) + " Supplies"];
 	};
 	sleep 0.2;
 	systemChat str _selectedIndex;
