@@ -13,7 +13,7 @@ class twc_rsc_picture_background: RscPicture
 {
 	idc = 1200;
 
-	text = "#(argb,8,8,3)color(0,0,1,0.5)";
+	text = "#(argb,8,8,3)color(01,0.647,0,0.75)";
 	x = 0.314375 * safezoneW + safezoneX;
 	y = 0.269 * safezoneH + safezoneY;
 	w = 0.37125 * safezoneW;
