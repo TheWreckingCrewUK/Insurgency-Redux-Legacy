@@ -1,5 +1,5 @@
-_deadCache = _this select 0;
-_killer = _this select 1;
+params["_deadCache","_killer"];
+
 _intelPos = (getPosATL _deadCache);
 _killerPos = (GetPosATL _killer);
 

@@ -1,5 +1,5 @@
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
-InsP_fnc_counterAttack = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_counterAttack.sqf";
+InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
 
 if (isNil "InsP_ammoCaches") then {
 	InsP_ammoCaches = 0;

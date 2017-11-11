@@ -1,4 +1,4 @@
-_destroyed = _this select 0;
+params["_destroyed"];
 
 call {
 	if (_destroyed == "cacheBoxA") exitWith {
