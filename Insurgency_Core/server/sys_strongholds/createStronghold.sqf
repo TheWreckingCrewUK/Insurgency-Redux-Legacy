@@ -58,6 +58,7 @@ for "_i" from 1 to 4 do{
 		if (side (_this select 1) == WEST) then{
 			["TWC_Insurgency_adjustInsurgentMorale", -2] call CBA_fnc_serverEvent;
 			["TWC_Insurgency_adjustCivilianMorale", 2] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustPoints", 15] call CBA_fnc_serverEvent;
 		};
 	}];
 	[_box]spawn{
@@ -80,6 +81,6 @@ for "_i" from 1 to 4 do{
 // Creates Trigger that checks when East is dead and awards points
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
-_trg setTriggerActivation ["EAST", "NOT PRESENT", False];
+_trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
-_trg setTriggerStatements ["this",format["'%1' setMarkerColor 'colorBlufor'; ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent; ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;",_marker],""];
+_trg setTriggerStatements ["count thisList < 4",format["'%1' setMarkerColor 'colorBlufor'; ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent; ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;",_marker],""];
