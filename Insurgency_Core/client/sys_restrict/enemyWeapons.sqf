@@ -7,7 +7,7 @@ player addEventHandler ["InventoryOpened", {
 			player removeWeapon (secondaryWeapon player);
 		};
 		if(handgunWeapon player in twc_restrictedHangunWeapons)then{
-			player removeWeapon (secondaryWeapon player);
+			player removeWeapon (handgunWeapon player);
 		};
 	};
 }];
