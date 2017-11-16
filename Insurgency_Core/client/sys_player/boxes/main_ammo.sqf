@@ -266,19 +266,18 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_items =
 	[
-		["ACE_fieldDressing",50],
+		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
 		["ACE_packingBandage", 50],
-		["ACE_personalAidKit", 50],
-		["ACE_morphine",50],
-		["ACE_epinephrine",50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
-		["ACE_salineIV",50],
-		["ACE_bodyBag",10],
-		["ACE_surgicalKit", 50],
-		["ACE_tourniquet", 5],
-		["ACRE_PRC343",1]
+		["ACE_salineIV_500", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1],
+		["ACRE_PRC343", 1]
 	];
 };
 /*
