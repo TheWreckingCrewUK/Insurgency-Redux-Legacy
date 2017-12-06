@@ -11,6 +11,12 @@
 #include "sys_objectives\init.sqf";
 #include "sys_forwardBase\init.sqf";
 #include "sys_chat\init.sqf";
+#include "sys_idf\init.sqf";
+
+
+basemode = 0;
+publicvariable "basemode";
+
 
 // List of civilians who were already questioned
 nonQuestionableList = [];

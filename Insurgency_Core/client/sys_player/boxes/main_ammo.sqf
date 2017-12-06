@@ -280,9 +280,9 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACRE_PRC343", 1]
 	];
 };
-/*
+
 //BAF Sniper
- if (g_class == "BAF_SN") then {
+ if (typeOf vehicle player == "Modern_British_Sniper_coin") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L115A3_DE",1],
@@ -295,15 +295,13 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_338_5Rnd",50],
 		["UK3CB_BAF_338_5Rnd_Tracer",50],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
-		["CUP_5Rnd_762x51_M24",50],
-		["rhsusf_5Rnd_762x51_m118_special_Mag", 50],
-		["rhsusf_10Rnd_762x51_m118_special_Mag", 50],
 		["rhsusf_mag_15Rnd_9x19_JHP",15]
 	];
 
 	_tmp_items = 
 	[
 		
+		["RKSL_optic_PMII_525",1],
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
 		["STKR_Predator",1],
@@ -311,10 +309,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",5],
 		["UK3CB_BAF_G_Tactical_Black",1],
-		["U_B_FullGhillie_ard",1],
 		["ACE_RangeCard",1],
-		["RKSL_optic_PMII_525",1],
-		["UK3CB_BAF_Silencer_L115A3",1],
 		["UK3CB_BAF_MaxiKite",1],
 		["ACE_Tripod",1],
 		["HandGrenade",5]
@@ -322,7 +317,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Spotter
- if (g_class == "BAF_SP") then {
+ if (typeOf vehicle player == "Modern_British_Spotter_coin") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS",1],
@@ -336,16 +331,14 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_338_5Rnd_Tracer",50],
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
-		["CUP_5Rnd_762x51_M24",50],
-		["rhsusf_5Rnd_762x51_m118_special_Mag", 50],
-		["rhsusf_10Rnd_762x51_m118_special_Mag", 50],
+		["UK3CB_BAF_762_L42A1_20Rnd", 50],
+		["UK3CB_BAF_762_L42A1_20Rnd_t", 50],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["HandGrenade",5]
 	];
 
 	_tmp_items = 
 	[
-		
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
 		["RKSL_optic_LDS",1],
@@ -362,12 +355,13 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_MX2A",1],
 		["ACRE_PRC117F_ID_1",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
+		["UK3CB_BAF_MaxiKite",1],
 		["ACE_ATragMX",1],
 		["ACE_Tripod",1],
 		["itemCTAB",1]
 	];
 };
-
+/*
 //BAF Bomb Disposal Team Leader
 if (g_class == "BAF_EOD_SL") then {
     _tmp_weapons =

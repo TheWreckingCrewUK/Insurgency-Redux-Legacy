@@ -21,8 +21,10 @@
 _group = createGroup civilian;
 params["_pos", "_civnum", "_civradius"];
 
+_num = 0;
+
 for "_i" from 1 to _civnum do {
-	_individualCiv = _group createUnit [civilianType, _pos, [], _civradius, "NONE"];
+	_individualCiv = _group createUnit [(civilianType select _num), _pos, [], _civradius, "NONE"];
 	_civHeading = (random 360);
 	_individualCiv setFormDir _civHeading;
 	_individualCiv setDir _civHeading;
@@ -40,6 +42,8 @@ for "_i" from 1 to _civnum do {
 	};
 	doStop _individualCiv;
 	
+	
+	_num = _num + 1;
 	_westKilled = _individualCiv addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		[_unit] call twc_fnc_deleteDead;

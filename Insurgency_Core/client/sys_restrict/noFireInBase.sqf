@@ -17,10 +17,13 @@ player addEventHandler ["Fired", {
 */
 player addEventHandler ["Fired",{
 	if ((_this select 0) distance getMarkerPos "base" < 200) then{
+	
+	if (basemode == 0) then {
 		deleteVehicle (_this select 6);
 		"RESTRICTED" hintc [
 			"DO NOT SHOOT IN THE BASE",
 			"The Base is Defined as 200m from Spawn"
 		];
+	};
 	};
 }]
