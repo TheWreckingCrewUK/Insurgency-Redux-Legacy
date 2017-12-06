@@ -20,7 +20,7 @@ _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 2) max 20;
 _group = createGroup East;
 for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select _num), _spawnPos,[], 5,"NONE"];
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _spawnPos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
