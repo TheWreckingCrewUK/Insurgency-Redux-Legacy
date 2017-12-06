@@ -53,7 +53,7 @@ _markerstr2 setMarkerText "Very Important Person";
 //Spawning the enemies
 [_pos]spawn{
 _pos = (_this select 0);
-_num = 0;
+_num = (floor random (count townspawn));
 _total = 10;
 _group = createGroup East;
 	for "_i" from 1 to _total do{
@@ -66,7 +66,7 @@ _group = createGroup East;
 		}];
 		_unit addMagazines ["handGrenade",2];
 		_unit setVariable ["unitsHome",_pos,false];
-		_num = _num + 1;
+		//_num = _num + 1;
 		sleep 0.2;
 	};
 	[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;

@@ -55,7 +55,7 @@ _taskID = str (random 1000);
 [WEST,[_taskID],["We have located a high ranking insurgent. Killing him send ripples through the whole insurgency.","High Value Target"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 //add Hostiles
-_num = 0;
+_num = (floor random (count townspawn));
 _total = 10;
 _group = createGroup East;
 for "_i" from 1 to _total do{
@@ -68,7 +68,7 @@ for "_i" from 1 to _total do{
 	}];
 	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
-	_num = _num + 1;
+	//_num = _num + 1;
 	sleep 0.2;
 };
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;

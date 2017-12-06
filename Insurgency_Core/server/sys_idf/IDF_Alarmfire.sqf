@@ -6,8 +6,9 @@ _direction = _shell getreldir _base;
 _distance = (_shooter) distance _base;
 _distancescale = 100;
 
-//defines how close shells have to be before tripping the alarm.
-_accuracy = 40;
+//defines how close shells have to be before tripping the alarm. FOB kunduz is 40 as a baseline.
+_accuracy = if(isNil "idfbasesize") then {40
+} else {idfbasesize};
 
 if (side group _shooter isEqualTo East) then {
 

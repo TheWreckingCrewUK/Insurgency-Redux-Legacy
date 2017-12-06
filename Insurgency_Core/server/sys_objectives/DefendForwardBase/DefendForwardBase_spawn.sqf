@@ -21,7 +21,7 @@ if([_pos,400] call twc_fnc_posNearPlayers)then{
 if(_BluInBase)then{
 	sleep 240;
 	//Calculating total enemies to spawn
-	_num = 0;
+	_num = (floor random (count townspawn));
 	_total = [_pos] call twc_fnc_calculateSpawnAmount;
 for "_i" from 1 to 3 do{
 	//Spawning hostiles
@@ -37,7 +37,7 @@ for "_i" from 1 to 3 do{
 			};
 		}];
 		_unit setVariable ["unitsHome",_pos,false];
-		_num = _num + 1;
+		//_num = _num + 1;
 		sleep 0.2;
 	};
 	[_group, (_pos), 40] call CBA_fnc_taskAttack;

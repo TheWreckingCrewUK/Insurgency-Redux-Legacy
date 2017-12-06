@@ -41,7 +41,7 @@ for "_i" from 1 to _total do{
 		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
-	_num = _num + 1;
+	//_num = _num + 1;
 	sleep 0.2;
 };
 [_group, (_pos), 40] call CBA_fnc_taskAttack;

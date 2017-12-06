@@ -23,7 +23,7 @@ for "_i" from 1 to _total do{
 	}];
 	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
-	_num = _num + 1;
+	//_num = _num + 1;
 	sleep 0.2;
 };
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
@@ -42,7 +42,7 @@ for "_i" from 1 to 2 do{
 			};
 		}];
 		_unit setVariable ["unitsHome",_pos,false];
-		_num = _num + 1;
+		//_num = _num + 1;
 		sleep 0.2;
 	};
 	[_group, _pos, 150, 3, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;

@@ -39,6 +39,9 @@ while{count _strongholdArray < 3}do{
 townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
+
+//#include "insurgency_core\server\sys_idf\idf.sqf";
+
 //Event Handler to stop players from  airdropping crates.
 ["ace_cargoUnloaded", {
 	params ["_item", "_vehicle", ["_dropStyle", ""]];

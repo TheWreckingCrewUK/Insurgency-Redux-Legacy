@@ -47,7 +47,7 @@ for "_i" from 1 to 3 do{
 	_total = 8;
 	_group = createGroup East;
 	for "_i" from 1 to _total do{
-		_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+		_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
 		_unit addEventHandler ["Killed",{
 			[(_this select 0)] call twc_fnc_deleteDead;
 			if (side (_this select 1) == WEST) then{
@@ -56,7 +56,7 @@ for "_i" from 1 to 3 do{
 			};
 		}];
 		_unit setVariable ["unitsHome",_pos,false];
-		_num = _num + 1;
+		//_num = _num + 1;
 		sleep 0.2;
 	};
 	[_group, _pos, 300, 3, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;

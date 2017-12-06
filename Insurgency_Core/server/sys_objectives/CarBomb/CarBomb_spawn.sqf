@@ -35,12 +35,13 @@ waitUntil{[_veh, 100] call CBA_fnc_nearPlayer};
 "Bo_GBU12_LGB" createVehicle (getPos _veh);
 _veh setDamage 1;
 
+_num = 0;
 sleep 3;
 //Add Wounded Civilians
 for "_i" from 1 to 5 do{
 	_unitPos = [(getPos _veh), 30] call CBA_fnc_randPos;
 	_group = createGroup civilian;
-	_unit = _group createUnit ["c_man_1",_unitPos,[],0,"NONE"];
+	_unit = _group createUnit [(civilianType select (floor random (count civilianType))),_unitPos,[],0,"NONE"];
 	
 	for "_i" from 1 to 5 do {
 		[_unit,random 0.8,["stab"]] call twc_fnc_aiWounds;

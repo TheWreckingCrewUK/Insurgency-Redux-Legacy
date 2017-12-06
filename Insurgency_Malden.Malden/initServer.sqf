@@ -22,7 +22,7 @@ twc_surrenderVote = false;
 */
 TWC_Building_Style = "Med";
 
-civilianType = "C_man_1";
+civilianType = ["greek_Civ_Men_1", "greek_Civ_Men_2", "greek_Civ_Men_3", "greek_Civ_Men_4", "greek_Civ_Men_5", "greek_Civ_Men_6", "greek_Civ_Men_7", "greek_Civ_Men_8", "greek_Civ_Men_9", "greek_Civ_Men_10", "greek_Civ_Men_11"];
 
 homeEnemy = ["twc_greek_rifleman"];
 
@@ -52,6 +52,10 @@ waitUntil{scriptDone _script};
 badTownArray = ["Airport","harbor","Moray","Pegasus Air Co.","military base","Saint Martin","Bosquet","Faro","Guran","Feas"];
 
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
+
+//defines how close mortar shells have to be predicted to land before tripping the base alarm. FOB kunduz is 40 as a baseline.
+idfbasesize = 70;
+publicvariable "idfbasesize";
 
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;
