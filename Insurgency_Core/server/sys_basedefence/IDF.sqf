@@ -11,7 +11,7 @@ if ((_this select 1) distance idfradar < 3000) then {
 (_this select 1) addeventhandler ["fired", 
 
 
-{if (alarm == 3) then {execVM "server\sys_idf\IDF_Alarmfire.sqf"};}];
+{if (alarm == 3) then {execVM "server\sys_basedefence\IDF_Alarmfire.sqf"};}];
 
 };
 };
