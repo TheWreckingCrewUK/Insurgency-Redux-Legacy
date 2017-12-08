@@ -4,7 +4,7 @@ if (idfon == 0) then {
 idfon = 1;
 publicvariable "idfon";
 sleep 1;
-\\systemchat "Alarm On";
+//systemchat "Alarm On";
 	
 //_soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
 //_soundToPlay = _soundPath + "server\sys_idf\idfalarm.wav";
