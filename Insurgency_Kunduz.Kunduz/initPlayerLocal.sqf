@@ -98,7 +98,7 @@ twc_restrictedVehicleSlots = [
 		["commander", 
 			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
 		]
-	]
+	],
 	
 		["RHS_CH_47F_light", 
 		["driver", 
@@ -107,7 +107,7 @@ twc_restrictedVehicleSlots = [
 		["commander", 
 			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
 		]
-	]
+	],
 	
 			["UK3CB_BAF_Merlin_HC3_CSAR", 
 		["driver", 

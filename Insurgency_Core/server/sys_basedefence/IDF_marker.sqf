@@ -15,9 +15,9 @@ _hour = floor daytime;
 _minute = floor ((daytime - _hour) * 60);
 _second = floor (((((daytime) - (_hour))*60) - _minute)*60);
 _time24 = text format ["%1:%2:%3",_hour,_minute,_second];
-
+_wait = (random 60)+60;
 //systemchat "marker approved";
-sleep (random 60)+60;
+sleep _wait;
 //systemchat "marker on";
 			_color = "ColorRed";
 //			_object = InsP_aaGroup call BIS_fnc_selectRandom;
