@@ -12,7 +12,7 @@ _accuracy = if(isNil "idfbasesize") then {40
 _distancescale = _accuracy * ((_distance * (_distance*0.2)) / 3500000);
 //systemchat format ["%1, %2", _distancescale, _distance];
 
-//if (side group _shooter isEqualTo East) then {
+if (side group _shooter isEqualTo East) then {
 if (idfreported == 0) then {
 if ((_shooter) distance _base < 5000) then
 {
@@ -52,4 +52,4 @@ execVM "Insurgency_Core\client\sys_basedefence\IDF_Clear.sqf";
 };
 };
 };
-//};
+};

@@ -41,7 +41,8 @@ if(_iedType in iedSpoofs)then{
 	_ied = createMine [_iedType, _position, [], 0];
 };
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,0]); // Still no idea why Mike did this
+_ied setPos (getPos _ied vectorAdd [0,0,-0.04]); // Still no idea why Mike did this
+
 
 _ied addEventHandler ["Killed", {
 	["TWC_Insurgency_adjustPoints", -1] call CBA_fnc_serverEvent;
