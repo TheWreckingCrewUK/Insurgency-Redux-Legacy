@@ -53,7 +53,7 @@ _markerstr2 setMarkerText "Very Important Person";
 //Spawning the enemies
 [_pos]spawn{
 _pos = (_this select 0);
-_num = (floor random (count townspawn));
+_num = 0;
 _total = 10;
 _group = createGroup East;
 	for "_i" from 1 to _total do{
