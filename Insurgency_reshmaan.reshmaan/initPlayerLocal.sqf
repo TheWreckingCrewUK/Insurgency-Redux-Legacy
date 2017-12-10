@@ -16,6 +16,7 @@ twc_scoreableAmmoBoxes = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_A
 twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F","CUP_BAF_IEDBox","Box_IED_Exp_F","twc_SuppliesBox"];
 
 
+execVM "Insurgency_Core\client\init.sqf";
  
 if ((typeOf vehicle player == "Modern_British_Jetpilot") or (typeOf vehicle player == "Modern_USMC_Jetpilot") ) then{ 
 
@@ -100,14 +101,7 @@ twc_restrictedVehicleSlots = [
 		]
 	],
 	
-		["RHS_CH_47F_light", 
-		["driver", 
-			["Modern_USMC_HeliPilot","Modern_British_HeliPilot"]
-		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
+
 	
 			["UK3CB_BAF_Merlin_HC3_CSAR", 
 		["driver", 
@@ -140,5 +134,3 @@ _justPlayers = count(allPlayers - entities "HeadlessClient_F");
 if(false)then{
 	["End2", false, 0] call BIS_fnc_endMission;
 };
-
-execVM "Insurgency_Core\client\init.sqf";
