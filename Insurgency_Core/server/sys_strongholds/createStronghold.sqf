@@ -9,11 +9,11 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 
 //Spawning a load of hostiles and the civs
-_num = 0;
+_num = (floor random (count townspawn));
 _total = 16;
 _group = createGroup East;
 for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
+	_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
@@ -23,7 +23,7 @@ for "_i" from 1 to _total do{
 	}];
 	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
-	//_num = _num + 1;
+	_num = _num + 1;
 	sleep 0.2;
 };
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
@@ -42,7 +42,7 @@ for "_i" from 1 to 2 do{
 			};
 		}];
 		_unit setVariable ["unitsHome",_pos,false];
-		//_num = _num + 1;
+		_num = _num + 1;
 		sleep 0.2;
 	};
 	[_group, _pos, 150, 3, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;

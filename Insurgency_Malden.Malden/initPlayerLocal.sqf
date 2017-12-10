@@ -15,6 +15,9 @@ twc_FOAllowedPlayers = ["Modern_British_Squadleader"];
 twc_scoreableAmmoBoxes = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F"];
 twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F","CUP_BAF_IEDBox","Box_IED_Exp_F","twc_SuppliesBox"];
 
+
+ 
+
 // Here be the list of vehicles, its restricted slots and players exempt from that
 // always class names of the objects, including the player (so for example British Pilot = Modern_British_heliPilot)
 
@@ -45,18 +48,43 @@ twc_restrictedVehicleSlots = [
 			["Modern_British_HeliPilot"]
 		],
 		["commander", 
-			["Modern_British_JetPilot","Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
 		]
 	],
 	
-	["RHS_UH60M_D", 
+	["CUP_B_UH1Y_Gunship_Dynamic_USMC", 
 		["driver", 
 			["Modern_USMC_HeliPilot"]
 		],
 		["commander", 
-			["Modern_British_JetPilot","Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
+		]
+	],
+	
+
+	
+			["UK3CB_BAF_Merlin_HC3_CSAR", 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["commander", 
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
+		]
+	],
+	
+				["CUP_B_A10_DYN_USA", 
+		["driver", 
+			["Modern_USMC_JetPilot"]
+		]
+	],
+	
+					["CUP_B_GR9_DYN_GB", 
+		["driver", 
+			["Modern_British_JetPilot"]
 		]
 	]
+	
+	
 ];
 //Items creatable from supplies boxes
 twc_supplyBoxBuildables = [["ACE_ConcertinaWireCoil",200],["twc_Land_BagFence_Corner_F",100],["twc_Land_BagFence_Long_F",100],["twc_Land_BagFence_Short_F",100],["twc_Land_BagFence_End_F",100],["twc_Land_BagFence_Round_F",100],["twc_Land_BagBunker_Small_F",500],["Land_PortableLight_double_F",100]];

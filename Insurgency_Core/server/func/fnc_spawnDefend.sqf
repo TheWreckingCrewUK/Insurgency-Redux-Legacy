@@ -30,7 +30,7 @@ for "_i" from 1 to _total do{
 	}];
 	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
-	//_num = _num + 1;
+	_num = _num + 1;
 	sleep 0.2;
 };
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;

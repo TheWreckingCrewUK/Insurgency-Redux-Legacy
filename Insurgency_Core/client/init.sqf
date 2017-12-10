@@ -5,7 +5,6 @@
 #include "sys_restrict\init.sqf";
 #include "sys_score\init.sqf";
 #include "sys_player\init.sqf";
-#include "sys_basedefence\init.sqf";
 #include "func\init.sqf";
 
 "iedRestrictionZone" setMarkerAlpha 0;

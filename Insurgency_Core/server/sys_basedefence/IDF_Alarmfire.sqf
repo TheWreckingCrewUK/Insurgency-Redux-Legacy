@@ -40,10 +40,10 @@ sleep _time;
 //systemchat "middle man sees the shell";
 sleep 2;
 if (idfon == 0) then {
-execVM "Insurgency_Core\client\sys_basedefence\IDF_Alarm.sqf";
+execVM "Insurgency_Core\server\sys_basedefence\IDF_Alarm.sqf";
 };
 if (clearing == 0) then {
-execVM "Insurgency_Core\client\sys_basedefence\IDF_Clear.sqf";
+execVM "Insurgency_Core\server\sys_basedefence\IDF_Clear.sqf";
 };
 
 

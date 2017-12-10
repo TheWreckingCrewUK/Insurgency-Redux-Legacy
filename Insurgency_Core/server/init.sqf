@@ -11,8 +11,11 @@
 #include "sys_objectives\init.sqf";
 #include "sys_forwardBase\init.sqf";
 #include "sys_chat\init.sqf";
-#include "sys_basedefence\init.sqf";
+#include "sys_idf\init.sqf";
 
+
+basemode = 0;
+publicvariable "basemode";
 
 
 // List of civilians who were already questioned
@@ -35,9 +38,6 @@ while{count _strongholdArray < 3}do{
 }forEach _strongholdArray;
 townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
-
-
-//#include "insurgency_core\server\sys_idf\idf.sqf";
 
 //Event Handler to stop players from  airdropping crates.
 ["ace_cargoUnloaded", {
