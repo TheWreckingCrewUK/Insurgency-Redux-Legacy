@@ -35,6 +35,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
         ["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["B_IR_Grenade",2]
 		["HandGrenade",5]
     ];
 
@@ -475,6 +476,105 @@ if (g_class == "BAF_EOD_TECH") then {
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["UK3CB_BAF_Javelin_CLU",1],
+		["UK3CB_BAF_LLM_IR_Black",1]
+	];
+};
+//FST Commander
+if (typeOf vehicle player == "Modern_British_FSTCommander") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_RIS",1],
+        ["ACE_Vector",1],
+		["rhsusf_weap_glock17g4",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+        ["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_epinephrine",5],
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC117F",1],
+		["UK3CB_BAF_LLM_IR_Black",1],
+		["itemCTAB",1],
+		["ACE_wirecutter", 1],
+		["ACE_IR_Strobe_Item",1]
+    ];
+};
+
+//FST Forward Observer
+ if (typeOf vehicle player == "Modern_British_FSTForwardObserver") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_UGL",1],
+        ["CUP_SOFLAM",1]
+		["rhsusf_weap_glock17g4",1],
+	];
+
+    _tmp_magazines =
+    [           
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["1Rnd_HE_Grenade_shell", 40],
+		["1Rnd_Smoke_Grenade_shell", 10],
+		["1Rnd_SmokeRed_Grenade_shell", 10],
+		["1Rnd_SmokeGreen_Grenade_shell", 10],
+		["1Rnd_SmokeYellow_Grenade_shell", 10],
+		["1Rnd_SmokePurple_Grenade_shell", 10],
+		["UGL_FlareWhite_F", 10],
+		["1Rnd_SmokeBlue_Grenade_shell", 10],
+		["HandGrenade",5],
+		["Laserbatteries",1],
+		["ACE_HandFlare_White",5],
+		["B_IR_Grenade",2]
+		
+    ];
+
+	_tmp_items =
+	[
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC152",1],
+		["UK3CB_BAF_LLM_IR_Black",1]
+		["ACE_SpottingScope",1]
+	];
+};
+
+//FST Assistant
+ if (typeOf vehicle player == "Modern_British_FSTAssistant") then {
+    _tmp_weapons =
+    [
+		["UK3CB_BAF_L85A2_RIS",1],
+		["rhsusf_weap_glock17g4",1],
+		["ACE_VMH3",1],
+		["rhs_weap_m72a7",4],
+    ];
+
+    _tmp_magazines =
+    [	
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["HandGrenade",5]
+	];
+
+	_tmp_items = 
+	[
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["UK3CB_BAF_Eotech",1],
+		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 };
