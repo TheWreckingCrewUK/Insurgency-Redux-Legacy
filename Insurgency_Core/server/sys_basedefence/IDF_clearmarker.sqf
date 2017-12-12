@@ -11,7 +11,7 @@ while {markertime < 5} do {
 //systemchat "markreset";
 markertime = markertime + 1;
 publicvariable "markertime";
-sleep 6;
+sleep 60;
 };
 };
 

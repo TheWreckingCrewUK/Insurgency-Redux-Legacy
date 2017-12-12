@@ -1,3 +1,5 @@
+/*
+
 params["_town"];
 
 //Trigger to identify town
@@ -84,3 +86,4 @@ _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
 _trg setTriggerStatements ["count thisList < 4",format["'%1' setMarkerColor 'colorBlufor'; ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent; ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;",_marker],""];
+*/

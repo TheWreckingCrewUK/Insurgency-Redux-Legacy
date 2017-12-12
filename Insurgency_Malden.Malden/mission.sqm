@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=521;
+	toggles=34;
 	class ItemIDProvider
 	{
-		nextID=628;
+		nextID=638;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8046.7241,57.150959,10192.004};
-		dir[]={0.13643226,-0.36884084,0.91946936};
-		up[]={0.054147255,0.92946446,0.36491656};
-		aside[]={0.98921168,-3.4394907e-007,-0.14678159};
+		pos[]={8124.2593,59.112206,10063.615};
+		dir[]={0.8308506,-0.27881795,0.48179814};
+		up[]={0.2412812,0.9603138,0.13991591};
+		aside[]={0.50169176,-7.2724652e-007,-0.86515993};
 	};
 };
 binarizationWanted=0;
@@ -59,13 +59,16 @@ addons[]=
 	"A3_Modules_F",
 	"CUP_CAMisc_E_WF",
 	"CUP_Misc3_Config",
-	"A3_Structures_F_Items_Vessels"
+	"A3_Structures_F_Items_Vessels",
+	"A3_Characters_F_Common",
+	"CUP_WaterVehicles_Weapons",
+	"A3_Structures_F_Ind_Cargo"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=33;
+		items=35;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -274,6 +277,19 @@ class AddonsMetaData
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
+		class Item33
+		{
+			className="CUP_WaterVehicles_Weapons";
+			name="CUP_WaterVehicles_Weapons";
+			author="Community Upgrade Project and ATLAS Mod";
+		};
+		class Item34
+		{
+			className="A3_Structures_F_Ind";
+			name="Arma 3 - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=16337384;
@@ -307,7 +323,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=75;
+		items=79;
 		class Item0
 		{
 			dataType="Marker";
@@ -452,7 +468,7 @@ class Mission
 			position[]={8112.3218,29.517475,10104.484};
 			name="crate";
 			type="Empty";
-			angle=97.276749;
+			angle=97.276741;
 			id=93;
 			atlOffset=1.5258789e-005;
 		};
@@ -1930,7 +1946,7 @@ class Mission
 			};
 			id=404;
 			type="twc_medical_hemtt";
-			atlOffset=-3.8146973e-006;
+			atlOffset=-7.4386597e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4374,7 +4390,7 @@ class Mission
 			};
 			id=580;
 			type="B_Truck_01_Repair_F";
-			atlOffset=-5.7220459e-006;
+			atlOffset=-2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5242,6 +5258,313 @@ class Mission
 			};
 			id=624;
 			atlOffset=1.9073486e-006;
+		};
+		class Item75
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8176.2007,35.949345,10082.136};
+						angles[]={0,4.6662598,0};
+					};
+					side="West";
+					flags=2;
+					class Attributes
+					{
+						name="cramG";
+					};
+					id=631;
+					type="B_UAV_AI";
+					atlOffset=0.77346039;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=631;
+						item1=630;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=629;
+			atlOffset=0.77346039;
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8176.1963,38.685986,10082.462};
+				angles[]={0,4.6662598,0};
+			};
+			side="West";
+			flags=2;
+			class Attributes
+			{
+				lock="LOCKEDPLAYER";
+				name="cram";
+			};
+			id=630;
+			type="CUP_WV_B_CRAM";
+			atlOffset=0.77346039;
+		};
+		class Item77
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8185.0732,28.889999,10082.576};
+			};
+			areaSize[]={1,-1,1};
+			id=633;
+			type="ModuleEditTerrainObject_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#name";
+					expression="_this setVariable [""#name"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="#initServer";
+					expression="_this setVariable [""#initServer"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="#state";
+					expression="_this setVariable [""#state"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="#allowDamage";
+					expression="_this setVariable [""#allowDamage"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="#doorStates";
+					expression="_this setVariable [""#doorStates"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="#init";
+					expression="_this setVariable [""#init"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=7;
+			};
+		};
+		class Item78
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8176.606,34.637215,10082.354};
+				angles[]={0,4.7123914,4.712389};
+			};
+			side="Empty";
+			class Attributes
+			{
+				createAsSimpleObject=1;
+				disableSimulation=1;
+			};
+			id=637;
+			type="Land_Cargo20_white_F";
+			atlOffset=3.9202232;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
