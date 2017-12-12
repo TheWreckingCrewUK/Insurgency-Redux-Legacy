@@ -36,7 +36,7 @@ _box AddMagazineCargoGlobal ["UK3CB_BAF_200Rnd_T",1];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",5];
 
-_box AddMagazineCargoGlobal ["UK3CB_BAF_9_17Rnd",10];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_9_17Rnd",8];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",8];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
 
@@ -44,7 +44,7 @@ _box addItemCargoGlobal ["ACE_fieldDressing",20];
 _box addItemCargoGlobal ["ACE_elasticBandage",20];
 _box addItemCargoGlobal ["ACE_quikclot",20];
 _box addItemCargoGlobal ["ACE_packingBandage",20];
-_box addItemCargoGlobal ["ACE_personalAidKit",5];
+_box addItemCargoGlobal ["ACE_personalAidKit",1];
 _box addItemCargoGlobal ["ACE_salineIV_500",3];
 _box addItemCargoGlobal ["ACE_atropine",5];
 _box addItemCargoGlobal ["ACE_epinephrine",5];
