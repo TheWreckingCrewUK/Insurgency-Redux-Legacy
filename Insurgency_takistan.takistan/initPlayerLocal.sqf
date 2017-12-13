@@ -17,45 +17,6 @@ twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_Amm
 
 
  
-if ((typeOf vehicle player == "Modern_British_Jetpilot") or (typeOf vehicle player == "Modern_USMC_Jetpilot") ) then{ 
-
-if (count allplayers <8) then {
-//if(!isMultiplayer)exitWith{};
-
-while {count allplayers <8}do{
-    [
-        "<t size='1.2'>Jet Pilot</t><br/><t size='0.6'>You need more than 8 people in the game before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
-    ] spawn bis_fnc_dynamictext;
-	sleep 5;
-cutText ["", "Black", 0.001];
-player forceWalk true;
-player setdamage 1;
-};
-cutText ["","Black IN",5];
-player forceWalk false;
-
-};
-};
-
-if ((typeOf vehicle player == "Modern_British_Sniper") or (typeOf vehicle player == "Modern_USMC_Spotter") ) then{ 
-
-if (count allplayers <8) then {
-//if(!isMultiplayer)exitWith{};
-
-while {count allplayers <8}do{
-    [
-        "<t size='1.2'>Sniper Team</t><br/><t size='0.6'>You need more than 8 people in the game before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
-    ] spawn bis_fnc_dynamictext;
-	sleep 5;
-cutText ["", "Black", 0.001];
-player forceWalk true;
-player setdamage 1;
-};
-cutText ["","Black IN",5];
-player forceWalk false;
-
-};
-};
 
 // Here be the list of vehicles, its restricted slots and players exempt from that
 // always class names of the objects, including the player (so for example British Pilot = Modern_British_heliPilot)
@@ -100,14 +61,7 @@ twc_restrictedVehicleSlots = [
 		]
 	],
 	
-		["RHS_CH_47F_light", 
-		["driver", 
-			["Modern_USMC_HeliPilot","Modern_British_HeliPilot"]
-		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
+
 	
 			["UK3CB_BAF_Merlin_HC3_CSAR", 
 		["driver", 
