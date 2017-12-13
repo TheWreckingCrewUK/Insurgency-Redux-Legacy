@@ -14,7 +14,7 @@ InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sy
 	_questionAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && !((_this select 0) getVariable ["ACE_isUnconscious",false])}] call ace_interact_menu_fnc_createAction;
 	
 	[_x, 0, ["ACE_MainActions"], _questionAction] call ace_interact_menu_fnc_addActionToClass;
-}forEach civiliantype
+} forEach civiliantype;
 
 EvidenceAction = [ "CollectEvidence", "Collect Evidence", "", { [ 5, [(_this select 0)], { [(_this select 0)] spawn InsP_fnc_Evidence }, {}, "Examining Evidence..." ] call ace_common_fnc_progressBar }, { alive (_this select 0) } ] call ace_interact_menu_fnc_createAction;
 
