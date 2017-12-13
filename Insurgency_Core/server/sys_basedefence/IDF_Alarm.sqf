@@ -13,11 +13,13 @@ sleep 1;
 
 //	[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
 //call TWC_fnc_idfsiren;	
-playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
-sleep 8;
+
+	[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
+//playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
+sleep 20;
 	idfsafe = 0;
 	publicvariable "idfsafe";
-playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
+//playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
 
 sleep 6;
 alarm = 0;

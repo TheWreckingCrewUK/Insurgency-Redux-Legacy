@@ -1,8 +1,5 @@
 
 
-clearingmarker = 0;
-publicvariable "clearingmarker";
-clearon = 1;
 //systemchat "marker init";
 if (markertime < 5) then {
 //systemchat "marker start reset";

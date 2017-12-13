@@ -4,7 +4,6 @@
 
 //if (idfguns find (str (_object)) <0) then {
 if (clearingmarker == 0) then {
-
 markertime = 0;
 publicvariable "markertime";
 _object = _this select 0;
@@ -32,7 +31,7 @@ sleep _wait;
 
 
 if (clearingmarker == 0) then {
-execVM "Insurgency_Core\client\sys_basedefence\IDF_clearmarker.sqf";};
+execVM "Insurgency_Core\server\sys_basedefence\IDF_clearmarker.sqf";};
 		
 			sleep 3600;
 			deletemarker _marker;
