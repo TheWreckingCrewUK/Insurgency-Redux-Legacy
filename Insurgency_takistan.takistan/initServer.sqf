@@ -49,7 +49,7 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
-badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
+badTownArray = ["airfield","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
 
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
