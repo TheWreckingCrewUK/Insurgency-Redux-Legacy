@@ -20,10 +20,12 @@ twc_surrenderVote = false;
 * "MidEast" - Middle East
 * "IRA" - Irish
 */
+
+
 TWC_Building_Style = "Med";
 
 civilianType = ["greek_Civ_Men_1", "greek_Civ_Men_2", "greek_Civ_Men_3", "greek_Civ_Men_4", "greek_Civ_Men_5", "greek_Civ_Men_6", "greek_Civ_Men_7", "greek_Civ_Men_8", "greek_Civ_Men_9", "greek_Civ_Men_10", "greek_Civ_Men_11"];
-
+publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
 
 AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";

@@ -30,9 +30,8 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
 };
 if((typeOf player) in ["Modern_British_Quartermaster"])then{
+execVM "insurgency_core\client\zeus\camera.sqf";
 
-		_action0 = ["Camera","Start Camera","",{execVM "insurgency_core\client\zeus\camera.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _action2] call ace_interact_menu_fnc_addActionToObject;
 	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf"},{true}] call ace_interact_menu_fnc_createAction;
@@ -44,8 +43,11 @@ if((typeOf player) in ["Modern_British_Quartermaster"])then{
 	
 
 	
-	_action7 = ["Zeus","IDF Siren","",{execVM "Insurgency_Core\client\IDFalarm\IDF_alarm.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_action7 = ["Zeus","IDF Siren","",{[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;},{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _action7] call ace_interact_menu_fnc_addActionToObject;
+	
+	_action8 = ["Zeus","Clear Siren","",{[idfalarm, "TWC_sound_idfclear"] call CBA_fnc_globalSay3d;},{true}] call ace_interact_menu_fnc_createAction;
+	[player, 1, ["ACE_SelfActions"], _action8] call ace_interact_menu_fnc_addActionToObject;
 	
 	
 	

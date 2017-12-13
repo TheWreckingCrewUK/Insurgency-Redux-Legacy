@@ -24,6 +24,7 @@ TWC_Building_Style = "Med";
 
 civilianType = ["Tak_Civ_Men_KTL1", "CUP_C_TK_Man_04_Jack", "Tak_Civ_Men_KTL2","CUP_C_TK_Man_07_Coat", "Tak_Civ_Men_KTL3", "Tak_Civ_Men_KTL4", "Tak_Civ_Men_KTs1", "Tak_Civ_Men_KTs2", "Tak_Civ_Men_KTs3", "Tak_Civ_Men_KTs4",  "CUP_C_TK_Man_05_Jack", "Tak_Civ_Men_J1", "Tak_Civ_Men_J2", "Tak_Civ_Men_J3"];
 
+publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
 
 AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";
