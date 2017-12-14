@@ -10,7 +10,7 @@
 
 _boxClass = "UK3CB_BAF_Box_M6";
 
-_box = _boxClass createVehicle (getPos ammoCrateSpawnPad);
+_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
@@ -24,11 +24,11 @@ _box AddWeaponCargoGlobal ["UK3CB_BAF_M6",1];
 
 _box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",50];
 _box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Flare_White",10];
-_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",10];
+_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",20];
 
 //Respawn/Despawn Script
 
-_trg = createTrigger ["EmptyDetector", getPos ammoCrateSpawnPad];
+_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
 _trg setTriggerArea [5,5,0,false];
 _trg setTriggerActivation ["WEST", "NOT PRESENT", false];
 _trg setTriggerTimeout [1800,1800,1800,true];
