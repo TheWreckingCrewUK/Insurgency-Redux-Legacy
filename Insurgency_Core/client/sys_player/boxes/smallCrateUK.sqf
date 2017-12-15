@@ -8,7 +8,7 @@
 */
 _boxClass = "ACE_Box_Ammo";
 
-_box = _boxClass createVehicle (getPos ammoCrateSpawnPad);
+_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
@@ -21,7 +21,7 @@ _box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 
 //supplies
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",1];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd",3];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd",4];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",20];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
@@ -30,8 +30,8 @@ _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",20];
 _box AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
 
-_box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",3];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_200Rnd_T",1];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",4];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_200Rnd_T",2];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",5];
@@ -45,7 +45,7 @@ _box addItemCargoGlobal ["ACE_elasticBandage",20];
 _box addItemCargoGlobal ["ACE_quikclot",20];
 _box addItemCargoGlobal ["ACE_packingBandage",20];
 _box addItemCargoGlobal ["ACE_personalAidKit",1];
-_box addItemCargoGlobal ["ACE_salineIV_500",3];
+_box addItemCargoGlobal ["ACE_salineIV_500",6];
 _box addItemCargoGlobal ["ACE_atropine",5];
 _box addItemCargoGlobal ["ACE_epinephrine",5];
 _box addItemCargoGlobal ["ACE_morphine",5];
