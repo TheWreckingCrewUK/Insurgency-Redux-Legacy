@@ -1544,6 +1544,213 @@ if (g_class == "ANA_TL") then {
 		
 	];
 };
+
+
+//90's era kit
+
+ if (typeOf vehicle player == "1990_British_SectionCommander_Desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D_Lazer",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC117F",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+ if (typeOf vehicle player == "1990_British_Rifleman_desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ if (typeOf vehicle player == "1990_British_Rifleman_AT_desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ if (typeOf vehicle player == "1990_British_Gunner_desert") then {
+    _tmp_weapons =
+    [
+		["UK3CB_BAF_L86A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ if (typeOf vehicle player == "1990_British_2IC_desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+ if (typeOf vehicle player == "1990_British_Medic_desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+ if (typeOf vehicle player == "1990_British_Sniper_desert") then {
+    _tmp_weapons =
+    [
+        ["twc_l96_d",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_L42A1_10Rnd",30],
+		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ if (typeOf vehicle player == "1990_British_Spotter_desert") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_L42A1_10Rnd",30],
+		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+ if (typeOf vehicle player == "1990_British_MachineGunner_Desert") then {
+    _tmp_weapons =
+    [
+		["UK3CB_BAF_Tripod",1],
+        ["UK3CB_BAF_L7A2",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_200Rnd",30],
+		["UK3CB_BAF_762_200Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+ if (typeOf vehicle player == "1990_British_mg_assistant_Desert") then {
+    _tmp_weapons =
+    [
+		["UK3CB_BAF_Tripod",1],
+        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_200Rnd",30],
+		["UK3CB_BAF_762_200Rnd_T",20],
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
 /*
  //US Crew Cheif
  if (g_class == "USPLT_CREW") then {

@@ -35,7 +35,7 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN"])t
 	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Small Alpha Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_alphaaction1 = ["Spawnheartscrate","Spawn Hearts & Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_alphaaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction1,true] call ace_interact_menu_fnc_addActionToClass;
 
 };
@@ -90,9 +90,24 @@ execVM "insurgency_core\client\zeus\camera.sqf";
 	
 	_action8 = ["Zeus","Clear Siren","",{[idfalarm, "TWC_sound_idfclear"] call CBA_fnc_globalSay3d;},{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _action8] call ace_interact_menu_fnc_addActionToObject;
+
+};
+
+
+if((typeOf player) in ["1990_British_mg_assistant_Desert"])then{
+
+	_mgaction = ["Spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_mgaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
+};
+
+if((typeOf player) in ["1990_British_2IC_Desert","1990_British_SectionCommander_Desert"])then{
+
 	
+	_90alphaaction = ["SpawnsmallAlphaCreate","Spawn UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk90.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
-	
+	_90alphaaction1 = ["Spawnheartscrate","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
 };
