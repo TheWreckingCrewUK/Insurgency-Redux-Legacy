@@ -75,21 +75,21 @@ if((typeOf player) in ["Modern_British_Quartermaster"])then{
 execVM "insurgency_core\client\zeus\camera.sqf";
 
 	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action2] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action2] call ace_interact_menu_fnc_addActionToObject;
 	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action3] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action3] call ace_interact_menu_fnc_addActionToObject;
 	_action4 = ["Zeus","Basemode On","",{execVM "insurgency_core\client\zeus\basemode_on.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action4] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action4] call ace_interact_menu_fnc_addActionToObject;
 	_action5 = ["Zeus","Basemode Off","",{execVM "insurgency_core\client\zeus\basemode_off.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action5] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action5] call ace_interact_menu_fnc_addActionToObject;
 	
 
 	
 	_action7 = ["Zeus","IDF Siren","",{[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action7] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action7] call ace_interact_menu_fnc_addActionToObject;
 	
 	_action8 = ["Zeus","Clear Siren","",{[idfalarm, "TWC_sound_idfclear"] call CBA_fnc_globalSay3d;},{true}] call ace_interact_menu_fnc_createAction;
-	[player, 1, ["ACE_SelfActions"], _action8] call ace_interact_menu_fnc_addActionToObject;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action8] call ace_interact_menu_fnc_addActionToObject;
 
 };
 
