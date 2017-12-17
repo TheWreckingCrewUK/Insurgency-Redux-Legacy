@@ -56,7 +56,7 @@ for "_i" from 1 to 5 do{
 //Add Enemies
 
 _nearest=objNull;
-_nearestdist=300;
+_nearestdist=200;
 {
 	_dist=vehicle _x distance _pos;
 	if (isPlayer _x and _dist<_nearestdist) then {
@@ -68,7 +68,13 @@ _nearestdist=300;
 
 //Complete or fail
 
-[_taskID] call bis_fnc_deleteTask;
-["TWC_Insurgency_objCompleted", ["CarBomb", _objType]] call CBA_fnc_serverEvent;
-deleteMarker _markerstr;
-deleteMarker _markerstr2;
+[
+	{
+		[(_this select 1)] call bis_fnc_deleteTask;
+		deleteMarker (_this select 2);
+		deleteMarker (_this select 3);
+		["TWC_Insurgency_objCompleted", ["CarBomb", (_this select 0)]] call CBA_fnc_serverEvent;
+	},
+	[_objType, _taskID, _markerstr, _markerstr2],
+	(60 + ((floor random 10) * 6))
+] call CBA_fnc_waitAndExecute;
