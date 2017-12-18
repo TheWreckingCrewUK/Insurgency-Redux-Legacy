@@ -19,8 +19,12 @@ sleep 10;
 //playSound3D ["A3\Sounds_F\sfx\alarmCar.wss", idfalarm, false, getposasl idfalarm,5,0.5];
 
 
-	[idfalarm, "TWC_sound_idfclear"] call CBA_fnc_globalSay3d;
 
+	{
+	[_x, "TWC_sound_idfclear"] call CBA_fnc_globalSay3d;
+} forEach sirenlist;
+
+	
 basesafe = 201;
 publicvariable "basesafe";
 
