@@ -31,7 +31,7 @@ _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
 _box AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",4];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_200Rnd_T",2];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",5];

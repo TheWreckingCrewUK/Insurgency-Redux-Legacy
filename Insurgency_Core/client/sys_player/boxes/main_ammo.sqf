@@ -1661,7 +1661,16 @@ if (g_class == "ANA_TL") then {
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",1],
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_bodyBag", 10]
 	];
 };
 
