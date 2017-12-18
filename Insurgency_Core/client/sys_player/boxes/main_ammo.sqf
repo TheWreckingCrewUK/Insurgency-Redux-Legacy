@@ -493,7 +493,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     [
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
-        ["rhsusf_mag_17Rnd_9x19_JHP",15],
+        ["rhsusf_mag_17Rnd_9x19_JHP",5],
 		["HandGrenade",5]
     ];
 
@@ -527,7 +527,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     [           
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
-		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["rhsusf_mag_17Rnd_9x19_JHP",5],
 		["1Rnd_HE_Grenade_shell", 40],
 		["1Rnd_Smoke_Grenade_shell", 10],
 		["1Rnd_SmokeRed_Grenade_shell", 10],
@@ -569,7 +569,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     [	
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
-		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["rhsusf_mag_17Rnd_9x19_JHP",5],
 		["HandGrenade",5]
 	];
 
@@ -1516,7 +1516,7 @@ if (g_class == "ANA_TL") then {
 	];
 };
 */
- //US Pilot
+//US Pilot
  if (typeOf vehicle player == "TWC_Modern_US_Army_HeliPilot") then {
     _tmp_weapons =
     [
@@ -1736,7 +1736,6 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
-
  if (typeOf vehicle player == "1990_British_mg_assistant_Desert") then {
     _tmp_weapons =
     [
@@ -1755,6 +1754,89 @@ if (g_class == "ANA_TL") then {
 
 	_tmp_items =
 	[
+		["ACRE_PRC343",1]
+	];
+};
+
+//FST Commander (90's)
+ if((typeOf player) in ["1990_British_FSTCommander", "1990_British_FSTCommander_Desert"])then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["ACE_Vector",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_epinephrine",5],
+		["UK3CB_BAF_SUSAT_3D",1],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC117F",1],
+		["ACE_wirecutter", 1],
+		["ACE_IR_Strobe_Item",1]
+    ];
+};
+
+//FST Forward Observer (90's)
+ if((typeOf player) in ["1990_British_FSTForwardObserver", "1990_British_FSTForwardObserver_Desert"]) then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["CUP_SOFLAM",1]
+	];
+
+    _tmp_magazines =
+    [           
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["HandGrenade",5],
+		["Laserbatteries",1],
+		["ACE_HandFlare_White",5],
+		["B_IR_Grenade",2]
+    ];
+
+	_tmp_items =
+	[
+		["UK3CB_BAF_SUSAT_3D",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC152",1],
+		["ACE_SpottingScope",1]
+	];
+};
+
+//FST Assistant (90's)
+ if((typeOf player) in ["1990_British_FSTAssistant", "1990_British_FSTAssistant_Desert"]) then{
+    _tmp_weapons =
+    [
+		["UK3CB_BAF_L85A1_SUSAT3D",1],
+		["rhs_weap_maaws",1],
+		["rhs_weap_m72a7",1]
+    ];
+
+    _tmp_magazines =
+    [	
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["rhs_mag_maaws_HE",5],
+		["rhs_mag_maaws_HEAT",5],
+		["HandGrenade",5]
+	];
+
+	_tmp_items = 
+	[
+		["UK3CB_BAF_SUSAT_3D",1],
+		["rhs_optic_maaws",1],
 		["ACRE_PRC343",1]
 	];
 };
