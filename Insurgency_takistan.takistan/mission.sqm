@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1587;
+		nextID=1590;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8302.9063,299.54843,2141.7219};
-		dir[]={-0.33888805,-0.21123084,0.91685611};
-		up[]={-0.07324253,0.97742707,0.19815437};
-		aside[]={0.93802053,-8.7020453e-008,0.34670874};
+		pos[]={8298.9541,305.9212,2118.5371};
+		dir[]={-0.019216269,-0.36439449,0.93112528};
+		up[]={-0.0075188484,0.93123013,0.36434656};
+		aside[]={0.99985808,5.4606062e-008,0.020631419};
 	};
 };
 binarizationWanted=0;
@@ -349,7 +349,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=281;
+		items=284;
 		class Item0
 		{
 			dataType="Marker";
@@ -9239,6 +9239,124 @@ class Mission
 			id=1586;
 			type="Land_Laptop_device_F";
 			atlOffset=3.4942322;
+		};
+		class Item281
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8274.5313,299.54318,2156.6567};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="idfalarm_1";
+			};
+			id=1587;
+			type="Land_Loudspeakers_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item282
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8171.7622,299.54318,1952.3158};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="idfalarm_2";
+			};
+			id=1588;
+			type="Land_Loudspeakers_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item283
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8232.8311,299.32843,2174.875};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="idfalarm_3";
+			};
+			id=1589;
+			type="Land_Loudspeakers_F";
+			atlOffset=0.0060119629;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

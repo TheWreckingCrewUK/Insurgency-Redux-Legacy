@@ -15,8 +15,10 @@
 * Public: No
 */
 pointLimit = 1000;
+if(isNil "totalPoints") then{
 totalPoints = 0;
 publicVariable "totalPoints"; // init once
+};
 
 _highestPlayerCountReached = 0; // the highest count reached of total connected players
 

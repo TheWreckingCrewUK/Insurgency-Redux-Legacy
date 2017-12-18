@@ -22,6 +22,9 @@ twc_surrenderVote = false;
 */
 TWC_Building_Style = "Med";
 
+sirenlist = [idfalarm];
+publicvariable "sirenlist";
+
 civilianType = ["Tak_Civ_Men_KTL1", "CUP_C_TK_Man_04_Jack", "Tak_Civ_Men_KTL2","CUP_C_TK_Man_07_Coat", "Tak_Civ_Men_KTL3", "Tak_Civ_Men_KTL4", "Tak_Civ_Men_KTs1", "Tak_Civ_Men_KTs2", "Tak_Civ_Men_KTs3", "Tak_Civ_Men_KTs4",  "CUP_C_TK_Man_05_Jack", "Tak_Civ_Men_J1", "Tak_Civ_Men_J2", "Tak_Civ_Men_J3"];
 
 publicvariable "civiliantype";
@@ -50,13 +53,16 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
-badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
+badTownArray = ["Airport north","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
 
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
 //defines how close mortar shells have to be predicted to land before tripping the base alarm. FOB kunduz is 40 as a baseline.
 idfbasesize = 70;
 publicvariable "idfbasesize";
+
+totalPoints = 750;
+publicVariable "totalPoints";
 
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;

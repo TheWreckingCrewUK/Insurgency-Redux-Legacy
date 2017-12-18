@@ -8,7 +8,7 @@ class EditorData
 	toggles=34;
 	class ItemIDProvider
 	{
-		nextID=660;
+		nextID=663;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8168.1636,46.547009,10137.079};
-		dir[]={0.0020533751,-0.4384653,-0.89887923};
-		up[]={0.0010028688,0.89868921,-0.43856391};
-		aside[]={-1.0001253,-2.020297e-007,-0.0022827352};
+		pos[]={8070.6904,35.884666,10135.743};
+		dir[]={-0.17222522,-0.39159775,-0.90400767};
+		up[]={-0.073305584,0.92008376,-0.3847858};
+		aside[]={-0.98245239,-6.0460297e-007,0.18717225};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=84;
+		items=87;
 		class Item0
 		{
 			dataType="Marker";
@@ -2422,6 +2422,25 @@ class Mission
 						};
 						class Attribute1
 						{
+							property="ace_isMedic";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
 							property="speaker";
 							expression="_this setspeaker _value;";
 							class Value
@@ -2439,7 +2458,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
+						class Attribute3
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -2458,7 +2477,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 			};
@@ -3435,7 +3454,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8067.9463,29.610645,10102.646};
+						position[]={8067.9458,29.610649,10102.646};
 						angles[]={0,1.5738508,0};
 					};
 					side="West";
@@ -3447,7 +3466,6 @@ class Mission
 					};
 					id=552;
 					type="Modern_USMC_Medic";
-					atlOffset=-3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3471,6 +3489,25 @@ class Mission
 						};
 						class Attribute1
 						{
+							property="ace_isMedic";
+							expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"",_value,true];};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
 							property="speaker";
 							expression="_this setspeaker _value;";
 							class Value
@@ -3488,7 +3525,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
+						class Attribute3
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -3507,7 +3544,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						nAttributes=4;
 					};
 				};
 			};
@@ -5724,6 +5761,57 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item84
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8185.2578,34.360096,10092.74};
+				angles[]={0,3.1457114,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_1";
+			};
+			id=660;
+			type="Loudspeaker";
+			atlOffset=5.4701195;
+		};
+		class Item85
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8093.4556,35.130497,10235.721};
+				angles[]={0,1.5749152,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_2";
+			};
+			id=661;
+			type="Loudspeaker";
+			atlOffset=5.9003696;
+		};
+		class Item86
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8102.0566,35.40659,10035.125};
+				angles[]={0,3.1457114,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_3";
+			};
+			id=662;
+			type="Loudspeaker";
+			atlOffset=6.2629604;
 		};
 	};
 };

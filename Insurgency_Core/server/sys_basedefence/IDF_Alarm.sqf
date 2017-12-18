@@ -14,7 +14,11 @@ sleep 1;
 //	[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
 //call TWC_fnc_idfsiren;	
 
-	[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
+{
+	[_x, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
+} forEach sirenlist;
+
+
 //playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
 sleep 20;
 	idfsafe = 0;

@@ -57,7 +57,7 @@ _num = 0;
 _total = 10;
 _group = createGroup East;
 	for "_i" from 1 to _total do{
-		_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+		_unit = _group createUnit [(townspawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
 		_unit addEventHandler ["Killed",{
 			[(_this select 0)] call twc_fnc_deleteDead;
 			if (side (_this select 1) == WEST) then{

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1460;
+		nextID=1465;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3350.28,26.881859,4991.6372};
-		dir[]={0.73565942,-0.26094511,-0.62521464};
-		up[]={0.1988699,0.96533591,-0.16901471};
-		aside[]={-0.64765346,-2.8708018e-007,-0.76205873};
+		pos[]={3385.0376,14.732549,4952.7939};
+		dir[]={-0.079189688,-0.26477328,-0.96116722};
+		up[]={-0.021746598,0.96428961,-0.26393729};
+		aside[]={-0.9967379,4.7520734e-007,0.082119107};
 	};
 };
 binarizationWanted=0;
@@ -351,7 +351,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=415;
+		items=420;
 		class Item0
 		{
 			dataType="Marker";
@@ -7744,7 +7744,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3359.5259,11.157302,4996.4136};
+				position[]={3360.7454,11.271456,4996.2139};
 				angles[]={0,4.3580599,0};
 			};
 			side="Empty";
@@ -7753,7 +7753,7 @@ class Mission
 			};
 			id=1159;
 			type="Land_LampHalogen_F";
-			atlOffset=0.31891394;
+			atlOffset=0.31893587;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7822,7 +7822,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3492.3367,12.064144,4948.938};
+				position[]={3490.4333,12.041302,4949.2837};
 				angles[]={0,5.7289205,0};
 			};
 			side="Empty";
@@ -7831,7 +7831,7 @@ class Mission
 			};
 			id=1161;
 			type="Land_LampHalogen_F";
-			atlOffset=0.30392408;
+			atlOffset=0.30392218;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15538,6 +15538,306 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item415
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3362.3132,10.540063,4856.2173};
+				angles[]={0,3.0344467,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_1";
+				disableSimulation=1;
+			};
+			id=1460;
+			type="Loudspeaker";
+			atlOffset=3.108531;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item416
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3451.6023,12.042964,4840.708};
+				angles[]={0,1.8922307,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_2";
+				disableSimulation=1;
+			};
+			id=1461;
+			type="Loudspeaker";
+			atlOffset=4.7543058;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item417
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3360.9639,12.104663,4996.0322};
+				angles[]={0,5.4701886,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_3";
+				disableSimulation=1;
+			};
+			id=1462;
+			type="Loudspeaker";
+			atlOffset=4.8134236;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item418
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3490.1824,12.844435,4949.1772};
+				angles[]={0,1.2265743,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_4";
+				disableSimulation=1;
+			};
+			id=1463;
+			type="Loudspeaker";
+			atlOffset=4.6338654;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item419
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3386.863,8.962286,4915.6143};
+				angles[]={0,5.1712737,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="idfalarm_5";
+				disableSimulation=1;
+			};
+			id=1464;
+			type="Loudspeaker";
+			atlOffset=0.54815388;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};
