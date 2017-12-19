@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=1594;
+		nextID=1599;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3211.9917,63.356159,1340.9355};
-		dir[]={0.66242737,-0.5294016,0.53026325};
-		up[]={0.41330731,0.84838271,0.33084148};
-		aside[]={0.62498164,2.0051375e-006,-0.78077108};
+		pos[]={3300.7771,14.093784,1422.749};
+		dir[]={0.4378159,-0.23182397,-0.86880314};
+		up[]={0.10435135,0.9727329,-0.2070809};
+		aside[]={-0.89310628,-1.4747493e-006,-0.45005384};
 	};
 };
 binarizationWanted=0;
@@ -229,7 +229,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=74;
 		class Item0
 		{
 			dataType="Marker";
@@ -4122,6 +4122,66 @@ class Mission
 			id=1593;
 			type="Land_HBarrier_Big_F";
 			atlOffset=-0.024331093;
+		};
+		class Item73
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3302.9409,11.47928,1420.0822};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=1596;
+					type="1990_British_FSTCommander_Desert";
+					atlOffset=-0.096899986;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3301.9084,11.484105,1419.0037};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1597;
+					type="1990_British_FSTForwardObserver_Desert";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3300.3616,11.424789,1417.9861};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1594;
+					type="1990_British_FSTAssistant_Desert";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1595;
+			atlOffset=-0.096899986;
 		};
 	};
 };
