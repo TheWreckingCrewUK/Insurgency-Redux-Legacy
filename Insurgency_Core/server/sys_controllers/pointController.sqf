@@ -14,7 +14,7 @@
 *
 * Public: No
 */
-pointLimit = 1000;
+pointLimit = 400;
 if(isNil "totalPoints") then{
 totalPoints = 0;
 publicVariable "totalPoints"; // init once

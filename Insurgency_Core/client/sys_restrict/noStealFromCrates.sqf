@@ -20,6 +20,11 @@ player addEventHandler ["Take", {
 		_text = format["The %1 has been put back in the %2",([_item] call twc_fnc_getDisplayName),getText (configFile >> "cfgVehicles" >> (typeOf _container) >> "displayName")];
 		hint parseText (_title + _text);
 	};
+	
+		if(_item in twc_heavybackpacks)then{
+		_unit forcewalk true;
+	};
+	
 }];
 
 player addEventHandler ["Put", {
@@ -31,4 +36,9 @@ player addEventHandler ["Put", {
 		_text = "This is a restricted crate. Anything you place in it you won't be able to get back!";
 		hint parseText (_title + _text);
 	};
+	
+			if(_item in twc_heavybackpacks)then{
+		_unit forcewalk false;
+	};
+	
 }];

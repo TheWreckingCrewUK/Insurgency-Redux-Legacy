@@ -17,9 +17,11 @@ _weapons = [];
 _magazines = [["SmokeShell",5], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",5], ["Chemlight_yellow",5], ["Chemlight_red",5], ["Chemlight_blue",5],["ACE_Chemlight_IR",5]];
 _items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1]];
 
+_backpacks = [];
 _tmp_weapons = [];
 _tmp_magazines = [];
 _tmp_items = [];
+_tmp_backpacks = [];
 
 //BAF Section Leader
 if (typeOf vehicle player == "Modern_British_Squadleader") then {
@@ -54,6 +56,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
+				_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
 };
 
 //BAF Rifleman Pointman
@@ -85,6 +92,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_Eotech",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -121,6 +133,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //BAF Automatic Rifleman
@@ -146,6 +163,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["UK3CB_BAF_Kite",1],
 		["ACRE_PRC343",1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -197,6 +219,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
 	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //BAF Machine Gunner
@@ -219,6 +246,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	_tmp_items = 
 	[
 		["ACRE_PRC343",1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
  
@@ -249,6 +281,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_MaxiKite",1],
 		["ACRE_PRC343",1]
 	];	
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
  if (typeOf vehicle player == "Modern_British_Medic") then {
     _tmp_weapons =
@@ -279,6 +316,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
 		["ACRE_PRC343", 1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -314,6 +356,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_MaxiKite",1],
 		["ACE_Tripod",1],
 		["HandGrenade",5]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -360,6 +407,11 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_ATragMX",1],
 		["ACE_Tripod",1],
 		["itemCTAB",1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 /*
@@ -512,6 +564,11 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //FST Forward Observer
@@ -551,6 +608,11 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_SpottingScope",1]
 	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //FST Assistant
@@ -579,6 +641,11 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UK3CB_BAF_Eotech",1],
 		["ACRE_PRC343",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
+	];
+
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 //US Section Leader
@@ -1950,6 +2017,10 @@ if (g_class == "ANA_TL") then {
         _items set [count _items, _x];
 } forEach _tmp_items;
 
+{
+        _backpacks set [count _backpacks, _x];
+} forEach _tmp_backpacks;
+
 // empty it.
 clearWeaponCargo crateBox;
 clearMagazineCargo crateBox;
@@ -1963,4 +2034,6 @@ clearbackPackCargo crateBox;
 {crateBox addMagazineCargo [(_x select 0),(_x select 1)]} foreach _magazines;
 
 {crateBox addItemCargo [(_x select 0),(_x select 1)]} foreach _items;
+
+{crateBox addbackpackCargo [(_x select 0),(_x select 1)]} foreach _backpacks;
 

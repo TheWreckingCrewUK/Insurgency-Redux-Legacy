@@ -61,7 +61,7 @@ badTownArray = ["Airport north","iedrestrictionzone","Bosquet","Faro","Guran","F
 idfbasesize = 70;
 publicvariable "idfbasesize";
 
-totalPoints = 750;
+totalPoints = 350;
 publicVariable "totalPoints";
 
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
