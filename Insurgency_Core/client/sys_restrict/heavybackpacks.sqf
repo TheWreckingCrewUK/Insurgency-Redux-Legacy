@@ -6,7 +6,7 @@ player addEventHandler ["Take", {
 	params["_unit","_container","_item"];
 
 		if(_item in twc_heavybackpacks)then{
-		_unit forcewalk true;
+		_unit allowsprint false;
 	};
 	
 }];
@@ -15,7 +15,7 @@ player addEventHandler ["Put", {
 	params["_unit","_container","_item"];
 	
 			if(_item in twc_heavybackpacks)then{
-		_unit forcewalk false;
+		_unit allowsprint true;
 	};
 	
 }];

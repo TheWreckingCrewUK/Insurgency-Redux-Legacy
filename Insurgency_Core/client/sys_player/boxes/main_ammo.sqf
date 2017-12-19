@@ -58,7 +58,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     ];
 				_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
 };
@@ -96,7 +96,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -136,7 +136,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -167,7 +167,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -222,7 +222,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -250,7 +250,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
  
@@ -284,7 +284,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
  if (typeOf vehicle player == "Modern_British_Medic") then {
@@ -320,7 +320,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -360,7 +360,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -411,7 +411,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 /*
@@ -567,7 +567,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -611,7 +611,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -645,7 +645,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 //US Section Leader

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3440.0449,14.064409,4874.8374};
-		dir[]={-0.55516648,-0.21968316,0.80234784};
-		up[]={-0.12504044,0.97554809,0.18071513};
-		aside[]={0.8224389,4.6566129e-009,0.5690726};
+		pos[]={3363.8796,30.115644,4922.2422};
+		dir[]={-0.61038911,-0.7081244,0.3552725};
+		up[]={-0.61199367,0.7060926,0.35620785};
+		aside[]={0.50309944,-1.9439613e-006,0.86437368};
 	};
 };
 binarizationWanted=0;
@@ -68,14 +68,13 @@ addons[]=
 	"UK3CB_BAF_Weapons_Static",
 	"A3_Structures_F_EPC_Items_Electronics",
 	"CUP_AirVehciles_UH1Y",
-	"CUP_WarfareBuildings",
-	"UK3CB_BAF_Weapons_Ammo"
+	"CUP_WarfareBuildings"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=40;
+		items=39;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -319,13 +318,6 @@ class AddonsMetaData
 			className="CUP_WarfareBuildings";
 			name="CUP_WarfareBuildings";
 		};
-		class Item39
-		{
-			className="UK3CB_BAF_Weapons_Ammo";
-			name="3CB BAF Weapons - Ammo";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
 	};
 };
 randomSeed=16337384;
@@ -359,7 +351,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=421;
+		items=420;
 		class Item0
 		{
 			dataType="Marker";
@@ -15847,45 +15839,6 @@ class Mission
 					};
 				};
 				nAttributes=2;
-			};
-		};
-		class Item420
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3346.9177,5.3579659,4927.2173};
-				angles[]={0.016004669,0,6.2671809};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1465;
-			type="UK3CB_BAF_Box_556_Ammo";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[""UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A""],[1]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
 			};
 		};
 	};
