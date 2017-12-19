@@ -222,7 +222,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 

@@ -21,9 +21,7 @@ player addEventHandler ["Take", {
 		hint parseText (_title + _text);
 	};
 	
-		if(_item in twc_heavybackpacks)then{
-		_unit forcewalk true;
-	};
+
 	
 }];
 
@@ -37,8 +35,6 @@ player addEventHandler ["Put", {
 		hint parseText (_title + _text);
 	};
 	
-			if(_item in twc_heavybackpacks)then{
-		_unit forcewalk false;
-	};
+
 	
 }];
