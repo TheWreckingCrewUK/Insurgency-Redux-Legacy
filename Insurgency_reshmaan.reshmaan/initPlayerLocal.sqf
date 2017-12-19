@@ -15,8 +15,12 @@ twc_FOAllowedPlayers = ["Modern_British_Squadleader"];
 twc_scoreableAmmoBoxes = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F"];
 twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_AmmoOrd_F","CUP_BAF_IEDBox","Box_IED_Exp_F","twc_SuppliesBox"];
 
-
- 
+//Glasses stuff, needs twc mission module to be fleshed out for all missions to work
+/*
+if !((goggles player) in approvedFacewear) then {
+            removeGoggles player;
+        };
+ */
 
 // Here be the list of vehicles, its restricted slots and players exempt from that
 // always class names of the objects, including the player (so for example British Pilot = Modern_British_heliPilot)
