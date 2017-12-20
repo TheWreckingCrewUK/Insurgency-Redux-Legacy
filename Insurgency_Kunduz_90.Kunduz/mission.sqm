@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1564;
+		nextID=1567;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3225.3323,34.607689,1799.1426};
-		dir[]={0.74646652,-0.35090321,-0.56552935};
-		up[]={0.27971873,0.93640423,-0.21191704};
-		aside[]={-0.60393035,-7.4645504e-007,-0.79715717};
+		pos[]={3224.5422,37.93861,1795.6693};
+		dir[]={0.60157967,-0.56270128,-0.56713772};
+		up[]={0.40944043,0.82666022,-0.38599831};
+		aside[]={-0.68603587,-1.2589153e-006,-0.72770125};
 	};
 };
 binarizationWanted=0;
@@ -179,7 +179,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=64;
+		items=63;
 		class Item0
 		{
 			dataType="Marker";
@@ -1203,6 +1203,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1468;
 			type="UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";
@@ -1219,6 +1220,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1469;
 			type="UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";
@@ -1236,6 +1238,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1470;
 			type="UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";
@@ -1252,6 +1255,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1472;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A";
@@ -1292,6 +1296,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1473;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A";
@@ -1332,6 +1337,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1474;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A";
@@ -1371,6 +1377,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1475;
 			type="UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";
@@ -1388,6 +1395,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1476;
 			type="UK3CB_BAF_LandRover_Hard_FFR_MERT_A";
@@ -1446,6 +1454,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1477;
 			type="UK3CB_BAF_LandRover_Hard_FFR_Sand_A";
@@ -1463,6 +1472,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1478;
 			type="UK3CB_BAF_LandRover_Hard_FFR_Sand_A";
@@ -1480,6 +1490,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1479;
 			type="UK3CB_BAF_LandRover_Hard_FFR_Sand_A";
@@ -1497,6 +1508,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=1480;
 			type="UK3CB_BAF_LandRover_Hard_FFR_Sand_A";
@@ -1508,7 +1520,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3270.0852,8.4300003,1747.8021};
-				angles[]={-0,3.7871199,0};
+				angles[]={0,3.7871199,0};
 			};
 			areaSize[]={50,0,35};
 			flags=1;
@@ -3327,394 +3339,6 @@ class Mission
 		};
 		class Item60
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3275.2231,8.4300003,1768.4674};
-				angles[]={1.5707964,0,1.5707964};
-			};
-			areaSize[]={1,-1,1};
-			id=1560;
-			type="ModuleEditTerrainObject_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#name";
-					expression="_this setVariable [""#name"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="#initServer";
-					expression="_this setVariable [""#initServer"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="#state";
-					expression="_this setVariable [""#state"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="#allowDamage";
-					expression="_this setVariable [""#allowDamage"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="#doorStates";
-					expression="_this setVariable [""#doorStates"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"ARRAY"
-								};
-							};
-							class value
-							{
-								items=3;
-								class Item0
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=43690;
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item2
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-							};
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="#init";
-					expression="_this setVariable [""#init"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=7;
-			};
-		};
-		class Item61
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3262.248,8.4300003,1778.0153};
-				angles[]={1.5707964,0,1.5707964};
-			};
-			areaSize[]={1,-1,1};
-			id=1561;
-			type="ModuleEditTerrainObject_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#name";
-					expression="_this setVariable [""#name"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="#initServer";
-					expression="_this setVariable [""#initServer"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="#state";
-					expression="_this setVariable [""#state"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="#allowDamage";
-					expression="_this setVariable [""#allowDamage"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="#doorStates";
-					expression="_this setVariable [""#doorStates"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"ARRAY"
-								};
-							};
-							class value
-							{
-								items=3;
-								class Item0
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=43690;
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item2
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-							};
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="#init";
-					expression="_this setVariable [""#init"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=7;
-			};
-		};
-		class Item62
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -3729,7 +3353,7 @@ class Mission
 			id=1562;
 			type="Land_SandbagBarricade_01_hole_F";
 		};
-		class Item63
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3744,6 +3368,97 @@ class Mission
 			};
 			id=1563;
 			type="Land_HBarrier_Big_F";
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3304.8987,8.511034,1744.0294};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1565;
+					type="1990_British_quartermaster_Desert";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3303.3677,8.5049095,1743.9094};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1566;
+					type="1990_British_quartermaster_Desert";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1564;
 		};
 	};
 };
