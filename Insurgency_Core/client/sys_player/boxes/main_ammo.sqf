@@ -1614,8 +1614,8 @@ if (g_class == "ANA_TL") then {
 
 
 //90's era kit
+if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_SectionCommander_Desert"])then{
 
- if (typeOf vehicle player == "1990_British_SectionCommander_Desert") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D_Lazer",1]
@@ -1654,7 +1654,8 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_Rifleman_AT_desert") then {
+ if((typeOf player) in ["1990_British_Rifleman_desert","1990_RM_British_Rifleman_Mix"])then{
+
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
@@ -1674,7 +1675,29 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_Gunner_desert") then {
+ if((typeOf player) in ["1990_British_Rifleman_AT_desert","1990_RM_British_Rifleman_AT_Mix"])then{
+
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ 
+ if((typeOf player) in ["1990_British_Gunner_Desert","1990_RM_British_Marksman_Mix"])then{
     _tmp_weapons =
     [
 		["UK3CB_BAF_L86A1_SUSAT3D",1]
@@ -1693,7 +1716,8 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_2IC_desert") then {
+
+ if((typeOf player) in ["1990_British_2IC_Desert","1990_RM_British_2IC_Mix"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
@@ -1713,7 +1737,8 @@ if (g_class == "ANA_TL") then {
 };
 
 
- if (typeOf vehicle player == "1990_British_Medic_desert") then {
+
+ if((typeOf player) in ["1990_British_Medic_desert","1990_RM_British_Medic_Mix"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
@@ -1741,6 +1766,24 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
+
+ if (typeOf vehicle player == "1990_RM_British_Gunner_Mix") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L110A1",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_200Rnd_T",30],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
 
  if (typeOf vehicle player == "1990_British_Sniper_desert") then {
     _tmp_weapons =
