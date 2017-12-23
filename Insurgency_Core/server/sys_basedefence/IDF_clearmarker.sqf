@@ -4,6 +4,7 @@
 if (markertime < 5) then {
 //systemchat "marker start reset";
 clearingmarker = 1;
+publicvariable "clearingmarker";
 while {markertime < 5} do {
 //systemchat "markreset";
 markertime = markertime + 1;

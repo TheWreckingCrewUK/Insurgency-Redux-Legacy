@@ -1,4 +1,4 @@
-
+if (clearingmarker == 1) exitwith {};
 //systemchat "marker attempt";
 
 
