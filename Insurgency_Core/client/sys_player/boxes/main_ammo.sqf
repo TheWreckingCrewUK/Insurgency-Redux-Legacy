@@ -1625,6 +1625,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_556_30Rnd",20],
 		["UK3CB_BAF_556_30Rnd_T",10],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
@@ -1795,11 +1796,13 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd",30],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
+		["ACE_RangeCard",1],
 		["ACRE_PRC343",1]
 	];
 };
@@ -1816,12 +1819,15 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
 		["UK3CB_BAF_556_30Rnd",30],
 		["UK3CB_BAF_556_30Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",1],
+		["ACE_RangeCard",1],
+		["ACRE_PRC117F",1]
 	];
 };
 
@@ -1873,13 +1879,14 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
-        ["ACE_Vector",1]
+        ["binocular",1]
     ];
 
 	_tmp_magazines =
     [
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
