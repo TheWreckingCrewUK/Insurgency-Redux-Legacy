@@ -24,6 +24,7 @@ _box addItemCargoGlobal ["ACE_quikclot",20];
 _box addItemCargoGlobal ["ACE_packingBandage",30];
 _box addItemCargoGlobal ["ACE_personalAidKit",1];
 _box addItemCargoGlobal ["ACE_salineIV_500",10];
+_box addItemCargoGlobal ["ACE_salineIV_250",10];
 _box addItemCargoGlobal ["ACE_atropine",15];
 _box addItemCargoGlobal ["ACE_epinephrine",15];
 _box addItemCargoGlobal ["ACE_morphine",15];

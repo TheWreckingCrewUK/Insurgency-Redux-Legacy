@@ -312,6 +312,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
@@ -919,6 +920,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 		["ACE_epinephrine",50],
 		["ACE_atropine", 50],
 		["ACE_salineIV",50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_surgicalKit", 50],
 		["ACE_tourniquet", 5],
@@ -1275,6 +1277,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
 		["ACE_epinephrine",50],
 		["ACE_atropine", 50],
 		["ACE_salineIV",50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_tourniquet", 5],
 		["rhsusf_acc_ACOG",1],
@@ -1763,6 +1766,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag", 10]
 	];
 };
