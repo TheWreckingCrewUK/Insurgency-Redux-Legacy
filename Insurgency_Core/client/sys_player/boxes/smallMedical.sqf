@@ -37,3 +37,5 @@ _trg setTriggerActivation ["WEST", "NOT PRESENT", false];
 _trg setTriggerTimeout [1800,1800,1800,true];
 _trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'ACE_medicalSupplyCrate_advanced'; deleteVehicle _box;",""];
 _trg attachTo [_box];
+
+[player, _box] call ace_cargo_fnc_startLoadIn;

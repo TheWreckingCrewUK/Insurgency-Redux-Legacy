@@ -32,5 +32,8 @@ _trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
 _trg setTriggerArea [5,5,0,false];
 _trg setTriggerActivation ["WEST", "NOT PRESENT", false];
 _trg setTriggerTimeout [1800,1800,1800,true];
-_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_L111A1'; deleteVehicle _box;",""];
+_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_L7A2'; deleteVehicle _box;",""];
 _trg attachTo [_box];
+
+
+[player, _box] call ace_cargo_fnc_startLoadIn;
