@@ -24,7 +24,7 @@ _markerstr2 = createMarker [str (random 1000),_markerPos];
 _markerstr2 setMarkerShape "ICON";
 _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
-_markerstr2 setMarkerText "CarBomb";
+_markerstr2 setMarkerText "Car Bomb";
 
 //Creating the task
 _taskID = str (random 1000);
