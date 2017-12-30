@@ -312,6 +312,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
@@ -919,6 +920,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 		["ACE_epinephrine",50],
 		["ACE_atropine", 50],
 		["ACE_salineIV",50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_surgicalKit", 50],
 		["ACE_tourniquet", 5],
@@ -1275,6 +1277,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
 		["ACE_epinephrine",50],
 		["ACE_atropine", 50],
 		["ACE_salineIV",50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_tourniquet", 5],
 		["rhsusf_acc_ACOG",1],
@@ -1614,8 +1617,8 @@ if (g_class == "ANA_TL") then {
 
 
 //90's era kit
+if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_SectionCommander_Desert"])then{
 
- if (typeOf vehicle player == "1990_British_SectionCommander_Desert") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D_Lazer",1]
@@ -1625,6 +1628,7 @@ if (g_class == "ANA_TL") then {
    [            
 		["UK3CB_BAF_556_30Rnd",20],
 		["UK3CB_BAF_556_30Rnd_T",10],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
@@ -1654,7 +1658,8 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_Rifleman_AT_desert") then {
+ if((typeOf player) in ["1990_British_Rifleman_desert","1990_RM_British_Rifleman_Mix"])then{
+
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
@@ -1674,7 +1679,29 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_Gunner_desert") then {
+ if((typeOf player) in ["1990_British_Rifleman_AT_desert","1990_RM_British_Rifleman_AT_Mix"])then{
+
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",20],
+		["UK3CB_BAF_556_30Rnd_T",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+ 
+ if((typeOf player) in ["1990_British_Gunner_Desert","1990_RM_British_Marksman_Mix"])then{
     _tmp_weapons =
     [
 		["UK3CB_BAF_L86A1_SUSAT3D",1]
@@ -1693,7 +1720,8 @@ if (g_class == "ANA_TL") then {
 	];
 };
 
- if (typeOf vehicle player == "1990_British_2IC_desert") then {
+
+ if((typeOf player) in ["1990_British_2IC_Desert","1990_RM_British_2IC_Mix"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
@@ -1713,7 +1741,8 @@ if (g_class == "ANA_TL") then {
 };
 
 
- if (typeOf vehicle player == "1990_British_Medic_desert") then {
+
+ if((typeOf player) in ["1990_British_Medic_desert","1990_RM_British_Medic_Mix"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
@@ -1737,10 +1766,29 @@ if (g_class == "ANA_TL") then {
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
 		["ACE_bodyBag", 10]
 	];
 };
 
+
+ if (typeOf vehicle player == "1990_RM_British_Gunner_Mix") then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L110A1",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_200Rnd_T",30],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
 
  if (typeOf vehicle player == "1990_British_Sniper_desert") then {
     _tmp_weapons =
@@ -1752,11 +1800,13 @@ if (g_class == "ANA_TL") then {
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd",30],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
+		["ACE_RangeCard",1],
 		["ACRE_PRC343",1]
 	];
 };
@@ -1773,12 +1823,15 @@ if (g_class == "ANA_TL") then {
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
 		["UK3CB_BAF_556_30Rnd",30],
 		["UK3CB_BAF_556_30Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",1],
+		["ACE_RangeCard",1],
+		["ACRE_PRC117F",1]
 	];
 };
 
@@ -1830,13 +1883,14 @@ if (g_class == "ANA_TL") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
-        ["ACE_Vector",1]
+        ["binocular",1]
     ];
 
 	_tmp_magazines =
     [
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
+		["CUP_15Rnd_9x19_M9",10],
 		["HandGrenade",5]
     ];
 

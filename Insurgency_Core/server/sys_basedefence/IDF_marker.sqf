@@ -1,5 +1,7 @@
 
+if (!isServer) exitWith {};
 //systemchat "marker attempt";
+if (clearingmarker == 1) exitwith {};
 
 
 //if (idfguns find (str (_object)) <0) then {
