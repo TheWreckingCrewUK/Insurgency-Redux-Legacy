@@ -13,9 +13,9 @@
 				edited by jayman to make it reload on box close animation.
 				This reduces players lag as it no longer fills every 240 seconds.
 */ 
-_weapons = [];
+_weapons = [["twc_L5A4_white",5],["twc_L5A4_red",5],["twc_L5A4_green",5]];
 _magazines = [["SmokeShell",5], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",5], ["Chemlight_yellow",5], ["Chemlight_red",5], ["Chemlight_blue",5],["ACE_Chemlight_IR",5]];
-_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1]];
+_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["rhs_mag_rsp30_white",5],["rhs_mag_rsp30_red",5],["rhs_mag_rsp30_green",5]];
 
 _backpacks = [];
 _tmp_weapons = [];
@@ -29,7 +29,10 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
         ["ACE_Vector",1],
-		["rhsusf_weap_glock17g4",1]
+		["rhsusf_weap_glock17g4",1],
+		["twc_L5A4_white",5],
+		["twc_L5A4_red",5],
+		["twc_L5A4_green",5]
     ];
 
 	_tmp_magazines =
@@ -38,7 +41,10 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_556_30Rnd_T",50],
         ["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["B_IR_Grenade",2],
-		["HandGrenade",5]
+		["HandGrenade",5],
+		["rhs_mag_rsp30_white",5],
+		["rhs_mag_rsp30_red",5],
+		["rhs_mag_rsp30_green",5]
     ];
 
     _tmp_items = 
@@ -178,7 +184,10 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
-		["rhs_weap_m72a7",4]
+		["rhs_weap_m72a7",4],
+		["twc_L5A4_white",5],
+		["twc_L5A4_red",5],
+		["twc_L5A4_green",5]
     ];
 
     _tmp_magazines =
@@ -208,7 +217,10 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		//Marksman
         ["UK3CB_BAF_762_L42A1_20Rnd",25],
 		["UK3CB_BAF_762_L42A1_20Rnd_T",10],	
-		["HandGrenade",5]
+		["HandGrenade",5],
+		["rhs_mag_rsp30_white",5],
+		["rhs_mag_rsp30_red",5],
+		["rhs_mag_rsp30_green",5]
 	];
 
 	_tmp_items = 
@@ -1724,14 +1736,20 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["1990_British_2IC_Desert","1990_RM_British_2IC_Mix"])then{
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L85A1_SUSAT3D",1]
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
+		["twc_L5A4_white",5],
+		["twc_L5A4_red",5],
+		["twc_L5A4_green",5]
 	];
 
 	_tmp_magazines =
    [            
 		["UK3CB_BAF_556_30Rnd",30],
 		["UK3CB_BAF_556_30Rnd_T",20],
-		["HandGrenade",5]
+		["HandGrenade",5],
+		["rhs_mag_rsp30_white",5],
+		["rhs_mag_rsp30_red",5],
+		["rhs_mag_rsp30_green",5]
     ];
 
 	_tmp_items =
