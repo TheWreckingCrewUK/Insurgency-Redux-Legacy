@@ -74,7 +74,7 @@ for "_i" from 1 to _total do{
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 
 //Add WaitUntil
-_time = time + 1200;
+_time = time + 3600;
 waitUntil{time > _time || !alive _hvt};
 
 //Add completion or failure
@@ -84,7 +84,7 @@ while{alive _hvt && [_hvt,200] call CBA_fnc_nearPlayer}do{
 if(!alive _hvt)then{
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 }else{
-	["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustPoints", -2] call CBA_fnc_serverEvent;
 };
 deleteMarker _markerstr;
 deleteMarker _markerstr2;
