@@ -21,7 +21,7 @@ player addEventHandler ["InventoryClosed", {
 }];
 
 
-	_infaction1 = ["clearbox","Clear Boxes","",{execvm "domination_core\client\sys_player\boxes\clearboxes.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\clearboxes.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
@@ -90,7 +90,7 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader"])then{
 		
 };
 
-if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_spotter_coin"])then{
+if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
 	_snaction1 = ["Spawnsnipbox","Spawn Sniper Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\smallCratesniper.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;

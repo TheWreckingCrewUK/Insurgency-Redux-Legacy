@@ -24,64 +24,127 @@ twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_Amm
 // FORMAT:
 // ["vehicle class name", ["slot name", ["acceptable person 1", ...]]],
 // known slot names (verbatim): "driver", "gunner", "commander", "Turret", or "cargo"
-twc_restrictedVehicleSlots = [
-	["CUP_B_C130J_GB", 
+twc_restrictedVehicleSlots = [	
+
+	
+		["CUP_B_MCV80_GB_W_SLAT",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander"]
+		]],5
+	],
+	
+		["CUP_B_LAV25_USMC",[ 
+		["driver", 
+			["Modern_USMC_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_USMC_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_USMC_VehicleCommander"]
+		]],5
+	],
+		
+	
+		["twc_public_c5_hercules", [
 		["driver", 
 			["Modern_British_JetPilot"]
 		],
-		["commander", 
+		["turret", 
 			["Modern_British_JetPilot"]
-		]
+		]],14
 	],
 	
-	["CUP_B_C130J_Cargo_GB",
+		["CUP_B_C130J_Cargo_GB",[
 		["driver",
 			["Modern_British_JetPilot"]
 		],
-		["commander", 
+		["turret", 
 			["Modern_British_JetPilot"]
-		]
+		]],14
 	],
 	
-	["UK3CB_BAF_Wildcat_AH1_CAS_8A", 
+		["UK3CB_BAF_Wildcat_AH1_CAS_8A", [
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
+		["gunner", 
+			["Modern_British_crewchief"]
+		]],7
 	],
 	
-	["CUP_B_UH1Y_Gunship_Dynamic_USMC", 
+		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
 		["driver", 
 			["Modern_USMC_HeliPilot"]
 		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
+		["turret", 
+			["Modern_USMC_crewchief"]
+		]],7
+	],	
 	
-
+		["CUP_B_MV22_USMC_RAMPGUN",[ 
+		["driver", 
+			["Modern_USMC_HeliPilot"]
+		],
+		["gunner", 
+			["Modern_USMC_crewchief"]
+		]],5
+	],	
 	
-			["UK3CB_BAF_Merlin_HC3_CSAR", 
+		["CUP_B_AH1_DL_BAF",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["commander", 
+		["gunner", 
+			["Modern_British_crewchief"]
+		]],10
+	],
+
+		["CUP_B_AH1Z_Dynamic_USMC",[ 
+		["driver", 
+			["Modern_USMC_HeliPilot"]
+		],
+		["gunner", 
+			["Modern_USMC_crewchief"]
+		]],10
+	],
+
+	
+		["CUP_B_CH47F_GB",[ 
+		["driver", 
 			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
+		],
+		["turret", 
+			["Modern_British_crewchief","Modern_USMC_crewchief"]
+		]],5
 	],
 	
-				["CUP_B_A10_DYN_USA", 
+		["CUP_B_MH60S_FFV_USMC",[ 
+		["driver", 
+			["Modern_USMC_HeliPilot"]
+		],
+		["Turret", 
+			["Modern_USMC_crewchief"]
+		]],5
+	],
+	
+				["CUP_B_A10_DYN_USA", [
 		["driver", 
 			["Modern_USMC_JetPilot"]
-		]
+		]],14
 	],
 	
-					["CUP_B_GR9_DYN_GB", 
+	
+					["CUP_B_GR9_DYN_GB", [
 		["driver", 
 			["Modern_British_JetPilot"]
-		]
+		]],14
 	]
 	
 	
