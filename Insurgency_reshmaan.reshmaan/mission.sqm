@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.78539819;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=554;
+	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=1186;
+		nextID=1196;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4296.4785,183.64734,17988.59};
-		dir[]={-0.027782155,-0.67741585,0.73513061};
-		up[]={-0.025581593,0.73560053,0.67692435};
-		aside[]={0.99932027,-1.7670391e-007,0.037767585};
+		pos[]={4264.1025,180.49272,18039.959};
+		dir[]={0.8921839,-0.45117223,0.023989238};
+		up[]={0.45102856,0.89242232,0.012125704};
+		aside[]={0.02688095,-1.15906e-007,-0.99969357};
 	};
 };
 binarizationWanted=0;
@@ -82,13 +82,14 @@ addons[]=
 	"CUP_AirVehicles_C130J",
 	"CUP_AirVehicles_MH60S",
 	"CUP_TrackedVehicles_MCV80",
-	"CUP_WheeledVehicles_LAV25"
+	"CUP_WheeledVehicles_LAV25",
+	"UK3CB_BAF_Weapons_Static"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=52;
+		items=53;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -400,6 +401,13 @@ class AddonsMetaData
 			className="CUP_WheeledVehicles_LAV25";
 			name="CUP_WheeledVehicles_LAV25";
 		};
+		class Item52
+		{
+			className="UK3CB_BAF_Weapons_Static";
+			name="3CB BAF Weapons - Statics";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
 	};
 };
 randomSeed=16337384;
@@ -433,7 +441,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=290;
+		items=296;
 		class Item0
 		{
 			dataType="Marker";
@@ -9413,7 +9421,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Viper";
+							value="FST";
 						};
 					};
 				};
@@ -10501,6 +10509,309 @@ class Mission
 			};
 			id=1185;
 			type="Land_Hangar_2";
+		};
+		class Item290
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4525.6821,139.15279,18047.287};
+				angles[]={0,3.1618013,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1187;
+			type="Land_fort_artillery_nest_EP1";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item291
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4526.021,139.15279,18064.383};
+				angles[]={0,0.033007503,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1188;
+			type="Land_fort_artillery_nest_EP1";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item292
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4525.375,139.95174,18048.703};
+				angles[]={0,1.8578771,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1189;
+			type="UK3CB_BAF_Static_L16_Deployed";
+		};
+		class Item293
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4525.7256,139.95174,18062.912};
+				angles[]={0,1.2536949,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1190;
+			type="UK3CB_BAF_Static_L16_Deployed";
+		};
+		class Item294
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4534.2354,139.10756,18055.436};
+				angles[]={0,4.7122626,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1191;
+			type="Land_fort_rampart_EP1";
+			atlOffset=-1.5258789e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item295
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4308.1621,138.96906,18051.674};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1193;
+					type="Modern_Artillery_Commander";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4310.3169,138.96906,18049.961};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1194;
+					type="Modern_Artillery_Gunner";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4305.8008,138.96906,18050.07};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1195;
+					type="Modern_Artillery_Gunner";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1192;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

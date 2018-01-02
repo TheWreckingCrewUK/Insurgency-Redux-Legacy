@@ -2081,6 +2081,22 @@ clearMagazineCargo crateBox;
 clearItemCargo crateBox;
 clearbackPackCargo crateBox;
 
+if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
+
+if (( count(allPlayers - entities "HeadlessClient_F"))>10) then {// add in all weapons.
+{crateBox addWeaponCargo [(_x select 0),(_x select 1)]} foreach _weapons;
+
+// add in all magazines.
+{crateBox addMagazineCargo [(_x select 0),(_x select 1)]} foreach _magazines;
+
+{crateBox addItemCargo [(_x select 0),(_x select 1)]} foreach _items;
+}
+else
+{
+[10] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";};
+
+} else {
+
 // add in all weapons.
 {crateBox addWeaponCargo [(_x select 0),(_x select 1)]} foreach _weapons;
 
@@ -2089,5 +2105,4 @@ clearbackPackCargo crateBox;
 
 {crateBox addItemCargo [(_x select 0),(_x select 1)]} foreach _items;
 
-{crateBox addbackpackCargo [(_x select 0),(_x select 1)]} foreach _backpacks;
-
+};
