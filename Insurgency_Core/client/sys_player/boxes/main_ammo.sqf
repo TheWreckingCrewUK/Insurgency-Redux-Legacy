@@ -2093,7 +2093,7 @@ if (( count(allPlayers - entities "HeadlessClient_F"))>10) then {// add in all w
 }
 else
 {
-[10] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";};
+[10] execVM "Insurgency_Core\client\sys_restrict\restrictedkit.sqf";};
 
 } else {
 
