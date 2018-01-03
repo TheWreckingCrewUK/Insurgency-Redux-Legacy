@@ -7,6 +7,8 @@
 *
 */
 
+if (( count(allPlayers - entities "HeadlessClient_F"))<7) then {
+[7] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";} else {
 
 _boxClass = "UK3CB_BAF_Box_L134A1";
 
@@ -36,4 +38,4 @@ _trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'U
 _trg attachTo [_box];
 
 
-[player, _box] call ace_cargo_fnc_startLoadIn;
+[player, _box] call ace_cargo_fnc_startLoadIn;};

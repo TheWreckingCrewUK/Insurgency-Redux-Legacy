@@ -7,7 +7,8 @@
 *
 */
 
-
+if (( count(allPlayers - entities "HeadlessClient_F"))<4) then {
+[4] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";} else {
 _boxClass = "UK3CB_BAF_Box_L7A2";
 
 _box = _boxClass createVehicle (getPos AmmoBoxSpawner);
@@ -36,4 +37,4 @@ _trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'U
 _trg attachTo [_box];
 
 
-[player, _box] call ace_cargo_fnc_startLoadIn;
+[player, _box] call ace_cargo_fnc_startLoadIn;}
