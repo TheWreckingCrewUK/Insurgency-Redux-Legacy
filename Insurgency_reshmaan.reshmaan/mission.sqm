@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4371.4111,180.49272,18042.855};
-		dir[]={0.8921839,-0.45117223,0.023989238};
-		up[]={0.45102856,0.89242232,0.012125704};
-		aside[]={0.02688095,-1.15906e-007,-0.99969357};
+		pos[]={4305.916,149.69019,18009.521};
+		dir[]={-0.90444255,-0.26763275,0.33239582};
+		up[]={-0.25123927,0.96350473,0.092336245};
+		aside[]={0.34497491,1.0197982e-007,0.93867236};
 	};
 };
 binarizationWanted=0;
@@ -10703,7 +10703,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item1
@@ -10742,7 +10761,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item2
@@ -10781,7 +10819,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="ace_isEngineer";
+							expression="if (_value != -1) then {_this setVariable ['ace_isEngineer',_value, true];}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 			};

@@ -90,6 +90,24 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader"])then{
 		
 };
 
+if((typeOf player) in ["Modern_Artillery_Gunner","Modern_Artillery_Commander"])then{
+
+	_artaction = ["SpawnsmallcharlieCreate","Spawn L16 Smoke Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_Smoke.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_artaction1 = ["Spawnheartscrateus","Spawn L16 Ilumination Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_Illum.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_artaction2 = ["SpawnmedCreate","Spawn L16 HE Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_HE.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction2,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_artaction3 = ["SpawnrepCreate","Spawn Vehicle Repair Kit","",{execvm "insurgency_core\client\sys_player\boxes\RepairKit.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+
+};
+
+
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
 	_snaction1 = ["Spawnsnipbox","Spawn Sniper Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\smallCratesniper.sqf"},{true}] call ace_interact_menu_fnc_createAction;

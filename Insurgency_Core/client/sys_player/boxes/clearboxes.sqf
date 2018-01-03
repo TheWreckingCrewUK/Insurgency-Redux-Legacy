@@ -26,6 +26,51 @@
 	_trg setTriggerActivation ["WEST", "PRESENT", true];
 	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_M6'; deleteVehicle _box;",""];
 	_trg attachTo [_box];
+	
+	//spare wheel removal	
+	_box = (getPos AmmoBoxSpawner) nearestObject 'ace_wheel';
+
+	_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
+	_trg setTriggerArea [50,50,0,false];
+	_trg setTriggerActivation ["WEST", "PRESENT", true];
+	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'ace_wheel'; deleteVehicle _box;",""];
+	_trg attachTo [_box];
+
+	//spare track removal	
+	_box = (getPos AmmoBoxSpawner) nearestObject 'ace_track';
+
+	_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
+	_trg setTriggerArea [50,50,0,false];
+	_trg setTriggerActivation ["WEST", "PRESENT", true];
+	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'ace_track'; deleteVehicle _box;",""];
+	_trg attachTo [_box];
+
+	//L16 ammo removal	
+	_box = (getPos AmmoBoxSpawner) nearestObject 'UK3CB_BAF_Box_L16_Ammo_Smoke';
+
+	_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
+	_trg setTriggerArea [50,50,0,false];
+	_trg setTriggerActivation ["WEST", "PRESENT", true];
+	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_L16_Ammo_Smoke'; deleteVehicle _box;",""];
+	_trg attachTo [_box];
+
+	_box = (getPos AmmoBoxSpawner) nearestObject 'UK3CB_BAF_Box_L16_Ammo_Illumination';
+
+	_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
+	_trg setTriggerArea [50,50,0,false];
+	_trg setTriggerActivation ["WEST", "PRESENT", true];
+	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_L16_Ammo_Illumination'; deleteVehicle _box;",""];
+	_trg attachTo [_box];
+
+	_box = (getPos AmmoBoxSpawner) nearestObject 'UK3CB_BAF_Box_L16_Ammo_HE';
+
+	_trg = createTrigger ["EmptyDetector", getPos AmmoBoxSpawner];
+	_trg setTriggerArea [50,50,0,false];
+	_trg setTriggerActivation ["WEST", "PRESENT", true];
+	_trg setTriggerStatements ["this", "_box = (getPos thisTrigger) nearestObject 'UK3CB_BAF_Box_L16_Ammo_HE'; deleteVehicle _box;",""];
+	_trg attachTo [_box];
+
+	
 
 //L7A2 Crate removal
 	_box = (getPos AmmoBoxSpawner) nearestObject 'UK3CB_BAF_Box_L7A2';
