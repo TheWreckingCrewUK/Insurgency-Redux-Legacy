@@ -118,7 +118,7 @@ class ace_medical_AIDamageThreshold {
 };
 
 class ace_medical_enableUnconsciousnessAI {
-	value = 0;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
