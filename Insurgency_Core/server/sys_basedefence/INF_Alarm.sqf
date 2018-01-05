@@ -6,6 +6,8 @@ publicvariable "idfon";
 {
 	[_x, "TWC_sound_infsiren"] call CBA_fnc_globalSay3d;
 } forEach sirenlist;
+basemode = 1;
+publicvariable "basemode";
 
 
 //playSound3D ["a3\data_f_curator\sound\cfgsounds\air_raid.wss", idfalarm, false, getposasl idfalarm,5];
