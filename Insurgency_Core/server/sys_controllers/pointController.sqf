@@ -14,7 +14,13 @@
 *
 * Public: No
 */
+
+
+if(isNil "pointLimit") then{
 pointLimit = 400;
+publicVariable "pointLimit"; // init once
+};
+
 if(isNil "totalPoints") then{
 totalPoints = 0;
 publicVariable "totalPoints"; // init once
@@ -26,7 +32,7 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 	totalPoints = totalPoints + _this;
 	
 	if (totalPoints >= pointLimit) then {
-		"pointVictory" call BIS_fnc_endMissionServer;
+		execVM "Insurgency_Core\server\sys_controllers\missionsuccess.sqf";
 	};
 	
 	if(totalPoints < 0)then{totalPoints = 0};
