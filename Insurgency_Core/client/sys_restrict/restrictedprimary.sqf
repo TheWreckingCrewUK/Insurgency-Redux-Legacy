@@ -1,0 +1,1 @@
+	"R_60mm_HE" createVehicle (getPos player);

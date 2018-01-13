@@ -11,3 +11,18 @@ player addEventHandler ["InventoryOpened", {
 		};
 	};
 }];
+twc_restrictedPrimaryWeapons = ["CUP_arifle_AK74"];
+
+player addEventHandler ["Take", {
+	params["_unit","_container","_item"];
+
+		if(_item in twc_restrictedPrimaryWeapons)then{
+		_unit allowsprint false;
+		
+		player addEventHandler ["Fired", {
+
+		execvm "Insurgency_Core\client\sys_restrict\restrictedprimary.sqf";
+	};];
+
+	
+}];
