@@ -36,6 +36,6 @@ _civweapon = _civ addWeapon _gun;
 
 //_mag = getArray (configFile >> "CfgWeapons" >> (_civweapon select 0) select 0 >> "magazines"); 
 
- //experimental/untested:
+
  _newgroup setCombatMode "RED";
  _newgroup addwaypoint [_nearestbluforplayer, 0];
