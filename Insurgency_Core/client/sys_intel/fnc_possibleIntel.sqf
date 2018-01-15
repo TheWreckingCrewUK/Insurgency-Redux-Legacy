@@ -1,7 +1,7 @@
 _givenNumber = (_this select 0) select 0;
 _civilianQuestioned = (_this select 0) select 1;
 //systemChat str _givenNumber;
-[_civilianQuestioned] execvm "Insurgency_Core\server\sys_civ\evilCiv.sqf";
+//[_civilianQuestioned] execvm "Insurgency_Core\server\sys_civ\evilCiv.sqf";
 if (_civilianQuestioned in nonQuestionableList) then {
 		switch (True) do {
 			case (floor TWC_civMorale <= 15):{hintSilent "Stop harassing me, you bully with a gun!"};
