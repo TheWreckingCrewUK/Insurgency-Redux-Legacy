@@ -607,6 +607,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["ACRE_PRC343",1],
 		["ACRE_PRC152",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
+		["itemCTAB",1],
 		["ACE_SpottingScope",1]
 	];
 
