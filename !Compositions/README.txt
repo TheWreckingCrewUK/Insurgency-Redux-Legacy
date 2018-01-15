@@ -1,0 +1,1 @@
+Place the above folders in %Arma3Profile%/compositions
