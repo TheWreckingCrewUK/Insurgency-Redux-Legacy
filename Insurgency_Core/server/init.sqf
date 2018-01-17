@@ -32,6 +32,7 @@ while{count _strongholdArray < 3}do{
 		_strongholdArray pushback _town;
 	};
 };
+
 //Strongholds
 {
 	[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
@@ -51,3 +52,12 @@ execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 		};
 	};
 }] call CBA_fnc_addEventHandler;
+
+["playerConnectedEHandler", "onPlayerConnected", {
+	// _this ([<id>,<uid>,<name>,<jip>,<owner>])
+	_isJIP = (_this select 3);
+	_name = (_this select 2);
+	_message = format ["%1 has connected, and is awaiting back at base.", _name];
+
+	if (_isJIP) then { { [_x, _message] call twc_fnc_sendCTabMessage; } allPlayers; };
+}] call BIS_fnc_addStackedEventHandler;
