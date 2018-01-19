@@ -56,8 +56,9 @@ execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 ["playerConnectedEHandler", "onPlayerConnected", {
 	// _this ([<id>,<uid>,<name>,<jip>,<owner>])
 	_isJIP = (_this select 3);
+	_owner = (_this select 4);
 	_name = (_this select 2);
 	_message = format ["%1 has connected, and is awaiting back at base.", _name];
 
-	if (_isJIP) then { { [_x, _message] call twc_fnc_sendCTabMessage; } forEach allPlayers; };
+	if (_isJIP) then { { [_x, _message, _owner] call twc_fnc_sendCTabMessage; } forEach allPlayers; };
 }] call BIS_fnc_addStackedEventHandler;
