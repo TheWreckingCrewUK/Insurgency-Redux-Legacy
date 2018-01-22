@@ -1,6 +1,4 @@
 
-		systemchat "restrict init";
-
 player addEventHandler ["InventoryOpened", {
 	if((getPos player) distance2D (getMarkerPos "base") < 200) then{
 		if(primaryWeapon player in twc_restrictedPrimaryWeapons)then{
