@@ -1,8 +1,8 @@
 _list=[
-		["RHS_M119_D", [
+		["CUP_B_M119_US", [
 		["gunner", 
 			["Modern_Artillery_Gunner"]
-		]],23,22
+		]],20,9
 	],
 	
 			["UK3CB_BAF_Static_L16_Deployed", [
@@ -106,25 +106,25 @@ _list=[
 	
 		["CUP_B_LAV25_USMC",[ 
 		["driver", 
-			["Modern_USMC_VehicleCrew"]
+			["Modern_British_VehicleCrew"]
 		],
 		["gunner", 
-			["Modern_USMC_VehicleCrew"]
+			["Modern_British_VehicleCrew"]
 		],
 		["commander", 
-			["Modern_USMC_VehicleCommander"]
+			["Modern_British_VehicleCommander"]
 		]],10
 	],
 		
 		["CUP_B_LAV25_desert_USMC",[ 
 		["driver", 
-			["Modern_USMC_VehicleCrew"]
+			["Modern_British_VehicleCrew"]
 		],
 		["gunner", 
-			["Modern_USMC_VehicleCrew"]
+			["Modern_British_VehicleCrew"]
 		],
 		["commander", 
-			["Modern_USMC_VehicleCommander"]
+			["Modern_British_VehicleCommander"]
 		]],10
 	],
 	
@@ -139,10 +139,10 @@ _list=[
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
 		["driver", 
-			["Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot"]
 		],
 		["turret", 
-			["Modern_USMC_crewchief"]
+			["Modern_British_crewchief"]
 		]],9
 	],	
 	
@@ -157,10 +157,10 @@ _list=[
 
 		["CUP_B_AH1Z_Dynamic_USMC",[ 
 		["driver", 
-			["Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot"]
 		],
 		["gunner", 
-			["Modern_USMC_crewchief"]
+			["Modern_British_crewchief"]
 		]],14
 	],
 
@@ -176,25 +176,25 @@ _list=[
 	
 		["CUP_B_MV22_USMC_RAMPGUN",[ 
 		["driver", 
-			["Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot"]
 		],
 		["gunner", 
-			["Modern_USMC_crewchief"]
+			["Modern_British_crewchief"]
 		]],5
 	],	
 	
 		["CUP_B_MH60S_FFV_USMC",[ 
 		["driver", 
-			["Modern_USMC_HeliPilot"]
+			["Modern_British_HeliPilot"]
 		],
 		["Turret", 
-			["Modern_USMC_crewchief"]
+			["Modern_British_crewchief"]
 		]],5
 	],
 	
 				["CUP_B_A10_DYN_USA", [
 		["driver", 
-			["Modern_USMC_JetPilot"]
+			["Modern_British_JetPilot"]
 		]],14
 	],
 		
@@ -295,7 +295,7 @@ TWC_fnc_checkVehicleSlot = {
 		_count = (_x select (count (_x)-1));
 		_maxcount = (_x select (count (_x)-2));
 		_currentcount = ( count(allPlayers - entities "HeadlessClient_F"));
-		_snipercount = 10;
+		_snipercount = 5;
 		
 		
  if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {if (_snipercount > _currentcount) then {[_playerUnit,_snipercount,_currentcount,"low"] call TWC_fnc_notenoughplayers};};
