@@ -13,6 +13,8 @@
 				edited by jayman to make it reload on box close animation.
 				This reduces players lag as it no longer fills every 240 seconds.
 */ 
+systemchat "1";
+
 _weapons = [["twc_L5A4_white",1],["twc_L5A4_red",1],["twc_L5A4_green",1]];
 _magazines = [["SmokeShell",5], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",5], ["Chemlight_yellow",5], ["Chemlight_red",5], ["Chemlight_blue",5],["ACE_Chemlight_IR",5]];
 _items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",2],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",5],["twc_l5a4_r",5],["twc_l5a4_g",5]];
@@ -2075,7 +2077,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 {
         _backpacks set [count _backpacks, _x];
 } forEach _tmp_backpacks;
-
+systemchat "2";
 // empty it.
 clearWeaponCargo crateBox;
 clearMagazineCargo crateBox;
