@@ -65,7 +65,7 @@ _list=[
 		],
 		["commander", 
 			["Modern_British_VehicleCommander"]
-		]],10
+		]],5
 	],	
 	
 			["CUP_B_MCV80_GB_D_SLAT",[ 
@@ -77,7 +77,7 @@ _list=[
 		],
 		["commander", 
 			["Modern_British_VehicleCommander"]
-		]],10
+		]],5
 	],	
 	
 		["CUP_B_FV432_Bulldog_GB_W",[ 
@@ -113,7 +113,7 @@ _list=[
 		],
 		["commander", 
 			["Modern_British_VehicleCommander"]
-		]],10
+		]],5
 	],
 		
 		["CUP_B_LAV25_desert_USMC",[ 
@@ -125,7 +125,7 @@ _list=[
 		],
 		["commander", 
 			["Modern_British_VehicleCommander"]
-		]],10
+		]],5
 	],
 	
 		["UK3CB_BAF_Wildcat_AH1_CAS_8A", [
@@ -134,7 +134,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],9
+		]],7
 	],
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
@@ -143,7 +143,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_crewchief"]
-		]],9
+		]],7
 	],	
 	
 		["UK3CB_BAF_Wildcat_AH1_HEL_8A",[ 
@@ -152,7 +152,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],9
+		]],7
 	],
 
 		["CUP_B_AH1Z_Dynamic_USMC",[ 
@@ -183,7 +183,7 @@ _list=[
 		]],5
 	],	
 	
-		["CUP_B_MH60S_FFV_USMC",[ 
+		["RHS_UH60M_d",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
@@ -195,13 +195,13 @@ _list=[
 				["CUP_B_A10_DYN_USA", [
 		["driver", 
 			["Modern_British_JetPilot"]
-		]],14
+		]],10
 	],
 		
 					["CUP_B_GR9_DYN_GB", [
 		["driver", 
 			["Modern_British_JetPilot"]
-		]],14
+		]],10
 	],
 	
 		["twc_public_c5_hercules", [
@@ -210,7 +210,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_JetPilot"]
-		]],14
+		]],10
 	],
 	
 		["CUP_B_C130J_Cargo_GB",[
@@ -219,7 +219,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_JetPilot"]
-		]],14
+		]],10
 	]
 	]
 ;
