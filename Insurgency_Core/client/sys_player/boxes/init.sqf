@@ -5,7 +5,7 @@
 * while always keeping the box full. Basically it reloads as soon as you close it
 */
 _marker = "crate";  // marker used to spawn.
-_boxType = "CUP_BAF_VehicleBox";  // the type of ammobox used.
+_boxType = "CUP_UK_VehicleBox";  // the type of ammobox used.
 
 // create and fill the box.
 crateBox = _boxType createVehicleLocal (getMarkerPos _marker);
@@ -27,7 +27,7 @@ player addEventHandler ["InventoryClosed", {
 
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
-	_action = ["SpawnAlphaCreate","Spawn Large Alpha Crate","",{"twc_forwardBase_BritishAmmoBox" createVehicle (getPos AmmoBoxSpawner)},{true}] call ace_interact_menu_fnc_createAction;
+	_action = ["SpawnUKCreate","Spawn Large UK Crate","",{"twc_forwardBase_BritishAmmoBox" createVehicle (getPos AmmoBoxSpawner)},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_action1 = ["SpawnCharlieCreate","Spawn Large Charlie Crate","",{"twc_forwardBase_CharlieAmmoBox" createVehicle (getPos AmmoBoxSpawner)},{true}] call ace_interact_menu_fnc_createAction;
@@ -36,8 +36,8 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn Small Charlie Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hcharlieaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_halphaaction3 = ["SpawnsmallAlphaCreate","Spawn Small Alpha Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_halphaaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_haction4 = ["SpawnsmallsniperCreate","Spawn Small Sniper Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcratesniper.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_haction4,true] call ace_interact_menu_fnc_addActionToClass;
@@ -61,23 +61,23 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN"])then{
 
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Small Alpha Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_alphaaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_alphaaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_alphaaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_alphaaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 
-if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader"])then{
+if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d"])then{
 
 	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small Charlie Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -90,15 +90,15 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader"])then{
 		
 };
 
-if((typeOf player) in ["Modern_Artillery_Gunner","Modern_Artillery_Commander"])then{
+if((typeOf player) in ["Modern_Artillery_Commander"])then{
 
-	_artaction = ["SpawnsmallcharlieCreate","Spawn L16 Smoke Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_Smoke.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_artaction = ["SpawnsmallcharlieCreate","Spawn 105mm HE Rounds","",{execvm "insurgency_core\client\sys_player\boxes\105he.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_artaction1 = ["Spawnheartscrateus","Spawn L16 Ilumination Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_Illum.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_artaction1 = ["Spawnheartscrateus","Spawn 105mm Smoke Rounds","",{execvm "insurgency_core\client\sys_player\boxes\105smoke.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction1,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_artaction2 = ["SpawnmedCreate","Spawn L16 HE Rounds","",{execvm "insurgency_core\client\sys_player\boxes\staticL16_HE.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_artaction2 = ["SpawnmedCreate","Spawn 105mm Illum Rounds","",{execvm "insurgency_core\client\sys_player\boxes\105illum.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_artaction3 = ["SpawnrepCreate","Spawn Vehicle Repair Kit","",{execvm "insurgency_core\client\sys_player\boxes\RepairKit.sqf"},{true}] call ace_interact_menu_fnc_createAction;
@@ -114,7 +114,7 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
-if((typeOf player) in ["Modern_British_Medic", "1990_British_Medic", "1990_British_Medic_Desert", "1990_RM_British_Medic_Mix", "Modern_USMC_Medic"])then{
+if((typeOf player) in ["Modern_British_Medic", "1990_British_Medic", "1990_British_Medic_Desert", "1990_RM_British_Medic_Mix", "Modern_USMC_Medic", "Modern_USMC_Medic_d"])then{
 
 	_medaction = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_medaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -145,7 +145,7 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	_fstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_fstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_fstaction7 = ["SpawnsmallAlphaCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_fstaction7 = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
@@ -200,17 +200,17 @@ if((typeOf player) in ["1990_British_mg_assistant_Desert"])then{
 if((typeOf player) in ["1990_British_2IC_Desert","1990_British_SectionCommander_Desert"])then{
 
 	
-	_90alphaaction = ["Spawnsmall90AlphaCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk90.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+	_90UKaction = ["Spawnsmall90UKCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk90.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_90alphaaction1 = ["Spawnheartscrate","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	_90UKaction1 = ["Spawnheartscrate","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_90alphaaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_90UKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_90alphaaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90alphaaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	_90UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
 
 	
 	_90charlieaction2 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
@@ -221,17 +221,17 @@ if((typeOf player) in ["1990_British_2IC_Desert","1990_British_SectionCommander_
 if((typeOf player) in ["1990_RM_British_2IC_Mix","1990_RM_British_SectionCommander_Mix"])then{
 
 	
-	_90rmalphaaction = ["Spawnsmall90AlphaCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk90RM.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmalphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+	_90rmUKaction = ["Spawnsmall90UKCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk90RM.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmUKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_90rmalphaaction1 = ["Spawnheartscrate","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsmindsRM.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmalphaaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	_90rmUKaction1 = ["Spawnheartscrate","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsmindsRM.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmUKaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_90rmalphaaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmalphaaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_90rmUKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_90rmalphaaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmalphaaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	_90rmUKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmUKaction4,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_90rmaction2 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_90rmaction2,true] call ace_interact_menu_fnc_addActionToClass;
