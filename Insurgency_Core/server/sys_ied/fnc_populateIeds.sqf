@@ -43,7 +43,7 @@ if (isNil "iedTypes") then {
 // Spawn IEDs
 for "_i" from 0 to _amount step 1 do {
 	_road = _allRoads call BIS_fnc_selectRandom;
-	_iedType = [iedTypes] call BIS_fnc_selectRandom;
+	_iedType = iedTypes call BIS_fnc_selectRandom;
 
 	// chance it's off the road a bit, but within 100~ meters at the start of the game
 	if ((random 1) >= 0.2) then {

@@ -21,6 +21,10 @@ params [["_delay", 120], ["_iedFactoryControlled", false]];
 private _shouldPlantIED = missionNamespace getVariable ["IEDFactoryIsFunctional", false];
 if (_iedFactoryControlled && !(_shouldPlantIED)) exitWith {};
 
+if (isNil "iedTypes") then {
+	iedTypes = ["ACE_IEDLandSmall_Range_Ammo", "ACE_IEDUrbanSmall_Range_Ammo", "ACE_IEDLandBig_Range_Ammo", "ACE_IEDUrbanBig_Range_Ammo", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+};
+
 private _iedType = selectRandom iedTypes;
 
 private _roadPos = [[worldSize / 2, worldSize / 2, 0], [0, 5000], [0, 360], 0] call SHK_pos;

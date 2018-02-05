@@ -20,7 +20,7 @@ _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,-0.04]); // ????? I'm not sure why Mike did this but I'm scared to remove it 
+_ied setPos (getPos _ied vectorAdd [0,0,-0.04]); // ????? I'm not sure why Mike did this but I'm scared to remove it
 
 _ied addEventHandler ["Killed", {
 	["TWC_Insurgency_adjustPoints", -1] call CBA_fnc_serverEvent;

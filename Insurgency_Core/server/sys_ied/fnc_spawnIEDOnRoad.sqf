@@ -35,11 +35,8 @@ _position = _road getRelPos [_halfOfWidth, _leftOrRight];
 
 //Created the object. We define _ied in since it is created in an if then
 _ied = "Arma is Retarded";
-if(_iedType in iedSpoofs)then{
-	_ied = createVehicle [_iedType,_position,[],0,"NONE"];
-}else{
-	_ied = createMine [_iedType, _position, [], 0];
-};
+_ied = createVehicle [_iedType,_position,[],0,"NONE"];
+
 _ied setDir (random 360);
 _ied setPos (getPos _ied vectorAdd [0,0,-0.04]); // Still no idea why Mike did this
 
