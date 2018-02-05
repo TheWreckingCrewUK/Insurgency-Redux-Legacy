@@ -36,10 +36,14 @@ _allRoads = _allRoads arrayIntersect _allRoads;
 
 if (count _allRoads <= 0) exitWith {};
 
+if (isNil "iedTypes") then {
+	iedTypes = ["ACE_IEDLandSmall_Range_Ammo", "ACE_IEDUrbanSmall_Range_Ammo", "ACE_IEDLandBig_Range_Ammo", "ACE_IEDUrbanBig_Range_Ammo", "Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
+};
+
 // Spawn IEDs
 for "_i" from 0 to _amount step 1 do {
 	_road = _allRoads call BIS_fnc_selectRandom;
-	_iedType = iedTypes call BIS_fnc_selectRandom;
+	_iedType = [iedTypes] call BIS_fnc_selectRandom;
 
 	// chance it's off the road a bit, but within 100~ meters at the start of the game
 	if ((random 1) >= 0.2) then {
