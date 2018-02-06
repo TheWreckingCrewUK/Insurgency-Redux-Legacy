@@ -81,7 +81,7 @@ for "_i" from 1 to _total do{
 	
 	_maxTime = time + 3600;
 	
-	while (alive _hvt) do {
+	while {alive _hvt} do {
 		if (time > _maxTime) exitWith {};
 		sleep 5;
 	};
