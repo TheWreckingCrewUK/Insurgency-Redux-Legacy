@@ -7,7 +7,6 @@
 #include "sys_cleanup\init.sqf";
 #include "sys_ied\init.sqf";
 #include "sys_cache\init.sqf";
-#include "sys_score\init.sqf";
 #include "sys_objectives\init.sqf";
 #include "sys_forwardBase\init.sqf";
 #include "sys_chat\init.sqf";

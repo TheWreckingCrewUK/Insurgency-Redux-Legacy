@@ -16,14 +16,15 @@
 */
 
 
-if(isNil "pointLimit") then{
-pointLimit = 400;
-publicVariable "pointLimit"; // init once
+if (isNil "pointLimit") then {
+	pointLimit = 400;
+	// let's come up with some set rewards for how this is valued
+	// i.e. difficulty & time to complete = X points
 };
 
-if(isNil "totalPoints") then{
-totalPoints = 0;
-publicVariable "totalPoints"; // init once
+if (isNil "totalPoints") then {
+	totalPoints = 0;
+	publicVariable "totalPoints"; // init once
 };
 
 _highestPlayerCountReached = 0; // the highest count reached of total connected players
@@ -50,5 +51,4 @@ _highestPlayerCountReached = 0; // the highest count reached of total connected 
 			pointLimit = pointLimit + 50;
 		};
 	};
-	publicVariable "pointLimit";
 }] call BIS_fnc_addStackedEventHandler;
