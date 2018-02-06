@@ -2,8 +2,8 @@
 
 //Deletion of ieds so players can't scum score
 {
-	player removeItems _x;
-}forEach ["ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"];
+	player removeMagazines _x;
+}forEach ["IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanBig_Remote_Mag","IEDUrbansmall_Remote_Mag"];
 //If player isn't west then kick them. Apparently players respawning as civ is an issue?
 if(side player != west)then{
 	call BIS_fnc_endMission;

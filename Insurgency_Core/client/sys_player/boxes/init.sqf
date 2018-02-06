@@ -5,13 +5,14 @@
 * while always keeping the box full. Basically it reloads as soon as you close it
 */
 _marker = "crate";  // marker used to spawn.
-_boxType = "CUP_UK_VehicleBox";  // the type of ammobox used.
+_boxType = "B_supplyCrate_F";  // the type of ammobox used.
 
 // create and fill the box.
+systemchat "created";
 crateBox = _boxType createVehicleLocal (getMarkerPos _marker);
 crateBox setPosATL (getMarkerPos _marker);
 crateBox allowDamage false;
-
+systemchat "done";
 [crateBox] execVM "Insurgency_Core\client\sys_player\boxes\main_ammo.sqf";
 
 player addEventHandler ["InventoryClosed", {
