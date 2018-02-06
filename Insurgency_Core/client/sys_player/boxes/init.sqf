@@ -5,7 +5,7 @@
 * while always keeping the box full. Basically it reloads as soon as you close it
 */
 _marker = "crate";  // marker used to spawn.
-_boxType = "B_supplyCrate_F";  // the type of ammobox used.
+_boxType = "CUP_BAF_VehicleBox";  // the type of ammobox used.
 
 // create and fill the box.
 systemchat "created";
