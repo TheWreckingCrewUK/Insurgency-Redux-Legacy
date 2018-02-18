@@ -24,6 +24,8 @@ twc_surrenderVote = false;
 
 TWC_Building_Style = "Med";
 
+hvtlist = ["rhsgref_ins_squadleader"];
+
 sirenlist = [idfalarm,idfalarm_1,idfalarm_2,idfalarm_3];
 publicvariable "sirenlist";
 

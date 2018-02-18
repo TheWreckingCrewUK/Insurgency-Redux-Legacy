@@ -1,4 +1,4 @@
-/*
+
 
 params["_town"];
 
@@ -11,11 +11,11 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 
 //Spawning a load of hostiles and the civs
-_num = (floor random (count townspawn));
+_num = 0;
 _total = 16;
 _group = createGroup East;
 for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
@@ -30,9 +30,9 @@ for "_i" from 1 to _total do{
 };
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
-for "_i" from 1 to 2 do{
+for "_i" from 1 to 4 do{
 	_num = 0;
-	_total = 8;
+	_total = 5 + random 5;
 	_group = createGroup East;
 	for "_i" from 1 to _total do{
 		_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
@@ -47,9 +47,19 @@ for "_i" from 1 to 2 do{
 		_num = _num + 1;
 		sleep 0.2;
 	};
-	[_group, _pos, 150, 3, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;
+	if (random 1 > 2) then {
+	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
+	else
+	{
+	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
+	//using the inferior cba defence function after the ace garrison teleport, so that if ace can't find a building then cba takes over
+	[_group, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;
+	};
 };
 [_pos, 5, 75] call twc_spawnCiv;
+
+_housecheck = (_pos) nearObjects ["House",200];
+if(count _housecheck > 0) then{
 
 for "_i" from 1 to 4 do{
 	_boxType = ["CUP_BAF_IEDBox","Box_IED_Exp_F"];
@@ -79,11 +89,10 @@ for "_i" from 1 to 4 do{
 		};
 	};
 };
-
+};
 // Creates Trigger that checks when East is dead and awards points
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
 _trg setTriggerStatements ["count thisList < 4",format["'%1' setMarkerColor 'colorBlufor'; ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent; ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;",_marker],""];
-*/

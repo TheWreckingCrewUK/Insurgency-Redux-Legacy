@@ -27,8 +27,10 @@ _strongholdArray = [];
 while{count _strongholdArray < 3}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
+	if ((_town distance getmarkerpos "base")>1000) then {
 		townLocationArray = townLocationArray - [_town];
 		_strongholdArray pushback _town;
+		};
 	};
 };
 

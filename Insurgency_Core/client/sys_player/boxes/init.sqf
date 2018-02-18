@@ -8,11 +8,9 @@ _marker = "crate";  // marker used to spawn.
 _boxType = "CUP_BAF_VehicleBox";  // the type of ammobox used.
 
 // create and fill the box.
-systemchat "created";
 crateBox = _boxType createVehicleLocal (getMarkerPos _marker);
 crateBox setPosATL (getMarkerPos _marker);
 crateBox allowDamage false;
-systemchat "done";
 [crateBox] execVM "Insurgency_Core\client\sys_player\boxes\main_ammo.sqf";
 
 player addEventHandler ["InventoryClosed", {

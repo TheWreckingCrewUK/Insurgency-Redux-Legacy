@@ -20,7 +20,9 @@ twc_surrenderVote = false;
 * "MidEast" - Middle East
 * "IRA" - Irish
 */
-TWC_Building_Style = "Med";
+TWC_Building_Style = "MidEast";
+
+hvtlist = ["CUP_O_TK_INS_Commander"];
 
 sirenlist = [idfalarm];
 publicvariable "sirenlist";
