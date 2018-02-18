@@ -1,6 +1,6 @@
 params["_civ"];
 
-if (0 > 0.2) exitwith {};
+if (random 1 > 0.05) exitwith {};
 _newGroup = createGroup East;
 _nearestEnemy = _civ findnearestenemy _civ;
 

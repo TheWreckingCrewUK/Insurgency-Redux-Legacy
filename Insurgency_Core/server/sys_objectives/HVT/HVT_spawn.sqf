@@ -33,7 +33,13 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 50
 };
 
 _group = createGroup East;
-_unitString = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"] call bis_fnc_selectRandom;
+
+if(isNil "hvtlist") then{
+	hvtlist = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"];
+};
+
+
+_unitString = hvtlist call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
 
@@ -55,12 +61,12 @@ _taskID = str (random 1000);
 [WEST,[_taskID],["We have located a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 //add Hostiles
-_num = (floor random (count townspawn));
+_num = 0;
 _total = 10;
 _group = createGroup East;
 
 for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select _num), _pos,[], 5,"NONE"];
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
