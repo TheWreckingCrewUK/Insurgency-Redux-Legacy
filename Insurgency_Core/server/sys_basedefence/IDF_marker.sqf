@@ -29,7 +29,7 @@ sleep _wait;
 			_marker setMarkerColor _color;
 			_marker setMarkerText (str(_distance) + "m @ " + str (_time24));
 			_marker setMarkerSize [0.5,0.5];
-			[_marker, true] call CBA_fnc_setMarkerPersistent;
+//			[_marker, true] call CBA_fnc_setMarkerPersistent;
 
 
 if (clearingmarker == 0) then {

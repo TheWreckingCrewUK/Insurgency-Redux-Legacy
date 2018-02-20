@@ -13,6 +13,11 @@
 #include "sys_basedefence\init.sqf";
 
 
+if(isNil "twc_is90") then{
+	twc_is90 = 0;
+	publicVariable "twc_is90";
+};
+
 basemode = 0;
 publicvariable "basemode";
 

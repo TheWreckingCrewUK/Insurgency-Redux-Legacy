@@ -164,9 +164,7 @@ execVM "insurgency_core\client\zeus\camera.sqf";
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
 	
 	
-	_action7 = ["Zeus","IDF Siren","",{{
-	[_x, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
-} forEach sirenlist;
+	_action7 = ["Zeus","IDF Siren","",{execVM "insurgency_core\server\sys_basedefence\IDF_Alarm.sqf"
 },{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action7] call ace_interact_menu_fnc_addActionToObject;
 	
