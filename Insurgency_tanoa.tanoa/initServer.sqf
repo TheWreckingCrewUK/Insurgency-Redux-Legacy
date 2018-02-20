@@ -21,10 +21,11 @@ twc_surrenderVote = false;
 * "IRA" - Irish
 */
 TWC_Building_Style = "MidEast";
+twc_is90 = 1;
 
-hvtlist = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"];
+hvtlist = ["rhsgref_ins_squadleader"];
 
-sirenlist = [idfalarm,idfalarm_1,idfalarm_2,idfalarm_3,idfalarm_4,idfalarm_5];
+sirenlist = [idfalarm];
 publicvariable "sirenlist";
 
 civilianType = ["C_man_polo_3_F_afro", "C_man_polo_1_F_afro", "C_man_polo_4_F_afro","C_man_polo_5_F_afro", "C_man_polo_6_F_afro", "C_man_p_fugitive_F_afro"];
@@ -55,7 +56,7 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
-badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
+badTownArray = ["railway depot","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
 
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
