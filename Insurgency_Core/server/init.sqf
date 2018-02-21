@@ -18,6 +18,12 @@ if(isNil "twc_is90") then{
 	publicVariable "twc_is90";
 };
 
+
+if(isNil "twc_mineType") then{
+	twc_mineType = ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1"];
+	publicVariable "twc_mineType";
+};
+
 basemode = 0;
 publicvariable "basemode";
 
