@@ -74,7 +74,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_VMH3",1],
 		["rhs_weap_m72a7",4],
 		["rhs_weap_M136_hedp",2],
-		["launch_NLAW_F",3]
+		["launch_NLAW_F",3],
+		["ACE_VMM3",1]
     ];
 
     _tmp_magazines =
@@ -1008,9 +1009,10 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 		["itemCTAB",1]
 	];
 };
+if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_SectionCommander_Desert"])
 */
 //USMC Squad Leader
- if (typeOf vehicle player == "Modern_USMC_Squadleader") then {
+ if ((typeOf vehicle player) in ["Modern_USMC_Squadleader", "Modern_USMC_Squadleader_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_m203_acog_lazer",1],
@@ -1053,7 +1055,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 	];
 };
 //USMC Team Leader
- if (typeOf vehicle player == "Modern_USMC_Teamleader") then {
+ if ((typeOf vehicle player) in ["Modern_USMC_Teamleader", "Modern_USMC_Teamleader_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_m203_acog_lazer",1],
@@ -1095,18 +1097,14 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 	];
 };
 
-//USMC Rifleman
- if (typeOf vehicle player == "Modern_USMC_Rifleman") then {
+//USMC breacher
+  if ((typeOf vehicle player) in ["Modern_USMC_Breacher", "Modern_USMC_Breacher_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
 		["ACE_VMH3",1],
         ["rhsusf_weap_m1911a1",1],
-		["UK3CB_BAF_Javelin_Slung_Tube",3],
-		["CUP_launch_Mk153Mod0",1],
-		["rhs_weap_M590_8RD",1],
-		["rhs_weap_M136_hedp",2],
-		["rhs_weap_m72a7",2]
+		["rhs_weap_M590_8RD",1]
 	];
 
     _tmp_magazines =
@@ -1116,6 +1114,38 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
         ["rhsusf_mag_7x45acp_MHP",15],
 		["rhsusf_8Rnd_00Buck",10],
 		["rhsusf_8Rnd_Slug",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+        ["ACE_MapTools",1],
+		["rhsusf_acc_ACOG",1],
+		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_anpeq15_bk_light",1],
+		["rhsusf_assault_eagleaiii_ocp",1],
+		["ACRE_PRC148",1]
+	];
+};
+
+//USMC Rifleman
+  if ((typeOf vehicle player) in ["Modern_USMC_Rifleman", "Modern_USMC_Rifleman_d"]) then {
+    _tmp_weapons =
+    [
+        ["twc_rhs_weap_m4a1_acog_lazer",1],
+		["ACE_VMH3",1],
+        ["rhsusf_weap_m1911a1",1],
+		["UK3CB_BAF_Javelin_Slung_Tube",3],
+		["CUP_launch_Mk153Mod0",1],
+		["rhs_weap_M136_hedp",2],
+		["rhs_weap_m72a7",2]
+	];
+
+    _tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
+        ["rhsusf_mag_7x45acp_MHP",15],
 		["CUP_SMAW_HEAA_M",3],
 		["CUP_SMAW_HEDP_M",3],
 		["CUP_SMAW_Spotting",8],
@@ -1135,8 +1165,10 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
 	];
 };
 
+
+
 //USMC Auto Rifleman
-if (typeOf vehicle player == "Modern_USMC_Autorifleman") then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Autorifleman", "Modern_USMC_Autorifleman_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m249_pip_L_mgo_lazer",1],
@@ -1166,7 +1198,7 @@ if (typeOf vehicle player == "Modern_USMC_Autorifleman") then {
 };
 
 //USMC Auto Rifleman Assistant
-if (typeOf vehicle player == "Modern_USMC_AsstAutorifleman") then {
+  if ((typeOf vehicle player) in ["Modern_USMC_AsstAutorifleman", "Modern_USMC_AsstAutorifleman_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],     
@@ -1196,7 +1228,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstAutorifleman") then {
 	];
 };
 //USMC Machine Gunner
-if (typeOf vehicle player == "Modern_USMC_MachineGunner") then {
+  if ((typeOf vehicle player) in ["Modern_USMC_MachineGunner", "Modern_USMC_MachineGunner_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m240B_mgo_lazer",1],
@@ -1222,7 +1254,7 @@ if (typeOf vehicle player == "Modern_USMC_MachineGunner") then {
 };
 
 //USMC Machine Gunner Assistant
-if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
+  if ((typeOf vehicle player) in ["Modern_USMC_AsstMachineGunner", "Modern_USMC_AsstMachineGunner_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
@@ -1253,7 +1285,7 @@ if (typeOf vehicle player == "Modern_USMC_AsstMachineGunner") then {
 };
 
 //USMC Medic
- if (typeOf vehicle player == "Modern_USMC_Medic") then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Medic", "Modern_USMC_Medic_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
