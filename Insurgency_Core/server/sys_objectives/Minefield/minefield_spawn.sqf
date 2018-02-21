@@ -11,7 +11,7 @@ while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos 
 _pos = [getPos _town, 500, 2000, 1, 0, 0.7, 0, [], [getPos _town, getPos _town]] call BIS_fnc_findSafePos;
 
 //Adds a marker with a bit of an offset
-_markerPos = [_pos, 100] call CBA_fnc_randPos;
+_markerPos = [_pos, 50] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
@@ -27,7 +27,7 @@ _markerstr2 setMarkerText "Minefield";
 
 //Creating the task
 _taskID = str (random 1000);
-[WEST,[_taskID],["A minefield has been reported in the area. We need to investigate it and defuse them if possible.","Clear Minefield"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+[WEST,[_taskID],["A minefield has been reported in the area. We need to investigate it and defuse them if possible.","Minefield Clearance"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 
 _num = 0;
@@ -46,22 +46,52 @@ _minecount = _minecount + 1;
 _marker = createMarker [str getpos _mine,getpos _mine];
 _marker setMarkerShape "Ellipse";
 _marker setMarkerBrush "Grid";
-_marker setMarkerSize [2,2];
+_marker setMarkerSize [1,1];
 _marker setMarkerColor "colorOpfor";
 */
 
 };
 
+
+
 sleep 20;
+
+waituntil {count (_pos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))};
+[
+	{
+		[(_this select 1), "ASSIGNED"] call BIS_fnc_taskSetState;
+		["TWC_Insurgency_adjustPoints", 10] call CBA_fnc_serverEvent;
+	},
+	[_objType, _taskID, _markerstr, _markerstr2],
+	(30 + ((floor random 10) * 3))
+] call CBA_fnc_waitAndExecute;
+
 //Complete or fail
-waituntil {_minecount < 5};
+waituntil {count (_pos nearobjects ["minebase", 150]) < (_totalmines /2)};
+[
+	{
+		[(_this select 1), "SUCCEEDED"] call BIS_fnc_taskSetState;
+		deleteMarker (_this select 2);
+		deleteMarker (_this select 3);
+		["TWC_Insurgency_adjustPoints", 30] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;
+	},
+	[_objType, _taskID, _markerstr, _markerstr2],
+	(30 + ((floor random 10) * 3))
+] call CBA_fnc_waitAndExecute;
+
+sleep 60;
 [
 	{
 		[(_this select 1)] call bis_fnc_deleteTask;
-		deleteMarker (_this select 2);
-		deleteMarker (_this select 3);
-		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;
 	},
 	[_objType, _taskID, _markerstr, _markerstr2],
 	(60 + ((floor random 10) * 6))
 ] call CBA_fnc_waitAndExecute;
+
+//cleanup after objective complete. It's slowed down so that there's still a risk after it's 'cleared'.
+sleep 600;
+while{count (_pos nearobjects ["minebase", 150]) > 0}do{
+sleep 600;
+_deletemine = (_pos nearobjects ["minebase", 150])  select 0;
+sleep 3;};

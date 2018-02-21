@@ -20,7 +20,7 @@ if(isNil "twc_is90") then{
 
 
 if(isNil "twc_mineType") then{
-	twc_mineType = ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1"];
+	twc_mineType = ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1", "ATMine"];
 	publicVariable "twc_mineType";
 };
 

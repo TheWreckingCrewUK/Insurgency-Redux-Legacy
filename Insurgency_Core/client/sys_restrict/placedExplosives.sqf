@@ -12,15 +12,15 @@
 	};
 	
 	//
-	if(typeOf _exp in ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1","ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])exitWith{
+	if(typeOf _exp in ["ATMine_Range_Ammo", "rhsusf_mine_m14_ammo", "APERSMine_Range_Ammo", "rhs_ammo_ptm1", "rhs_mine_pmn2_ammo", "rhs_ammo_pfm1", "ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])exitWith{
 		deleteVehicle _exp;
-		hint "You are supposed to clean up the ieds not plant them";
+		hint "You are supposed to clean up the explosives, not plant them";
 	};
 }] call CBA_fnc_addEventHandler;
 
 ["ace_explosives_defuse", {
 	params ["_exp", "_unit"];
-	if(typeOf _exp in ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1", "ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])then{
-		["TWC_Insurgency_adjustPoints", 2] call CBA_fnc_serverEvent;
+	if(typeOf _exp in ["ATMine_Range_Ammo", "rhsusf_mine_m14_ammo", "APERSMine_Range_Ammo", "rhs_ammo_ptm1", "rhs_mine_pmn2_ammo", "rhs_ammo_pfm1", "ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])then{
+		["TWC_Insurgency_adjustPoints", 5] call CBA_fnc_serverEvent;
 	};
 }] call CBA_fnc_addEventHandler;

@@ -16,11 +16,11 @@ _ROOT = "Insurgency_Core\server\sys_objectives\";
 
 if (!isServer) exitWith {};
 
-_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
-_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_spawn.sqf");
+//_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
+//_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_spawn.sqf");
 
-//_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_canSpawn.sqf");
-//_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_spawn.sqf");
+_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_canSpawn.sqf");
+_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_spawn.sqf");
 
 //_canSpawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_canSpawn.sqf");
 //_spawn_CrashedHeli = compile preprocessFileLineNumbers (_ROOT + "CrashedHeli\crashedHeli_spawn.sqf");
