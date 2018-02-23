@@ -1396,6 +1396,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	];
 };
 
+
 //ANA Section Leader
 if (g_class == "ANA_SL") then {
     _tmp_weapons =
@@ -1560,6 +1561,244 @@ if (g_class == "ANA_TL") then {
 	];
 };
 */
+
+//Redux ANA
+
+if (typeOf vehicle player == "twc_ana_commander") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1],
+        ["binocular",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_762x39mm",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1],
+		["ACRE_PRC148",1],
+		["ACRE_PRC117F",1],
+		["ACE_morphine", 20],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_ana_base") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_762x39mm",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_ana_subcommander") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_762x39mm",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+
+if (typeOf vehicle player == "twc_ana_rifleman_at") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_762x39mm",50],
+        ["rhs_rpg7_OG7V_mag",20],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_ana_mg") then {
+    _tmp_weapons =
+    [
+  //      ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_100Rnd_762x54mmR_green",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+
+if (typeOf vehicle player == "twc_ana_mg_as") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_762x39mm",50],
+        ["rhs_100Rnd_762x54mmR_green",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+
+if (typeOf vehicle player == "twc_ana_marksman") then {
+    _tmp_weapons =
+    [
+ //       ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_10Rnd_762x54mmR_7N1",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_ana_medic") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_10Rnd_762x54mmR_7N1",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",45],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_personalAidKit", 1],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
 //BAF Pilot
  if (typeOf vehicle player == "Modern_British_heliPilot") then {
     _tmp_weapons =
@@ -1589,9 +1828,12 @@ if (g_class == "ANA_TL") then {
 		["ACRE_PRC117F",1]
 	];
 };
-/*
+
+
+
+
  //BAF Crew Cheif
- if (g_class == "PLT_CREW") then {
+ if (typeOf vehicle player == "Modern_British_crewchief") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L22A2",1],
@@ -1619,7 +1861,7 @@ if (g_class == "ANA_TL") then {
 		
 	];
 };
-*/
+
 //US Pilot
  if (typeOf vehicle player == "TWC_Modern_US_Army_HeliPilot") then {
     _tmp_weapons =

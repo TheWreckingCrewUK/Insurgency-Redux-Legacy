@@ -18,6 +18,7 @@
 
 if (isNil "pointLimit") then {
 	pointLimit = 400;
+	publicVariable "pointLimit";
 	// let's come up with some set rewards for how this is valued
 	// i.e. difficulty & time to complete = X points
 };

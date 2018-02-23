@@ -19,6 +19,9 @@ if (!isServer) exitWith {};
 _canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
 _spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_spawn.sqf");
 
+//_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_canSpawn.sqf");
+//_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_spawn.sqf");
+
 //_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_canSpawn.sqf");
 //_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_spawn.sqf");
 
@@ -30,6 +33,9 @@ _spawn_HVT = compile preprocessFileLineNumbers (_ROOT + "HVT\HVT_spawn.sqf");
 
 _canSpawn_minefield = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_canSpawn.sqf");
 _spawn_minefield = compile preprocessFileLineNumbers (_ROOT + "minefield\minefield_spawn.sqf");
+
+_canSpawn_convoy = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_canSpawn.sqf");
+_spawn_convoy = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_spawn.sqf");
 
 
 _canSpawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_canSpawn.sqf");
@@ -54,7 +60,8 @@ heartsAndMindsObjs = [
 
 searchAndDestroyObjs = [
 	["Blank", _canSpawn_Blank, _spawn_Blank],
-	["HVT", _canSpawn_HVT, _spawn_HVT]
+	["HVT", _canSpawn_HVT, _spawn_HVT],
+	["Convoy", _canSpawn_Convoy, _spawn_Convoy]
 	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]
 ];
 

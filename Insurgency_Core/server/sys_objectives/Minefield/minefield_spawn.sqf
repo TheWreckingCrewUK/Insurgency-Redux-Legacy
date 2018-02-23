@@ -6,7 +6,7 @@ _pos = getPos _town;
 _attemptcount = 0;
 while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 2000 || _town in badTownArray}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
-	_pos1 = getPos _town;
+	_pos = getPos _town;
 	_attemptcount = _attemptcount + 1;
 if (_attemptcount > 50) exitwith {
 		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;};

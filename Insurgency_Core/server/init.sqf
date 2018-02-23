@@ -19,6 +19,32 @@ if(isNil "twc_is90") then{
 };
 
 
+if(isNil "twc_convoyallowed") then{
+	twc_convoyallowed = 1;
+};
+
+
+if(isNil "twc_heavies") then{
+	twc_heavies = ["twc_heavy_men_rif_m4",
+			"twc_heavy_men_com",
+			"twc_heavy_men_ar",
+			"twc_heavy_men_mg",
+			"twc_heavy_men_mg_as",
+			"twc_heavy_men_gren_m203",
+			"twc_heavy_men_gren_gp25",
+			"twc_heavy_men_rif_at",
+			"twc_heavy_men_mk",
+			"twc_heavy_men_rif_ak74",
+			"twc_heavy_men_rif_m16"];
+			
+};
+
+if(isNil "enemyTechnical") then{
+	enemyTechnical = ["CUP_O_LR_MG_TKM", "CUP_O_LR_SPG9_TKM"];
+	publicVariable "enemyTechnical";
+};
+
+
 if(isNil "twc_mineType") then{
 	twc_mineType = ["rhsusf_mine_m14", "APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1", "ATMine"];
 	publicVariable "twc_mineType";

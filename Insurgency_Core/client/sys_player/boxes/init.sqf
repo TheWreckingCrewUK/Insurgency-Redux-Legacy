@@ -22,7 +22,10 @@ player addEventHandler ["InventoryClosed", {
 
 	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\clearboxes.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
 	
+twc_placeflag = ["placeflag","Place EOD Flag","",{call twc_fnc_eodflag},{count (_pos nearobjects ["minebase", 400]) > 0 && count (_pos nearobjects ["twc_flag_eod", 400]) < 30}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], twc_placeflag] call ace_interact_menu_fnc_addActionToObject;
 
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
