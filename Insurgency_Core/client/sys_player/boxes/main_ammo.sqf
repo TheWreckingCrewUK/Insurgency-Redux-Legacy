@@ -2018,7 +2018,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["1990_British_Medic_desert","1990_RM_British_Medic_Mix"])then{
+ if((typeOf player) in ["1990_British_Medic_Desert","1990_RM_British_Medic_Mix"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
@@ -2043,6 +2043,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
 		["ACE_salineIV_250", 50],
+		["ACE_personalAidKit", 1],
 		["ACE_bodyBag", 10]
 	];
 };

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3284.5466,18.540712,1396.4302};
-		dir[]={0.90773684,-0.36239406,-0.21142894};
-		up[]={0.35295221,0.93202329,-0.082209744};
-		aside[]={-0.22684978,-4.2107422e-007,-0.97393936};
+		pos[]={3302.7209,25.274914,1390.1466};
+		dir[]={0.73422563,-0.42489809,0.52958393};
+		up[]={0.34460634,0.90524441,0.24855791};
+		aside[]={0.58501375,-4.54369e-007,-0.81107634};
 	};
 };
 binarizationWanted=0;
@@ -227,7 +227,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=76;
+		items=75;
 		class Item0
 		{
 			dataType="Marker";
@@ -1733,7 +1733,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item33
@@ -4535,39 +4554,6 @@ class Mission
 			{
 			};
 			id=1643;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="acex_headless_blacklist";
-					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item75
-		{
-			dataType="Group";
-			side="West";
-			class Attributes
-			{
-			};
-			id=1673;
-			atlOffset=-110.8175;
 			class CustomAttributes
 			{
 				class Attribute0
