@@ -1771,7 +1771,7 @@ if (typeOf vehicle player == "twc_ana_medic") then {
 
 	_tmp_magazines =
     [
-        ["rhs_10Rnd_762x54mmR_7N1",50],
+        ["rhs_30Rnd_762x39mm",50],
 		["HandGrenade",5]
     ];
 
