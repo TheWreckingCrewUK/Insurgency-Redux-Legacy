@@ -28,7 +28,7 @@ _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
 _markerstr setMarkerBrush "Grid";
-_markerstr setMarkerSize [100,100];
+_markerstr setMarkerSize [70,70];
 
 _markerstr2 = createMarker [str (random 1000),_markerPos];
 _markerstr2 setMarkerShape "ICON";
@@ -51,7 +51,7 @@ for "_i" from 1 to _totalmines do{
 	_minePos1 = [_pos, 50] call CBA_fnc_randPos;
 	_minePos = [_minePos1,[10,50],random 360,0,[0,100]] call SHK_pos;
 	_mine = createmine [_minetype, _minePos, [], 5];
-	
+	_mine setdir random 360;
 _minecount = _minecount + 1;
 /*
 _marker = createMarker [str getpos _mine,getpos _mine];

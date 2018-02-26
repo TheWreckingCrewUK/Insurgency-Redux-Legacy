@@ -85,7 +85,7 @@ for "_i" from 1 to _total do{
 [_hvt, _markerstr, _markerstr2, _taskID, _group, _objType] spawn {
 	params ["_hvt", "_markerstr", "_markerstr2", "_taskID", "_group", "_objType"];
 	
-	_maxTime = time + 3600;
+	_maxTime = time + 6000;
 	
 	while {alive _hvt} do {
 		if (time > _maxTime) exitWith {};
@@ -95,7 +95,7 @@ for "_i" from 1 to _total do{
 	if (!alive _hvt) then {
 		["TWC_Insurgency_adjustPoints", 50] call CBA_fnc_serverEvent;
 	}else{
-		["TWC_Insurgency_adjustPoints", -25] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_adjustPoints", -15] call CBA_fnc_serverEvent;
 	};
 
 	deleteMarker _markerstr;

@@ -2,6 +2,7 @@ INS_fnc_spawnIED = compile preprocessFileLineNumbers "Insurgency_Core\server\sys
 INS_fnc_spawnIEDOnRoad = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIEDOnRoad.sqf";
 INS_fnc_populateIEDs = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_populateIEDs.sqf";
 INS_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_startIEDPlantLoop.sqf";
+INS_fnc_daisychain = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_daisychain.sqf";
 
 if (isNil "InsP_iedGroup") then {
 	InsP_iedGroup = [];

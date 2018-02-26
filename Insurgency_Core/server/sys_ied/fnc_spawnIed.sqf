@@ -16,11 +16,30 @@
  */
 params ["_iedType", "_position", ["_spawnRadius", 0], ["_isIntialSeed", false]];
 
+
+
+
 _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,-0.04]); // ????? I'm not sure why Mike did this but I'm scared to remove it
+_ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // ????? I'm not sure why Mike did this but I'm scared to remove it
+/*
+_marker = createMarker [str getpos _ied,getpos _ied];
+_marker setMarkerShape "ICON";
+_marker setMarkerType "MIL_dot";
+_marker setMarkerColor "colorOpfor";
+*/
+_randsize = random 40;
+_randtime = random 5;
+_trg = createTrigger ["EmptyDetector", getpos _ied];
+_trg setTriggerArea [_randsize, _randsize, 30, false];
+_trg setTriggerActivation ["west", "PRESENT", False];
+_trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
+_trg setTriggerStatements ["{speed _x > 10} foreach thislist","'R_80mm_HE' createvehicle getpos thistrigger; 
+deleteVehicle thisTrigger;",""];
+
+
 
 _ied addEventHandler ["Killed", {
 	["TWC_Insurgency_adjustPoints", -1] call CBA_fnc_serverEvent;
@@ -29,3 +48,4 @@ _ied addEventHandler ["Killed", {
 
 InsP_iedGroup pushback _ied;
 publicVariable "InsP_iedGroup";
+

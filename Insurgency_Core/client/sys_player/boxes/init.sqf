@@ -23,10 +23,22 @@ player addEventHandler ["InventoryClosed", {
 	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\clearboxes.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
 
-	/*
-_twc_placeflag = ["placeflag","Place EOD Flag","",{call twc_fnc_eodflag},{count (_pos nearobjects ["minebase", 400]) > 0 && count (_pos nearobjects ["twc_flag_eod", 400]) < 30}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _twc_placeflag] call ace_interact_menu_fnc_addActionToObject;
-*/
+	_twc_removeflag = ["clearflag","Remove Flag","",{deletevehicle _target},{true}] call ace_interact_menu_fnc_createAction;
+	["FlagSmall_F",0,["ACE_MainActions"],_twc_removeflag,true] call ace_interact_menu_fnc_addActionToClass;
+
+
+_twc_placeflag = ["placeflag","Place EOD Flag","",{ 
+_flag = createVehicle ["FlagSmall_F", ([_player, 2, getdir _player] call BIS_fnc_relPos), [], 0, "CAN_COLLIDE"];
+_flag setdir random 360;
+if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag; hint "You're Nowhere Near A Minefield"} else 
+
+{if (count (player nearobjects ["FlagSmall_F", 250]) >50) then {deletevehicle _flag; hint "There Are Too Many Flags In The Area Already, Chill Your Bean"} else {if (count (player nearobjects ["FlagSmall_F", 40]) >15) then {deletevehicle _flag; hint "I Am A Server In Pain, Please Have Mercy"} else {if (count (player nearobjects ["FlagSmall_F", 5]) >3) then {deletevehicle _flag; hint "You're Really Enthusiastic With This Whole Flag Thing"}}}}
+;
+
+},{true}] call ace_interact_menu_fnc_createAction; 
+[player, 1, ["ACE_SelfActions"], _twc_placeflag] call ace_interact_menu_fnc_addActionToObject; 
+
+
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
 	_action = ["SpawnUKCreate","Spawn Large UK Crate","",{"twc_forwardBase_BritishAmmoBox" createVehicle (getPos AmmoBoxSpawner)},{true}] call ace_interact_menu_fnc_createAction;
