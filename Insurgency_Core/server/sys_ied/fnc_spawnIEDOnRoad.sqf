@@ -41,12 +41,12 @@ _ied = createVehicle [_iedType,_position,[],0,"NONE"];
 _ied setDir (random 360);
 _ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // Still no idea why Mike did this
 
-/*
+
 _marker = createMarker [str getpos _ied,getpos _ied];
 _marker setMarkerShape "ICON";
 _marker setMarkerType "MIL_dot";
 _marker setMarkerColor "colorBlufor";
-*/
+
 
 _randsize = random 40;
 _randtime = random 5;
@@ -54,7 +54,7 @@ _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
 _trg setTriggerActivation ["west", "PRESENT", False];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{speed _x > 10} foreach thislist","'Bo_GBU12_LGB' createvehicle getpos thistrigger;[getpos thistrigger] call INS_fnc_daisychain; deleteVehicle thisTrigger;",""];
+_trg setTriggerStatements ["{speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","'Bo_GBU12_LGB' createvehicle getpos thistrigger;[getpos thistrigger] call INS_fnc_daisychain; deleteVehicle thisTrigger;",""];
 
 
 _ied addEventHandler ["Killed", {
