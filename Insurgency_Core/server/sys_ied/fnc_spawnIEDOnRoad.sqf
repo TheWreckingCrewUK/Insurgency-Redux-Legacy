@@ -41,12 +41,12 @@ _ied = createVehicle [_iedType,_position,[],0,"NONE"];
 _ied setDir (random 360);
 _ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // Still no idea why Mike did this
 
-
+/*
 _marker = createMarker [str getpos _ied,getpos _ied];
 _marker setMarkerShape "ICON";
 _marker setMarkerType "MIL_dot";
 _marker setMarkerColor "colorBlufor";
-
+*/
 
 _randsize = random 40;
 _randtime = random 5;
