@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=1270;
+		nextID=1271;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4254.7656,140.52483,18063.033};
-		dir[]={-0.9884789,0.13885199,-0.060362499};
-		up[]={0.13859466,0.99031365,0.0084624868};
-		aside[]={-0.060952604,9.0184039e-007,0.99814796};
+		pos[]={4401.8735,151.95863,18117.305};
+		dir[]={-0.45498559,-0.34739506,-0.81997532};
+		up[]={-0.16856286,0.93770844,-0.30378634};
+		aside[]={-0.87443066,1.1720695e-006,0.48520035};
 	};
 };
 binarizationWanted=0;
@@ -82,13 +82,14 @@ addons[]=
 	"CUP_Creatures_StaticWeapons",
 	"twc_artillery_computer",
 	"parachute",
-	"CUP_WaterVehicles_Weapons"
+	"CUP_WaterVehicles_Weapons",
+	"CUP_WheeledVehicles_Wolfhound"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=52;
+		items=53;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -396,6 +397,11 @@ class AddonsMetaData
 			name="CUP_WaterVehicles_Weapons";
 			author="Community Upgrade Project and ATLAS Mod";
 		};
+		class Item52
+		{
+			className="CUP_WheeledVehicles_Wolfhound";
+			name="CUP_WheeledVehicles_Wolfhound";
+		};
 	};
 };
 randomSeed=16337384;
@@ -580,7 +586,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=293;
+		items=294;
 		class Item0
 		{
 			dataType="Marker";
@@ -735,7 +741,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4379.9956,139.54779,18101.568};
+				position[]={4374.3721,139.54788,18101.49};
 				angles[]={0,0.001324292,0};
 			};
 			side="Empty";
@@ -745,16 +751,14 @@ class Mission
 			};
 			id=108;
 			type="Land_InfoStand_V2_F";
-			atlOffset=-9.1552734e-005;
 		};
 		class Item7
 		{
 			dataType="Marker";
-			position[]={4376.7861,138.96753,18094.383};
+			position[]={4371.1626,138.96762,18094.305};
 			name="crateDropOff";
 			type="Empty";
 			id=219;
-			atlOffset=-9.1552734e-005;
 		};
 		class Item8
 		{
@@ -1041,11 +1045,10 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={4378.7241,138.96753,18095.238};
+			position[]={4373.1006,138.96762,18095.16};
 			name="forwardBase_itemSpawn";
 			type="Empty";
 			id=351;
-			atlOffset=-9.1552734e-005;
 		};
 		class Item11
 		{
@@ -1178,7 +1181,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4377.7261,140.09473,18101.471};
+				position[]={4372.1025,140.09482,18101.393};
 				angles[]={0,6.2629747,0};
 			};
 			side="Empty";
@@ -1189,7 +1192,7 @@ class Mission
 			};
 			id=466;
 			type="SignAd_Sponsor_F";
-			atlOffset=0.08605957;
+			atlOffset=0.086151123;
 		};
 		class Item14
 		{
@@ -1525,7 +1528,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4362.167,137.91231,18096.674};
+				position[]={4357.9326,137.91231,18096.793};
 				angles[]={0,4.7081475,0};
 			};
 			side="Empty";
@@ -8095,7 +8098,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4385.4409,140.00809,18098.756};
+				position[]={4380.3418,140.00809,18098.941};
 				angles[]={0,1.6088705,0};
 			};
 			side="Empty";
@@ -8134,7 +8137,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4385.4604,140.00809,18094.572};
+				position[]={4380.3613,140.00809,18094.758};
 				angles[]={0,1.6088705,0};
 			};
 			side="Empty";
@@ -11682,6 +11685,46 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item293
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4384.8999,139.05762,18096.561};
+				angles[]={0,3.1329706,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1270;
+			type="CUP_B_Wolfhound_LMG_GB_D";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};

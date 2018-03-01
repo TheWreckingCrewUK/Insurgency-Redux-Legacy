@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=741;
+		nextID=743;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8149.3872,31.981539,10113.176};
-		dir[]={-0.35093358,-0.39189357,-0.85048395};
-		up[]={-0.14951205,0.91997409,-0.36233833};
-		aside[]={-0.92442077,3.6507845e-007,0.38144246};
+		pos[]={8144.6162,51.432285,10070.6};
+		dir[]={-0.063196599,-0.69614708,0.71515924};
+		up[]={-0.061281718,0.71784711,0.6934967};
+		aside[]={0.99614954,1.884473e-007,0.088026859};
 	};
 };
 binarizationWanted=0;
@@ -68,13 +68,14 @@ addons[]=
 	"RHS_US_A2_AirImport",
 	"twc_modern",
 	"twc_framework_public_modern_us",
-	"CUP_WheeledVehicles_HMMWV"
+	"CUP_WheeledVehicles_HMMWV",
+	"CUP_WheeledVehicles_Wolfhound"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -324,6 +325,11 @@ class AddonsMetaData
 			className="CUP_WheeledVehicles_HMMWV";
 			name="CUP_WheeledVehicles_HMMWV";
 		};
+		class Item41
+		{
+			className="CUP_WheeledVehicles_Wolfhound";
+			name="CUP_WheeledVehicles_Wolfhound";
+		};
 	};
 };
 randomSeed=16337384;
@@ -357,7 +363,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=93;
+		items=94;
 		class Item0
 		{
 			dataType="Marker";
@@ -692,7 +698,7 @@ class Mission
 			position[]={8108.2114,0,10076.679};
 			name="crateDropOff";
 			type="Empty";
-			angle=6.8301856e-006;
+			angle=6.8301852e-006;
 			id=219;
 			atlOffset=-29.450424;
 		};
@@ -1045,7 +1051,7 @@ class Mission
 			position[]={8108.2915,0,10076.174};
 			name="forwardBase_itemSpawn";
 			type="Empty";
-			angle=6.8301856e-006;
+			angle=6.8301852e-006;
 			id=351;
 			atlOffset=-29.44891;
 		};
@@ -3206,6 +3212,7 @@ class Mission
 			};
 			id=668;
 			type="CUP_B_A10_DYN_USA";
+			atlOffset=-0.0013008118;
 		};
 		class Item77
 		{
@@ -3222,6 +3229,7 @@ class Mission
 			};
 			id=671;
 			type="CUP_B_GR9_DYN_GB";
+			atlOffset=0.0031852722;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3373,7 +3381,7 @@ class Mission
 			};
 			id=690;
 			type="RHS_UH60M_d";
-			atlOffset=1.9073486e-006;
+			atlOffset=3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5205,7 +5213,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8149.7959,31.49614,10105.623};
-				angles[]={-0,0.53421038,6.2687912};
+				angles[]={0,0.53421038,6.2687912};
 			};
 			side="Empty";
 			flags=4;
@@ -5245,7 +5253,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8146.4824,31.543854,10107.769};
-				angles[]={-0,0.53421038,6.2687912};
+				angles[]={0,0.53421038,6.2687912};
 			};
 			side="Empty";
 			flags=4;
@@ -5273,6 +5281,46 @@ class Mission
 								};
 							};
 							value="[[[[""rhs_weap_m4_carryhandle"",""rhs_weap_M136_hedp"",""FirstAidKit""],[2,2,4]],[[""rhs_m136_hedp_mag"",""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhsusf_100Rnd_556x45_soft_pouch"",""rhs_mag_M441_HE"",""rhs_mag_m714_White"",""rhs_mag_m662_red"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[2,20,8,16,4,2,4,2,2,4]],[[],[]],[[""rhsusf_falconii""],[2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8143.5835,29.027657,10088.872};
+				angles[]={6.278389,3.1165297,6.2767911};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=741;
+			type="CUP_B_Wolfhound_LMG_GB_W";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
 						};
 					};
 				};

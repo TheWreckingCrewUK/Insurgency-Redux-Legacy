@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1697;
+		nextID=1698;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8004.5259,320.8558,1988.7382};
-		dir[]={-0.69033962,-0.57015777,-0.44551596};
-		up[]={-0.47913373,0.82146454,-0.30921501};
-		aside[]={-0.54227871,9.0245157e-007,0.84027112};
+		pos[]={8249.7773,320.8558,2150.2229};
+		dir[]={0.36599106,-0.6714837,0.64444679};
+		up[]={0.33163711,0.74094427,0.58395946};
+		aside[]={0.86961889,4.3027103e-007,-0.49386698};
 	};
 };
 binarizationWanted=0;
@@ -68,13 +68,14 @@ addons[]=
 	"twc_framework_public_modern_us",
 	"RHS_US_A2_AirImport",
 	"rhsusf_c_HEMTT_A4",
-	"CUP_WheeledVehicles_UpHMMWV"
+	"CUP_WheeledVehicles_UpHMMWV",
+	"CUP_WheeledVehicles_Wolfhound"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=39;
+		items=40;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -314,6 +315,11 @@ class AddonsMetaData
 			className="CUP_WheeledVehicles_UpHMMWV";
 			name="CUP_WheeledVehicles_UpHMMWV";
 		};
+		class Item39
+		{
+			className="CUP_WheeledVehicles_Wolfhound";
+			name="CUP_WheeledVehicles_Wolfhound";
+		};
 	};
 };
 randomSeed=16337384;
@@ -347,7 +353,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=294;
+		items=295;
 		class Item0
 		{
 			dataType="Marker";
@@ -12323,6 +12329,46 @@ class Mission
 			id=1696;
 			type="CUP_B_M1151_M2_DSRT_USMC";
 			atlOffset=-9.1552734e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item294
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8271.1191,296.13,2168.5774};
+				angles[]={0,4.1433535,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1697;
+			type="CUP_B_Wolfhound_LMG_GB_D";
 			class CustomAttributes
 			{
 				class Attribute0

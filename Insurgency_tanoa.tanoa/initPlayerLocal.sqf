@@ -29,13 +29,21 @@ twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_Amm
 //this is now stored in core as it's only rare for there to be differences to the normal, I'll put in exemption code if this ever becomes necessary
 twc_restrictedVehicleSlots = [	
 
-		["CUP_B_AH1_DL_BAF",[ 
+		["CUP_B_CH53E_USMC",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			["Modern_USMC_HeliPilot"]
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
-		]],14
+			["Modern_USMC_crewchief"]
+		]],2
+	],	
+			["CUP_B_MH60L_DAP_4x_USN",[ 
+		["driver", 
+			["Modern_USMC_HeliPilot"]
+		],
+		["gunner", 
+			["Modern_USMC_crewchief"]
+		]],2
 	]
 	];
 	//Items creatable from supplies boxes

@@ -26,6 +26,14 @@ player addEventHandler ["InventoryClosed", {
 	_twc_removeflag = ["clearflag","Remove Flag","",{deletevehicle _target},{true}] call ace_interact_menu_fnc_createAction;
 	["FlagSmall_F",0,["ACE_MainActions"],_twc_removeflag,true] call ace_interact_menu_fnc_addActionToClass;
 
+	_twc_repveh = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["CUP_B_Wolfhound_LMG_GB_W",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_twc_repvehd = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["CUP_B_Wolfhound_LMG_GB_D",0,["ACE_MainActions"],_twc_repvehd,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_twc_repveh2 = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_twc_repveh2,true] call ace_interact_menu_fnc_addActionToClass;	
 
 _twc_placeflag = ["placeflag","Place EOD Flag","",{ 
 _flag = createVehicle ["FlagSmall_F", ([_player, 2, getdir _player] call BIS_fnc_relPos), [], 0, "CAN_COLLIDE"];

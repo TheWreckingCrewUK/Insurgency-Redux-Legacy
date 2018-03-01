@@ -1,6 +1,9 @@
 params ["_objType"];
 
-//this objective makes a small 2 vehicle convoy and makes them patrol through 3 different towns. You need twc_convoyallowed to be defined as 1 in the map's server init for this to work because there's a lot of maps with non ai-friendly roads
+//90's check, since the units that are spawned are modern
+if (twc_is90 == 1) exitwith {
+		["TWC_Insurgency_objCompleted", ["Convoy", (_this select 0)]] call CBA_fnc_serverEvent;};
+
 
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
