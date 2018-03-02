@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9550.9355,150.14743,9919.499};
-		dir[]={-0.30267584,-0.38255602,0.87307733};
-		up[]={-0.12533398,0.92389834,0.36152312};
-		aside[]={0.94492608,-1.1593802e-006,0.32758951};
+		pos[]={9563.1396,194.30775,10041.285};
+		dir[]={-0.55155987,-0.42040217,-0.72060376};
+		up[]={-0.25556308,0.9073025,-0.33389223};
+		aside[]={-0.79416883,-1.3441313e-006,0.60786152};
 	};
 };
 binarizationWanted=0;
@@ -2213,6 +2213,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
 			id=991;
 			type="CUP_B_UH1Y_Gunship_Dynamic_USMC";
@@ -2233,7 +2234,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
 						};
 					};
 				};

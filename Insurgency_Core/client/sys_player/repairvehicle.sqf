@@ -18,7 +18,9 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 	twc_repairtickets = 5;
 	publicvariable "twc_repairtickets";
 	hint "Logistics Vehicle Resupplied";
-	} else { hint "Logistics Vehicle Not Nearby, Unable To Resupply."}
+	} else { 
+	if (twc_is90 == 0) then {
+	hint "Logistics Vehicle Not Nearby, Unable To Resupply."}}
 	} foreach _tsv;
 } else 
 //now it's the non-base repair script, usually from a wolfhound, with a ticket system
