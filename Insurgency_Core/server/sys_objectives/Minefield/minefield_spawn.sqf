@@ -22,7 +22,7 @@ _trg setTriggerStatements ["this","[thistrigger] execVM 'Insurgency_Core\server\
 //[_pos] execVM "Insurgency_Core\server\sys_objectives\Minefield\minefield_patrolspawn.sqf";
 
 //Adds a marker with a bit of an offset
-_markerPos = [_pos, 50] call CBA_fnc_randPos;
+_markerPos = [_pos, 10] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
@@ -48,7 +48,7 @@ sleep 3;
 _minetype = twc_mineType  call bis_fnc_selectRandom;
 //Add Mines
 for "_i" from 1 to _totalmines do{
-	_minePos1 = [_pos, 50] call CBA_fnc_randPos;
+	_minePos1 = [_markerpos, 50] call CBA_fnc_randPos;
 	_minePos = [_minePos1,[10,50],random 360,0,[0,100]] call SHK_pos;
 	_mine = createmine [_minetype, _minePos, [], 5];
 	_mine setdir random 360;
@@ -67,7 +67,7 @@ _marker setMarkerColor "colorOpfor";
 
 sleep 20;
 
-waituntil {count (_pos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))};
+waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))};
 [
 	{
 		[(_this select 1), "ASSIGNED"] call BIS_fnc_taskSetState;
@@ -78,7 +78,7 @@ waituntil {count (_pos nearobjects ["minebase", 150]) < (_totalmines - (2 + rand
 ] call CBA_fnc_waitAndExecute;
 
 //Complete or fail
-waituntil {count (_pos nearobjects ["minebase", 150]) < (_totalmines /2)};
+waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines /2)};
 [
 	{
 		[(_this select 1), "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -102,7 +102,8 @@ sleep 60;
 
 //cleanup after objective complete. It's slowed down so that there's still a risk after it's 'cleared'.
 sleep 600;
-while{count (_pos nearobjects ["minebase", 150]) > 0}do{
+while{count (_markerpos nearobjects ["minebase", 150]) > 0}do{
 sleep 600;
-_deletemine = (_pos nearobjects ["minebase", 150])  select 0;
+_deletemine = (_markerpos nearobjects ["minebase", 150])  select 0;
+_deleteflag = (_markerpos nearobjects ["FlagSmall_F", 200])  select 0;
 sleep 3;};
