@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=554;
+	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=1679;
+		nextID=1681;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9563.1396,194.30775,10041.285};
-		dir[]={-0.55155987,-0.42040217,-0.72060376};
-		up[]={-0.25556308,0.9073025,-0.33389223};
-		aside[]={-0.79416883,-1.3441313e-006,0.60786152};
+		pos[]={9525.4346,149.64418,9904.1895};
+		dir[]={0.88152504,-0.45895383,0.11186343};
+		up[]={0.45536903,0.88842303,0.057786595};
+		aside[]={0.12590507,-1.5726255e-006,-0.99214613};
 	};
 };
 binarizationWanted=0;
@@ -12894,7 +12894,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=311;
+		items=313;
 		class Item0
 		{
 			dataType="Marker";
@@ -24432,6 +24432,88 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item311
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9551.5918,140.8029,9908.6523};
+				angles[]={0,3.1359217,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this attachto [table]}";
+			};
+			id=1679;
+			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.00018310547;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item312
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9551.6133,140.3951,9908.7139};
+				angles[]={0,3.1359174,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="table";
+				disableSimulation=1;
+			};
+			id=1680;
+			type="FoldTable";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
 						};
 					};
 				};

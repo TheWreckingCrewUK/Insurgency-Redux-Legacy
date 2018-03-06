@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=1537;
+		nextID=1539;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3415.5481,34.354382,4827.8755};
-		dir[]={0.16364151,-0.84779572,0.50457603};
-		up[]={0.26153436,0.53037852,0.80641806};
-		aside[]={0.95128942,-6.1077299e-007,-0.30851653};
+		pos[]={3334.7241,10.063444,4916.1577};
+		dir[]={0.31201321,-0.66986018,0.6738615};
+		up[]={0.28145501,0.74249136,0.60786325};
+		aside[]={0.90751445,-2.3620669e-007,-0.42019865};
 	};
 };
 binarizationWanted=0;
@@ -12835,7 +12835,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=419;
+		items=421;
 		class Item0
 		{
 			dataType="Marker";
@@ -30094,6 +30094,87 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item419
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3336.6321,5.8893352,4920.686};
+				angles[]={0.012007865,1.9205254,6.2631841};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="table";
+				disableSimulation=1;
+			};
+			id=1537;
+			type="FoldTable";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item420
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3336.677,6.29669,4920.6348};
+				angles[]={0,1.9205291,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{this attachto [table]}";
+			};
+			id=1538;
+			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.80046606;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
 						};
 					};
 				};

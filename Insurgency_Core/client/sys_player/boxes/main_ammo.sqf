@@ -1660,6 +1660,7 @@ if (typeOf vehicle player == "twc_ana_rifleman_at") then {
 	_tmp_magazines =
     [
         ["rhs_30Rnd_762x39mm",50],
+        ["rhs_rpg7_PG7V_mag",20],
         ["rhs_rpg7_OG7V_mag",20],
 		["HandGrenade",5]
     ];

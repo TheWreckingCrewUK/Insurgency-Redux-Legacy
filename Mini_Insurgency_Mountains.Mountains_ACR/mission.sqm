@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1641;
+		nextID=1643;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3892.6113,318.70184,4431.3013};
-		dir[]={-0.40840441,-0.6260851,-0.66426963};
-		up[]={-0.32791287,0.77975059,-0.53334945};
-		aside[]={-0.85188782,1.1012889e-007,0.52375406};
+		pos[]={3819.2437,270.32159,4471.6729};
+		dir[]={-0.049123306,-0.56412303,0.82425857};
+		up[]={-0.033560436,0.82568389,0.56313139};
+		aside[]={0.99825478,-3.4563709e-007,0.059495382};
 	};
 };
 binarizationWanted=0;
@@ -49,13 +49,14 @@ addons[]=
 	"CUP_WheeledVehicles_Lada",
 	"ace_weather",
 	"twc_modern",
-	"twc_framework_public_modern_us"
+	"twc_framework_public_modern_us",
+	"twc_objects"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -187,6 +188,11 @@ class AddonsMetaData
 		{
 			className="twc_framework_public_modern_us";
 			name="twc_framework_public_modern_us";
+		};
+		class Item22
+		{
+			className="twc_objects";
+			name="twc_objects";
 		};
 	};
 };
@@ -12703,7 +12709,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=48;
+		items=50;
 		class Item0
 		{
 			dataType="Marker";
@@ -16318,6 +16324,87 @@ class Mission
 				{
 					property="acex_headless_blacklist";
 					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3819.8987,266.21021,4476.8696};
+				angles[]={0,3.0483825,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{this attachto [table]}";
+			};
+			id=1641;
+			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.013458252;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3819.9209,265.79108,4476.9097};
+				angles[]={6.2400084,3.0483782,0.057539199};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="table";
+				disableSimulation=1;
+			};
+			id=1642;
+			type="FoldTable";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
 					class Value
 					{
 						class data

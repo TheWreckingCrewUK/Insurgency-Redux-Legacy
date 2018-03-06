@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1709;
+		nextID=1711;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3250.6162,19.466223,1725.2155};
-		dir[]={0.50410241,-0.33736774,0.79514778};
-		up[]={0.18068071,0.94134772,0.28500107};
-		aside[]={0.84465086,1.3193348e-006,-0.53548443};
+		pos[]={3272.5293,13.462643,1773.1666};
+		dir[]={0.073533662,-0.72537899,-0.68456405};
+		up[]={0.077475704,0.68834007,-0.72124505};
+		aside[]={-0.99437243,1.3095851e-006,-0.10681308};
 	};
 };
 binarizationWanted=0;
@@ -48,13 +48,15 @@ addons[]=
 	"A3_Structures_F_Heli_Items_Electronics",
 	"twc_modern",
 	"CUP_CAMP_Armory_Misc_Concrete_Wall",
-	"CUP_WheeledVehicles_Datsun"
+	"CUP_WheeledVehicles_Datsun",
+	"CUP_Misc3_Config",
+	"twc_objects"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=21;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -173,6 +175,16 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_Datsun";
 			name="CUP_WheeledVehicles_Datsun";
+		};
+		class Item19
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
+		};
+		class Item20
+		{
+			className="twc_objects";
+			name="twc_objects";
 		};
 	};
 };
@@ -12689,7 +12701,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=79;
+		items=81;
 		class Item0
 		{
 			dataType="Marker";
@@ -16827,6 +16839,88 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item79
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3272.7791,8.830101,1769.005};
+				angles[]={0,2.2203381,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="table";
+				disableSimulation=1;
+			};
+			id=1709;
+			type="FoldTable";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item80
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3272.8132,9.2379112,1768.9502};
+				angles[]={-0,2.2203424,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this attachto [table]}";
+			};
+			id=1710;
+			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.00019454956;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
 						};
 					};
 				};

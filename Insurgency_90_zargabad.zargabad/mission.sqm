@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1676;
+		nextID=1678;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3288.5461,27.347786,1384.2035};
-		dir[]={0.73422563,-0.42489809,0.52958393};
-		up[]={0.34460634,0.90524441,0.24855791};
-		aside[]={0.58501375,-4.54369e-007,-0.81107634};
+		pos[]={3306.437,15.67408,1410.139};
+		dir[]={0.77941048,-0.4258697,0.45961756};
+		up[]={0.36683652,0.90478611,0.21632227};
+		aside[]={0.50797969,-1.7532147e-007,-0.86142457};
 	};
 };
 binarizationWanted=0;
@@ -51,13 +51,14 @@ addons[]=
 	"CUP_CAMisc_ACR_ScaffoldingSmall",
 	"CUP_Buildings_Config",
 	"A3_Structures_F_EPC_Items_Electronics",
-	"twc_modern"
+	"twc_modern",
+	"twc_objects"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -193,6 +194,11 @@ class AddonsMetaData
 		{
 			className="twc_modern";
 			name="twc_modern";
+		};
+		class Item22
+		{
+			className="twc_objects";
+			name="twc_objects";
 		};
 	};
 };
@@ -12709,7 +12715,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=75;
+		items=77;
 		class Item0
 		{
 			dataType="Marker";
@@ -17054,6 +17060,88 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item75
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3318.384,12.182837,1417.9519};
+				angles[]={0.032480575,4.3155537,0.0025132741};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="table";
+				disableSimulation=1;
+			};
+			id=1676;
+			type="FoldTable";
+			atlOffset=1.9073486e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3318.3159,12.5911,1417.9315};
+				angles[]={0,4.3155551,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{this attachto [table]}";
+			};
+			id=1677;
+			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.80069828;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
 						};
 					};
 				};
