@@ -19,6 +19,9 @@ if (!isServer) exitWith {};
 _canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_canSpawn.sqf");
 _spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Blank\Blank_spawn.sqf");
 
+//_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Recovery\Recovery_canSpawn.sqf");
+//_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Recovery\Recovery_spawn.sqf");
+
 //_canSpawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_canSpawn.sqf");
 //_spawn_Blank = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_spawn.sqf");
 
@@ -37,6 +40,8 @@ _spawn_minefield = compile preprocessFileLineNumbers (_ROOT + "minefield\minefie
 _canSpawn_convoy = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_canSpawn.sqf");
 _spawn_convoy = compile preprocessFileLineNumbers (_ROOT + "Convoy\convoy_spawn.sqf");
 
+_canSpawn_Recovery = compile preprocessFileLineNumbers (_ROOT + "Recovery\Recovery_canSpawn.sqf");
+_spawn_Recovery = compile preprocessFileLineNumbers (_ROOT + "Recovery\Recovery_spawn.sqf");
 
 _canSpawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_canSpawn.sqf");
 _spawn_CarBomb = compile preprocessFileLineNumbers (_ROOT + "CarBomb\CarBomb_spawn.sqf");
@@ -54,6 +59,7 @@ heartsAndMindsObjs = [
 	["Blank", _canSpawn_Blank, _spawn_Blank],
 //	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
 	["CarBomb", _canSpawn_CarBomb, _spawn_CarBomb],
+	["Recovery", _canSpawn_Recovery, _spawn_Recovery],
 	["VIP", _canSpawn_VIP, _spawn_VIP],
 	["Minefield", _canSpawn_minefield, _spawn_minefield]
 ];

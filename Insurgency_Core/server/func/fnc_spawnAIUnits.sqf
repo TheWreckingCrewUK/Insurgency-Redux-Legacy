@@ -20,7 +20,7 @@
 params ["_pos","_groupradius","_thisList"];
 
 //Selects a direction generally oposite of incoming friendlies
-_dir = (_thisList select 0) getDir _pos;
+_dir = (getpos (_thisList select 0)) getDir _pos;
 _dir1 = _dir - 30;
 _dir2 = _dir + 30;
 
