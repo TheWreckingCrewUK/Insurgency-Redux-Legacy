@@ -36,6 +36,7 @@ _num = floor (random 10);
 };
 
 _veh setfuel random 1;
+[_veh, 0, -180 + (random 360)] call BIS_fnc_setPitchBank;
 
 //Adds a marker with a bit of an ofset
 _markerPos = [_pos, 200] call CBA_fnc_randPos;
