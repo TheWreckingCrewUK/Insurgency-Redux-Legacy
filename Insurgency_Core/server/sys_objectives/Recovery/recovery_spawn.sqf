@@ -12,7 +12,7 @@ while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos 
 _vehicle = (getDescription (((getMarkerPos "base") nearobjects ["car", 300]) call bis_fnc_selectRandom)) select 0;
 
 if(isNil "_vehicle") then{
-_vehicle = ((getMarkerPos "base") nearobjects ["car", 500]) call bis_fnc_selectRandom;
+	["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
 };
 //{(_target (distance (getMarkerPos "base")) < 40)}
 _pos = [getPos _town,[0,200],[0,360],0] call SHK_pos;
