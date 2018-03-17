@@ -14,7 +14,7 @@
 *
 * Example:
 *
-* ["bastam", 7] spawn twc_fnc_SpawnCiv;
+* ["bastam", 7] spawn twc_SpawnCiv;
 *
 * Author: [TWC] Jayman / [TWC] Bosenator
 */

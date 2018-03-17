@@ -15974,7 +15974,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8239.7373,294.98468,2088.4822};
+				position[]={8239.7373,294.98468,2088.4819};
 				angles[]={0,4.1887903,0};
 			};
 			side="Empty";
@@ -16005,7 +16005,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item87
@@ -24881,7 +24900,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8228.8193,296.8479,2084.9641};
-				angles[]={-0,4.191792,0};
+				angles[]={0,4.191792,0};
 			};
 			side="Empty";
 			flags=4;
@@ -24922,7 +24941,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8228.8838,296.44012,2084.9751};
-				angles[]={-0,4.1917877,0};
+				angles[]={0,4.1917877,0};
 			};
 			side="Empty";
 			flags=4;
