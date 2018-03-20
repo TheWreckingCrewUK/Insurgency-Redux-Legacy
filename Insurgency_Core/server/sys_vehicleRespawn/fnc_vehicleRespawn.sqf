@@ -18,6 +18,7 @@ params["_veh"];
 if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehicle. Exiting..."};
 
 _veh setVariable ["twc_cacheDisabled",true];
+
 if(isNil {_veh getVariable "respawnInfo"})then{
 	_weapons = getWeaponCargo _veh;
 	_items = getitemCargo _veh;
@@ -47,6 +48,8 @@ _veh addEventHandler ["GetOut",{
 					_respawnInfo = _veh getVariable "respawnInfo";
 					deleteVehicle _veh;
 					sleep 2;
+		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
+		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
 					_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 					_veh setPosASL (_respawnInfo select 1);
 					_veh setDir (_respawnInfo select 2);
@@ -84,13 +87,9 @@ _veh addEventHandler ["Killed",{
 		
 		_respawnInfo = _veh getVariable "respawnInfo";
 		[_veh]spawn{waitUntil {!([(_this select 0),500] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0)};
-		sleep 600;
-	//	systemchat "trying";
-	//	systemchat format ["done with %1", (_respawnInfo select 1)];
-	//	_checkpos = [[_respawnInfo select 1] select 0,[_respawnInfo select 1] select 1, 1];
-	//	_check = (count (_checkpos nearentities [["car", "helicopter", "plane", "tank"], 3]));
-	//	waituntil {_check == 0};
-	
+		sleep 2;
+		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
+		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
 		_veh setDir (_respawnInfo select 2);
