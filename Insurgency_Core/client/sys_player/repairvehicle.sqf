@@ -7,7 +7,7 @@ if(isNil "twc_repairtickets") then{
 };
 
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
-_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]); {_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1} foreach _list;
+_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); {_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1} foreach _list;
 
 hint format ["%1 Vehicles Repaired", count _list];
 
@@ -27,7 +27,7 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 {
 
 //replen the vehicle's tickets if it's near the spawner
-if (count (_vehicle nearobjects ["Land_InfoStand_V1_F", 30]) > 0) then {
+if (count (_vehicle nearobjects ["Land_InfoStand_V1_F", 40]) > 0) then {
 	twc_repairtickets = 6;
 	publicvariable "twc_repairtickets";
 	hint "Logistics Vehicle Resupplied";
