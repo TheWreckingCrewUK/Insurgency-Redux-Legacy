@@ -88,7 +88,14 @@ _veh addEventHandler ["Killed",{
 		_respawnInfo = _veh getVariable "respawnInfo";
 		[_veh]spawn{waitUntil {!([(_this select 0),500] call CBA_fnc_nearPlayer)}; deleteVehicle (_this select 0)};
 		sleep 2;
-		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
+		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0.5];
+		
+		while {(count(_checkpos nearobjects ["all", 4]) >0)} do {
+		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects ["all", 4]);};
+		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
+		sleep (2+ (random 10)); //reason for sleep and double check is so that mass casualty events don't cause the cookoff to instantly injure the new vehicle
+		while {(count(_checkpos nearobjects ["all", 4]) >0)} do {
+		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects ["all", 4]);};
 		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
