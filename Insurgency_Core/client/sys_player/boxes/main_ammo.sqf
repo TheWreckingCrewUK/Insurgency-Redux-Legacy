@@ -1322,6 +1322,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	];
 };
 /*
+
 //USMC Sniper
  if (g_class == "USMC_SN") then {
     _tmp_weapons =
@@ -2239,6 +2240,475 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACRE_PRC343",1]
 	];
 };
+
+
+//////////////////////////////////
+///2000 era kit
+//////////////////////////////////
+
+ if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_SectionCommander"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_SUSAT",1],
+        ["twc_browning_hp",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC117F",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Rifleman_Desert","2000_British_Rifleman"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_SUSAT",1],
+		["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Grenadier_Desert","2000_British_Grenadier"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_UGL_SUSAT",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["1Rnd_HE_Grenade_shell",20],
+		["UGL_FlareGreen_F",20],
+		["UGL_FlareRed_F",20],
+		["UGL_FlareWhite_F",20],
+		["UGL_FlareYellow_F",20],
+		["1Rnd_SmokeBlue_Grenade_shell",20],
+		["1Rnd_SmokeGreen_Grenade_shell",20],
+		["1Rnd_SmokeOrange_Grenade_shell",20],
+		["1Rnd_SmokePurple_Grenade_shell",20],
+		["1Rnd_SmokeRed_Grenade_shell",20],
+		["1Rnd_Smoke_Grenade_shell",20],
+		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Gunner","2000_British_Gunner_Desert"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L110A1",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_200Rnd_T",30],
+		["UK3CB_BAF_556_200Rnd",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_2IC_Desert","2000_British_2IC"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_SUSAT",1],
+		["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["CUP_15Rnd_9x19_M9",20],
+		["UK3CB_BAF_556_200Rnd_T",20],
+		["UK3CB_BAF_556_200Rnd",20],
+		["UK3CB_BAF_762_200Rnd",20],
+		["UK3CB_BAF_762_200Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_MachineGunner_Desert","2000_British_MachineGunner"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L7A2",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_200Rnd",30],
+		["UK3CB_BAF_762_200Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_mg_assistant_Desert","2000_British_mg_assistant"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_SUSAT",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["UK3CB_BAF_762_200Rnd",30],
+		["UK3CB_BAF_762_200Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Medic_Desert","2000_British_Medic"])then{
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L85A2_SUSAT",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_556_30Rnd_T",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1],
+		["ACRE_PRC343", 1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
+    _tmp_weapons =
+    [
+        ["twc_browning_hp",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_15Rnd_9x19_M9",20]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC117F",1],
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Vehicle_Commander"])then{
+    _tmp_weapons =
+    [
+        ["rhs_weap_m4",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["rhs_mag_30Rnd_556x45_M855_Stanag",30]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC117F",1],
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
+ if((typeOf player) in ["2000_British_Vehicle_Crew"])then{
+    _tmp_weapons =
+    [
+        ["rhs_weap_m4",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["rhs_mag_30Rnd_556x45_M855_Stanag",30]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+///////////////////////////////////////////////////////////
+/////2000 US Army Kit
+///////////////////////////////////////
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander"])then{
+    _tmp_weapons =
+    [
+        ["rhs_m4_acog",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC117F",1],
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_TeamLeader"])then{
+    _tmp_weapons =
+    [
+        ["twc_m4_203_acog",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["1Rnd_HE_Grenade_shell",20],
+		["UGL_FlareGreen_F",20],
+		["UGL_FlareRed_F",20],
+		["UGL_FlareWhite_F",20],
+		["UGL_FlareYellow_F",20],
+		["1Rnd_SmokeBlue_Grenade_shell",20],
+		["1Rnd_SmokeGreen_Grenade_shell",20],
+		["1Rnd_SmokeOrange_Grenade_shell",20],
+		["1Rnd_SmokePurple_Grenade_shell",20],
+		["1Rnd_SmokeRed_Grenade_shell",20],
+		["1Rnd_Smoke_Grenade_shell",20],
+		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_Rifleman"])then{
+    _tmp_weapons =
+    [
+        ["twc_m4_cco_vfg",1],
+        ["rhs_weap_M136",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_Grenadier"])then{
+    _tmp_weapons =
+    [
+        ["twc_m4_203_cco",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["1Rnd_HE_Grenade_shell",20],
+		["UGL_FlareGreen_F",20],
+		["UGL_FlareRed_F",20],
+		["UGL_FlareWhite_F",20],
+		["UGL_FlareYellow_F",20],
+		["1Rnd_SmokeBlue_Grenade_shell",20],
+		["1Rnd_SmokeGreen_Grenade_shell",20],
+		["1Rnd_SmokeOrange_Grenade_shell",20],
+		["1Rnd_SmokePurple_Grenade_shell",20],
+		["1Rnd_SmokeRed_Grenade_shell",20],
+		["1Rnd_Smoke_Grenade_shell",20],
+		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_AutomaticRifleman"])then{
+    _tmp_weapons =
+    [
+        ["twc_m249_para_acog",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["rhs_200rnd_556x45_B_SAW",30],
+		["rhs_200rnd_556x45_T_SAW",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_Marksman"])then{
+    _tmp_weapons =
+    [
+        ["rhs_m4_acog",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["TWC_2000_US_Army_Medic"])then{
+    _tmp_weapons =
+    [
+        ["rhs_m4_compm4",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1],
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
 
 
 /*
