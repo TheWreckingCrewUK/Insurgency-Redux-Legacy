@@ -4,7 +4,7 @@ pythontruck = "CUP_B_Wolfhound_LMG_GB_D" createvehicle position player;
 con = "rhs_weap_9K133_launcher_used" createvehicle position player;
 con attachto [pythontruck, [0.7,2.7,1.5]];
 con setVectorDirAndUp [[0,1.5,2],[1,1,0]];
-con setpos con;
+con setpos (getPos con);
 
 
 [] spawn {
@@ -46,7 +46,8 @@ player addEventHandler ["Hit", {
 	_pelpos = getpos pythontruck vectoradd [0, 5 * (cos (getdir pythontruck )), 2 * (tan (getdir pythontruck ))];
 
 	_pellet = createvehicle ["rhs_weap_9K115_launcher_used", _pelpos, [], 0, "can_collide"];
-	_ropepos = (pythontruck modeltoworld [0,10,0]); _rope = ropeCreate [pythontruck, [0.77,3.1,2], _pellet, [0, 0, 0], 150];
+	_ropepos = (pythontruck modeltoworld [0,10,0]);
+	_rope = ropeCreate [pythontruck, [0.77,3.1,2], _pellet, [0, 0, 0], 150];
 	_pellet setvelocity [25 * (sin (getdir pythontruck )), 25 * (cos (getdir pythontruck )), 20];
 	
 	sleep 10;
