@@ -34,13 +34,21 @@ if !((goggles player) in approvedFacewear) then {
 //this is now stored in core as it's only rare for there to be differences to the normal, I'll put in exemption code if this ever becomes necessary
 twc_restrictedVehicleSlots = [	
 
-		["CUP_B_AH1_DL_BAF",[ 
+		["CUP_B_M1126_ICV_M2_Woodland_Slat",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			["2000_British_Vehicle_Crew"]
+		],
+		["commander", 
+			["2000_British_Vehicle_Commander"]
+		]],5
+	],	
+			["CUP_B_MH60L_DAP_4x_USN",[ 
+		["driver", 
+			["2000_British_HeliPilot_Desert"]
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
-		]],14
+			["2000_British_HeliPilot_Desert"]
+		]],5
 	]
 	];
 //Items creatable from supplies boxes

@@ -2520,7 +2520,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_SectionCommander"])then{
     _tmp_weapons =
     [
-        ["rhs_m4_acog",1]
+        ["twc_m4_cco_vfg",1]
 	];
 
 	_tmp_magazines =
@@ -2543,7 +2543,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_TeamLeader"])then{
     _tmp_weapons =
     [
-        ["twc_m4_203_acog",1]
+        ["twc_m4_203_cco",1]
 	];
 
 	_tmp_magazines =
@@ -2656,7 +2656,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_Marksman"])then{
     _tmp_weapons =
     [
-        ["rhs_m4_acog",1]
+        ["rhs_m4_compm4",1]
 	];
 
 	_tmp_magazines =
