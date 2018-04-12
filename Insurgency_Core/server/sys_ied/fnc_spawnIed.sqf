@@ -24,19 +24,19 @@ _ied = "Arma is Retarded";
 _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
 _ied setDir (random 360);
 _ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // ????? I'm not sure why Mike did this but I'm scared to remove it
-/*
+
 _marker = createMarker [str getpos _ied,getpos _ied];
 _marker setMarkerShape "ICON";
 _marker setMarkerType "MIL_dot";
 _marker setMarkerColor "colorOpfor";
-*/
+
 _randsize = random 40;
 _randtime = random 5;
 _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
-_trg setTriggerActivation ["west", "PRESENT", False];
+_trg setTriggerActivation ["west", "PRESENT", True];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","'Bo_GBU12_LGB' createvehicle getpos thistrigger; 
+_trg setTriggerStatements ["{((getposatl _x) select 2) < 20} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};'Bo_GBU12_LGB' createvehicle getpos thistrigger; 
 deleteVehicle thisTrigger;",""];
 
 
