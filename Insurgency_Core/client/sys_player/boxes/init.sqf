@@ -171,7 +171,7 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
-if((typeOf player) in ["Modern_British_Quartermaster","1990_British_quartermaster_Desert"])then{
+if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{
 execVM "insurgency_core\client\zeus\camera.sqf";
 
 	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},{true}] call ace_interact_menu_fnc_createAction;
