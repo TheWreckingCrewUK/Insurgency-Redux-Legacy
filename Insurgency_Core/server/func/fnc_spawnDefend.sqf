@@ -15,6 +15,14 @@
 */
 
 params["_pos"];
+
+_check = [0] call twc_terp_msgcheck;
+if (_check == 1) then {
+if ((twc_terp distance _pos) < 1000) then {
+call twc_terp_enemy};
+};
+
+
 _spawnPos = [_pos, 50] call CBA_fnc_randPos;
 _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 2) max 20;

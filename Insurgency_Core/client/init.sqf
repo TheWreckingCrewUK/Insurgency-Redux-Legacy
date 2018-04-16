@@ -10,7 +10,8 @@
 "iedRestrictionZone" setMarkerAlpha 0;
 
 waitUntil {!isNull player};
-
+sleep 30;
+systemchat "terp init";
 if (typeOf player == "twc_ana_interpreter") then {
 	twc_terp = player;
 	publicvariable "twc_terp";

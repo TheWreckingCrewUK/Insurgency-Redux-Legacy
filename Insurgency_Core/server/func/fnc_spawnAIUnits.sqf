@@ -20,12 +20,15 @@
 params ["_pos","_groupradius","_thisList"];
 
 //Selects a direction generally oposite of incoming friendlies
-_dir = (_thisList select 0) getDir _pos;
+//_dir = (_thisList select 0) getDir _pos;
+_dir = random 360;
 
-
-if(isNil "_dir") then{
-	_dir = random 360;
+_check = [0] call twc_terp_msgcheck;
+if (_check == 1) then {
+if ((twc_terp distance _pos) < 1000) then {
+call twc_terp_enemy};
 };
+
 _dir1 = _dir - 30;
 _dir2 = _dir + 30;
 

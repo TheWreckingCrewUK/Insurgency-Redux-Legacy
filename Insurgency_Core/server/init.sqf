@@ -11,6 +11,7 @@
 #include "sys_forwardBase\init.sqf";
 #include "sys_chat\init.sqf";
 #include "sys_basedefence\init.sqf";
+#include "sys_terp\init.sqf";
 
 
 if(isNil "twc_is90") then{
@@ -18,6 +19,7 @@ if(isNil "twc_is90") then{
 	publicVariable "twc_is90";
 };
 
+twc_terp = objnull;
 
 if(isNil "twc_convoyallowed") then{
 	twc_convoyallowed = 1;
