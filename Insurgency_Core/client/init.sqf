@@ -9,5 +9,11 @@
 #include "sys_basedefence\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
+waitUntil {!isNull player};
+
+if (typeOf player == "twc_ana_interpreter") then {
+	twc_terp = player;
+	publicvariable "twc_terp";
+};
 /*
 player addEventHandler ["Hit", {[] spawn {if !(vehicle player == player) exitwith{};if (stance player == "PRONE") exitwith {};if ((random 1)>1.5) exitwith{}; _this = player; _this setUnconscious true; sleep 0.1; _this setUnconscious false}}]*.
