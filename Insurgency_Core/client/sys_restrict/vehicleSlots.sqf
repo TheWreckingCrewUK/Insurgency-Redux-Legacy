@@ -134,7 +134,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],7
+		]],10
 	],
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
@@ -143,7 +143,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_crewchief"]
-		]],7
+		]],10
 	],	
 	
 		["UK3CB_BAF_Wildcat_AH1_HEL_8A",[ 
@@ -152,7 +152,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],7
+		]],10
 	],
 
 		["CUP_B_AH1Z_Dynamic_USMC",[ 
@@ -167,11 +167,11 @@ _list=[
 
 		["CUP_B_CH47F_GB",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","Modern_British_HeliPilot"]
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","Modern_British_HeliPilot","2000_British_HeliPilot_Desert"]
 		],
 		["turret", 
 			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot"]
-		]],5
+		]],8
 	],
 	
 		["CUP_B_MV22_USMC_RAMPGUN",[ 
@@ -180,7 +180,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],5
+		]],8
 	],	
 	
 		["RHS_UH60M_d",[ 
@@ -189,7 +189,7 @@ _list=[
 		],
 		["Turret", 
 			["Modern_British_crewchief"]
-		]],5
+		]],8
 	],
 	
 				["CUP_B_A10_DYN_USA", [

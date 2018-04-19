@@ -1,4 +1,4 @@
-twc_enemychannel = ceil (random 6);
+twc_enemychannel = ceil (random 5);
 //twc_enemychannel = 1;
 terptimer = 0;
 //execvm "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";

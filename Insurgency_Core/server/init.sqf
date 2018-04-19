@@ -21,6 +21,21 @@ if(isNil "twc_is90") then{
 
 twc_terp = objnull;
 
+
+if(isNil "twc_ismini") then{
+	twc_ismini = 0;
+	publicVariable "twc_ismini";
+};
+
+if (twc_ismini == 1) then {
+["TWC_PlayerDisconnected", "onPlayerDisconnected", {
+	
+	if ((count(allPlayers - entities "HeadlessClient_F")) == 0) then {
+		call BIS_fnc_endMission;
+	};
+}] call BIS_fnc_addStackedEventHandler;
+};
+
 if(isNil "twc_convoyallowed") then{
 	twc_convoyallowed = 1;
 };

@@ -48,7 +48,7 @@ twc_restrictedVehicleSlots = [
 		],
 		["gunner", 
 			["2000_British_HeliPilot_Desert"]
-		]],5
+		]],10
 	]
 	];
 //Items creatable from supplies boxes
