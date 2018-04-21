@@ -19,7 +19,7 @@ params["_pos"];
 _check = [0] call twc_terp_msgcheck;
 if (_check == 1) then {
 if ((twc_terp distance _pos) < 1000) then {
-call twc_terp_enemy};
+execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
 };
 
 
