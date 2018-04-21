@@ -8,7 +8,7 @@ twc_terp = _x;
 publicVariable "twc_terp"}; 
 } forEach allUnits; 
 
-if (isnull twc_terp) then {0;systemchat "check sees no terp"} else {
+if (isnull twc_terp) then {0} else {
 
 if (isnil "_time") then {If (terptimer >0) exitwith {0}};
 

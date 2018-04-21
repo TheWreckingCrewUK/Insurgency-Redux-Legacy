@@ -1,8 +1,8 @@
-_check = call twc_terp_msgcheck;
+_check = [0] call twc_terp_msgcheck;
 
 //systemchat format ["check returns %1 for IED message", _check];
 
-_ied = (twc_terp nearobjects ['pipebombbase', 500]) select 0;
+_ied = (vehicle twc_terp nearobjects ['pipebombbase', 500]) select 0;
 
 _dis = ((ceil(((twc_terp distance _ied) + random 100) / 50)) / 2) * 100;
 

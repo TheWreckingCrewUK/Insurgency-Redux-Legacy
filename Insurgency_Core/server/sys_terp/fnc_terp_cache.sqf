@@ -1,4 +1,4 @@
-_check = call twc_terp_msgcheck; 
+_check = [0] call twc_terp_msgcheck; 
  
 //systemchat "cache received";
   
