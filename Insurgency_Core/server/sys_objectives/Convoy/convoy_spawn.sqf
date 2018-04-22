@@ -81,7 +81,7 @@ _group addwaypoint [_pos3,0];
 
 //Creating the task
 _taskID = str (random 1000);
-[WEST,[_taskID],["A group of infantry consisting of foreign nationals has been spotted patrolling to and from this location. Locate it and neutralise it.","Foreign Fighters"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+[WEST,[_taskID],["A group of infantry consisting of foreign nationals has been spotted patrolling around this location. Locate it and neutralise it.","Foreign Fighters"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 
 
@@ -94,8 +94,10 @@ waituntil {{alive _x} count units _group < 5};
 sleep 10;
 [
 	{
-		[(_this select 1)] call bis_fnc_deleteTask;
+[_taskID] call bis_fnc_deleteTask;
 	["TWC_Insurgency_objCompleted", ["Convoy", _objType]] call CBA_fnc_serverEvent;
+deleteMarker _markerstr;
+deleteMarker _markerstr2;
 	},
 	[_objType, _taskID, _markerstr, _markerstr2],
 	(60 + ((floor random 10) * 6))

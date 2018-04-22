@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1410;
+		nextID=1411;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4437.8804,152.85522,18165.256};
-		dir[]={0.073917501,-0.36864662,0.926727};
-		up[]={0.029321425,0.92952943,0.36759967};
-		aside[]={0.99691981,-3.4924597e-007,-0.079517841};
+		pos[]={4266.3833,143.29688,18064.699};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -22219,17 +22219,79 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4266.4443,138.96906,18068.674};
+						position[]={4266.3599,138.96906,18068.756};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
+						name="twc_terp";
 						isPlayer=1;
 						isPlayable=1;
 					};
-					id=1391;
+					id=1410;
 					type="twc_ana_interpreter";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 			};
 			class Attributes

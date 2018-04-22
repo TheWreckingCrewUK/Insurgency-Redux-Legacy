@@ -84,7 +84,7 @@ waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines /2)};
 		[(_this select 1), "SUCCEEDED"] call BIS_fnc_taskSetState;
 		deleteMarker (_this select 2);
 		deleteMarker (_this select 3);
-		["TWC_Insurgency_adjustPoints", 60] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_adjustPoints", 100] call CBA_fnc_serverEvent;
 		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;
 	},
 	[_objType, _taskID, _markerstr, _markerstr2],

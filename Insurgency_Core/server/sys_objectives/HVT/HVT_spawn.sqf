@@ -85,7 +85,7 @@ for "_i" from 1 to _total do{
 [_hvt, _markerstr, _markerstr2, _taskID, _group, _objType] spawn {
 	params ["_hvt", "_markerstr", "_markerstr2", "_taskID", "_group", "_objType"];
 	
-	_maxTime = time + 6000;
+	_maxTime = time + 60000;
 	
 	while {alive _hvt} do {
 		if (time > _maxTime) exitWith {};
