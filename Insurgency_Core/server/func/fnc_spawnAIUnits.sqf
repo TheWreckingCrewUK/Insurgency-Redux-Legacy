@@ -23,8 +23,14 @@ params ["_pos","_groupradius","_thisList"];
 //_dir = (_thisList select 0) getDir _pos;
 _dir = random 360;
 
-_check = [0] call twc_terp_msgcheck;
-if (_check == 1) then {
+{ 
+ if (_x isKindOf "twc_ana_interpreter") then { 
+ 
+twc_terp = _x;
+publicVariable "twc_terp"}; 
+} forEach allUnits; 
+
+if (!(isnull twc_terp)) then {
 if ((twc_terp distance _pos) < 1000) then {
 execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
 };

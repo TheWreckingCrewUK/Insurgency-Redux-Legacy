@@ -21,14 +21,7 @@ if (typeOf player == "twc_ana_interpreter") then {
 	"As an interpreter you can gain access to valuable information regarding enemy activity. As you move through the area you will receive hints regarding cache locations, currently defended towns, IED's and even estimates of stronghold strength. You will only get this information if your PRC152 is set to the correct channel however, and you will need to find the correct channel yourself."
 ]];
 
-[] spawn {while {true} do {
 
-	publicvariable "twc_terp";
-_terpradio = ["ACRE_PRC152", twc_terp] call acre_api_fnc_getRadioByType;  
- if (!(isnil "_terpradio")) then {
-terpChannel = [_terpradio] call acre_api_fnc_getRadioChannel;
-publicVariable "terpChannel";
- sleep 20; }}}
 	
 };
 
