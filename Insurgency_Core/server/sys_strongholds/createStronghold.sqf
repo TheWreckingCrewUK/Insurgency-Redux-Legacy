@@ -11,7 +11,7 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 
 _randsize = 650 + (random 100);
-_randtime = 20;
+_randtime = 10;
 _trg2 = createTrigger ["EmptyDetector", _pos];
 _trg2 setTriggerArea [_randsize, _randsize, 30, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];

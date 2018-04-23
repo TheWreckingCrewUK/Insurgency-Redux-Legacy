@@ -43,4 +43,4 @@ if(isNil "idfGuns") then{
 	idfGuns = [];
 	publicvariable "idfGuns";
 };
-
+twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";

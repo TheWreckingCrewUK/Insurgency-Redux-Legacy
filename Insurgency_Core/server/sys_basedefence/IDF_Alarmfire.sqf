@@ -28,6 +28,7 @@ idfreported = 1;
 publicvariable "idfreported";
 
 
+//[_shell] execVM "Insurgency_Core\server\sys_basedefence\IDF_cram.sqf";
 
 
 [_shooter,_distance] execvm "Insurgency_Core\server\sys_basedefence\IDF_marker.sqf";
@@ -35,9 +36,8 @@ if (alarm == 0) then {
 alarm = 1;
 publicvariable "alarm";
 sleep _time;
+systemchat "middle man sees the shell";
 
-terminate execVM "Insurgency_Core\server\sys_basedefence\IDF_cram.sqf";
-//systemchat "middle man sees the shell";
 sleep 2;
 if (idfon == 0) then {
 execVM "Insurgency_Core\server\sys_basedefence\IDF_Alarm.sqf";

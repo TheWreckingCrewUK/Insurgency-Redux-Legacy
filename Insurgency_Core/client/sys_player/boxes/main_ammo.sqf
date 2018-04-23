@@ -1806,6 +1806,33 @@ if (typeOf vehicle player == "twc_ana_medic") then {
 	
 };
 
+if (typeOf vehicle player == "twc_ana_interpreter") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_aks74u_folded",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhs_30Rnd_545x39_7N22_AK",50]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC152", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
 
 //BAF Pilot
  if (typeOf vehicle player == "Modern_British_heliPilot") then {

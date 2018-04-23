@@ -1,7 +1,8 @@
-_check = [0] call twc_terp_msgcheck; 
+[0] call twc_terp_msgcheck; 
  
-//systemchat "cache received";
-  
-if (_check == 1) then {  
+
+sleep 2;
+
+If (terpChannel != twc_enemychannel) exitwith {};  
+[40] call twc_terp_timer;   
   "You hear chatter that suggests a weapons cache may be nearby" remoteExec ["hint",owner twc_terp];  
-};
