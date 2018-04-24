@@ -1,7 +1,7 @@
 //These have to go in the init because when a plyer dismounts a vehicle the vehicle is local to them
-vehicleRespawnDistancePlayers = 1000;
+vehicleRespawnDistancePlayers = 1500;
 vehicleRespawnDistanceForwardBase = 300;
-vehicleRespawnDelay = 10;
+vehicleRespawnDelay = 6000;
 
 twc_fnc_vehicleRespawn = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf";
 

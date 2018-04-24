@@ -90,13 +90,13 @@ _veh addEventHandler ["Killed",{
 		sleep 20;
 		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0.5];
 		
-		while {(count(_checkpos nearobjects [typeof _veh, 4]) >0)} do {
-		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects [typeof _veh, 4]);};
-		waituntil {(count(_checkpos nearobjects [typeof _veh, 4]) ==0)};
+		while {(count(_checkpos nearobjects [typeof _veh, 3]) >0)} do {
+		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects [typeof _veh, 3]);};
+		waituntil {(count(_checkpos nearobjects [typeof _veh, 3]) ==0)};
 		sleep (2+ (random 10)); //reason for sleep and double check is so that mass casualty events don't cause the cookoff to instantly injure the new vehicle
-		while {(count(_checkpos nearobjects [typeof _veh, 4]) >0)} do {
+		while {(count(_checkpos nearobjects [typeof _veh, 3]) >0)} do {
 		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects ["all", 4]);};
-		waituntil {(count(_checkpos nearobjects [typeof _veh, 4]) ==0)};
+		waituntil {(count(_checkpos nearobjects [typeof _veh, 3]) ==0)};
 		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
 		_veh setPosASL (_respawnInfo select 1);
 		_veh setDir (_respawnInfo select 2);
