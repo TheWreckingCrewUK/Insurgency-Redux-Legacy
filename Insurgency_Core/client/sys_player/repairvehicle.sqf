@@ -6,8 +6,32 @@ if(isNil "twc_repairtickets") then{
 	publicvariable "twc_repairtickets";
 };
 
+if (typeof _vehicle == "twc_SuppliesBox") then {
+_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]); 
+_time = time;
+
+hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
+waituntil {time > _time + (count _list * 10)};
+
+{_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
+
+hint format ["%1 Vehicles Repaired", count _list];
+
+sleep 5;
+_tsv = ["CUP_B_Wolfhound_LMG_GB_W", "CUP_B_Wolfhound_LMG_GB_D"];
+{
+if (count (_vehicle nearobjects [_x, 30]) > 0) then {
+	twc_repairtickets = 5;
+	publicvariable "twc_repairtickets";
+	hint "Logistics Vehicle Resupplied";
+	} else { 
+	if (twc_is90 == 0) then {
+	hint "Logistics Vehicle Not Nearby, Unable To Resupply."}}
+	} foreach _tsv;
+};
+
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
-_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); {_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1} foreach _list;
+_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); {_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
 
 hint format ["%1 Vehicles Repaired", count _list];
 
@@ -43,7 +67,7 @@ hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
 waituntil {time > _time + (count _list * 10)};
 
 if ((count _list) == (count (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]))) then {
-{_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1} foreach _list;
+{_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
 	twc_repairtickets = twc_repairtickets - 1;
 	publicvariable "twc_repairtickets";
 	

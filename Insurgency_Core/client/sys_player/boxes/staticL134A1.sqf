@@ -12,7 +12,9 @@ if (( count(allPlayers - entities "HeadlessClient_F"))<7) then {
 
 _boxClass = "UK3CB_BAF_Box_L134A1";
 
-_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
+_box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
+(getPos AmmoBoxSpawner)} else 
+{(getPos player)});
 
 //clearWeaponCargoGlobal _box;
 //clearBackpackCargoGlobal _box;

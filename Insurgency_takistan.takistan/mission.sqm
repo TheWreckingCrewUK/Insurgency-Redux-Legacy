@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1809;
+		nextID=1811;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7972.6899,303.92108,1948.9041};
-		dir[]={-0.43882295,-0.36057389,0.8230601};
-		up[]={-0.16964191,0.93272835,0.31818184};
-		aside[]={0.88241857,5.4365955e-007,0.4704707};
+		pos[]={8281.5156,336.21817,2126.8342};
+		dir[]={-0.80599767,-0.4314878,-0.40524298};
+		up[]={-0.38552281,0.90211046,-0.1938346};
+		aside[]={-0.44921178,7.4040145e-007,0.89344895};
 	};
 };
 binarizationWanted=0;
@@ -26192,13 +26192,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8225.2549,297.12183,2097.5554};
+				position[]={8225.2549,297.12183,2097.5549};
 				angles[]={0,4.6989503,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; this addItemCargoGlobal [""ACE_CableTie"",10]}";
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; if(!isServer)exitWith{};this addItemCargoGlobal [""ACE_CableTie"",10]}";
 			};
 			id=1794;
 			type="TWC_Public_AmmoBox_Hobbs_Precious";
@@ -26232,13 +26232,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8225.2031,297.96683,2096.5554};
+				position[]={8225.2031,297.96683,2096.5549};
 				angles[]={0,4.6989503,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;this additemcargoglobal [""ACE_DefusalKit"",1];this additemcargoglobal [""ACE_EntrenchingTool"",2];}";
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_DefusalKit"",1];this additemcargoglobal [""ACE_EntrenchingTool"",2];}";
 			};
 			id=1795;
 			type="TWC_Public_AmmoBox_Hobbs_Precious";
@@ -26278,7 +26278,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;this additemcargoglobal [""ACE_Flashlight_KSF1"", 10]}";
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_Flashlight_KSF1"", 10]}";
 			};
 			id=1796;
 			type="TWC_Public_AmmoBox_Hobbs_Precious";

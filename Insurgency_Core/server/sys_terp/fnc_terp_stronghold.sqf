@@ -1,9 +1,11 @@
 params ["_count"];
 
 [0] call twc_terp_msgcheck; 
- 
-_enemycountlow = ceil(((count _count) / 10) - (random 2) + (random 2)) * 10;  
-_enemycounthigh = (ceil((_enemycountlow * (1.2+ (random 0.7)))/10)) *10;  
+
+_countnum = count _count;
+ {if (!(alive _x)) then {_countnum = _countnum - 1}} foreach _count;
+_enemycountlow = (ceil((_countnum / 10) - (random 2) + (random 2)) * 10) max 0;  
+_enemycounthigh = ((ceil((_enemycountlow * (1.2+ (random 0.7)))/10)) *10) max 0;  
   
    
 sleep 2;

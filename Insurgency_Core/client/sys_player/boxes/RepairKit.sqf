@@ -11,11 +11,15 @@ if (( count(allPlayers - entities "HeadlessClient_F"))<3) then {
 [3] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";} else {
 _boxClass = "ACE_Box_Ammo";
 
-_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
-"ace_Wheel" createVehicle (getPos AmmoBoxSpawner);
-"ace_Wheel" createVehicle (getPos AmmoBoxSpawner);
-"ace_Track" createVehicle (getPos AmmoBoxSpawner);
-"ace_Track" createVehicle (getPos AmmoBoxSpawner);
+_box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
+(getPos AmmoBoxSpawner)} else 
+{(getPos player)});
+"ace_Wheel" createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
+(getPos AmmoBoxSpawner)} else 
+{(getPos player)});
+"ace_Wheel" createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
+(getPos AmmoBoxSpawner)} else 
+{(getPos player)});
 
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
