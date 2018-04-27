@@ -42,7 +42,8 @@ if(isNil "hvtlist") then{
 _unitString = hvtlist call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
-
+_vehspawnPos = [_pos,[5,30],random 360,0, [1,30]] call SHK_pos; 
+createvehicle ["CUP_C_Volha_Limo_TKCIV", _vehspawnPos];
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
 
 _markerstr = createMarker [str (random 1000),_markerPos];

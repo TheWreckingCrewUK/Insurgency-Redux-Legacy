@@ -28,6 +28,7 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 	if (twc_is90 == 0) then {
 	hint "Logistics Vehicle Not Nearby, Unable To Resupply."}}
 	} foreach _tsv;
+	
 };
 
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
@@ -49,7 +50,7 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 } else 
 //now it's the non-base repair script, usually from a wolfhound, with a ticket system
 {
-
+if (typeof _vehicle == "twc_SuppliesBox") exitwith {};
 //replen the vehicle's tickets if it's near the spawner
 if (count (_vehicle nearobjects ["Land_InfoStand_V1_F", 40]) > 0) then {
 	twc_repairtickets = 6;

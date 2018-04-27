@@ -36,14 +36,14 @@ _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
 [_vip, true] call ACE_captives_fnc_setSurrendered;
 
 //Adds a Marker with a bit of an offset so players know where to go
-_markerPos = [_pos, 300] call CBA_fnc_randPos;
-
+_markerPos = [_pos, 2] call CBA_fnc_randPos;
+/*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
 _markerstr setMarkerBrush "Grid";
 _markerstr setMarkerSize [500,500];
-
+*/
 _markerstr2 = createMarker [str (random 1000),_markerPos];
 _markerstr2 setMarkerShape "ICON";
 _markerstr2 setMarkerType "MIL_unknown";
@@ -64,7 +64,7 @@ _group = createGroup East;
 				InsP_enemyMorale = InsP_enemyMorale + 0.06; publicVariable "InsP_enemyMorale";
 			};
 		}];
-		_unit addMagazines ["handGrenade",2];
+//		_unit addMagazines ["handGrenade",2];
 		_unit setVariable ["unitsHome",_pos,false];
 		//_num = _num + 1;
 		sleep 0.2;
@@ -82,7 +82,7 @@ waitUntil {(!alive _vip || time < _time) && [_vip,100] call CBA_fnc_nearPlayer};
 
 //End of Tasks tuff
 ["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
-deleteMarker _markerstr;
+//deleteMarker _markerstr;
 deleteMarker _markerstr2;
 deleteVehicle _vip;
 [_taskID] call bis_fnc_deleteTask;

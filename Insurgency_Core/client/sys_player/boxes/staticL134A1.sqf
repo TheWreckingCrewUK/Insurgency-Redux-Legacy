@@ -8,7 +8,7 @@
 */
 
 if (( count(allPlayers - entities "HeadlessClient_F"))<7) then {
-[7] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";} else {
+[7] execVM "Insurgency_Core\client\sys_restrict\restrictedkit.sqf";} else {
 
 _boxClass = "UK3CB_BAF_Box_L134A1";
 

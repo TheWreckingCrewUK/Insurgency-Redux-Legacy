@@ -35,7 +35,18 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action1,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 	
-	
+	_twc_placeflag = ["placeflag","Place EOD Flag","",{ 
+_flag = createVehicle ["FlagSmall_F", ([_player, 2, getdir _player] call BIS_fnc_relPos), [], 0, "CAN_COLLIDE"];
+_flag setdir random 360;
+if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag; hint "You're Nowhere Near A Minefield"} else 
+
+{if (count (player nearobjects ["FlagSmall_F", 250]) >50) then {deletevehicle _flag; hint "There Are Too Many Flags In The Area Already, Chill Your Bean"} else {if (count (player nearobjects ["FlagSmall_F", 40]) >15) then {deletevehicle _flag; hint "I Am A Server In Pain, Please Have Mercy"} else {if (count (player nearobjects ["FlagSmall_F", 5]) >3) then {deletevehicle _flag; hint "You're Really Enthusiastic With This Whole Flag Thing"}}}}
+;
+
+},_condition] call ace_interact_menu_fnc_createAction; 
+[player, 1, ["ACE_SelfActions"], _twc_placeflag] call ace_interact_menu_fnc_addActionToObject; 
+
+
 	
 {
 _condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)};
@@ -49,17 +60,6 @@ _condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (pla
 
 	_twc_repveh2 = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_twc_repveh2,true] call ace_interact_menu_fnc_addActionToClass;	
-
-_twc_placeflag = ["placeflag","Place EOD Flag","",{ 
-_flag = createVehicle ["FlagSmall_F", ([_player, 2, getdir _player] call BIS_fnc_relPos), [], 0, "CAN_COLLIDE"];
-_flag setdir random 360;
-if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag; hint "You're Nowhere Near A Minefield"} else 
-
-{if (count (player nearobjects ["FlagSmall_F", 250]) >50) then {deletevehicle _flag; hint "There Are Too Many Flags In The Area Already, Chill Your Bean"} else {if (count (player nearobjects ["FlagSmall_F", 40]) >15) then {deletevehicle _flag; hint "I Am A Server In Pain, Please Have Mercy"} else {if (count (player nearobjects ["FlagSmall_F", 5]) >3) then {deletevehicle _flag; hint "You're Really Enthusiastic With This Whole Flag Thing"}}}}
-;
-
-},_condition] call ace_interact_menu_fnc_createAction; 
-[player, 1, ["ACE_SelfActions"], _twc_placeflag] call ace_interact_menu_fnc_addActionToObject; 
 
 
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
