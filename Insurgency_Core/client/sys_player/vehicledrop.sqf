@@ -8,26 +8,30 @@ _vehicle = createvehicle ["UK3CB_BAF_LandRover_Soft_Sand_A", [0,0,0]];
 _total = ((ceil(_playercount * 1.3))-(count (_boxpos nearentities ["car", 200]))) max 1;
 hint format ["Spawning %1 Vehicles", _total *2];
 
-vehdrop = {
-params ["_boxpos"];
+//vehdrop = {
+//params ["_boxpos"];
 
-_pos = [_boxpos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+//_pos = [_boxpos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_pos = [_boxpos, 5, 50, 10, 0, 1, 0, [], [_boxpos, _boxpos]] call BIS_fnc_findSafePos;
 
 for "_i" from 1 to _total do{ 
 
-_spawnPos = [_pos,[5,50],random 360,0, [1,40], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,40], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _wmik = createvehicle ["UK3CB_BAF_LandRover_WMIK_GPMG_Sand_A", _spawnPos];  
 clearweaponcargoglobal _wmik; 
 _wmik addmagazinecargoglobal ["UK3CB_BAF_762_200Rnd_T", 5];
 sleep 1;
 if ((vectorMagnitude (velocity _wmik))>2 || (damage _wmik > 0)) then {deletevehicle _wmik;
-_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _wmik = createvehicle ["UK3CB_BAF_LandRover_WMIK_GPMG_Sand_A", _spawnPos];  
 clearweaponcargoglobal _wmik; 
 _wmik addmagazinecargoglobal ["UK3CB_BAF_762_200Rnd_T", 5];
 sleep 1;
 if ((vectorMagnitude (velocity _wmik))>2 || (damage _wmik > 0)) then {deletevehicle _wmik;
-_spawnPos = [_pos,[5,50],random 360,0, [1,70], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _wmik = createvehicle ["UK3CB_BAF_LandRover_WMIK_GPMG_Sand_A", _spawnPos];  
 clearweaponcargoglobal _wmik; 
 _wmik addmagazinecargoglobal ["UK3CB_BAF_762_200Rnd_T", 5];
@@ -37,17 +41,20 @@ _wmik setdamage 0;
 };
 };
 
-_spawnPos = [_pos,[5,50],random 360,0, [1,40], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _car = createvehicle ["UK3CB_BAF_LandRover_Soft_Sand_A", _spawnPos];
 sleep 1;
 if ((vectorMagnitude (velocity _car))>2 || (damage _car > 0)) then {deletevehicle _car;
 
-_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _car = createvehicle ["UK3CB_BAF_LandRover_Soft_Sand_A", _spawnPos];
 sleep 1;
 if ((vectorMagnitude (velocity _car))>2 || (damage _car > 0)) then {deletevehicle _car;
 
-_spawnPos = [_pos,[5,50],random 360,0, [1,70], [50,(typeof _vehicle)]] call SHK_pos; 
+//_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
+_spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _car = createvehicle ["UK3CB_BAF_LandRover_Soft_Sand_A", _spawnPos];
 sleep 5;
 _car setdamage 0;
@@ -56,6 +63,7 @@ _car setdamage 0;
 };
 
 };
-deletevehicle _vehicle;};
+deletevehicle _vehicle;
+//};
 
-[[_total],vehdrop] remoteExec ["bis_fnc_execvm", 2];
+//[[_total],vehdrop] remoteExec ["bis_fnc_execvm", 2];
