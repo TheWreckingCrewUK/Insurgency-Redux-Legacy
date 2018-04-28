@@ -35,7 +35,7 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 50
 _group = createGroup East;
 
 if(isNil "hvtlist") then{
-	hvtlist = ["CUP_O_TK_INS_Commander","rhsgref_ins_squadleader"];
+	hvtlist = ["CUP_O_TK_INS_Commander_twc","rhsgref_ins_squadleader"];
 };
 
 

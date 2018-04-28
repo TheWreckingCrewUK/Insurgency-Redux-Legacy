@@ -25,7 +25,7 @@ player addEventHandler ["InventoryClosed", {
 	_twc_repvehd = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{alive _target}] call ace_interact_menu_fnc_createAction;
 	["CUP_B_Wolfhound_LMG_GB_D",0,["ACE_MainActions"],_twc_repvehd,true] call ace_interact_menu_fnc_addActionToClass;
 
-	
+	_condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)};
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
 
 	_action = ["SpawnUKCreate","Spawn Large UK Crate","",{"twc_forwardBase_BritishAmmoBox" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
@@ -49,7 +49,7 @@ if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag
 
 	
 {
-_condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)};
+
 
 	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\clearboxes.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;

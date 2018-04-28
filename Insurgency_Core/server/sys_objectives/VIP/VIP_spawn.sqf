@@ -48,7 +48,7 @@ _markerstr2 = createMarker [str (random 1000),_markerPos];
 _markerstr2 setMarkerShape "ICON";
 _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
-_markerstr2 setMarkerText "Very Important Person";
+_markerstr2 setMarkerText "Hostage Rescue";
 
 //Spawning the enemies
 [_pos]spawn{
@@ -74,7 +74,7 @@ _group = createGroup East;
 
 //Creates the task
 _taskID = str (random 1000);
-[WEST,[_taskID],["A member of the press has been captured by insurgents. We need to rescue him.","Hostage Situation"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+[WEST,[_taskID],["A member of the press has been captured by insurgents. We need to rescue him.","Hostage Rescue"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 //Waits until the time runs out or the vip dies AND not near players
 _time = time + 1200;
