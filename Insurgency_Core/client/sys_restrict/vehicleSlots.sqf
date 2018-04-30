@@ -136,6 +136,14 @@ _list=[
 			["Modern_British_crewchief"]
 		]],8
 	],
+		["ukcw_Gazelle", [
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],0
+	],
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
 		["driver", 

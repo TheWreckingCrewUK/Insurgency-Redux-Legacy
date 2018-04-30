@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3264.7378,141.71585,4875.3613};
-		dir[]={0.43934086,-0.64891988,0.62119615};
-		up[]={0.37470523,0.76085591,0.52980596};
-		aside[]={0.81644195,2.3283064e-009,-0.57742858};
+		pos[]={3388.9006,107.01565,4777.0454};
+		dir[]={0.077368721,-0.6151709,0.78459829};
+		up[]={0.060368679,0.78839421,0.61220056};
+		aside[]={0.9951781,5.2939868e-008,-0.098133989};
 	};
 };
 binarizationWanted=0;
@@ -12873,7 +12873,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=435;
+		items=432;
 		class Item0
 		{
 			dataType="Marker";
@@ -22313,7 +22313,7 @@ class Mission
 			};
 			id=1235;
 			type="CUP_A1_Road_ces_d25";
-			atlOffset=0.023836136;
+			atlOffset=0.024219036;
 		};
 		class Item196
 		{
@@ -30335,7 +30335,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -30399,7 +30399,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -30439,7 +30439,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -30503,7 +30503,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -30802,174 +30802,6 @@ class Mission
 				{
 					property="hideObject";
 					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item432
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={3123.8689,13.536698,1189.17};
-				angles[]={0,5.6031876,0};
-			};
-			areaSize[]={45,0,25};
-			flags=1;
-			id=1577;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=4.7099991;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=15;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item433
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={1891.505,27.491554,3223.2339};
-				angles[]={0,5.6031876,0};
-			};
-			areaSize[]={45,0,25};
-			flags=1;
-			id=1578;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=13.318999;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=9;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item434
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={1020.899,54.32,1927.2841};
-				angles[]={0,3.7563324,0};
-			};
-			areaSize[]={55,0,65};
-			flags=1;
-			id=1579;
-			type="ModuleHideTerrainObjects_F";
-			atlOffset=10.630001;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="#filter";
-					expression="_this setVariable [""#filter"",_value]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=11;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="#hideLocally";
-					expression="_this setVariable [""#hideLocally"",_value]";
 					class Value
 					{
 						class data
