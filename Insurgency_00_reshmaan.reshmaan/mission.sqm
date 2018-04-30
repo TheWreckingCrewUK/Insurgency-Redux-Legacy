@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1876;
+		nextID=1878;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15723.412,100.01167,14935.132};
-		dir[]={-0.28574663,-0.64991713,0.70425224};
-		up[]={-0.24435531,0.75999612,0.60223895};
-		aside[]={0.92663389,-1.2852252e-007,0.37597644};
+		pos[]={14769.954,19.688971,9200.0059};
+		dir[]={-0.41322246,-0.32688051,-0.84996861};
+		up[]={-0.14292735,0.9450621,-0.29399133};
+		aside[]={-0.89936769,-1.3480894e-007,0.4372406};
 	};
 };
 binarizationWanted=0;
@@ -84,13 +84,14 @@ addons[]=
 	"ace_realisticnames",
 	"ace_maptools",
 	"acre_sys_prc117f",
-	"twc_modern"
+	"twc_modern",
+	"ukcw_gazelle"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=52;
+		items=53;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -414,6 +415,11 @@ class AddonsMetaData
 		{
 			className="twc_modern";
 			name="twc_modern";
+		};
+		class Item52
+		{
+			className="ukcw_gazelle";
+			name="ukcw_gazelle";
 		};
 	};
 };
@@ -12930,7 +12936,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=360;
+		items=362;
 		class Item0
 		{
 			dataType="Marker";
@@ -24061,7 +24067,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14757.863,13.207028,9166.5391};
+				position[]={14755.799,13.17306,9163.3926};
 				angles[]={6.2799468,0.54269266,0.011925534};
 			};
 			side="Empty";
@@ -24072,7 +24078,6 @@ class Mission
 			};
 			id=1709;
 			type="CUP_B_MH60L_DAP_4x_USN";
-			atlOffset=-0.00088214874;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24316,7 +24321,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14758.452,11.347536,9167.666};
+				position[]={14756.388,11.312686,9164.5195};
 				angles[]={6.2799468,0.56583685,0.011925534};
 			};
 			side="Empty";
@@ -25672,7 +25677,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -25710,7 +25715,7 @@ class Mission
 				class Attribute3
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -25909,7 +25914,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -25973,7 +25978,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -26013,7 +26018,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -26077,7 +26082,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -26168,7 +26173,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -26232,7 +26237,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -27700,6 +27705,81 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item360
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14761.163,13.241632,9186.8066};
+				angles[]={0,0.5540024,0.0097563909};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1876;
+			type="ukcw_Gazelle";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_space";
+					expression="[_this,_value] call ace_cargo_fnc_setSpace;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item361
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14760.942,11.426149,9187.5254};
+				angles[]={-0,0.56583685,0.0097534489};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1877;
+			type="Land_HelipadSquare_F";
 		};
 	};
 };
