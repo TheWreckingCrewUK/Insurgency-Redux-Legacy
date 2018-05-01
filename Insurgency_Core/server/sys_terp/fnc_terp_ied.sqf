@@ -11,4 +11,10 @@ _dis = ((ceil(((twc_terp distance _ied) + random 100) / 50)) / 2) * 100;
 
 
 
-format ["You hear chatter indicating an IED nearby, within approximately %1 meters of your current position",_dis] remoteExec ["hint",owner twc_terp];
+_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Enemy Intel</t>"; 
+
+ _text1 = format ["<br />You hear chatter indicating an IED nearby, within approximately %1 meters of your current position",_dis];
+ _terptext = parsetext (_title + _text1);
+ 
+ [_terptext] remoteExec ["hint",owner twc_terp];
+

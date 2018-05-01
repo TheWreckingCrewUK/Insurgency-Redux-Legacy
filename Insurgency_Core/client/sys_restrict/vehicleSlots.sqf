@@ -142,7 +142,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_crewchief"]
-		]],0
+		]],3
 	],
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
