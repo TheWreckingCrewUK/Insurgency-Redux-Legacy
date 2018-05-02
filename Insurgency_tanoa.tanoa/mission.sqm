@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1897;
+		nextID=1898;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4073.4768,3.6829143,8252.5557};
-		dir[]={-0.77540332,-0.51250124,-0.36895308};
-		up[]={-0.46279123,0.85868251,-0.22020619};
-		aside[]={-0.42967054,2.0908192e-007,0.90300322};
+		pos[]={3474.7993,100.30938,9001.7471};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -48,13 +48,14 @@ addons[]=
 	"CUP_WheeledVehicles_HMMWV",
 	"CUP_AirVehicles_UH60",
 	"CUP_WheeledVehicles_Wolfhound",
-	"CUP_Misc3_Config"
+	"CUP_Misc3_Config",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -187,6 +188,12 @@ class AddonsMetaData
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
+		};
+		class Item23
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12703,7 +12710,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=52;
+		items=53;
 		class Item0
 		{
 			dataType="Marker";
@@ -14068,6 +14075,7 @@ class Mission
 			};
 			id=1729;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
+			atlOffset=-6.6757202e-006;
 		};
 		class Item19
 		{
@@ -14085,7 +14093,7 @@ class Mission
 			};
 			id=1730;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
-			atlOffset=2.3841858e-007;
+			atlOffset=-6.4373016e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14126,7 +14134,7 @@ class Mission
 			};
 			id=1731;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
-			atlOffset=-0.0012271404;
+			atlOffset=-0.0012338161;
 		};
 		class Item21
 		{
@@ -15085,7 +15093,7 @@ class Mission
 				class Attribute0
 				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['VehicleCustomization',_value]} else {([_this] + _value) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
 					class Value
 					{
 						class data
@@ -15678,27 +15686,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_fastroping_equipFRIES";
-					expression="[_this] call ace_fastroping_fnc_equipFRIES";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['VehicleCustomization',_value]} else {([_this] + _value) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
 					class Value
 					{
 						class data
@@ -16080,6 +16069,25 @@ class Mission
 									};
 								};
 							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_fastroping_equipFRIES";
+					expression="[_this] call ace_fastroping_fnc_equipFRIES";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
 						};
 					};
 				};
@@ -16108,27 +16116,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="ace_fastroping_equipFRIES";
-					expression="[_this] call ace_fastroping_fnc_equipFRIES";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['VehicleCustomization',_value]} else {([_this] + _value) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
 					class Value
 					{
 						class data
@@ -16510,6 +16499,25 @@ class Mission
 									};
 								};
 							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_fastroping_equipFRIES";
+					expression="[_this] call ace_fastroping_fnc_equipFRIES";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
 						};
 					};
 				};
@@ -16690,6 +16698,40 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item52
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3458.906,-1.8740381,9083.4736};
+			};
+			id=1897;
+			type="TWC_Module_Medical";
+			atlOffset=0.027993202;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
 						};
 					};
 				};

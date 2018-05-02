@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=1815;
+		nextID=1816;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8295.5039,303.28775,2038.3142};
-		dir[]={0.19756895,-0.25203055,-0.94739604};
-		up[]={0.051459059,0.9677099,-0.24676163};
-		aside[]={-0.97899956,2.7799979e-007,-0.2041577};
+		pos[]={7583.4048,334.0033,2147.6367};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -79,13 +79,14 @@ addons[]=
 	"ace_ballistics",
 	"A3_Weapons_F_Ammoboxes",
 	"ace_rearm",
-	"ukcw_gazelle"
+	"ukcw_gazelle",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=50;
+		items=51;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -395,6 +396,12 @@ class AddonsMetaData
 		{
 			className="ukcw_gazelle";
 			name="ukcw_gazelle";
+		};
+		class Item50
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12911,7 +12918,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=296;
+		items=297;
 		class Item0
 		{
 			dataType="Marker";
@@ -13303,7 +13310,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8266.0596,298.15076,1989.8561};
-				angles[]={-0,5.7150111,0};
+				angles[]={0,5.7150111,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25433,7 +25440,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8300.9365,297.85522,2010.496};
-				angles[]={-0,5.7594295,0};
+				angles[]={0,5.7594295,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25484,6 +25491,40 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item296
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7580.5498,308.25418,2169.6265};
+			};
+			id=1815;
+			type="TWC_Module_Medical";
+			atlOffset=6.1035156e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};

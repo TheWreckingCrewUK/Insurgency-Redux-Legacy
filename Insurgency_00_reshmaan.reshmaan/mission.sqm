@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1878;
+		nextID=1879;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14769.954,19.688971,9200.0059};
-		dir[]={-0.41322246,-0.32688051,-0.84996861};
-		up[]={-0.14292735,0.9450621,-0.29399133};
-		aside[]={-0.89936769,-1.3480894e-007,0.4372406};
+		pos[]={4172.9482,164.03362,18244.969};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -85,13 +85,14 @@ addons[]=
 	"ace_maptools",
 	"acre_sys_prc117f",
 	"twc_modern",
-	"ukcw_gazelle"
+	"ukcw_gazelle",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=53;
+		items=54;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -420,6 +421,12 @@ class AddonsMetaData
 		{
 			className="ukcw_gazelle";
 			name="ukcw_gazelle";
+		};
+		class Item53
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12936,7 +12943,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=362;
+		items=363;
 		class Item0
 		{
 			dataType="Marker";
@@ -27722,6 +27729,7 @@ class Mission
 			};
 			id=1876;
 			type="ukcw_Gazelle";
+			atlOffset=-0.0019865036;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27771,7 +27779,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={14760.942,11.426149,9187.5254};
-				angles[]={-0,0.56583685,0.0097534489};
+				angles[]={0,0.56583685,0.0097534489};
 			};
 			side="Empty";
 			flags=4;
@@ -27780,6 +27788,39 @@ class Mission
 			};
 			id=1877;
 			type="Land_HelipadSquare_F";
+		};
+		class Item362
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4169.2598,138.96762,18263.877};
+			};
+			id=1878;
+			type="TWC_Module_Medical";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

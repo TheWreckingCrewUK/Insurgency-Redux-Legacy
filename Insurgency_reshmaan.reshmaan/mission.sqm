@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=1424;
+		nextID=1425;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4406.1875,147.61478,18118.141};
-		dir[]={-0.0056690387,-0.28951731,0.95724982};
-		up[]={-0.0017149894,0.95716065,0.2895779};
-		aside[]={1.0000744,2.0030348e-007,0.0059206672};
+		pos[]={4173.1328,163.96962,18236.26};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -89,13 +89,14 @@ addons[]=
 	"RHS_US_A2_AirImport",
 	"A3_Characters_F_Common",
 	"CUP_WaterVehicles_Weapons",
-	"ukcw_gazelle"
+	"ukcw_gazelle",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=59;
+		items=60;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -451,6 +452,12 @@ class AddonsMetaData
 		{
 			className="ukcw_gazelle";
 			name="ukcw_gazelle";
+		};
+		class Item59
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12968,7 +12975,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=328;
+		items=329;
 		class Item0
 		{
 			dataType="Marker";
@@ -26487,6 +26494,39 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item328
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4164.6909,138.96762,18256.076};
+			};
+			id=1424;
+			type="TWC_Module_Medical";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};

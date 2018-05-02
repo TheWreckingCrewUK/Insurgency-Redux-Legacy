@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=1748;
+		nextID=1749;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={808.63373,81.293678,1955.0211};
+		pos[]={3123.5613,33.804245,5447.0298};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
 		aside[]={0.99999994,0,-0};
@@ -55,13 +55,14 @@ addons[]=
 	"UK3CB_BAF_Weapons_Ammo",
 	"ace_repair",
 	"ace_dragging",
-	"rhsusf_c_weapons"
+	"rhsusf_c_weapons",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -225,6 +226,12 @@ class AddonsMetaData
 			name="RHSUSF Weapons & Accessories";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item26
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12741,7 +12748,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=90;
+		items=91;
 		class Item0
 		{
 			dataType="Marker";
@@ -13724,7 +13731,7 @@ class Mission
 			};
 			id=1207;
 			type="Flag_UK_F";
-			atlOffset=0.98300171;
+			atlOffset=0.98300266;
 		};
 		class Item21
 		{
@@ -15752,7 +15759,7 @@ class Mission
 			};
 			id=1554;
 			type="Land_SandbagBarricade_01_hole_F";
-			atlOffset=9.5367432e-007;
+			atlOffset=1.9073486e-006;
 		};
 		class Item50
 		{
@@ -15769,6 +15776,7 @@ class Mission
 			};
 			id=1555;
 			type="Land_SandbagBarricade_01_F";
+			atlOffset=1.9073486e-006;
 		};
 		class Item51
 		{
@@ -15785,6 +15793,7 @@ class Mission
 			};
 			id=1557;
 			type="Land_SandbagBarricade_01_F";
+			atlOffset=9.5367432e-007;
 		};
 		class Item52
 		{
@@ -15801,6 +15810,7 @@ class Mission
 			};
 			id=1558;
 			type="Land_SandbagBarricade_01_hole_F";
+			atlOffset=1.9073486e-006;
 		};
 		class Item53
 		{
@@ -15817,7 +15827,7 @@ class Mission
 			};
 			id=1559;
 			type="Land_SandbagBarricade_01_hole_F";
-			atlOffset=9.5367432e-007;
+			atlOffset=1.9073486e-006;
 		};
 		class Item54
 		{
@@ -15982,7 +15992,7 @@ class Mission
 			};
 			id=1567;
 			type="Land_SandbagBarricade_01_hole_F";
-			atlOffset=9.5367432e-007;
+			atlOffset=1.9073486e-006;
 		};
 		class Item58
 		{
@@ -15999,7 +16009,7 @@ class Mission
 			};
 			id=1568;
 			type="Land_SandbagBarricade_01_F";
-			atlOffset=2.8601322;
+			atlOffset=2.8601332;
 		};
 		class Item59
 		{
@@ -16033,6 +16043,7 @@ class Mission
 			};
 			id=1570;
 			type="Land_SandbagBarricade_01_half_F";
+			atlOffset=9.5367432e-007;
 		};
 		class Item61
 		{
@@ -16098,6 +16109,7 @@ class Mission
 			};
 			id=1574;
 			type="Land_BagFence_Long_F";
+			atlOffset=1.9073486e-006;
 		};
 		class Item65
 		{
@@ -16202,7 +16214,7 @@ class Mission
 			};
 			id=1582;
 			type="Land_Camera_01_F";
-			atlOffset=2.983654;
+			atlOffset=2.983655;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17397,7 +17409,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -17435,7 +17447,7 @@ class Mission
 				class Attribute3
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -17651,7 +17663,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -17715,7 +17727,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -17755,7 +17767,7 @@ class Mission
 				class Attribute0
 				{
 					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0,0,0]})) then {_this setVariable ['ace_refuel_hooks',[_value],true]}";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 					class Value
 					{
 						class data
@@ -17819,7 +17831,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this,_value] call ace_refuel_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -17854,6 +17866,39 @@ class Mission
 			id=1746;
 			type="rhs_weapon_m72a7";
 			atlOffset=1.7304592;
+		};
+		class Item90
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3120.3247,8.8000002,5464.4453};
+			};
+			id=1748;
+			type="TWC_Module_Medical";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

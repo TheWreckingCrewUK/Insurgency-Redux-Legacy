@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1624;
+		nextID=1625;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3817.2749,269.85312,4469.5195};
-		dir[]={0.26968703,-0.47711158,0.83656985};
-		up[]={0.14639685,0.87883681,0.4541207};
-		aside[]={0.95186764,2.8108479e-006,-0.3068597};
+		pos[]={3114.7058,241.11884,5440.3228};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -48,13 +48,14 @@ addons[]=
 	"CUP_WheeledVehicles_Skoda",
 	"CUP_WheeledVehicles_Lada",
 	"twc_1990",
-	"twc_objects"
+	"twc_objects",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=22;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -179,6 +180,12 @@ class AddonsMetaData
 		{
 			className="twc_objects";
 			name="twc_objects";
+		};
+		class Item21
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -836,7 +843,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=50;
+		items=51;
 		class Item0
 		{
 			dataType="Marker";
@@ -4334,6 +4341,39 @@ class Mission
 								};
 							};
 							value="";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item50
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3118.6331,220.1562,5458.2251};
+			};
+			id=1624;
+			type="TWC_Module_Medical";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
 						};
 					};
 				};

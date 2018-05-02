@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=745;
+		nextID=746;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8118.9805,33.711662,10110.742};
-		dir[]={0.010169461,-0.67922699,-0.73390669};
-		up[]={0.0094110016,0.73387444,-0.67921698};
-		aside[]={-0.99993718,-5.261245e-008,-0.013855209};
+		pos[]={8093.4268,54.258251,10007.516};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -69,13 +69,14 @@ addons[]=
 	"twc_modern",
 	"twc_framework_public_modern_us",
 	"CUP_WheeledVehicles_HMMWV",
-	"CUP_WheeledVehicles_Wolfhound"
+	"CUP_WheeledVehicles_Wolfhound",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=42;
+		items=43;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -329,6 +330,12 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_Wolfhound";
 			name="CUP_WheeledVehicles_Wolfhound";
+		};
+		class Item42
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12845,7 +12852,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=96;
+		items=97;
 		class Item0
 		{
 			dataType="Marker";
@@ -13091,7 +13098,7 @@ class Mission
 			};
 			id=96;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
-			atlOffset=-0.00025749207;
+			atlOffset=-0.00026321411;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13132,7 +13139,7 @@ class Mission
 			};
 			id=97;
 			type="UK3CB_BAF_Jackal2_L134A1_W";
-			atlOffset=-0.0002155304;
+			atlOffset=-0.0002117157;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13180,7 +13187,7 @@ class Mission
 			position[]={8108.2114,0,10076.679};
 			name="crateDropOff";
 			type="Empty";
-			angle=6.8301842e-006;
+			angle=6.8301838e-006;
 			id=219;
 			atlOffset=-29.450424;
 		};
@@ -13533,7 +13540,7 @@ class Mission
 			position[]={8108.2915,0,10076.174};
 			name="forwardBase_itemSpawn";
 			type="Empty";
-			angle=6.8301842e-006;
+			angle=6.8301838e-006;
 			id=351;
 			atlOffset=-29.44891;
 		};
@@ -14205,6 +14212,7 @@ class Mission
 			};
 			id=557;
 			type="UK3CB_BAF_Jackal2_L111A1_W";
+			atlOffset=-5.7220459e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14330,6 +14338,7 @@ class Mission
 			};
 			id=568;
 			type="rhsusf_M1220_M2_usarmy_wd";
+			atlOffset=-0.00015640259;
 		};
 		class Item41
 		{
@@ -14347,6 +14356,7 @@ class Mission
 			};
 			id=569;
 			type="rhsusf_M1220_M2_usarmy_wd";
+			atlOffset=-0.00015640259;
 		};
 		class Item42
 		{
@@ -15863,7 +15873,7 @@ class Mission
 			};
 			id=690;
 			type="RHS_UH60M_d";
-			atlOffset=3.8146973e-006;
+			atlOffset=-0.029756546;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17885,6 +17895,40 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item96
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8089.9019,29.289522,10027.933};
+			};
+			id=745;
+			type="TWC_Module_Medical";
+			atlOffset=-0.0079975128;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
 						};
 					};
 				};

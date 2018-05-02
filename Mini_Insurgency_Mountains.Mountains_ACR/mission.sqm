@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1643;
+		nextID=1644;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3819.2437,270.32159,4471.6729};
-		dir[]={-0.049123306,-0.56412303,0.82425857};
-		up[]={-0.033560436,0.82568389,0.56313139};
-		aside[]={0.99825478,-3.4563709e-007,0.059495382};
+		pos[]={3123.1912,241.24144,5452.436};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -50,13 +50,14 @@ addons[]=
 	"ace_weather",
 	"twc_modern",
 	"twc_framework_public_modern_us",
-	"twc_objects"
+	"twc_objects",
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -193,6 +194,12 @@ class AddonsMetaData
 		{
 			className="twc_objects";
 			name="twc_objects";
+		};
+		class Item23
+		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
 		};
 	};
 };
@@ -12709,7 +12716,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=50;
+		items=51;
 		class Item0
 		{
 			dataType="Marker";
@@ -16417,6 +16424,40 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item50
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3120.8364,217.87999,5469.311};
+			};
+			id=1643;
+			type="TWC_Module_Medical";
+			atlOffset=0.055114746;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TWC_Module_Medical_enablePublicCPRChance";
+					expression="_this setVariable ['enablePublicCPRChance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
 						};
 					};
 				};
