@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1895;
+		nextID=1898;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15511.339,446.09274,20920};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={15712.318,54.440472,17228.26};
+		dir[]={-0.85453314,-0.40959644,-0.31962064};
+		up[]={-0.38368446,0.91224152,-0.14351009};
+		aside[]={-0.35035029,7.3679257e-007,0.93669522};
 	};
 };
 binarizationWanted=0;
@@ -63,7 +63,8 @@ addons[]=
 	"ace_dragging",
 	"A3_Structures_F_Civ_Lamps",
 	"ukcw_gazelle",
-	"twc_medical"
+	"twc_medical",
+	"A3_Structures_F_Mil_Fortification"
 };
 class AddonsMetaData
 {
@@ -12810,16 +12811,16 @@ class Mission
 	};
 	class Entities
 	{
-		items=92;
+		items=91;
 		class Item0
 		{
 			dataType="Marker";
-			position[]={15699.516,6.1049805,17185.428};
+			position[]={15707.492,6.7540002,17168.266};
 			name="base";
 			text="BASE";
 			type="b_hq";
 			id=14;
-			atlOffset=0.027270794;
+			atlOffset=0.28458834;
 		};
 		class Item1
 		{
@@ -12938,12 +12939,12 @@ class Mission
 		class Item4
 		{
 			dataType="Marker";
-			position[]={15682.867,6.816844,17183.299};
+			position[]={15690.963,7.2325778,17166.607};
 			name="crate";
 			type="Empty";
 			angle=89.611404;
 			id=93;
-			atlOffset=0.69534636;
+			atlOffset=0.96387863;
 		};
 		class Item5
 		{
@@ -13783,24 +13784,24 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15688.12,10.34653,17190.736};
+				position[]={15696.097,10.316074,17173.574};
 				angles[]={0,5.0858183,0};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 			};
 			id=1207;
 			type="Flag_UK_F";
-			atlOffset=0.14338541;
+			atlOffset=0.40070295;
 		};
 		class Item21
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15658.218,5.8184075,17159.859};
+				position[]={15656.435,5.7931232,17159.875};
 				angles[]={0.0035379357,3.126302,0.014143427};
 			};
 			side="Empty";
@@ -14163,8 +14164,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15687.522,6.4728785,17178.643};
-				angles[]={0.010608234,1.5810925,6.2796474};
+				position[]={15694.42,6.8817706,17161.242};
+				angles[]={0.028283346,1.5810925,0.017679788};
 			};
 			side="Empty";
 			flags=4;
@@ -14204,17 +14205,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15687.613,6.879137,17178.742};
-				angles[]={0.010608234,1.5810968,6.2796474};
+				position[]={15694.511,7.2881718,17161.342};
+				angles[]={0.028283346,1.5810968,0.017686529};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="call{this attachto [table]}";
 			};
 			id=1710;
 			type="TWC_Item_Public_Base_LOCSTAT";
+			atlOffset=0.80037785;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14244,17 +14245,15 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15696.443,8.1898355,17183.504};
-				angles[]={6.269042,0,0.014143427};
+				position[]={15704.42,8.5422993,17166.342};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=1748;
 			type="WarfareBDepot";
-			atlOffset=-4.7683716e-007;
+			atlOffset=0.25731707;
 		};
 		class Item32
 		{
@@ -16238,8 +16237,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15644.684,8.5157728,17168.014};
-				angles[]={6.269042,0.0040154867,0.0035379357};
+				position[]={15700.007,8.5066109,17182.393};
+				angles[]={0.022923734,0.0040154867,0.0089036338};
 			};
 			side="Empty";
 			flags=4;
@@ -16249,7 +16248,7 @@ class Mission
 			};
 			id=1807;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
-			atlOffset=9.727478e-005;
+			atlOffset=9.6797943e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16279,8 +16278,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15652.086,8.5628948,17168.111};
-				angles[]={6.2796474,0.0040154867,0.0035379357};
+				position[]={15707.409,8.5709991,17182.49};
+				angles[]={0.022923734,0.0040154867,0.0089036338};
 			};
 			side="Empty";
 			flags=4;
@@ -16290,7 +16289,6 @@ class Mission
 			};
 			id=1808;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
-			atlOffset=-0.0001540184;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16320,8 +16318,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15648.503,8.5289936,17168};
-				angles[]={6.269042,0.0040154867,0.0035379357};
+				position[]={15703.826,8.5408211,17182.379};
+				angles[]={0.022923734,0.0040154867,0.0089036338};
 			};
 			side="Empty";
 			flags=4;
@@ -16331,7 +16329,6 @@ class Mission
 			};
 			id=1809;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
-			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16361,8 +16358,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15606.611,6.1296954,17176.607};
-				angles[]={6.269042,1.5573114,0};
+				position[]={15681.484,6.2254972,17175.248};
+				angles[]={0.0070674536,4.7544036,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16372,7 +16369,6 @@ class Mission
 			};
 			id=1810;
 			type="CUP_B_Mastiff_HMG_GB_D";
-			atlOffset=0.0027031898;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16402,8 +16398,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15606.747,5.9640884,17163.457};
-				angles[]={6.2725773,1.5573114,0};
+				position[]={15681.919,6.1841035,17181.33};
+				angles[]={6.269042,4.7544036,6.2796474};
 			};
 			side="Empty";
 			flags=4;
@@ -16442,8 +16438,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15633.292,9.720129,17195.959};
-				angles[]={6.2372441,3.1462374,0.014143427};
+				position[]={15691.179,9.256443,17198.748};
+				angles[]={6.2179136,3.1462374,0.0035379357};
 			};
 			side="Empty";
 			flags=4;
@@ -16453,7 +16449,6 @@ class Mission
 			};
 			id=1812;
 			type="UK3CB_BAF_Jackal2_L111A1_D";
-			atlOffset=-0.0031652451;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16483,8 +16478,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15619.421,9.5989056,17196.416};
-				angles[]={6.2301879,3.1145916,0};
+				position[]={15685.782,9.2976837,17198.77};
+				angles[]={6.2443042,3.1145916,6.2796474};
 			};
 			side="Empty";
 			flags=4;
@@ -16494,7 +16489,6 @@ class Mission
 			};
 			id=1813;
 			type="UK3CB_BAF_Jackal2_L111A1_D";
-			atlOffset=-0.003423214;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16524,8 +16518,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15660.242,8.9220219,17145.998};
-				angles[]={0.017679788,2.5901549,0.031816527};
+				position[]={15609.396,9.1902256,17191.861};
+				angles[]={6.2266626,2.0658593,0.0035379357};
 			};
 			side="Empty";
 			flags=4;
@@ -16535,7 +16529,6 @@ class Mission
 			};
 			id=1815;
 			type="rhsusf_rg33_m2_usmc_d";
-			atlOffset=-0.0017499924;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16565,8 +16558,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15668.766,9.1446667,17146.602};
-				angles[]={0.024751723,2.6506984,0.024751723};
+				position[]={15607.194,8.9900961,17187.51};
+				angles[]={6.2443042,2.0434785,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16576,7 +16569,6 @@ class Mission
 			};
 			id=1816;
 			type="rhsusf_rg33_m2_usmc_d";
-			atlOffset=-0.0016007423;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16606,8 +16598,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15639.52,8.7200022,17145.83};
-				angles[]={0.0035379357,2.7660482,0.010608234};
+				position[]={15606.095,8.807827,17176.719};
+				angles[]={6.269042,1.5657144,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16617,7 +16609,6 @@ class Mission
 			};
 			id=1817;
 			type="rhsusf_M1220_M2_usarmy_d";
-			atlOffset=-0.0029234886;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16647,8 +16638,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15646.226,8.8018742,17146.211};
-				angles[]={0.014143427,2.706604,0.0070674536};
+				position[]={15605.992,8.6463251,17163.777};
+				angles[]={6.2725773,1.6038173,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16658,7 +16649,6 @@ class Mission
 			};
 			id=1818;
 			type="rhsusf_M1220_M2_usarmy_d";
-			atlOffset=-0.0092000961;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16688,8 +16678,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15691.32,9.6305828,17145.598};
-				angles[]={0.042412028,2.6327269,0.021213956};
+				position[]={15617.684,9.4267473,17196.877};
+				angles[]={6.2301879,3.0101197,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16699,7 +16689,6 @@ class Mission
 			};
 			id=1824;
 			type="CUP_B_M1151_M2_DSRT_USMC";
-			atlOffset=-0.011469841;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16729,8 +16718,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15686.788,9.5533428,17145.688};
-				angles[]={0.042413436,2.6813724,0.01414764};
+				position[]={15625.183,9.4782534,17196.689};
+				angles[]={6.2372441,2.8893933,0.0070674536};
 			};
 			side="Empty";
 			flags=4;
@@ -16740,7 +16729,6 @@ class Mission
 			};
 			id=1825;
 			type="CUP_B_M1151_M2_DSRT_USMC";
-			atlOffset=-0.011089802;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16770,8 +16758,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15682.329,9.4721584,17145.58};
-				angles[]={0.031818401,2.6585515,0.024751723};
+				position[]={15620.964,9.4681816,17197.342};
+				angles[]={6.2301888,3.0359442,0.014143427};
 			};
 			side="Empty";
 			flags=4;
@@ -16781,15 +16769,14 @@ class Mission
 			};
 			id=1826;
 			type="CUP_B_M1151_M2_DSRT_USMC";
-			atlOffset=-0.011093616;
 		};
 		class Item53
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15702.328,9.8771267,17145.439};
-				angles[]={0.04594142,2.6130953,0.024749314};
+				position[]={15635.694,9.5567303,17195.727};
+				angles[]={6.2372441,3.127383,0.014143427};
 			};
 			side="Empty";
 			flags=4;
@@ -16799,7 +16786,6 @@ class Mission
 			};
 			id=1827;
 			type="CUP_B_M1151_DSRT_USMC";
-			atlOffset=-0.0034618378;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16829,8 +16815,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15706.719,9.9751053,17145.672};
-				angles[]={0.04594142,2.583683,0.024749314};
+				position[]={15631.741,9.4925756,17195.441};
+				angles[]={6.2372441,3.1713006,0.014143427};
 			};
 			side="Empty";
 			flags=4;
@@ -16840,7 +16826,7 @@ class Mission
 			};
 			id=1828;
 			type="CUP_B_M1151_DSRT_USMC";
-			atlOffset=-0.0034613609;
+			atlOffset=0.0048761368;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16870,8 +16856,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15711.014,10.073122,17146.166};
-				angles[]={0.04594142,2.5259686,0.038881414};
+				position[]={15640.593,9.6290302,17196.512};
+				angles[]={6.2407737,2.7380366,0};
 			};
 			side="Empty";
 			flags=4;
@@ -16881,7 +16867,6 @@ class Mission
 			};
 			id=1829;
 			type="CUP_B_M1151_DSRT_USMC";
-			atlOffset=-0.0045852661;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17071,8 +17056,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15662.941,9.0140781,17198.102};
-				angles[]={6.2442994,4.7896724,6.2619619};
+				position[]={15699.827,8.6824245,17199.326};
+				angles[]={6.2179136,3.2069881,0.0035379357};
 			};
 			side="Empty";
 			flags=4;
@@ -17082,6 +17067,7 @@ class Mission
 			};
 			id=1831;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17111,8 +17097,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15662.963,8.8536158,17193.875};
-				angles[]={6.2443042,4.7896724,6.2619686};
+				position[]={15704.053,8.8204689,17199.398};
+				angles[]={6.2549,3.2069881,0.028285453};
 			};
 			side="Empty";
 			flags=4;
@@ -17122,7 +17108,6 @@ class Mission
 			};
 			id=1832;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=0.0044512749;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17152,8 +17137,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15663.404,8.6844683,17189.779};
-				angles[]={6.2655025,4.7896724,6.2619686};
+				position[]={15708.188,8.9526653,17199.934};
+				angles[]={6.2549,3.2069881,0.028285453};
 			};
 			side="Empty";
 			flags=4;
@@ -17163,7 +17148,6 @@ class Mission
 			};
 			id=1833;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=0.00056600571;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17193,71 +17177,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15677.306,7.7983832,17146.762};
-				angles[]={0.031818401,1.6454369,0.024751723};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1834;
-			type="Land_HBarrier_large";
-		};
-		class Item61
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15697.068,8.1824522,17146.65};
-				angles[]={0.045942716,1.6454369,0.01768316};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1835;
-			type="Land_HBarrier_large";
-		};
-		class Item62
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15652.986,7.1771379,17146.572};
-				angles[]={0.01414764,1.6454369,0.024751723};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1837;
-			type="Land_HBarrier_large";
-		};
-		class Item63
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15716.519,8.7150946,17147.092};
-				angles[]={0.04594142,1.6454369,0.038881414};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=1838;
-			type="Land_HBarrier_large";
-			atlOffset=-4.7683716e-007;
-		};
-		class Item64
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={15653.88,5.888195,17287.281};
 				angles[]={0.0035379357,0.028453156,0.010608234};
 			};
@@ -17270,7 +17189,7 @@ class Mission
 			id=1839;
 			type="Land_HelipadSquare_F";
 		};
-		class Item65
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17310,7 +17229,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item66
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17350,7 +17269,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item67
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17391,7 +17310,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item68
+		class Item64
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17431,7 +17350,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item69
+		class Item65
 		{
 			dataType="Marker";
 			position[]={15653.476,5.8800001,17291.752};
@@ -17441,7 +17360,7 @@ class Mission
 			id=1846;
 			atlOffset=0.005718708;
 		};
-		class Item70
+		class Item66
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17482,7 +17401,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item71
+		class Item67
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17541,12 +17460,12 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item72
+		class Item68
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15638.353,6.2911901,17165.184};
+				position[]={15653.772,6.2911901,17172.432};
 				angles[]={6.2655058,0,0.014143427};
 			};
 			side="Empty";
@@ -17557,7 +17476,7 @@ class Mission
 			};
 			id=1874;
 			type="CUP_B_Wolfhound_LMG_GB_D";
-			atlOffset=0.15396118;
+			atlOffset=-0.056966305;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17582,12 +17501,12 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item73
+		class Item69
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15637.438,7.9902024,17161.996};
+				position[]={15652.858,7.9902024,17169.244};
 			};
 			side="Empty";
 			class Attributes
@@ -17596,7 +17515,7 @@ class Mission
 			};
 			id=1875;
 			type="ACE_Box_Ammo";
-			atlOffset=1.7261658;
+			atlOffset=1.5076752;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17621,12 +17540,12 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item74
+		class Item70
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15637.438,7.9733381,17160.945};
+				position[]={15652.858,7.9733381,17168.193};
 			};
 			side="Empty";
 			class Attributes
@@ -17635,7 +17554,295 @@ class Mission
 			};
 			id=1876;
 			type="ACE_Box_Ammo";
-			atlOffset=1.7241693;
+			atlOffset=1.4945278;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item71
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15652.608,8.0450048,17175.02};
+				angles[]={0,4.6725602,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 5] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; [this, true, [0, 1, 0.3], 10] call ace_dragging_fnc_setCarryable;}";
+			};
+			id=1877;
+			type="Fuel_can";
+			atlOffset=1.4469314;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_refuel_hooks";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=20;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item72
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15652.816,8.0501442,17175.029};
+				angles[]={0,4.6725602,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 5] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; [this, true, [0, 1, 0.3], 10] call ace_dragging_fnc_setCarryable;}";
+			};
+			id=1878;
+			type="Fuel_can";
+			atlOffset=1.4510903;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_refuel_hooks";
+					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=20;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item73
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15654.764,7.1373806,17171.777};
+				angles[]={0,4.6989503,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;}";
+			};
+			id=1879;
+			type="TWC_Public_AmmoBox_Hobbs_Precious";
+			atlOffset=0.80862427;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item74
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15652.792,7.1047106,17171.676};
+				angles[]={0,4.6989503,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; if(!isServer)exitWith{};this addItemCargoGlobal [""ACE_CableTie"",10]}";
+			};
+			id=1880;
+			type="TWC_Public_AmmoBox_Hobbs_Precious";
+			atlOffset=0.78543472;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17665,225 +17872,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15637.188,8.0450048,17167.771};
-				angles[]={0,4.6725602,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 5] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; [this, true, [0, 1, 0.3], 10] call ace_dragging_fnc_setCarryable;}";
-			};
-			id=1877;
-			type="Fuel_can";
-			atlOffset=1.6949286;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"ARRAY"
-								};
-							};
-							class value
-							{
-								items=3;
-								class Item0
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item2
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-							};
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=20;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item76
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15637.396,8.0501442,17167.781};
-				angles[]={0,4.6725602,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 5] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; [this, true, [0, 1, 0.3], 10] call ace_dragging_fnc_setCarryable;}";
-			};
-			id=1878;
-			type="Fuel_can";
-			atlOffset=1.6969428;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_refuel_hooks";
-					expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"ARRAY"
-								};
-							};
-							class value
-							{
-								items=3;
-								class Item0
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-								class Item2
-								{
-									class data
-									{
-										class type
-										{
-											type[]=
-											{
-												"SCALAR"
-											};
-										};
-										value=0;
-									};
-								};
-							};
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=20;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item77
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15639.344,7.1373806,17164.529};
+				position[]={15652.74,7.9312696,17170.676};
 				angles[]={0,4.6989503,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;}";
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_DefusalKit"",1];this additemcargoglobal [""ACE_EntrenchingTool"",2];}";
 			};
-			id=1879;
+			id=1881;
 			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.0108705;
+			atlOffset=1.6369548;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17908,22 +17907,102 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item78
+		class Item76
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15637.372,7.1047106,17164.428};
+				position[]={15654.713,7.9639788,17170.777};
 				angles[]={0,4.6989503,0};
 			};
 			side="Empty";
 			class Attributes
 			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this; if(!isServer)exitWith{};this addItemCargoGlobal [""ACE_CableTie"",10]}";
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_Flashlight_KSF1"", 10]}";
 			};
-			id=1880;
+			id=1882;
 			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.0078802;
+			atlOffset=1.6601491;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item77
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15652.773,7.132133,17172.789};
+				angles[]={0,4.6989503,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;}";
+			};
+			id=1883;
+			type="TWC_Public_AmmoBox_Hobbs_Precious";
+			atlOffset=0.78536177;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""B_IR_Grenade"",""UK3CB_BAF_SmokeShell"",""UK3CB_BAF_SmokeShellGreen"",""UK3CB_BAF_SmokeShellOrange"",""UK3CB_BAF_SmokeShellRed"",""UK3CB_BAF_SmokeShellBlue""],[10,3,3,3,3,3]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item78
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15654.771,7.1651654,17172.891};
+				angles[]={0,4.6989503,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "if(!isServer)exitWith{};this setpos position this;this additemcargoglobal [""ACRE_PRC343"",5];this additemcargoglobal [""ACRE_PRC148"",5];}";
+			};
+			id=1884;
+			type="TWC_Public_AmmoBox_Hobbs_Precious";
+			atlOffset=0.80881929;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17953,167 +18032,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15637.32,7.9312696,17163.428};
-				angles[]={0,4.6989503,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_DefusalKit"",1];this additemcargoglobal [""ACE_EntrenchingTool"",2];}";
-			};
-			id=1881;
-			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.8528423;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item80
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15639.293,7.9639788,17163.529};
-				angles[]={0,4.6989503,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;if(!isServer)exitWith{};this additemcargoglobal [""ACE_Flashlight_KSF1"", 10]}";
-			};
-			id=1882;
-			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.8558545;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item81
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15637.354,7.132133,17165.541};
-				angles[]={0,4.6989503,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "this setpos position this;}";
-			};
-			id=1883;
-			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.0158758;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[""B_IR_Grenade"",""UK3CB_BAF_SmokeShell"",""UK3CB_BAF_SmokeShellGreen"",""UK3CB_BAF_SmokeShellOrange"",""UK3CB_BAF_SmokeShellRed"",""UK3CB_BAF_SmokeShellBlue""],[10,3,3,3,3,3]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item82
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15639.352,7.1651654,17165.643};
-				angles[]={0,4.6989503,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="call{_car= (this nearobjects [""CUP_B_Wolfhound_LMG_GB_D"", 10] select 0); this attachto [_car]; _y = getdir _car + 90;  _p = 0; _r = 0;     " \n "this setVectorDirAndUp [     " \n " [ sin _y * cos _p,cos _y * cos _p,sin _p],     " \n " [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D     " \n "]; " \n "if(!isServer)exitWith{};this setpos position this;this additemcargoglobal [""ACRE_PRC343"",5];this additemcargoglobal [""ACRE_PRC148"",5];}";
-			};
-			id=1884;
-			type="TWC_Public_AmmoBox_Hobbs_Precious";
-			atlOffset=1.0188489;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item83
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15638.574,8.49084,17161.537};
+				position[]={15653.994,8.49084,17168.785};
 			};
 			side="Empty";
 			class Attributes
@@ -18122,7 +18041,7 @@ class Mission
 			};
 			id=1885;
 			type="Box_NATO_AmmoVeh_F";
-			atlOffset=1.7149444;
+			atlOffset=1.5002613;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18166,7 +18085,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item84
+		class Item80
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18183,7 +18102,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=-0.00097131729;
 		};
-		class Item85
+		class Item81
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18200,7 +18119,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=-0.0018563271;
 		};
-		class Item86
+		class Item82
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18217,7 +18136,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=-0.0036268234;
 		};
-		class Item87
+		class Item83
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18234,7 +18153,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=0.014073372;
 		};
-		class Item88
+		class Item84
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18251,7 +18170,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=0.0087628365;
 		};
-		class Item89
+		class Item85
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18268,7 +18187,7 @@ class Mission
 			type="Land_LampHalogen_F";
 			atlOffset=-0.0053963661;
 		};
-		class Item90
+		class Item86
 		{
 			dataType="Object";
 			class PositionInfo
@@ -18328,7 +18247,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item91
+		class Item87
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -18361,6 +18280,54 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15635.897,7.3026261,17169.715};
+				angles[]={6.2655058,0.049074225,0.014143427};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1895;
+			type="Land_HBarrier_Big_F";
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15644.343,7.3743181,17169.523};
+				angles[]={6.269042,0.049074225,0.0035379357};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1896;
+			type="Land_HBarrier_Big_F";
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15627.162,7.069561,17159.102};
+				angles[]={6.2796474,1.5944704,0.0035379357};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1897;
+			type="Land_HBarrier_Big_F";
 		};
 	};
 };

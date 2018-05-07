@@ -26,25 +26,44 @@ player addEventHandler ["InventoryClosed", {
 	["CUP_B_Wolfhound_LMG_GB_D",0,["ACE_MainActions"],_twc_repvehd,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)};
-if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
 
 	_action = ["SpawnUKCreate","Spawn Large UK Crate","",{"twc_forwardBase_BritishAmmoBox" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_action1 = ["SpawnCharlieCreate","Spawn Large Charlie Crate","",{"twc_forwardBase_CharlieAmmoBox" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
+	_action1 = ["SpawnCharlieCreate","Spawn Large US Crate","",{"twc_forwardBase_CharlieAmmoBox" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action1,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_actionempty = ["SpawnemptyCreate","Spawn Large Empty Crate","",{"TWC_AmmoBox_Other_Pallet_pub" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_actionempty,true] call ace_interact_menu_fnc_addActionToClass;
 	};
-	
+		_minecondition = {(count (player nearobjects ["minebase", 500]) > 0) || (count (player nearobjects ["pipebombbase", 10]) > 0)};
 	_twc_placeflag = ["placeflag","Place EOD Flag","",{ 
 _flag = createVehicle ["FlagSmall_F", ([_player, 2, getdir _player] call BIS_fnc_relPos), [], 0, "CAN_COLLIDE"];
 _flag setdir random 360;
-if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag; hint "You're Nowhere Near A Minefield"} else 
 
-{if (count (player nearobjects ["FlagSmall_F", 250]) >50) then {deletevehicle _flag; hint "There Are Too Many Flags In The Area Already, Chill Your Bean"} else {if (count (player nearobjects ["FlagSmall_F", 40]) >15) then {deletevehicle _flag; hint "I Am A Server In Pain, Please Have Mercy"} else {if (count (player nearobjects ["FlagSmall_F", 5]) >3) then {deletevehicle _flag; hint "You're Really Enthusiastic With This Whole Flag Thing"}}}}
+if (count (player nearobjects ["FlagSmall_F", 250]) >50) then {deletevehicle _flag; hint "There Are Too Many Flags In The Area Already, Chill Your Bean"} else {if (count (player nearobjects ["FlagSmall_F", 40]) >15) then {deletevehicle _flag; hint "I Am A Server In Pain, Please Have Mercy"} else {if (count (player nearobjects ["FlagSmall_F", 5]) >3) then {deletevehicle _flag; hint "You're Really Enthusiastic With This Whole Flag Thing"}}}
 ;
 
-},_condition] call ace_interact_menu_fnc_createAction; 
+},_minecondition] call ace_interact_menu_fnc_createAction; 
 [player, 1, ["ACE_SelfActions"], _twc_placeflag] call ace_interact_menu_fnc_addActionToObject; 
+
+		_flagcondition = {(count (player nearobjects ["FlagSmall_F", 2]) > 0)};
+	_twc_removeflag = ["placeflag","Remove EOD Flag","",{ 
+_flag = (player nearobjects ["FlagSmall_F", 2]) select 0;
+
+deleteVehicle _flag;
+
+},_flagcondition] call ace_interact_menu_fnc_createAction; 
+[player, 1, ["ACE_SelfActions"], _twc_removeflag] call ace_interact_menu_fnc_addActionToObject; 
+
+
+		_deleteboxcondition = {(count (_target nearobjects ["Land_InfoStand_V1_F", 5]) > 0)};
+	_twc_deletebox = ["deletebox","Destroy","",{ 
+deleteVehicle _target;
+
+},_deleteboxcondition] call ace_interact_menu_fnc_createAction; 
+	["ReammoBox_F",0,["ACE_MainActions"],_twc_deletebox,true] call ace_interact_menu_fnc_addActionToClass;
 
 
 	
@@ -62,17 +81,17 @@ if (count (player nearobjects ["minebase", 400]) == 0) then {deletevehicle _flag
 	[_x,0,["ACE_MainActions"],_twc_repveh2,true] call ace_interact_menu_fnc_addActionToClass;	
 
 
-if((typeOf player) in ["Modern_British_HeliPilot","Modern_USMC_HeliPilot"])then{
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
 
 
-	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn Small Charlie Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_hcharlieaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;	
 	
 	_hUKactionana = ["SpawnsmallUKCreate","Spawn Small ANA Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateana.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	[_x,0,["ACE_MainActions"],_hUKactionana,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_haction4 = ["SpawnsmallsniperCreate","Spawn Small Sniper Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcratesniper.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_haction4,true] call ace_interact_menu_fnc_addActionToClass;
@@ -130,7 +149,7 @@ if((typeOf player) in ["twc_ana_commander","twc_ana_subcommander"])then{
 
 if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d"])then{
 
-	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small Charlie Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_charlieaction1 = ["Spawnheartscrateus","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\heartsminds_us.sqf"},_condition] call ace_interact_menu_fnc_createAction;
