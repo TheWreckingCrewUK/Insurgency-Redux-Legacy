@@ -1832,6 +1832,194 @@ if (typeOf vehicle player == "twc_ana_interpreter") then {
 	
 };
 
+//colombian army
+
+
+if (typeOf vehicle player == "twc_nac_commander") then {
+    _tmp_weapons =
+    [
+        ["binocular",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+        ["30Rnd_556x45_Stanag_Tracer_Red",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1],
+		["ACRE_PRC148",1],
+		["ACRE_PRC117F",1],
+		["ACE_morphine", 20],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_nac_base") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_m21a",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhsgref_30rnd_556x45_m21",50],
+        ["rhsgref_30rnd_556x45_m21_t",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_nac_subcommander") then {
+    _tmp_weapons =
+    [
+    ];
+
+	_tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+        ["30Rnd_556x45_Stanag_Tracer_Red",50],
+        ["rhsgref_30rnd_556x45_m21",50],
+        ["rhsgref_30rnd_556x45_m21_t",50],
+        ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",50],
+        ["1Rnd_HE_Grenade_shell",50],
+        ["ACE_HuntIR_M203",50],
+        ["1Rnd_Smoke_Grenade_shell",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+
+if (typeOf vehicle player == "twc_nac_mg") then {
+    _tmp_weapons =
+    [
+  //      ["rhs_weap_akm",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
+if (typeOf vehicle player == "twc_nac_medic") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_m21a",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhsgref_30rnd_556x45_m21",50],
+        ["rhsgref_30rnd_556x45_m21_T",50],
+		["HandGrenade",5]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",45],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACE_wirecutter", 1],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_personalAidKit", 1],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+if (typeOf vehicle player == "twc_nac_interpreter") then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_m21a_fold",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhsgref_30rnd_556x45_m21",50],
+        ["rhsgref_30rnd_556x45_m21_T",50]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_fieldDressing",25],
+		["ACE_morphine", 20],
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC152", 1]
+    ];
+				_tmp_backpacks = 
+	[
+//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
+	
+};
+
+
 
 
 //BAF Pilot

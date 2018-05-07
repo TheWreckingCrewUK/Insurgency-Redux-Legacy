@@ -2,11 +2,12 @@
 params ["_time"];
 
 { 
- if (_x isKindOf "twc_ana_interpreter") then { 
+ if ((_x isKindOf "twc_nac_interpreter") || (_x isKindOf "twc_ana_interpreter")) then { 
  
 twc_terp = _x;
 publicVariable "twc_terp"}; 
 } forEach allUnits; 
+
 
  
 if (isnull twc_terp) exitwith {terpChannel = 0; publicvariable "terpChannel"}; 
