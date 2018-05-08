@@ -6,6 +6,7 @@ InsP_MissionStatus = ["MissionStatus","Mission Status","",{call InsP_fnc_Mission
 
 //Questioning Civs
 InsP_fnc_questionDisplay = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_questionDisplay.sqf";
+InsP_fnc_enemyIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_enemyIntel.sqf";
 InsP_fnc_possibleIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_possibleIntel.sqf";
 InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_evidence.sqf";
 

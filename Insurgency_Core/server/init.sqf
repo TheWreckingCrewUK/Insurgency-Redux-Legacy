@@ -19,7 +19,7 @@ if(isNil "twc_is90") then{
 	publicVariable "twc_is90";
 };
 
-if(isNull twc_terp) then{
+if(isNil "twc_terp") then{
 twc_terp = objnull;
 };
 

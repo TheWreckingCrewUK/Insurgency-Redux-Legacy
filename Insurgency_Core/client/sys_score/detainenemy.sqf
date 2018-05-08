@@ -1,0 +1,3 @@
+_action = ["Actiondetainenemy","Detain","",{["TWC_Insurgency_adjustPoints", 30] call CBA_fnc_serverEvent;deleteVehicle _target; call InsP_fnc_enemyIntel},{((GetPos player) distance (getMarkerPos "base") < 20) && ((side _target) == civilian)&& (!(_target isKindOf "Civilian_F")) && (alive _target)}] call ace_interact_menu_fnc_createAction; 
+ 
+["man",0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass; 
