@@ -12,7 +12,7 @@ player addEventHandler ["InventoryOpened", {
 		};
 	};
 }];
-_local_restrictedPrimaryWeapons = ["twc_ksvk", "CUP_srifle_SVD_des_ghillie_pso", "CUP_arifle_M16A2", "CUP_arifle_FNFAL", "CUP_arifle_RPK74", "CUP_lmg_PKM", "CUP_arifle_AK74_GL", "CUP_arifle_AK74"];
+_local_restrictedPrimaryWeapons = ["twc_ksvk", "CUP_srifle_SVD_des_ghillie_pso", "CUP_arifle_M16A2", "CUP_arifle_FNFAL", "CUP_arifle_RPK74", "CUP_lmg_PKM", "CUP_arifle_AK74_GL", "CUP_arifle_AK74", "CUP_arifle_AKM", "CUP_arifle_AKS_Gold", "CUP_arifle_M16A2", "CUP_arifle_AKS", "CUP_arifle_AK74"];
 
 if(isNil "twc_restrictedPrimaryWeapons") then{
 twc_restrictedPrimaryWeapons = _local_restrictedPrimaryWeapons;

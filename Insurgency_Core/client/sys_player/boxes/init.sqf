@@ -108,6 +108,8 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_hfstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	[_x,0,["ACE_MainActions"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
@@ -228,6 +230,9 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	[_x,0,["ACE_MainActions"],_fstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_fstaction5 = ["spawnm6","Spawn M6","",{execvm "insurgency_core\client\sys_player\boxes\smallMortar.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	[_x,0,["ACE_MainActions"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_fstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
