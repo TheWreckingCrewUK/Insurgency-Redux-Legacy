@@ -128,7 +128,8 @@ _list=[
 		]],5
 	],
 	
-		["UK3CB_BAF_Wildcat_AH1_CAS_8A", [
+		
+		["UK3CB_BAF_Wildcat_AH1_CAS_8A",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
@@ -136,6 +137,17 @@ _list=[
 			["Modern_British_crewchief"]
 		]],8
 	],
+	
+		
+		["UK3CB_BAF_Wildcat_AH1_CAS_8B",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["gunner", 
+			["Modern_British_crewchief"]
+		]],8
+	],
+	
 		["ukcw_Gazelle", [
 		["driver", 
 			["Modern_British_HeliPilot"]
