@@ -12,6 +12,8 @@
 #include "sys_chat\init.sqf";
 #include "sys_basedefence\init.sqf";
 #include "sys_terp\init.sqf";
+//#include "sys_strongholds\init.sqf";
+execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 
 
 if(isNil "twc_is90") then{

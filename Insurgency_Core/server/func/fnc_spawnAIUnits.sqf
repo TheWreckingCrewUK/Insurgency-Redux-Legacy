@@ -62,6 +62,10 @@ for "_i" from 1 to _total do {
 	_unit setVariable ["unitsHome",_pos,false];
 	//_num = _num + 1;
 	sleep 0.2;
+	
+	[_pos, nil, [_unit], 300, 2, true, true] call ace_ai_fnc_garrison;
 };
-
+	sleep 5;
+	[_pos, nil, units _group, 300, 2, true, false] call ace_ai_fnc_garrison;
+	
 [_group, (_pos), 40] call CBA_fnc_taskAttack;

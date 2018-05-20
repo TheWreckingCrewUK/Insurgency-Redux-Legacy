@@ -1,9 +1,8 @@
 
-
-params["_town"];
+params["_pos"];
 
 //Trigger to identify town
-_pos = getPos _town;
+//_pos = getPos _town;
 _marker = createMarker [str _pos,_pos];
 _marker setMarkerShape "Ellipse";
 _marker setMarkerBrush "Grid";
@@ -37,7 +36,7 @@ for "_i" from 1 to _total do{
 	_num = _num + 1;
 	sleep 0.2;
 };
-	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
+	[_pos, nil, units _group, 300, 2, true, true] call ace_ai_fnc_garrison;
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 for "_i" from 1 to 7 do{
@@ -61,7 +60,7 @@ for "_i" from 1 to 7 do{
 	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
 	else
 	{
-	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
+	[_pos, nil, units _group, 300, 2, true, true] call ace_ai_fnc_garrison;
 	//using the inferior cba defence function after the ace garrison teleport, so that if ace can't find a building then cba takes over
 	[_group, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;
 	};
