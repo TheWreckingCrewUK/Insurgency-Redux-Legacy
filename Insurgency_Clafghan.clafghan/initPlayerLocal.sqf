@@ -25,65 +25,6 @@ twc_restrictedCrates = ["Box_NATO_Ammo_F","ACE_medicalSupplyCrate","Box_Nato_Amm
 // ["vehicle class name", ["slot name", ["acceptable person 1", ...]]],
 // known slot names (verbatim): "driver", "gunner", "commander", "Turret", or "cargo"
 twc_restrictedVehicleSlots = [
-	["CUP_B_C130J_GB", 
-		["driver", 
-			["Modern_British_JetPilot"]
-		],
-		["commander", 
-			["Modern_British_JetPilot"]
-		]
-	],
-	
-	["CUP_B_C130J_Cargo_GB",
-		["driver",
-			["Modern_British_JetPilot"]
-		],
-		["commander", 
-			["Modern_British_JetPilot"]
-		]
-	],
-	
-	["UK3CB_BAF_Wildcat_AH1_CAS_8A", 
-		["driver", 
-			["Modern_British_HeliPilot"]
-		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
-	
-	["CUP_B_UH1Y_Gunship_Dynamic_USMC", 
-		["driver", 
-			["Modern_USMC_HeliPilot"]
-		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
-	
-
-	
-			["UK3CB_BAF_Merlin_HC3_CSAR", 
-		["driver", 
-			["Modern_British_HeliPilot"]
-		],
-		["commander", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot"]
-		]
-	],
-	
-				["CUP_B_A10_DYN_USA", 
-		["driver", 
-			["Modern_USMC_JetPilot"]
-		]
-	],
-	
-					["CUP_B_GR9_DYN_GB", 
-		["driver", 
-			["Modern_British_JetPilot"]
-		]
-	]
-	
 	
 ];
 //Items creatable from supplies boxes

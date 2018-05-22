@@ -135,7 +135,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],8
+		]],3
 	],
 	
 		
@@ -145,12 +145,12 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],8
+		]],3
 	],
 	
 		["ukcw_Gazelle", [
 		["driver", 
-			["Modern_British_HeliPilot"]
+			["Modern_British_HeliPilot","2000_British_HeliPilot_Desert"]
 		],
 		["turret", 
 			["Modern_British_crewchief"]
@@ -161,9 +161,9 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["turret", 
+		["Turret", 
 			["Modern_British_crewchief"]
-		]],8
+		]],3
 	],	
 	
 		["UK3CB_BAF_Wildcat_AH1_HEL_8A",[ 
@@ -172,7 +172,17 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],8
+		]],3
+	],
+	
+
+		["CUP_B_AH1_DL_BAF",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["gunner", 
+			["Modern_British_crewchief"]
+		]],7
 	],
 
 		["CUP_B_AH1Z_Dynamic_USMC",[ 
@@ -181,8 +191,24 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],14
+		]],7
 	],
+		["rhsgref_cdf_b_Mi24D_Early",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
+		["rhsgref_cdf_Mi24D_early",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
 
 
 		["CUP_B_CH47F_GB",[ 
@@ -191,7 +217,7 @@ _list=[
 		],
 		["turret", 
 			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot"]
-		]],6
+		]],3
 	],
 	
 		["CUP_B_MV22_USMC_RAMPGUN",[ 
@@ -200,7 +226,39 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],6
+		]],3
+	],	
+		["CUP_O_UH1H_TKA",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
+		["CUP_O_Mi8_CHDKZ",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
+		["RHS_UH1Y_d",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["Turret", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
+		["UK3CB_BAF_Merlin_HC3_18_GPMG",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief"]
+		]],3
 	],	
 	
 		["RHS_UH60M_d",[ 
@@ -209,7 +267,7 @@ _list=[
 		],
 		["Turret", 
 			["Modern_British_crewchief"]
-		]],6
+		]],3
 	],
 	
 				["CUP_B_A10_DYN_USA", [

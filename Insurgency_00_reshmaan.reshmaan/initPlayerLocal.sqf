@@ -32,25 +32,8 @@ if !((goggles player) in approvedFacewear) then {
 // if the second to last value is a number then that is the max player count until that vehicle can be used.
 // you can also restrict specific slots to different player counts by duplicating the vehicle entry, only having that one slot, and then inputting different count values.
 //this is now stored in core as it's only rare for there to be differences to the normal, I'll put in exemption code if this ever becomes necessary
-twc_restrictedVehicleSlots = [	
-
-		["CUP_B_M1126_ICV_M2_Woodland_Slat",[ 
-		["driver", 
-			["2000_British_Vehicle_Crew"]
-		],
-		["commander", 
-			["2000_British_Vehicle_Commander"]
-		]],5
-	],	
-			["CUP_B_MH60L_DAP_4x_USN",[ 
-		["driver", 
-			["2000_British_HeliPilot_Desert"]
-		],
-		["gunner", 
-			["2000_British_HeliPilot_Desert"]
-		]],10
-	]
-	];
+twc_restrictedVehicleSlots = [
+];
 //Items creatable from supplies boxes
 twc_supplyBoxBuildables = [["ACE_ConcertinaWireCoil",200],["twc_Land_BagFence_Corner_F",100],["twc_Land_BagFence_Long_F",100],["twc_Land_BagFence_Short_F",100],["twc_Land_BagFence_End_F",100],["twc_Land_BagFence_Round_F",100],["twc_Land_BagBunker_Small_F",500],["Land_PortableLight_double_F",100]];
 
