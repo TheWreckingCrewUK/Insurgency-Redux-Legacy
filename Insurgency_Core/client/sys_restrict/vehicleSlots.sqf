@@ -176,28 +176,42 @@ _list=[
 	],
 	
 
-		["CUP_B_AH1_DL_BAF",[ 
+		["RHS_AH64D",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["gunner", 
+		["Turret", 
 			["Modern_British_crewchief"]
 		]],7
 	],
 
-		["CUP_B_AH1Z_Dynamic_USMC",[ 
+		["RHS_AH1Z",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["gunner", 
+		["Turret", 
 			["Modern_British_crewchief"]
 		]],7
 	],
+		["CUP_O_UH1H_TKA",[ 
+		["driver", 
+			["Modern_British_HeliPilot"]
+		],
+		["Turret", 
+			["Modern_British_crewchief"]
+		],
+		["Gunner", 
+			["Modern_British_crewchief"]
+		]],3
+	],	
 		["rhsgref_cdf_b_Mi24D_Early",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["turret", 
+		["Turret", 
+			["Modern_British_crewchief"]
+		],
+		["Gunner", 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -205,7 +219,10 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["turret", 
+		["Turret", 
+			["Modern_British_crewchief"]
+		],
+		["Gunner", 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -261,7 +278,7 @@ _list=[
 		]],3
 	],	
 	
-		["RHS_UH60M_d",[ 
+		["CUP_B_UH60M_US",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
@@ -306,7 +323,9 @@ _list=[
 
 TWC_fnc_notAllowedInSeat = {
 	params ["_playerUnit"];
-	
+	[_playerUnit] spawn {
+	params ["_playerUnit"];
+	sleep 1;
 	_freePassengerSpace = (vehicle _playerUnit) emptyPositions "cargo";
 	_title  = "<t color='#ff0000' size='1.2' shadow='1' shadowColor='#000000' align='center'>RESTRICTED</t>";
 
@@ -323,9 +342,12 @@ TWC_fnc_notAllowedInSeat = {
 	_text = "<br />You are not qualified for that slot.";
 	hint parseText (_title + _text);
 };
-
+};
 TWC_fnc_notenoughplayers = {
 	params ["_playerUnit","_count","_currentcount","_problem"];
+	[_playerUnit,_count,_currentcount,_problem] spawn {
+	params ["_playerUnit","_count","_currentcount","_problem"];
+	sleep 1;
 	if (_problem == "low") then {
 	_title  = "<t color='#ff0000' size='1.2' shadow='1' shadowColor='#000000' align='center'>Not Enough Players</t>";
 
@@ -360,6 +382,7 @@ TWC_fnc_notenoughplayers = {
 	};
 	
 	};
+};
 
 TWC_fnc_checkVehicleSlot = {
 	params ["_playerUnit"];

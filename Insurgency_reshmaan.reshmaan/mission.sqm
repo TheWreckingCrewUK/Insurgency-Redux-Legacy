@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=1466;
+		nextID=1470;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4459.5444,151.19968,18020.564};
-		dir[]={-0.62574035,-0.24643572,0.74024624};
-		up[]={-0.15912324,0.96914887,0.1882413};
-		aside[]={0.76379657,-1.4697434e-006,0.64564699};
+		pos[]={4223.3203,148.85521,18057.852};
+		dir[]={0.59170562,-0.23690028,-0.77071708};
+		up[]={0.14429234,0.9715212,-0.18794613};
+		aside[]={-0.79328912,-1.0925578e-006,-0.60903633};
 	};
 };
 binarizationWanted=0;
@@ -84,14 +84,13 @@ addons[]=
 	"CUP_Editor_A1_Roads_Config",
 	"A3_Characters_F_Common",
 	"CUP_WaterVehicles_Weapons",
-	"twc_medical",
-	"rhsgref_c_vehicles_ret"
+	"twc_medical"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=55;
+		items=54;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -419,13 +418,6 @@ class AddonsMetaData
 			className="twc_medical";
 			name="twc_medical";
 			author="Bosenator";
-		};
-		class Item54
-		{
-			className="rhsgref_c_vehicles_ret";
-			name="GREF Vehicle Retextures";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -12943,7 +12935,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=324;
+		items=323;
 		class Item0
 		{
 			dataType="Marker";
@@ -26197,66 +26189,6 @@ class Mission
 					};
 				};
 				nAttributes=1;
-			};
-		};
-		class Item323
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4225.8833,141.5972,18670.107};
-				angles[]={0,3.1415927,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="hind";
-				pylons="rhs_mag_fab500_m54;rhs_mag_fab500_m54;rhs_mag_upk23_mixed;rhs_mag_upk23_mixed;[0];[0];";
-			};
-			id=1465;
-			type="rhsgref_cdf_Mi24D_early";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[8]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[10,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
 			};
 		};
 	};
