@@ -1311,6 +1311,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_epinephrine",50],
 		["ACE_atropine", 50],
 		["ACE_salineIV",50],
+		["ACE_salineIV_500",50],
 		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_tourniquet", 5],

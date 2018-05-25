@@ -296,10 +296,10 @@ _list=[
 					["CUP_B_GR9_DYN_GB", [
 		["driver", 
 			["Modern_British_JetPilot"]
-		]],10
+		]],8
 	],
 	
-		["twc_public_c5_hercules", [
+		["TWC_Vehicle_Generic_Hercules_RAF", [
 		["driver", 
 			["Modern_British_JetPilot"]
 		],
