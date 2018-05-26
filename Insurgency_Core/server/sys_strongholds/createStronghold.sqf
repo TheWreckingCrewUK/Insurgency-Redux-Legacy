@@ -40,6 +40,13 @@ for "_i" from 1 to _total do{
 	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
+for "_i" from 1 to 2 do{
+if ((random 1) < 0.15) then {
+_group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+};
+};
+
+
 for "_i" from 1 to 7 do{
 	_num = 0;
 	_total = 5 + random 5;

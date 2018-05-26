@@ -62,6 +62,8 @@ deleteVehicle _target;
 	
 {
 
+#include "fst.sqf";
+
 
 	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\clearboxes.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -168,36 +170,6 @@ if((typeOf player) in ["Modern_British_Medic", "1990_British_Medic", "1990_Briti
 		
 };
 
-
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermaster","Modern_British_FSTForwardObserver","Modern_British_FSTCommander"])then{
-
-	_fstaction1 = ["spawnl111","Spawn L111A1 HMG","",{execvm "insurgency_core\client\sys_player\boxes\staticL111A1.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction2 = ["spawnl134","Spawn L134 GMG","",{execvm "insurgency_core\client\sys_player\boxes\staticL134A1.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction2,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction21 = ["spawnl7","Spawn L7 GPMG","",{execvm "insurgency_core\client\sys_player\boxes\staticL7.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction21,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction3,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_fstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction4,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction5 = ["spawnm6","Spawn M6","",{execvm "insurgency_core\client\sys_player\boxes\smallMortar.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction6,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_fstaction7 = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
-};
 
 
 
@@ -314,13 +286,13 @@ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_Tea
 	
 };
 
-if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_TeamLeader","2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_2IC_Desert","2000_British_2IC","1990_RM_British_2IC_Mix","1990_RM_British_SectionCommander_Mix","1990_British_2IC_Desert","1990_British_SectionCommander_Desert", "Modern_British_Spotter_coin","Modern_British_FSTCommander","Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d","twc_ana_commander","twc_ana_subcommander","Modern_British_Squadleader","Modern_British_2IC_COIN"])then{
-	_vic = ["spawn762","Spawn Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	[_x,0,["ACE_MainActions"],_vic,true] call ace_interact_menu_fnc_addActionToClass;};
+
 
 } foreach ["Land_InfoStand_V1_F", "twc_SuppliesBox"];
 
-
+if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_TeamLeader","2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_2IC_Desert","2000_British_2IC","1990_RM_British_2IC_Mix","1990_RM_British_SectionCommander_Mix","1990_British_2IC_Desert","1990_British_SectionCommander_Desert", "Modern_British_Spotter_coin","Modern_British_FSTCommander","Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d","twc_ana_commander","twc_ana_subcommander","Modern_British_Squadleader","Modern_British_2IC_COIN"])then{
+	_vic = ["spawn762","Spawn Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["twc_SuppliesBox",0,["ACE_MainActions"],_vic,true] call ace_interact_menu_fnc_addActionToClass;};
 
 if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{
 execVM "insurgency_core\client\zeus\camera.sqf";

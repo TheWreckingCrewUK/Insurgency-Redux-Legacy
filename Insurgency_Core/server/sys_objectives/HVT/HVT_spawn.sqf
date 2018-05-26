@@ -80,13 +80,20 @@ for "_i" from 1 to _total do{
 	sleep 0.2;
 };
 
+for "_i" from 1 to 2 do{
+if ((random 1) < 0.15) then {
+_group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+};
+};
+
+
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 
 // let's start monitoring conditions to satisfy completion/failure
 [_hvt, _markerstr, _markerstr2, _taskID, _group, _objType] spawn {
 	params ["_hvt", "_markerstr", "_markerstr2", "_taskID", "_group", "_objType"];
 	
-	_maxTime = time + 60000;
+	_maxTime = time + ((10*60)*60);
 	
 	while {alive _hvt} do {
 		if (time > _maxTime) exitWith {};

@@ -29,7 +29,8 @@ execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
 };
 
 
-_spawnPos = [_pos, 50] call CBA_fnc_randPos;
+//_spawnPos = [_pos, 50] call CBA_fnc_randPos;
+_spawnPos = [0,0,0];
 _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 2) max 20;
 _group = createGroup East;
@@ -47,9 +48,19 @@ for "_i" from 1 to _total do{
 	_num = _num + 1;
 	sleep 0.2;
 	
-	[_pos, nil, [_unit], 300, 2, true, true] call ace_ai_fnc_garrison;
+	
 };
+
+	[_pos, nil, units _group, 300, 2, true, true] call ace_ai_fnc_garrison;
+//_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+
+
+for "_i" from 1 to 2 do{
+if ((random 1) < 0.15) then {
+_group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+};
+};
+
 
 	sleep 5;
 	[_pos, nil, units _group, 300, 2, true, false] call ace_ai_fnc_garrison;
-//_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;

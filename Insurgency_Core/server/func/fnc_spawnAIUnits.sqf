@@ -45,7 +45,8 @@ _total = [_pos] call twc_fnc_calculateSpawnAmount;
 
 //Spawning hostiles
 _group = createGroup East;
-_spawnPos = [_pos,_groupradius,[_dir1,_dir2]] call SHK_pos;
+//_spawnPos = [_pos,_groupradius,[_dir1,_dir2]] call SHK_pos;
+_spawnPos = [0,0,0];
 
 if (isNil "townSpawn") exitWith {};
 
@@ -63,8 +64,8 @@ for "_i" from 1 to _total do {
 	//_num = _num + 1;
 	sleep 0.2;
 	
-	[_pos, nil, [_unit], 300, 2, true, true] call ace_ai_fnc_garrison;
 };
+	[_pos, nil, units _group, 300, 2, true, true] call ace_ai_fnc_garrison;
 	sleep 5;
 	[_pos, nil, units _group, 300, 2, true, false] call ace_ai_fnc_garrison;
 	

@@ -1,9 +1,13 @@
 
-_attackcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 10};
+_attackcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
+
+_attackcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 10};
 
 _utilitycond = {( count(allPlayers - entities "HeadlessClient_F")) >= 3};
 
-_transportcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 5};
+_transportcond1 = {( count(allPlayers - entities "HeadlessClient_F")) >= 4};
+
+_transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 5};
 
 _cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
 
@@ -125,7 +129,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief","20
 	_vehaction2 = ["vehiclespawnutility","Utility Helicopters","",{},_utilitycond] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","vehiclespawn"],_vehaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_vehaction3 = ["vehiclespawntransport","Transport Helicopters","",{},_transportcond] call ace_interact_menu_fnc_createAction;
+	_vehaction3 = ["vehiclespawntransport","Transport Helicopters","",{},_transportcond1] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","vehiclespawn"],_vehaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_vehaction4 = ["vehiclespawncas","CAS Helicopters","",{},_cascond] call ace_interact_menu_fnc_createAction;
@@ -264,6 +268,13 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Merlin","",{
+	
+	["UK3CB_BAF_Merlin_HC3_18_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\utilityheli.sqf"
+	
+	},_transportcond2] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 /*
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Huey","",{
 	
@@ -278,14 +289,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	
 	["RHS_AH64D"] execvm "insurgency_core\client\sys_player\vehicles\attackheli.sqf"
 	
-	},_condition] call ace_interact_menu_fnc_createAction;
+	},_attackcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Cobra","",{
 	
 	["RHS_AH1Z"] execvm "insurgency_core\client\sys_player\vehicles\attackheli.sqf"
 	
-	},_condition] call ace_interact_menu_fnc_createAction;
+	},_attackcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 
@@ -302,21 +313,16 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	
 	["CUP_O_Mi8_CHDKZ"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
 	
-	},_condition] call ace_interact_menu_fnc_createAction;
+	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Merlin","",{
-	
-	["UK3CB_BAF_Merlin_HC3_18_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
-	
-	},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Blackhawk","",{
 	
 	["CUP_B_UH60M_US"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
 	
-	},_condition] call ace_interact_menu_fnc_createAction;
+	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 

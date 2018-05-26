@@ -77,8 +77,8 @@ _taskID = str (random 1000);
 [WEST,[_taskID],["A member of the press has been captured by insurgents. We need to rescue him.","Hostage Rescue"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
 //Waits until the time runs out or the vip dies AND not near players
-_time = time + 1200;
-waitUntil {(!alive _vip || time < _time) && [_vip,100] call CBA_fnc_nearPlayer};
+_time = time + ((10*60)*60);
+waitUntil {(!alive _vip || time > _time) && (!([_vip,200] call CBA_fnc_nearPlayer))};
 
 //End of Tasks tuff
 ["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;

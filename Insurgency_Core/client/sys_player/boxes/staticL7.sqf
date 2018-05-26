@@ -8,7 +8,7 @@
 */
 
 if (( count(allPlayers - entities "HeadlessClient_F"))<4) then {
-[4] execVM "Domination_Core\client\sys_restrict\restrictedkit.sqf";} else {
+[4] execVM "Insurgency_Core\client\sys_restrict\restrictedkit.sqf";} else {
 _boxClass = "UK3CB_BAF_Box_L7A2";
 
 _box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
