@@ -386,40 +386,55 @@ TWC_fnc_notenoughplayers = {
 
 TWC_fnc_checkVehicleSlot = {
 	params ["_playerUnit"];
-	
 	if (vehicle _playerUnit == _playerUnit) exitWith { false; }; // double check
 	
-	_currentSeat = [_playerUnit] call CBA_fnc_vehicleRole;
+	_slotFullData = {fullCrew vehicle _playerUnit select {(_x select 0) isEqualTo _playerUnit}} select 0;
+	_currentSeat = _slotFullData select 1;
+	_currentSeatTurretPath = _slotFullData select 3;
+	
 	{
 		_vehicle = (_x select 0);
 		_slotsAndRoles = (_x select 1);
 		_count = (_x select (count (_x)-1));
 		_maxcount = (_x select (count (_x)-2));
-		_currentcount = ( count(allPlayers - entities "HeadlessClient_F"));
+		_currentcount = (count(allPlayers - entities "HeadlessClient_F"));
 		_snipercount = 5;
 		
-		
- if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {if (_snipercount > _currentcount) then {[_playerUnit,_snipercount,_currentcount,"low"] call TWC_fnc_notenoughplayers};};
+		if ((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
+			if (_snipercount > _currentcount) then {
+				[_playerUnit, _snipercount, _currentcount, "low"] call TWC_fnc_notenoughplayers;
+			};
+		};
 		
 		if (typeof (vehicle _playerUnit) == _vehicle) then {
 			{
 				_slot = (_x select 0);
 				_roles = (_x select 1);
-				if (_currentSeat == _slot) then {
-//				systemchat format ["%1", _roles];
+
+				_checkWith = _currentSeat;
+				if (typeName _slot == "ARRAY") then { _checkWith = _currentSeatTurretPath; };
+
+				if (_checkWith == _slot) then {
 					if (!(typeOf _playerUnit in _roles)) then {
 						[_playerUnit] call TWC_fnc_notAllowedInSeat;
 					} else {
-					if (typename _count == "SCALAR") then {if (_count > _currentcount) then {[_playerUnit,_count,_currentcount,"low"] call TWC_fnc_notenoughplayers} else {if (typename _maxcount == "SCALAR") then {if (_maxcount < _currentcount) then {[_playerUnit,_count,_currentcount,"high"] call TWC_fnc_notenoughplayers};};};};
+						if (typename _count == "SCALAR") then {
+							if (_count > _currentcount) then {
+								[_playerUnit, _count, _currentcount, "low"] call TWC_fnc_notenoughplayers;
+							} else {
+								if (typename _maxcount == "SCALAR") then {
+									if (_maxcount < _currentcount) then {
+										[_playerUnit, _count, _currentcount, "high"] call TWC_fnc_notenoughplayers;
+									};
+								};
+							};
+						};
 					};
 				};
 			} forEach _slotsAndRoles;
 		};
 	} forEach twc_restrictedVehicleSlots;
 };
-
-
-
 
 [player, "GetInMan", {
 	params ["_playerUnit"];
