@@ -388,7 +388,8 @@ TWC_fnc_checkVehicleSlot = {
 	params ["_playerUnit"];
 	if (vehicle _playerUnit == _playerUnit) exitWith { false; }; // double check
 	
-	_slotFullData = {fullCrew vehicle _playerUnit select {(_x select 0) isEqualTo _playerUnit}} select 0;
+	_slotFull = fullCrew vehicle _playerUnit select {(_x select 0) isEqualTo _playerUnit};
+	_slotFullData = _slotFull select 0;
 	_currentSeat = _slotFullData select 1;
 	_currentSeatTurretPath = _slotFullData select 3;
 	
