@@ -72,7 +72,7 @@ _trg2 setTriggerStatements ["vehicle twc_terp in thislist","[0] execvm 'Insurgen
 			sleep 0.2;
 		};
 		for "_i" from 1 to 2 do{
-if ((random 1) > 0.1) then {
+if ((random 1) < 0.15) then {
 _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 };
 };
