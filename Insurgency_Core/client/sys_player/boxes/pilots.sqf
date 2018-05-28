@@ -320,7 +320,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Blackhawk","",{
 	
-	["CUP_B_UH60M_US"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
+	["RHS_UH60M"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
 	
 	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;

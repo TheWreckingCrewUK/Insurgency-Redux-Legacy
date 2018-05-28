@@ -26,8 +26,16 @@ _veh = _heli createvehicle (getPos AmmoBoxSpawner);
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
-clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
+
+
+if (!(["3CB", typeof _veh] call BIS_fnc_inString)) then {
+
+
+if (!(["3CB", typeof _veh] call BIS_fnc_inString)) then {
+
+clearMagazineCargoGlobal _veh;
+};
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Helicopter Spawner</t>"; 
 

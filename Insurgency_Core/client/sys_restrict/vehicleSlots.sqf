@@ -197,10 +197,7 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
-			["Modern_British_crewchief"]
-		],
-		["Gunner", 
+		[[2], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -208,21 +205,15 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
-			["Modern_British_crewchief"]
-		],
-		["Gunner", 
+		[[0], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
-		["rhsgref_cdf_Mi24D_early",[ 
+		["rhsgref_cdf_Mi24D_Early",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
-			["Modern_British_crewchief"]
-		],
-		["Gunner", 
+		[[0], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -232,7 +223,7 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","Modern_British_HeliPilot","2000_British_HeliPilot_Desert"]
 		],
-		["turret", 
+		[[3], 
 			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot"]
 		]],3
 	],
@@ -245,19 +236,11 @@ _list=[
 			["Modern_British_crewchief"]
 		]],3
 	],	
-		["CUP_O_UH1H_TKA",[ 
-		["driver", 
-			["Modern_British_HeliPilot"]
-		],
-		["turret", 
-			["Modern_British_crewchief"]
-		]],3
-	],	
 		["CUP_O_Mi8_CHDKZ",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["turret", 
+		[[2], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -265,7 +248,7 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
+		[[0], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
@@ -273,16 +256,16 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["turret", 
+		["gunner", 
 			["Modern_British_crewchief"]
 		]],3
 	],	
 	
-		["CUP_B_UH60M_US",[ 
+		["RHS_UH60M",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
+		[[0], 
 			["Modern_British_crewchief"]
 		]],3
 	],
@@ -413,8 +396,9 @@ TWC_fnc_checkVehicleSlot = {
 				_roles = (_x select 1);
 
 				_checkWith = _currentSeat;
-				if (typeName _slot == "ARRAY") then { _checkWith = _currentSeatTurretPath; };
+				if (typeName _slot == "ARRAY") then { _checkWith = _currentSeatTurretPath select 0; _slot= _slot select 0;};
 
+			
 				if (_checkWith == _slot) then {
 					if (!(typeOf _playerUnit in _roles)) then {
 						[_playerUnit] call TWC_fnc_notAllowedInSeat;

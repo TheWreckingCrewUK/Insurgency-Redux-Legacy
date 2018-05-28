@@ -23,8 +23,11 @@ _veh = _heli createvehicle (getPos AmmoBoxSpawner);
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
-clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
+
+if (!(["3CB", typeof _veh] call BIS_fnc_inString)) then {
+clearMagazineCargoGlobal _veh;
+};
 
 
 
