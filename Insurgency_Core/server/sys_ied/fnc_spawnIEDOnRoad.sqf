@@ -55,7 +55,7 @@ _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
 _trg setTriggerActivation ["west", "PRESENT", False];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","'Bo_GBU12_LGB' createvehicle getpos thistrigger;[getpos thistrigger] call INS_fnc_daisychain; deleteVehicle thisTrigger;",""];
+_trg setTriggerStatements ["{speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","'Bo_GBU12_LGB' createvehicle getpos thistrigger;[getpos thistrigger] call INS_fnc_daisychain; [getpos thistrigger] call INS_fnc_iedcounterattack; deleteVehicle thisTrigger;",""];
 
 _randsize = 150 + (random 200);
 _randtime = random 2;

@@ -221,7 +221,7 @@ _list=[
 
 		["CUP_B_CH47F_GB",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","Modern_British_HeliPilot","2000_British_HeliPilot_Desert"]
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","2000_British_HeliPilot_Desert"]
 		],
 		[[3], 
 			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot"]

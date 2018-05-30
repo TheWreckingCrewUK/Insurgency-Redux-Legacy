@@ -4,6 +4,8 @@ INS_fnc_populateIEDs = compile preprocessFileLineNumbers "Insurgency_Core\server
 INS_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_startIEDPlantLoop.sqf";
 INS_fnc_daisychain = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_daisychain.sqf";
 
+INS_fnc_iedcounterattack = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_iedcounterattack.sqf";
+
 if (isNil "InsP_iedGroup") then {
 	InsP_iedGroup = [];
 	publicVariable "InsP_iedGroup";

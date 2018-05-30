@@ -24,6 +24,7 @@ clearitemCargoGlobal _box;
 
 _box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",20];
 _box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm_tracer",5];
+_box AddMagazineCargoGlobal ["rhs_30Rnd_545x39_7N22_AK",5];
 
 _box AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",2];
 _box AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",4];

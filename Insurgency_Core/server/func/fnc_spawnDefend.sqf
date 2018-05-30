@@ -64,3 +64,22 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 	sleep 5;
 	[_pos, nil, units _group, 300, 2, true, false] call ace_ai_fnc_garrison;
+	
+	_array1 = [];
+	_array2 = [];
+	
+	{if (random 0.5 > 1) then {_array1 pushback _x} else {_array2 pushback _x};} foreach (units _group);
+	
+	while {alive (units _group select 0)} do {
+	
+	_randtime = random 120;
+	sleep (120 + _randtime);
+	
+	[_pos, nil, _array1, 300, 2, true, false] call ace_ai_fnc_garrison;
+	
+	_randtime = random 120;
+	sleep (120 + _randtime);
+	
+	[_pos, nil, _array2, 300, 2, true, false] call ace_ai_fnc_garrison;};
+	
+	

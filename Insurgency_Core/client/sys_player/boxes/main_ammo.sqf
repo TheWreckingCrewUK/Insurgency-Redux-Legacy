@@ -59,7 +59,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     ];
 				_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
 };
@@ -98,7 +98,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -138,7 +138,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -169,7 +169,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -252,7 +252,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
  
@@ -286,7 +286,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
  if (typeOf vehicle player == "Modern_British_Medic") then {
@@ -323,7 +323,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -570,7 +570,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -615,7 +615,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -649,7 +649,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 
 	_tmp_backpacks = 
 	[
-//		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 //US Section Leader
@@ -3060,6 +3060,8 @@ if (( count(allPlayers - entities "HeadlessClient_F"))>5) then {// add in all we
 {crateBox addMagazineCargo [(_x select 0),(_x select 1)]} foreach _magazines;
 
 {crateBox addItemCargo [(_x select 0),(_x select 1)]} foreach _items;
+
+{crateBox addBackpackCargo [(_x select 0),(_x select 1)]} foreach _backpacks;
 }
 else
 {
@@ -3074,5 +3076,7 @@ else
 {crateBox addMagazineCargo [(_x select 0),(_x select 1)]} foreach _magazines;
 
 {crateBox addItemCargo [(_x select 0),(_x select 1)]} foreach _items;
+
+{crateBox addBackpackCargo [(_x select 0),(_x select 1)]} foreach _backpacks;
 
 };

@@ -78,7 +78,7 @@ _taskID = (_this select 4);
 	["TWC_Insurgency_adjustPoints", 40] call CBA_fnc_serverEvent;
 
 };
-
+/*
 _nearest=objNull;
 _nearestdist=200;
 {
@@ -89,6 +89,7 @@ _nearestdist=200;
 	};
 } forEach allPlayers;
 [_pos,2,[200,300],[_nearest]] spawn twc_spawnAIUnits;
+*/
 
 //Complete or fail
 if(isNil "_veh")exitWith{};

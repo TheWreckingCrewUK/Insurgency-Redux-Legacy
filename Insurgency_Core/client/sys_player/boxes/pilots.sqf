@@ -275,14 +275,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-/*
+
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Huey","",{
 	
 	["CUP_O_UH1H_TKA"] execvm "insurgency_core\client\sys_player\vehicles\utilityheli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-*/
+
 
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Apache","",{
