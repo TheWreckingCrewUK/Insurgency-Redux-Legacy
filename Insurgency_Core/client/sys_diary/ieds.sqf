@@ -1,1 +1,1 @@
-player CreateDiaryRecord ["Diary",["IEDS","Insurgents place IEDS which can be defused with a defusal kit. Having them explode awards no points. Diffusing them allows for points and you get a few for returning them to the base Ammo-Crate"]];
+player CreateDiaryRecord ["Diary",["IEDS","Insurgents place IEDS which can be defused with a defusal kit. Having them explode awards no points. Having the Wolfhound nearby stops them from exploding unless someone walks/runs directly over them."]];

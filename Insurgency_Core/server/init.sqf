@@ -26,6 +26,12 @@ twc_terp = objnull;
 };
 
 
+if(isNil "twc_activemissions") then{
+	twc_activemissions = [];
+	publicVariable "twc_activemissions";
+};
+
+
 if(isNil "twc_ismini") then{
 	twc_ismini = 0;
 	publicVariable "twc_ismini";

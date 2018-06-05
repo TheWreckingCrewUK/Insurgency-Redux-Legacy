@@ -42,3 +42,5 @@ while {_vehicle < _amountToSpawn} do {
 		_vehicle = _vehicle + 1;
 	};
 };
+
+[[worldSize/2,worldSize/2], 6, worldSize/2 ] execvm "Insurgency_Core\server\func\fnc_spawnAmbientTechnicals.sqf";

@@ -17,7 +17,7 @@ _planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
 _planecondhi = {( count(allPlayers - entities "HeadlessClient_F")) >= 12};
 
-/*
+
 playercount = 0;
 _planecondlow = {playercount >= 5};
 
@@ -31,8 +31,12 @@ _utilitycond = {true};
 
 _transportcond = {true};
 
+_transportcond1 = {true};
+
+_transportcond2 = {true};
+
 _cascond = {true};
-*/
+
 
 twc_planetime=0;
 publicVariable "twc_planetime";
@@ -55,14 +59,14 @@ publicVariable "twc_casplanetime_amount";
 twc_helitime=0;
 publicVariable "twc_helitime";
 
-twc_helitime_amount=600;
+twc_helitime_amount=3600;
 publicVariable "twc_helitime_amount";
 
-twc_transhelitime=0;
-publicVariable "twc_transhelitime";
+twc_Transporthelitime=0;
+publicVariable "twc_Transporthelitime";
 
-twc_transhelitime_amount=60;
-publicVariable "twc_transhelitime_amount";
+twc_Transporthelitime_amount=60;
+publicVariable "twc_Transporthelitime_amount";
 
 twc_utilhelitime=0;
 publicVariable "twc_utilhelitime";

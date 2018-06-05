@@ -17,10 +17,11 @@ _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["VEHICLE twc_terp in thislist","[nearestObjects [thistrigger, ['soldiergb'], 500]] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_stronghold.sqf'",""];
 
+[_pos, 2, 500] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
 
 //Spawning a load of hostiles and the civs
 _num = 0;
-_total = 20;
+_total = 15;
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];

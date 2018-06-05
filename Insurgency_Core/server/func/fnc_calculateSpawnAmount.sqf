@@ -18,7 +18,7 @@ _defaultAmount = 0;
 _playerCount = (count (allPlayers - entities "HeadlessClient_F")) max 1;
 
 // 9 with 10 online for example
-_total = _defaultAmount + (round (_playerCount * (random [0.3, 0.5, 0.7])));
+_total = _defaultAmount + (round (_playerCount * (random [0.4, 0.6, 0.8])));
 
 _kmFromBase = ((_loc distance getMarkerPos "base") / 2000) max 1;
 _moraleMod = round (TWC_insMorale * 0.08); //100% = 8 extra

@@ -21,9 +21,10 @@ _trg setTriggerStatements ["this","[thistrigger] execVM 'Insurgency_Core\server\
 };
 //[_pos] execVM "Insurgency_Core\server\sys_objectives\Minefield\minefield_patrolspawn.sqf";
 
+
 //Adds a marker with a bit of an offset
 _markerPos = [_pos, 10] call CBA_fnc_randPos;
-
+/*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
@@ -39,7 +40,7 @@ _markerstr2 setMarkerText "Minefield";
 //Creating the task
 _taskID = str (random 1000);
 [WEST,[_taskID],["A minefield has been reported in the area. We need to investigate it and defuse them if possible.","Minefield Clearance"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
-
+*/
 
 _num = 0;
 _minecount = 0;
@@ -63,17 +64,17 @@ _marker setMarkerColor "colorOpfor";
 
 };
 
-
+_id = [_markerPos, "Minefield"];
+twc_activemissions pushback _id;
 
 sleep 20;
 
 waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))};
 [
 	{
-		[(_this select 1), "ASSIGNED"] call BIS_fnc_taskSetState;
 		["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 	},
-	[_objType, _taskID, _markerstr, _markerstr2],
+	[_objType, _taskID],
 	(30 + ((floor random 10) * 3))
 ] call CBA_fnc_waitAndExecute;
 
@@ -87,7 +88,7 @@ waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines /2)};
 		["TWC_Insurgency_adjustPoints", 100] call CBA_fnc_serverEvent;
 		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;
 	},
-	[_objType, _taskID, _markerstr, _markerstr2],
+	[_objType, _taskID],
 	(30 + ((floor random 10) * 3))
 ] call CBA_fnc_waitAndExecute;
 
@@ -96,9 +97,16 @@ sleep 60;
 	{
 		[(_this select 1)] call bis_fnc_deleteTask;
 	},
-	[_objType, _taskID, _markerstr, _markerstr2],
+	[_objType, _taskID],
 	(60 + ((floor random 10) * 6))
 ] call CBA_fnc_waitAndExecute;
+
+_taskID = str (random 1000);
+[WEST,[_taskID],["A minefield has been reported in the area and subsequently cleared.","Minefield Clearance"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
+
+	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
+	
+		twc_activemissions deleteAt (twc_activemissions find _id);
 
 //cleanup after objective complete. It's slowed down so that there's still a risk after it's 'cleared'.
 sleep 600;

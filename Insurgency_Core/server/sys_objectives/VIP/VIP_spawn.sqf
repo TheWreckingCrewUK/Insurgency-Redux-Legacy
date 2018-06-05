@@ -35,20 +35,28 @@ _group = createGroup civilian;
 _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
 [_vip, true] call ACE_captives_fnc_setSurrendered;
 
+_vip setVariable ["active",1,true];
+
 //Adds a Marker with a bit of an offset so players know where to go
 _markerPos = [_pos, 2] call CBA_fnc_randPos;
+
+_id = [_markerpos, "Hostage"];
+
+twc_activemissions pushback _id;
+
 /*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
 _markerstr setMarkerBrush "Grid";
 _markerstr setMarkerSize [500,500];
-*/
+
 _markerstr2 = createMarker [str (random 1000),_markerPos];
 _markerstr2 setMarkerShape "ICON";
 _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "Hostage Rescue";
+*/
 
 //Spawning the enemies
 [_pos]spawn{
@@ -69,23 +77,39 @@ _group = createGroup East;
 		//_num = _num + 1;
 		sleep 0.2;
 	};
-	[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
+	[_group, _group, 50, 3, false] call CBA_fnc_TaskDefend;
 };
 
-//Creates the task
-_taskID = str (random 1000);
-[WEST,[_taskID],["A member of the press has been captured by insurgents. We need to rescue him.","Hostage Rescue"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
+	
 //Waits until the time runs out or the vip dies AND not near players
 _time = time + ((10*60)*60);
 waitUntil {(!alive _vip || time > _time) && (!([_vip,200] call CBA_fnc_nearPlayer))};
 
-//End of Tasks tuff
+//End of Tasks stuff
 ["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
 //deleteMarker _markerstr;
-deleteMarker _markerstr2;
+//deleteMarker _markerPos;
+
+
+
+
+sleep 1;
+
+if (!((_vip getvariable "active") == 0)) then {
+
+//Creates the task
+_taskID = str (random 1000);
+[WEST,[_taskID],["A member of the press was captured by insurgents, and later died","Hostage Rescue"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
+
+	[_taskID,"Failed"] call BIS_fnc_taskSetState;
+	};
+		twc_activemissions deleteAt (twc_activemissions find _id);
+
+sleep 600;
+
+
 deleteVehicle _vip;
-[_taskID] call bis_fnc_deleteTask;
 
 //If vip is returned then it exits not hurting score
 if(isNil "_vip")exitWith{};

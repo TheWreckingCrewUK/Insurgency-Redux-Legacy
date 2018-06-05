@@ -45,9 +45,10 @@ _hvt disableAi "PATH";
 _vehspawnPos = [_pos,[5,30],random 360,0, [1,30]] call SHK_pos; 
 createvehicle ["CUP_C_Volha_Limo_TKCIV", _vehspawnPos];
 
+_taskID = str (random 1000);
 
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
-
+/*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
@@ -60,9 +61,9 @@ _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "High Value Target";
 
-_taskID = str (random 1000);
-[WEST,[_taskID],["We have located a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
+[WEST,[_taskID],["We have located a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+*/
 //add Hostiles
 _num = 0;
 _total = 10;
@@ -91,9 +92,12 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 
+_id = [_pos, "HVT"];
+twc_activemissions pushback _id;
+
 // let's start monitoring conditions to satisfy completion/failure
-[_hvt, _markerstr, _markerstr2, _taskID, _group, _objType] spawn {
-	params ["_hvt", "_markerstr", "_markerstr2", "_taskID", "_group", "_objType"];
+[_hvt, _taskID, _group, _objType, _id, _markerPos] spawn {
+	params ["_hvt", "_taskID", "_group", "_objType", "_id", "_markerPos"];
 	
 	_maxTime = time + ((10*60)*60);
 	
@@ -108,8 +112,9 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 		["TWC_Insurgency_adjustPoints", -15] call CBA_fnc_serverEvent;
 	};
 
-	deleteMarker _markerstr;
-	deleteMarker _markerstr2;
+	//deleteMarker _markerstr;
+	//deleteMarker _markerstr2;
+	
 
 	[_hvt, _group] spawn {
 		waitUntil { !([(_this select 0), 750] call CBA_fnc_nearPlayer) };
@@ -121,5 +126,11 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 	};
 
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
-	[_taskID] call bis_fnc_deleteTask;
+	
+		twc_activemissions deleteAt (twc_activemissions find _id);
+	
+	[WEST,[_taskID],["We have located and eliminated a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
+	
+	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
+
 };

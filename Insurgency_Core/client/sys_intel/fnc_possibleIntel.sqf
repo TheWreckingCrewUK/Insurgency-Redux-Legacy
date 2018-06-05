@@ -34,6 +34,12 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			default {hintSilent "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
 		};
 		_rand = (floor (random 4));
+		
+		
+		if ((count twc_activemissions) > 0) then {_rand = (floor (random 5));};
+
+		
+		//non-situation stuff like caches
 		if (_rand <= 2)then{
 			_color = "ColorOrange";
 			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
@@ -71,7 +77,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			};
 		};
 */
-		if (_rand >= 3)then{
+		if (_rand == 3)then{
 			_color = "ColorYellow";
 			_object = InsP_iedGroup call BIS_fnc_selectRandom;
 			_distance = [100,200] call BIS_fnc_selectRandom;
@@ -82,6 +88,22 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerText (str(_distance) + "m");
 			_marker setMarkerSize [0.5,0.5];
 		};
+		
+		if (_rand >= 4)then{
+			_color = "ColorBlue";
+			_object = twc_activemissions call BIS_fnc_selectRandom;
+			_objectname = _object select 1;
+			_objectpos = _object select 0;
+			_distance = 50 + ((floor (1 * (random 20))) * 50);
+			_intelPos = [_objectpos, _distance] call CBA_fnc_randPos;
+			_marker = createMarker [format["%1%2", _objectpos, (str _intelPos)], _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor _color;
+			_marker setMarkerText (str(_distance) + "m: " + _objectname);
+			_marker setMarkerSize [0.5,0.5];
+		};
+		
+		
 	}else{
 		switch (True) do {
 			case (floor TWC_civMorale <= 15):{hintSilent "I wish nothing but death upon scum like you. The moment you invaded our country you showed your true selves as inbred worthless cowards. Nothing would give me more pleasure than seeing your bleeding corpse on the side of the road."};

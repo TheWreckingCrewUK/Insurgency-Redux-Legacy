@@ -20,8 +20,11 @@ _trg2 setTriggerStatements ["VEHICLE twc_terp in thislist","[nearestObjects [thi
 
 
 //Spawning a load of hostiles and the civs
+
+[_pos, 2, 500] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
+
 _num = 0;
-_total = 20;
+_total = 15;
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
@@ -74,6 +77,9 @@ for "_i" from 1 to 7 do{
 	};
 };
 //[_pos, 5, 75] call twc_spawnCiv;
+
+
+
 
 _housecheck = (_pos) nearObjects ["House",200];
 if(count _housecheck > 0) then{

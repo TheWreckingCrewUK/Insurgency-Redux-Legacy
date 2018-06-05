@@ -41,6 +41,12 @@ _veh setfuel random 1;
 //Adds a marker with a bit of an ofset
 _markerPos = [_pos, 200] call CBA_fnc_randPos;
 
+_id = [_markerpos, "Recovery"];
+
+twc_activemissions pushback _id;
+
+
+/*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
 _markerstr setMarkerShape "Ellipse";
@@ -56,17 +62,15 @@ _markerstr2 setMarkerText "Vehicle Recovery";
 //Creating the task
 _taskID = str (random 1000);
 [WEST,[_taskID],["Allied Forces Have Had To Abandon A Vehicle In This Area. It May Be Damaged. Bring It Back To Base In Whatever Condition You Can.","Recovery"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
-
+*/
 
 _num = 0;
 sleep 3;
 
-[_veh, _markerstr, _markerstr2, _objType, _taskID]spawn{
+[_veh, _objType, _id]spawn{
 _veh = (_this select 0);
-_markerstr = (_this select 1);
-_markerstr2 = (_this select 2);
-_objType = (_this select 3);
-_taskID = (_this select 4);
+_objType = (_this select 1);
+_id = (_this select 2);
 
 	waituntil{((GetPos _veh) distance (getMarkerPos "base") < 100)};
 	sleep 60;
@@ -76,6 +80,13 @@ _taskID = (_this select 4);
 	deleteMarker _markerstr2;
 	[_taskID] call bis_fnc_deleteTask;
 	["TWC_Insurgency_adjustPoints", 40] call CBA_fnc_serverEvent;
+	//Creating the task
+	
+_taskID = str (random 1000);
+[WEST,[_taskID],["Allied forces have had to abandon a vehicle in this area. It has since been recovered by our forces.","Recovery"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+
+	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
+		twc_activemissions deleteAt (twc_activemissions find _id);
 
 };
 /*
@@ -98,10 +109,14 @@ waitUntil {(!alive _veh)};
 sleep 30;
 //End of Tasks tuff
 ["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
-deleteMarker _markerstr;
-deleteMarker _markerstr2;
+_taskID = str (random 1000);
+[WEST,[_taskID],["Allied forces have had to abandon a vehicle in this area. It has since been destroyed.","Recovery"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+
+	[_taskID,"Failed"] call BIS_fnc_taskSetState;
+		twc_activemissions deleteAt (twc_activemissions find _id);
+
 deleteVehicle _veh;
-[_taskID] call bis_fnc_deleteTask;
+
 
 //If vip is returned then it exits not hurting score
 if(isNil "_veh")exitWith{};

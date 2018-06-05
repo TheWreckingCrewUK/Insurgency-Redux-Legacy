@@ -9,7 +9,7 @@
 		
 // Creates trigger to spawn the civilians.
 		_trg = createTrigger ["EmptyDetector", getPos _x];
-		_trg setTriggerArea [500, 500, 0, false];
+		_trg setTriggerArea [800, 800, 0, false];
 		_trg setTriggerActivation ["West", "PRESENT", False];
 		_trg setTriggerTimeout[2, 2, 2, true];
 		_trg setTriggerStatements ["(((objectParent (thisList call bis_fnc_selectRandom)) isKindOf 'air') && (getPosATL (thisList call bis_fnc_selectRandom)) select 2 < 25) || !((objectParent (thisList call bis_fnc_selectRandom)) isKindOf 'air')",format["[(getPos thisTrigger),%1,100,[100,200],thisList] spawn twc_townSetup",_count],""];

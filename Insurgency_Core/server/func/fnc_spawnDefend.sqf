@@ -16,12 +16,7 @@
 
 params["_pos"];
 
-{ 
- if (_x isKindOf "twc_ana_interpreter") then { 
- 
-twc_terp = _x;
-publicVariable "twc_terp"}; 
-} forEach allUnits; 
+
 
 if (!(isnull twc_terp)) then {
 if ((twc_terp distance _pos) < 1000) then {
@@ -51,7 +46,7 @@ for "_i" from 1 to _total do{
 	
 };
 
-	[_pos, nil, units _group, 300, 2, true, true] call ace_ai_fnc_garrison;
+	[_pos, nil, units _group, 600, 2, true, true] call ace_ai_fnc_garrison;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 
@@ -63,7 +58,7 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 
 	sleep 5;
-	[_pos, nil, units _group, 300, 2, true, false] call ace_ai_fnc_garrison;
+	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_array1 = [];
 	_array2 = [];
@@ -75,11 +70,11 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array1, 300, 2, true, false] call ace_ai_fnc_garrison;
+	[_pos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array2, 300, 2, true, false] call ace_ai_fnc_garrison;};
+	[_pos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
 	
 	

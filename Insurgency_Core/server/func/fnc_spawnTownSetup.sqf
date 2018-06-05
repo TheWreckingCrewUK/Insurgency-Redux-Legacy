@@ -15,7 +15,7 @@
 						  
 params["_pos","_civnum","_civradius","_groupradius","_thisList",["_spawnCivs",true],["_forceSpawn",false]];
 
-_civnum = _civnum min 10;
+_civnum = (_civnum min 10) max 5;
 
 if(_spawnCivs)then{
 	[_pos, _civnum, _civradius] call twc_spawnCiv;
