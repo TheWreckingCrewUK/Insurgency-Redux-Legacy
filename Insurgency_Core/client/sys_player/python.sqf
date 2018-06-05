@@ -64,3 +64,13 @@ player addEventHandler ["Hit", {
 		{_x setdamage 1} foreach (_x nearobjects ["minebase", 20]);
 	} foreach (pythontruck nearobjects ["ropeSegment", 200]);
 };
+
+
+
+// super basic implementation of spawning a hesco barrier in front of an arv. in future it needs the ace progress bar for each step and a method of destroying barriers, as well as some kind of purpose to making barriers in the first place. might do it with earthen ramparts instead
+
+[] spawn {sleep 5;_relpos = tank getRelPos [7, 2]; _wall = "Land_Wired_Fence_8mD_F" createvehicle [0,0,0]; _wall setdir (getdir tank);_wall setpos _relpos;sleep 5;deletevehicle _wall;_wall = "Land_HBarrier_Big_F" createvehicle [0,0,0]; _wall setdir (getdir tank);_wall setpos _relpos;}
+
+//rampart version
+
+[] spawn {sleep 1;_relpos = tank getRelPos [9, 1]; _wall = "Land_Wired_Fence_8mD_F" createvehicle [0,0,0]; _wall setdir (getdir tank);_wall setpos _relpos;sleep 1;deletevehicle _wall;_wall = "Land_Rampart_F" createvehicle [0,0,0]; _wall setdir ((getdir tank) + 90);_wall setpos _relpos;}

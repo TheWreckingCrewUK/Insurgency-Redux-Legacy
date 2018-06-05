@@ -10,6 +10,8 @@
 "iedRestrictionZone" setMarkerAlpha 0;
 
 waitUntil {!isNull player};
+
+
 sleep 30;
 //systemchat "terp init";
 if (["interpreter", typeof player] call BIS_fnc_inString) then {

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9628.1895,157.59695,10052.039};
-		dir[]={0.14911631,-0.5193516,-0.84154856};
-		up[]={0.090615973,0.85455847,-0.51139736};
-		aside[]={-0.98474574,1.384411e-006,-0.17448807};
+		pos[]={9490.2158,157.77361,9762.5039};
+		dir[]={0.96845025,-0.2185812,0.12057126};
+		up[]={0.21695334,0.97581363,0.027010413};
+		aside[]={0.12355611,6.0047023e-007,-0.99244368};
 	};
 };
 binarizationWanted=0;
@@ -78,22 +78,13 @@ addons[]=
 	"A3_Structures_F_Ind_Cargo",
 	"ace_cargo",
 	"twc_medical",
-	"CUP_WheeledVehicles_Stryker",
-	"CUP_Creatures_Military_USArmy",
-	"rhsgref_c_weapons",
-	"A3_Weapons_F",
-	"acre_main",
-	"CUP_Weapons_NVG",
-	"CUP_Creatures_Military_CDF",
-	"A3_Weapons_F_Items",
-	"ace_medical",
-	"CUP_Creatures_Military_RACS"
+	"CUP_WheeledVehicles_Stryker"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=54;
+		items=47;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -383,47 +374,6 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_Stryker";
 			name="CUP_WheeledVehicles_Stryker";
-		};
-		class Item47
-		{
-			className="CUP_Creatures_Military_USArmy";
-			name="CUP_Creatures_Military_USArmy";
-		};
-		class Item48
-		{
-			className="rhsgref_c_weapons";
-			name="GREF Weapons";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item49
-		{
-			className="acre_main";
-			name="ACRE2 - Main";
-			author="ACRE2Team";
-			url="https://github.com/IDI-Systems/acre2";
-		};
-		class Item50
-		{
-			className="CUP_Weapons_NVG";
-			name="CUP_Weapons_NVG";
-		};
-		class Item51
-		{
-			className="CUP_Creatures_Military_CDF";
-			name="CUP_Creatures_Military_CDF";
-		};
-		class Item52
-		{
-			className="ace_medical";
-			name="ACE3 - Medical";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item53
-		{
-			className="CUP_Creatures_Military_RACS";
-			name="CUP_Creatures_Military_RACS";
 		};
 	};
 };
@@ -12940,7 +12890,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=298;
+		items=296;
 		class Item0
 		{
 			dataType="Marker";
@@ -23980,140 +23930,6 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={10285.671,48.108109,11824.173};
-					};
-					side="West";
-					flags=3;
-					class Attributes
-					{
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_weap_m21s_fold";
-								class primaryMuzzleMag
-								{
-									name="rhsgref_30rnd_556x45_m21";
-									ammoLeft=30;
-								};
-							};
-							class uniform
-							{
-								typeName="CUP_U_B_CDF_FST_2";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="CUP_NVG_PVS14";
-							headgear="CUP_H_CDF_H_PASGT_FST";
-						};
-					};
-					id=1726;
-					type="CUP_B_US_Soldier_Engineer_EOD";
-					atlOffset=75.046967;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1725;
-			atlOffset=75.046967;
-		};
-		class Item294
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={10288.567,48.108109,11823.922};
-					};
-					side="West";
-					flags=3;
-					class Attributes
-					{
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="rhs_weap_savz58v_fold_black";
-								class primaryMuzzleMag
-								{
-									name="rhs_30Rnd_762x39mm_Savz58";
-									ammoLeft=30;
-								};
-							};
-							class uniform
-							{
-								typeName="CUP_U_B_CDF_FST_1";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="CUP_V_I_RACS_Carrier_Rig_wdl_3";
-								isBackpack=0;
-							};
-							class backpack
-							{
-								typeName="CUP_B_CivPack_WDL";
-								isBackpack=1;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="CUP_NVG_PVS14";
-							headgear="CUP_H_CDF_H_PASGT_FST";
-						};
-					};
-					id=1728;
-					type="CUP_B_US_Soldier_Engineer_EOD";
-					atlOffset=75.029716;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=1727;
-			atlOffset=75.029716;
-		};
-		class Item295
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
 				items=8;
 				class Item0
 				{
@@ -24464,7 +24280,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item296
+		class Item294
 		{
 			dataType="Object";
 			class PositionInfo
@@ -24480,7 +24296,7 @@ class Mission
 			id=1774;
 			type="Land_HelipadSquare_F";
 		};
-		class Item297
+		class Item295
 		{
 			dataType="Marker";
 			position[]={9632.6094,139.995,10033.898};

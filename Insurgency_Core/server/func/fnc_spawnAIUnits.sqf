@@ -23,7 +23,7 @@ params ["_pos","_groupradius","_thisList"];
 //_dir = (_thisList select 0) getDir _pos;
 _dir = random 360;
 
-
+if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 if (!(isnull twc_terp)) then {
 	if ((twc_terp distance _pos) < 1000) then {

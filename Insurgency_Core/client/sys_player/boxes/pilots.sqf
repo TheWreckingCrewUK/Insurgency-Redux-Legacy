@@ -17,7 +17,7 @@ _planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
 _planecondhi = {( count(allPlayers - entities "HeadlessClient_F")) >= 12};
 
-
+/*
 playercount = 0;
 _planecondlow = {playercount >= 5};
 
@@ -36,7 +36,7 @@ _transportcond1 = {true};
 _transportcond2 = {true};
 
 _cascond = {true};
-
+*/
 
 twc_planetime=0;
 publicVariable "twc_planetime";
