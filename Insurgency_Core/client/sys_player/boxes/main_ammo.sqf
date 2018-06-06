@@ -3053,7 +3053,7 @@ clearbackPackCargo crateBox;
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
 
-if (( count(allPlayers - entities "HeadlessClient_F"))>5) then {// add in all weapons.
+if (( count(allPlayers - entities "HeadlessClient_F"))>=2) then {// add in all weapons.
 {crateBox addWeaponCargo [(_x select 0),(_x select 1)]} foreach _weapons;
 
 // add in all magazines.
@@ -3065,7 +3065,7 @@ if (( count(allPlayers - entities "HeadlessClient_F"))>5) then {// add in all we
 }
 else
 {
-[5] execVM "Insurgency_Core\client\sys_restrict\restrictedkit.sqf";};
+[2] execVM "Insurgency_Core\client\sys_restrict\restrictedkit.sqf";};
 
 } else {
 

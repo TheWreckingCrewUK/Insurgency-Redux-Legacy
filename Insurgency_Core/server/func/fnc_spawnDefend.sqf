@@ -17,7 +17,7 @@
 params["_pos"];
 
 
-if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
+if ([_pos,600] call twc_fnc_posNearPlayers) exitwith {};
 
 if (!(isnull twc_terp)) then {
 if ((twc_terp distance _pos) < 1000) then {

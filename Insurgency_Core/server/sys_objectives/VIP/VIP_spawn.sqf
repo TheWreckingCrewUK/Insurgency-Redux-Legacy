@@ -82,9 +82,8 @@ _group = createGroup East;
 
 
 	
-//Waits until the time runs out or the vip dies AND not near players
-_time = time + ((10*60)*60);
-waitUntil {(!alive _vip || time > _time) && (!([_vip,200] call CBA_fnc_nearPlayer))};
+//Waits until the vip isn't around anymore
+waitUntil {(!alive _vip)};
 
 //End of Tasks stuff
 ["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;

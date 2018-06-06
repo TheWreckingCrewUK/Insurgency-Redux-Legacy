@@ -14,4 +14,4 @@
 * Public: No
 */
 
-true
+if ((random 1) > 0.5) then {true} else {false};
