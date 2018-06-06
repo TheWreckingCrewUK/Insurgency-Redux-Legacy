@@ -36,7 +36,7 @@ if (alarm == 0) then {
 alarm = 1;
 publicvariable "alarm";
 sleep _time;
-systemchat "middle man sees the shell";
+//systemchat "middle man sees the shell";
 
 sleep 2;
 if (idfon == 0) then {

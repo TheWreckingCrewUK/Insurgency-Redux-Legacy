@@ -1,7 +1,7 @@
 _givenNumber = (_this select 0) select 0;
 _civilianQuestioned = (_this select 0) select 1;
 //adding in 100% certainty for the interpreter to weasle info out of someone, unless they've been questioned already
-if (typeOf player == "twc_ana_interpreter") then {
+if (player == twc_terp) then {
 _givenNumber = 0};
 //systemChat str _givenNumber;
 //[_civilianQuestioned] execvm "Insurgency_Core\server\sys_civ\evilCiv.sqf";
