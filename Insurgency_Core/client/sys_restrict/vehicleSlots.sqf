@@ -298,6 +298,30 @@ _list=[
 		["turret", 
 			["Modern_British_JetPilot"]
 		]],6
+	],
+	
+		["ukcw_cvrt_Scim_d",[
+		["driver",
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["Commander", 
+			["Modern_British_VehicleCommander"]
+		]],0
+	],
+	
+		["ukcw_cvrt_Scim_w",[
+		["driver",
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["Commander", 
+			["Modern_British_VehicleCommander"]
+		]],0
 	]
 	]
 ;

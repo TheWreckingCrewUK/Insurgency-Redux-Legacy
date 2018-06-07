@@ -50,9 +50,9 @@ _veh addEventHandler ["GetOut",{
 					sleep 20;
 		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
 		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
-					_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
-					_veh setPosASL (_respawnInfo select 1);
+					_veh = (_respawnInfo select 0) createVehicle [0,0,500];
 					_veh setDir (_respawnInfo select 2);
+					_veh setPosASL (_respawnInfo select 1);
 					clearWeaponCargoGlobal _veh;
 					clearMagazineCargoGlobal _veh;
 					clearItemCargoGlobal _veh;
@@ -100,9 +100,9 @@ _veh addEventHandler ["Killed",{
 		sleep 10;
 		//waituntil {(count(_checkpos nearobjects [typeof _veh, 3]) ==0)};
 		
-		_veh = (_respawnInfo select 0) createVehicle (_respawnInfo select 1);
-		_veh setPosASL (_respawnInfo select 1);
+		_veh = (_respawnInfo select 0) createVehicle [0,0,500];
 		_veh setDir (_respawnInfo select 2);
+		_veh setPosASL (_respawnInfo select 1);
 		clearWeaponCargoGlobal _veh;
 		clearMagazineCargoGlobal _veh;
 		clearItemCargoGlobal _veh;

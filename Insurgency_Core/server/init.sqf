@@ -77,6 +77,18 @@ if(isNil "twc_mineType") then{
 	publicVariable "twc_mineType";
 };
 
+
+if (isNil "twc_armourcrew") then {
+	twc_armourcrew = [];
+	publicVariable "twc_armourcrew";
+};
+
+if (isNil "twc_sniperteam") then {
+	twc_sniperteam = [];
+	publicVariable "twc_sniperteam";
+};
+
+
 basemode = 0;
 publicvariable "basemode";
 
@@ -126,4 +138,35 @@ execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 	_message = format ["%1 has connected, and is awaiting back at base.", _name];
 
 	if (_isJIP) then { { [_x, _message, _owner] call twc_fnc_sendCTabMessage; } forEach allPlayers; };
+}] call BIS_fnc_addStackedEventHandler;
+
+["TWC_ArmourCrewConnected", {
+	params ["_caller"];
+
+	twc_armourcrew pushBack _caller;
+	publicVariable "twc_armourcrew";
+	
+}] call CBA_fnc_addEventHandler;
+
+["TWC_ArmourCrewDisconnected", "onPlayerDisconnected", {
+	twc_armourcrew = twc_armourcrew - [_uid];
+	publicVariable "twc_armourcrew";
+	
+	
+}] call BIS_fnc_addStackedEventHandler;
+
+["TWC_SniperConnected", {
+	params ["_caller"];
+
+	twc_sniperteam pushBack _caller;
+	publicVariable "twc_sniperteam";
+
+	
+}] call CBA_fnc_addEventHandler;
+
+["TWC_SniperDisconnected", "onPlayerDisconnected", {
+	twc_sniperteam = twc_sniperteam - [_uid];
+	publicVariable "twc_sniperteam";
+	
+	
 }] call BIS_fnc_addStackedEventHandler;

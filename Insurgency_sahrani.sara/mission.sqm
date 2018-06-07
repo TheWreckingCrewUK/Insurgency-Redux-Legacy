@@ -8,7 +8,7 @@ class EditorData
 	toggles=554;
 	class ItemIDProvider
 	{
-		nextID=1776;
+		nextID=1781;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9490.2158,157.77361,9762.5039};
-		dir[]={0.96845025,-0.2185812,0.12057126};
-		up[]={0.21695334,0.97581363,0.027010413};
-		aside[]={0.12355611,6.0047023e-007,-0.99244368};
+		pos[]={9517.8643,176.40666,9910.5137};
+		dir[]={0.053305741,-0.52094787,-0.85206491};
+		up[]={0.032528445,0.85358459,-0.51993847};
+		aside[]={-0.99816263,2.3964967e-006,-0.062440515};
 	};
 };
 binarizationWanted=0;
@@ -78,13 +78,14 @@ addons[]=
 	"A3_Structures_F_Ind_Cargo",
 	"ace_cargo",
 	"twc_medical",
-	"CUP_WheeledVehicles_Stryker"
+	"CUP_WheeledVehicles_Stryker",
+	"ukcw_cvrt"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=47;
+		items=48;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -374,6 +375,11 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_Stryker";
 			name="CUP_WheeledVehicles_Stryker";
+		};
+		class Item47
+		{
+			className="ukcw_cvrt";
+			name="ukcw_cvrt";
 		};
 	};
 };
@@ -12890,7 +12896,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=296;
+		items=298;
 		class Item0
 		{
 			dataType="Marker";
@@ -24304,6 +24310,207 @@ class Mission
 			text="PLANES";
 			type="b_hq";
 			id=1775;
+		};
+		class Item296
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9453.0234,141.0722,10090.189};
+					};
+					side="West";
+					flags=3;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=1777;
+					type="Modern_British_VehicleCommander";
+					atlOffset=1.0757751;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9456.0234,141.0696,10087.189};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=1778;
+					type="Modern_British_VehicleCrew";
+					atlOffset=1.0731659;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9458.0234,141.0674,10087.189};
+					};
+					side="West";
+					flags=1;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=1779;
+					type="Modern_British_VehicleCrew";
+					atlOffset=1.0709686;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1776;
+			atlOffset=1.0757751;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item297
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9521.9941,142.00172,9919.3398};
+				angles[]={0,3.1338634,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1780;
+			type="ukcw_cvrt_Scim_w";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

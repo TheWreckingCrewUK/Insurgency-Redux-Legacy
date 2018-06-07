@@ -2086,6 +2086,62 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 	];
 };
 
+//BAF Armour
+ if (typeOf vehicle player == "Modern_British_VehicleCrew") then {
+    _tmp_weapons =
+    [
+        ["ACE_Vector",1],
+		["rhsusf_weap_glock17g4",1]
+	];
+
+    _tmp_magazines =
+    [           
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1],
+		["UK3CB_BAF_LLM_IR_Black",1]
+	];
+
+	_tmp_backpacks = 
+	[
+	];
+};
+
+//BAF Armour
+ if (typeOf vehicle player == "Modern_British_VehicleCommander") then {
+    _tmp_weapons =
+    [
+        ["ACE_Vector",1],
+		["rhsusf_weap_glock17g4",1]
+	];
+
+    _tmp_magazines =
+    [           
+		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_556_30Rnd_T",50],
+		["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC343",1],
+		["ACRE_PRC117F",1],
+		["itemCTAB",1],
+		["UK3CB_BAF_LLM_IR_Black",1]
+	];
+
+	_tmp_backpacks = 
+	[
+	];
+};
+
 //US Pilot
  if (typeOf vehicle player == "TWC_Modern_US_Army_HeliPilot") then {
     _tmp_weapons =

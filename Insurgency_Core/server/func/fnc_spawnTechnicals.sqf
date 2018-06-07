@@ -88,12 +88,12 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 	_unit moveIngunner _gun;
 
-	_truck addMPEventHandler ["MPKilled",{
+/*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
 		["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 			};
 		}];
-	
+	*/
 	};
 
 
@@ -157,12 +157,12 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	_truck setdir _direction;
 
 
-	_truck addMPEventHandler ["MPKilled",{
+/*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
 		["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
 			};
 		}];
-
+*/
 
 
 	

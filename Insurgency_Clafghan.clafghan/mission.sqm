@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1907;
+		nextID=1917;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15557.51,36.014809,17323.543};
-		dir[]={0.81435996,-0.27899826,-0.50911212};
-		up[]={0.23665223,0.96026266,-0.14794677};
-		aside[]={-0.53015858,6.2445179e-007,-0.84802163};
+		pos[]={15649.982,15.335378,17192.523};
+		dir[]={0.518857,-0.59568572,-0.61323941};
+		up[]={0.38481069,0.80316228,-0.45480675};
+		aside[]={-0.763448,3.0978117e-007,-0.64594692};
 	};
 };
 binarizationWanted=0;
@@ -61,13 +61,14 @@ addons[]=
 	"A3_Structures_F_Civ_Lamps",
 	"twc_medical",
 	"A3_Structures_F_Mil_Fortification",
-	"A3_Structures_F_Mil_Helipads"
+	"A3_Structures_F_Mil_Helipads",
+	"ukcw_cvrt"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=33;
+		items=34;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -275,6 +276,11 @@ class AddonsMetaData
 			className="twc_medical";
 			name="twc_medical";
 			author="Bosenator";
+		};
+		class Item33
+		{
+			className="ukcw_cvrt";
+			name="ukcw_cvrt";
 		};
 	};
 };
@@ -12791,7 +12797,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=88;
+		items=90;
 		class Item0
 		{
 			dataType="Marker";
@@ -18107,8 +18113,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15635.897,7.3026261,17169.715};
-				angles[]={6.2655058,0.049074225,0.014143427};
+				position[]={15642.83,7.3376107,17167.307};
+				angles[]={6.269042,4.7640314,0.0035379357};
 			};
 			side="Empty";
 			flags=4;
@@ -18123,8 +18129,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15644.343,7.3743181,17169.523};
-				angles[]={6.269042,0.049074225,0.0035379357};
+				position[]={15646.034,7.4445381,17172.322};
+				angles[]={6.2584362,0.049074225,0.0035379357};
 			};
 			side="Empty";
 			flags=4;
@@ -18165,6 +18171,239 @@ class Mission
 			};
 			id=1904;
 			type="Land_HelipadEmpty_F";
+		};
+		class Item88
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15588.958,6.7813988,17114.502};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1908;
+					type="Modern_British_VehicleCommander";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15590.433,6.837925,17112.736};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1909;
+					type="Modern_British_VehicleCrew";
+					atlOffset=0.00080728531;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15593.759,6.8146658,17112.729};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1910;
+					type="Modern_British_VehicleCrew";
+					atlOffset=0.00080728531;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1907;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15638.026,7.9703431,17160.65};
+				angles[]={6.269042,0.011964621,0.010608234};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1911;
+			type="ukcw_cvrt_Scim_d";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

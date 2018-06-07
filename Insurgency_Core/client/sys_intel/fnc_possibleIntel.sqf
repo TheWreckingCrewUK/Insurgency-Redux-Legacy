@@ -36,7 +36,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		_rand = (floor (random 4));
 		
 		
-		if ((count twc_activemissions) > 0) then {_rand = (floor (random 5));};
+		if ((count twc_activemissions) > 0) then {_rand = (floor (random 6));};
 
 		
 		//non-situation stuff like caches

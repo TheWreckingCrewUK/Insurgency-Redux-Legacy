@@ -74,6 +74,21 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 ]]; 
 };
 
+
+
+
+if((typeOf player) in ["Modern_British_VehicleCommander", "Modern_British_VehicleCrew"]) then {
+	["TWC_ArmourCrewConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
+};
+
+
+
+if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"]) then {
+	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
+};
+
+
+
 //check if the player is stuck in the map screen
 if ((str getpos player) == "[10,10,10]") then {
 player setdamage 1;
