@@ -423,10 +423,16 @@ TWC_fnc_checkVehicleSlot = {
 
 [player, "GetInMan", {
 	params ["_playerUnit"];
-	[_playerUnit] call TWC_fnc_checkVehicleSlot;
+	
+	if (isPlayer _playerUnit) then {
+		[_playerUnit] call TWC_fnc_checkVehicleSlot;
+	};
 }, player] call CBA_fnc_addBISEventHandler;
 
 [player, "SeatSwitchedMan", {
 	params ["_playerUnit"];
-	[_playerUnit] call TWC_fnc_checkVehicleSlot;
+	
+	if (isPlayer _playerUnit) then {
+		[_playerUnit] call TWC_fnc_checkVehicleSlot;
+	};
 }, player] call CBA_fnc_addBISEventHandler;
