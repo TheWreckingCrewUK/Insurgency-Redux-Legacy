@@ -89,7 +89,7 @@ if (isNil "twc_sniperteam") then {
 };
 
 
-basemode = 0;
+basemode = 1;
 publicvariable "basemode";
 
 
