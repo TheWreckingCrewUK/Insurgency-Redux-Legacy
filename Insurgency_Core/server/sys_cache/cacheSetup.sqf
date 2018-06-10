@@ -77,6 +77,7 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 };
 };
 
+	[_pos, nil, units _group, 10, 2, true, true] call ace_ai_fnc_garrison;
 		_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	} forEach InsP_cacheGroup;
 };

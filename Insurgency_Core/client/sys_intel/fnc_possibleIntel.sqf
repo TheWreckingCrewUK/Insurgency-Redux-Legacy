@@ -33,14 +33,29 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			case (floor TWC_civMorale > 90):{hintSilent "You people have done so much good for this region, I couldn't be more grateful. I've marked a spot on your map where I saw something earlier, I wish you the best of luck on your travels."};
 			default {hintSilent "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
 		};
-		_rand = (floor (random 4));
+		_rand = (floor (random 5));
 		
 		
-		if ((count twc_activemissions) > 0) then {_rand = (floor (random 6));};
+		if ((count twc_activemissions) > 0) then {_rand = (floor (random 7));};
 
+		if (_rand <= 2)then{
+				
+		if ((count twc_activestrongholds) == 0) then {_rand = 3} else {
+		
+			_color = "ColorGreen";
+			_objectpos = (twc_activestrongholds call BIS_fnc_selectRandom) select 0;
+			_distance = 500 + ((floor (1 * (random 10))) * 500);
+			_intelPos = [_objectpos, _distance] call CBA_fnc_randPos;
+			_marker = createMarker [format["%1%2", _objectpos, (str _intelPos)], _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor _color;
+			_marker setMarkerText (str(_distance) + "m: STRONGHOLD");
+			_marker setMarkerSize [0.5,0.5];
+			};
+		};		
 		
 		//non-situation stuff like caches
-		if (_rand <= 2)then{
+		if (_rand == 3)then{
 			_color = "ColorOrange";
 			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
 			_distance = [250,500,500,750,750,1000,1000,1500,2000] call BIS_fnc_selectRandom;
@@ -77,7 +92,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			};
 		};
 */
-		if (_rand == 3)then{
+		if (_rand == 4)then{
 			_color = "ColorYellow";
 			_object = InsP_iedGroup call BIS_fnc_selectRandom;
 			_distance = [100,200] call BIS_fnc_selectRandom;
@@ -89,7 +104,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerSize [0.5,0.5];
 		};
 		
-		if (_rand >= 4)then{
+		if (_rand >= 5)then{
 			_color = "ColorBlue";
 			_object = twc_activemissions call BIS_fnc_selectRandom;
 			_objectname = _object select 1;

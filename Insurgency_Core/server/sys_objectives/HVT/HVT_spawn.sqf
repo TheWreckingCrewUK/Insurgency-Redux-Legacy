@@ -15,6 +15,10 @@
 */
 params ["_objType"];
 
+[_objType] spawn {
+params ["_objType"];
+
+
 //Finding a position that is far enough from base and not near players
 _pos = [0,0,0];
 while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || ([_pos,500] call twc_fnc_posNearPlayers)} do {			
@@ -68,6 +72,7 @@ _markerstr2 setMarkerText "High Value Target";
 _num = 0;
 _total = 10;
 _group = createGroup East;
+_spawntime = time;
 
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
@@ -94,6 +99,16 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 _id = [_pos, "HVT"];
 twc_activemissions pushback _id;
+publicVariable "twc_activemissions";
+
+//wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
+waituntil {time > (_spawntime + 60)};
+	if (!alive _hvt) exitwith {
+	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
+	
+		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
+};
 
 // let's start monitoring conditions to satisfy completion/failure
 [_hvt, _taskID, _group, _objType, _id, _markerPos] spawn {
@@ -128,9 +143,14 @@ twc_activemissions pushback _id;
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
 	
 		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
+		
 	
 	[WEST,[_taskID],["We have located and eliminated a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
 	
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 
 };
+
+};
+

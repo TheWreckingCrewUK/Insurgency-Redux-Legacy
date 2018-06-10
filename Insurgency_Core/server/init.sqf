@@ -32,6 +32,12 @@ if(isNil "twc_activemissions") then{
 };
 
 
+if(isNil "twc_activestrongholds") then{
+	twc_activestrongholds = [];
+	publicVariable "twc_activestrongholds";
+};
+
+
 if(isNil "twc_ismini") then{
 	twc_ismini = 0;
 	publicVariable "twc_ismini";

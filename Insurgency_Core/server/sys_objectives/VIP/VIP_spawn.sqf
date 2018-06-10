@@ -43,6 +43,7 @@ _markerPos = [_pos, 2] call CBA_fnc_randPos;
 _id = [_markerpos, "Hostage"];
 
 twc_activemissions pushback _id;
+publicVariable "twc_activemissions";
 
 /*
 _markerstr = createMarker [str (random 1000),_markerPos];
@@ -57,7 +58,7 @@ _markerstr2 setMarkerType "MIL_unknown";
 _markerstr2 setMarkerColor "colorWest";
 _markerstr2 setMarkerText "Hostage Rescue";
 */
-
+_spawntime = time;
 //Spawning the enemies
 [_pos]spawn{
 _pos = (_this select 0);
@@ -80,7 +81,14 @@ _group = createGroup East;
 	[_group, _group, 50, 3, false] call CBA_fnc_TaskDefend;
 };
 
-
+//wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
+waituntil {time > (_spawntime + 60)};
+	if (!alive _vip) exitwith {
+["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
+	
+		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
+};
 	
 //Waits until the vip isn't around anymore
 waitUntil {(!alive _vip)};
@@ -104,6 +112,7 @@ _taskID = str (random 1000);
 	[_taskID,"Failed"] call BIS_fnc_taskSetState;
 	};
 		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
 
 sleep 600;
 

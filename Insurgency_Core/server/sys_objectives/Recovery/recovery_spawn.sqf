@@ -44,6 +44,7 @@ _markerPos = [_pos, 200] call CBA_fnc_randPos;
 _id = [_markerpos, "Recovery"];
 
 twc_activemissions pushback _id;
+publicVariable "twc_activemissions";
 
 
 /*
@@ -67,6 +68,8 @@ _taskID = str (random 1000);
 _num = 0;
 sleep 3;
 
+_spawntime = time;
+
 [_veh, _objType, _id]spawn{
 _veh = (_this select 0);
 _objType = (_this select 1);
@@ -87,6 +90,7 @@ _taskID = str (random 1000);
 
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
 
 };
 /*
@@ -104,6 +108,18 @@ _nearestdist=200;
 
 //Complete or fail
 if(isNil "_veh")exitWith{};
+
+
+//wait 60 seconds and see if the vehicle is still alive after spawn, if it's dead then just cancel the task without any reward/penalty
+waituntil {time > (_spawntime + 60)};
+	if (!alive _veh) exitwith {
+["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
+	
+		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
+};
+
+
 
 waitUntil {(!alive _veh)};
 sleep 30;

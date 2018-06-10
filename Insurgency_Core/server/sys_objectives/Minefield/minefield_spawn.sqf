@@ -66,6 +66,7 @@ _marker setMarkerColor "colorOpfor";
 
 _id = [_markerPos, "Minefield"];
 twc_activemissions pushback _id;
+publicVariable "twc_activemissions";
 
 sleep 20;
 
@@ -107,6 +108,7 @@ _taskID = str (random 1000);
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 	
 		twc_activemissions deleteAt (twc_activemissions find _id);
+publicVariable "twc_activemissions";
 
 //cleanup after objective complete. It's slowed down so that there's still a risk after it's 'cleared'.
 sleep 600;

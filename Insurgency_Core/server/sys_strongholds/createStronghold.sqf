@@ -4,11 +4,22 @@ params["_town"];
 
 //Trigger to identify town
 _pos = getPos _town;
+/*
 _marker = createMarker [str _pos,_pos];
 _marker setMarkerShape "Ellipse";
 _marker setMarkerBrush "Grid";
 _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
+*/
+
+
+
+_id = [_pos, "Stronghold"];
+twc_activestrongholds pushback _id;
+publicVariable "twc_activestrongholds";
+_rand = (str random 1000);
+
+missionNamespace setVariable [format["stronghold_%1", _rand], 5];
 
 _randsize = 650 + (random 100);
 _randtime = 10;
@@ -80,7 +91,7 @@ for "_i" from 1 to 7 do{
 
 
 
-
+/*
 _housecheck = (_pos) nearObjects ["House",200];
 if(count _housecheck > 0) then{
 
@@ -113,9 +124,30 @@ for "_i" from 1 to 4 do{
 	};
 };
 };
+
+*/
+
+_idpos = twc_activestrongholds find _id;
 // Creates Trigger that checks when East is dead and awards points
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
-_trg setTriggerStatements ["count thisList < 4",format["'%1' setMarkerColor 'colorBlufor'; ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent; ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;",_marker],""];
+_trg setTriggerStatements ["count thisList < 4",format ["
+['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent;
+
+_taskID = (str random 1000);
+
+[WEST,[_taskID],['Reconnaissance identified a large stronghold which was later destroyed by friendly forces','Stronghold'],(getpos thistrigger),0,2,true] call BIS_fnc_taskCreate;
+
+	[_taskID,'Succeeded'] call BIS_fnc_taskSetState;
+	
+	missionNamespace setVariable [format['stronghold_%1', %1], 2];
+['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;", _rand],""];
+
+waituntil {
+	(missionNamespace getVariable [format['stronghold_%1', _rand], 0]) == 2};
+
+
+		twc_activestrongholds deleteAt (twc_activestrongholds find _id);
+publicVariable 'twc_activestrongholds';
