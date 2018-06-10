@@ -38,7 +38,7 @@ if(_enemies == 0)exitWith{};
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [700, 700, 0, false];
 _trg setTriggerActivation ["ANY", "PRESENT", False];
-_trg setTriggerTimeout [7,7,7, true];
+_trg setTriggerTimeout [15,15,15, true];
 _trg setTriggerStatements ["{side (group _x) == WEST} count thisList == 0 || {side (group _x) == EAST && (str (_x getVariable 'unitsHome') == str (thisTrigger getVariable 'unitsHome'))} count thisList < 5","[(thisTrigger getVariable 'unitsHome'),thisList] spawn twc_fnc_townDeciding",""];
 
 _trg setVariable ["unitsHome",_pos];

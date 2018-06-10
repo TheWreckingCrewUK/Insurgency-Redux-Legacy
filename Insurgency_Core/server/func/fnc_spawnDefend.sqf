@@ -17,7 +17,7 @@
 params["_pos"];
 
 
-if ([_pos,600] call twc_fnc_posNearPlayers) exitwith {};
+if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 if (!(isnull twc_terp)) then {
 if ((twc_terp distance _pos) < 1000) then {
@@ -28,7 +28,7 @@ execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
 //_spawnPos = [_pos, 50] call CBA_fnc_randPos;
 _spawnPos = [0,0,0];
 _num = 0;
-_total = (([_pos] call twc_fnc_calculateSpawnAmount) * 2) max 20;
+_total = (([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10;
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _spawnPos,[], 5,"NONE"];
@@ -39,15 +39,14 @@ for "_i" from 1 to _total do{
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
 	_num = _num + 1;
-	sleep 0.2;
+	sleep 0.1;
 	
 	
 };
 
-	[_pos, nil, units _group, 600, 2, true, true] call ace_ai_fnc_garrison;
+	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 /*

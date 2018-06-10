@@ -109,19 +109,26 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 
 
-if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
+//second check to incorporate the logistics crew without giving them the ability to spawn helis
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief","2000_British_HeliPilot_Desert","2000_British_HeliPilot", "Modern_British_logitech"])then{
 
-	_ammoaction = ["ammospawn","Spawn Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;
+
+
+
+	_ammoaction = ["ammospawn","Spawn Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_ammoaction2 = ["ammospawnlight","Light Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;
+	_ammoaction2 = ["ammospawnlight","Light Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_ammoaction3 = ["ammospawnsupport","Support Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;
+	_ammoaction3 = ["ammospawnsupport","Support Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_ammoaction4 = ["ammospawnheavy","Heavy Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;
+	_ammoaction4 = ["ammospawnheavy","Heavy Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
 	
 	_vehaction = ["vehiclespawn","Spawn Helicopters","",{},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -140,6 +147,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief","20
 	["Land_InfoStand_V1_F",0,["ACE_MainActions","vehiclespawn"],_vehaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
 };	
+};
 	
 if((typeOf player) in ["Modern_British_JetPilot"])then{
 
@@ -223,7 +231,7 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
-	
+	/*
 	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateus.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["twc_SuppliesBox",0,["ACE_MainActions"],_hcharlieaction2,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -254,7 +262,7 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["twc_SuppliesBox",0,["ACE_MainActions"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
+	*/
 	
 	
 
@@ -262,7 +270,7 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 };
 	
 	
-if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "Modern_British_logitech"])then{
 
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
@@ -401,7 +409,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
+	/*
 	
 	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallcrateus.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["twc_SuppliesBox",0,["ACE_MainActions"],_hcharlieaction2,true] call ace_interact_menu_fnc_addActionToClass;
@@ -433,7 +441,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["twc_SuppliesBox",0,["ACE_MainActions"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
+	*/
 	
 	
 

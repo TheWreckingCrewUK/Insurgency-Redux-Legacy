@@ -58,8 +58,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 	
 };
@@ -97,8 +96,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -137,8 +135,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -168,8 +165,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -223,8 +219,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -251,8 +246,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
  
@@ -285,8 +279,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];	
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
  if (typeOf vehicle player == "Modern_British_Medic") then {
@@ -322,8 +315,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -569,8 +561,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     ];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -614,8 +605,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 
@@ -648,8 +638,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 	];
 
 	_tmp_backpacks = 
-	[
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	[ 
 	];
 };
 //US Section Leader
@@ -2084,6 +2073,35 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 		["UK3CB_BAF_SUSAT",1]
 		
 	];
+};
+
+
+if (typeOf vehicle player == "Modern_British_Logitech") then {
+    _tmp_weapons =
+    [
+		["rhsusf_weap_glock17g4",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["UK3CB_BAF_556_30Rnd",5],
+        ["rhsusf_mag_17Rnd_9x19_JHP",5],
+		["B_IR_Grenade",2]
+    ];
+
+    _tmp_items = 
+	[
+		["ACE_DAGR",1],
+		["ACRE_PRC343",1],
+		["ACRE_PRC148",1],
+		["itemCTAB",1],
+		["ACE_wirecutter", 1],
+		["ACE_IR_Strobe_Item",1]
+    ];
+				_tmp_backpacks = 
+	[ 
+	];
+	
 };
 
 //BAF Armour
