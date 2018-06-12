@@ -15,3 +15,4 @@ twc_fnc_checkLastDamage = compile preprocessfilelinenumbers "Insurgency_Core\ser
 twc_fnc_addScore = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_addScore.sqf";
 twc_fnc_calculateSpawnAmount = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_calculateSpawnAmount.sqf";
 twc_fnc_spawntechnicals = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
+twc_fnc_deadasset = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deadAsset.sqf";

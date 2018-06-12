@@ -161,7 +161,7 @@ _list=[
 		["driver", 
 			["Modern_British_HeliPilot"]
 		],
-		["Turret", 
+		[[2], 
 			["Modern_British_crewchief"]
 		]],3
 	],	
