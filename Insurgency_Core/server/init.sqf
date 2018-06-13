@@ -16,6 +16,11 @@
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 
 
+if(isNil "twc_attachmentgap") then{
+	twc_attachmentgap = 9;
+	publicVariable "twc_attachmentgap";
+};
+
 if(isNil "twc_is90") then{
 	twc_is90 = 0;
 	publicVariable "twc_is90";

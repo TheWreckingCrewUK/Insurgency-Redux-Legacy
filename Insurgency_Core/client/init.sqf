@@ -2,7 +2,6 @@
 #include "sys_intel\init.sqf";
 #include "sys_diary\init.sqf";
 #include "sys_forwardBase\init.sqf";
-#include "sys_restrict\init.sqf";
 #include "sys_score\init.sqf";
 #include "sys_player\init.sqf";
 #include "func\init.sqf";
@@ -13,6 +12,12 @@ waitUntil {!isNull player};
 
 
 sleep 30;
+
+
+if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
+execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
+};
+
 //systemchat "terp init";
 if (["interpreter", typeof player] call BIS_fnc_inString) then {
 	twc_terp = player;
@@ -20,7 +25,7 @@ if (["interpreter", typeof player] call BIS_fnc_inString) then {
 	"You're an interpreter. Read more about this in the diary on your map" remoteExec ["hint",twc_terp];
 	
 	player CreateDiaryRecord ["Diary",["Interpreter",
-	"As an interpreter you can gain access to valuable information regarding enemy activity. As you move through the area you will receive hints regarding cache locations, currently defended towns, IED's and even estimates of stronghold strength. You will only get this information if your PRC152 is set to the correct channel however, and you will need to find the correct channel yourself. You can speed this process up by ACE interacting on a High Value Target (HVT) and getting the radio channel that way."
+	"As an interpreter you can gain access to valuable information regarding enemy activity. As you move through the area you will receive hints regarding cache locations, currently defended towns, IED's and even estimates of stronghold strength. <br /><br />You will only get this information if your PRC152 is set to the correct channel however, and you will need to find the correct channel yourself. You can speed this process up by ACE interacting on a High Value Target (HVT) and getting the radio channel that way."
 ]];	
 
 
@@ -70,7 +75,7 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 	
 	player CreateDiaryRecord ["Diary",["Pilot", 
  "As a pilot you can move and paradrop very large amounts of ammunition and vehicles, as well as provide combat close air support to troops on the ground. You can spawn aircraft at the main spawner that the infantry uses for ammunition spawning.  
- </br></br> Your choice of aircraft is limited based on how many people are in the server, and the spawner will only show you aircraft that you have the playercount to fly at that point. This has a cooldown, and you can return aircraft with ace interaction to mitigate this. If you're a fixed wing pilot spawning a plane, that plane will appear on the apron, not the spawn helipad." 
+<br /><br />Your choice of aircraft is limited based on how many people are in the server, and the spawner will only show you aircraft that you have the playercount to fly at that point. This has a cooldown, and you can return aircraft with ace interaction to mitigate this. If you're a fixed wing pilot spawning a plane, that plane will appear on the apron, not the spawn helipad." 
 ]]; 
 };
 
@@ -88,15 +93,4 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 };
 
 
-
-//check if the player is stuck in the map screen
-if ((str getpos player) == "[10,10,10]") then {
-player setdamage 1;
-systemchat "map glitch workaround activated with a result of 10, please tell Hobbs this happened with this result ASAP";
-};
-if ((str getpos player) == "[0,0,0]") then {
-player setdamage 1;
-
-systemchat "map glitch workaround activated with a result of 0, please tell Hobbs this happened with this result ASAP";
-};
-
+#include "sys_restrict\init.sqf";
