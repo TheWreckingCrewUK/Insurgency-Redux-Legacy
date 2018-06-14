@@ -1,7 +1,9 @@
 sleep 5;
 //if(!isMultiplayer)exitWith{};
 
-/*
+//a lot of this is commented out because a separate attachment count system is running elsewhere, and the individual playercounts are currently not necessary for most roles
+
+
 if((typeOf player) in ["Modern_British_crewchief"])then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 8) then {
 
@@ -22,7 +24,7 @@ cutText ["","Black IN",5];
 player forceWalk false;
 };
 };
-*/
+
 
 
 if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
@@ -73,7 +75,7 @@ player forceWalk false;
 };
 };
 */
-/*
+
 if((typeOf player) in ["Modern_British_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 5) then {
 
@@ -95,11 +97,13 @@ player forceWalk false;
 };
 };
 
-*/
+
+
+
+
+if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech", "Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
 
 /*
-
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander"])then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 8) then {
 
 cutText ["", "Black", 0.001];
@@ -118,8 +122,12 @@ cutText ["", "Black", 0.001];
 cutText ["","Black IN",5];
 player forceWalk false;
 };
-};
 */
+
+execvm "Insurgency_Core\client\sys_restrict\fullFST.sqf";
+
+};
+
 
 
 

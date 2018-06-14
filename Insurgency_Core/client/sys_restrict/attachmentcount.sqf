@@ -25,20 +25,20 @@ _attachmentcount = count _groups;
 
 //intention is to have a sliding scale that puts people into regular infantry roles in the beginning and then lowers the gap to new attachments as the playercount increases to avoid a perpetually reserved slot scenario. simple approach for now
 
-if (((_attachmentcount * twc_attachmentgap)- 3) < ( count(allPlayers - entities "HeadlessClient_F")))
+if (((_attachmentcount * twc_attachmentgap)+ 2) < ( count(allPlayers - entities "HeadlessClient_F")))
 
-exitwith {systemchat format ["you good %1", ((_attachmentcount * twc_attachmentgap)- 3)]};
+exitwith {systemchat format ["you good %1", ((_attachmentcount * twc_attachmentgap)+ 2)]};
 
 //now use the standard spawn restriction system to let the player know what's up
 
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {(((_attachmentcount * twc_attachmentgap)- 3) > ( count(allPlayers - entities "HeadlessClient_F")))} do {
+while {(((_attachmentcount * twc_attachmentgap)+ 2) > ( count(allPlayers - entities "HeadlessClient_F")))} do {
 cutText ["", "Black", 0.001];
     [ 
         format ["<t size='1.2'>Attachment Role</t><br/><t size='0.6'>There are currently no attachment roles available, join one of the regular infantry roles. %1 players need to be online for the next attachment to become available</t>", 
 		
-		ceil ((_attachmentcount * twc_attachmentgap)- 3),
+		ceil ((_attachmentcount * twc_attachmentgap)+ 2),
 		( count(allPlayers - entities "HeadlessClient_F"))
 		], 0, 0.22, 5, 0, 0, 2 
     ] spawn bis_fnc_dynamictext;

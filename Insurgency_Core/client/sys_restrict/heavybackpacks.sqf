@@ -1,3 +1,5 @@
+//if this ever needs to work, make a version that checks the current backpack on respawn
+
 twc_heavybackpacks = ["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A"];
 publicvariable "twc_heavybackpacks";
 
