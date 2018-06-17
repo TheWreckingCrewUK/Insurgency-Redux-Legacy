@@ -57,6 +57,12 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	_fstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_actionempty = ["SpawnemptyCreate","Spawn Large Empty Crate","",{"TWC_AmmoBox_Other_Pallet_pub" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_actionempty,true] call ace_interact_menu_fnc_addActionToClass;
+	
+		_hfstaction3 = ["spawn50","Spawn Spare Wheels","",{execvm "insurgency_core\client\sys_player\boxes\Repairkit.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_hfstaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_fstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction6,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -74,6 +80,8 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 
 	_fstaction7 = ["SpawnsmallUKCreate","Spawn Coyote HMG","",{["UK3CB_BAF_Coyote_Logistics_L111A1_D"] execvm "insurgency_core\client\sys_player\vehicles\coyote.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawndesert"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	
 
 	
 	};

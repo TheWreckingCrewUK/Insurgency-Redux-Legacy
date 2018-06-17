@@ -33,6 +33,9 @@ _leftOrRight = _roadDirection + _leftOrRight;
 // let's find a cosy nice warm home for this brand new IED on the side of the road
 _position = _road getRelPos [_halfOfWidth, _leftOrRight];
 
+if (isnil "_position") exitwith {};
+
+if ((_position distance (getmarkerpos "base")) < 2000) exitwith {};
 
 if (count(_position nearobjects ['pipebombbase', 500]) > 0) exitwith {};
 //Created the object. We define _ied in since it is created in an if then

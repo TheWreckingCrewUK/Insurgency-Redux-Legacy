@@ -19,6 +19,8 @@ params ["_iedType", "_position", ["_spawnRadius", 0], ["_isIntialSeed", false]];
 
 if (count(_position nearobjects ['pipebombbase', 500]) > 0) exitwith {};
 
+if ((_position distance (getmarkerpos "base")) < 2000) exitwith {};
+
 _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
