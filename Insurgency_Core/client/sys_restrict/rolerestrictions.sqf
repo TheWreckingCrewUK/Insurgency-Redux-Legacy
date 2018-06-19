@@ -11,6 +11,7 @@ cutText ["", "Black", 0.001];
 player forceWalk true;
 while {( count(allPlayers - entities "HeadlessClient_F")) < 8} do {
 cutText ["", "Black", 0.001];
+
     [
         "<t size='1.2'>Helicopter Crew Chief</t><br/><t size='0.6'>You need 8 or more players on the server before you can be a Crew Chief</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
@@ -83,6 +84,7 @@ cutText ["", "Black", 0.001];
 player forceWalk true;
 while {( count(allPlayers - entities "HeadlessClient_F")) < 5} do {
 cutText ["", "Black", 0.001];
+
     [
         "<t size='1.2'>Helicopter Pilot</t><br/><t size='0.6'>You need 5 or more people before you can be a helicopter pilot</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
@@ -98,7 +100,7 @@ player forceWalk false;
 };
 
 
-
+systemchat "firing fst";
 
 
 if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech", "Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{

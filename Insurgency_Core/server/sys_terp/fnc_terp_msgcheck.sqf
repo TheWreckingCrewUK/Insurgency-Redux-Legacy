@@ -20,13 +20,3 @@ publicVariable "terpChannel";
 If (terpChannel != twc_enemychannel) exitwith {0}; 
 1; 
 }] remoteExec ["bis_fnc_call", twc_terp];
-/*
-if (isnull twc_terp) then {0} else {
-
-if (isnil "_time") then {If (terptimer >0) exitwith {0}};
-
-If (terpChannel != twc_enemychannel) exitwith {0};
-
-[40] call twc_terp_timer;
-1;
-};

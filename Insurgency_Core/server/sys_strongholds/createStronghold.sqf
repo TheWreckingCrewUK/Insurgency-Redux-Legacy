@@ -27,7 +27,7 @@ _trg2 = createTrigger ["EmptyDetector", _pos];
 _trg2 setTriggerArea [_randsize, _randsize, 30, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["VEHICLE twc_terp in thislist","[nearestObjects [thistrigger, ['soldiergb'], 500]] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_stronghold.sqf'",""];
+_trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[nearestObjects [thistrigger, ['soldiergb'], 500], getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_stronghold.sqf'",""];
 
 
 //Spawning a load of hostiles and the civs
@@ -148,6 +148,7 @@ _taskID = (str random 1000);
 waituntil {
 	(missionNamespace getVariable [format['stronghold_%1', _rand], 0]) == 2};
 
+deletevehicle _trg2;
 
 		twc_activestrongholds deleteAt (twc_activestrongholds find _id);
 publicVariable 'twc_activestrongholds';

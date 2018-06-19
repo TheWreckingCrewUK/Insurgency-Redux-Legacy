@@ -20,6 +20,8 @@ if((getMarkerPos "respawn_forwardBase") distance2D (getPos player) < 200)then{
 
 };
 
+#include "Insurgency_Core/OnRespawn.sqf";
+
 //make the player middle eastern if they spawn as ANA. Sounds racist, but otherwise it looks dumb
 _me = player;
 if (faction player == "ana_units") then {

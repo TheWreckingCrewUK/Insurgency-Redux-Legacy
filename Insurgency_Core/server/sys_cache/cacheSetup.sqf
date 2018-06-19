@@ -50,7 +50,7 @@ _trg2 = createTrigger ["EmptyDetector", getpos _x];
 _trg2 setTriggerArea [_randsize, _randsize, 30, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["vehicle twc_terp in thislist","[0] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
+_trg2 setTriggerStatements ["vehicle twc_terp in thislist","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
 		
 		
 		_num = 0;

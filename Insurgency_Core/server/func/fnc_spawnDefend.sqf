@@ -19,16 +19,22 @@ params["_pos"];
 
 if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
-if (!(isnull twc_terp)) then {
-if ((twc_terp distance _pos) < 1000) then {
-execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
-};
-
 
 //_spawnPos = [_pos, 50] call CBA_fnc_randPos;
 _spawnPos = [0,0,0];
 _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10;
+
+sleep 1;
+
+if (!(isnull twc_terp)) then {
+if (_total > 0) then {
+if ((twc_terp distance _pos) < 1000) then {
+[_pos] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
+};
+};
+
+
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _spawnPos,[], 5,"NONE"];

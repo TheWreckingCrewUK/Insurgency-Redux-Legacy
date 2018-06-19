@@ -11,8 +11,11 @@
 waitUntil {!isNull player};
 
 
-sleep 30;
+sleep 10;
 
+#include "sys_restrict\init.sqf";
+
+sleep 10;
 
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
@@ -92,5 +95,3 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 };
 
-
-#include "sys_restrict\init.sqf";

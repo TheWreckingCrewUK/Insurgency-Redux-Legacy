@@ -25,11 +25,6 @@ _dir = random 360;
 
 if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
-if (!(isnull twc_terp)) then {
-	if ((twc_terp distance _pos) < 1000) then {
-		execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"
-	};
-};
 
 _dir1 = _dir - 30;
 _dir2 = _dir + 30;
@@ -37,6 +32,16 @@ _dir2 = _dir + 30;
 //Calculating total enemies to spawn
 _num = 0;
 _total = [_pos] call twc_fnc_calculateSpawnAmount;
+
+sleep 1;
+
+if (!(isnull twc_terp)) then {
+	if (_total > 0) then {
+	if ((twc_terp distance _pos) < 1000) then {
+		[_pos] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"
+	};
+	};
+};
 
 //Spawning hostiles
 _group = createGroup East;

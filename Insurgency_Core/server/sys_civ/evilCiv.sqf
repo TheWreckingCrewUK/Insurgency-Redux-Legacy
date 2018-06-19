@@ -15,4 +15,6 @@ _weapon = [["rhs_weap_savz61_folded", "rhsgref_20rnd_765x17_vz61"],["rhs_weap_ak
 _choice = _weapon call BIS_fnc_selectRandom;
 _civ addMagazines [(_choice select 1), 4]; 
 _gun = (_choice select 0);
-_civweapon = _civ addWeapon _gun;
+//_civweapon = _civ addWeapon _gun;
+
+[_civ, _gun] remoteExec ["addweapon",0];

@@ -7,6 +7,8 @@ Once they have enough, then it runs itself again to wait until the situation cha
 */
 
 
+waitUntil {!isNull player};
+
 waituntil {(count (units group player)) < 3};
 
 if(!isMultiplayer)exitWith{};
@@ -14,6 +16,8 @@ cutText ["", "Black", 0.001];
 player forceWalk true;
 
 while {(count (units group player)) < 3}do{
+
+cutText ["", "Black", 0.001];
     [
         "<t size='1.2'>Armour Crew</t><br/><t size='0.6'>You need a full armour crew online before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
@@ -23,10 +27,6 @@ cutText ["","Black IN",5];
 player forceWalk false;
 
 
-
-if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
-
-execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";};
 
 
 execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";

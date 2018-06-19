@@ -4,5 +4,5 @@ terptimer = _time;
 
 [] spawn {
 
-while {terptimer > 0} do {terptimer = terptimer - 10; sleep 10};
+while {terptimer > 0} do {sleep 10; terptimer = terptimer - 10;};
 }
