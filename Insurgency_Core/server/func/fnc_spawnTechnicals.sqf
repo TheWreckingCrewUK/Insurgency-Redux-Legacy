@@ -62,7 +62,11 @@ for "_i" from 1 to _total do {
 
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
+	_truck setVehicleLock "LOCKEDPLAYER";
+	
 	_gun = "rhs_KORD_high_VMF" createvehicle _spawnpos; 
+	
+	_gun setVehicleLock "LOCKEDPLAYER";
 	
 	_gun attachto [_truck, [0.2,-1.5,0.4]];
 	
@@ -129,8 +133,12 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	};
 	
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
+	
+	_truck setVehicleLock "LOCKEDPLAYER";
 
 	_gun = "CUP_B_SPG9_CDF" createvehicle _spawnpos; 
+	
+	_gun setVehicleLock "LOCKEDPLAYER";
 
 	_gun attachto [_truck, [-0.2,-1.7,-1.2]];  
 

@@ -61,7 +61,11 @@ while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos 
 
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
+	_truck setVehicleLock "LOCKEDPLAYER";
+	
 	_gun = "rhs_KORD_high_VMF" createvehicle _spawnpos; 
+	
+	_gun setVehicleLock "LOCKEDPLAYER";
 	
 	_gun attachto [_truck, [0.2,-1.5,0.4]];
 	
@@ -142,8 +146,12 @@ while {(_spawnpos distance (getmarkerpos "base")) < 1000 && (count (_spawnpos ne
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom)};
 	
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
+	
+	_truck setVehicleLock "LOCKEDPLAYER";
 
 	_gun = "CUP_B_SPG9_CDF" createvehicle _spawnpos; 
+	
+	_gun setVehicleLock "LOCKEDPLAYER";
 
 	_gun attachto [_truck, [-0.2,-1.7,-1.2]];  
 

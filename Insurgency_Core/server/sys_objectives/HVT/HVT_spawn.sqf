@@ -88,6 +88,14 @@ for "_i" from 1 to _total do{
 	sleep 0.2;
 };
 
+_randsize = 650 + (random 100);
+_randtime = 10;
+_trg2 = createTrigger ["EmptyDetector", _pos];
+_trg2 setTriggerArea [_randsize, _randsize, 30, false];
+_trg2 setTriggerActivation ["west", "PRESENT", True];
+_trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
+_trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_hvt.sqf'",""];
+
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
 _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
@@ -106,13 +114,15 @@ waituntil {time > (_spawntime + 60)};
 	if (!alive _hvt) exitwith {
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
 	
+	deletevehicle _trg2;
+	
 		twc_activemissions deleteAt (twc_activemissions find _id);
 publicVariable "twc_activemissions";
 };
 
 // let's start monitoring conditions to satisfy completion/failure
-[_hvt, _taskID, _group, _objType, _id, _markerPos] spawn {
-	params ["_hvt", "_taskID", "_group", "_objType", "_id", "_markerPos"];
+[_hvt, _taskID, _group, _objType, _id, _markerPos,_trg2] spawn {
+	params ["_hvt", "_taskID", "_group", "_objType", "_id", "_markerPos", "_trg2"];
 	
 	_maxTime = time + ((10*60)*60);
 	
@@ -122,8 +132,12 @@ publicVariable "twc_activemissions";
 	};
 
 	if (!alive _hvt) then {
+	
+	deletevehicle _trg2;
 		["TWC_Insurgency_adjustPoints", 50] call CBA_fnc_serverEvent;
 	}else{
+	
+	deletevehicle _trg2;
 		["TWC_Insurgency_adjustPoints", -15] call CBA_fnc_serverEvent;
 	};
 
@@ -149,6 +163,8 @@ publicVariable "twc_activemissions";
 	[WEST,[_taskID],["We have located and eliminated a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
 	
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
+	
+	deletevehicle _trg2;
 
 };
 

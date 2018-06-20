@@ -15,6 +15,9 @@
 //#include "sys_strongholds\init.sqf";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 
+twc_missionname = missionname;
+publicVariable "twc_missionname";
+
 
 if(isNil "twc_attachmentgap") then{
 	twc_attachmentgap = 7;

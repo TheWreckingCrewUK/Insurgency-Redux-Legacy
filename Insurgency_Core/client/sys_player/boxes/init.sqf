@@ -122,6 +122,13 @@ if((typeOf player) in ["twc_ana_commander","twc_ana_subcommander"])then{
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Armed)","",{["I_G_Offroad_01_armed_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Unarmed)","",{["C_Offroad_01_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+
 };
 
 if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d"])then{

@@ -100,7 +100,6 @@ player forceWalk false;
 };
 
 
-systemchat "firing fst";
 
 
 if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech", "Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
