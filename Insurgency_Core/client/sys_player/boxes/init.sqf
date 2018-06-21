@@ -59,6 +59,7 @@ deleteVehicle _target;
 	["ReammoBox_F",0,["ACE_MainActions"],_twc_deletebox,true] call ace_interact_menu_fnc_addActionToClass;
 
 
+#include "armour.sqf";
 #include "fst.sqf";
 	
 {
@@ -122,12 +123,22 @@ if((typeOf player) in ["twc_ana_commander","twc_ana_subcommander"])then{
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	
+	waituntil {(!(isnil "twc_missionname"))};
 
+if (["90", twc_missionname] call BIS_fnc_inString) then {
+
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Armed)","",{["CUP_I_Datsun_PK_TK_Random"] execvm "insurgency_core\client\sys_player\vehicles\anapickup90.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Unarmed)","",{["CUP_I_Datsun_4seat_TK"] execvm "insurgency_core\client\sys_player\vehicles\anapickup90.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	} else {
+	
 	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Armed)","",{["I_G_Offroad_01_armed_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Unarmed)","",{["C_Offroad_01_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	};
 
 };
 

@@ -35,9 +35,10 @@ _car2 = "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A";
 
 if (["twc_ana", typeof player] call BIS_fnc_inString) then {
 
-_car1 = "C_Offroad_01_F";
 
-_car2 = "I_G_Offroad_01_armed_F";
+_car1 = "CUP_I_Datsun_4seat_TK";
+
+_car2 = "CUP_I_Datsun_PK_TK_Random";
 };
 
 if (["usmc", typeof player] call BIS_fnc_inString) then {

@@ -20,7 +20,18 @@ _list=[
 		],
 		["commander", 
 			["Modern_USMC_VehicleCommander"]
-		]],12
+		]],5
+	],
+		["rhsusf_m1a2sep1tuskiid_usarmy",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander"]
+		]],5
 	],
 		["rhsusf_m1a2sep1d_usarmy",[ 
 		["driver", 
@@ -68,6 +79,29 @@ _list=[
 		]],5
 	],	
 	
+			["CUP_B_AAV_USMC",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander"]
+		]],5
+	],	
+			["RHS_M2A3_BUSKIII",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander"]
+		]],5
+	],	
+	
 			["CUP_B_MCV80_GB_D_SLAT",[ 
 		["driver", 
 			["Modern_British_VehicleCrew"]
@@ -79,6 +113,35 @@ _list=[
 			["Modern_British_VehicleCommander"]
 		]],5
 	],	
+	
+			["CUP_B_M1130_CV_M2_Desert_Slat",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander","Modern_British_VehicleCrew"]
+		]],5
+	],	
+			["CUP_B_M1130_CV_M2_Woodland_Slat",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander","Modern_British_VehicleCrew"]
+		]],5
+	],	
+	
+		["ukcw_fv432",[ 
+		["driver", 
+			["Modern_British_VehicleCrew","Modern_British_VehicleCommander"]
+		]],5
+	],	
+	
+		["rhsusf_m113d_usarmy_M240",[ 
+		["driver", 
+			["Modern_British_VehicleCrew","Modern_British_VehicleCommander"]
+		]],5
+	],
 	
 		["CUP_B_FV432_Bulldog_GB_W",[ 
 		["driver", 
@@ -327,6 +390,8 @@ _list=[
 ;
 {twc_restrictedVehicleSlots pushback _x} foreach _list;
 
+twc_fullvehicles = ["ukcw_cvrt_Scim_w", "ukcw_cvrt_Scim_d", "CUP_B_MCV80_GB_D_SLAT", "RHS_AH64D", "RHS_AH1Z", "CUP_B_LAV25_desert_USMC", "CUP_B_LAV25_USMC", "CUP_B_M1130_CV_M2_Woodland_Slat", "CUP_B_M1130_CV_M2_Desert_Slat", "CUP_B_AAV_USMC", "RHS_M2A3_BUSKIII", "rhsusf_m1a2sep1tuskiid_usarmy"];
+
 
 TWC_fnc_notAllowedInSeat = {
 	params ["_playerUnit"];
@@ -391,6 +456,8 @@ TWC_fnc_notenoughplayers = {
 	};
 };
 
+
+
 TWC_fnc_checkVehicleSlot = {
 	params ["_playerUnit"];
 	if (vehicle _playerUnit == _playerUnit) exitWith { false; }; // double check
@@ -421,12 +488,15 @@ TWC_fnc_checkVehicleSlot = {
 
 				_checkWith = _currentSeat;
 				if (typeName _slot == "ARRAY") then { _checkWith = _currentSeatTurretPath select 0; _slot= _slot select 0;};
-
 			
 				if (_checkWith == _slot) then {
 					if (!(typeOf _playerUnit in _roles)) then {
 						[_playerUnit] call TWC_fnc_notAllowedInSeat;
+				
+
 					} else {
+								if (((typeof vehicle _playerUnit)) in twc_fullvehicles) then {
+								[_currentSeat, _slotsAndRoles] execvm "Insurgency_Core\client\sys_restrict\fullvehicle.sqf"; };
 						if (typename _count == "SCALAR") then {
 							if (_count > _currentcount) then {
 								[_playerUnit, _count, _currentcount, "low"] call TWC_fnc_notenoughplayers;
@@ -449,6 +519,8 @@ TWC_fnc_checkVehicleSlot = {
 	params ["_playerUnit"];
 	
 	if (isPlayer _playerUnit) then {
+	if ((str (typeof vehicle _playerUnit)) in twc_fullvehicles) then {
+execvm "Insurgency_Core\client\sys_restrict\fullvehicle.sqf"; };
 		[_playerUnit] call TWC_fnc_checkVehicleSlot;
 	};
 }, player] call CBA_fnc_addBISEventHandler;
