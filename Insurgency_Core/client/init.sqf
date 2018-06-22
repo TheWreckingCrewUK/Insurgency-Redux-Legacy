@@ -67,7 +67,7 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 
 	if (typeOf vehicle player == "Modern_British_JetPilot") then {
 
-		if (( count(allPlayers - entities "HeadlessClient_F")) >= 8) then 
+		if (( count(allPlayers - entities "HeadlessClient_F")) >= 6) then 
 		{
 			hint "You're a pilot. Read how to spawn aircraft in the diary on your map";
 		} else
@@ -87,6 +87,25 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 
 if((typeOf player) in ["Modern_British_VehicleCommander", "Modern_British_VehicleCrew"]) then {
 	["TWC_ArmourCrewConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
+	
+	
+
+			hint "Read how to spawn heavy vehicles in the diary on your map";
+
+		
+	
+	player CreateDiaryRecord ["Diary",["Armour Crew", 
+ "The armour crew is responsible for providing heavy fire support and transport for the infantry. They have much better protection against IED's and rockets than other vehicles, and so have much more freedom in where they can go.
+<br /><br />
+One of the main advantages of the armour crew is their ability to operate in positions that would be too dangerous for other vehicles. The commander should leverage this advantage while managing the risk to the vehicle.
+<br /><br />
+The commander can spawn vehicles from the main spawner, and then despawn them by ace interacting on the vehicle when it's in base. Only 2 vehicles may be around at a time, if both of them get destroyed then it allows you 1 more.
+<br /><br />
+The large vehicles require a full crew of 3 to operate, but the vehicles without a full turret only require a member of the armour crew to drive it. For example, a crewman could drive an FV432 APC with the commander as the gunner and then the second crewman could drive another FV432 with an infantryman as the gunner.
+" 
+]]; 
+	
+	
 };
 
 
@@ -95,3 +114,5 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 };
 
+
+twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";

@@ -103,9 +103,10 @@ if (isNil "twc_sniperteam") then {
 };
 
 
-basemode = 1;
+if (isNil "basemode") then {
+basemode = 0;
 publicvariable "basemode";
-
+};
 
 // List of civilians who were already questioned
 nonQuestionableList = [];

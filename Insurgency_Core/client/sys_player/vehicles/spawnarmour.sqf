@@ -12,6 +12,14 @@ _veh = _heli createvehicle getpos ammoboxspawner;
 twc_armourcount = twc_armourcount +1;
 publicVariable "twc_armourcount";
 
+	
+	if (typeof _veh == "rhsusf_M1117_D") then {
+[
+	_veh,
+	["desert",1], 
+	["DUKE_Hide",1]
+] call BIS_fnc_initVehicle;
+};
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 
@@ -26,3 +34,4 @@ _veh addEventHandler ["Killed",{
 twc_armourcount=twc_armourcount - 0.5;
 publicVariable "twc_armourcount";
 	}];
+	

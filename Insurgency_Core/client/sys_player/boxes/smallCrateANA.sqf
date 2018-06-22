@@ -22,6 +22,12 @@ clearitemCargoGlobal _box;
 
 //supplies
 
+//add 556 mags if it's not 90's, because they have access to M16's
+if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",20];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",5];
+};
+
 _box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",20];
 _box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm_tracer",5];
 _box AddMagazineCargoGlobal ["rhs_30Rnd_545x39_7N22_AK",5];

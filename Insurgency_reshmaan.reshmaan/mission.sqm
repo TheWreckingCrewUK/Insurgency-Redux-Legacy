@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.78539819;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=545;
+	toggles=33;
 	class ItemIDProvider
 	{
-		nextID=1551;
+		nextID=1568;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4233.3633,155.0692,18020.611};
-		dir[]={0.5685581,-0.76599431,-0.30039325};
-		up[]={0.67726392,0.64285594,-0.3578271};
-		aside[]={-0.46719772,-2.3663742e-006,-0.88427609};
+		pos[]={4027.9128,195.13887,18220.279};
+		dir[]={0.84794265,-0.38242045,-0.36742285};
+		up[]={0.35096112,0.92395204,-0.15207545};
+		aside[]={-0.39763018,-9.7684097e-007,-0.91766769};
 	};
 };
 binarizationWanted=0;
@@ -12881,7 +12881,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=302;
+		items=303;
 		class Item0
 		{
 			dataType="Marker";
@@ -26215,7 +26215,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4298.4136,142.24356,18070.068};
-				angles[]={-0,4.7059178,0};
+				angles[]={0,4.7059178,0};
 			};
 			side="Empty";
 			class Attributes
@@ -26255,7 +26255,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4314.8486,142.22273,18071.051};
-				angles[]={-0,4.7172279,0};
+				angles[]={0,4.7172279,0};
 			};
 			side="Empty";
 			class Attributes
@@ -26295,7 +26295,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4298.3667,140.35339,18068.75};
-				angles[]={-0,3.1351216,0};
+				angles[]={0,3.1351216,0};
 			};
 			side="Empty";
 			flags=4;
@@ -26335,7 +26335,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4314.8125,140.35339,18069.732};
-				angles[]={-0,3.1464317,0};
+				angles[]={0,3.1464317,0};
 			};
 			side="Empty";
 			flags=4;
@@ -26581,6 +26581,26 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item302
+		{
+			dataType="Trigger";
+			position[]={4264.5088,138.96762,18116.885};
+			class Attributes
+			{
+				text="basemode";
+				condition="call{this}";
+				onActivation="call{basemode = 1; publicVariable ""basemode"";execVM ""insurgency_core\server\sys_basedefence\INF_Alarm.sqf"";}";
+				onDeactivation="call{[] spawn {sleep 15; execVM ""insurgency_core\server\sys_basedefence\INF_Alarmclear.sqf"";basemode = 0; publicVariable ""basemode"";}}";
+				sizeA=1196.6949;
+				sizeB=1084.4709;
+				sizeC=0;
+				repeatable=1;
+				activationBy="EAST";
+				isServerOnly=1;
+			};
+			id=1551;
+			type="EmptyDetectorAreaR250";
 		};
 	};
 };

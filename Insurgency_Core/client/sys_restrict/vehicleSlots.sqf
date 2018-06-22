@@ -45,6 +45,13 @@ _list=[
 		]],12
 	],
 	
+		["rhsusf_M1117_D",[ 
+		["driver", 
+			["Modern_British_VehicleCrew","Modern_British_VehicleCommander"]
+		],["gunner", 
+			["Modern_British_VehicleCrew","Modern_British_VehicleCommander"]
+		]],5
+	],
 		["rhsusf_m113d_usarmy_MK19",[ 
 		["driver", 
 			["Modern_USMC_VehicleCrew","Modern_USMC_VehicleCommander"]
@@ -390,7 +397,7 @@ _list=[
 ;
 {twc_restrictedVehicleSlots pushback _x} foreach _list;
 
-twc_fullvehicles = ["ukcw_cvrt_Scim_w", "ukcw_cvrt_Scim_d", "CUP_B_MCV80_GB_D_SLAT", "RHS_AH64D", "RHS_AH1Z", "CUP_B_LAV25_desert_USMC", "CUP_B_LAV25_USMC", "CUP_B_M1130_CV_M2_Woodland_Slat", "CUP_B_M1130_CV_M2_Desert_Slat", "CUP_B_AAV_USMC", "RHS_M2A3_BUSKIII", "rhsusf_m1a2sep1tuskiid_usarmy"];
+twc_fullvehicles = ["ukcw_cvrt_Scim_w", "ukcw_cvrt_Scim_d", "CUP_B_MCV80_GB_D_SLAT", "RHS_AH64D", "RHS_AH1Z", "CUP_B_LAV25_desert_USMC", "CUP_B_LAV25_USMC", "CUP_B_M1130_CV_M2_Woodland_Slat", "CUP_B_M1130_CV_M2_Desert_Slat", "CUP_B_AAV_USMC", "RHS_M2A3_BUSKIII", "rhsusf_m1a2sep1tuskiid_usarmy", "rhsusf_M1117_D"];
 
 
 TWC_fnc_notAllowedInSeat = {

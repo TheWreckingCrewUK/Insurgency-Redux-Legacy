@@ -123,6 +123,9 @@ if((typeOf player) in ["twc_ana_commander","twc_ana_subcommander"])then{
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+
+	_UKaction5 = ["SpawnmedCreate","Spawn ZSU HMMWV","",{execvm "insurgency_core\client\sys_player\vehicles\anahumvee.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 	
 	waituntil {(!(isnil "twc_missionname"))};
 

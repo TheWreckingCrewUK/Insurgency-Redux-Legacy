@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=1971;
+		nextID=1972;
 	};
 	class MarkerIDProvider
 	{
@@ -12866,7 +12866,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=241;
+		items=242;
 		class Item0
 		{
 			dataType="Marker";
@@ -24993,6 +24993,26 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item241
+		{
+			dataType="Trigger";
+			position[]={8144.3281,296.04001,1958.552};
+			class Attributes
+			{
+				text="basemode";
+				condition="call{this}";
+				onActivation="call{basemode = 1; publicVariable ""basemode"";execVM ""insurgency_core\server\sys_basedefence\INF_Alarm.sqf"";}";
+				onDeactivation="call{[] spawn {sleep 15; execVM ""insurgency_core\server\sys_basedefence\INF_Alarmclear.sqf"";basemode = 0; publicVariable ""basemode"";}}";
+				sizeA=1196.6949;
+				sizeB=1084.4709;
+				sizeC=0;
+				repeatable=1;
+				activationBy="EAST";
+				isServerOnly=1;
+			};
+			id=1971;
+			type="EmptyDetectorAreaR250";
 		};
 	};
 };

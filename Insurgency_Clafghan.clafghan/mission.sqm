@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1992;
+		nextID=1993;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15625.474,57.519676,17077.486};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={15617.786,223.93758,16995.459};
+		dir[]={0.03693397,-0.79686439,0.60302889};
+		up[]={0.048714634,0.6041581,0.79537421};
+		aside[]={0.99812996,-6.4028427e-010,-0.061132889};
 	};
 };
 binarizationWanted=0;
@@ -12791,7 +12791,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=88;
+		items=89;
 		class Item0
 		{
 			dataType="Marker";
@@ -19803,6 +19803,27 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item88
+		{
+			dataType="Trigger";
+			position[]={15812.094,5.1761484,17219.203};
+			class Attributes
+			{
+				text="basemode";
+				condition="call{this}";
+				onActivation="call{basemode = 1; publicVariable ""basemode"";execVM ""insurgency_core\server\sys_basedefence\INF_Alarm.sqf"";}";
+				onDeactivation="call{[] spawn {sleep 15; execVM ""insurgency_core\server\sys_basedefence\INF_Alarmclear.sqf"";basemode = 0; publicVariable ""basemode"";}}";
+				sizeA=1196.6949;
+				sizeB=1084.4709;
+				sizeC=0;
+				repeatable=1;
+				activationBy="EAST";
+				isServerOnly=1;
+			};
+			id=1992;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-3.7789993;
 		};
 	};
 };
