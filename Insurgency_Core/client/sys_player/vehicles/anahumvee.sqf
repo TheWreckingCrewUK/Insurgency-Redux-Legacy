@@ -1,6 +1,18 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
  
+ //
+ if (isnil "twc_specvehcount") then {
+ twc_specvehcount = 0;
+ publicVariable "twc_specvehcount";
+ };
+ 
+ if (twc_specvehcount == 1) exitwith {};
+ 
+ twc_specvehcount = 1;
+ publicVariable "twc_specvehcount";
+ 
+ 
  _veh = "CUP_B_M1151_USA" createvehicle _spawnpos;  
   
  
@@ -28,5 +40,8 @@ hint _spawntext;
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 deleteVehicle (nearestObject [this, "CUP_O_ZU23_TK_INS"]);
+
+ twc_specvehcount = 0;
+ publicVariable "twc_specvehcount";
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
