@@ -7,7 +7,14 @@
  publicVariable "twc_specvehcount";
  };
  
- if (twc_specvehcount == 1) exitwith {};
+ if (twc_specvehcount == 1) exitwith {
+ 
+ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Specialist Vehicle</t>"; 
+
+ _text1 =  "<br />Only one of these may exist at a time. Get the person that spawned the last one to return it in order to get a new one.";
+_spawntext = parsetext (_title + _text1);
+hint _spawntext;
+ };
  
  twc_specvehcount = 1;
  publicVariable "twc_specvehcount";
