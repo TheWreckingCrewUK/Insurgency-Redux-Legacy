@@ -1,4 +1,7 @@
 //Extra stronghold spawner for larger maps
+/*
+removing this for now since patrol towns are good atm and it saves on performance
+
 []spawn {
 _total = (worldsize) / 6000;
 

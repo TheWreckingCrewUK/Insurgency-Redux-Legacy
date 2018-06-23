@@ -23,7 +23,7 @@ if((west countSide _thisList) == 0)then{
 	}forEach _thisList;
 	
 	_trg = createTrigger ["EmptyDetector", _pos];
-	_trg setTriggerArea [600, 600, 0, false];
+	_trg setTriggerArea [600, 600, 200, false];
 	_trg setTriggerActivation ["West", "PRESENT", False];
 	_trg setTriggerTimeout[10, 10, 10, true];
 	_trg setTriggerStatements ["((getPosATL (thisList call bis_fnc_selectRandom)) select 2) < 250)","[(getPos thisTrigger),0,100,[100,200],thisList,false,true] spawn twc_townSetup",""];

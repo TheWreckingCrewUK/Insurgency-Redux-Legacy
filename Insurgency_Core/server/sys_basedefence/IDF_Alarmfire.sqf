@@ -5,7 +5,7 @@ _shell = _this select 1;
 _direction = _shell getreldir _base;
 _distance = (_shooter) distance _base;
 
-//defines how close shells have to be before tripping the alarm. FOB kunduz is 40 as a baseline.
+//defines how close shells have to be aimed before tripping the alarm. FOB kunduz is 40 as a baseline.
 _accuracy = if(isNil "idfbasesize") then {40
 } else {idfbasesize * 0.5};
 
@@ -19,7 +19,7 @@ _distancescale = _accuracy * ((_distance * (_distance*0.2)) / 3500000);
 			if ((_shooter) distance _base > (idfbasesize *3)) then
 {
 
-				if ((_direction > ((360 - _accuracy) + (_distancescale))) or {_direction < ((0 + _accuracy) - ( _distancescale))}) then
+				if (((((direction _shell) - (_shooter getreldir _base)) < 20) && (((direction _shell) - (_shooter getreldir _base)) > -1)) || ((((direction _shell) - (_shooter getreldir _base)) > -20) && (((direction _shell) - (_shooter getreldir _base)) < 1))) then
 {
 basesafe = 0;
 publicvariable "idfsafe";

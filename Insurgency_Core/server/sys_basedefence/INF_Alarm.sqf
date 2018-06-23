@@ -1,4 +1,4 @@
-
+waituntil {(!(isnil "idfon"))};
 if (idfon ==1) exitwith {}; 
 
 idfon = 1;

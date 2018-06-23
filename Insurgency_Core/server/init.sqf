@@ -1,3 +1,6 @@
+twc_mortarchance = 0.02;
+publicVariable "twc_mortarchance";
+
 // Includes
 #include "func\init.sqf";
 #include "sys_controllers\init.sqf";

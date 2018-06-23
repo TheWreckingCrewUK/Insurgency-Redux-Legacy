@@ -1,5 +1,7 @@
 //Stuff that happens on player respawnVehicle
 
+#include "insurgency_core\client\onRespawn.sqf";
+
 //Deletion of ieds so players can't scum score
 {
 	player removeMagazines _x;
