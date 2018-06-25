@@ -13,7 +13,7 @@ _time = time;
 hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
 waituntil {time > _time + (count _list * 10)};
 
-{_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
+{_x setdamage 0.1; _x setdamage 0; _x setVehicleAmmoDef 1; _x setfuel 1} foreach _list;
 
 hint format ["%1 Vehicles Repaired", count _list];
 
@@ -32,7 +32,7 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 };
 
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
-_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); {_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
+_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); {_x setdamage 0.1; _x setdamage 0; _x setVehicleAmmoDef 1; _x setfuel 1} foreach _list;
 
 hint format ["%1 Vehicles Repaired", count _list];
 
@@ -68,7 +68,7 @@ hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
 waituntil {time > _time + (count _list * 10)};
 
 if ((count _list) == (count (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]))) then {
-{_x setdamage 0.1; _x setdamage 0; _x setvehicleammo 1; _x setfuel 1} foreach _list;
+{_x setdamage 0.1; _x setdamage 0; _x setVehicleAmmoDef 1; _x setfuel 1} foreach _list;
 	twc_repairtickets = twc_repairtickets - 1;
 	publicvariable "twc_repairtickets";
 	

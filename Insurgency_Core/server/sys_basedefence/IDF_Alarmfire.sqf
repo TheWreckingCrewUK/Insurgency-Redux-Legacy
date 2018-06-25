@@ -13,6 +13,10 @@ _distancescale = _accuracy * ((_distance * (_distance*0.2)) / 3500000);
 //systemchat format ["%1, %2", _distancescale, _distance];
 
 
+[_shell] execVM "Insurgency_Core\server\sys_basedefence\IDF_cram.sqf";
+
+if (isnil "idfreported") then { idfreported = 0};
+
 	if (idfreported == 0) then {
 		if ((_shooter) distance _base < 5000) then
 {
@@ -28,7 +32,6 @@ idfreported = 1;
 publicvariable "idfreported";
 
 
-//[_shell] execVM "Insurgency_Core\server\sys_basedefence\IDF_cram.sqf";
 
 
 [_shooter,_distance] execvm "Insurgency_Core\server\sys_basedefence\IDF_marker.sqf";

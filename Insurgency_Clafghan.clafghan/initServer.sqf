@@ -22,6 +22,9 @@ twc_surrenderVote = false;
 */
 TWC_Building_Style = "MidEast";
 twc_is90 = 0;
+
+crampresent = 1;
+
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
 sirenlist = [idfalarm,idfalarm_1];

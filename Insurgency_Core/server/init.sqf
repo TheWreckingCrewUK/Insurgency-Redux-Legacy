@@ -118,7 +118,7 @@ publicVariable "nonQuestionableList";
 // Array of the locations and the strongholds
 townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
 _strongholdArray = [];
-while{count _strongholdArray < 3}do{
+while{count _strongholdArray < 2}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
@@ -157,7 +157,7 @@ execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
 	if (_isJIP) then { { [_x, _message, _owner] call twc_fnc_sendCTabMessage; } forEach allPlayers; };
 }] call BIS_fnc_addStackedEventHandler;
-
+/*
 ["TWC_ArmourCrewConnected", {
 	params ["_caller"];
 

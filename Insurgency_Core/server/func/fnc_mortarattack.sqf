@@ -25,8 +25,8 @@ sleep 4 +(random 3);
 
 twc_mortar setvehicleammo 1;
 
-sleep 60 + (random 60);
+sleep 30 + (random 180);
 
-if ((random 1) > 0.8) exitwith {[_targetpos] call twc_fnc_mortarattack};
+if ((random 1) < twc_mortarchance) exitwith { [_targetpos] remoteExec ["twc_fnc_mortarattack", 2];};
 
 };

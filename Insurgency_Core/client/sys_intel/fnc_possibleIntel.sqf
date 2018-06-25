@@ -38,7 +38,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		
 		if ((count twc_activemissions) > 0) then {_rand = (floor (random 7));};
 
-		if (_rand <= 2)then{
+		if (_rand <= 1)then{
 				
 		if ((count twc_activestrongholds) == 0) then {_rand = 3} else {
 		
@@ -55,7 +55,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		};		
 		
 		//non-situation stuff like caches
-		if (_rand == 3)then{
+		if (_rand == 2)then{
 			_color = "ColorOrange";
 			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
 			_distance = [250,500,500,750,750,1000,1000,1500,2000] call BIS_fnc_selectRandom;
@@ -92,7 +92,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			};
 		};
 */
-		if (_rand == 4)then{
+		if (_rand == 3)then{
 			_color = "ColorYellow";
 			_object = InsP_iedGroup call BIS_fnc_selectRandom;
 			_distance = [100,200] call BIS_fnc_selectRandom;
@@ -104,7 +104,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerSize [0.5,0.5];
 		};
 		
-		if (_rand >= 5)then{
+		if (_rand >= 4)then{
 			_color = "ColorBlue";
 			_object = twc_activemissions call BIS_fnc_selectRandom;
 			_objectname = _object select 1;

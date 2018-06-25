@@ -8,7 +8,7 @@ class EditorData
 	toggles=33;
 	class ItemIDProvider
 	{
-		nextID=1568;
+		nextID=1571;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4027.9128,195.13887,18220.279};
-		dir[]={0.84794265,-0.38242045,-0.36742285};
-		up[]={0.35096112,0.92395204,-0.15207545};
-		aside[]={-0.39763018,-9.7684097e-007,-0.91766769};
+		pos[]={4285.4141,166.65514,18006.709};
+		dir[]={-0.16240582,-0.46928033,0.8681376};
+		up[]={-0.086303532,0.8830117,0.46133405};
+		aside[]={0.98305988,-1.6635749e-006,0.18391016};
 	};
 };
 binarizationWanted=0;
@@ -71,12 +71,12 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"ace_rearm",
 	"CUP_Editor_A1_Roads_Config",
-	"A3_Characters_F_Common",
-	"CUP_WaterVehicles_Weapons",
 	"twc_medical",
 	"twc_modern",
 	"twc_framework_public_modern_us",
-	"A3_Structures_F_Ind_Cargo"
+	"A3_Structures_F_Ind_Cargo",
+	"A3_Characters_F_Common",
+	"A3_Static_F_Jets_AAA_System_01"
 };
 class AddonsMetaData
 {
@@ -331,37 +331,38 @@ class AddonsMetaData
 		};
 		class Item40
 		{
+			className="twc_medical";
+			name="twc_medical";
+			author="Bosenator";
+		};
+		class Item41
+		{
+			className="twc_modern";
+			name="twc_modern";
+		};
+		class Item42
+		{
+			className="twc_framework_public_modern_us";
+			name="twc_framework_public_modern_us";
+		};
+		class Item43
+		{
+			className="A3_Structures_F_Ind";
+			name="Arma 3 - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item44
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item41
-		{
-			className="CUP_WaterVehicles_Weapons";
-			name="CUP_WaterVehicles_Weapons";
-			author="Community Upgrade Project and ATLAS Mod";
-		};
-		class Item42
-		{
-			className="twc_medical";
-			name="twc_medical";
-			author="Bosenator";
-		};
-		class Item43
-		{
-			className="twc_modern";
-			name="twc_modern";
-		};
-		class Item44
-		{
-			className="twc_framework_public_modern_us";
-			name="twc_framework_public_modern_us";
-		};
 		class Item45
 		{
-			className="A3_Structures_F_Ind";
-			name="Arma 3 - Industrial Structures";
+			className="A3_Static_F_Jets";
+			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -22536,79 +22537,6 @@ class Mission
 		};
 		class Item284
 		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4280.6172,145.57306,18030.354};
-						angles[]={0,3.1415927,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-						name="twc_cramG";
-					};
-					id=1414;
-					type="B_UAV_AI";
-					atlOffset=0.28684998;
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=1;
-				};
-				class Links
-				{
-					items=1;
-					class Item0
-					{
-						linkID=0;
-						item0=1414;
-						item1=1413;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=1412;
-			atlOffset=0.28684998;
-		};
-		class Item285
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4280.9932,148.30971,18030.305};
-				angles[]={0,3.1415927,0};
-			};
-			side="West";
-			flags=2;
-			class Attributes
-			{
-				ammo=0;
-				name="twc_cram";
-			};
-			id=1413;
-			type="CUP_WV_B_CRAM";
-			atlOffset=0.28684998;
-		};
-		class Item286
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -22646,7 +22574,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item287
+		class Item285
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -22679,7 +22607,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item288
+		class Item286
 		{
 			dataType="Object";
 			class PositionInfo
@@ -22695,7 +22623,7 @@ class Mission
 			id=1470;
 			type="Land_HelipadSquare_F";
 		};
-		class Item289
+		class Item287
 		{
 			dataType="Marker";
 			position[]={4206.314,138.968,18251.184};
@@ -22705,7 +22633,7 @@ class Mission
 			id=1471;
 			atlOffset=0.00038146973;
 		};
-		class Item290
+		class Item288
 		{
 			dataType="Group";
 			side="West";
@@ -23474,7 +23402,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item291
+		class Item289
 		{
 			dataType="Group";
 			side="West";
@@ -24330,7 +24258,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item292
+		class Item290
 		{
 			dataType="Group";
 			side="West";
@@ -25100,7 +25028,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item293
+		class Item291
 		{
 			dataType="Group";
 			side="West";
@@ -25643,7 +25571,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item294
+		class Item292
 		{
 			dataType="Group";
 			side="West";
@@ -25860,7 +25788,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item295
+		class Item293
 		{
 			dataType="Group";
 			side="West";
@@ -25995,7 +25923,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item296
+		class Item294
 		{
 			dataType="Group";
 			side="West";
@@ -26209,7 +26137,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item297
+		class Item295
 		{
 			dataType="Object";
 			class PositionInfo
@@ -26249,7 +26177,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item298
+		class Item296
 		{
 			dataType="Object";
 			class PositionInfo
@@ -26289,7 +26217,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item299
+		class Item297
 		{
 			dataType="Object";
 			class PositionInfo
@@ -26329,7 +26257,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item300
+		class Item298
 		{
 			dataType="Object";
 			class PositionInfo
@@ -26369,7 +26297,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item301
+		class Item299
 		{
 			dataType="Group";
 			side="West";
@@ -26582,7 +26510,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item302
+		class Item300
 		{
 			dataType="Trigger";
 			position[]={4264.5088,138.96762,18116.885};
@@ -26601,6 +26529,81 @@ class Mission
 			};
 			id=1551;
 			type="EmptyDetectorAreaR250";
+		};
+		class Item301
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4280.6802,145.97505,18029.947};
+						angles[]={0,3.1415927,0};
+					};
+					side="West";
+					flags=2;
+					class Attributes
+					{
+						name="cramG";
+					};
+					id=1570;
+					type="B_UAV_AI";
+					atlOffset=0.68057251;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=1570;
+						item1=1569;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=1568;
+			atlOffset=0.73072815;
+		};
+		class Item302
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4280.6802,148.47937,18029.896};
+				angles[]={0,3.1415927,0};
+			};
+			side="West";
+			flags=2;
+			class Attributes
+			{
+				name="cram";
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				aiRadarUsage=1;
+			};
+			id=1569;
+			type="B_AAA_System_01_F";
+			atlOffset=0.73072815;
 		};
 	};
 };

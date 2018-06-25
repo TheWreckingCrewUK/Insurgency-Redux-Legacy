@@ -158,6 +158,12 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Mode
 		
 };
 
+
+if((typeOf player) in ["Modern_British_logitech"])then{
+	_UKaction = ["Spawncontainer","Spawn Large Container","",{execvm "insurgency_core\client\sys_player\boxes\Container.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+};
+
 if((typeOf player) in ["Modern_Artillery_Commander"])then{
 
 	_artaction = ["SpawnsmallcharlieCreate","Spawn 105mm HE Rounds","",{execvm "insurgency_core\client\sys_player\boxes\105he.sqf"},_condition] call ace_interact_menu_fnc_createAction;
