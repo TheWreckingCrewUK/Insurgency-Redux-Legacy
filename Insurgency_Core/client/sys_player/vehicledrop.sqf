@@ -3,9 +3,11 @@ params ["_boxpos"];
 
 _car1 = "UK3CB_BAF_LandRover_Soft_Sand_A";
 
-	if (twc_wdveh == 0) then {
+	if (twc_wdveh == 1) then {
 _car1 = "UK3CB_BAF_LandRover_Soft_Green_A";};
 
+
+//car2 stays green because a later script turns it sandy coloured in a different way to differentiate it from base vehicles
 _car2 = "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A";
 
 if (["twc_ana", typeof player] call BIS_fnc_inString) then {

@@ -5,6 +5,7 @@
 #include "placedExplosives.sqf";
 #include "vehicleSlots.sqf";
 #include "heavybackpacks.sqf";
+#include "minimi.sqf";
 
 
 
@@ -16,3 +17,4 @@ if (isNil "twc_sniperteam") then {
 
 
 execvm "Insurgency_Core\client\sys_restrict\rolerestrictions.sqf";
+

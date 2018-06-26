@@ -11,7 +11,7 @@
  
  _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Specialist Vehicle</t>"; 
 
- _text1 =  "<br />Only one of these may exist at a time. Get the person that spawned the last one to return it in order to get a new one.";
+ _text1 =  "<br />Only one specialist section vehicle may exist at a time. Get the person that spawned the last one to return it in order to get a new one.";
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
  };
@@ -20,15 +20,10 @@ hint _spawntext;
  publicVariable "twc_specvehcount";
  
  
- _veh = "CUP_B_M1151_USA" createvehicle _spawnpos;  
+ _veh = "CUP_B_HMMWV_Crows_M2_USA" createvehicle _spawnpos;  
   
  
   
- _gun = "CUP_O_ZU23_TK_INS" createvehicle _spawnpos;  
-  
- 
-  
- _gun attachto [_veh, [-0.1,0,1.2]];
 
 
 clearWeaponCargoGlobal _veh;

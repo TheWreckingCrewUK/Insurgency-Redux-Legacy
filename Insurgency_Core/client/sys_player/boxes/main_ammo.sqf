@@ -2833,12 +2833,12 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
     _tmp_weapons =
     [
-        ["twc_browning_hp",1]
+        ["ukcw_hipower",1]
 	];
 
 	_tmp_magazines =
    [            
-		["CUP_15Rnd_9x19_M9",20]
+		["ukcw_13rd_9x19",20]
     ];
 
 	_tmp_items =
