@@ -13,7 +13,7 @@ _mortartruck setpos _pos;
  _box = "ACE_Box_82mm_Mo_HE" createvehicle _pos; _box attachto [_mortartruck, [0.45,-0.1,0]];
  
  
-	twc_mortar setVehicleLock "LOCKEDPLAYER";
+	twc_mortar setVehicleLock "LOCKED";
  
 	_mortartruck setVehicleLock "LOCKEDPLAYER";
  
@@ -58,6 +58,8 @@ _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	
 	};
 	
+	publicVariable "twc_mortar";
+	
 	// obj creation
 if (isServer) then {
 	_eventHandlerID = ["twc_event_remoteFireMortar", {
@@ -90,7 +92,8 @@ twc_mortar setvehicleammo 1;
 
 sleep 30 + (random 180);
 
-if ((random 1) < twc_mortarchance) exitwith { [_targetpos] remoteExec ["twc_fnc_mortarattack", 2];};
+if ((random 1) < twc_mortarchance) exitwith {
+["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;};
 
 };
 

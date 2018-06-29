@@ -51,6 +51,9 @@ for "_i" from 1 to _total do{
 	
 	
 };
+_group setBehaviour "SAFE";
+_group setSpeedMode "LIMITED";
+
 
 	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;

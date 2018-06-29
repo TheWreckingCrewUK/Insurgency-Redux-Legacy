@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=2020;
+		nextID=2021;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15589.525,11.351029,17268.096};
-		dir[]={0.96455216,-0.18996522,0.18376741};
-		up[]={0.18670914,0.98177481,0.035572592};
-		aside[]={0.18717536,1.0755612e-006,-0.98243028};
+		pos[]={15689.104,10.074084,17161.832};
+		dir[]={0.97538733,-0.21738416,-0.039828811};
+		up[]={0.2173025,0.97606665,-0.0088727856};
+		aside[]={-0.040801786,1.1801167e-006,-0.99927121};
 	};
 };
 binarizationWanted=0;
@@ -12838,7 +12838,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=101;
+		items=102;
 		class Item0
 		{
 			dataType="Marker";
@@ -20259,6 +20259,24 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item101
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15696.242,7.5003562,17161.156};
+				angles[]={0,1.5643448,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\locstat.jpg""]; this allowDamage False;}";
+			};
+			id=2020;
+			type="SignAd_Sponsor_F";
+			atlOffset=-0.056988239;
 		};
 	};
 };

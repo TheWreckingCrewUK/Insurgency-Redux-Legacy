@@ -137,6 +137,22 @@ _list=[
 			["Modern_British_VehicleCommander","Modern_British_VehicleCrew"]
 		]],5
 	],	
+			["CUP_B_M1126_ICV_M2_Woodland_Slat",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["2000_British_Vehicle_Commander","2000_British_Vehicle_Crew"]
+		]],5
+	],	
+			["CUP_B_M1126_ICV_M2_Desert_Slat",[ 
+		["driver", 
+			["2000_British_Vehicle_Crew"]
+		],
+		["commander", 
+			["2000_British_Vehicle_Commander","2000_British_Vehicle_Crew"]
+		]],5
+	],	
 	
 		["ukcw_fv432",[ 
 		["driver", 

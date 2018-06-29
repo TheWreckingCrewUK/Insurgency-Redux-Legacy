@@ -1,11 +1,11 @@
 
 params ["_shell", "_override"];
 
-cram disableai "autotarget";
-
 if (isnil "crampresent") exitwith {
 //systemchat "no cram"
 };
+
+cram disableai "autotarget";
 
 if (isnil "cramactive") then {cramactive = 0};
 

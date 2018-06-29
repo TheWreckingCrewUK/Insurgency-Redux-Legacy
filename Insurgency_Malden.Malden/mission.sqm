@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=841;
+		nextID=842;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8010.0996,72.823402,10084.387};
-		dir[]={0.63381237,-0.65596914,-0.40987423};
-		up[]={0.5508312,0.75478339,-0.35621199};
-		aside[]={-0.54303098,-1.3667159e-007,-0.8397193};
+		pos[]={8114.645,32.038708,10105.521};
+		dir[]={0.86773628,-0.48659828,0.10139119};
+		up[]={0.48332489,0.87361711,0.056474872};
+		aside[]={0.1160578,-1.7310958e-007,-0.99325538};
 	};
 };
 binarizationWanted=0;
@@ -12800,7 +12800,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=88;
+		items=89;
 		class Item0
 		{
 			dataType="Marker";
@@ -13135,7 +13135,7 @@ class Mission
 			position[]={8108.2114,0,10076.679};
 			name="crateDropOff";
 			type="Empty";
-			angle=6.830177e-006;
+			angle=6.8301765e-006;
 			id=219;
 			atlOffset=-29.450424;
 		};
@@ -13429,7 +13429,7 @@ class Mission
 			position[]={8108.2915,0,10076.174};
 			name="forwardBase_itemSpawn";
 			type="Empty";
-			angle=6.830177e-006;
+			angle=6.8301765e-006;
 			id=351;
 			atlOffset=-29.44891;
 		};
@@ -15559,7 +15559,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8119.2852,30.233772,10106.24};
+				position[]={8119.2993,30.234398,10106.44};
 				angles[]={6.2791886,0.0062282775,6.2711854};
 			};
 			side="Empty";
@@ -15570,7 +15570,7 @@ class Mission
 			};
 			id=743;
 			type="TWC_Item_Public_Base_LOCSTAT";
-			atlOffset=0.002450943;
+			atlOffset=0.0024490356;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15600,7 +15600,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8119.2681,29.823614,10106.173};
+				position[]={8119.2822,29.824242,10106.373};
 				angles[]={6.2791886,0.0062239859,6.2711854};
 			};
 			side="Empty";
@@ -18549,6 +18549,23 @@ class Mission
 			id=840;
 			type="EmptyDetectorAreaR250";
 			atlOffset=-0.0027980804;
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8119.2852,30.46303,10105.849};
+				angles[]={0,3.1415927,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\locstat.jpg""]; this allowDamage False;}";
+			};
+			id=841;
+			type="SignAd_Sponsor_F";
 		};
 	};
 };

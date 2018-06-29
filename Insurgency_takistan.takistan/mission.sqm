@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=554;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1985;
+		nextID=1986;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8289.918,388.58112,1993.8107};
-		dir[]={0.011374703,-0.68928719,0.72447705};
-		up[]={0.01082096,0.72443599,0.68925828};
-		aside[]={0.99993426,4.0109444e-007,-0.015696641};
+		pos[]={8094.5894,307.34558,2053.908};
+		dir[]={-0.15954228,-0.22451726,-0.96145308};
+		up[]={-0.036748588,0.97450662,-0.22145985};
+		aside[]={-0.98666066,-4.339352e-006,0.16371217};
 	};
 };
 binarizationWanted=0;
@@ -12891,7 +12891,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=250;
+		items=251;
 		class Item0
 		{
 			dataType="Marker";
@@ -19586,7 +19586,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8228.8193,296.8479,2084.9641};
+				position[]={8228.626,296.8479,2084.8508};
 				angles[]={0,4.191792,0};
 			};
 			side="Empty";
@@ -19627,7 +19627,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8228.8838,296.44012,2084.9751};
+				position[]={8228.6904,296.44012,2084.8618};
 				angles[]={0,4.1917877,0};
 			};
 			side="Empty";
@@ -25253,6 +25253,23 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item250
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8229.0986,297.08105,2085.1018};
+				angles[]={0,1.0373119,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="call{this setObjectTexture [0, ""twc_ui\insurgency\locstat.jpg""]; this allowDamage False;}";
+			};
+			id=1985;
+			type="SignAd_Sponsor_F";
 		};
 	};
 };

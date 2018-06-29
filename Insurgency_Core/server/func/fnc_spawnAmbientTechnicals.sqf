@@ -75,6 +75,8 @@ while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos 
 	
 	_direction = 180;	
 	_nearRoads = _spawnpos nearRoads 10;
+	
+	_truck addEventHandler ["Killed", {[50] call twc_fnc_deadasset}];
 
 if(count _nearRoads > 0) then
 {
@@ -177,12 +179,7 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 	_truck setdir _direction;
 
-/*	_truck addEventHandler ["Killed",{
-			if (side (_this select 1) == WEST) then{
-		["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
-			};
-		}];
-*/
+	_truck addEventHandler ["Killed", {[50] call twc_fnc_deadasset}];
 
 	_unit moveIngunner _gun;
 	

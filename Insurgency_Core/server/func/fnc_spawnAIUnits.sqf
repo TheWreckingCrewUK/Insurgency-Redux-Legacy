@@ -65,6 +65,11 @@ for "_i" from 1 to _total do {
 	sleep 0.2;
 	
 };
+
+
+_group setBehaviour "SAFE";
+_group setSpeedMode "LIMITED";
+
 	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	sleep 5;
 	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;

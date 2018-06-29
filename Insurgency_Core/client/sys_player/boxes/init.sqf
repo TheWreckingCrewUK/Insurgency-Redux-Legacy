@@ -331,6 +331,9 @@ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_Tea
 if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{
 execVM "insurgency_core\client\zeus\camera.sqf";
 
+	_vehaction1 = ["base_Interact","Base","",{},{true}] call ace_interact_menu_fnc_createAction;
+	[player, 1, ["ACE_SelfActions"], _vehaction1] call ace_interact_menu_fnc_addActionToObject;
+
 	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action2] call ace_interact_menu_fnc_addActionToObject;
 	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf"},_condition] call ace_interact_menu_fnc_createAction;
