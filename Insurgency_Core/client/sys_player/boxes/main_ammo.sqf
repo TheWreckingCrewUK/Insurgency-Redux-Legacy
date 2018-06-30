@@ -2543,7 +2543,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     [
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
-		["CUP_15Rnd_9x19_M9",10],
+		["ukcw_13rd_9x19",10],
 		["HandGrenade",5]
     ];
 
