@@ -123,6 +123,9 @@ publicVariable "twc_activemissions";
 
 waitUntil {(!alive _veh)};
 sleep 30;
+
+if (!(_id in twc_activemissions)) exitwith {};
+
 //End of Tasks tuff
 ["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
 _taskID = str (random 1000);

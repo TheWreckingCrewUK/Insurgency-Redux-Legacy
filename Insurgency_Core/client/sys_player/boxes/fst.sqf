@@ -50,6 +50,10 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	
 	_fstaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","Spawn Sniper Ammo","",{execvm "insurgency_core\client\sys_player\boxes\smallCratesniper.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 
 	_fstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction4,true] call ace_interact_menu_fnc_addActionToClass;

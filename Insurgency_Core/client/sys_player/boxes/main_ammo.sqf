@@ -16,7 +16,7 @@
 
 _weapons = [["twc_L5A4_white",1],["twc_L5A4_red",1],["twc_L5A4_green",1]];
 _magazines = [["SmokeShell",5], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",5], ["Chemlight_yellow",5], ["Chemlight_red",5], ["Chemlight_blue",5],["ACE_Chemlight_IR",5]];
-_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",10],["ACE_morphine",10],["ACE_elasticBandage",10],["ACE_quikclot",10],["ACE_packingBandage",10], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25],["twc_l5a4_r",25],["twc_l5a4_g",25]];
+_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 2],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25],["twc_l5a4_r",25],["twc_l5a4_g",25]];
 
 _backpacks = [];
 _tmp_weapons = [];
@@ -285,7 +285,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
  if (typeOf vehicle player == "Modern_British_Medic") then {
     _tmp_weapons =
     [
-		["UK3CB_BAF_L85A2_RIS",1],
+		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["rhsusf_weap_glock17g4",1]
 	];
 
@@ -324,6 +324,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L115A3_DE",1],
+		["rhs_weap_M107",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1]
     ];
@@ -332,6 +333,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     [	
 		["UK3CB_BAF_338_5Rnd",50],
 		["UK3CB_BAF_338_5Rnd_Tracer",50],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",50],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",50],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["rhsusf_mag_15Rnd_9x19_JHP",15]
 	];
@@ -340,6 +343,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	[
 		
 		["RKSL_optic_PMII_525",1],
+		["UK3CB_BAF_Silencer_L115A3",1],
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
 		["STKR_Predator",1],
@@ -363,7 +367,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
  if (typeOf vehicle player == "Modern_British_Spotter_coin") then {
     _tmp_weapons =
     [
-		["UK3CB_BAF_L85A2_RIS",1],
+		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1]
     ];
@@ -376,6 +380,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["UK3CB_BAF_556_30Rnd_T",50],
 		["UK3CB_BAF_762_L42A1_20Rnd", 50],
 		["UK3CB_BAF_762_L42A1_20Rnd_t", 50],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",50],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",50],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["HandGrenade",5]
 	];
@@ -386,6 +392,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_morphine",10],
 		["RKSL_optic_LDS",1],
 		["UK3CB_BAF_LLM_IR",1],
+		["UK3CB_BAF_Silencer_L115A3",1],
 		["UK3CB_BAF_Eotech",1],
 		["STKR_Predator",1],
 		["rhsusf_ANPVS_14",1],
@@ -414,7 +421,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 if (g_class == "BAF_EOD_SL") then {
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L85A2_RIS",1],
+        ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
         ["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
 		["ACE_VMM3",1]
@@ -454,7 +461,7 @@ if (g_class == "BAF_EOD_SL") then {
 if (g_class == "BAF_EOD_TECH") then {
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L85A2_RIS",1],
+        ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
         ["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
 		["ACE_VMM3",1]
@@ -491,7 +498,7 @@ if (g_class == "BAF_EOD_TECH") then {
  if (g_class == "BAF_EOD_ESC") then {
     _tmp_weapons =
     [
-		["UK3CB_BAF_L85A2_RIS",1],
+		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["UK3CB_BAF_L128A1",1],
 		["rhsusf_weap_glock17g4",1],
 		["ACE_VMH3",1],
@@ -1810,6 +1817,14 @@ if (typeOf vehicle player == "twc_ana_marksman") then {
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
+	
+		if (!(isnil "twc_missionname")) then {
+		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		_tmp_weapons pushback ["rhs_weap_m24sws_blk_ana",1];
+		_tmp_magazines pushback ["rhsusf_5Rnd_762x51_m993_Mag",50];
+		};
+		};
+	
 				_tmp_backpacks = 
 	[
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]

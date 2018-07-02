@@ -56,9 +56,9 @@ for "_i" from 1 to _total do {
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 	
 	
-while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos nearobjects ['rhs_KORD_high_VMF', 1500]) > 0)} do {
+while {((_spawnpos distance (getmarkerpos "base")) < 2000) && (count (_spawnpos nearobjects ['rhs_KORD_high_VMF', 1500]) > 0)} do {
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom)};
-
+if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
@@ -116,7 +116,7 @@ _group = createGroup East;
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	
 	};
-
+};
 /////////////////////////////////////////////////////////////////////////////////////////
 
 	for "_i" from 1 to (_total / 2) do {
@@ -144,9 +144,9 @@ _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 _spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 
-while {(_spawnpos distance (getmarkerpos "base")) < 1000 && (count (_spawnpos nearobjects ['CUP_B_SPG9_CDF', 1500]) > 0)} do {
+while {(_spawnpos distance (getmarkerpos "base")) < 2000 && (count (_spawnpos nearobjects ['CUP_B_SPG9_CDF', 1500]) > 0)} do {
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom)};
-	
+	if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
@@ -200,7 +200,7 @@ _group = createGroup East;
 	
 
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
-	
+	};
 	};
 	
 	};

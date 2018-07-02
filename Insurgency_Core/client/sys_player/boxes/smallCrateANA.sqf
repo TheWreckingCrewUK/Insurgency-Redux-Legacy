@@ -41,6 +41,7 @@ _box AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",4];
 _box AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",6];
 
 _box AddMagazineCargoGlobal ["rhs_10Rnd_762x54mmR_7N1",6];
+_box AddMagazineCargoGlobal ["rhsusf_5Rnd_762x51_m993_Mag",10];
 
 
 _box addItemCargoGlobal ["ACE_fieldDressing",20];

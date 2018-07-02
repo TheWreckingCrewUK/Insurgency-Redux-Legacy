@@ -27,7 +27,9 @@ _attachmentcount = count _groups;
 
 if (((_attachmentcount * twc_attachmentgap)+ 2) < ( count(allPlayers - entities "HeadlessClient_F")))
 
-exitwith {systemchat format ["you good %1", ((_attachmentcount * twc_attachmentgap)+ 2)]};
+exitwith {
+//systemchat format ["you good %1", ((_attachmentcount * twc_attachmentgap)+ 2)]
+};
 
 //now use the standard spawn restriction system to let the player know what's up
 
