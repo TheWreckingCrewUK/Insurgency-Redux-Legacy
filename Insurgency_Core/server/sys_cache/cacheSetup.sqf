@@ -45,12 +45,20 @@ if (isNil "InsP_cacheGroup") then {
 		clearBackpackCargoGlobal _x;
 		
 		_randsize = 250 + (random 500);
-_randtime = 2;
-_trg2 = createTrigger ["EmptyDetector", getpos _x];
-_trg2 setTriggerArea [_randsize, _randsize, 30, false];
-_trg2 setTriggerActivation ["west", "PRESENT", True];
-_trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["vehicle twc_terp in thislist","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
+		_randtime = 2;
+		_trg2 = createTrigger ["EmptyDetector", getpos _x];
+		_trg2 setTriggerArea [_randsize, _randsize, 30, false];
+		_trg2 setTriggerActivation ["west", "PRESENT", True];
+		_trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
+		_trg2 setTriggerStatements ["vehicle twc_terp in thislist","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
+				
+		
+		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 10];
+		_x AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",random 10];
+		_x AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",random 10];
+		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 5];
+		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 5];
+
 		
 		
 		_num = 0;

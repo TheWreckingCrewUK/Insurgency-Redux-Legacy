@@ -62,6 +62,19 @@ publicVariable "twc_coyotecount";
 } foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
 };
 
+if (["logi", typeof player] call BIS_fnc_inString) then {
+
+_returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+
+twc_quadbikecount=twc_quadbikecount - 1;
+publicVariable "twc_quadbikecount";
+
+},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
+["B_Quadbike_01_F",0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
+
+
+};
+
 
 if (["pilot", typeof player] call BIS_fnc_inString) then {
 

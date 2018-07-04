@@ -11,7 +11,7 @@ _fsthi = {(( count(allPlayers - entities "HeadlessClient_F")) >= 6)};
 
 
 
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermaster","Modern_British_FSTForwardObserver","Modern_British_FSTCommander"])then{
+if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermaster","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech"])then{
 
 
 
@@ -84,8 +84,27 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 
 	_fstaction7 = ["SpawnsmallUKCreate","Spawn Coyote HMG","",{["UK3CB_BAF_Coyote_Logistics_L111A1_D"] execvm "insurgency_core\client\sys_player\vehicles\coyote.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawndesert"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
 
 	
 	};
+
+	
+	
+if((typeOf player) in ["Modern_British_logitech"])then{
+	_UKaction = ["Spawncontainer","Spawn Large Container","",{execvm "insurgency_core\client\sys_player\boxes\Container.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	
+	_fstaction7 = ["SpawnsmallUKCreate","Spawn Quad Bike","",{["B_Quadbike_01_F"] execvm "insurgency_core\client\sys_player\vehicles\quadbike.sqf"},_fsthi] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawndesert"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_fstaction7 = ["SpawnsmallUKCreate","Spawn Quad Bike","",{["B_Quadbike_01_F"] execvm "insurgency_core\client\sys_player\vehicles\quadbike.sqf"},_fsthi] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_fstaction7,true] call ace_interact_menu_fnc_addActionToClass;
+	
+};
+
+
+
