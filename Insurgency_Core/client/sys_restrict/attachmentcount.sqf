@@ -6,6 +6,11 @@ this will count the current number of groups, disregarding any groups that have 
 
 if (( count(allPlayers - entities "HeadlessClient_F")) > 23) exitwith {};
 
+
+if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
+waituntil {(( count(allPlayers - entities "HeadlessClient_F")) >= 5)};
+};
+
 _groups = [];
 
 {if (_x == leader _x) then {

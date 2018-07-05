@@ -48,6 +48,8 @@ cutText ["","Black IN",5];
 player forceWalk false;
 };
 */
+if (( count(allPlayers - entities "HeadlessClient_F")) > 2) then {
+execvm "Insurgency_Core\client\sys_restrict\fullFST.sqf"};
 
 execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";
 
@@ -102,7 +104,7 @@ player forceWalk false;
 
 
 
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech", "Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
+if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech"])then{
 
 /*
 if (( count(allPlayers - entities "HeadlessClient_F")) < 8) then {
