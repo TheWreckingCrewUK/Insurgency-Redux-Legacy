@@ -14,7 +14,7 @@ if (twc_coyotecount >= 2) exitwith {
 	
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Too Many Coyotes</t>"; 
 
- _text1 = format ["<br />There Are Already 2 Coyotes In The AO. You Can Return Them To Base To Have Access to Another",(ceil(((((twc_utilplanetime)-time) max (twc_planetime-time)) / 60) / 6)) /10];
+ _text1 = format ["<br />There Are Already 2 Coyotes In The AO. You Can Return Them To Base To Have Access to Another",1];
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 	

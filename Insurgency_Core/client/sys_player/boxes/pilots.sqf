@@ -38,54 +38,6 @@ _transportcond2 = {true};
 _cascond = {true};
 */
 
-twc_planetime=0;
-publicVariable "twc_planetime";
-
-twc_planetime_amount=600;
-publicVariable "twc_planetime_amount";
-
-twc_utilplanetime=0;
-publicVariable "twc_utilplanetime";
-
-twc_utilplanetime_amount=60;
-publicVariable "twc_utilplanetime_amount";
-
-twc_casplanetime=0;
-publicVariable "twc_casplanetime";
-
-twc_casplanetime_amount=240;
-publicVariable "twc_casplanetime_amount";
-
-twc_helitime=0;
-publicVariable "twc_helitime";
-
-twc_helitime_amount=3600;
-publicVariable "twc_helitime_amount";
-
-twc_Transporthelitime=0;
-publicVariable "twc_Transporthelitime";
-
-twc_Transporthelitime_amount=60;
-publicVariable "twc_Transporthelitime_amount";
-
-twc_utilhelitime=0;
-publicVariable "twc_utilhelitime";
-
-twc_utilhelitime_amount=60;
-publicVariable "twc_utilhelitime_amount";
-
-twc_attackhelitime=0;
-publicVariable "twc_attackhelitime";
-
-twc_attackhelitime_amount=48;
-publicVariable "twc_attackhelitime_amount";
-
-twc_cashelitime=0;
-publicVariable "twc_cashelitime";
-
-twc_cashelitime_amount=120;
-publicVariable "twc_cashelitime_amount";
-
 
 if((typeOf player) in ["Modern_British_JetPilot"])then{
 
@@ -154,14 +106,14 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Hercules","",{
 	
-	["TWC_Vehicle_Generic_Hercules_RAF"] execvm "insurgency_core\client\sys_player\vehicles\utilityplane.sqf"
+	["TWC_Vehicle_Generic_Hercules_RAF"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
 	},_planecondlow] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Hercules VIV","",{
 	
-	["CUP_B_C130J_Cargo_GB"] execvm "insurgency_core\client\sys_player\vehicles\utilityplane.sqf"
+	["CUP_B_C130J_Cargo_GB"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
 	},_planecondlow] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -169,14 +121,14 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Harrier","",{
 	
-	["CUP_B_GR9_DYN_GB"] execvm "insurgency_core\client\sys_player\vehicles\casplane.sqf"
+	["CUP_B_GR9_DYN_GB"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
 	},_planecondmid] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn A-10","",{
 	
-	["CUP_B_A10_DYN_USA"] execvm "insurgency_core\client\sys_player\vehicles\casplane.sqf"
+	["CUP_B_A10_DYN_USA"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
 	},_planecondhi] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -281,14 +233,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
 	
-	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\utilityheli.sqf"
+	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Merlin","",{
 	
-	["UK3CB_BAF_Merlin_HC3_18_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\utilityheli.sqf"
+	["UK3CB_BAF_Merlin_HC3_18_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -296,7 +248,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Huey","",{
 	
-	["CUP_O_UH1H_TKA"] execvm "insurgency_core\client\sys_player\vehicles\utilityheli.sqf"
+	["CUP_O_UH1H_TKA"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -305,14 +257,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Apache","",{
 	
-	["RHS_AH64D"] execvm "insurgency_core\client\sys_player\vehicles\attackheli.sqf"
+	["RHS_AH64D"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_attackcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Cobra","",{
 	
-	["RHS_AH1Z"] execvm "insurgency_core\client\sys_player\vehicles\attackheli.sqf"
+	["RHS_AH1Z"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_attackcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -322,14 +274,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
 	
-	["CUP_B_CH47F_GB"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
+	["CUP_B_CH47F_GB"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Mi-8","",{
 	
-	["CUP_O_Mi8_CHDKZ"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
+	["CUP_O_Mi8_CHDKZ"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -338,7 +290,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Blackhawk","",{
 	
-	["RHS_UH60M"] execvm "insurgency_core\client\sys_player\vehicles\transheli.sqf"
+	["RHS_UH60M"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_transportcond2] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -346,14 +298,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Wildcat","",{
 	
-	["UK3CB_BAF_Wildcat_AH1_CAS_8B"] execvm "insurgency_core\client\sys_player\vehicles\casheli.sqf"
+	["UK3CB_BAF_Wildcat_AH1_CAS_8B"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Venom","",{
 	
-	["RHS_UH1Y_d"] execvm "insurgency_core\client\sys_player\vehicles\casheli.sqf"
+	["RHS_UH1Y_d"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -361,7 +313,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Hind","",{
 	
-	["rhsgref_cdf_b_Mi24D_Early"] execvm "insurgency_core\client\sys_player\vehicles\casheli.sqf"
+	["rhsgref_cdf_b_Mi24D_Early"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;

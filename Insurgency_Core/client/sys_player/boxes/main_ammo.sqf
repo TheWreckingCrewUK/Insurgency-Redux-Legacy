@@ -324,17 +324,17 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L115A3_DE",1],
-		["rhs_weap_M107",1],
+		["twc_rhs_weap_M107",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1]
     ];
 
     _tmp_magazines =
     [	
-		["UK3CB_BAF_338_5Rnd",50],
-		["UK3CB_BAF_338_5Rnd_Tracer",50],
-		["rhsusf_mag_10Rnd_STD_50BMG_M33",50],
-		["rhsusf_mag_10Rnd_STD_50BMG_mk211",50],
+		["ACE_10Rnd_338_300gr_HPBT_Mag",50],
+		["ACE_10Rnd_338_API526_Mag",50],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",10],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",10],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["rhsusf_mag_15Rnd_9x19_JHP",15]
 	];
@@ -374,8 +374,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 
     _tmp_magazines =
     [	
-		["UK3CB_BAF_338_5Rnd",50],
-		["UK3CB_BAF_338_5Rnd_Tracer",50],
+		["ACE_10Rnd_338_300gr_HPBT_Mag",50],
+		["ACE_10Rnd_338_API526_Mag",50],
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",50],
 		["UK3CB_BAF_762_L42A1_20Rnd", 50],
