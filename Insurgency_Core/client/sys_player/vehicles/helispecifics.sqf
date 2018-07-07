@@ -24,3 +24,19 @@ if (typeof _veh == "ukcw_Gazelle") then {
 	[_veh, 3] call ace_cargo_fnc_setSpace;
 };
 
+if (typeof _veh == "twc_mert_ch47") then {
+_veh addItemCargoGlobal ["ACE_fieldDressing",40];
+_veh addItemCargoGlobal ["ACE_elasticBandage",40];
+_veh addItemCargoGlobal ["ACE_quikclot",40];
+_veh addItemCargoGlobal ["ACE_packingBandage",40];
+_veh addItemCargoGlobal ["ACE_personalAidKit",1];
+_veh addItemCargoGlobal ["ACE_salineIV_500",50];
+_veh addItemCargoGlobal ["ACE_salineIV_250",50];
+_veh addItemCargoGlobal ["ACE_salineIV",30];
+_veh addItemCargoGlobal ["ACE_bodybag",30];
+_veh addItemCargoGlobal ["ACE_tourniquet",15];
+_veh addItemCargoGlobal ["ACE_atropine",15];
+_veh addItemCargoGlobal ["ACE_epinephrine",25];
+_veh addItemCargoGlobal ["ACE_morphine",25];
+};
+

@@ -23,7 +23,7 @@ publicVariable "twc_missionname";
 
 
 if(isNil "twc_attachmentgap") then{
-	twc_attachmentgap = 7;
+	twc_attachmentgap = 8;
 	publicVariable "twc_attachmentgap";
 };
 

@@ -313,6 +313,15 @@ _list=[
 			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot"]
 		]],3
 	],
+
+		["twc_mert_ch47",[ 
+		["driver", 
+			["Modern_British_MERT_HeliPilot"]
+		],
+		[[3], 
+			["Modern_British_MERT_HeliPilot"]
+		]],3
+	],
 	
 		["CUP_B_MV22_USMC_RAMPGUN",[ 
 		["driver", 

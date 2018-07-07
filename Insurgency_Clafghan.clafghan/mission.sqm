@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=2023;
+		nextID=2028;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15677.924,20.327312,17162.043};
-		dir[]={0.67790198,-0.72717685,-0.10911319};
-		up[]={0.71794426,0.68644798,-0.1155581};
-		aside[]={-0.15892614,-8.1292819e-007,-0.98740745};
+		pos[]={15590.914,20.327312,17145.799};
+		dir[]={0.85613036,-0.42295745,-0.29731205};
+		up[]={0.3996205,0.90612,-0.13877793};
+		aside[]={-0.32809037,6.8033114e-007,-0.94476897};
 	};
 };
 binarizationWanted=0;
@@ -12808,7 +12808,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=92;
+		items=93;
 		class Item0
 		{
 			dataType="Marker";
@@ -20279,6 +20279,264 @@ class Mission
 					};
 				};
 				nAttributes=3;
+			};
+		};
+		class Item92
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15631.287,6.5907698,17104.145};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						description="Helicopter Pilot @MERT Team";
+						isPlayable=1;
+					};
+					id=2024;
+					type="Modern_British_MERT_HeliPilot";
+					atlOffset=0.044660568;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15629.451,6.5907698,17102.797};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="MERT Medic";
+						isPlayable=1;
+					};
+					id=2025;
+					type="Modern_British_Medic_Mert";
+					atlOffset=-0.0047178268;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15630.98,6.559886,17102.256};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="MERT Medic";
+						isPlayable=1;
+					};
+					id=2026;
+					type="Modern_British_Medic_Mert";
+					atlOffset=-0.012785912;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15632.85,6.5598707,17102.033};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="MERT Medic";
+						isPlayable=1;
+					};
+					id=2027;
+					type="Modern_British_Medic_Mert";
+					atlOffset=0.02451086;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2023;
+			atlOffset=0.044660568;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="MERT";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

@@ -39,6 +39,17 @@ _cascond = {true};
 */
 
 
+if((typeOf player) in ["Modern_British_MERT_HeliPilot"])then{
+
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn MEDEVAC Chinook","",{
+	
+	["twc_mert_ch47"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
+	
+	},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	};
+	
+	
 if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 	_ammoaction = ["ammospawn","Spawn Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;

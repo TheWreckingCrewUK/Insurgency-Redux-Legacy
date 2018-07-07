@@ -282,6 +282,39 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 	[ 
 	];
 };
+ if (typeOf vehicle player == "Modern_British_Medic_Mert") then {
+    _tmp_weapons =
+    [
+		["rhsusf_weap_glock17g4",1]
+	];
+
+    _tmp_magazines =
+	[
+        ["rhsusf_mag_17Rnd_9x19_JHP",15]
+    ];
+
+	_tmp_items =
+	[
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1],
+		["ACRE_PRC343", 1]
+	];
+
+	_tmp_backpacks = 
+	[ 
+	];
+};
+
  if (typeOf vehicle player == "Modern_British_Medic") then {
     _tmp_weapons =
     [
@@ -2124,9 +2157,33 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 	[
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
+		["ACRE_PRC148",1],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",1],
 		["ACE_M26_Clacker",1],
+		["ACRE_PRC343",1],
+		["rhsusf_ANPVS_14",1],
+		["itemCTAB",1],
+		["ACE_microDAGR",1]
+	];
+};
+
+ if (typeOf vehicle player == "Modern_British_MERT_HeliPilot") then {
+    _tmp_weapons =
+    [
+		["rhsusf_weap_glock17g4",1]
+    ];
+
+	_tmp_magazines =
+    [
+        ["rhsusf_mag_17Rnd_9x19_JHP",15],
+		["HandGrenade",5]
+    ];
+	_tmp_items =
+	[
+		["ACE_DAGR",1],
+        ["ACE_MapTools",1],
+		["ACRE_PRC148",1],
 		["ACRE_PRC343",1],
 		["rhsusf_ANPVS_14",1],
 		["itemCTAB",1],
