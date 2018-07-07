@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1735;
+		nextID=1739;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3308.6963,19.83087,1406.4816};
-		dir[]={0.31281003,-0.35875103,-0.87959528};
-		up[]={0.12020151,0.93344939,-0.33799204};
-		aside[]={-0.94230306,4.7311187e-007,-0.33511233};
+		pos[]={3284.3491,22.007603,1429.2194};
+		dir[]={0.72685736,-0.48035982,-0.49109885};
+		up[]={0.39799774,0.87709433,-0.26890501};
+		aside[]={-0.55990422,9.0175308e-007,-0.82869637};
 	};
 };
 binarizationWanted=0;
@@ -12729,7 +12729,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=81;
+		items=82;
 		class Item0
 		{
 			dataType="Marker";
@@ -14310,6 +14310,7 @@ class Mission
 			};
 			id=1478;
 			type="Land_House_K_5_dam_EP1";
+			atlOffset=9.5367432e-007;
 		};
 		class Item35
 		{
@@ -17224,7 +17225,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=5;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
@@ -17309,85 +17310,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3302.021,11.260638,1403.891};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="FST Forward Observer";
-						isPlayable=1;
-					};
-					id=1721;
-					type="1990_British_FSTForwardObserver_Desert";
-					atlOffset=0.0010004044;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male08ENG";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={3300.4741,11.259356,1402.873};
 					};
 					side="West";
@@ -17462,23 +17384,23 @@ class Mission
 						nAttributes=3;
 					};
 				};
-				class Item3
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3305.2971,11.288656,1404.509};
+						position[]={3301.8706,11.263405,1402.9172};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
-						description="Spotter";
+						description="FST Assistant";
 						isPlayable=1;
 					};
-					id=1723;
-					type="1990_British_Spotter_desert";
-					atlOffset=0.010000229;
+					id=1736;
+					type="1990_British_FSTAssistant_Desert";
+					atlOffset=0.012000084;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -17515,7 +17437,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male02ENG";
+									value="Male08ENG";
 								};
 							};
 						};
@@ -17534,86 +17456,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3306.8779,11.31269,1403.8511};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Sniper";
-						isPlayable=1;
-					};
-					id=1724;
-					type="1990_British_Sniper_desert";
-					atlOffset=0.0059995651;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male11ENG";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.01;
+									value=0.99000001;
 								};
 							};
 						};
@@ -18621,6 +18464,220 @@ class Mission
 					};
 				};
 				nAttributes=3;
+			};
+		};
+		class Item81
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3305.2971,11.288656,1404.509};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						description="Spotter @Sniper Team";
+						isPlayable=1;
+					};
+					id=1723;
+					type="1990_British_Spotter_desert";
+					atlOffset=0.010000229;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3306.8779,11.31269,1403.8511};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="Sniper";
+						isPlayable=1;
+					};
+					id=1724;
+					type="1990_British_Sniper_desert";
+					atlOffset=0.0059995651;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1737;
+			atlOffset=0.010000229;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Sniper";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

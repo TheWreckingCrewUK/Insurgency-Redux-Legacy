@@ -1,5 +1,5 @@
 sleep 5;
-//if(!isMultiplayer)exitWith{};
+if(!isMultiplayer)exitWith{};
 
 
 
@@ -28,11 +28,6 @@ player forceWalk false;
 
 
 if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
-
-
-	if (( count(allPlayers - entities "HeadlessClient_F")) > 2) then {
-		execvm "Insurgency_Core\client\sys_restrict\fullFST.sqf"
-	};
 
 execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";
 
@@ -74,7 +69,7 @@ player forceWalk false;
 
 
 
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander", "Modern_British_logitech"])then{
+if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTCommander", "Modern_British_logitech"])then{
 
 
 
@@ -86,6 +81,16 @@ execvm "Insurgency_Core\client\sys_restrict\fullFST.sqf";
 
 
 if((typeOf player) in ["Modern_British_VehicleCrew", "Modern_British_VehicleCommander"])then{
+
+
+execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";
+
+};
+
+
+
+
+if((typeOf player) in ["Modern_British_JetPilot", "Modern_British_FSTForwardObserver"])then{
 
 
 execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";

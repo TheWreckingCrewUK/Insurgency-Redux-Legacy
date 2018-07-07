@@ -2,7 +2,7 @@ params ["_checkedseat", "_roles"];
 
 
 
-
+// putting in an active check because the get in eventhandler seems to fire multiple times
 if (isnil "twc_fullrestrictactive") then {
 twc_fullrestrictactive = 0};
 
@@ -16,27 +16,37 @@ _playerunit = player;
 	twc_fullrestrictactive = 0;
 	cutText ["","Black IN",0.001];}; // double check
 	
- _slotFull = fullCrew vehicle player; 
- _slotFullData = _slotFull select 0; 
- _currentSeat = _slotFullData select 1;
  
  //if (_checkedseat != _currentseat) exitwith {// systemchat "no longer in old seat";};
 
  
-	_slotFull = fullcrew [vehicle player, "",true];
 	_takenslotplayers = [];
-	_takenslots = [];
 	_restrictedslots = [];
 	
 	{_restrictedslots pushback (_x select 0)} foreach _roles;
 	
-
-	{if (!(isnull (_x select 0))) then {_takenslots pushback _x}} foreach _slotFull;
 	
-	//// systemchat format ["%1", _roles];
+	
+_takenslots = fullcrew vehicle player;
+	
+	{
+	if((_x select 1) in _restrictedslots) then {
+		_takenslotplayers pushback (_x select 1)
+		};
+	sleep 0.1;
+	} foreach _takenslots;
+	
+	
+	//waits until crew positions aren't filled before doing anything proper. dumb script because fullcrew can't filter multiple types
+	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]))
+	)
+	};
+	
+	
+
 	
 	//put a waituntil here to prevent scummy people getting in to fulfil the restriction and then getting out
-	while {!(vehicle _playerUnit == _playerUnit)} do {
+	while {(!(vehicle _playerUnit == _playerUnit)) && (count _restrictedslots != count _takenslotplayers)} do {
 	
 	
 	_takenslotplayers = [];
@@ -47,40 +57,38 @@ _playerunit = player;
 	{if (!(isnull (_x select 0))) then {_takenslots pushback _x}} foreach _slotFull;
 	
 	{if((_x select 1) in _restrictedslots) then {_takenslotplayers pushback (_x select 1)}} foreach _takenslots;
- // systemchat	format ["%1 restricted, %2 currently", _restrictedslots, _takenslotplayers];
+	//systemchat	format ["%1 restricted, %2 currently", _restrictedslots, _takenslotplayers];
  
- if ((count _takenslotplayers) == 0) exitwith {// systemchat "vehicle empty";
- twc_fullrestrictactive = 0;
- 
-	cutText ["","Black IN",0.001];};
+	if ((count _takenslotplayers) == 0) exitwith {
+		// systemchat "vehicle empty";
+		twc_fullrestrictactive = 0;	 
+		cutText ["","Black IN",0.001];
+	};
 		
 
 		
-	if (vehicle _playerUnit == _playerUnit) exitWith { // systemchat "no longer in vehicle";
-twc_fullrestrictactive = 0; 
-	cutText ["","Black IN",0.001];}; // double check
-	
- _slotFull = fullCrew vehicle player; 
- _slotFullData = _slotFull select 0; 
- _currentSeat = _slotFullData select 1;
- 
+	if (vehicle _playerUnit == _playerUnit) exitWith {
+		// systemchat "no longer in vehicle";
+		twc_fullrestrictactive = 0; 
+		cutText ["","Black IN",0.001];
+	}; // double check
+		
+	 _slotFull = fullCrew vehicle player; 
+	 _slotFullData = _slotFull select 0; 
+	 _currentSeat = _slotFullData select 1;
  
 
- 		if (count _restrictedslots != count _takenslotplayers) then {
 		
-cutText ["", "Black", 0.001];
-		// systemchat "get out";
-		    [
-        "<t size='1.2'>Vehicle Crew</t><br/><t size='0.6'>This vehicle needs a full crew before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
-    ] spawn bis_fnc_dynamictext;
-	} else {
-	cutText ["","Black IN",0.001];};
- 
- 
-		sleep 5;};
-	cutText ["","Black IN",0.001];
-	// systemchat "you're good";
-	twc_fullrestrictactive = 0;
+	cutText ["", "Black", 0.001];
+	// systemchat "get out";
+    ["<t size='1.2'>Vehicle Crew</t><br/><t size='0.6'>This vehicle needs a full crew before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
+	] spawn bis_fnc_dynamictext;
+	sleep 1;
+};
+
+cutText ["","Black IN",0.001];
+// systemchat "you're good";
+twc_fullrestrictactive = 0;
 sleep 1;
 
 [_checkedseat, _roles] execvm "Insurgency_Core\client\sys_restrict\fullvehicle.sqf";

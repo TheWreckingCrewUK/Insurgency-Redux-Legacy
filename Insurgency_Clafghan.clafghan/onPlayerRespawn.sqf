@@ -22,12 +22,6 @@ if((getMarkerPos "respawn_forwardBase") distance2D (getPos player) < 200)then{
 
 };
 
-//make the player middle eastern if they spawn as ANA. Sounds racist, but otherwise it looks dumb
-_me = player;
-if (faction player == "ana_units") then {
-[_me, "PersianHead_A3_01"] remoteExec ["setFace", 0, _me]
-};
-
 
 //Set Radios Correctly
 _radioID = [getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")] call acre_api_fnc_getRadioByType; 

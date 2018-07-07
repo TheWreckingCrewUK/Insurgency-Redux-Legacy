@@ -1,15 +1,15 @@
 
-_attackcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
+_attackcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 14};
 
-_attackcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 10};
+_attackcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 14};
 
-_utilitycond = {( count(allPlayers - entities "HeadlessClient_F")) >= 3};
+_utilitycond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
 _transportcond1 = {( count(allPlayers - entities "HeadlessClient_F")) >= 4};
 
-_transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 5};
+_transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
 
-_cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
+_cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
 _planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 6};
 

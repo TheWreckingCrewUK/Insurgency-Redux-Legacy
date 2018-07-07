@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=2028;
+		nextID=2030;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15590.914,20.327312,17145.799};
-		dir[]={0.85613036,-0.42295745,-0.29731205};
-		up[]={0.3996205,0.90612,-0.13877793};
-		aside[]={-0.32809037,6.8033114e-007,-0.94476897};
+		pos[]={15623.725,20.900446,17115.633};
+		dir[]={-0.4039785,-0.67851967,0.61372715};
+		up[]={-0.37307853,0.73456174,0.56678373};
+		aside[]={0.83537704,-4.0745363e-007,0.54988134};
 	};
 };
 binarizationWanted=0;
@@ -12808,7 +12808,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=93;
+		items=94;
 		class Item0
 		{
 			dataType="Marker";
@@ -17979,13 +17979,13 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=8;
+				items=4;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15608.945,6.4248548,17125.975};
+						position[]={15607.909,6.2071071,17128.34};
 					};
 					side="West";
 					flags=7;
@@ -17998,7 +17998,7 @@ class Mission
 					};
 					id=1972;
 					type="Modern_British_FSTCommander";
-					atlOffset=0.2012639;
+					atlOffset=0.051482677;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18066,10 +18066,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15613.945,6.5608411,17122.973};
+						position[]={15612.909,6.3430934,17125.338};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
@@ -18078,7 +18078,7 @@ class Mission
 					};
 					id=1973;
 					type="Modern_British_FSTAssistant";
-					atlOffset=0.26312256;
+					atlOffset=0.11696815;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18108,10 +18108,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15615.945,6.5985394,17122.973};
+						position[]={15614.909,6.3807917,17125.338};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
@@ -18120,7 +18120,7 @@ class Mission
 					};
 					id=1974;
 					type="Modern_British_FSTAssistant";
-					atlOffset=0.30789614;
+					atlOffset=0.16174173;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18150,248 +18150,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15617.945,6.6367221,17122.973};
-					};
-					side="West";
-					flags=1;
-					class Attributes
-					{
-						skill=0.40000001;
-						description="FST Forward Observer";
-						isPlayable=1;
-					};
-					id=1975;
-					type="Modern_British_FSTForwardObserver";
-					atlOffset=0.35314941;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male03ENG";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={15608.988,6.4742656,17121.24};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-						description="Spotter";
-						isPlayable=1;
-					};
-					id=1976;
-					type="Modern_British_Spotter_coin";
-					atlOffset=0.1003046;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male01ENG";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={15611.988,6.5799117,17118.24};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						description="Sniper";
-						isPlayable=1;
-					};
-					id=1977;
-					type="Modern_British_Sniper_coin";
-					atlOffset=0.13104296;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male07ENG";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={15615.822,6.3802943,17119.893};
+						position[]={15614.786,6.1625466,17122.258};
 					};
 					side="West";
 					flags=5;
@@ -18402,48 +18161,7 @@ class Mission
 					};
 					id=1978;
 					type="Modern_British_logitech";
-					atlOffset=-0.0082540512;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={15617.043,6.4571023,17117.957};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Combat Logistics Technician";
-						isPlayable=1;
-					};
-					id=1979;
-					type="Modern_British_logitech";
-					atlOffset=0.018097401;
+					atlOffset=-0.1549654;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18473,7 +18191,7 @@ class Mission
 			{
 			};
 			id=1971;
-			atlOffset=0.2012639;
+			atlOffset=0.051482677;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20514,6 +20232,223 @@ class Mission
 								};
 							};
 							value="MERT";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item93
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15608.988,6.4739609,17121.24};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						description="Spotter @Sniper Team";
+						isPlayable=1;
+					};
+					id=1976;
+					type="Modern_British_Spotter_coin";
+					atlOffset=0.099999905;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15611.988,6.5799117,17118.24};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						description="Sniper";
+						isPlayable=1;
+					};
+					id=1977;
+					type="Modern_British_Sniper_coin";
+					atlOffset=0.13104296;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2028;
+			atlOffset=0.099999905;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Sniper Team";
 						};
 					};
 				};

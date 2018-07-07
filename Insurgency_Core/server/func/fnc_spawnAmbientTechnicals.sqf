@@ -174,7 +174,9 @@ _roadConnectedTo = roadsConnectedTo _road;
 _connectedRoad = _roadConnectedTo select 0;
 _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 };
-	
+	if (isnil "_direction") then {
+		_direction = random 360
+		};
 	
 
 	_truck setdir _direction;

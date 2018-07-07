@@ -21,6 +21,11 @@ publicVariable "twc_armourcount";
 ] call BIS_fnc_initVehicle;
 };
 
+clearWeaponCargoGlobal _veh;
+clearBackpackCargoGlobal _veh;
+clearMagazineCargoGlobal _veh;
+clearitemCargoGlobal _veh;
+
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 
 twc_armourcount = twc_armourcount -1;
