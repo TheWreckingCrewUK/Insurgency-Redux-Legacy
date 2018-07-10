@@ -45,7 +45,7 @@ cutText ["", "Black", 0.001];
     [ 
         format ["<t size='1.2'>Attachment Role</t><br/><t size='0.6'>There are currently no attachment roles available, join one of the regular infantry roles. %1 players need to be online for the next attachment to become available</t>", 
 		
-		ceil ((_attachmentcount * twc_attachmentgap)+ 2),
+		ceil ((_attachmentcount * twc_attachmentgap)+ 3),
 		( count(allPlayers - entities "HeadlessClient_F"))
 		], 0, 0.22, 5, 0, 0, 2 
     ] spawn bis_fnc_dynamictext;

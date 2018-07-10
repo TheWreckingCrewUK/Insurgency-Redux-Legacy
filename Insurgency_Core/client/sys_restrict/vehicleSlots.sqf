@@ -268,7 +268,7 @@ _list=[
 		],
 		["gunner", 
 			["Modern_British_crewchief"]
-		]],0
+		]],7
 	],
 
 		["RHS_AH1Z",[ 
