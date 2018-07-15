@@ -18,3 +18,5 @@ if (isNil "twc_sniperteam") then {
 
 execvm "Insurgency_Core\client\sys_restrict\rolerestrictions.sqf";
 
+execvm "Domination_Core\client\sys_restrict\sectioncount.sqf";
+
