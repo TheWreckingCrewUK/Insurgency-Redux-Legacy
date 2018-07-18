@@ -7,6 +7,9 @@ publicVariable "twc_armourcount";};
 
 if (twc_armourcount > 1) exitwith {hint "2 heavy vehicles have been spawned already"};
 
+//pre spawn file to change classname to woodland/desert versions if necessary
+#include "armourspecifics_prespawn.sqf";
+
 _veh = _heli createvehicle getpos ammoboxspawner;
 
 twc_armourcount = twc_armourcount +1;
@@ -40,3 +43,5 @@ twc_armourcount=twc_armourcount - 0.5;
 publicVariable "twc_armourcount";
 	}];
 	
+
+#include "armourspecifics.sqf";

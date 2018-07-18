@@ -24,6 +24,8 @@ _tmp_magazines = [];
 _tmp_items = [];
 _tmp_backpacks = [];
 
+#include "pol_base.sqf";
+
 //BAF Section Leader
 if (typeOf vehicle player == "Modern_British_Squadleader") then {
     _tmp_weapons =

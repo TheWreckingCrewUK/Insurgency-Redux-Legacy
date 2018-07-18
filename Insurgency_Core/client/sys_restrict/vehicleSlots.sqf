@@ -10,6 +10,17 @@ _list=[
 			["Modern_Artillery_Gunner"]
 		]],14,10
 	],
+		["B_APC_Wheeled_01_cannon_F",[ 
+		["driver", 
+			["Modern_British_VehicleCrew"]
+		],
+		["gunner", 
+			["Modern_British_VehicleCrew"]
+		],
+		["commander", 
+			["Modern_British_VehicleCommander"]
+		]],5
+	],
 	
 		["rhsusf_m1a2sep1wd_usarmy",[ 
 		["driver", 
