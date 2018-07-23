@@ -24,6 +24,8 @@ _groups = [];
 
 _snowflakes = 0;
 
+	if ((["quartermaster", str (typeof player)] call BIS_fnc_inString)) exitwith {};
+
 //now find out what groups we're dealing with. looking for regular infantry groups and adding exemptions for any non-infantry groups that are allowed at low playercounts, like snipers, heli pilots and quartermasters
 {if (_x == leader _x) then {
 	if (!(["sniper", str (group _x)] call BIS_fnc_inString)) then {
@@ -93,17 +95,19 @@ _space = 0;
 systemchat format ["space equals %1", _space];
  
 // if it finds no space in any of the sections, update the server with the new group count to check for future and don't restrict the new guy for joining a new section
-if (space == 0) exitwith {
+if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
 systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
+cutText ["","Black IN",5]; 
+player forceWalk false;
 };
 
 //now use the standard spawn restriction system to let the player know what's up
 systemchat "gonna restrict you now";
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {((count units group player) < (4 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) || (_space == 1)} do {
+while {((count units group player) < (4 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) && (_space == 1)} do {
 cutText ["", "Black", 0.001];
     [ 
         format ["<t size='1.2'>Fill The Sections</t><br/><t size='0.6'>There are other sections that need to be filled. Go there or get 4 or more people in the current section</t>", 
@@ -119,6 +123,15 @@ cutText ["", "Black", 0.001];
 		};
 	};
 } foreach _groups;
+
+if (_space == 0) exitwith {
+twc_groupcount = count _groups;
+publicVariable "twc_groupcount";
+systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
+cutText ["","Black IN",5]; 
+player forceWalk false;
+};
+
 
 _groups = [];
 

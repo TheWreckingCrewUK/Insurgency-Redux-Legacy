@@ -103,7 +103,6 @@
     _tmp_weapons =
     [
         ["twc_ak74_pol",1],
-        ["rhs_weap_igla",1],
         ["twc_rpg_pol",1]
     ];
 
@@ -171,7 +170,7 @@
 		["rhs_100Rnd_762x54mmR_green",10],
 		["rhs_VOG25",30],
 		["rhs_GRD40_White",30],
-		["rhs_rpg7_TBG7V_mag",10],
+		["rhs_rpg7_PG7VL_mag",10],
 		["rhs_rpg7_TBG7V_mag",10],
 		["HandGrenade",5]
     ];
