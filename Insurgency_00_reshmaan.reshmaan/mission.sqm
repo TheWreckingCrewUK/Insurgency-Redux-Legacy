@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1890;
+		nextID=1900;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14605.364,27.530563,9981.1738};
-		dir[]={-0.85467577,-0.48543781,-0.18407488};
-		up[]={-0.47455785,0.87427008,-0.10220739};
-		aside[]={-0.21054602,2.9394869e-008,0.97758609};
+		pos[]={14606.824,28.885826,9962.3486};
+		dir[]={-0.87489158,-0.41861966,-0.24408731};
+		up[]={-0.40321019,0.90819293,-0.11249092};
+		aside[]={-0.26876023,2.5094487e-006,0.96335787};
 	};
 };
 binarizationWanted=0;
@@ -14436,17 +14436,98 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14611.378,21.479019,9984.6699};
+						position[]={14613.2,21.283134,9985.0977};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
+						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1879;
-					type="2000_British_Marksman_Desert";
+					id=1322;
+					type="2000_British_MachineGunner_Desert";
 					atlOffset=3.8146973e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14615.2,21.11211,9985.0977};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=1323;
+					type="2000_British_mg_assistant_Desert";
+					atlOffset=3.8146973e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14611.378,21.479015,9984.6699};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1891;
+					type="2000_British_Rifleman_Desert";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14507,88 +14588,6 @@ class Mission
 							};
 						};
 						nAttributes=3;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14613.2,21.283134,9985.0977};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=1322;
-					type="2000_British_MachineGunner_Desert";
-					atlOffset=3.8146973e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14615.2,21.11211,9985.0977};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=1323;
-					type="2000_British_mg_assistant_Desert";
-					atlOffset=3.8146973e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
 					};
 				};
 				class Item8
@@ -22789,18 +22788,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14651.127,17.510193,9988.5664};
+						position[]={14651.127,17.510021,9988.5664};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1310;
-					type="TWC_2000_US_Army_Marksman";
-					atlOffset=0.00017166138;
+					id=1892;
+					type="TWC_2000_US_Army_Rifleman";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -22822,7 +22820,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male07ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item8
@@ -25440,7 +25476,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
@@ -25513,6 +25549,83 @@ class Mission
 										};
 									};
 									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14607.99,23.452976,9967.4326};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1890;
+					type="2000_British_CrewChief_Desert";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
 								};
 							};
 						};
@@ -26818,7 +26931,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14600.591,24.824646,9959.3203};
+						position[]={14600.789,24.674074,9960.1895};
 					};
 					side="West";
 					flags=5;
@@ -26827,9 +26940,9 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1850;
-					type="twc_ana_marksman";
-					atlOffset=0.012752533;
+					id=1897;
+					type="twc_ana_base";
+					atlOffset=-0.037467957;
 					class CustomAttributes
 					{
 						class Attribute0

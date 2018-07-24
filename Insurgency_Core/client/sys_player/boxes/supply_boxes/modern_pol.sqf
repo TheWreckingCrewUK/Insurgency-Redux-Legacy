@@ -20,10 +20,8 @@ if((typeOf player) in ["Modern_pol_commander","Modern_pol_commander_d", "Modern_
 	
 	
 	
-			_artaction3 = ["SpawnrepCreate","Spawn Landmines","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\tm62_mines.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
-			_artaction3 = ["SpawnrepCreate","Spawn Marksman Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\specCratepol_svd.sqf"},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
+			_artaction3 = ["SpawnrepCreate","Spawn Marksman Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\marksmancratepol.sqf"},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 };
