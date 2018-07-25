@@ -40,7 +40,8 @@ _box AddWeaponCargoGlobal ["twc_l96_w",1];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd",7];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd",25];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd_T",5];
 
 
 _box addItemCargoGlobal ["ACE_RangeCard",1];

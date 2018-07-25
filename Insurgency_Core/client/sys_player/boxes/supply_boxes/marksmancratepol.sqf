@@ -40,8 +40,8 @@ _box AddWeaponCargoGlobal ["twc_pol_svd",1];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["rhs_10Rnd_762x54mmR_7N1",7];
-_box AddMagazineCargoGlobal ["twc_10Rnd_762x54mmR_7N1_P",3];
+_box AddMagazineCargoGlobal ["rhs_10Rnd_762x54mmR_7N1",25];
+_box AddMagazineCargoGlobal ["twc_10Rnd_762x54mmR_7N1_P",5];
 
 
 _box addItemCargoGlobal ["ACE_RangeCard",1];

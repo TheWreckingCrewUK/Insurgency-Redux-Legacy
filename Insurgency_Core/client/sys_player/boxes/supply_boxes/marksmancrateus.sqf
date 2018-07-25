@@ -40,7 +40,7 @@ _box AddWeaponCargoGlobal ["rhs_weap_m14ebrri_leu",1];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",10];
+_box AddMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",30];
 
 
 _box addItemCargoGlobal ["ACE_RangeCard",1];
