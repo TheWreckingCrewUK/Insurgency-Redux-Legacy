@@ -358,9 +358,8 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
  if (typeOf vehicle player == "Modern_British_Sniper_coin") then {
     _tmp_weapons =
     [
-		["UK3CB_BAF_L115A3_DE",1],
+		["twc_l115a3_wd",1],
 		["twc_rhs_weap_M107",1],
-		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1]
     ];
 
@@ -370,8 +369,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 		["ACE_10Rnd_338_API526_Mag",50],
 		["rhsusf_mag_10Rnd_STD_50BMG_M33",10],
 		["rhsusf_mag_10Rnd_STD_50BMG_mk211",10],
-		["rhsusf_mag_17Rnd_9x19_JHP",15],
-		["rhsusf_mag_15Rnd_9x19_JHP",15]
+		["rhsusf_mag_17Rnd_9x19_JHP",15]
 	];
 
 	_tmp_items = 

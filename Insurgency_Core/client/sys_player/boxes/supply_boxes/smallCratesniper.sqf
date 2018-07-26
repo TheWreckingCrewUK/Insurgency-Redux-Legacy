@@ -8,9 +8,7 @@
 */
 _boxClass = "ACE_Box_Ammo";
 
-_box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
-(getPos AmmoBoxSpawner)} else 
-{(getPos player)});
+_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
@@ -20,7 +18,8 @@ clearitemCargoGlobal _box;
 //Weapons
 
 //supplies
-_box AddMagazineCargoGlobal ["UK3CB_BAF_338_5Rnd",10];
+_box AddMagazineCargoGlobal ["ACE_10Rnd_338_API526_Mag",10];
+_box AddMagazineCargoGlobal ["ACE_10Rnd_338_300gr_HPBT_Mag",10];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",10];
 

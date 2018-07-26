@@ -10,37 +10,37 @@ _mortartruck setpos _pos;
  
  twc_mortar attachto [_mortartruck, [-0.053,-2.7,0.6]]; 
  
- _box = "ACE_Box_82mm_Mo_HE" createvehicle _pos; _box attachto [_mortartruck, [0.45,-0.1,0]];
+_box = "ACE_Box_82mm_Mo_HE" createvehicle _pos; _box attachto [_mortartruck, [0.45,-0.1,0]];
  
  
-	twc_mortar setVehicleLock "LOCKED";
+twc_mortar setVehicleLock "LOCKED";
  
-	_mortartruck setVehicleLock "LOCKEDPLAYER";
+_mortartruck setVehicleLock "LOCKEDPLAYER";
  
-	twc_mortar addEventHandler ["Killed",{
-	[twc_mortar] call twc_fnc_deadmortar
-	}];
+twc_mortar addEventHandler ["Killed",{
+[twc_mortar] call twc_fnc_deadmortar
+}];
 
-	_group = createGroup East;
+_group = createGroup East;
 	
-	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
-	_unit addEventHandler ["Killed",{
-		[(_this select 0)] call twc_fnc_deleteDead;
-
-		if (side (_this select 1) == WEST) then{
-			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
-			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
-		};
-	}];
+_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
+_unit addEventHandler ["Killed",{
+	[(_this select 0)] call twc_fnc_deleteDead;
+	if (side (_this select 1) == WEST) then{
+		["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+	};
+}];
 	
-	_unit disableai "AUTOTARGET";
+_unit disableai "AUTOTARGET";
+_unit disableai "TARGET";
 	
-	_unit moveIngunner twc_mortar;
+_unit moveIngunner twc_mortar;
 	
-	//now get the guarding infantry sorted
+//now get the guarding infantry sorted
 	
-		_groupcount = 3 + (random 5);
-		_infpos = getpos _mortartruck;
+_groupcount = 3 + (random 5);
+_infpos = getpos _mortartruck;
 	
 _group = createGroup East;
 	for "_i" from 1 to _groupcount do {
@@ -54,11 +54,11 @@ _group = createGroup East;
 	}];
 	
 
-_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	
 	};
 	
-	publicVariable "twc_mortar";
+publicVariable "twc_mortar";
 	
 	// obj creation
 if (isServer) then {
@@ -68,37 +68,37 @@ params ["_targetpos"];
 
 [_targetpos] spawn {
 
-params ["_targetpos"];
+	params ["_targetpos"];
 
-sleep 10 + (random 30);
+	sleep 10 + (random 30);
 
-_total = 3 +(random 7);
+	_total = 3 +(random 7);
 
-if ((twc_mortar distance _targetpos) > 4000) exitwith {};
+	if ((twc_mortar distance _targetpos) > 4000) exitwith {};
 
-_radius = (twc_mortar distance _targetpos) / 80;
+	twc_mortar setvehicleammodef 1;
 
-twc_mortar lookat (_targetpos);
+	_radius = (twc_mortar distance _targetpos) / 80;
 
-for "_i" from 1 to _total do {
+	twc_mortar lookat (_targetpos);
 
-twc_mortar doArtilleryFire [[_targetpos,150] call cba_fnc_randpos, currentmagazine twc_mortar, 1];
+	for "_i" from 1 to _total do {
 
-sleep 4 +(random 3);
+		twc_mortar doArtilleryFire [[_targetpos,150] call cba_fnc_randpos, currentmagazine twc_mortar, 1];
 
-}; twc_mortar lookat objnull;
+		sleep 4 +(random 3);
 
-twc_mortar setvehicleammo 1;
+	}; 
+	twc_mortar lookat objnull;
 
-sleep 30 + (random 180);
+	twc_mortar setvehicleammodef 0;
 
-if ((random 1) < twc_mortarchance) exitwith {
-["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;};
+	sleep 30 + (random 180);
+
+	if ((random 1) < twc_mortarchance) exitwith {
+	["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;};
 
 };
 
 	}] call CBA_fnc_addEventHandler;
 };
-/*
-// call to obj
-["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;

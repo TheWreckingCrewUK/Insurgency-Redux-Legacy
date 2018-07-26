@@ -115,10 +115,11 @@ if((typeOf player) in ["1990_British_Tank_Commander_Desert", "2000_British_Vehic
 	};
 	
 	
-if((typeOf player) in ["2000_British_Vehicle_Commander"])then{
 	
+if((typeOf player) in ["2000_British_Vehicle_Commander"])then{
+	/* removing chally 2 because it can take 50 AP rounds and still have no damage apart from tracks
 		_armouraction1 = ["spawnl111","Spawn Challenger 2","",{["CUP_B_Challenger2_2CW_BAF"] execvm "domination_core\client\sys_player\vehicles\spawnarmour.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
+	*/
 	};
 	
