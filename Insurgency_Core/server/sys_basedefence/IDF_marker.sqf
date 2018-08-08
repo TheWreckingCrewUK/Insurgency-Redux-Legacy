@@ -1,12 +1,16 @@
 
 if (!isServer) exitWith {};
 //systemchat "marker attempt";
-if (clearingmarker == 1) exitwith {};
+
+if(isNil "markertime") then{
+	markertime = -1000;
+	publicvariable "markertime";
+};
+
+if ((markertime + 600) > time) exitwith {};
 
 
-//if (idfguns find (str (_object)) <0) then {
-if (clearingmarker == 0) then {
-markertime = 0;
+markertime = time;
 publicvariable "markertime";
 _object = _this select 0;
 _distanceshooter = _this select 1;
@@ -32,11 +36,9 @@ sleep _wait;
 //			[_marker, true] call CBA_fnc_setMarkerPersistent;
 
 
-if (clearingmarker == 0) then {
-execVM "Insurgency_Core\server\sys_basedefence\IDF_clearmarker.sqf";};
+sleep 7200;
+//systemchat "deleting";
+deletemarker _marker;
 		
-			sleep 3600;
-			deletemarker _marker;
-			};
 		
-	//		};
+		

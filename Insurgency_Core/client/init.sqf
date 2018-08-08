@@ -6,6 +6,7 @@
 #include "sys_player\init.sqf";
 #include "func\init.sqf";
 #include "sys_basedefence\init.sqf";
+#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
 waitUntil {!isNull player};

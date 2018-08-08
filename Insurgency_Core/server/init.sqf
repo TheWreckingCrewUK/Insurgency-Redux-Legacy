@@ -18,6 +18,8 @@ publicVariable "twc_mortarchance";
 //#include "sys_strongholds\init.sqf";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 
+execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
+
 twc_missionname = missionname;
 publicVariable "twc_missionname";
 

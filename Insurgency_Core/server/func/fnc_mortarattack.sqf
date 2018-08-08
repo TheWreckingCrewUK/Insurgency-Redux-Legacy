@@ -7,7 +7,7 @@ params ["_targetpos"];
 
 sleep 10 + (random 30);
 
-twc_mortar setvehicleammodef 1;
+twc_mortar setvehicleammo 1;
 
 _total = 3 +(random 7);
 
@@ -25,7 +25,7 @@ sleep 4 +(random 3);
 
 }; twc_mortar lookat objnull;
 
-twc_mortar setvehicleammodef 0;
+twc_mortar setvehicleammo 0;
 
 sleep 30 + (random 180);
 

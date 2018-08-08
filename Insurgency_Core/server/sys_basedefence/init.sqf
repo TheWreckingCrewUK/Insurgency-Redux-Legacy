@@ -29,10 +29,6 @@ if(isNil "idfon") then{
 	publicvariable "idfon";
 };
 
-if(isNil "markertime") then{
-	markertime = 10;
-	publicvariable "markertime";
-};
 
 if(isNil "clearingmarker") then{
 	clearingmarker = 0;
