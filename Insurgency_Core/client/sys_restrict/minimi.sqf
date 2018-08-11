@@ -1,5 +1,5 @@
 // making the minimi less of a laser
-
+/*
   player addEventHandler["Fired",{ 
   if (currentweapon player == "UK3CB_BAF_L110A2_ELCAN3D") then { 
    
