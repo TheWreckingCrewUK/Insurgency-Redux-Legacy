@@ -93,7 +93,7 @@ execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";
 if((typeOf player) in ["Modern_British_JetPilot", "Modern_British_FSTForwardObserver"])then{
 
 
-execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";
+execvm "Insurgency_Core\client\sys_restrict\fulljetteam.sqf";
 
 };
 

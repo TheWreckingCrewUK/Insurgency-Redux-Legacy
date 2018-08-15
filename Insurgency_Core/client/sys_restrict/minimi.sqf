@@ -1,6 +1,6 @@
 // making the minimi less of a laser
 /*
-  player addEventHandler["Fired",{ 
+  player addEventHandler["Fired",{
   if (currentweapon player == "UK3CB_BAF_L110A2_ELCAN3D") then { 
    
 	_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (random 10) - 5, 
