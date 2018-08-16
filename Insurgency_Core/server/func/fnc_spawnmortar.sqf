@@ -70,7 +70,7 @@ params ["_targetpos"];
 
 	params ["_targetpos"];
 
-	sleep 10 + (random 30);
+	sleep (10 + random 30);
 
 	_total = 3 +(random 7);
 
@@ -86,14 +86,14 @@ params ["_targetpos"];
 
 		twc_mortar doArtilleryFire [[_targetpos,150] call cba_fnc_randpos, currentmagazine twc_mortar, 1];
 
-		sleep 4 +(random 3);
+		sleep (4 + random 3);
 
 	}; 
 	twc_mortar lookat objnull;
 
 	twc_mortar setvehicleammodef 0;
 
-	sleep 30 + (random 180);
+	sleep (30 + random 180);
 
 	if ((random 1) < twc_mortarchance) exitwith {
 	["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;};
