@@ -25,7 +25,6 @@ _dir = random 360;
 
 if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
-
 _dir1 = _dir - 30;
 _dir2 = _dir + 30;
 
@@ -65,13 +64,33 @@ for "_i" from 1 to _total do {
 	sleep 0.2;
 	
 };
+_civg = creategroup civilian;
+_fraggertotal = (random 2);
 
+for "_i" from 1 to _fraggertotal do {
+	_unit = _civg createUnit [(selectRandom civilianType), _spawnPos, [], 5, "NONE"];
+	_unit addEventHandler ["Killed",{
+		[(_this select 0)] call twc_fnc_deleteDead;
 
+		if (side (_this select 1) == WEST) then{
+			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+		};
+	}];
+	_unit setVariable ["unitsHome",_pos,false];
+	//_num = _num + 1;
+	_unit addItemtoUniform "CUP_handgrenade_RGD5";
+	_unit addItemtoUniform "CUP_handgrenade_RGD5";
+	sleep 0.2;
+};
+sleep 1;
 _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
+units _civg joinsilent _group;
+
 	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
-	sleep 5;
+	sleep 3;
 	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_array1 = [];
