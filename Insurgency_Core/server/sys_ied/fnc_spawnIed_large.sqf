@@ -14,8 +14,9 @@
  * Example:
  * ["IEDLandBig_F", getPos player, 3] call TWC_fnc_spawnIED;
  */
-params ["_iedType", "_position", ["_spawnRadius", 0], ["_isIntialSeed", false]];
+params ["_position", "_vehicle"];
 
+_iedtype = "IEDUrbanSmall_Remote_Ammo"; 
 
 if (count(_position nearobjects ['pipebombbase', 500]) > 0) exitwith {};
 
@@ -23,25 +24,25 @@ if ((_position distance (getmarkerpos "base")) < 2000) exitwith {};
 
 _ied = "Arma is Retarded";
 // Create visible explosive object
-_ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
+_ied = createVehicle [_iedType, _position, [], 1, "NONE"];
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // ????? I'm not sure why Mike did this but I'm scared to remove it
+
+if (!isnil "_vehicle") then {_ied attachto [_vehicle]};
 
 /*
 _marker = createMarker [str getpos _ied,getpos _ied];
 _marker setMarkerShape "ICON";
 _marker setMarkerType "MIL_dot";
-_marker setMarkerColor "colorOpfor";
+_marker setMarkerColor "colorOrange";
 */
 
-_randsize = random 20;
-_randtime = random 2;
+_randsize = ((random 40) + 20);
+_randtime = random 5;
 _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
 _trg setTriggerActivation ["west", "PRESENT", True];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};'ammo_Bomb_SDB' createvehicle getpos thistrigger; 
-deleteVehicle thisTrigger;",""];
+_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};_iedtype = ['ammo_Missile_Cruise_01', 'Bomb_03_F', 'Bo_GBU12_LGB'] call bis_fnc_selectrandom; _iedtype createvehicle getpos thistrigger;  [getpos thistrigger, thislist] call INS_fnc_iedcounterattack; deleteVehicle thisTrigger;",""];
 
 _randsize = 150 + (random 200);
 _randtime = random 2;

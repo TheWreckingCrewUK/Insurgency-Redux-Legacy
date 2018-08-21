@@ -38,7 +38,13 @@ while {_vehicle < _amountToSpawn} do {
 				(getPosATL _newVehicle select 1) + _yAxis, 0];
 			_newVehicle setDir (random 360);
 		};
-	
+	if ((random 1) < 0.1) then {
+		[_newVehicle] spawn {
+			params ["_newVehicle"];
+			sleep 2;
+			[getpos _newVehicle, _newVehicle] call INS_fnc_spawnIED_Large
+			};
+		};
 		_vehicle = _vehicle + 1;
 	};
 };

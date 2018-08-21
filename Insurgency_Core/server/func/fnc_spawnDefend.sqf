@@ -17,7 +17,7 @@
 params["_pos"];
 
 
-if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
+//if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 
 //_spawnPos = [_pos, 50] call CBA_fnc_randPos;

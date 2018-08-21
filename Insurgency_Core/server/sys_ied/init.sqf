@@ -1,4 +1,5 @@
 INS_fnc_spawnIED = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIED.sqf";
+INS_fnc_spawnIED_Large = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIED_Large.sqf";
 INS_fnc_spawnIEDOnRoad = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIEDOnRoad.sqf";
 INS_fnc_populateIEDs = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_populateIEDs.sqf";
 INS_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_startIEDPlantLoop.sqf";

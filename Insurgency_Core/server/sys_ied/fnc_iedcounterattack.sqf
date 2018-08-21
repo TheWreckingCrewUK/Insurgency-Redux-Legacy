@@ -1,14 +1,14 @@
-params ["_iedpos"];
+params ["_iedpos", "_thislist"];
 
 //if (random 1 >0.3) exitwith {};
 //systemchat "counterattack called";
 _LocationArray = [];
 
+if (isnil "_thislist") then {_thislist = [];};
+
 _LocationArray = nearestLocations [_iedpos, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2000];
 
-if ((count _LocationArray) == 0) exitwith {
-//systemchat "no locations near IED"
-};
+if ((count _LocationArray) == 0) exitwith {};
 
 _pos = [[getpos (_LocationArray select 0),[0,40],random 360,0,[0,100]] call SHK_pos,5] call CBA_fnc_randPos;
 
@@ -52,10 +52,12 @@ if ((_pos distance _iedpos) > 500) then {
 			};
 		}];
 		
-		
+		{_unit reveal [_x, 4]} foreach _thislist;
 	};
 	
 	[_group, _iedpos, 100] call CBA_fnc_taskAttack;
+	
+	
 
 } else {
 //systemchat "location chosen";
@@ -76,6 +78,7 @@ if ((_pos distance _iedpos) > 500) then {
 			};
 		}];
 		
+		{_unit reveal [_x, 4]} foreach _thislist;
 	};
 	
 	[_group, _iedpos, 100] call CBA_fnc_taskAttack;

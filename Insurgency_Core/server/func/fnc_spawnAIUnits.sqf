@@ -17,20 +17,20 @@
 */
 
 //Recieved Parameters
-params ["_pos","_groupradius","_thisList"];
+params ["_pos","_groupradius","_thisList", ["_multiplier",1]];
 
 //Selects a direction generally oposite of incoming friendlies
 //_dir = (_thisList select 0) getDir _pos;
 _dir = random 360;
 
-if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
+//if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 _dir1 = _dir - 30;
 _dir2 = _dir + 30;
 
 //Calculating total enemies to spawn
 _num = 0;
-_total = [_pos] call twc_fnc_calculateSpawnAmount;
+_total = ([_pos] call twc_fnc_calculateSpawnAmount) * _multiplier;
 
 sleep 1;
 
