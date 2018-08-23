@@ -1,4 +1,4 @@
-hintSilent "Intel Received From Detaining Insurgent";
+hintSilent "Intel Received From Enemy Combatant";
 		_rand = (floor (random 2));
 		if (_rand <= 1)then{
 			_color = "ColorOrange";

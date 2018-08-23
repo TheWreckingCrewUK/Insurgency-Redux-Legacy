@@ -83,6 +83,7 @@ _group = createGroup East;
 		}];
 //		_unit addMagazines ["handGrenade",2];
 		_unit setVariable ["unitsHome",_pos,false];
+		_unit setVariable ["twc_isenemy",1];
 		//_num = _num + 1;
 		sleep 0.2;
 	};

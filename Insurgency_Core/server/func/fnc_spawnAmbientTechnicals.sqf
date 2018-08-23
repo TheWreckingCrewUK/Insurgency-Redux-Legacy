@@ -48,6 +48,7 @@ for "_i" from 1 to _total do {
 		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
+	_unit setVariable ["twc_isenemy",1];
 	
 	
 	_spawnpos = _pos;
@@ -91,6 +92,7 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	_truck setdir _direction;
 
 	_unit moveIngunner _gun;
+	_unit setVariable ["twc_isenemy",1];
 
 /*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
@@ -138,6 +140,7 @@ _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
+	_unit setVariable ["twc_isenemy",1];
 	
 	
 	_spawnpos = _pos;
@@ -184,6 +187,7 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	_truck addEventHandler ["Killed", {[50] call twc_fnc_deadasset}];
 
 	_unit moveIngunner _gun;
+	_unit setVariable ["twc_isenemy",1];
 	
 	
 		_groupcount = 3 + (random 5);
@@ -200,8 +204,9 @@ _group = createGroup East;
 		};
 	}];
 	
+	_unit setVariable ["twc_isenemy",1];
 
-_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	};
 	};
 	

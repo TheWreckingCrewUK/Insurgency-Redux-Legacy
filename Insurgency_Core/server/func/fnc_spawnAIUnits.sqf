@@ -60,6 +60,7 @@ for "_i" from 1 to _total do {
 		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
+	_unit setVariable ["twc_isenemy",1];
 	//_num = _num + 1;
 	sleep 0.2;
 	
@@ -78,6 +79,7 @@ for "_i" from 1 to _fraggertotal do {
 		};
 	}];
 	_unit setVariable ["unitsHome",_pos,false];
+	_unit setVariable ["twc_isenemy",1];
 	//_num = _num + 1;
 	_unit addItemtoUniform "CUP_handgrenade_RGD5";
 	_unit addItemtoUniform "CUP_handgrenade_RGD5";

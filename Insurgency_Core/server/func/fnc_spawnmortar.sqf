@@ -36,6 +36,7 @@ _unit disableai "AUTOTARGET";
 _unit disableai "TARGET";
 	
 _unit moveIngunner twc_mortar;
+_unit setVariable ["twc_isenemy",1];
 	
 //now get the guarding infantry sorted
 	
@@ -53,6 +54,7 @@ _group = createGroup East;
 		};
 	}];
 	
+	_unit setVariable ["twc_isenemy",1];
 
 	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	

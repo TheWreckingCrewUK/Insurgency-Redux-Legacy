@@ -21,3 +21,16 @@ twc_fnc_spawnmortar = compile preprocessfilelinenumbers "Insurgency_Core\server\
 twc_fnc_deadmortar = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deadmortar.sqf";
 
 call twc_fnc_spawnmortar;
+
+{ 
+_x addEventHandler ["CuratorObjectPlaced", {
+	params ["_curator", "_entity"];
+	
+	if ((side _entity) == east) then {
+		_entity setVariable ["twc_isenemy",1];
+	};
+} 
+ 
+]; 
+ 
+} forEach allCurators;
