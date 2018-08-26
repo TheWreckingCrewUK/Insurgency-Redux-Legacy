@@ -3,9 +3,9 @@ by [TWC] Hobbs
 Stops civilians in a nearby area from running for a small period
 */
 
-params["_player"];
+params["_pos", "_player"];
 
-_pos = getpos _player;
+
 
 {
 	if (((str side _x) == "CIV") && ((_pos distance _x) < 20)) then {

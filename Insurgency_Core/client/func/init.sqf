@@ -10,6 +10,10 @@ player addEventHandler ["CuratorObjectPlaced", {
 	
 	if ((side _entity) == east) then {
 		_entity setVariable ["twc_isenemy",1];
-		systemchat "enemy placed";
+		//systemchat "enemy placed";
+	};
+	if ((side _entity) == civilian) then {
+		_entity setVariable ["twc_isenemy",0,true];
+		systemchat "civ placed";
 	};
 }];

@@ -34,6 +34,7 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 50
 _group = createGroup civilian;
 _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
 [_vip, true] call ACE_captives_fnc_setSurrendered;
+_vip setVariable ["twc_isenemy",0, true];
 
 _vip setVariable ["active",1,true];
 

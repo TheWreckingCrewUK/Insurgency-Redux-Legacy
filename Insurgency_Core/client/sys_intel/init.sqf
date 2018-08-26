@@ -20,7 +20,7 @@ InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sy
 
 //Adds question action to all civilians whose classname is defined in array civiliantype	
 {
-	_questionAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && !((_this select 0) getVariable ["ACE_isUnconscious",false]) && (((_this select 0) getVariable ["twc_isenemy",0]) == 0)}] call ace_interact_menu_fnc_createAction;
+	_questionAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && !((_this select 0) getVariable ["ACE_isUnconscious",false]) && (((_this select 0) getVariable ["twc_isenemy",1]) == 0)}] call ace_interact_menu_fnc_createAction;
 	
 	[_x, 0, ["ACE_MainActions"], _questionAction] call ace_interact_menu_fnc_addActionToClass;
 } forEach civiliantype;
@@ -31,5 +31,5 @@ EvidenceAction = [ "CollectEvidence", "Collect Evidence", "", { [ 5, [(_this sel
 
 ["ace_placedInBodyBag", {
 	params ["_man", "_bag"];
-	if ((_man getVariable ["twc_isenemy",0]) == 1) then {_bag setVariable ["twc_isenemy",1]; systemchat "enemy bag";}
+	if (((_man getVariable ["twc_isenemy",1]) == 1) && (side _man != WEST)) then {_bag setVariable ["twc_isenemy",1, true]; }
 }] call CBA_fnc_addEventHandler;

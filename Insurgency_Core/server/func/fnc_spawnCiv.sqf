@@ -28,6 +28,7 @@ for "_i" from 1 to _civnum do {
 	_civHeading = (random 360);
 	_individualCiv setFormDir _civHeading;
 	_individualCiv setDir _civHeading;
+	_individualCiv setVariable ["twc_isenemy",0, true];
 	
 	_random = random 100;
 	if(_random < 66)then{
@@ -47,7 +48,6 @@ for "_i" from 1 to _civnum do {
 	_westKilled = _individualCiv addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		[_unit] call twc_fnc_deleteDead;
-
 		_instigator = _unit getVariable ["ace_medical_lastDamageSource", _instigator];
 		if (isPlayer _instigator) then {
 			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;

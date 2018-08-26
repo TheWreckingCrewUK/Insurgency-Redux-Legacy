@@ -14,6 +14,8 @@ waitUntil {!isNull player};
 
 sleep 10;
 
+vehicle player setVariable ["twc_isenemy",0, true];
+
 #include "sys_restrict\init.sqf";
 
 sleep 10;

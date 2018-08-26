@@ -1,6 +1,6 @@
 
 waitUntil {inputAction "User10" > 0};
-[player] remoteexec ["twc_fnc_stopcivs", 2];
+[getpos player, vehicle player] remoteexec ["twc_fnc_stopcivs", 2];
 hint "GET DOWN";
 sleep 10;
 

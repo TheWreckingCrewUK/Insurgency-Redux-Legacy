@@ -2,7 +2,6 @@
 
 twc_fnc_healing = {
 	params ["_player", "_target", "_selectionName", "_className"];
-	if (side _target != Civilian) exitWith {};
 
 	if (
 		_className == "Morphine" ||
@@ -15,6 +14,10 @@ twc_fnc_healing = {
 		_className == "Defib" ||
 		_className == "LogDebug"
 	) exitWith {};
+	
+	if (side _target == west) exitWith {};
+	_target setvariable ["ACE_isUnconscious", false, true];
+	_target setUnconscious false;
 
 	[_target] remoteExecCall ["twc_fnc_checkLastDamage", 2];
 };

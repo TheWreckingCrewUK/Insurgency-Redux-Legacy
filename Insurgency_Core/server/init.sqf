@@ -117,6 +117,10 @@ publicvariable "basemode";
 nonQuestionableList = [];
 publicVariable "nonQuestionableList";
 
+// List of civilians who have decided whether to pull a gun
+goodcivlist = [];
+publicVariable "goodcivlist";
+
 // Array of the locations and the strongholds
 townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
 _strongholdArray = [];
