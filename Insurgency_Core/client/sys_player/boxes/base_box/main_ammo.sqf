@@ -27,7 +27,7 @@ _tmp_backpacks = [];
 #include "pol_base.sqf";
 
 //BAF Section Leader
-if (typeOf vehicle player == "Modern_British_Squadleader") then {
+if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squadleader_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -66,7 +66,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Rifleman Pointman
- if (typeOf vehicle player == "Modern_British_Pointman") then {
+ if (typeOf vehicle player in ["Modern_British_Pointman", "Modern_British_Pointman_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -103,7 +103,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Grenadier
- if (typeOf vehicle player == "Modern_British_Grenadier_COIN") then {
+ if (typeOf vehicle player in ["Modern_British_Grenadier_COIN", "Modern_British_Grenadier_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_UGL_ELCAN3D",1],
@@ -142,7 +142,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Automatic Rifleman
- if (typeOf vehicle player == "Modern_British_Autorifleman_COIN") then {
+ if (typeOf vehicle player in ["Modern_British_Autorifleman_COIN", "Modern_British_Autorifleman_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L110A2_ELCAN3D",1],
@@ -172,7 +172,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF 2IC
- if (typeOf vehicle player == "Modern_British_2IC_COIN") then {
+ if (typeOf vehicle player in ["Modern_British_2IC_COIN", "Modern_British_2IC_COIN_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -226,7 +226,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
 
 //BAF Machine Gunner
- if (typeOf vehicle player == "Modern_British_Machinegunner") then {
+ if (typeOf vehicle player in ["Modern_British_Machinegunner", "Modern_British_Machinegunner_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L7A2",1],
@@ -253,7 +253,7 @@ if (typeOf vehicle player == "Modern_British_Squadleader") then {
 };
  
 //BAF Marksman
- if (typeOf vehicle player == "Modern_British_Marksman_COIN") then {
+ if (typeOf vehicle player in ["Modern_British_Marksman_COIN", "Modern_British_Marksman_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L129A1_Grippod_TA648",1],

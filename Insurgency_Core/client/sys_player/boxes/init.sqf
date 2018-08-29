@@ -78,7 +78,13 @@ deleteVehicle _target;
 
 } foreach ["Land_InfoStand_V1_F", "twc_SuppliesBox"];
 
-if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN"])then{
+if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
+
+	if((typeOf player) in ["Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
+		_UKaction5 = ["SpawnmedCreate","Spawn Heavy WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	};
+		
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Ambulance","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_uk.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
