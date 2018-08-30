@@ -29,6 +29,11 @@ if(isNil "twc_attachmentgap") then{
 	publicVariable "twc_attachmentgap";
 };
 
+if(isNil "twc_campaignmode") then{
+	twc_campaignmode = 0;
+	publicVariable "twc_campaignmode";
+};
+
 if(isNil "twc_is90") then{
 	twc_is90 = 0;
 	publicVariable "twc_is90";

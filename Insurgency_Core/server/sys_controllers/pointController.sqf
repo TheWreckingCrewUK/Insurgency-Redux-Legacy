@@ -31,6 +31,8 @@ if (isNil "totalPoints") then {
 _highestPlayerCountReached = 0; // the highest count reached of total connected players
 
 ["TWC_Insurgency_adjustPoints", {
+	if (twc_campaignmode == 1) exitwith {};
+
 	totalPoints = totalPoints + _this;
 	
 	if (totalPoints >= pointLimit) then {

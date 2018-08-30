@@ -66,10 +66,10 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerText (str(_distance) + "m");
 			_marker setMarkerSize [0.5,0.5];
 
-			switch (str _object) do {
-				case (str (InsP_cacheGroup select 0)): {cacheAMarkers pushBack _marker; publicVariable "cacheAMarkers"};
-				case (str (InsP_cacheGroup select 1)): {cacheBMarkers pushBack _marker; publicVariable "cacheBMarkers"};
-				case (str (InsP_cacheGroup select 2)): {cacheCMarkers pushBack _marker; publicVariable "cacheCMarkers"};
+			switch (_object) do {
+				case (cacheBoxA): {cacheAMarkers pushBack _marker; publicVariable "cacheAMarkers"};
+				case (cacheBoxB): {cacheBMarkers pushBack _marker; publicVariable "cacheBMarkers"};
+				case (cacheBoxC): {cacheCMarkers pushBack _marker; publicVariable "cacheCMarkers"};
 				default {hint "Something went wrong";};
 			};
 		};

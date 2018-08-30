@@ -25217,6 +25217,25 @@ class Mission
 			{
 				class Attribute0
 				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UK Light Infantry";
+						};
+					};
+				};
+				class Attribute1
+				{
 					property="acex_headless_blacklist";
 					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
 					class Value
@@ -25234,7 +25253,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 	};

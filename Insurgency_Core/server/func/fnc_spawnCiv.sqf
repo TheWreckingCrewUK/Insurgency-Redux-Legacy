@@ -48,12 +48,15 @@ for "_i" from 1 to _civnum do {
 	_westKilled = _individualCiv addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		[_unit] call twc_fnc_deleteDead;
+		if (_unit getvariable ["twc_isenemy", 0] == 1) exitwith {};
 		_instigator = _unit getVariable ["ace_medical_lastDamageSource", _instigator];
 		if (isPlayer _instigator) then {
 			["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
 			["TWC_Insurgency_adjustCivilianMorale", -1] call CBA_fnc_serverEvent;
-			diag_log format ["%1 - %2 killed a civilian", time, name _instigator];
-			systemchat format ["%1 - %2 killed a civilian", time, name _instigator];
+			if (_unit getvariable ["twc_isenemy", 0] == 0) then {
+				diag_log format ["%1 - %2 killed a civilian", time, name _instigator];
+				systemchat format ["%1 - %2 killed a civilian", time, name _instigator];
+			};
 		};
 	}];
 

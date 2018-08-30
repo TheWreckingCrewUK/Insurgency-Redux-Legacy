@@ -1,20 +1,20 @@
 params["_destroyed"];
 
 call {
-	if (_destroyed == "cacheBoxA") exitWith {
+	if (_destroyed == cacheBoxA) exitWith {
 		{
 			deadMarker = deleteMarker _x;
 			publicVariable "deadMarker";
 		}forEach cacheAMarkers;
 	};
 	
-	if (_destroyed == "cacheBoxB") exitWith {
+	if (_destroyed == cacheBoxB) exitWith {
 		{
 			deadMarker = deleteMarker _x;
 			publicVariable "deadMarker";
 		}forEach cacheBMarkers;
 	};
-	if (_destroyed == "cacheBoxC") exitWith {
+	if (_destroyed == cacheBoxC) exitWith {
 		{
 			deadMarker = deleteMarker _x;
 			publicVariable "deadMarker";

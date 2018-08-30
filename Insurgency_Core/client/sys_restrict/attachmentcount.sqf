@@ -6,6 +6,9 @@ this will count the current number of groups, disregarding any groups that have 
 
 if (( count(allPlayers - entities "HeadlessClient_F")) > 23) exitwith {};
 
+if (["HQ", str (group player)] call BIS_fnc_inString) exitwith {
+execvm "Insurgency_Core\client\sys_restrict\platoonhq.sqf";
+};
 
 if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
 waituntil {(( count(allPlayers - entities "HeadlessClient_F")) >= 5)};
@@ -15,7 +18,9 @@ _groups = [];
 
 {if (_x == leader _x) then {
 	if (!(["infantry", str (group _x)] call BIS_fnc_inString)) then {
-		_groups pushback [group _x]
+		if (!(["HQ", str (group _x)] call BIS_fnc_inString)) then {
+			_groups pushback [group _x]
+			};
 		};
 	};
 } foreach allplayers;

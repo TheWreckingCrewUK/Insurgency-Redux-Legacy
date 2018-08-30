@@ -1,7 +1,7 @@
 //Mission Status:
 InsP_fnc_MissionStatus = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\MissionStatus.sqf";
 
-InsP_MissionStatus = ["MissionStatus","Mission Status","",{call InsP_fnc_MissionStatus},{true}] call ace_interact_menu_fnc_createAction;
+InsP_MissionStatus = ["MissionStatus","Mission Status","",{call InsP_fnc_MissionStatus},{(twc_campaignmode == 0) || (isnil "twc_campaignmode")}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], InsP_MissionStatus] call ace_interact_menu_fnc_addActionToObject;
 
 /*
