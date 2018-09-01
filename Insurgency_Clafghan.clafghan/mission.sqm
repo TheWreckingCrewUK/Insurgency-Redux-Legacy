@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=2084;
+		nextID=2087;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15622.77,20.097336,17116.111};
-		dir[]={0.53980583,-0.84114701,-0.036507234};
-		up[]={0.83921653,0.54083848,-0.056755349};
-		aside[]={-0.067479424,-1.507753e-006,-0.99783689};
+		pos[]={15589.757,26.190693,17089.873};
+		dir[]={0.14367887,-0.56248003,0.81438565};
+		up[]={0.097737387,0.82677281,0.55399114};
+		aside[]={0.98490649,4.9406663e-007,-0.17375815};
 	};
 };
 binarizationWanted=0;
@@ -12808,7 +12808,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=96;
+		items=97;
 		class Item0
 		{
 			dataType="Marker";
@@ -20874,6 +20874,7 @@ class Mission
 					};
 					id=2075;
 					type="Modern_British_Squadleader_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20994,6 +20995,7 @@ class Mission
 					};
 					id=2078;
 					type="Modern_British_Autorifleman_COIN_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21034,6 +21036,7 @@ class Mission
 					};
 					id=2079;
 					type="Modern_British_2IC_COIN_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21074,6 +21077,7 @@ class Mission
 					};
 					id=2080;
 					type="Modern_British_Autorifleman_COIN_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21114,6 +21118,7 @@ class Mission
 					};
 					id=2081;
 					type="Modern_British_Machinegunner_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21154,6 +21159,7 @@ class Mission
 					};
 					id=2082;
 					type="Modern_British_Marksman_COIN_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21194,6 +21200,7 @@ class Mission
 					};
 					id=2083;
 					type="Modern_British_Medic_Light";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -21223,6 +21230,7 @@ class Mission
 			{
 			};
 			id=2074;
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21241,6 +21249,142 @@ class Mission
 								};
 							};
 							value="UK Light Infantry";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item96
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15591.482,7.0102048,17107.693};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=2085;
+					type="Modern_British_Platoon_Commander";
+					atlOffset=2.3365021e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15593.434,7.0492587,17106.465};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=2086;
+					type="Modern_British_Platoon_Sergeant";
+					atlOffset=-9.059906e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2084;
+			atlOffset=2.3365021e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="HQ";
 						};
 					};
 				};

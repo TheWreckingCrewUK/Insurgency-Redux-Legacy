@@ -20,12 +20,8 @@
 params ["_pos","_groupradius","_thisList", ["_multiplier",1]];
 
 if (twc_campaignmode == 1) then {
-	if (!(twc_pltcmd in allplayers)) then {
-		twc_campaignmode = 0;
-		publicVariable "twc_campaignmode";
-	};
+	call twc_fnc_commandcheck;
 };
-
 
 //Selects a direction generally oposite of incoming friendlies
 //_dir = (_thisList select 0) getDir _pos;

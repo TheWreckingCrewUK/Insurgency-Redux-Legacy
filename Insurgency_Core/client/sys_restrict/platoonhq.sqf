@@ -2,7 +2,7 @@
 
 if (twc_skipsectionsystem == 1) exitwith {};
 
-
+systemchat "platoon system init";
 
 _groups = [];
 
@@ -43,7 +43,11 @@ if(isNil "twc_campaignmode") then{
 sleep 3;
 
 
-if ((count _groups) > 1) exitwith {};
+if ((count _groups) > 1) exitwith {if (twc_campaignmode == 0) then {
+	twc_pltcmd = player;
+	publicVariable "twc_pltcmd";
+	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";
+};};
 
 
 

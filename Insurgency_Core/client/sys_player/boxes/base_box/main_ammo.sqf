@@ -318,7 +318,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	];
 };
 
- if (typeOf vehicle player == "Modern_British_Medic") then {
+ if (typeOf vehicle player in ["Modern_British_Medic", "Modern_British_Medic_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],

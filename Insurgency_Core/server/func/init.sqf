@@ -7,6 +7,8 @@ twc_fnc_deleteDead = compile preprocessfilelinenumbers "Insurgency_Core\server\f
 
 twc_fnc_aiWounds = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aiWounds.sqf";
 
+twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
+
 twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
 twc_fnc_getRandomNearbyRoad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_getRandomNearbyRoad.sqf";
 twc_fnc_randomBuildingPos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_randomBuildingPos.sqf";
@@ -19,6 +21,7 @@ twc_fnc_deadasset = compile preprocessfilelinenumbers "Insurgency_Core\server\fu
 twc_fnc_mortarattack = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_mortarattack.sqf";
 twc_fnc_spawnmortar = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_spawnmortar.sqf";
 twc_fnc_deadmortar = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deadmortar.sqf";
+twc_fnc_commandcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_commandcheck.sqf";
 
 call twc_fnc_spawnmortar;
 
