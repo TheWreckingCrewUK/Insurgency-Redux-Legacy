@@ -376,6 +376,15 @@ _list=[
 		]],3
 	],
 	
+		["CUP_B_UH60M_FFV_US",[ 
+		["driver", 
+			["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+		],
+		[[0], 
+			["Modern_British_crewchief","Modern_British_MERT_HeliPilot"]
+		]],3
+	],
+	
 				["CUP_B_A10_DYN_USA", [
 		["driver", 
 			["Modern_British_JetPilot"]

@@ -147,6 +147,13 @@ cutText ["","Black IN",5];
 player forceWalk false;
 };
 
+if ((count units group player) > 3) exitwith {
+twc_groupcount = count _groups;
+publicVariable "twc_groupcount";
+cutText ["","Black IN",5]; 
+player forceWalk false;
+};
+
 
 _groups = [];
 
