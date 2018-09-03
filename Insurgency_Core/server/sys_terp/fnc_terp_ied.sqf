@@ -1,5 +1,7 @@
 params ["_iedpos"];
 
+if ((count (_iedpos nearobjects ['pipebombbase', 5])) ==0) exitwith {};
+
 _terpdis = ((vehicle twc_terp) distance _iedpos);
 
 while {((vehicle twc_terp) distance _iedpos) < (_terpdis + 50)} do {

@@ -1,6 +1,7 @@
 
-params ["_pos"];
+params ["_pos", "_cache"];
 
+if (!alive _cache) exitwith {};
 
 _terpdis = ((vehicle twc_terp) distance _pos);
 

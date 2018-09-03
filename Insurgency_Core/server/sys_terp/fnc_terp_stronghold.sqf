@@ -14,7 +14,7 @@ _enemycountlow = (ceil((_countnum / 10) - (random 2) + (random 2)) * 10) max 0;
 _enemycounthigh = ((ceil((_enemycountlow * (1.2+ (random 0.7)))/10)) *10) max 0;  
   
  
-if (_countnum < 1) exitwith {systemchat "no enemies"};
+if (_countnum < 5) exitwith {};
 sleep 2;
 
 If (terptimer == 0) then {

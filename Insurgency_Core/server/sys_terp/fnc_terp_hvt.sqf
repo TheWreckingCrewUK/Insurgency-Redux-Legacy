@@ -1,6 +1,7 @@
 
-params ["_pos"];
+params ["_pos", "_id"];
 
+if (!(_id in twc_activemissions)) exitwith {};
 
 _terpdis = ((vehicle twc_terp) distance _pos);
 

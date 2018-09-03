@@ -37,7 +37,7 @@
 	_tmp_items =
 	[
 		["ACRE_PRC148",1],
-		["ACE_surgicalKit",1],
+		["TWC_Item_Medical_SutureKit_20",1],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],

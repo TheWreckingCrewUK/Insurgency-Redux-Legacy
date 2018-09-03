@@ -89,13 +89,17 @@ for "_i" from 1 to _total do{
 	sleep 0.2;
 };
 
+_id = [_pos, "HVT"];
+twc_activemissions pushback _id;
+publicVariable "twc_activemissions";
+
 _randsize = 650 + (random 100);
 _randtime = 10;
 _trg2 = createTrigger ["EmptyDetector", _pos];
 _trg2 setTriggerArea [_randsize, _randsize, 30, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_hvt.sqf'",""];
+_trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[getpos thistrigger, _id] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_hvt.sqf'",""];
 
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
@@ -106,9 +110,6 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 
-_id = [_pos, "HVT"];
-twc_activemissions pushback _id;
-publicVariable "twc_activemissions";
 
 //wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
 waituntil {time > (_spawntime + 60)};
