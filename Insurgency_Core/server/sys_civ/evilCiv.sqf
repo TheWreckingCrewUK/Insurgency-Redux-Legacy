@@ -6,7 +6,7 @@ _newGroup = createGroup East;
 _bluforarray = (_civ nearentities ['man', 10]);
 {_civ reveal _x} foreach _bluforarray;
 [_civ] joinSilent _newGroup;
-_civ setVariable ["twc_isenemy",1];
+_civ setVariable ["twc_isenemy",1, true];
 
  
  _newgroup setCombatMode "RED";
