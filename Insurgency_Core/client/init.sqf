@@ -20,6 +20,10 @@ vehicle player setVariable ["twc_isenemy",0, true];
 
 sleep 10;
 
+_forceMapForced = forcedMap select 0;
+_openMapForced = forcedMap select 1;
+if (_forceMapForced || _openMapForced) then {player setdamage 1};
+
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
 };

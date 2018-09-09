@@ -16,6 +16,7 @@ waituntil {time > _time + (count _list * 10)};
 {_x setdamage 0.1; 
 _x setdamage 0; 
 _x setVehicleAmmoDef 1; 
+_x setVehicleAmmo 1; 
 _x setfuel 1;
 
 _veh = _x;
@@ -47,6 +48,7 @@ _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]);
 {_x setdamage 0.1; 
 _x setdamage 0; 
 _x setVehicleAmmoDef 1; 
+_x setVehicleAmmo 1; 
 _x setfuel 1;
 
 _veh = _x;
@@ -93,6 +95,7 @@ if (twc_repairtickets > 0) then {
 		{_x setdamage 0.1; 
 		_x setdamage 0; 
 		_x setVehicleAmmoDef 1; 
+		_x setVehicleAmmo 1; 
 		_x setfuel 1;
 
 		_veh = _x;
