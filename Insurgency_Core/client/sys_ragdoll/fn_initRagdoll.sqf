@@ -19,16 +19,23 @@
 // no need to initialise ragdolling twice!
 if (!isNil 'diwako_ragdoll_ragdollRunning') exitWith {};
 diwako_ragdoll_ragdollRunning = true;
+diwako_ragdoll_ragdolling = true;
+diwako_ragdoll_ai = true;
+diwako_ragdoll_server_only = true;
+
+diwako_ragdoll_fnc_animChangedEH = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_ragdoll\fn_animChangedEH.sqf";
+
 
 ["ace_unconscious", {
   params [["_unit", objNull],["_state", false]];
-  if (!diwako_ragdoll_ragdolling) exitWith {}; // ragdolling if it's active
-  if ((!(isPlayer _unit) && {!diwako_ragdoll_ai})) exitWith {}; // only ragdoll players and only ragdolling AI if that option is set active
-  if (_state && {(isNull objectParent _unit) && {!([_unit] call ace_medical_fnc_isBeingCarried) && {!([_unit] call ace_medical_fnc_isBeingDragged)}}}) then {
+  // if(!local _unit || {!diwako_ragdoll_ragdolling}) exitWith {}; // ragdolling if it's active and unit local
+  if(!diwako_ragdoll_ragdolling) exitWith {}; // ragdolling if it's active
+  if((!(isPlayer _unit) && {!diwako_ragdoll_ai})) exitWith {}; // only ragdoll players and only ragdolling AI if that option is set active
+  if(_state && {(isNull objectParent _unit) && {!([_unit] call ace_medical_fnc_isBeingCarried) && {!([_unit] call ace_medical_fnc_isBeingDragged)}}}) then {
     // ragdoll unit
     _unit setUnconscious true;
   };
-  if (!_state) then {
+  if(!_state) then {
     // unit woke up before ragdolling was finished
     _unit setUnconscious false;
   };
