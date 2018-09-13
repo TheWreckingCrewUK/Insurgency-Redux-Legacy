@@ -23,6 +23,9 @@ twc_surrenderVote = false;
 TWC_Building_Style = "MidEast";
 twc_convoyallowed = 1;
 
+twc_wdveh = 0;
+publicVariable "twc_wdveh";
+
 crampresent = 1;
 
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];

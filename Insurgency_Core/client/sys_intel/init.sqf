@@ -14,6 +14,7 @@ execvm "Insurgency_Core\client\sys_intel\stopcivsinit.sqf";
 
 //Questioning Civs
 InsP_fnc_questionDisplay = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_questionDisplay.sqf";
+InsP_fnc_enemyIntel_body = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_enemyIntel_body.sqf";
 InsP_fnc_enemyIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_enemyIntel.sqf";
 InsP_fnc_possibleIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_possibleIntel.sqf";
 InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_evidence.sqf";

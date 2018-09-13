@@ -25,6 +25,9 @@ twc_is90 = 0;
 
 crampresent = 1;
 
+twc_wdveh = 0;
+publicVariable "twc_wdveh";
+
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
 sirenlist = [idfalarm,idfalarm_1];
