@@ -15,7 +15,7 @@ publicVariable "twc_skipsectionsystem";
 
 
 if (isnil "twc_sectionsize") then {
-twc_sectionsize = 8;
+twc_sectionsize = 7;
 publicVariable "twc_sectionsize";
 };
 
@@ -90,7 +90,7 @@ systemchat "there's only one group";
 
 //see if the section they're in is populated
 
-if ((count units group player) >= (4 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) exitwith {
+if ((count units group player) >= (3 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
 systemchat "section system thinks you've joined a decent sized team";
@@ -122,10 +122,10 @@ player forceWalk false;
 systemchat "gonna restrict you now";
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {((count units group player) < (4 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) && (_space == 1)} do {
+while {((count units group player) < (3 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) && (_space == 1)} do {
 cutText ["", "Black", 0.001];
     [ 
-        format ["<t size='1.2'>Fill The Sections</t><br/><t size='0.6'>There are other sections that need to be filled. Go there or get 4 or more people in the current section</t>", 
+        format ["<t size='1.2'>Fill The Sections</t><br/><t size='0.6'>There are other sections that need to be filled. Go there or get 3 or more people in the current section</t>", 
 		
 		0
 		], 0, 0.22, 5, 0, 0, 2 
@@ -143,13 +143,6 @@ if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
 systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
-cutText ["","Black IN",5]; 
-player forceWalk false;
-};
-
-if ((count units group player) > 3) exitwith {
-twc_groupcount = count _groups;
-publicVariable "twc_groupcount";
 cutText ["","Black IN",5]; 
 player forceWalk false;
 };
@@ -173,6 +166,13 @@ _snowflakes = 0;
 		};
 	};
 } foreach allplayers;
+
+if ((count units group player) >= 3) exitwith {
+twc_groupcount = count _groups;
+publicVariable "twc_groupcount";
+cutText ["","Black IN",5]; 
+player forceWalk false;
+};
 
 
 };

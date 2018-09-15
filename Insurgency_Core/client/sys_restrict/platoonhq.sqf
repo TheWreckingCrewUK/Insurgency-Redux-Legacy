@@ -2,7 +2,7 @@
 
 if (twc_skipsectionsystem == 1) exitwith {};
 
-systemchat "platoon system init";
+systemchat "Starting Deployment";
 
 _groups = [];
 
@@ -16,7 +16,6 @@ if(isNil "twc_campaignmode") then{
 
 //now find out what groups we're dealing with. looking for regular infantry groups and adding exemptions for any non-infantry groups that are allowed at low playercounts, like snipers, heli pilots and quartermasters
 {if (_x == leader _x) then {
-	if (!(["sniper", str (group _x)] call BIS_fnc_inString)) then {
 	
 		if ((["infantry", str (group _x)] call BIS_fnc_inString)) then {
 		
@@ -30,20 +29,24 @@ if(isNil "twc_campaignmode") then{
 					
 				} else {_snowflakes = _snowflakes + (count units group _x)};
 			};
-		} else { //sniper exemption because they can spawn under 5 playercount
-			if ((count(allPlayers - entities "HeadlessClient_F"))< 5) then {
-				_snowflakes = _snowflakes + (count units group _x);
-				};
-			};
+		
 	};
 } foreach allplayers;
  
+ {if (_x == leader _x) then {
+		if (!(["HQ", str (group _x)] call BIS_fnc_inString)) then {
+			if (!(["quartermaster", str (typeof _x)] call BIS_fnc_inString)) then {
+			_groups pushback [group _x]
+			};
+		};
+	};
+} foreach allplayers;
  
 //quick sleep because instring is a bit slow
 sleep 3;
 
 
-if ((count _groups) > 1) exitwith {if (twc_campaignmode == 0) then {
+if ((count _groups) > 2) exitwith {if (twc_campaignmode == 0) then {
 	twc_pltcmd = player;
 	publicVariable "twc_pltcmd";
 	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";

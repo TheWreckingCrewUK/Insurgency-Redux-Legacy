@@ -25,6 +25,9 @@ TWC_Building_Style = "MidEast";
 twc_is90 = 1;
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
+pointLimit = 400;
+publicVariable "pointLimit";
+
 sirenlist = [idfalarm,idfalarm_1];
 publicvariable "sirenlist";
 
