@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1754;
+		nextID=1758;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3316.0198,22.404694,1433.0793};
-		dir[]={0.25819841,-0.58231723,-0.77103454};
-		up[]={0.18489774,0.81300235,-0.55214161};
-		aside[]={-0.94836116,3.3993274e-008,-0.31757912};
+		pos[]={3404.0205,65.191002,1424.7401};
+		dir[]={-0.78667247,-0.58690298,-0.19178471};
+		up[]={-0.57022518,0.80963916,-0.13901693};
+		aside[]={-0.23686913,-1.3148529e-006,0.97159088};
 	};
 };
 binarizationWanted=0;
@@ -12728,7 +12728,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=85;
+		items=86;
 		class Item0
 		{
 			dataType="Marker";
@@ -13856,7 +13856,7 @@ class Mission
 			};
 			id=1463;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
-			atlOffset=0.1154356;
+			atlOffset=0.11538982;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13897,6 +13897,7 @@ class Mission
 			};
 			id=1464;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
+			atlOffset=-0.00030422211;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13937,7 +13938,7 @@ class Mission
 			};
 			id=1465;
 			type="UK3CB_BAF_LandRover_WMIK_HMG_Sand_A";
-			atlOffset=0.094749451;
+			atlOffset=0.094612122;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14017,7 +14018,7 @@ class Mission
 			};
 			id=1467;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=0.012999535;
+			atlOffset=0.01289463;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18600,6 +18601,7 @@ class Mission
 			};
 			id=1743;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
+			atlOffset=-9.5367432e-005;
 		};
 		class Item79
 		{
@@ -18617,7 +18619,7 @@ class Mission
 			};
 			id=1744;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=9.5367432e-007;
+			atlOffset=-0.00035667419;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18648,7 +18650,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3329.1484,13.919392,1402.3516};
-				angles[]={0.027492445,0.33625984,0.034986377};
+				angles[]={0.027492445,0.62975109,0.034986377};
 			};
 			side="Empty";
 			flags=4;
@@ -18658,6 +18660,7 @@ class Mission
 			};
 			id=1749;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
+			atlOffset=-0.00073051453;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18698,6 +18701,7 @@ class Mission
 			};
 			id=1750;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
+			atlOffset=-1.9073486e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18818,6 +18822,7 @@ class Mission
 			};
 			id=1753;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
+			atlOffset=-0.0004234314;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18840,6 +18845,142 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item85
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3319.4675,11.611023,1392.6393};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1755;
+					type="1990_British_Platoon_Commander_Desert";
+					atlOffset=4.7683716e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3320.9846,11.65023,1392.3489};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1756;
+					type="1990_British_Platoon_Sergeant_Desert";
+					atlOffset=-1.9073486e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1754;
+			atlOffset=4.7683716e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="HQ";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

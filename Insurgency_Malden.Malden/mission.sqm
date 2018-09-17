@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=862;
+		nextID=865;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8048.8433,72.459717,9963.123};
-		dir[]={-0.023302115,-0.50306159,0.86399978};
-		up[]={-0.013563664,0.86422908,0.50292206};
-		aside[]={0.9996931,-5.4482371e-007,0.026963586};
+		pos[]={8031.5024,46.839169,9965.6172};
+		dir[]={-0.044517852,-0.6902805,0.72224724};
+		up[]={-0.042468116,0.72352517,0.6889956};
+		aside[]={0.99816275,-9.5528958e-007,0.061526384};
 	};
 };
 binarizationWanted=0;
@@ -12800,7 +12800,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=93;
+		items=94;
 		class Item0
 		{
 			dataType="Marker";
@@ -13138,7 +13138,7 @@ class Mission
 			position[]={8108.2114,0,10076.679};
 			name="crateDropOff";
 			type="Empty";
-			angle=6.8301733e-006;
+			angle=6.8301729e-006;
 			id=219;
 			atlOffset=-29.450424;
 		};
@@ -13432,7 +13432,7 @@ class Mission
 			position[]={8108.2915,0,10076.174};
 			name="forwardBase_itemSpawn";
 			type="Empty";
-			angle=6.8301733e-006;
+			angle=6.8301729e-006;
 			id=351;
 			atlOffset=-29.44891;
 		};
@@ -19851,6 +19851,139 @@ class Mission
 								};
 							};
 							value="UK Light Infantry";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="acex_headless_blacklist";
+					expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item93
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8031.0098,29.971437,9977.4961};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=863;
+					type="Modern_British_Platoon_Commander";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8033.7686,29.971437,9975.918};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=864;
+					type="Modern_British_Platoon_Sergeant";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=862;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="HQ";
 						};
 					};
 				};

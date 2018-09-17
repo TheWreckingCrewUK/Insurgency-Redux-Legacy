@@ -22,6 +22,12 @@ _list=[
 		]],5
 	],
 	
+		["UK3CB_BAF_LandRover_Hard_FFR_Green_A_TWCBaseRadio",[
+		["driver",
+			["literally noone"]
+		]],6
+	],
+	
 		["rhsusf_m1a2sep1wd_usarmy",[ 
 		["driver", 
 			["Modern_USMC_VehicleCrew"]
