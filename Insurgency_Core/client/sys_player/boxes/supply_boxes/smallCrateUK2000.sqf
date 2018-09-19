@@ -38,7 +38,7 @@ _box AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",4];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 
-_box AddMagazineCargoGlobal ["ukcw_13rd_9x19",8];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",8];
 
 _box addItemCargoGlobal ["ACE_fieldDressing",5];
 _box addItemCargoGlobal ["ACE_elasticBandage",5];

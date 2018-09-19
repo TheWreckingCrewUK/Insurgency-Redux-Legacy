@@ -246,14 +246,14 @@ if((typeOf player) in ["1990_British_quartermaster_Desert"])then{
 
 };
 
-if((typeOf player) in ["1990_British_mg_assistant_Desert"])then{
+if((typeOf player) in ["1990_British_mg_assistant_Desert","1990_British_mg_assistant"])then{
 
 	_mgaction = ["Spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_mgaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
 };
 
-if((typeOf player) in ["1990_British_2IC_Desert","1990_British_SectionCommander_Desert"])then{
+if((typeOf player) in ["1990_British_2IC","1990_British_SectionCommander","1990_British_2IC_Desert","1990_British_SectionCommander_Desert"])then{
 
 	
 	_90UKaction = ["Spawnsmall90UKCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk90.sqf"},_condition] call ace_interact_menu_fnc_createAction;

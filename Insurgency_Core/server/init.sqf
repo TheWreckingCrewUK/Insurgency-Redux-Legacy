@@ -118,6 +118,10 @@ basemode = 0;
 publicvariable "basemode";
 };
 
+if (isNil "twc_strongholdcount") then {
+twc_strongholdcount = 3;
+};
+
 // List of civilians who were already questioned
 nonQuestionableList = [];
 publicVariable "nonQuestionableList";
@@ -129,7 +133,7 @@ publicVariable "goodcivlist";
 // Array of the locations and the strongholds
 townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
 _strongholdArray = [];
-while{count _strongholdArray < 2}do{
+while{count _strongholdArray <= twc_strongholdcount}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
@@ -138,6 +142,12 @@ while{count _strongholdArray < 2}do{
 		};
 	};
 };
+
+if(isNil "customlocations") then{
+	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
+	};
+	{
+townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
 
 //Strongholds
 {

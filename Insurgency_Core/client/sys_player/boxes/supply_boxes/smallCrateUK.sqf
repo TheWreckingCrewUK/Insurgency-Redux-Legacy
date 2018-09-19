@@ -39,6 +39,7 @@ _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",5];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",8];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",8];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
 

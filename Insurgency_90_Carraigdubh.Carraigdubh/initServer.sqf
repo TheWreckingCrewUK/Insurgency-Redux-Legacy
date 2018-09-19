@@ -20,16 +20,21 @@ twc_surrenderVote = false;
 * "MidEast" - Middle East
 * "IRA" - Irish
 */
+TWC_Building_Style = "MidEast";
 
+twc_is90 = 1;
+hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
-TWC_Building_Style = "Med";
+twc_strongholdcount = 1;
 
-hvtlist = ["rhsgref_ins_squadleader"];
+pointLimit = 400;
+publicVariable "pointLimit";
 
-sirenlist = [idfalarm,idfalarm_1,idfalarm_2,idfalarm_3];
+sirenlist = [idfalarm,idfalarm_1];
 publicvariable "sirenlist";
 
 civilianType = ["greek_Civ_Men_1", "greek_Civ_Men_2", "greek_Civ_Men_3", "greek_Civ_Men_4", "greek_Civ_Men_5", "greek_Civ_Men_6", "greek_Civ_Men_7", "greek_Civ_Men_8", "greek_Civ_Men_9", "greek_Civ_Men_10", "greek_Civ_Men_11"];
+
 publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
 
@@ -56,7 +61,7 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil{scriptDone _script};
 
 
-badTownArray = ["Airport","harbor","Moray","Pegasus Air Co.","military base","Saint Martin","Bosquet","Faro","Guran","Feas"];
+badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Bosquet","Faro","Guran","Feas"];
 
 [missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
