@@ -23,18 +23,16 @@ if(!(alive _unit) &&  // do not run if unit is dead
 
 _anim = toLower(_anim);
 
-if((_anim find "unconsciousrevive") != -1 || 
-  {(_anim == "unconsciousoutprone") || 
-  {(_anim find "amov") == 0 }} ) then {
+if((_anim find "unconsciousrevive") != -1 || {(_anim == "unconsciousoutprone") || {(_anim find "amov") == 0 }} ) then {
   _anim = "unconscious";
 
   // figure out which position state is need
-  private _vRightShoulder = _unit selectionPosition "rightshoulder";
-  private _vLeftShoulder = _unit selectionPosition "leftshoulder";
-  private _heightDif = (_vRightShoulder select 2) - (_vLeftShoulder select 2);
+_vRightShoulder = _unit selectionPosition "rightshoulder";
+_vLeftShoulder = _unit selectionPosition "leftshoulder";
+_heightDif = (_vRightShoulder select 2) - (_vLeftShoulder select 2);
 
   // array of array for each animation
-  private _animHolder = [];
+_animHolder = [];
 
   if(isNil "diwako_ragdoll_animHolder") then {
     diwako_ragdoll_animHolder = [];
