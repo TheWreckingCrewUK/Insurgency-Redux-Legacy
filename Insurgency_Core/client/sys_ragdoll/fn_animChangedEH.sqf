@@ -23,9 +23,9 @@ if(!(alive _unit) &&  // do not run if unit is dead
 
 _anim = toLower(_anim);
 
-if((_anim find "unconsciousrevive") != -1 || // catch ragdoll recovery animations
-  {(_anim == "unconsciousoutprone") || // catch another ragdoll recovery animation
-  {(_anim find "amov") == 0 }} ) then { // catch any movement or stance type of animation (player specific clause)
+if((_anim find "unconsciousrevive") != -1 || 
+  {(_anim == "unconsciousoutprone") || 
+  {(_anim find "amov") == 0 }} ) then {
   _anim = "unconscious";
 
   // figure out which position state is need
