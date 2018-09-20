@@ -29,9 +29,13 @@ if((_anim find "unconsciousrevive") != -1 || // catch ragdoll recovery animation
   _anim = "unconscious";
 
   // figure out which position state is need
-  private _vRightShoulder = _unit selectionPosition "rightshoulder";
-  private _vLeftShoulder = _unit selectionPosition "leftshoulder";
-  private _heightDif = _vRightShoulder select 2 - _vLeftShoulder select 2;
+_vRightShoulder = _unit selectionPosition "rightshoulder";
+_vLeftShoulder = _unit selectionPosition "leftshoulder";
+ _heightDif = _vRightShoulder select 2 - _vLeftShoulder select 2;
+ 
+ private "_vRightShoulder";
+ private "_vLeftShoulder";
+ private "_heightDif";
 
   // array of array for each animation
   private _animHolder = [];
