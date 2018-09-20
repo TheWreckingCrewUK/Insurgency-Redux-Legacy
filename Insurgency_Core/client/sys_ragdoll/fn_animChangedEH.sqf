@@ -19,7 +19,7 @@
 params ["_unit","_anim"];
 if(!(_unit getVariable ["ACE_isUnconscious",false])) exitWith {}; // do not run if unit is conscious
 if(!(alive _unit) &&  // do not run if unit is dead
-	{!(isNull objectParent _unit)}) exitWith {}; // do not run if unit in any vehicle
+	(!(isNull objectParent _unit))) exitWith {}; // do not run if unit in any vehicle
 
 _anim = toLower(_anim);
 
@@ -36,7 +36,7 @@ if((_anim find "unconsciousrevive") != -1 || ((_anim == "unconsciousoutprone") |
 
   if(isNil "diwako_ragdoll_animHolder") then {
     diwako_ragdoll_animHolder = [];
-    if(!diwako_ragdoll_server_only && {isClass(configFile >> "CfgPatches" >> "diwako_ragdoll")}) then {
+    if(!diwako_ragdoll_server_only && (isClass(configFile >> "CfgPatches" >> "diwako_ragdoll"))) then {
       // mod version found
       diwako_ragdoll_animHolder pushBack ["kka3_unc_2","kka3_unc_2_1","kka3_unc_7_1","kka3_unc_8_1","kka3_unc_5_1","kka3_unc_6_1"]; // 0 on their back
       diwako_ragdoll_animHolder pushBack ["kka3_unc_1", "kka3_unc_3", "kka3_unc_4","unconscious","KIA_passenger_boat_holdleft","kka3_unc_3_1","kka3_unc_4_1"]; // 1 on their belly
