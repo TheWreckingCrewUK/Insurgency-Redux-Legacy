@@ -147,6 +147,7 @@ if(isNil "customlocations") then{
 	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
 	};
 	{
+	_location = createLocation [ "NameVillage" , getpos _x, 100, 100];
 townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
 
 //Strongholds

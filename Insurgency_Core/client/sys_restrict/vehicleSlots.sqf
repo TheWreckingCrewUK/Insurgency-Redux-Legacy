@@ -277,6 +277,15 @@ _list=[
 		]],3
 	],
 	
+		["ukcw_Gazelle_dyn", [
+		["driver", 
+			["Modern_British_HeliPilot","2000_British_HeliPilot_Desert","1990_British_HeliPilot"]
+		],
+		["turret", 
+			["Modern_British_crewchief","1990_British_HeliPilot"]
+		]],3
+	],
+	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
 		["driver", 
 			["Modern_British_HeliPilot"]
@@ -341,10 +350,10 @@ _list=[
 
 		["CUP_B_CH47F_GB",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","2000_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot"]
+			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","1990_British_HeliPilot","2000_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot"]
 		],
 		[[3], 
-			["Modern_British_crewchief","Modern_USMC_crewchief","Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			["Modern_British_crewchief","Modern_USMC_crewchief","1990_British_HeliPilot","Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
 		]],3
 	],
 

@@ -4,15 +4,15 @@ if(!isMultiplayer)exitWith{};
 
 
 if((typeOf player) in ["Modern_British_crewchief"])then{
-if (( count(allPlayers - entities "HeadlessClient_F")) < 8) then {
+if (( count(allPlayers - entities "HeadlessClient_F")) < 10) then {
 
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {( count(allPlayers - entities "HeadlessClient_F")) < 8} do {
+while {( count(allPlayers - entities "HeadlessClient_F")) < 10} do {
 cutText ["", "Black", 0.001];
 
     [
-        "<t size='1.2'>Helicopter Crew Chief</t><br/><t size='0.6'>You need 8 or more players on the server before you can be a Crew Chief</t>", 0, 0.22, 5, 0, 0, 2
+        "<t size='1.2'>Helicopter Crew Chief</t><br/><t size='0.6'>You need 10 or more players on the server before you can be a Crew Chief</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
 	
 	sleep 5;
@@ -44,7 +44,7 @@ if((typeOf player) in ["Modern_British_Medic_Mert","Modern_British_MERT_HeliPilo
 
 
 
-if((typeOf player) in ["Modern_British_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
+if((typeOf player) in ["Modern_British_HeliPilot","1990_British_HeliPilot_Desert","1990_British_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 5) then {
 
 cutText ["", "Black", 0.001];

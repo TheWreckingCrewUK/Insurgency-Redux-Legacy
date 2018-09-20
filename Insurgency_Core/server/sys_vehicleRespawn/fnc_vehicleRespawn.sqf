@@ -53,6 +53,16 @@ _veh addEventHandler ["GetOut",{
 					_veh = (_respawnInfo select 0) createVehicle [0,0,500];
 					_veh setDir (_respawnInfo select 2);
 					_veh setPosASL (_respawnInfo select 1);
+					
+					if (typeof _veh == "ukcw_Gazelle_dyn") then {
+						[
+						_veh,
+						["Woodland",1], 
+						["HideWeapons",1]
+						] call BIS_fnc_initVehicle;
+						_veh setpylonloadout ["ukcw_PylonPod_1200Rnd_L20A1","ukcw_PylonPod_1200Rnd_L20A1"];
+					};
+					
 					clearWeaponCargoGlobal _veh;
 					clearMagazineCargoGlobal _veh;
 					clearItemCargoGlobal _veh;
@@ -103,6 +113,15 @@ _veh addEventHandler ["Killed",{
 		_veh = (_respawnInfo select 0) createVehicle [0,0,500];
 		_veh setDir (_respawnInfo select 2);
 		_veh setPosASL (_respawnInfo select 1);
+					
+					if (typeof _veh == "ukcw_Gazelle_dyn") then {
+						[
+						_veh,
+						["Woodland",1], 
+						["HideWeapons",1]
+						] call BIS_fnc_initVehicle;
+						_veh setpylonloadout ["ukcw_PylonPod_1200Rnd_L20A1","ukcw_PylonPod_1200Rnd_L20A1"];
+					};
 		clearWeaponCargoGlobal _veh;
 		clearMagazineCargoGlobal _veh;
 		clearItemCargoGlobal _veh;

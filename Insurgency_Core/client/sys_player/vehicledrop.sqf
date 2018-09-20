@@ -49,6 +49,17 @@ _car1 = "CUP_B_HMMWV_Unarmed_USA";
 
 _car2 = "CUP_B_HMMWV_M2_USA";
 };
+
+
+if (["carraig", twc_missionname] call BIS_fnc_inString) then {
+
+_car1 = "UK3CB_BAF_LandRover_Snatch_NI_A";
+
+_car2 = "UK3CB_BAF_LandRover_Snatch_NI_A";
+
+};
+
+
 };
 
 _playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.5) +2) max 2;
