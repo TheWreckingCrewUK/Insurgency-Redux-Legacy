@@ -23,12 +23,13 @@ if(!(alive _unit) &&  // do not run if unit is dead
 
 _anim = toLower(_anim);
 
-if((_anim find "unconsciousrevive") != -1 || // catch ragdoll recovery animations
-  {_anim == "unconsciousoutprone" || // catch another ragdoll recovery animation
-  {(_anim find "amov") == 0 }} ) then { // catch any movement or stance type of animation (player specific clause)
+if(((_anim find "unconsciousrevive") != -1) || // catch ragdoll recovery animations
+  (_anim == "unconsciousoutprone" || // catch another ragdoll recovery animation
+  ((_anim find "amov") == 0 )) ) then { // catch any movement or stance type of animation (player specific clause)
   _anim = "unconscious";
 
   // figure out which position state is need
+  
   private _vRightShoulder = _unit selectionPosition "rightshoulder";
   private _vLeftShoulder = _unit selectionPosition "leftshoulder";
   private _heightDif = _vRightShoulder#2 - _vLeftShoulder#2;
@@ -99,9 +100,9 @@ if((_anim find "unconsciousrevive") != -1 || // catch ragdoll recovery animation
       {
         params ["_unit","_anim"];
         if((_unit getVariable ["ACE_isUnconscious",false]) && // unit still unconscious
-          {(isNull objectParent _unit) && // unit not in a car
-          {!([_unit] call ace_medical_fnc_isBeingCarried) && // not being carried
-          {!([_unit] call ace_medical_fnc_isBeingDragged)}}} // not being dragged
+          ((isNull objectParent _unit) && // unit not in a car
+          (!([_unit] call ace_medical_fnc_isBeingCarried) && // not being carried
+          (!([_unit] call ace_medical_fnc_isBeingDragged)))) // not being dragged
           ) then {
           // reapply unconscious animation just in case
           if(_unit == ace_player) then {
