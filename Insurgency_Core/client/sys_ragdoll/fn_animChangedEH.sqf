@@ -54,12 +54,12 @@ if((_anim find "unconsciousrevive") != -1 ||  (_anim == "unconsciousoutprone" ||
   
     _anim = selectRandom ([ (diwako_ragdoll_animHolder select 2) , (diwako_ragdoll_animHolder select 3) ] select (_heightDif < -0.2));
   } else {
-    if(_vRightShoulder#0 > _vLeftShoulder#0) then {
+    if((_vRightShoulder select 0) > (_vLeftShoulder select 0)) then {
 	
-      _anim = selectRandom (diwako_ragdoll_animHolder#1);
+      _anim = selectRandom (diwako_ragdoll_animHolder select 1);
     } else {
 	
-      _anim = selectRandom (diwako_ragdoll_animHolder#0);
+      _anim = selectRandom (diwako_ragdoll_animHolder select 0);
     };
   };
 
