@@ -17,7 +17,8 @@
     none
 */
 params ["_unit","_anim"];
-if(!(_unit getVariable ["ACE_isUnconscious",false])) exitWith {}; // do not run if unit is conscious
+if(!(_unit getVariable ["ACE_isUnconscious",false])) exitWith {}; 
+// do not run if unit is conscious
 if(!(alive _unit) && {!(isNull objectParent _unit)}) exitWith {}; 
 // do not run if unit in any vehicle
 
@@ -26,46 +27,42 @@ _anim = toLower(_anim);
 if((_anim find "unconsciousrevive") != -1 ||  {_anim == "unconsciousoutprone" ||   {(_anim find "amov") == 0 }} ) then {
   _anim = "unconscious";
 
-  // figure out which position state is need
   private _vRightShoulder = _unit selectionPosition "rightshoulder";
   private _vLeftShoulder = _unit selectionPosition "leftshoulder";
   private _heightDif = (_vRightShoulder select 2) - (_vLeftShoulder select 2);
 
-  // array of array for each animation
   private _animHolder = [];
 
   if(isNil "diwako_ragdoll_animHolder") then {
     diwako_ragdoll_animHolder = [];
     if(!diwako_ragdoll_server_only && {isClass(configFile >> "CfgPatches" >> "diwako_ragdoll")}) then {
-      // mod version found
-      diwako_ragdoll_animHolder pushBack ["kka3_unc_2","kka3_unc_2_1","kka3_unc_7_1","kka3_unc_8_1","kka3_unc_5_1","kka3_unc_6_1"]; // 0 on their back
-      diwako_ragdoll_animHolder pushBack ["kka3_unc_1", "kka3_unc_3", "kka3_unc_4","unconscious","KIA_passenger_boat_holdleft","kka3_unc_3_1","kka3_unc_4_1"]; // 1 on their belly
-      diwako_ragdoll_animHolder pushBack ["kka3_unc_7","kka3_unc_8","kka3_unc_6_1","kka3_unc_5_1"]; // 2 on their right shoulder
-      diwako_ragdoll_animHolder pushBack ["kka3_unc_5","kka3_unc_6","KIA_driver_boat01","kka3_unc_1_1","kka3_unc_7_1","kka3_unc_8_1"]; // 3 on their left shoulder
+      
+      diwako_ragdoll_animHolder pushBack ["kka3_unc_2","kka3_unc_2_1","kka3_unc_7_1","kka3_unc_8_1","kka3_unc_5_1","kka3_unc_6_1"]; 
+      diwako_ragdoll_animHolder pushBack ["kka3_unc_1", "kka3_unc_3", "kka3_unc_4","unconscious","KIA_passenger_boat_holdleft","kka3_unc_3_1","kka3_unc_4_1"]; 
+      diwako_ragdoll_animHolder pushBack ["kka3_unc_7","kka3_unc_8","kka3_unc_6_1","kka3_unc_5_1"]; 
+      diwako_ragdoll_animHolder pushBack ["kka3_unc_5","kka3_unc_6","KIA_driver_boat01","kka3_unc_1_1","kka3_unc_7_1","kka3_unc_8_1"]; 
     } else {
-      // script version or server only mode
-      diwako_ragdoll_animHolder pushBack ["unconscious"]; // 0 on their back
-      diwako_ragdoll_animHolder pushBack ["unconscious","KIA_passenger_boat_holdleft"]; // 1 on their belly
-      diwako_ragdoll_animHolder pushBack ["unconscious"]; // 2 on their right shoulder
-      diwako_ragdoll_animHolder pushBack ["unconscious","KIA_driver_boat01"]; // 3 on their left shoulder
+	
+      diwako_ragdoll_animHolder pushBack ["unconscious"]; 
+      diwako_ragdoll_animHolder pushBack ["unconscious","KIA_passenger_boat_holdleft"]; 
+      diwako_ragdoll_animHolder pushBack ["unconscious"];
+      diwako_ragdoll_animHolder pushBack ["unconscious","KIA_driver_boat01"];
     };
   };
 
   if( _heightDif > 0.2 || _heightDif < -0.2) then {
-    // unit on side
-    // first one is right shoulder, second one is on left shoulder
-    _anim = selectRandom ([ diwako_ragdoll_animHolder#2 , diwako_ragdoll_animHolder#3 ] select (_heightDif < -0.2));
+  
+    _anim = selectRandom ([ (diwako_ragdoll_animHolder select 2) , (diwako_ragdoll_animHolder select 3) ] select (_heightDif < -0.2));
   } else {
     if(_vRightShoulder#0 > _vLeftShoulder#0) then {
-      // unit on their belly
+	
       _anim = selectRandom (diwako_ragdoll_animHolder#1);
     } else {
-      // unit on their back
+	
       _anim = selectRandom (diwako_ragdoll_animHolder#0);
     };
   };
 
-  // play animation
   [
     {
       params ["_unit","_anim"];
@@ -76,9 +73,7 @@ if((_anim find "unconsciousrevive") != -1 ||  {_anim == "unconsciousoutprone" ||
           _unit switchMove _anim;
         };
       };
-    }, // code
-    [_unit,_anim], // params
-    0.2 // delay
+    },   [_unit,_anim],     0.2 
   ] call CBA_fnc_waitAndExecute;
   [
     {
@@ -86,22 +81,14 @@ if((_anim find "unconsciousrevive") != -1 ||  {_anim == "unconsciousoutprone" ||
       if(_unit getVariable ["ACE_isUnconscious",false]) then {
         _unit setUnconscious false;
       };
-    }, // code
-    [_unit,_anim], // params
-    5 // delay
-  ] call CBA_fnc_waitAndExecute;
+    },    [_unit,_anim],    5  ] call CBA_fnc_waitAndExecute;
 
-  // combat network sync issues
   if(isMultiplayer) then {
     [
       {
         params ["_unit","_anim"];
-        if((_unit getVariable ["ACE_isUnconscious",false]) && // unit still unconscious
-          {(isNull objectParent _unit) && // unit not in a car
-          {!([_unit] call ace_medical_fnc_isBeingCarried) && // not being carried
-          {!([_unit] call ace_medical_fnc_isBeingDragged)}}} // not being dragged
-          ) then {
-          // reapply unconscious animation just in case
+        if((_unit getVariable ["ACE_isUnconscious",false]) &&        {(isNull objectParent _unit) &&          {!([_unit] call ace_medical_fnc_isBeingCarried) &&           {!([_unit] call ace_medical_fnc_isBeingDragged)}}}          ) then {
+          
           if(_unit == ace_player) then {
             ["ace_common_switchMove", [_unit, _anim]] call CBA_fnc_globalEvent;
           } else {
@@ -109,16 +96,11 @@ if((_anim find "unconsciousrevive") != -1 ||  {_anim == "unconsciousoutprone" ||
           };
         };
         if(!(_unit getVariable ["ACE_isUnconscious",false])) then {
-          // unit is not unconscious anymore
           _unit setUnconscious false;
-          // free unit of unconscious animation if it is still trapped in it
           if(local _unit) then {
             ["ace_common_switchMove", [_unit, (animationState _unit)]] call CBA_fnc_globalEvent;
           };
         };
-      }, // code
-      [_unit,_anim], // params
-      10 // delay
-    ] call CBA_fnc_waitAndExecute;
+      },      [_unit,_anim],       10     ] call CBA_fnc_waitAndExecute;
   };
 };
