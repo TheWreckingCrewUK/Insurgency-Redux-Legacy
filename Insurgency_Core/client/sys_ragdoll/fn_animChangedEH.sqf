@@ -18,20 +18,18 @@
 */
 params ["_unit","_anim"];
 if(!(_unit getVariable ["ACE_isUnconscious",false])) exitWith {}; // do not run if unit is conscious
-if(!(alive _unit) &&  // do not run if unit is dead
-	{!(isNull objectParent _unit)}) exitWith {}; // do not run if unit in any vehicle
+if(!(alive _unit) && {!(isNull objectParent _unit)}) exitWith {}; 
+// do not run if unit in any vehicle
 
 _anim = toLower(_anim);
 
-if((_anim find "unconsciousrevive") != -1 || // catch ragdoll recovery animations
-  {_anim == "unconsciousoutprone" || // catch another ragdoll recovery animation
-  {(_anim find "amov") == 0 }} ) then { // catch any movement or stance type of animation (player specific clause)
+if((_anim find "unconsciousrevive") != -1 ||  {_anim == "unconsciousoutprone" ||   {(_anim find "amov") == 0 }} ) then {
   _anim = "unconscious";
 
   // figure out which position state is need
   private _vRightShoulder = _unit selectionPosition "rightshoulder";
   private _vLeftShoulder = _unit selectionPosition "leftshoulder";
-  private _heightDif = _vRightShoulder#2 - _vLeftShoulder#2;
+  private _heightDif = (_vRightShoulder select 2) - (_vLeftShoulder select 2);
 
   // array of array for each animation
   private _animHolder = [];
