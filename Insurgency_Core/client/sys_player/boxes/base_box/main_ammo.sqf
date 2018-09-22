@@ -2826,7 +2826,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["2000_British_Gunner","2000_British_Gunner_Desert"])then{
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L110A1",1]
+        ["TWC_UK3CB_BAF_L110A2_SUSAT",1]
 	];
 
 	_tmp_magazines =
