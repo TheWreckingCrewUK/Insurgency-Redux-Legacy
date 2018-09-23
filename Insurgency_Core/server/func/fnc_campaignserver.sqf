@@ -36,7 +36,7 @@ params ["_obj", "_campaignlist", "_tasklist"];
 _taskid = str random 1000;
 	if (_obj in InsP_cacheGroup) then {
 		_cachepos = ([getpos _obj, 100] call CBA_fnc_randPos);
-		[twc_pltcmd,[_taskid],["Intel reports suggest an enemy weapons cache nearby. We need to destroy it to hamper their abilities in the region.","Weapons Cache"],_cachepos,0,2,true] call BIS_fnc_taskCreate; _tasklist pushback _taskid;
+		[group twc_pltcmd,[_taskid],["Intel reports suggest an enemy weapons cache nearby. We need to destroy it to hamper their abilities in the region.","Weapons Cache"],_cachepos,0,2,true] call BIS_fnc_taskCreate; _tasklist pushback _taskid;
 		waituntil {!(_obj in InsP_cacheGroup)};
 		[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 	};
@@ -44,16 +44,16 @@ _taskid = str random 1000;
 	
 	if ((_obj select 1) == "HVT") then {
 	_cachepos = ([_obj select 0, 100] call CBA_fnc_randPos);
-		[twc_pltcmd,[_taskid],["We have located a high ranking enemy insurgent. Eliminate him.", _obj select 1],_cachepos,0,2,true] call BIS_fnc_taskCreate;};
+		[group twc_pltcmd,[_taskid],["We have located a high ranking enemy insurgent. Eliminate him.", _obj select 1],_cachepos,0,2,true] call BIS_fnc_taskCreate;};
 	
 	if ((_obj select 1) == "VIP") then {
-		[twc_pltcmd,[_taskid],["A Journalist is being held by enemy forces. Bring him safely back to base and select the option to Rescue VIP when he's near the spawn building.", _obj select 1],_obj select 0,0,2,true] call BIS_fnc_taskCreate;}; _tasklist pushback _taskid;
+		[group twc_pltcmd,[_taskid],["A Journalist is being held by enemy forces. Bring him safely back to base and select the option to Rescue VIP when he's near the spawn building.", _obj select 1],_obj select 0,0,2,true] call BIS_fnc_taskCreate;}; _tasklist pushback _taskid;
 		waituntil {!(_obj in twc_activemissions)};
 		[_taskid] call BIS_fnc_deleteTask;
 	};
 	if (_obj in twc_activestrongholds) then {
 	
-		[twc_pltcmd,[_taskid],["A large concentration of enemy forces has been identified in this area. Clear it of enemy presence.","Stronghold"],_obj select 0,0,2,true] call BIS_fnc_taskCreate; _tasklist pushback _taskid;
+		[group twc_pltcmd,[_taskid],["A large concentration of enemy forces has been identified in this area. Clear it of enemy presence.","Stronghold"],_obj select 0,0,2,true] call BIS_fnc_taskCreate; _tasklist pushback _taskid;
 		waituntil {!(_obj in twc_activestrongholds)};
 		[_taskid] call BIS_fnc_deleteTask;
 	};

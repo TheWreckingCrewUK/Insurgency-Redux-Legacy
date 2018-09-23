@@ -29,6 +29,11 @@ hvtlist = ["rhsgref_ins_squadleader"];
 sirenlist = [idfalarm,idfalarm_1,idfalarm_2,idfalarm_3];
 publicvariable "sirenlist";
 
+twc_wdveh = 1;
+publicVariable "twc_wdveh";
+
+twc_strongholdcount = 1;
+
 civilianType = ["greek_Civ_Men_1", "greek_Civ_Men_2", "greek_Civ_Men_3", "greek_Civ_Men_4", "greek_Civ_Men_5", "greek_Civ_Men_6", "greek_Civ_Men_7", "greek_Civ_Men_8", "greek_Civ_Men_9", "greek_Civ_Men_10", "greek_Civ_Men_11"];
 publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];

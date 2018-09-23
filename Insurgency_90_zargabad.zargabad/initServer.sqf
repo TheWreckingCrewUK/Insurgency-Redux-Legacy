@@ -25,7 +25,7 @@ TWC_Building_Style = "MidEast";
 twc_is90 = 1;
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
-twc_strongholdcount = 1;
+twc_strongholdcount = 0;
 
 pointLimit = 400;
 publicVariable "pointLimit";

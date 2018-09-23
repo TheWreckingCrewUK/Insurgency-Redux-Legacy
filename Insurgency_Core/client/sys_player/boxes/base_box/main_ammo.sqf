@@ -75,7 +75,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_L128A1_Eotech",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
-		["ACE_VMH3",1],
 		["rhs_weap_m72a7",4],
 		["rhs_weap_M136_hedp",2],
 		["launch_NLAW_F",3],
@@ -558,7 +557,7 @@ if (g_class == "BAF_EOD_TECH") then {
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["UK3CB_BAF_L128A1",1],
 		["rhsusf_weap_glock17g4",1],
-		["ACE_VMH3",1],
+		["ACE_VMM3",1],
 		["Binocular",1],
 		["rhs_weap_m72a7",4],
 		["rhs_weap_M136_hedp",2],
@@ -684,7 +683,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
-		["ACE_VMH3",1],
+		["ACE_VMM3",1],
 		["UK3CB_BAF_Javelin_Slung_Tube",1],
 		["UK3CB_BAF_Javelin_CLU",1],
 		["rhs_weap_m72a7",1]
@@ -806,7 +805,7 @@ if (typeOf vehicle player == "TWC_Modern_US_Army_TeamLeader") then {
     [
         ["rhs_weap_m4a1_carryhandle_grip",1],
 		["rhs_weap_M590_8RD",1],
-		["ACE_VMH3",1],
+		["ACE_VMM3",1],
 		["Binocular",1],
 		["rhsusf_weap_m9",1],
 		["rhs_weap_M136_hedp",4],
@@ -1164,7 +1163,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
-		["ACE_VMH3",1],
+		["ACE_VMM3",1],
         ["rhsusf_weap_m1911a1",1],
 		["rhs_weap_M590_8RD",1]
 	];
@@ -1195,7 +1194,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
-		["ACE_VMH3",1],
+		["ACE_VMM3",1],
         ["rhsusf_weap_m1911a1",1],
 		["UK3CB_BAF_Javelin_Slung_Tube",3],
 		["twc_smaw",1],

@@ -1,6 +1,6 @@
 sleep 5;
 if(!isMultiplayer)exitWith{};
-
+/*
 
 
 if((typeOf player) in ["Modern_British_crewchief"])then{

@@ -63,6 +63,7 @@ deleteVehicle _target;
 
 #include "armour.sqf";
 #include "fst.sqf";
+#include "HQ.sqf";
 	
 {
 
@@ -81,7 +82,9 @@ deleteVehicle _target;
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
 
 	if((typeOf player) in ["Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
-		_UKaction5 = ["SpawnmedCreate","Spawn Heavy WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+		_UKaction5 = ["SpawnmedCreate","Spawn Patrol WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+		_UKaction5 = ["SpawnmedCreate","Spawn Patrol Mastiff","",{execvm "insurgency_core\client\sys_player\vehicles\patrolmastiff.sqf"},{count units group player > 3}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 		
@@ -253,7 +256,7 @@ if((typeOf player) in ["1990_British_mg_assistant_Desert","1990_British_mg_assis
 	
 };
 
-if((typeOf player) in ["1990_British_2IC","1990_British_SectionCommander","1990_British_2IC_Desert","1990_British_SectionCommander_Desert","1990_British_HeliPilot"])then{
+if((typeOf player) in ["1990_British_2IC","1990_British_SectionCommander","1990_British_2IC_Desert","1990_British_SectionCommander_Desert"])then{
 
 	
 	_90UKaction = ["Spawnsmall90UKCreate","Spawn Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk90.sqf"},_condition] call ace_interact_menu_fnc_createAction;

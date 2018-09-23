@@ -101,9 +101,11 @@ _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[getpos thistrigger, _id] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_hvt.sqf'",""];
 
+if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
 _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+};
 };
 };
 

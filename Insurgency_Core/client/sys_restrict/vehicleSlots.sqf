@@ -1,3 +1,8 @@
+_pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","Modern_British_MERT_HeliPilot"];
+
+_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert"];
+
+
 _list=[
 		["CUP_B_M119_US", [
 		["gunner", 
@@ -251,109 +256,118 @@ _list=[
 		
 		["UK3CB_BAF_Wildcat_AH1_CAS_8A",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],
 	
 		
 		["UK3CB_BAF_Wildcat_AH1_CAS_8B",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],
 	
 		["ukcw_Gazelle", [
 		["driver", 
-			["Modern_British_HeliPilot","2000_British_HeliPilot_Desert"]
+			_pilots
 		],
 		["turret", 
-			["Modern_British_crewchief"]
+			_crewchiefs
+		]],3
+	],
+	
+		["CUP_B_SA330_Puma_HC2_BAF", [
+		["driver", 
+			_pilots
+		],
+		["turret", 
+			_crewchiefs
 		]],3
 	],
 	
 		["ukcw_Gazelle_dyn", [
 		["driver", 
-			["Modern_British_HeliPilot","2000_British_HeliPilot_Desert","1990_British_HeliPilot"]
+			_pilots
 		],
 		["turret", 
-			["Modern_British_crewchief","1990_British_HeliPilot"]
+			_crewchiefs
 		]],3
 	],
 	
 		["CUP_B_UH1Y_Gunship_Dynamic_USMC",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		[[2], 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 	
 		["UK3CB_BAF_Wildcat_AH1_HEL_8A",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],
 	
 
 		["RHS_AH64D",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],7
 	],
 
 		["RHS_AH1Z",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["Turret", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],7
 	],
 		["CUP_O_UH1H_TKA",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		[[2], 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 		["rhsgref_cdf_b_Mi24D_Early",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		[[0], 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 		["rhsgref_cdf_Mi24D_Early",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		[[0], 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 
 
 		["CUP_B_CH47F_GB",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_USMC_HeliPilot","1990_British_HeliPilot","2000_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot"]
+			_pilots
 		],
 		[[3], 
-			["Modern_British_crewchief","Modern_USMC_crewchief","1990_British_HeliPilot","Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			_crewchiefs
 		]],3
 	],
 
@@ -368,52 +382,61 @@ _list=[
 	
 		["CUP_B_MV22_USMC_RAMPGUN",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 		["CUP_O_Mi8_CHDKZ",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			_pilots
 		],
 		[[2], 
-			["Modern_British_crewchief","Modern_British_MERT_HeliPilot"]
+			_crewchiefs
 		]],3
 	],	
 		["RHS_UH1Y_d",[ 
 		["driver", 
-			["Modern_British_HeliPilot"]
+			_pilots
 		],
 		[[0], 
-			["Modern_British_crewchief"]
+			_crewchiefs
 		]],3
 	],	
 		["UK3CB_BAF_Merlin_HC3_18_GPMG",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			_pilots
 		],
 		["gunner", 
-			["Modern_British_crewchief","Modern_British_MERT_HeliPilot"]
+			_crewchiefs
 		]],3
 	],	
 	
 		["RHS_UH60M",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			_pilots
 		],
 		[[0], 
-			["Modern_British_crewchief","Modern_British_MERT_HeliPilot"]
+			_crewchiefs
+		]],3
+	],
+	
+		["RHS_UH60M_ESSS",[ 
+		["driver", 
+			_pilots
+		],
+		[[0], 
+			_crewchiefs
 		]],3
 	],
 	
 		["CUP_B_UH60M_FFV_US",[ 
 		["driver", 
-			["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot"]
+			_pilots
 		],
 		[[0], 
-			["Modern_British_crewchief","Modern_British_MERT_HeliPilot"]
+			_crewchiefs
 		]],3
 	],
 	

@@ -122,7 +122,7 @@ player forceWalk false;
 systemchat "gonna restrict you now";
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {((count units group player) < (3 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) && (_space == 1)} do {
+while {((count units group player) < 3) || (_space == 1)} do {
 cutText ["", "Black", 0.001];
     [ 
         format ["<t size='1.2'>Fill The Sections</t><br/><t size='0.6'>There are other sections that need to be filled. Go there or get 3 or more people in the current section</t>", 

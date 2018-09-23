@@ -8,7 +8,7 @@
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>"; 
 
- _text1 =  "<br />The Vehicle Has Been Spawned.";
+ _text1 =  "<br />The Vehicle Has Been Spawned. It's Already Loaded With Ammunition";
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
@@ -41,3 +41,8 @@ _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 
 
+_veh AddWeaponCargoGlobal ["UK3CB_BAF_L128A1_Eotech",1];
+_veh AddWeaponCargoGlobal ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1];
+_veh AddWeaponCargoGlobal ["ACE_VMM3",1];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",10];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",10];

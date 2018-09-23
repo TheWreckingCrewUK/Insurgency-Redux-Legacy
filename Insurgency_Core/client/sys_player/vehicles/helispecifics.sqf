@@ -25,6 +25,13 @@ if (typeof _veh == "ukcw_Gazelle_dyn") then {
 						["Woodland",1], 
 						["HideWeapons",1]
 						] call BIS_fnc_initVehicle;
+};				
+
+if (typeof _veh == "RHS_UH60M_ESSS") then {
+	private _pylons = ["rhs_mag_M151_19","rhs_mag_M151_19","rhs_mag_M151_19","rhs_mag_M151_19"];
+	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
+	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
+	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
 };
 
 if (typeof _veh == "RHS_AH64D") then {
