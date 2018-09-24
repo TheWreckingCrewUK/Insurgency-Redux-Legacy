@@ -36,6 +36,7 @@ _takenslots = fullcrew vehicle player;
 	sleep 0.1;
 	} foreach _takenslots;
 	
+	sleep 20;
 	
 	//waits until crew positions aren't filled before doing anything proper. dumb script because fullcrew can't filter multiple types
 	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]))

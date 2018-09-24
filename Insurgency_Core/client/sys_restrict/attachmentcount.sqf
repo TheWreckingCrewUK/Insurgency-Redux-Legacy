@@ -4,7 +4,7 @@ this will count the current number of groups, disregarding any groups that have 
 
 //first up, let's just go open season if there's more slots than our standard layout of infantry can manage
 
-if (( count(allPlayers - entities "HeadlessClient_F")) > 23) exitwith {};
+if (( count(allPlayers - entities "HeadlessClient_F")) > 28) exitwith {};
 
 if (["HQ", str (group player)] call BIS_fnc_inString) exitwith {
 execvm "Insurgency_Core\client\sys_restrict\platoonhq.sqf";
