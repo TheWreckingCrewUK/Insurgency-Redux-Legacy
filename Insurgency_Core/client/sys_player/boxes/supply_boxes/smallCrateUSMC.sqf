@@ -28,8 +28,8 @@ _box AddMagazineCargoGlobal ["rhsusf_100Rnd_762x51",4];
 _box AddMagazineCargoGlobal ["CUP_6Rnd_HE_M203",5];
 _box AddMagazineCargoGlobal ["CUP_6Rnd_Smoke_M203",2];
 
-_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",20];
-_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",10];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",20];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",10];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];

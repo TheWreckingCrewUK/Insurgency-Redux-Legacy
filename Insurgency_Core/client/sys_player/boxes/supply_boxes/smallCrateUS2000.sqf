@@ -24,8 +24,8 @@ _box AddWeaponCargoGlobal ["UK3CB_BAF_AT4_CS_AP_Launcher",2];
 
 //supplies
 
-_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",20];
-_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",5];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",20];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",5];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",20];
