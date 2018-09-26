@@ -26,6 +26,10 @@ publicVariable "twc_planecount";
 
 _veh = _plane createvehicle (getPos planespawnpad);
 
+_veh setdir (getdir planespawnpad);
+
+_veh setPos (getPos _veh);
+
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
 //clearMagazineCargoGlobal _veh;

@@ -1,18 +1,18 @@
 sleep 5;
 if(!isMultiplayer)exitWith{};
-/*
 
 
-if((typeOf player) in ["Modern_British_crewchief"])then{
-if (( count(allPlayers - entities "HeadlessClient_F")) < 10) then {
+
+if((typeOf player) in ["Modern_British_crewchief", "2000_British_CrewChief", "2000_British_CrewChief_Desert"])then{
+if (( count(allPlayers - entities "HeadlessClient_F")) < 14) then {
 
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {( count(allPlayers - entities "HeadlessClient_F")) < 10} do {
+while {( count(allPlayers - entities "HeadlessClient_F")) < 14} do {
 cutText ["", "Black", 0.001];
 
     [
-        "<t size='1.2'>Helicopter Crew Chief</t><br/><t size='0.6'>You need 10 or more players on the server before you can be a Crew Chief</t>", 0, 0.22, 5, 0, 0, 2
+        "<t size='1.2'>Helicopter Crew Chief</t><br/><t size='0.6'>You need 14 or more players on the server before you can be a Crew Chief</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
 	
 	sleep 5;
