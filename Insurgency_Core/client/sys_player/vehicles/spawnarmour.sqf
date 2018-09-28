@@ -5,7 +5,7 @@ if(isNil "_heli")exitWith{hint "No heli was given to the spawn system, please no
 if (isnil "twc_armourcount") then {twc_armourcount = 0;
 publicVariable "twc_armourcount";};
 
-if (twc_armourcount > 1) exitwith {hint "2 heavy vehicles have been spawned already"};
+if (twc_armourcount > 2) exitwith {hint "3 heavy vehicles have been spawned already"};
 
 //pre spawn file to change classname to woodland/desert versions if necessary
 #include "armourspecifics_prespawn.sqf";
@@ -39,7 +39,7 @@ publicVariable "twc_armourcount";
 
 _veh addEventHandler ["Killed",{
 
-twc_armourcount=twc_armourcount - 0.5;
+twc_armourcount=twc_armourcount - 0.4;
 publicVariable "twc_armourcount";
 	}];
 	

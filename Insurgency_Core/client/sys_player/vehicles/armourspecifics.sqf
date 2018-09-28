@@ -163,6 +163,14 @@ if (twc_wdveh == 1) then {
 	};
 };
 
+if ((typeof _veh == "UK3CB_BAF_FV432_Mk3_GPMG_Green")||(typeof _veh == "UK3CB_BAF_FV432_Mk3_GPMG_Sand")) then {
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",12];
+};
+
+if ((typeof _veh == "UK3CB_BAF_FV432_Mk3_RWS_Green")||(typeof _veh == "UK3CB_BAF_FV432_Mk3_RWS_Sand")) then {
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",10];
+};
+
 
 
 

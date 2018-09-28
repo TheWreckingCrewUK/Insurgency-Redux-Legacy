@@ -7,7 +7,7 @@ params["_pos", "_player"];
 
 
 {
-	if (((str side _x) == "CIV") && ((_pos distance _x) < 20)) then {
+	if (((str side _x) == "CIV") && ((_pos distance _x) < 30)) then {
 		_x disableai "path";
 		_x disableai "move";
 		_x disableai "fsm";
@@ -32,4 +32,4 @@ params["_pos", "_player"];
 		} else {
 		_x reveal [_player, 4]
 		}
-} foreach (_pos nearentities ["man",60]);
+} foreach (_pos nearentities ["man",70]);

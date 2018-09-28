@@ -36,18 +36,19 @@ _takenslots = fullcrew vehicle player;
 	sleep 0.1;
 	} foreach _takenslots;
 	
-	sleep 20;
+	_stryker = 0;
+	if ((typeof vehicle player) == "CUP_B_M1130_CV_M2_Woodland_Slat") then {_stryker = 1;};
 	
 	//waits until crew positions aren't filled before doing anything proper. dumb script because fullcrew can't filter multiple types
-	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]))
-	)
+	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]) - _stryker)
+	) && (gunner vehicle player == player)
 	};
 	
 	
 
 	
 	//put a waituntil here to prevent scummy people getting in to fulfil the restriction and then getting out
-	while {(!(vehicle _playerUnit == _playerUnit)) && (count _restrictedslots != count _takenslotplayers)} do {
+	while {(!(vehicle _playerUnit == _playerUnit)) && (count _restrictedslots != count _takenslotplayers) && (gunner vehicle player == player)} do {
 	
 	
 	_takenslotplayers = [];
@@ -68,7 +69,7 @@ _takenslots = fullcrew vehicle player;
 		
 
 		
-	if (vehicle _playerUnit == _playerUnit) exitWith {
+	if ((vehicle _playerUnit == _playerUnit) || (!(gunner vehicle player == player))) exitWith {
 		// systemchat "no longer in vehicle";
 		twc_fullrestrictactive = 0; 
 		cutText ["","Black IN",0.001];
@@ -92,4 +93,4 @@ cutText ["","Black IN",0.001];
 twc_fullrestrictactive = 0;
 sleep 1;
 
-[_checkedseat, _roles] execvm "Insurgency_Core\client\sys_restrict\fullvehicle.sqf";
+[_checkedseat, _roles] execvm "insurgency_core\client\sys_restrict\fullvehicle.sqf";

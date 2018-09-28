@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2054;
+		nextID=2056;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8100.188,345.59958,1940.7505};
-		dir[]={0.7768681,-0.27598679,0.56605083};
-		up[]={0.22306377,0.96116549,0.16253163};
-		aside[]={0.58892334,4.1211024e-007,-0.80826449};
+		pos[]={7961.9937,300.89285,1918.3711};
+		dir[]={0.86129504,-0.45022851,-0.23552579};
+		up[]={0.43428826,0.89291108,-0.11875867};
+		aside[]={-0.26377243,-1.7951243e-007,-0.96458942};
 	};
 };
 binarizationWanted=0;
@@ -24140,7 +24140,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=3;
+				items=4;
 				class Item0
 				{
 					dataType="Object";
@@ -24277,6 +24277,46 @@ class Mission
 					id=2028;
 					type="Modern_British_VehicleCrew";
 					atlOffset=0.00064086914;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7970.8125,296.04663,1915.7979};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="Crewman";
+						isPlayable=1;
+					};
+					id=2055;
+					type="Modern_British_VehicleCrew";
 					class CustomAttributes
 					{
 						class Attribute0

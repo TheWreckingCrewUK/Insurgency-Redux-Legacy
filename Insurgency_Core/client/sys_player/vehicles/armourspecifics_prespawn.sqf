@@ -18,10 +18,39 @@ _heli = "CUP_B_LAV25_USMC";
 };
 
 
+if ( _heli == "RHS_M6") then {
+
+if (twc_wdveh == 1) then {
+_heli = "RHS_M6_wd";
+};
+};
+
 if ( _heli == "ukcw_cvrt_Scim_d") then {
 
 if (twc_wdveh == 1) then {
 _heli = "ukcw_cvrt_Scim_w";
+};
+};
+
+if ( _heli == "UK3CB_BAF_FV432_Mk3_GPMG_Green") then {
+
+if (twc_wdveh == 0) then {
+_heli = "UK3CB_BAF_FV432_Mk3_GPMG_Sand";
+};
+};
+
+if ( _heli == "UK3CB_BAF_FV432_Mk3_RWS_Green") then {
+
+if (twc_wdveh == 0) then {
+_heli = "UK3CB_BAF_FV432_Mk3_RWS_Sand";
+};
+};
+
+
+if ( _heli == "ukcw_cvrt_Scim_w_L1") then {
+
+if (twc_wdveh == 0) then {
+_heli = "ukcw_cvrt_Scim_d_L1";
 };
 };
 

@@ -6,10 +6,10 @@ waitUntil {inputAction "User10" > 0};
 _civsnear = 0;
 
 {
-	if ((str side _x) == "CIV") then {
+	if (!((str side _x) == "WEST")) then {
 	_civsnear = 1;
 		};
-} foreach (_pos nearentities ["man",60]);
+} foreach (player nearentities ["man",100]);
 
 sleep 0.2;
 
