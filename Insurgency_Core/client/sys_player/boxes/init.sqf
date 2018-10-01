@@ -82,9 +82,9 @@ deleteVehicle _target;
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
 
 	if((typeOf player) in ["Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
-		_UKaction5 = ["SpawnmedCreate","Spawn Patrol WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+		_UKaction5 = ["SpawnmedCreate","Spawn Loaded WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-		_UKaction5 = ["SpawnmedCreate","Spawn Patrol Mastiff","",{execvm "insurgency_core\client\sys_player\vehicles\patrolmastiff.sqf"},{count units group player > 3}] call ace_interact_menu_fnc_createAction;
+		_UKaction5 = ["SpawnmedCreate","Spawn Loaded Mastiff","",{execvm "insurgency_core\client\sys_player\vehicles\patrolmastiff.sqf"},{count units group player > 3}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 		
