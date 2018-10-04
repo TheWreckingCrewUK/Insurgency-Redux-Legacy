@@ -2,10 +2,10 @@ params["_heli"];
 
 if(isNil "_heli")exitWith{hint "No heli was given to the spawn system, please notify management"};
 
-if (isnil "twc_armourcount") then {twc_armourcount = 0;
+if (isnil "twc_armourcount") then {twc_armourcount = -4;
 publicVariable "twc_armourcount";};
 
-if (twc_armourcount > 2) exitwith {hint "3 heavy vehicles have been spawned already"};
+if (twc_armourcount > 2) exitwith {hint "There are no more armoured vehicle available for spawning"};
 
 //pre spawn file to change classname to woodland/desert versions if necessary
 #include "armourspecifics_prespawn.sqf";

@@ -30,6 +30,20 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
  _switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
  Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType"),_channelNumber]; 
  };
+ 
+ 
+ _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
+ 
+ if (typeof player in _armourcrew) then {
+	 _count = group player getvariable ["armourcount", 0];group player setvariable ["armourcount", _count + 1, true];
+	[player] remoteExec ["twc_fnc_crewcount", 2];
+	
+	if ((["infantry", str (group player)] call BIS_fnc_inString)) then {
+		if ((group player getvariable ["twc_ismechanised", 0]) == 0) then {
+			group player setvariable ["twc_ismechanised", 1, true];
+		};
+	};
+};
 
 sleep 10;
 

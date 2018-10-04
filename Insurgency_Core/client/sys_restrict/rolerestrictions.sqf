@@ -78,9 +78,7 @@ execvm "Insurgency_Core\client\sys_restrict\fullFST.sqf";
 };
 
 
-
-
-if((typeOf player) in ["Modern_British_VehicleCrew", "Modern_British_VehicleCommander"])then{
+if((typeOf player) in ["Modern_British_VehicleCrew", "Modern_British_VehicleCommander", "1990_British_Tank_Crew_Desert", "1990_British_Tank_Commander_Desert", "2000_British_Vehicle_Commander", "2000_British_Vehicle_Crew"])then{
 
 
 execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";

@@ -10,7 +10,7 @@ if (["HQ", str (group player)] call BIS_fnc_inString) exitwith {
 execvm "Insurgency_Core\client\sys_restrict\platoonhq.sqf";
 };
 
-if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
+if((["spotter", str (typeof player)] call BIS_fnc_inString) || (["sniper", str (typeof player)] call BIS_fnc_inString))then{
 waituntil {(( count(allPlayers - entities "HeadlessClient_F")) >= 5)};
 };
 
