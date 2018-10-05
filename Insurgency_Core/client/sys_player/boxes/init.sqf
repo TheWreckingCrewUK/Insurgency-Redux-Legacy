@@ -82,9 +82,9 @@ deleteVehicle _target;
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
 
 	if((typeOf player) in ["Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
-		_UKaction5 = ["SpawnmedCreate","Spawn Loaded WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+		_UKaction5 = ["SpawnmedCreate","Spawn Loaded WMIK","",{execvm "insurgency_core\client\sys_player\vehicles\patrolwmik.sqf"},{((group player getvariable ["twc_ismechanised", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-		_UKaction5 = ["SpawnmedCreate","Spawn Loaded Mastiff","",{execvm "insurgency_core\client\sys_player\vehicles\patrolmastiff.sqf"},{count units group player > 3}] call ace_interact_menu_fnc_createAction;
+		_UKaction5 = ["SpawnmedCreate","Spawn Loaded Mastiff","",{execvm "insurgency_core\client\sys_player\vehicles\patrolmastiff.sqf"},{(count units group player > 3) && ((group player getvariable ["twc_ismechanised", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 		
@@ -109,6 +109,19 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+};
+
+
+if((typeOf player) in ["Modern_British_Recce_Commander"])then{
+
+	_snaction1 = ["Spawnsnipbox","Spawn Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrateRecce.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_snaction1 = ["Spawnsnipbox","Spawn Loaded GMG Jackal","",{execvm "insurgency_core\client\sys_player\vehicles\reccejackal.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+		
+	_alphaaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 

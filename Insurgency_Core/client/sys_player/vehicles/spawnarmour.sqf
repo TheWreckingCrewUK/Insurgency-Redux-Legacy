@@ -43,5 +43,10 @@ twc_armourcount=twc_armourcount - 0.4;
 publicVariable "twc_armourcount";
 	}];
 	
+if ((["90", twc_missionname] call BIS_fnc_inString) || (["00", twc_missionname] call BIS_fnc_inString)) then {
+
+_veh AddWeaponCargoGlobal ["UK3CB_BAF_L85A1_SUSAT3D_Lazer",1];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",2];
+};
 
 #include "armourspecifics.sqf";
