@@ -206,6 +206,28 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Mode
 		
 };
 
+if((typeOf player) in ["TWC_Modern_US_Army_SectionCommander","TWC_Modern_US_Army_TeamLeader"])then{
+
+	_UKaction5 = ["SpawnmedCreate","Spawn CROWS HMMWV","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_usmc.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	
+	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUS.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Marksman Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\marksmancrateus.sqf"},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_charlieaction1 = ["Spawnheartscrateus","Spawn Hearts and Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\heartsminds_us.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_charlieaction2 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction2,true] call ace_interact_menu_fnc_addActionToClass;
+		
+};
+
 
 
 if((typeOf player) in ["Modern_Artillery_Commander"])then{
@@ -385,7 +407,7 @@ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_Tea
 
 
 
-if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_TeamLeader","2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_2IC_Desert","2000_British_2IC","1990_RM_British_2IC_Mix","1990_RM_British_SectionCommander_Mix","1990_British_2IC_Desert","1990_British_SectionCommander_Desert", "Modern_British_Spotter_coin","Modern_British_FSTCommander","Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Modern_USMC_Squadleader_d","Modern_USMC_Teamleader_d","twc_ana_commander","twc_ana_subcommander","Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_pol_commander","Modern_pol_commander_d","Modern_pol_subcommander","Modern_pol_subcommander_d","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
+if ((["commander", typeof player] call BIS_fnc_inString) || (["leader", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["spotter", typeof player] call BIS_fnc_inString)) then {
 	_vic = ["spawn762","Spawn Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["twc_SuppliesBox",0,["ACE_MainActions"],_vic,true] call ace_interact_menu_fnc_addActionToClass;};
 

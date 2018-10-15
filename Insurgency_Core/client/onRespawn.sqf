@@ -34,8 +34,9 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
  
  _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
  
+
  if (typeof player in _armourcrew) then {
-	 _count = group player getvariable ["armourcount", 0];group player setvariable ["armourcount", _count + 1, true];
+ 
 	[player] remoteExec ["twc_fnc_crewcount", 2];
 	
 	if ((["infantry", str (group player)] call BIS_fnc_inString)) then {

@@ -26,8 +26,7 @@ player forceWalk false;
 };
 
 
-
-if((typeOf player) in ["Modern_British_Spotter_coin","Modern_British_Sniper_coin"])then{
+if ((["sniper", typeof player] call BIS_fnc_inString) || (["spotter", typeof player] call BIS_fnc_inString)) then {
 
 execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";
 
@@ -69,7 +68,7 @@ player forceWalk false;
 
 
 
-if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_FSTCommander", "Modern_British_logitech"])then{
+if(["FST", str (group player)] call BIS_fnc_inString)then{
 
 
 
