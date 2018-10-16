@@ -25,7 +25,7 @@ if (!alive idfradar) exitwith {};
 	
 	
 		//systemchat "1";
-		if ((_shooter) distance _base < 25000) then
+		if ((_shooter) distance _base < 8000) then
 {			//systemchat "2";
 			if ((_shooter) distance _base > (idfbasesize *3)) then
 {			
