@@ -73,6 +73,7 @@ _veh addEventHandler ["GetOut",{
 						["HideWeapons",1]
 						] call BIS_fnc_initVehicle;
 						_veh setpylonloadout ["ukcw_PylonPod_1200Rnd_L20A1","ukcw_PylonPod_1200Rnd_L20A1"];
+						};
 					if (damage _veh == 1) then {
 					
 					_veh = (_respawnInfo select 0) createVehicle [0,0,(200 + (random 1000))];
@@ -161,6 +162,7 @@ _veh addEventHandler ["Killed",{
 						["HideWeapons",1]
 						] call BIS_fnc_initVehicle;
 						_veh setpylonloadout ["ukcw_PylonPod_1200Rnd_L20A1","ukcw_PylonPod_1200Rnd_L20A1"];
+						};
 					if (damage _veh == 1) then {
 					
 					_veh = (_respawnInfo select 0) createVehicle [0,0,(200 + (random 1000))];
