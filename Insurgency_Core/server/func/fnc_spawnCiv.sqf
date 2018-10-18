@@ -66,7 +66,7 @@ for "_i" from 1 to _civnum do {
 		params["_civ"];
 		_isBrickingIt = _civ getVariable ["unitIsBrickingIt", false];
 		
-		if (!(_isBrickingIt) && alive _civ) then {
+		if (!(_isBrickingIt) && alive _civ && (_civ getvariable ["twc_isenemy", 0] == 0)) then {
 		_civ setVariable ["unitIsBrickingIt", true, false];
 			switch (round(random 2)) do {
 				case 0:{_civ switchMove "ApanPercMstpSnonWnonDnon_G01";};
