@@ -3034,7 +3034,6 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 {
         _weapons set [count _weapons, _x];
 } forEach _tmp_weapons;
-
 {
         _magazines set [count _magazines, _x];
 } forEach _tmp_magazines;
@@ -3052,6 +3051,19 @@ clearWeaponCargo crateBox;
 clearMagazineCargo crateBox;
 clearItemCargo crateBox;
 clearbackPackCargo crateBox;
+
+
+_spawnweps = [(configFile >> "CfgVehicles" >> (typeOf player)), "weapons", "none"] call BIS_fnc_returnConfigEntry;
+
+
+
+
+ 
+{
+_spawnweps pushback (_x select 0);
+} foreach _tmp_weapons;
+_checkweps = (player getvariable ["twc_allowedweapons", []]);
+if (count _checkweps == 0) then {player setvariable ["twc_allowedweapons", _spawnweps]};
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
 

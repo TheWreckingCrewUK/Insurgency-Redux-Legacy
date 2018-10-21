@@ -1,5 +1,5 @@
 if (isnil "twc_primaryrestrict_active") then {
-twc_primaryrestrict_active == 0};
+twc_primaryrestrict_active = 0};
 
 if (twc_primaryrestrict_active == 1) exitwith {};
 
