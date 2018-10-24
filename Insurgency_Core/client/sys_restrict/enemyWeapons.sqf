@@ -43,7 +43,7 @@ player addEventHandler ["Take", {
 		
 	
 }];
-
+/*
 player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
 	if((getPos player) distance2D (getMarkerPos "base") > 200) exitwith {};
@@ -67,7 +67,7 @@ player addEventHandler ["InventoryOpened", {
 
 	};
 }];
-
+*/
 /* secondary systems to restrict the player taking scopes above the power of what they spawn with and taking weapons that they won't need when they get back to base. Didn't work due to weapon classnames changing after picking up the weapon so our twc versions weren't getting picked up, but it was a lot of damn effort and I don't want to waste it so I'm letting it rot for a bit
 
 player addEventHandler ["InventoryClosed", {

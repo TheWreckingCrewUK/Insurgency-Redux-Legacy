@@ -2752,6 +2752,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",1],
 		["ACE_M26_Clacker",1],
+		["optic_MRCO",1],
 		["ACRE_PRC117F",1],
 		["ACRE_PRC148",1]
 	];
@@ -2775,6 +2776,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UGL_FlareRed_F",20],
 		["UGL_FlareWhite_F",20],
 		["UGL_FlareYellow_F",20],
+		["optic_MRCO",1],
 		["1Rnd_SmokeBlue_Grenade_shell",20],
 		["1Rnd_SmokeGreen_Grenade_shell",20],
 		["1Rnd_SmokeOrange_Grenade_shell",20],
@@ -2790,6 +2792,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",1],
 		["ACE_M26_Clacker",1],
+		["rhsusf_spc_teamleader",1],
 		["ACRE_PRC148",1]
 	];
 };
@@ -2813,7 +2816,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",1],
+		["rhsusf_spc_rifleman",1],
+		["optic_MRCO",1]
 	];
 };
 
@@ -2847,6 +2852,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
+		["optic_MRCO",1],
 		["ACRE_PRC148",1]
 	];
 };
@@ -2869,6 +2875,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
+		["rhsusf_spc_mg",1],
 		["ACRE_PRC148",1]
 	];
 };
@@ -2926,6 +2933,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
+		["optic_MRCO",1],
+		["rhsusf_spc_corpsman",1],
 		["ACRE_PRC148",1]
 	];
 };
