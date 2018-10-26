@@ -3071,9 +3071,10 @@ _spawnweps = [(configFile >> "CfgVehicles" >> (typeOf player)), "weapons", "none
 {
 _spawnweps pushback (_x select 0);
 } foreach _tmp_weapons;
+/*
 _checkweps = (player getvariable ["twc_allowedweapons", []]);
 if (count _checkweps == 0) then {player setvariable ["twc_allowedweapons", _spawnweps]};
-
+*/
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
 
 if (( count(allPlayers - entities "HeadlessClient_F"))>=0) then {// add in all weapons.
