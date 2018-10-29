@@ -9,7 +9,7 @@ sleep (10 + random 30);
 
 twc_mortar setvehicleammo 1;
 
-_total = 3 +(random 7);
+_total = 5 +(random 7);
 
 if ((twc_mortar distance _targetpos) > 4000) exitwith {};
 
@@ -19,7 +19,7 @@ twc_mortar lookat (_targetpos);
 
 for "_i" from 1 to _total do {
 
-twc_mortar doArtilleryFire [[_targetpos,150] call cba_fnc_randpos, currentmagazine twc_mortar, 1];
+twc_mortar doArtilleryFire [_targetpos, currentmagazine twc_mortar, 1]; 
 
 sleep (4 + random 3);
 

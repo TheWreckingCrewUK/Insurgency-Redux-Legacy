@@ -23,6 +23,13 @@ publicVariable "twc_armourcount";
 	["DUKE_Hide",1]
 ] call BIS_fnc_initVehicle;
 };
+	_crewcount = 0;
+
+	{if (typeof _x in _armourcrew) then {_crewcount = _crewcount + 1;}} foreach units group player;
+	group player setvariable ["armourcount", _crewcount, true];
+		if ((group player getvariable ["armourcount", 3]) == 0) then {
+			group player setvariable ["twc_ismechanised", 0, true];
+		};
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;

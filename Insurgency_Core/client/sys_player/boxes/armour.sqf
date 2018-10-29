@@ -177,6 +177,10 @@ if((typeOf player) in ["Modern_British_VehicleCommander"])then{
 
 
 if((typeOf player) in ["Modern_British_VehicleCrew"])then{
+	
+	_vehaction = ["vehiclespawnwoodland","Spawn Vehicles","",{},_armourlow] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_armouraction1 = ["spawnl111","Spawn Bulldog (GPMG)","",{["UK3CB_BAF_FV432_Mk3_GPMG_Green"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	};

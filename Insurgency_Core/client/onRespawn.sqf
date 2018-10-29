@@ -46,6 +46,17 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
 	};
 };
 
+if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+	_crewcount = 0;
+
+	{if (typeof _x in _armourcrew) then {_crewcount = _crewcount + 1;}} foreach units group player;
+	group player setvariable ["armourcount", _crewcount, true];
+		if ((group player getvariable ["armourcount", 3]) == 0) then {
+			group player setvariable ["twc_ismechanised", 0, true];
+		};
+	
+};
+
 sleep 10;
 
 if ((random 1)< twc_mortarchance) then {

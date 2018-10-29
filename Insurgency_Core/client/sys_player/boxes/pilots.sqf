@@ -17,7 +17,7 @@ _planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
 _planecondhi = {( count(allPlayers - entities "HeadlessClient_F")) >= 12};
 
-_helicrew = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","Modern_British_MERT_HeliPilot","Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert"];
+_helicrew = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot","Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert"];
 
 
 /*
