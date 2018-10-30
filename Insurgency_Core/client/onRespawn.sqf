@@ -60,7 +60,10 @@ if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 sleep 10;
 
 if ((random 1)< twc_mortarchance) then {
-
-["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;
+_ran = (random 3);
+for "_i" from 1 to _ran do {
+twc_mortar_targetlist pushback ((getpos player) vectoradd [random 1,random 1,random 1]);
+publicVariable "twc_mortar_targetlist";
+};
 };
 	

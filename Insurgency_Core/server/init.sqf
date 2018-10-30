@@ -2,7 +2,7 @@
 twc_missionname = missionname;
 publicVariable "twc_missionname";
 
-twc_mortarchance = 0.02;
+twc_mortarchance = 0.1;
 publicVariable "twc_mortarchance";
 
 // Includes
@@ -35,6 +35,15 @@ if(isNil "twc_attachmentgap") then{
 if(isNil "twc_campaignmode") then{
 	twc_campaignmode = 0;
 	publicVariable "twc_campaignmode";
+};
+
+if(isNil "twc_basepos") then{
+	twc_basepos = getmarkerpos "base";
+};
+
+if(isNil "twc_mortar_targetlist") then{
+	twc_mortar_targetlist = [];
+	publicVariable "twc_mortar_targetlist";
 };
 
 if(isNil "twc_is90") then{

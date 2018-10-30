@@ -6,19 +6,19 @@ _pos = [getmarkerpos "base",[1000,3500],random 360,0, [1,250], [50,(typeof _mort
 
 _mortartruck setpos _pos;
 
- twc_mortar = "Rhs_2b14_82mm_ins" createvehicle _pos; 
+ _mortar = "Rhs_2b14_82mm_ins" createvehicle _pos; 
  
- twc_mortar attachto [_mortartruck, [-0.053,-2.7,0.6]]; 
+ _mortar attachto [_mortartruck, [-0.053,-2.7,0.6]]; 
  
 _box = "ACE_Box_82mm_Mo_HE" createvehicle _pos; _box attachto [_mortartruck, [0.45,-0.1,0]];
  
  
-twc_mortar setVehicleLock "LOCKED";
+_mortar setVehicleLock "LOCKED";
  
 _mortartruck setVehicleLock "LOCKEDPLAYER";
  
-twc_mortar addEventHandler ["Killed",{
-[twc_mortar] call twc_fnc_deadmortar
+_mortar addEventHandler ["Killed",{
+[_mortar] call twc_fnc_deadmortar
 }];
 
 _group = createGroup East;
@@ -35,7 +35,7 @@ _unit addEventHandler ["Killed",{
 _unit disableai "AUTOTARGET";
 _unit disableai "TARGET";
 	
-_unit moveIngunner twc_mortar;
+_unit moveIngunner _mortar;
 _unit setVariable ["twc_isenemy",1];
 	
 //now get the guarding infantry sorted
@@ -60,47 +60,8 @@ _group = createGroup East;
 	
 	};
 	
-publicVariable "twc_mortar";
+	[_mortar] spawn twc_fnc_mortarattack;
 	
-	// obj creation
-if (isServer) then {
-	_eventHandlerID = ["twc_event_remoteFireMortar", {
-params ["_targetpos"];
-
-
-[_targetpos] spawn {
-
-	params ["_targetpos"];
-
-	sleep (10 + random 30);
-
-	_total = 3 +(random 7);
-
-	if ((twc_mortar distance _targetpos) > 4000) exitwith {};
-
-	twc_mortar setvehicleammodef 1;
-
-	_radius = (twc_mortar distance _targetpos) / 80;
-
-	twc_mortar lookat (_targetpos);
-
-	for "_i" from 1 to _total do {
-
-		twc_mortar doArtilleryFire [[_targetpos,150] call cba_fnc_randpos, currentmagazine twc_mortar, 1];
-
-		sleep (4 + random 3);
-
-	}; 
-	twc_mortar lookat objnull;
-
-	twc_mortar setvehicleammodef 0;
-
-	sleep (30 + random 180);
-
-	if ((random 1) < twc_mortarchance) exitwith {
-	["twc_event_remoteFireMortar", [getpos player], twc_mortar] call CBA_fnc_targetEvent;};
-
-};
-
-	}] call CBA_fnc_addEventHandler;
-};
+	_mortar addEventHandler ["Fired", {
+		[_this select 6, _this select 7] call twc_fnc_mortarwalk_fnc_mortarwalk; }];
+	

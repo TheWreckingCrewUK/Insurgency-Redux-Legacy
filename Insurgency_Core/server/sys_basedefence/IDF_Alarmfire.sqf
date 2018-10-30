@@ -15,7 +15,7 @@ _accuracy = idfbasesize * 0.5;
 
 _distancescale = _accuracy * ((_distance * (_distance*0.2)) / 3500000);
 
-
+twc_cram_targetlist pushback _shell;
 
 //systemchat format ["%1, %2", _distancescale, _distance];
 
@@ -39,7 +39,7 @@ if (!alive idfradar) exitwith {};
 			[_shooter,_distance] execvm "insurgency_core\server\sys_basedefence\IDF_marker.sqf";
 		
 			
-			[_shell] execVM "insurgency_core\server\sys_basedefence\IDF_cram.sqf";
+			//[_shell] execVM "insurgency_core\server\sys_basedefence\IDF_cram.sqf";
 			
 			//delay variable for automated siren vs human shouting. human shouting (90's) takes a little longer to register the call
 			_delay = 1.5;
