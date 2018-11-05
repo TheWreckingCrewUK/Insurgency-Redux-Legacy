@@ -2433,7 +2433,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 ///2000 era kit
 //////////////////////////////////
 
- if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_SectionCommander"])then{
+ if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_SectionCommander_Desert_light","2000_British_SectionCommander_light"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_SUSAT",1],
@@ -2460,7 +2460,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["2000_British_Rifleman_Desert","2000_British_Rifleman"])then{
+ if((typeOf player) in ["2000_British_Rifleman_Desert","2000_British_Rifleman","2000_British_Rifleman_Desert_light","2000_British_Rifleman_light"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_SUSAT",1],
@@ -2507,7 +2507,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["2000_British_Grenadier_Desert","2000_British_Grenadier"])then{
+ if((typeOf player) in ["2000_British_Grenadier_Desert","2000_British_Grenadier","2000_British_Grenadier_Desert_light","2000_British_Grenadier_light"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_UGL_SUSAT",1]
@@ -2540,7 +2540,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["2000_British_Gunner","2000_British_Gunner_Desert"])then{
+ if((typeOf player) in ["2000_British_Gunner","2000_British_Gunner_Desert","2000_British_Gunner_light","2000_British_Gunner_Desert_light"])then{
     _tmp_weapons =
     [
         ["TWC_UK3CB_BAF_L110A2_SUSAT",1]
@@ -2561,7 +2561,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["2000_British_2IC_Desert","2000_British_2IC"])then{
+ if((typeOf player) in ["2000_British_2IC_Desert","2000_British_2IC","2000_British_2IC_Desert_light","2000_British_2IC_light"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_SUSAT",1],
@@ -2636,7 +2636,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
- if((typeOf player) in ["2000_British_Medic_Desert","2000_British_Medic"])then{
+ if((typeOf player) in ["2000_British_Medic_Desert","2000_British_Medic","2000_British_Medic_Desert_light","2000_British_Medic_light"])then{
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_SUSAT",1]

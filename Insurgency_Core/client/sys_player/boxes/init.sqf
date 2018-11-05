@@ -345,7 +345,7 @@ if((typeOf player) in ["1990_RM_British_2IC_Mix","1990_RM_British_SectionCommand
 
 
 
-if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_2IC_Desert","2000_British_2IC"])then{
+if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_SectionCommander","2000_British_2IC_Desert","2000_British_2IC","2000_British_SectionCommander_Desert_light","2000_British_SectionCommander_light","2000_British_2IC_Desert_light","2000_British_2IC_light"])then{
 
 
 
