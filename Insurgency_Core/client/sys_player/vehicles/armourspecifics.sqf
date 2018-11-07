@@ -89,7 +89,7 @@ if (typeof _veh == "CUP_B_MCV80_GB_D_SLAT") then {
 ] call BIS_fnc_initVehicle;
 };
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+	//if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 
 		_box = _veh;
 		if (["90", twc_missionname] call BIS_fnc_inString) then {
@@ -160,7 +160,7 @@ if (typeof _veh == "CUP_B_MCV80_GB_D_SLAT") then {
 
 // Modern
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+//	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 
 //Weapons
 	_box AddWeaponCargoGlobal ["rhs_weap_m72a7",3];
@@ -199,10 +199,10 @@ if (typeof _veh == "CUP_B_MCV80_GB_D_SLAT") then {
 	_box addItemCargoGlobal ["HandGrenade",2];
 	_box addItemCargoGlobal ["SmokeShell",4];
 	_box addItemCargoGlobal ["SmokeShellRed",4];
-	};
+//	};
 };
 
-};
+//};
 };
 
 if (typeof _veh == "CUP_B_MCV80_GB_W_SLAT") then {
@@ -216,7 +216,7 @@ if (typeof _veh == "CUP_B_MCV80_GB_W_SLAT") then {
 ] call BIS_fnc_initVehicle;
 };
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+	//if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 
 		_box = _veh;
 		if (["90", twc_missionname] call BIS_fnc_inString) then {
@@ -287,7 +287,7 @@ if (typeof _veh == "CUP_B_MCV80_GB_W_SLAT") then {
 
 // Modern
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+	//if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 
 //Weapons
 	_box AddWeaponCargoGlobal ["rhs_weap_m72a7",3];
@@ -326,14 +326,30 @@ if (typeof _veh == "CUP_B_MCV80_GB_W_SLAT") then {
 	_box addItemCargoGlobal ["HandGrenade",2];
 	_box addItemCargoGlobal ["SmokeShell",4];
 	_box addItemCargoGlobal ["SmokeShellRed",4];
+//};
+};
+
+//};
+};
+
+
+if (typeof _veh == "rhsusf_m1a2sep1tuskiid_usarmy") then {
+
+if (twc_wdveh == 1) then {
+	[
+	_veh,
+	["woodland",1], 
+	["IFF_Panels_Hide",0,"Miles_Hide",1,"showCamonetTurret",0,"showCamonetHull",0,"DUKE_Hide",1]
+	] call BIS_fnc_initVehicle;
+	} else {
+
+[
+	_veh,
+	["desert",1], 
+	["IFF_Panels_Hide",0,"Miles_Hide",1,"showCamonetTurret",0,"showCamonetHull",0,"DUKE_Hide",1]
+	] call BIS_fnc_initVehicle;
 	};
 };
-
-};
-};
-
-
-
 
 if (typeof _veh == "rhsusf_m1a2sep1tuskid_usarmy") then {
 
@@ -395,7 +411,7 @@ if (twc_wdveh == 1) then {
 if ((typeof _veh == "UK3CB_BAF_FV432_Mk3_GPMG_Green")||(typeof _veh == "UK3CB_BAF_FV432_Mk3_GPMG_Sand")) then {
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",9];
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+	//if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 _box = _veh;
 
 
@@ -499,17 +515,18 @@ _box = _veh;
 	_box addItemCargoGlobal ["SmokeShellRed",4];
 	
 };
-} else {
+/*} else {
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",6];
 };
+*/
 };
 
 
 if ((typeof _veh == "UK3CB_BAF_FV432_Mk3_RWS_Green")||(typeof _veh == "UK3CB_BAF_FV432_Mk3_RWS_Sand")) then {
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",5];
 
-	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
+//	if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 _box = _veh;
 
 
@@ -617,10 +634,12 @@ _box = _veh;
 	_box addItemCargoGlobal ["SmokeShellRed",4];
 	
 };
+/*
 } else {
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",5];
 };
+*/
 };
 
 
