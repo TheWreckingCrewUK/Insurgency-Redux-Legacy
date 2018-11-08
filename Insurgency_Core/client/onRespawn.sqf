@@ -23,6 +23,13 @@ if (!isnil "_nobackpack") then {
 	};
 };
 
+
+waituntil {(!(isnil "twc_missionname"))};
+
+if (((uniform player) == "UK3CB_BAF_U_RolledUniform_MTP") && ((["90", twc_missionname] call BIS_fnc_inString))) then {
+	(player) setObjectTextureGlobal [0, "uk3cb_baf_equipment\backpacks\data\backpack_ddpm_co.paa"];
+};
+
 //Set Radios Correctly
 _radioID = [getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")] call acre_api_fnc_getRadioByType; 
  if (!isNil "_radioID") then { 

@@ -39,7 +39,8 @@ _num = 0;
 _total = 15;
 _group = createGroup East;
 for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
+_infpos = [_pos, 300] call CBA_fnc_randPos;
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _infpos,[], 5,"NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
@@ -59,7 +60,8 @@ _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
-_group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+		_infpos = [_pos, 300] call CBA_fnc_randPos;
+_group createUnit ["CUP_O_TK_INS_Soldier_AA", _infpos,[], 25,"NONE"];
 };
 };
 };
@@ -69,7 +71,8 @@ for "_i" from 1 to 7 do{
 	_total = 5 + random 5;
 	_group = createGroup East;
 	for "_i" from 1 to _total do{
-		_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
+		_infpos = [_pos, 300] call CBA_fnc_randPos;
+		_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _infpos,[], 5,"NONE"];
 		_unit addEventHandler ["Killed",{
 			[(_this select 0)] call twc_fnc_deleteDead;
 			if (side (_this select 1) == WEST) then{
