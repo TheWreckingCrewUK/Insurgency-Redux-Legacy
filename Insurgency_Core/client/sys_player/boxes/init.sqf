@@ -258,7 +258,11 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Anti Material Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\barretrifle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
 };
 
 if (["Medic", typeof player] call BIS_fnc_inString) then {
@@ -366,6 +370,20 @@ if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_Sect
 
 	_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	
+
+	
+};
+
+
+
+
+if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","2000_British_Sniper","2000_British_Sniper_desert"])then{
+
+
+
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Anti Material Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\barretrifle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
 	

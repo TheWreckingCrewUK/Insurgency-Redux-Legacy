@@ -15,6 +15,8 @@ player addEventHandler ["InventoryOpened", {
 */
 _local_restrictedPrimaryWeapons = ["twc_ksvk", "CUP_srifle_SVD_des_ghillie_pso", "CUP_arifle_M16A2", "CUP_arifle_FNFAL", "CUP_arifle_RPK74", "CUP_lmg_PKM", "CUP_arifle_AK74_GL", "CUP_arifle_AK74", "CUP_arifle_AKM", "CUP_arifle_AKS_Gold", "CUP_arifle_M16A2", "CUP_arifle_AKS", "CUP_arifle_AK74"];
 
+twc_rarePrimaryWeapons = ["rhs_weap_M107", "rhs_weap_m14ebrri_leu", "twc_l96_w", "rhs_weap_svdp_pso1", "twc_pol_svd"];
+
 if(isNil "twc_restrictedPrimaryWeapons") then{
 twc_restrictedPrimaryWeapons = _local_restrictedPrimaryWeapons;
 publicVariable "twc_restrictedPrimaryWeapons";
@@ -43,16 +45,37 @@ player addEventHandler ["Take", {
 		
 	
 }];
+
 /*
+
 player addEventHandler ["InventoryOpened", {
 	params ["_unit", "_container"];
+	
+	if (!isnil "twc_skipweprestrict") then {
+		if (twc_skipweprestrict == 1) exitwith {};
+	};
+	
+	if ((primaryweapon player) in twc_rarePrimaryWeapons) exitwith {};
+	
 	if((getPos player) distance2D (getMarkerPos "base") > 200) exitwith {};
-	if ((primaryweapon player in (player getvariable ["twc_allowedweapons", [0]])) || (primaryweapon player == "")) exitwith {};
-
+	
+	
 	_goodlist = [];
 
 	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach (player getvariable ["twc_allowedweapons", [0]]);
+ 
+ _origweapons = [(configFile >> "CfgVehicles" >> typeof player), "weapons", "none"] call BIS_fnc_returnConfigEntry;
 
+	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach _origweapons;
+	
+	if ((primaryweapon player in (player getvariable ["twc_allowedweapons", [0]])) || (primaryweapon player == "")) exitwith {};
+
+	_bad = 1;
+	{if ((_x iskindof [(primaryweapon player), configFile >> "CfgWeapons"]) || ((primaryweapon player) iskindof [_x, configFile >> "CfgWeapons"])) then {_bad = 0};} foreach _goodlist;
+	
+	//systemchat format ["bad is %1", _bad];
+	if (_bad == 0) exitwith {};
+	
 	player removeWeapon primaryweapon player;
 	
 	[_container] spawn {
@@ -62,31 +85,73 @@ player addEventHandler ["InventoryOpened", {
 		player action ["GEAR",_container];
 	};
 	
-	if (_container == cratebox) then {
 		player addweapon (_goodlist call bis_fnc_selectrandom);
+//	if (_container == cratebox) then {};
 
-	};
+	
 }];
-*/
-/* secondary systems to restrict the player taking scopes above the power of what they spawn with and taking weapons that they won't need when they get back to base. Didn't work due to weapon classnames changing after picking up the weapon so our twc versions weren't getting picked up, but it was a lot of damn effort and I don't want to waste it so I'm letting it rot for a bit
+
+
+
+// secondary systems to restrict the player taking scopes above the power of what they spawn with and taking weapons that they won't need when they get back to base. Didn't work due to weapon classnames changing after picking up the weapon so our twc versions weren't getting picked up, but it was a lot of damn effort and I don't want to waste it so I'm letting it rot for a bit
+
+
+
 
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"]; 
+	
+	if (!isnil "twc_skipweprestrict") then {
+		if (twc_skipweprestrict == 1) exitwith {};
+	};
+	if (primaryweapon player == "") exitwith {};
+ _attacheditems = [];
+_attacheditems = primaryWeaponItems player;
+if ((count _attacheditems) == 0) exitwith {};
+
+	_goodlist = [];
+	_itemlist = [];
+	{
+	if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x};
+	if (_x isKindOf ["itemcore", configFile >> "CfgWeapons"]) then {_itemlist pushback _x};
+	} foreach (player getvariable ["twc_allowedweapons", [0]]);
  
-_scope = [(configFile >> "CfgWeapons" >> (primaryweapon player) >> "linkeditems" >> "linkeditemsoptic"), "item", "none"] call BIS_fnc_returnConfigEntry; 
-if (_scope in (primaryWeaponItems player)) exitwith {}; 
+ _origweapons = [(configFile >> "CfgVehicles" >> typeof player), "weapons", "none"] call BIS_fnc_returnConfigEntry;
+
+	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach _origweapons;
+ _scopelist = [];
 _zoom = 10;  
+  
+ 
+{_scope = [(configFile >> "CfgWeapons" >> _x >> "linkeditems" >> "linkeditemsoptic"), "item", "none"] call BIS_fnc_returnConfigEntry;
   
 _configsbase = "true" configClasses (configFile >> "CfgWeapons" >> _scope >> "iteminfo" >> "opticsmodes");   
   
 _conf = [];   
 {_conf pushback configname _x} foreach _configsbase;   
-  
-  
-  
+
 _check = 10;   
 {_check = getNumber (configFile >> "CfgWeapons" >> _scope >> "iteminfo" >> "opticsmodes" >> _x >> "opticsZoomMin");  
  if ((_check != 0) && (_check < _zoom)) then {_zoom = _check}; } foreach _conf;  
+} foreach _goodlist;
+
+
+
+{_scope = _x;
+//systemchat format ["%1", _x];
+_configsbase = "true" configClasses (configFile >> "CfgWeapons" >> _scope >> "iteminfo" >> "opticsmodes");   
+  
+_conf = [];   
+{_conf pushback configname _x} foreach _configsbase;   
+
+_check = 10;   
+{_check = getNumber (configFile >> "CfgWeapons" >> _scope >> "iteminfo" >> "opticsmodes" >> _x >> "opticsZoomMin");  
+ if ((_check != 0) && (_check < _zoom)) then {_zoom = _check}; } foreach _conf;  
+} foreach _itemlist;
+
+
+//if (_scope in (primaryWeaponItems player)) exitwith {}; 
+  
 
  
  
@@ -119,4 +184,3 @@ systemchat "Scope removed, nice try chap";};
 
 }];
 */
-

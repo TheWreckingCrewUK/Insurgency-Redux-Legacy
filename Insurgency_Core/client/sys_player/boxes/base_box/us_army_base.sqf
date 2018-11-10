@@ -2,7 +2,7 @@
  if ((typeOf vehicle player) in ["TWC_Modern_US_Army_SectionCommander"]) then {
     _tmp_weapons =
     [
-        ["twc_m4_acog_lazer",1],
+        ["rhs_weap_m4a1_carryhandle_grip3",1],
         ["ACE_Vector",1],
         ["rhsusf_weap_m9",1],
 		["rhsusf_weap_glock17g4",1]
@@ -86,7 +86,7 @@
   if ((typeOf vehicle player) in ["TWC_Modern_US_Army_Rifleman"]) then {
     _tmp_weapons =
     [
-        ["twc_m4_acog_lazer",1],
+        ["rhs_weap_m4a1_carryhandle_grip3",1],
 		["ACE_VMM3",1],
 		["rhs_weap_M590_8RD",1],
 		["rhs_weap_m72a7",2]
@@ -166,7 +166,7 @@
   if ((typeOf vehicle player) in ["TWC_Modern_US_Army_Medic"]) then {
     _tmp_weapons =
     [
-        ["twc_m4_acog_lazer",1]
+        ["rhs_weap_m4a1_carryhandle_grip3",1]
 	];
 
     _tmp_magazines =

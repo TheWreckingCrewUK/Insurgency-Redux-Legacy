@@ -268,7 +268,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
  if (typeOf vehicle player in ["Modern_British_Marksman_COIN", "Modern_British_Marksman_COIN_Light"]) then {
     _tmp_weapons =
     [
-        ["UK3CB_BAF_L129A1_Grippod_TA648",1],
+        ["UK3CB_BAF_L129A1_FGrip_Bipod",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
@@ -379,7 +379,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["twc_l115a3_wd",1],
-		["twc_rhs_weap_M107",1],
 		["UK3CB_BAF_L107A1",1],
 		["rhsusf_weap_glock17g4",1]
     ];
@@ -388,8 +387,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     [	
 		["ACE_10Rnd_338_300gr_HPBT_Mag",50],
 		["ACE_10Rnd_338_API526_Mag",50],
-		["rhsusf_mag_10Rnd_STD_50BMG_M33",10],
-		["rhsusf_mag_10Rnd_STD_50BMG_mk211",10],
 		["UK3CB_BAF_9_15Rnd",15],
 		["rhsusf_mag_17Rnd_9x19_JHP",15]
 	];
@@ -423,6 +420,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
+		["UK3CB_BAF_L129A1_FGrip_Bipod",1],
 		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1]
@@ -436,8 +434,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_556_30Rnd_T",50],
 		["UK3CB_BAF_762_L42A1_20Rnd", 50],
 		["UK3CB_BAF_762_L42A1_20Rnd_t", 50],
-		["rhsusf_mag_10Rnd_STD_50BMG_M33",50],
-		["rhsusf_mag_10Rnd_STD_50BMG_mk211",50],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["UK3CB_BAF_9_15Rnd",15],
 		["HandGrenade",5]
@@ -2689,6 +2685,58 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 
+
+ if((typeOf player) in ["2000_British_Sniper","2000_British_Sniper_desert"])then{
+    _tmp_weapons =
+    [
+		["twc_l96_d",1],
+		["ACE_Yardage450",1],
+		["UK3CB_BAF_L85A2_SUSAT",1],
+		["UK3CB_BAF_L107A1",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_30Rnd",30],
+		["UK3CB_BAF_762_L42A1_10Rnd",30],
+		["UK3CB_BAF_762_L42A1_10Rnd_T",30]
+    ];
+
+	_tmp_items =
+	[
+		["ACE_RangeCard",1],
+		["ACE_Tripod",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+ if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert"])then{
+    _tmp_weapons =
+    [
+		["twc_l96_d",1],
+		["ACE_Yardage450",1],
+		["UK3CB_BAF_L85A2_SUSAT",1],
+		["UK3CB_BAF_L107A1",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_762_L42A1_10Rnd_T",30],
+		["UK3CB_BAF_762_L42A1_10Rnd",30],
+		["UK3CB_BAF_556_30Rnd",30]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1],
+		["ACE_RangeCard",1],
+		["ACRE_PRC343",1]
+	];
+};
+
+
+
  if((typeOf player) in ["2000_British_Vehicle_Commander"])then{
     _tmp_weapons =
     [
@@ -2737,7 +2785,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_SectionCommander"])then{
     _tmp_weapons =
     [
-        ["twc_m4_cco_vfg",1]
+        ["rhs_m4_compm4",1]
 	];
 
 	_tmp_magazines =
@@ -2803,7 +2851,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_Rifleman"])then{
     _tmp_weapons =
     [
-        ["twc_m4_cco_vfg",1],
+        ["rhs_m4_compm4",1],
         ["rhs_weap_M136",1]
 	];
 
@@ -3063,18 +3111,21 @@ clearbackPackCargo crateBox;
 
 
 _spawnweps = [(configFile >> "CfgVehicles" >> (typeOf player)), "weapons", "none"] call BIS_fnc_returnConfigEntry;
-
-
-
-
  
 {
 _spawnweps pushback (_x select 0);
 } foreach _tmp_weapons;
-/*
+
+
+_spawnitems = [(configFile >> "CfgVehicles" >> (typeOf player)), "weapons", "none"] call BIS_fnc_returnConfigEntry;
+ 
+{
+_spawnweps pushback (_x select 0);
+} foreach _tmp_items;
+
 _checkweps = (player getvariable ["twc_allowedweapons", []]);
 if (count _checkweps == 0) then {player setvariable ["twc_allowedweapons", _spawnweps]};
-*/
+
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin","Modern_Artillery_Commander","Modern_Artillery_Gunner"]) then {
 
 if (( count(allPlayers - entities "HeadlessClient_F"))>=0) then {// add in all weapons.

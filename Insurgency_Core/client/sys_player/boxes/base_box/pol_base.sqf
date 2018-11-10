@@ -3,7 +3,7 @@
  if (typeOf vehicle player in ["Modern_pol_Base", "Modern_pol_Base_d"]) then {
     _tmp_weapons =
     [
-        ["twc_ak74_pol",1],
+        ["rhs_weap_ak74m_zenitco01_b33_grip1",1],
         ["rhs_weap_M136_hedp",1]
     ];
 
@@ -25,7 +25,7 @@
  if (typeOf vehicle player in ["Modern_pol_medic", "Modern_pol_medic_d"]) then {
     _tmp_weapons =
     [
-        ["twc_ak74_pol",1]
+        ["rhs_weap_ak74m_zenitco01_b33_grip1",1]
     ];
 
 	_tmp_magazines =
@@ -103,7 +103,7 @@
  if (typeOf vehicle player in ["Modern_pol_rifleman_at", "Modern_pol_rifleman_at_d"]) then {
     _tmp_weapons =
     [
-        ["twc_ak74_pol",1],
+        ["rhs_weap_ak74m_zenitco01_b33_grip1",1],
         ["twc_rpg_pol",1]
     ];
 

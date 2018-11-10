@@ -23,11 +23,16 @@ if (!isnil "_nobackpack") then {
 	};
 };
 
+[] spawn {
+	waituntil {(!(isnil "twc_missionname"))};
+	waitUntil {!isNull player};
 
-waituntil {(!(isnil "twc_missionname"))};
-
-if (((uniform player) == "UK3CB_BAF_U_RolledUniform_MTP") && ((["90", twc_missionname] call BIS_fnc_inString))) then {
-	(player) setObjectTextureGlobal [0, "uk3cb_baf_equipment\backpacks\data\backpack_ddpm_co.paa"];
+	if (((uniform player) == "UK3CB_BAF_U_RolledUniform_MTP") && ((["90", twc_missionname] call BIS_fnc_inString))) then {
+	for "_i" from 1 to 3 do {
+		sleep 3;
+		(player) setObjectTextureGlobal [0, "uk3cb_baf_equipment\backpacks\data\backpack_ddpm_co.paa"];
+		};
+	};
 };
 
 //Set Radios Correctly
@@ -68,6 +73,7 @@ sleep 10;
 
 if ((random 1)< twc_mortarchance) then {
 _ran = (random 3);
+waituntil {(!(isnil "twc_mortar_targetlist"))};
 for "_i" from 1 to _ran do {
 twc_mortar_targetlist pushback ((getpos player) vectoradd [random 1,random 1,random 1]);
 publicVariable "twc_mortar_targetlist";
