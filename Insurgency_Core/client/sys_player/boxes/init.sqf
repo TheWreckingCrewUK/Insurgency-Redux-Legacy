@@ -89,7 +89,7 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 	};
 		
 
-	_UKaction5 = ["SpawnmedCreate","Spawn Ambulance","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_uk.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Panther CLV","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_uk.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 
 	_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
