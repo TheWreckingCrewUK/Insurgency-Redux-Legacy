@@ -71,7 +71,7 @@ for "_i" from 1 to _total do {
 	
 	_gun attachto [_truck, [0.2,-1.5,0.4]];
 	_gun addEventHandler ["Fired", {
-		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk_fnc_gunwalk; }];
+		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk; }];
 	
 	
 	_direction = 180;	
@@ -151,7 +151,7 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	_gun setPos (getpos _gun);
 	
 	_gun addEventHandler ["Fired", {
-		[_this select 6, _this select 7] call twc_fnc_mortarwalk_fnc_mortarwalk; }];
+		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk;  }];
 	
 	
 	_direction = 180;	

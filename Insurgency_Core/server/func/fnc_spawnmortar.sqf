@@ -63,5 +63,5 @@ _group = createGroup East;
 	[_mortar] spawn twc_fnc_mortarattack;
 	
 	_mortar addEventHandler ["Fired", {
-		[_this select 6, _this select 7] call twc_fnc_mortarwalk_fnc_mortarwalk; }];
+		[_this select 6, _this select 7] call twc_fnc_mortarwalk; }];
 	

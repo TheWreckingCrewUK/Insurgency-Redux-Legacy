@@ -21,7 +21,7 @@ params ["_pos","_total","_radius"];
 
 _total = _total / 2;
 
-if(_pos distance (getmarkerpos "base") < 1000) exitwith {};
+//if(_pos distance (getmarkerpos "base") < 1000) exitwith {};
 
 
 if ((count(_pos nearRoads _radius)) == 0) exitwith {};
@@ -70,7 +70,7 @@ if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 	
 	_gun attachto [_truck, [0.2,-1.5,0.4]];
 	_gun addEventHandler ["Fired", {
-		[_this select 6, _this select 7] call twc_fnc_gunwalk_fnc_gunwalk; }];
+		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk;  }];
 	
 	_flag = "rhs_flag_insurgents" createvehicle _spawnpos;
 	
@@ -165,7 +165,7 @@ while {(_spawnpos distance (getmarkerpos "base")) < 2000 && (count (_spawnpos ne
 	_gun setDir 180;  
 	_gun setPos (getpos _gun); 
 	_gun addEventHandler ["Fired", {
-		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk_fnc_gunwalk; }];
+		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk; }];
 	
 	_flag = "rhs_flag_insurgents" createvehicle _spawnpos;
 	
