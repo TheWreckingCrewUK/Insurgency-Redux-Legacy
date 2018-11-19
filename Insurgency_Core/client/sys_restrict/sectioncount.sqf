@@ -24,7 +24,7 @@ if (twc_skipsectionsystem == 1) exitwith {};
 
 //then we'll exit if they haven't joined a regular infantry slot, there's other stuff for that
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) exitwith {
-systemchat "section system thinks you've taken a non standard slot. Let Hobbs know ASAP if this isn't the case";
+//systemchat "section system thinks you've taken a non standard slot. Let Hobbs know ASAP if this isn't the case";
 };
 
 //init the group count for the first player to join
@@ -69,13 +69,13 @@ _snowflakes = 0;
 //quick sleep because instring is a bit slow
 sleep 3;
 
-systemchat format["section system sees %1 viable groups", count _groups];
+//systemchat format["section system sees %1 viable groups", count _groups];
 //if the player hasn't increased the number of groups from the last player to do the count, exit the script
 
 if ((count _groups) == twc_groupcount) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
-systemchat "section system thinks you're ok";
+//systemchat "section system thinks you're ok";
 };
 
 
@@ -84,7 +84,7 @@ systemchat "section system thinks you're ok";
 if ((count _groups) == 1) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
-systemchat "there's only one group";
+//systemchat "there's only one group";
 };
 
 
@@ -93,7 +93,7 @@ systemchat "there's only one group";
 if ((count units group player) >= (3 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
-systemchat "section system thinks you've joined a decent sized team";
+//systemchat "section system thinks you've joined a decent sized team";
 };
 
 
@@ -103,26 +103,30 @@ _space = 0;
 {	if(!(str group player == str _x)) then {
 		if ((count units _x) < twc_sectionsize) then {
 			_space = 1;
-		} else {systemchat "found a full group"};
-	} else {systemchat "got your number"};
+		} else {
+		//systemchat "found a full group";
+		};
+	} else {
+	//systemchat "got your number"
+	};
 } foreach _groups;
 
-systemchat format ["space equals %1", _space];
+//systemchat format ["space equals %1", _space];
  
 // if it finds no space in any of the sections, update the server with the new group count to check for future and don't restrict the new guy for joining a new section
 if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
-systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
+//systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
 cutText ["","Black IN",5]; 
 player forceWalk false;
 };
 
 //now use the standard spawn restriction system to let the player know what's up
-systemchat "gonna restrict you now";
+//systemchat "gonna restrict you now";
 cutText ["", "Black", 0.001];
 player forceWalk true;
-while {((count units group player) < 3) || (_space == 1)} do {
+while {((count units group player) < (3 min ((count(allPlayers - entities "HeadlessClient_F")) - _snowflakes))) && (_space == 1)} do {
 cutText ["", "Black", 0.001];
     [ 
         format ["<t size='1.2'>Fill The Sections</t><br/><t size='0.6'>There are other sections that need to be filled. Go there or get 3 or more people in the current section</t>", 
@@ -142,7 +146,7 @@ cutText ["", "Black", 0.001];
 if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
-systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
+//systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
 cutText ["","Black IN",5]; 
 player forceWalk false;
 };
