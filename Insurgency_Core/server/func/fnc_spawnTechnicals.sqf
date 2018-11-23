@@ -65,7 +65,8 @@ for "_i" from 1 to _total do {
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
 	
-	_gun = "rhs_KORD_high_VMF" createvehicle _spawnpos; 
+	_guntype = ["rhs_KORD_high_VMF", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
+	_gun = _guntype createvehicle _spawnpos; 
 	
 	_gun setVehicleLock "LOCKEDPLAYER";
 	

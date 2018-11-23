@@ -14,11 +14,14 @@ _box = "ACE_Box_82mm_Mo_HE" createvehicle _pos; _box attachto [_mortartruck, [0.
  
  
 _mortar setVehicleLock "LOCKED";
+
+_mortartruck setvariable ["twc_attachedmortar", _mortar, true];
  
 _mortartruck setVehicleLock "LOCKEDPLAYER";
  
-_mortar addEventHandler ["Killed",{
-[_mortar] call twc_fnc_deadmortar
+_mortartruck addEventHandler ["Killed",{
+params ["_unit", "_killer", "_instigator", "_useEffects"];
+[_unit] call twc_fnc_deadmortar
 }];
 
 _group = createGroup East;

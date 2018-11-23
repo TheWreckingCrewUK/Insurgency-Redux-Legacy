@@ -148,6 +148,11 @@ _taskID = (str random 1000);
 [WEST,[_taskID],['Reconnaissance identified a large stronghold which was later destroyed by friendly forces','Stronghold'],(getpos thistrigger),0,2,true] call BIS_fnc_taskCreate;
 
 	[_taskID,'Succeeded'] call BIS_fnc_taskSetState;
+	_marker = createMarker [format ['stronghold%1', (random 1000)], getpos thistrigger];
+	_marker setMarkerType 'mil_triangle';
+	_marker setMarkerColor 'ColorGreen';
+	_marker setMarkerText ('Stronghold Cleared');
+	_marker setMarkerSize [0.75, 0.75];
 	
 	missionNamespace setVariable [format['stronghold_%1', %1], 2];
 ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;", _rand],""];

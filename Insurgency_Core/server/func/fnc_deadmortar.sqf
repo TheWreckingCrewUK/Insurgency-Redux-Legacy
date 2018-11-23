@@ -1,8 +1,12 @@
-params["_deadCache"];
+params["_truck"];
 
-_intelPos = (getPosATL _deadCache);
+_mortar = _truck getvariable ["twc_attachedmortar", _truck];
 
-_marker = createMarker [format ["%1", _deadCache], _intelPos];
+_mortar setdamage 1;
+
+_intelPos = (getPosATL _truck);
+
+_marker = createMarker [format ["mortar%1", (random 1000)], _intelPos];
 _marker setMarkerType "mil_triangle";
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText ("Mortar Destroyed");

@@ -63,8 +63,8 @@ if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
-	
-	_gun = "rhs_KORD_high_VMF" createvehicle _spawnpos; 
+	_guntype = ["rhs_KORD_high_VMF", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
+	_gun = _guntype createvehicle _spawnpos; 
 	
 	_gun setVehicleLock "LOCKEDPLAYER";
 	
