@@ -38,8 +38,8 @@ for "_i" from 1 to _total do {
 	if (isNil "townSpawn") exitWith {};
 
 
-	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
-	_unit addEventHandler ["Killed",{
+	_gunner = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
+	_gunner addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 
 		if (side (_this select 1) == WEST) then{
@@ -47,8 +47,8 @@ for "_i" from 1 to _total do {
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	_unit setVariable ["unitsHome",_pos,false];
-	_unit setVariable ["twc_isenemy",1];
+	_gunner setVariable ["unitsHome",_pos,false];
+	_gunner setVariable ["twc_isenemy",1];
 	
 	
 	_spawnpos = _pos;
@@ -93,8 +93,8 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 	_truck setdir _direction;
 
-	_unit moveIngunner _gun;
-	_unit setVariable ["twc_isenemy",1];
+	_gunner moveIngunner _gun;
+	_gunner setVariable ["twc_isenemy",1];
 
 /*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
@@ -118,6 +118,7 @@ _group = createGroup East;
 	
 
 _null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+[_gunner] joinsilent _group;
 	
 	};
 };
