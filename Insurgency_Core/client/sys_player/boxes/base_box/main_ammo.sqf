@@ -161,6 +161,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
    [            
 		["UK3CB_BAF_556_200Rnd",20],
 		["UK3CB_BAF_556_200Rnd_T",10],
+		["ACE_SpareBarrel",1],
         ["rhsusf_mag_17Rnd_9x19_JHP",15],
         ["UK3CB_BAF_9_15Rnd",15],
 		["HandGrenade",5]
@@ -215,6 +216,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		//GPMG
         ["UK3CB_BAF_762_100Rnd",20],
 		["UK3CB_BAF_762_100Rnd_T",10],
+		["ACE_SpareBarrel",1],
 		//Marksman
         ["UK3CB_BAF_762_L42A1_20Rnd",25],
 		["UK3CB_BAF_762_L42A1_20Rnd_T",10],	
@@ -251,6 +253,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_762_100Rnd_T",10],
 		["rhsusf_mag_17Rnd_9x19_JHP",15],
 		["UK3CB_BAF_9_15Rnd",15],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 	
@@ -958,6 +961,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
 		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",20],
         ["rhsusf_mag_7x45acp_MHP",15],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -989,6 +993,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_100Rnd_556x45_soft_pouch",10],
 		["rhsusf_200Rnd_556x45_soft_pouch",10],
         ["rhsusf_mag_7x45acp_MHP",15],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -1015,6 +1020,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_100Rnd_762x51",20],
 		["rhsusf_100Rnd_762x51_m62_tracer",10],
         ["rhsusf_mag_7x45acp_MHP",15],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -1045,6 +1051,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_100Rnd_762x51",10],
 		["rhsusf_100Rnd_762x51_m62_tracer",10],
         ["rhsusf_mag_7x45acp_MHP",15],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -1515,6 +1522,7 @@ if (typeOf vehicle player == "twc_ana_mg") then {
 	_tmp_magazines =
     [
         ["rhs_100Rnd_762x54mmR_green",50],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -1546,6 +1554,7 @@ if (typeOf vehicle player == "twc_ana_mg_as") then {
         ["rhs_30Rnd_762x39mm",50],
         ["rhs_30Rnd_762x39mm_tracer",50],
         ["rhs_100Rnd_762x54mmR_green",50],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2306,6 +2315,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_200Rnd",30],
 		["UK3CB_BAF_762_200Rnd_T",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2328,6 +2338,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_762_200Rnd_T",20],
 		["UK3CB_BAF_556_30Rnd",30],
 		["UK3CB_BAF_556_30Rnd_T",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2546,6 +2557,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_556_200Rnd_T",30],
 		["UK3CB_BAF_556_200Rnd",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2598,6 +2610,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_200Rnd",30],
 		["UK3CB_BAF_762_200Rnd_T",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2621,6 +2634,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_556_30Rnd_T",20],
 		["UK3CB_BAF_762_200Rnd",30],
 		["UK3CB_BAF_762_200Rnd_T",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 
@@ -2918,6 +2932,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["rhs_200rnd_556x45_B_SAW",30],
 		["rhs_200rnd_556x45_T_SAW",20],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 

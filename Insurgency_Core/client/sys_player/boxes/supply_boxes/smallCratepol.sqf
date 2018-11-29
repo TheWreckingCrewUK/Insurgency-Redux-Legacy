@@ -22,6 +22,7 @@ clearitemCargoGlobal _box;
 //supplies
 
 
+_box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 
 _box AddMagazineCargoGlobal ["twc_rhsgref_30rnd_556x45_m21",30];
 _box AddMagazineCargoGlobal ["twc_rhsgref_30rnd_556x45_m21_t",10];

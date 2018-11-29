@@ -20,6 +20,7 @@ clearitemCargoGlobal _box;
 //Weapons
 _box AddWeaponCargoGlobal ["UK3CB_BAF_AT4_CS_AP_Launcher",2];
 
+_box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 
 //supplies
 _box AddMagazineCargoGlobal ["rhsusf_100Rnd_762x51_m62_tracer",1];

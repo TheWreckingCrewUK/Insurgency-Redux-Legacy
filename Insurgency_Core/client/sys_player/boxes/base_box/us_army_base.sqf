@@ -150,6 +150,7 @@
     [
         ["rhsusf_100Rnd_556x45_mixed_soft_pouch",20],
 		["rhs_200rnd_556x45_T_SAW",10],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 

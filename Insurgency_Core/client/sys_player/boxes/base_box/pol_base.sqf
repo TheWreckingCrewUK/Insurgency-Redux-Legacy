@@ -89,6 +89,7 @@
     [
         ["rhs_100Rnd_762x54mmR_7N26",10],
 		["rhs_100Rnd_762x54mmR_green",10],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -173,6 +174,7 @@
 		["rhs_GRD40_White",30],
 		["rhs_rpg7_PG7VL_mag",10],
 		["rhs_rpg7_TBG7V_mag",10],
+		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
 	_tmp_items =
