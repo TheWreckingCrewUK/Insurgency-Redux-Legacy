@@ -1516,12 +1516,13 @@ if (typeOf vehicle player == "twc_ana_rifleman_at") then {
 if (typeOf vehicle player == "twc_ana_mg") then {
     _tmp_weapons =
     [
-  //      ["rhs_weap_akm",1]
+        ["CUP_arifle_RPK74",1]
     ];
 
 	_tmp_magazines =
     [
         ["rhs_100Rnd_762x54mmR_green",50],
+        ["rhs_30Rnd_762x39mm_tracer",50],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];

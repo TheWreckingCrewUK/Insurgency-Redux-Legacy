@@ -31,6 +31,7 @@ player addEventHandler ["InventoryClosed", {
 #include "pilots.sqf";
 
 #include "supply_boxes\modern_pol.sqf";
+#include "supply_boxes\1990_us.sqf";
 	
 	_minecondition = {(count (player nearobjects ["minebase", 500]) > 0) || (count (player nearobjects ["pipebombbase", 10]) > 0)};
 	_twc_placeflag = ["placeflag","Place EOD Flag","",{ 

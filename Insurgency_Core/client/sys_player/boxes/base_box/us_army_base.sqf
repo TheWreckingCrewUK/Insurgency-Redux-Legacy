@@ -198,3 +198,121 @@
 		["ACRE_PRC148",1]
 	];
 };
+
+
+  if ((typeOf vehicle player) in ["twc_men_1990_us_w_SquadLeader", "twc_men_1990_us_d_SquadLeader"]) then {
+    _tmp_weapons =
+    [
+	];
+
+    _tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",20],
+        ["rhsusf_mag_7x45acp_MHP",15],
+		["1Rnd_HE_Grenade_shell", 30],
+	    ["1Rnd_Smoke_Grenade_shell", 10],
+	    ["1Rnd_SmokeRed_Grenade_shell", 10],
+	    ["1Rnd_SmokeGreen_Grenade_shell", 10],
+	    ["1Rnd_SmokeYellow_Grenade_shell", 10],
+	    ["1Rnd_SmokePurple_Grenade_shell", 10],
+        ["1Rnd_SmokeBlue_Grenade_shell", 10],
+		["UGL_FlareWhite_F", 10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1],
+		["twc_men_1990_us_w_backpack_squadlead",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC117F",1],
+		["ACRE_PRC148",1],
+		["ACE_IR_Strobe_Item",1]
+	];
+};
+
+
+  if ((typeOf vehicle player) in ["twc_men_1990_us_w_teamleader", "twc_men_1990_us_d_teamleader"]) then {
+    _tmp_weapons =
+    [
+	];
+
+    _tmp_magazines =
+    [
+		["1Rnd_Smoke_Grenade_shell", 10],
+		["1Rnd_SmokeRed_Grenade_shell", 10],
+		["1Rnd_SmokeGreen_Grenade_shell", 10],
+		["1Rnd_SmokeYellow_Grenade_shell", 10],
+		["1Rnd_SmokePurple_Grenade_shell", 10],
+		["UGL_FlareWhite_F", 10],
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",20]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",1],
+		["ACE_M26_Clacker",1]
+	];
+};
+
+
+  if ((typeOf vehicle player) in ["twc_men_1990_us_w_rifleman", "twc_men_1990_us_d_rifleman"]) then {
+    _tmp_weapons =
+    [
+	];
+
+    _tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",20]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+  if ((typeOf vehicle player) in ["twc_men_1990_us_w_rifleman_at", "twc_men_1990_us_d_rifleman_at"]) then {
+    _tmp_weapons =
+    [
+		["rhs_weap_M136",1]
+	];
+
+    _tmp_magazines =
+    [
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",20]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+  if ((typeOf vehicle player) in ["twc_men_1990_us_w_autorifleman", "twc_men_1990_us_d_autorifleman"]) then {
+    _tmp_weapons =
+    [
+	];
+
+    _tmp_magazines =
+    [
+        ["ACE_SpareBarrel",1],
+        ["rhs_200rnd_556x45_T_SAW",50],
+		["rhsusf_100Rnd_556x45_soft_pouch",20]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
