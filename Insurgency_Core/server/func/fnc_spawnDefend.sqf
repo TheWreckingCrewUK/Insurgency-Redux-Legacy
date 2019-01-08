@@ -56,7 +56,13 @@ _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
 
-	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	//[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	
+	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	
+	{
+		deletevehicle _x;
+	} foreach _rem;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 /*

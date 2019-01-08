@@ -17,7 +17,7 @@
 */
 
 //Recieved Parameters
-params ["_pos","_total","_radius"];
+params ["_pos","_total","_radius", "_group"];
 
 _total = ceil(_total / 2);
 
@@ -31,23 +31,13 @@ for "_i" from 1 to _total do {
 	for "_i" from 1 to (ceil (_total / 2)) do {
 
 	//Spawning hostiles
-	_group = createGroup East;
+	//_group = createGroup East;
 
 
 	if (isNil "townSpawn") exitWith {};
 
 
-	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
-	_unit addEventHandler ["Killed",{
-		[(_this select 0)] call twc_fnc_deleteDead;
-
-		if (side (_this select 1) == WEST) then{
-			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
-			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
-		};
-	}];
-	_unit setVariable ["unitsHome",_pos,false];
-	_unit setVariable ["twc_isenemy",1];
+	
 	
 	
 	_spawnpos = _pos;
@@ -56,7 +46,7 @@ for "_i" from 1 to _total do {
 
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 	
-	while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos nearobjects ['rhs_KORD_high_VMF', 1500]) > 0)} do {
+	while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos nearobjects ['rhs_KORD_high_MSV', 1500]) > 0)} do {
 	
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 	};
@@ -65,7 +55,7 @@ for "_i" from 1 to _total do {
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
 	
-	_guntype = ["rhs_KORD_high_VMF", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
+	_guntype = ["rhs_KORD_high_MSV", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
 	_gun = _guntype createvehicle _spawnpos; 
 	
 	_gun setVehicleLock "LOCKEDPLAYER";
@@ -93,9 +83,27 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 	_truck setdir _direction;
 	
+	
 
-	_unit moveIngunner _gun;
-	_unit setVariable ["twc_isenemy",1];
+	[_pos, _gun, _group] spawn {
+		params ["_pos", "_gun", "_group"];
+		
+		_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+
+			if (side (_this select 1) == WEST) then{
+				["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+				["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+			};
+		}];
+		_unit setVariable ["unitsHome",_pos,false];
+		_unit setVariable ["twc_isenemy",1];
+		sleep 5;
+		_unit assignasgunner _gun;
+		_group addvehicle _gun;
+		_unit moveIngunner _gun;
+	};
 
 /*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
@@ -110,7 +118,7 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 	for "_i" from 1 to (ceil (_total / 2)) do {
 
 	//Spawning hostiles
-	_group = createGroup East;
+	//_group = createGroup East;
 
 
 	if (isNil "townSpawn") exitWith {};
@@ -182,9 +190,13 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 */
 
 
-	
-
-	_unit moveIngunner _gun;
+	[_unit, _gun, _group] spawn {
+		params ["_unit", "_gun", "_group"];
+		sleep 2;
+		_unit assignasgunner _gun;
+		_group addvehicle _gun;
+		_unit moveIngunner _gun;
+	};
 	_unit setVariable ["twc_isenemy",1];
 	
 	};

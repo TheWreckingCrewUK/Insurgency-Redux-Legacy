@@ -33,11 +33,11 @@ _trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[nearestObjects [t
 
 //Spawning a load of hostiles and the civs
 
-[_pos, 2, 500] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
+_group = createGroup East;
+[_pos, 2, 500, _group] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
 
 _num = 0;
 _total = 15;
-_group = createGroup East;
 for "_i" from 1 to _total do{
 _infpos = [_pos, 300] call CBA_fnc_randPos;
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _infpos,[], 5,"NONE"];

@@ -25,6 +25,7 @@ _tmp_items = [];
 _tmp_backpacks = [];
 
 #include "pol_base.sqf";
+#include "ger_base.sqf";
 #include "us_army_base.sqf";
 
 //BAF Section Leader

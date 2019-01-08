@@ -38,8 +38,8 @@ for "_i" from 1 to _total do {
 	if (isNil "townSpawn") exitWith {};
 
 
-	_gunner = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
-	_gunner addEventHandler ["Killed",{
+	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
+	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 
 		if (side (_this select 1) == WEST) then{
@@ -47,9 +47,8 @@ for "_i" from 1 to _total do {
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	_gunner setVariable ["unitsHome",_pos,false];
-	_gunner setVariable ["twc_isenemy",1];
-	
+	_unit setVariable ["unitsHome",_pos,false];
+	_unit setVariable ["twc_isenemy",1];
 	
 	_spawnpos = _pos;
 
@@ -57,13 +56,14 @@ for "_i" from 1 to _total do {
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 	
 	
-while {((_spawnpos distance (getmarkerpos "base")) < 2000) && (count (_spawnpos nearobjects ['rhs_KORD_high_VMF', 1500]) > 0)} do {
-	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom)};
+while {((_spawnpos distance (getmarkerpos "base")) < 2000) && (count (_spawnpos nearobjects ['rhs_KORD_high_MSV', 1500]) > 0)} do {
+	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
+	};
 if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
-	_guntype = ["rhs_KORD_high_VMF", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
+	_guntype = ["rhs_KORD_high_MSV", "twc_KORD_high_20mm"] call bis_fnc_selectrandom;
 	_gun = _guntype createvehicle _spawnpos; 
 	
 	_gun setVehicleLock "LOCKEDPLAYER";
@@ -86,15 +86,24 @@ if(count _nearRoads > 0) then
 _road = _nearRoads select 0;
 _roadConnectedTo = roadsConnectedTo _road;
 _connectedRoad = _roadConnectedTo select 0;
+if (isnil "_connectedRoad") then {
+	_connectedroad = _road;
+};
 _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 };
 	
 	
 
 	_truck setdir _direction;
-
-	_gunner moveIngunner _gun;
-	_gunner setVariable ["twc_isenemy",1];
+	_gunner = _unit;
+	[_unit, _gun, _group] spawn {
+		params ["_unit", "_gun", "_group"];
+		sleep 2;
+		_unit assignasgunner _gun;
+		_group addvehicle _gun;
+		_unit moveIngunner _gun;
+	};
+	_unit setVariable ["twc_isenemy",1];
 
 /*	_truck addEventHandler ["Killed",{
 			if (side (_this select 1) == WEST) then{
@@ -115,10 +124,17 @@ _group = createGroup East;
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	
+	_group selectleader _unit;
 
-_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
-[_gunner] joinsilent _group;
+//[_unit, getpos _unit,150, 2, true] spawn TWC_fnc_Defend;
+//[_unit,getpos _unit,150,"LIMITED","COLUMN","SAFE"] call twc_fnc_patrol;
+[_group,getpos _unit, 150, 7, "MOVE", "SAFE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+
+[_gunner, _group] spawn {
+		params ["_gunner", "_group"];
+		sleep 10;
+		[_gunner] joinsilent _group;
+	};
 	
 	};
 };
@@ -180,6 +196,9 @@ if(count _nearRoads > 0) then
 _road = _nearRoads select 0;
 _roadConnectedTo = roadsConnectedTo _road;
 _connectedRoad = _roadConnectedTo select 0;
+if (isnil "_connectedRoad") then {
+	_connectedroad = _road;
+};
 _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 };
 	if (isnil "_direction") then {
@@ -191,6 +210,9 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 	_truck addEventHandler ["Killed", {[50] call twc_fnc_deadasset}];
 
+	_gunner = _unit;
+	_unit assignasgunner _gun;
+	_group addvehicle _gun;
 	_unit moveIngunner _gun;
 	_unit setVariable ["twc_isenemy",1];
 	
@@ -210,9 +232,22 @@ _group = createGroup East;
 	}];
 	
 	_unit setVariable ["twc_isenemy",1];
+	
+	_group selectleader _unit;
 
-	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+	_null = [leader _group, leader _group,150, 2, true] spawn TWC_fnc_Defend;
+	
+	[_gunner, _group] spawn {
+		params ["_gunner", "_group"];
+		sleep 10;
+		[_gunner] joinsilent _group;
 	};
+	
+	//[_unit,getpos _unit,150,"LIMITED","COLUMN","SAFE"] call twc_fnc_patrol;
+	//[_group,getpos _unit, 150, 7, "MOVE", "SAFE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+	};
+	
+	
 	};
 	
 	};

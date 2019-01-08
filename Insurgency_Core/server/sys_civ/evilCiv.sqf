@@ -11,6 +11,9 @@ _civ setVariable ["twc_isenemy",1, true];
  
  _newgroup setCombatMode "RED";
  //_newgroup addwaypoint [_nearestbluforplayer, 0];
+ _civ enableai "path";
+ _civ enableai "move";
+ _civ enableai "fsm";
 sleep 0.2;
 _weapon = [["rhs_weap_savz61_folded", "rhsgref_20rnd_765x17_vz61"],["rhs_weap_aks74u_folded","rhs_30Rnd_545x39_AK"],["rhs_weap_savz61_folded","rhsgref_20rnd_765x17_vz61"]];
 _choice = _weapon call BIS_fnc_selectRandom;

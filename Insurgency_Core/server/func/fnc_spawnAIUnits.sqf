@@ -95,7 +95,12 @@ _group setSpeedMode "LIMITED";
 
 units _civg joinsilent _group;
 
-	[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	
+	{
+		deletevehicle _x;
+	} foreach _rem;
+	
 	sleep 3;
 	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
