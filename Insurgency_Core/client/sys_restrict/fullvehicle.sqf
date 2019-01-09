@@ -42,7 +42,7 @@ _takenslots = fullcrew vehicle player;
 	
 	//waits until crew positions aren't filled before doing anything proper. dumb script because fullcrew can't filter multiple types
 	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]) - _stryker)
-	) && ((gunner vehicle player == player) || (_vehicle isKindOf "air";))
+	) && (((gunner vehicle player) == player) || (_vehicle isKindOf "air";))
 	};
 	
 

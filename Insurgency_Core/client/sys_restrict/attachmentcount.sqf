@@ -9,10 +9,14 @@ if (( count(allPlayers - entities "HeadlessClient_F")) > 28) exitwith {};
 if (["HQ", str (group player)] call BIS_fnc_inString) exitwith {
 execvm "Insurgency_Core\client\sys_restrict\platoonhq.sqf";
 };
-
+/*
 if((["spotter", str (typeof player)] call BIS_fnc_inString) || (["sniper", str (typeof player)] call BIS_fnc_inString))then{
 waituntil {(( count(allPlayers - entities "HeadlessClient_F")) >= 5)};
 };
+*/
+
+//testing a potential method of filling servers, if they're the first into the server then they get first pick of attachments
+if (( count(allPlayers - entities "HeadlessClient_F")) == (count (units group player))) exitwith {};
 
 _groups = [];
 
