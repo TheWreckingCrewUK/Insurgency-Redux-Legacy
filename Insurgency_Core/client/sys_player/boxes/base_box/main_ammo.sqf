@@ -2695,7 +2695,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC148",1]
 	];
 };
 
