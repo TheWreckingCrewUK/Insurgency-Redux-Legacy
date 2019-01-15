@@ -31,7 +31,7 @@ _box AddMagazineCargoGlobal ["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",10];
 _box AddMagazineCargoGlobal ["rhs_mag_maaws_HEDP",3];
 
 
-_box AddMagazineCargoGlobal ["rhsgref_296Rnd_792x57_SmK_alltracers_belt",2];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",3];
 _box AddMagazineCargoGlobal ["rhs_200rnd_556x45_T_SAW",3];
 
 _box AddMagazineCargoGlobal ["CUP_1Rnd_HEDP_M203",15];

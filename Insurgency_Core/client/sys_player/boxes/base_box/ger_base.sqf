@@ -90,7 +90,7 @@
 	_tmp_magazines =
     [
         ["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",30],
-		["rhsgref_296Rnd_792x57_SmK_alltracers_belt",10],
+		["UK3CB_BAF_762_200Rnd_T",10],
 		["rhs_200rnd_556x45_T_SAW",15],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
