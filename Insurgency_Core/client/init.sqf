@@ -85,7 +85,8 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 
 	if (typeOf vehicle player == "Modern_British_JetPilot") then {
 
-		if (( count(allPlayers - entities "HeadlessClient_F")) >= 6) then 
+		//if (( count(allPlayers - entities "HeadlessClient_F")) >= 6) then 
+		if (( count(allPlayers - entities "HeadlessClient_F")) >= 0) then 
 		{
 			hint "You're a pilot. Read how to spawn aircraft in the diary on your map";
 		} else

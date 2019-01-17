@@ -11,9 +11,9 @@ _transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
 
 _cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 
-_planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 6};
+_planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 
-_planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
+_planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 
 _planecondhi = {( count(allPlayers - entities "HeadlessClient_F")) >= 12};
 
