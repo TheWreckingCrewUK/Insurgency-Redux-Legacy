@@ -61,9 +61,9 @@ for "_i" from 1 to _total do {
 	_gun setVehicleLock "LOCKEDPLAYER";
 	
 	_gun attachto [_truck, [0.2,-1.5,0.4]];
-	_gun addEventHandler ["Fired", {
+	/*_gun addEventHandler ["Fired", {
 		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk; }];
-	
+	*/
 	
 	_direction = 180;	
 	_nearRoads = _spawnpos nearRoads 10;
@@ -141,27 +141,28 @@ _direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
 
 
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
-	while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos nearobjects ['CUP_B_SPG9_CDF', 300]) > 0)} do {
+	while {((_spawnpos distance (getmarkerpos "base")) < 1000) && (count (_spawnpos nearobjects ['CUP_O_AGS_SLA', 300]) > 0)} do {
 	
 	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
 	};
 	
-	_truck = "CUP_C_Datsun" createvehicle _spawnpos; 
+	_truck = "C_Truck_02_covered_F" createvehicle _spawnpos; 
 	
 	_truck setVehicleLock "LOCKEDPLAYER";
 
-	_gun = "CUP_B_SPG9_CDF" createvehicle _spawnpos; 
+	_gun = "CUP_O_AGS_SLA" createvehicle _spawnpos; 
 	
 	_gun setVehicleLock "LOCKEDPLAYER";
 
-	_gun attachto [_truck, [-0.2,-1.7,-1.2]];  
-
+	//_gun attachto [_truck, [-0.2,-1.7,-1.2]];  // spg attach coords for when the cup spg starts working again
+	_gun attachto [_truck, [0,-2.6,0.5]];
+	
 	_gun setDir 180;  
 	_gun setPos (getpos _gun);
 	
-	_gun addEventHandler ["Fired", {
+	/*_gun addEventHandler ["Fired", {
 		[_this select 1, _this select 6, _this select 7] call twc_fnc_gunwalk;  }];
-	
+	*/
 	
 	_direction = 180;	
 	_nearRoads = _spawnpos nearRoads 10;

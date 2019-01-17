@@ -36,7 +36,7 @@ if (!(_x == _player)) then {
 			if (((_pos distance _x) < 10)) then {
 				//systemchat format ["%1", (_sup - 0.4)];
 			};
-			if (((random 1) < (_sup - 0.4)) && ((_pos distance _x) < 10)) then {
+			if (((random 1) < (_sup - 0.2)) && ((_pos distance _x) < 10)) then {
 				["ace_captives_setSurrendered",[_x,true]] call CBA_fnc_globalEvent;
 			};
 		};
