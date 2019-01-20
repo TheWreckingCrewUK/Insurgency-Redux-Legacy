@@ -1,4 +1,4 @@
-if((typeOf player) in ["modern_ger_commander","modern_ger_commander_d", "modern_ger_subcommander","modern_ger_subcommander_d"])then{
+if((typeOf player) in ["Modern_ger_commander","Modern_ger_commander_d", "Modern_ger_subcommander","Modern_ger_subcommander_d"])then{
 
 	_UKaction = ["SpawnsmallanaCreate","Spawn Small German Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateger.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
