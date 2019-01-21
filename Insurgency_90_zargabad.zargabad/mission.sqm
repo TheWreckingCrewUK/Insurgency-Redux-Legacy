@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1821;
+		nextID=1825;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3147.4282,15.979243,1115.2115};
-		dir[]={-0.90975952,-0.41511074,-0.0053829867};
-		up[]={-0.41510838,0.90976757,-0.0024563344};
-		aside[]={-0.0059164939,1.3655517e-007,0.99998677};
+		pos[]={3246.3982,45.759037,1394.0563};
+		dir[]={0.91006124,-0.41340268,-0.030364154};
+		up[]={0.41318783,0.91054201,-0.013786619};
+		aside[]={-0.03334824,-3.5505946e-007,-0.99946034};
 	};
 };
 binarizationWanted=0;
@@ -53,13 +53,14 @@ addons[]=
 	"twc_medical",
 	"A3_Structures_F_Items_Tools",
 	"twc_modern",
-	"twc_1990"
+	"twc_1990",
+	"UK3CB_BAF_Vehicles_MAN"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=25;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -206,6 +207,13 @@ class AddonsMetaData
 		{
 			className="twc_1990";
 			name="twc_1990";
+		};
+		class Item24
+		{
+			className="UK3CB_BAF_Vehicles_MAN";
+			name="3CB BAF Vehicles - MAN Truck";
+			author="AUTHOR_3CB";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
@@ -12722,7 +12730,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=87;
+		items=91;
 		class Item0
 		{
 			dataType="Marker";
@@ -17414,6 +17422,70 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item87
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3354.1702,13.401709,1384.9154};
+				angles[]={6.278194,1.1152133,0.01749678};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1821;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3347.6519,13.32337,1381.8884};
+				angles[]={6.278194,1.1152133,0.014998405};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1822;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3355.9211,13.407248,1381.2556};
+				angles[]={6.2756844,1.1308501,0.01749678};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1823;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3349.5125,13.327272,1378.1754};
+				angles[]={6.2731848,1.1152133,0.01749678};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1824;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
 		};
 	};
 };

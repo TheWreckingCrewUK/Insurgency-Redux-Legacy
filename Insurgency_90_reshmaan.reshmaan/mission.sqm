@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2137;
+		nextID=2141;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13159.151,55.184479,10518.669};
-		dir[]={0.69681853,-0.71662289,-0.030337159};
-		up[]={0.71595514,0.69744593,-0.031170648};
-		aside[]={-0.043496527,-4.9505616e-007,-0.99906468};
+		pos[]={13212.241,49.505005,10551.401};
+		dir[]={0.80239284,-0.59383047,0.059499785};
+		up[]={0.59220976,0.8045857,0.043914195};
+		aside[]={0.073950268,6.2282197e-008,-0.99726701};
 	};
 };
 binarizationWanted=0;
@@ -54,13 +54,14 @@ addons[]=
 	"A3_Structures_F_Ind_WindPowerPlant",
 	"twc_modern",
 	"ukcw_bedford",
-	"twc_1990"
+	"twc_1990",
+	"UK3CB_BAF_Vehicles_MAN"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -196,6 +197,13 @@ class AddonsMetaData
 		{
 			className="twc_1990";
 			name="twc_1990";
+		};
+		class Item23
+		{
+			className="UK3CB_BAF_Vehicles_MAN";
+			name="3CB BAF Vehicles - MAN Truck";
+			author="AUTHOR_3CB";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
@@ -12712,7 +12720,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=311;
+		items=315;
 		class Item0
 		{
 			dataType="Marker";
@@ -24518,6 +24526,7 @@ class Mission
 					};
 					id=2109;
 					type="twc_ana_commander";
+					atlOffset=-3.4332275e-005;
 				};
 				class Item1
 				{
@@ -24535,6 +24544,7 @@ class Mission
 					};
 					id=2110;
 					type="twc_ana_base";
+					atlOffset=3.6239624e-005;
 				};
 				class Item2
 				{
@@ -24552,6 +24562,7 @@ class Mission
 					};
 					id=2111;
 					type="twc_ana_base";
+					atlOffset=3.6239624e-005;
 				};
 				class Item3
 				{
@@ -24569,6 +24580,7 @@ class Mission
 					};
 					id=2112;
 					type="twc_ana_rifleman_at";
+					atlOffset=3.6239624e-005;
 				};
 				class Item4
 				{
@@ -24586,6 +24598,7 @@ class Mission
 					};
 					id=2113;
 					type="twc_ana_subcommander";
+					atlOffset=3.6239624e-005;
 				};
 				class Item5
 				{
@@ -24603,6 +24616,7 @@ class Mission
 					};
 					id=2114;
 					type="twc_ana_mg";
+					atlOffset=3.4332275e-005;
 				};
 				class Item6
 				{
@@ -24620,6 +24634,7 @@ class Mission
 					};
 					id=2115;
 					type="twc_ana_mg_as";
+					atlOffset=3.4332275e-005;
 				};
 				class Item7
 				{
@@ -24637,6 +24652,7 @@ class Mission
 					};
 					id=2116;
 					type="twc_ana_medic";
+					atlOffset=3.4332275e-005;
 				};
 				class Item8
 				{
@@ -24654,12 +24670,14 @@ class Mission
 					};
 					id=2117;
 					type="twc_ana_interpreter";
+					atlOffset=3.4332275e-005;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=2108;
+			atlOffset=-3.4332275e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25148,6 +25166,71 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item311
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13252.295,25.804024,10554.315};
+				angles[]={-0,1.3624314,6.2322745};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2137;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item312
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13260.184,25.558542,10556.12};
+				angles[]={6.2582536,1.3624314,6.2582536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2138;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item313
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13260.912,25.464043,10553.06};
+				angles[]={6.2582536,1.3624314,6.2582536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2139;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+			atlOffset=-5.3405762e-005;
+		};
+		class Item314
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={13253.06,25.765087,10551.085};
+				angles[]={-0,1.3624314,6.2322745};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2140;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
 		};
 	};
 };

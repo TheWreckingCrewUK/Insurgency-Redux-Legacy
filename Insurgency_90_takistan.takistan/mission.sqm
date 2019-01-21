@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2535;
+		nextID=2539;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6935.3721,361.26999,4553.6782};
-		dir[]={-0.90740901,-0.32810691,-0.26306707};
-		up[]={-0.3151733,0.94462198,-0.091369204};
-		aside[]={-0.27846822,-3.3481047e-007,0.96055084};
+		pos[]={6613.4106,392.62982,4459.5679};
+		dir[]={-0.71896416,-0.46627507,-0.51547927};
+		up[]={-0.37895316,0.88463169,-0.27170065};
+		aside[]={-0.58269721,6.9849193e-009,0.81271237};
 	};
 };
 binarizationWanted=0;
@@ -44,13 +44,14 @@ addons[]=
 	"UK3CB_BAF_Vehicles_LandRover",
 	"A3_Structures_F_Mil_Flags",
 	"ukcw_bedford",
-	"twc_1990"
+	"twc_1990",
+	"UK3CB_BAF_Vehicles_MAN"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -147,6 +148,13 @@ class AddonsMetaData
 		{
 			className="twc_1990";
 			name="twc_1990";
+		};
+		class Item16
+		{
+			className="UK3CB_BAF_Vehicles_MAN";
+			name="3CB BAF Vehicles - MAN Truck";
+			author="AUTHOR_3CB";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
@@ -12663,7 +12671,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=76;
+		items=80;
 		class Item0
 		{
 			dataType="Marker";
@@ -15629,8 +15637,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6575.3232,372.4772,4428.5313};
-				angles[]={0.011198638,5.6278849,0.012793615};
+				position[]={6572.4473,372.44754,4432.082};
+				angles[]={6.2767911,5.9074345,0};
 			};
 			side="Empty";
 			flags=4;
@@ -15640,7 +15648,6 @@ class Mission
 			};
 			id=2467;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=-0.0002746582;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15670,8 +15677,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6571.2661,372.49738,4425.3345};
-				angles[]={0.0079935296,5.5085306,0.0032018756};
+				position[]={6567.668,372.47397,4430.1338};
+				angles[]={0.0080009829,5.7880802,6.2623887};
 			};
 			side="Empty";
 			flags=4;
@@ -15681,7 +15688,6 @@ class Mission
 			};
 			id=2468;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=-0.0007019043;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17062,6 +17068,70 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item76
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6587.854,372.16016,4420.3721};
+				angles[]={0.03359022,4.7777467,0.015994642};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2535;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item77
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6588.2046,372.02509,4424.5186};
+				angles[]={0.043170009,4.7777467,0.006394445};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2536;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item78
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6578.6357,371.87048,4425.2383};
+				angles[]={0.011198638,4.7777467,0.012793615};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2537;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item79
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6578.4312,371.9805,4421.1938};
+				angles[]={0.025594741,4.7777467,0.015994642};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2538;
+			type="UK3CB_BAF_MAN_HX58_Container_Green";
 		};
 	};
 };
