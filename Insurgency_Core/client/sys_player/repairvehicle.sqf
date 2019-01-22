@@ -6,7 +6,7 @@ if(isNil "twc_repairtickets") then{
 	publicvariable "twc_repairtickets";
 };
 
-if (typeof _vehicle == "twc_SuppliesBox") then {
+if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]); 
 _time = time;
 
@@ -29,7 +29,7 @@ _veh = _x;
 hint format ["%1 Vehicles Repaired", count _list];
 
 sleep 5;
-_tsv = ["CUP_B_Wolfhound_LMG_GB_W", "CUP_B_Wolfhound_LMG_GB_D"];
+_tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 {
 if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 	twc_repairtickets = 5;
@@ -61,7 +61,7 @@ _veh = _x;
 hint format ["%1 Vehicles Repaired", count _list];
 
 sleep 5;
-_tsv = ["CUP_B_Wolfhound_LMG_GB_W", "CUP_B_Wolfhound_LMG_GB_D"];
+_tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 {
 if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 	twc_repairtickets = 5;
@@ -74,7 +74,7 @@ if (count (_vehicle nearobjects [_x, 30]) > 0) then {
 } else 
 //now it's the non-base repair script, usually from a wolfhound, with a ticket system
 {
-if (typeof _vehicle == "twc_SuppliesBox") exitwith {};
+if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") exitwith {};
 //replen the vehicle's tickets if it's near the spawner
 if (count (_vehicle nearobjects ["Land_InfoStand_V1_F", 40]) > 0) then {
 	twc_repairtickets = 6;
