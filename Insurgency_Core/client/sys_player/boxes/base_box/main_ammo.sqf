@@ -914,7 +914,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
         ["twc_rhs_weap_m4a1_acog_lazer",1],
 		["ACE_VMM3",1],
         ["rhsusf_weap_m1911a1",1],
-		["UK3CB_BAF_Javelin_Slung_Tube",3],
+		//["UK3CB_BAF_Javelin_Slung_Tube",3],
 		["twc_smaw",1],
 		["rhs_weap_M136_hedp",2],
 		["rhs_weap_m72a7",2]
@@ -939,7 +939,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
 		["ACRE_PRC148",1],
-		["UK3CB_BAF_Javelin_CLU",1],
+		//["UK3CB_BAF_Javelin_CLU",1],
 		["rhs_weap_optic_smaw",1]
 	];
 };
