@@ -77,10 +77,16 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	if (_vehicle iskindof "Tank") then {
 		if (!((backpack _unit) == "")) then {
-			moveout player;
-			"MECHANISED MOBILITY" hintc [
-				"You are unable to enter armoured vehicles while wearing a backpack. Store it in the vehicle’s inventory or drop it.","Tip: Mechanised troops commonly fight without backpacks."
-			];
+		
+			_newbackpack = (backpack _unit);
+			
+			_load = [(configFile >> "CfgVehicles" >> _newbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+			if (_load > 120) then {
+				moveout player;
+				"MECHANISED MOBILITY" hintc [
+					"You are unable to enter armoured vehicles while wearing a backpack. Store it in the vehicle’s inventory or drop it.","Tip: Mechanised troops commonly fight without backpacks."
+				];
+			};
 		};
 	};
 }];

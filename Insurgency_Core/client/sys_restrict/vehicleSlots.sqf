@@ -279,6 +279,15 @@ _list=[
 	],
 	
 		
+		["ukcw_lynx_2gpmg",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		
 		["UK3CB_BAF_Wildcat_AH1_HEL_6A",[ 
 		["driver", 
 			_pilots
@@ -603,6 +612,18 @@ _list=[
 		]],0
 	],
 	
+		["ukcw_cvrt_Scim_d_L1",[
+		["driver",
+			_armourcrew
+		],
+		["gunner", 
+			_armourcrew
+		],
+		["commander", 
+			_armourcommanders
+		]],0
+	],
+	
 		["ukcw_cvrt_Scim_w_L1",[
 		["driver",
 			_armourcrew
@@ -635,6 +656,7 @@ twc_fullvehicles = [
 "ukcw_cvrt_Scim_w",
  "ukcw_cvrt_Scim_d",
  "ukcw_cvrt_Scim_w_L1",
+ "ukcw_cvrt_Scim_d_L1",
  "CUP_B_MCV80_GB_D_SLAT",
  "CUP_B_MCV80_GB_W_SLAT",
  "RHS_AH64D",

@@ -378,6 +378,89 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	];
 };
 
+ if (typeOf vehicle player in ["Modern_British_Recce_Autorifleman"]) then {
+    _tmp_weapons =
+    [
+        ["UK3CB_BAF_L110A2",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["UK3CB_BAF_556_200Rnd",20],
+		["UK3CB_BAF_556_200Rnd_T",10],
+		["ACE_SpareBarrel",1],
+        ["rhsusf_mag_17Rnd_9x19_JHP",15]
+    ];
+
+	_tmp_items =
+	[
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC343",1]
+	];
+
+	_tmp_backpacks = 
+	[ 
+		["B_Parachute",1]
+	];
+};
+
+ if (typeOf vehicle player in ["Modern_British_Recce_Rifleman"]) then {
+    _tmp_weapons =
+    [
+        ["rhs_weap_m72a7",1]
+	];
+
+	_tmp_magazines =
+   [            
+        ["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",20],
+        ["rhsusf_mag_17Rnd_9x19_JHP",15]
+    ];
+
+	_tmp_items =
+	[
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC343",1]
+	];
+
+	_tmp_backpacks = 
+	[ 
+		["B_Parachute",1]
+	];
+};
+
+ if (typeOf vehicle player in ["Modern_British_Recce_Commander"]) then {
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+        ["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",20],
+		["1Rnd_HE_Grenade_shell",10],
+		["1Rnd_SmokeBlue_Grenade_shell",10],
+		["1Rnd_SmokeGreen_Grenade_shell",10],
+		["1Rnd_SmokeRed_Grenade_shell",10]
+    ];
+
+	_tmp_items =
+	[
+		["UK3CB_BAF_SpecterLDS_Dot",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC148",1],
+		["ACRE_PRC343",1]
+	];
+
+	_tmp_backpacks = 
+	[ 
+		["B_Parachute",1]
+	];
+};
+
+
 //BAF Sniper
  if (typeOf vehicle player == "Modern_British_Sniper_coin") then {
     _tmp_weapons =

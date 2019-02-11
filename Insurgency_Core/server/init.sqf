@@ -2,7 +2,7 @@
 twc_missionname = missionname;
 publicVariable "twc_missionname";
 
-twc_mortarchance = 0.1;
+twc_mortarchance = 0.01;
 publicVariable "twc_mortarchance";
 
 // Includes

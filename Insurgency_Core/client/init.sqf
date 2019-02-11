@@ -136,6 +136,7 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 sleep 10;
 
 if (sunormoon == 0) then {
-hint "looks like it's night, there are NVG's in your vest"};
+	player addweapon "rhsusf_ANPVS_14";
+};
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";
