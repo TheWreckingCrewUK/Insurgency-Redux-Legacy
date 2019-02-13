@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2023;
+		nextID=2026;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4260.9019,26.771145,3595.7654};
-		dir[]={0.80370289,-0.50237888,-0.31891012};
-		up[]={0.46697444,0.86463922,-0.18529661};
-		aside[]={-0.36883116,4.414469e-007,-0.92951274};
+		pos[]={4383.9214,18.375189,3504.3879};
+		dir[]={0.086091712,-0.49322033,0.86565137};
+		up[]={0.04881385,0.86989766,0.49081531};
+		aside[]={0.9951095,3.6344863e-007,-0.098966435};
 	};
 };
 binarizationWanted=0;
@@ -12691,7 +12691,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=147;
+		items=148;
 		class Item0
 		{
 			dataType="Marker";
@@ -18313,7 +18313,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4302.3804,7.1949406,3575.4458};
-				angles[]={-0,4.9507813,0.0024897563};
+				angles[]={0,4.9507813,0.0024897563};
 			};
 			side="Empty";
 			flags=4;
@@ -18322,6 +18322,7 @@ class Mission
 			};
 			id=2021;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
+			atlOffset=-4.2915344e-006;
 		};
 		class Item146
 		{
@@ -18338,6 +18339,101 @@ class Mission
 			};
 			id=2022;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
+			atlOffset=-0.0041975975;
+		};
+		class Item147
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4384.8691,11.112541,3512.4121};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2024;
+					type="1990_British_quartermaster";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4387.8691,11.39974,3509.4121};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2025;
+					type="1990_British_quartermaster";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2023;
 		};
 	};
 };

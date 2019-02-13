@@ -118,8 +118,8 @@ if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
 //systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
-cutText ["","Black IN",5]; 
-player forceWalk false;
+//cutText ["","Black IN",5]; 
+//player forceWalk false;
 };
 
 //now use the standard spawn restriction system to let the player know what's up
@@ -147,6 +147,7 @@ if (_space == 0) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
 //systemchat "section system thinks all the sections are full, let Hobbs know ASAP if this isn't the case";
+sleep 3;
 cutText ["","Black IN",5]; 
 player forceWalk false;
 };
@@ -156,24 +157,34 @@ _groups = [];
 
 _snowflakes = 0;
 
+
 {if (_x == leader _x) then {
-	if ((["infantry", str (group _x)] call BIS_fnc_inString)) then {
-		if (!(["heli", str (group _x)] call BIS_fnc_inString)) then {
-			if (!(["sniper", str (group _x)] call BIS_fnc_inString)) then {
-				_groups pushback [group _x];
-				} else {
-					if ((count(allPlayers - entities "HeadlessClient_F"))< 5) then {
-						_snowflakes = _snowflakes + (count units group _x)
-						};
-					};
-			} else {_snowflakes = _snowflakes + 1};
-		};
+	if (!(["sniper", str (group _x)] call BIS_fnc_inString)) then {
+	
+		if ((["infantry", str (group _x)] call BIS_fnc_inString)) then {
+		
+			if (!(["heli", str (group _x)] call BIS_fnc_inString)) then {
+			
+				if (!(["quartermaster", str (typeof _x)] call BIS_fnc_inString)) then {
+				
+					_groups pushback (group _x);
+					
+					} else {_snowflakes = _snowflakes + (count units group _x)};
+					
+				} else {_snowflakes = _snowflakes + (count units group _x)};
+			};
+		} else { //sniper exemption because they can spawn under 5 playercount
+			if ((count(allPlayers - entities "HeadlessClient_F"))< 5) then {
+				_snowflakes = _snowflakes + (count units group _x);
+				};
+			};
 	};
 } foreach allplayers;
 
 if ((count units group player) >= 3) exitwith {
 twc_groupcount = count _groups;
 publicVariable "twc_groupcount";
+sleep 3;
 cutText ["","Black IN",5]; 
 player forceWalk false;
 };
@@ -181,6 +192,7 @@ player forceWalk false;
 
 };
 
+sleep 3;
 	
 cutText ["","Black IN",5];
 player forceWalk false;

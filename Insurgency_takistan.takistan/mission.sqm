@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2477;
+		nextID=2481;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8218.6406,318.96692,2130.7478};
-		dir[]={0.72380924,-0.41175222,-0.5537926};
-		up[]={0.32715771,0.91120917,-0.25030923};
-		aside[]={-0.60768634,-3.0407682e-007,-0.79425085};
+		pos[]={7922.0327,300.52771,1814.4899};
+		dir[]={0.39882514,-0.17280637,0.90060741};
+		up[]={0.06997256,0.98495722,0.15800771};
+		aside[]={0.9143638,-3.8044527e-007,-0.40491709};
 	};
 };
 binarizationWanted=0;
@@ -12831,7 +12831,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=253;
+		items=254;
 		class Item0
 		{
 			dataType="Marker";
@@ -24266,7 +24266,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=4;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
@@ -24363,46 +24363,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=2439;
-					type="Modern_British_VehicleCrew";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7938.0229,296.04144,1819.9554};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=2440;
 					type="Modern_British_VehicleCrew";
 					class CustomAttributes
 					{
@@ -25616,6 +25576,54 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item253
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7931.1953,296.04144,1818.9325};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2478;
+					type="Modern_British_Quartermaster";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7934.1953,296.04144,1815.9325};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2479;
+					type="Modern_British_Quartermaster";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2477;
 		};
 	};
 };

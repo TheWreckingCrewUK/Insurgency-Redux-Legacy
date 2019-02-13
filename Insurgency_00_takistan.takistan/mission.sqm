@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=2652;
+		nextID=2655;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2253.5781,226.22203,4525.8164};
-		dir[]={-0.51737386,-0.63659644,0.57202244};
-		up[]={-0.42709264,0.77111977,0.47220412};
-		aside[]={0.7416985,-1.5704427e-006,0.67084092};
+		pos[]={2638.2676,402.11679,3670.2278};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -12716,7 +12716,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=200;
+		items=201;
 		class Item0
 		{
 			dataType="Marker";
@@ -19657,7 +19657,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=4;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
@@ -19754,46 +19754,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=2591;
-					type="2000_British_Vehicle_Crew";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2638.2676,377.11823,3695.2778};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=2592;
 					type="2000_British_Vehicle_Crew";
 					class CustomAttributes
 					{
@@ -20781,6 +20741,7 @@ class Mission
 			};
 			id=2634;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
+			atlOffset=-0.034072876;
 		};
 		class Item191
 		{
@@ -20797,7 +20758,7 @@ class Mission
 			};
 			id=2635;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
-			atlOffset=-4.5776367e-005;
+			atlOffset=-0.0234375;
 		};
 		class Item192
 		{
@@ -20814,7 +20775,7 @@ class Mission
 			};
 			id=2636;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
-			atlOffset=-3.0517578e-005;
+			atlOffset=-0.012695313;
 		};
 		class Item193
 		{
@@ -20831,7 +20792,7 @@ class Mission
 			};
 			id=2637;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
-			atlOffset=1.5258789e-005;
+			atlOffset=-0.0066680908;
 		};
 		class Item194
 		{
@@ -20849,7 +20810,7 @@ class Mission
 			};
 			id=2644;
 			type="rhsusf_m1043_d_m2";
-			atlOffset=3.0517578e-005;
+			atlOffset=-0.00086975098;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20909,7 +20870,7 @@ class Mission
 			};
 			id=2647;
 			type="rhsusf_m1043_d_m2";
-			atlOffset=-1.5258789e-005;
+			atlOffset=0.00010681152;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21089,7 +21050,7 @@ class Mission
 			};
 			id=2650;
 			type="rhsusf_m1043_d_m2";
-			atlOffset=3.0517578e-005;
+			atlOffset=-0.0046234131;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21149,7 +21110,7 @@ class Mission
 			};
 			id=2651;
 			type="rhsusf_m1043_d_mk19";
-			atlOffset=4.5776367e-005;
+			atlOffset=-0.0024414063;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -21192,6 +21153,54 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item200
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2632.3123,374.75159,3690.4827};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2653;
+					type="2000_British_quartermaster_Desert";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2635.3123,375.44382,3687.4827};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2654;
+					type="2000_British_quartermaster_Desert";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2652;
 		};
 	};
 };

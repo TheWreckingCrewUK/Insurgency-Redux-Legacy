@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2141;
+		nextID=2144;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13212.241,49.505005,10551.401};
-		dir[]={0.80239284,-0.59383047,0.059499785};
-		up[]={0.59220976,0.8045857,0.043914195};
-		aside[]={0.073950268,6.2282197e-008,-0.99726701};
+		pos[]={13172.559,56.290665,10479.431};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -12720,7 +12720,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=315;
+		items=316;
 		class Item0
 		{
 			dataType="Marker";
@@ -24804,7 +24804,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=4;
+				items=3;
 				class Item0
 				{
 					dataType="Object";
@@ -24855,23 +24855,6 @@ class Mission
 						isPlayable=1;
 					};
 					id=2123;
-					type="1990_British_Tank_Crew_Desert";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={13180.204,31.292101,10518.868};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=2124;
 					type="1990_British_Tank_Crew_Desert";
 				};
 			};
@@ -25173,7 +25156,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13252.295,25.804024,10554.315};
-				angles[]={-0,1.3624314,6.2322745};
+				angles[]={0,1.3624314,6.2322745};
 			};
 			side="Empty";
 			flags=4;
@@ -25198,6 +25181,7 @@ class Mission
 			};
 			id=2138;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
+			atlOffset=-3.6239624e-005;
 		};
 		class Item313
 		{
@@ -25222,7 +25206,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={13253.06,25.765087,10551.085};
-				angles[]={-0,1.3624314,6.2322745};
+				angles[]={0,1.3624314,6.2322745};
 			};
 			side="Empty";
 			flags=4;
@@ -25231,6 +25215,54 @@ class Mission
 			};
 			id=2140;
 			type="UK3CB_BAF_MAN_HX58_Container_Green";
+		};
+		class Item315
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13172.425,30.587612,10505.409};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2142;
+					type="1990_British_quartermaster_Desert";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13175.425,30.512758,10502.409};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2143;
+					type="1990_British_quartermaster_Desert";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2141;
 		};
 	};
 };
