@@ -92,7 +92,13 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 		
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Panther CLV","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_uk.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -196,6 +202,12 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Mode
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"
+
 	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -217,6 +229,12 @@ if((typeOf player) in ["TWC_Modern_US_Army_SectionCommander","TWC_Modern_US_Army
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"
 
 	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUS.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -433,21 +451,25 @@ if ((["commander", typeof player] call BIS_fnc_inString) || (["leader", typeof p
 	_vic = ["spawn762","Spawn Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["UK3CB_BAF_MAN_HX58_Container_Green",0,["ACE_MainActions"],_vic,true] call ace_interact_menu_fnc_addActionToClass;};
 
-if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{
+//if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{
+if([player] call TWC_Core_fnc_ismanagement)then{
 execVM "insurgency_core\client\zeus\camera.sqf";
 
-	_vehaction1 = ["base_Interact","Base","",{},{true}] call ace_interact_menu_fnc_createAction;
+	_vehaction1 = ["base_Interact","TWC","",{},{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _vehaction1] call ace_interact_menu_fnc_addActionToObject;
 
 	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action2] call ace_interact_menu_fnc_addActionToObject;
 	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action3] call ace_interact_menu_fnc_addActionToObject;
+	/*
 	_action4 = ["Zeus","Basemode On","",{execVM "insurgency_core\client\zeus\basemode_on.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action4] call ace_interact_menu_fnc_addActionToObject;
 	_action5 = ["Zeus","Basemode Off","",{execVM "insurgency_core\client\zeus\basemode_off.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action5] call ace_interact_menu_fnc_addActionToObject;
-	
+	*/
+	_action6 = ["Zeus","Repair Current Vehicle","",{execVM "insurgency_core\client\zeus\zrepair.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
 	_action6 = ["Zeus","Enemy Siren","",{execVM "insurgency_core\server\sys_basedefence\INF_Alarm.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
 	
