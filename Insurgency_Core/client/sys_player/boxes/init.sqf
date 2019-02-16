@@ -94,10 +94,10 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 	_UKaction5 = ["SpawnmedCreate","Spawn Panther CLV","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_uk.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{((count units group player) > 3)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
+	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{((count units group player) > 3)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -201,12 +201,12 @@ if((typeOf player) in ["Modern_USMC_Squadleader","Modern_USMC_Teamleader", "Mode
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"
+	
+	_UKaction3 = ["spawn50","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction3 = ["spawn50","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUSMC.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;
@@ -229,12 +229,12 @@ if((typeOf player) in ["TWC_Modern_US_Army_SectionCommander","TWC_Modern_US_Army
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"
+	
+	_UKaction3 = ["spawn50","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction3 = ["spawn50","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{(count units group player) >= 4}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_charlieaction = ["SpawnsmallcharlieCreate","Spawn Small US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUS.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_charlieaction,true] call ace_interact_menu_fnc_addActionToClass;

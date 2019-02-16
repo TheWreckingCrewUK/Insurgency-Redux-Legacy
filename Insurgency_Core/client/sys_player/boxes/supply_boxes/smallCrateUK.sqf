@@ -23,8 +23,7 @@ _box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 
 //supplies
-_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",1];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd",4];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",5];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",20];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
