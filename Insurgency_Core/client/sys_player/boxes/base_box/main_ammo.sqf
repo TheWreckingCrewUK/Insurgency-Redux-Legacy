@@ -2202,7 +2202,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	];
 };
 
- if((typeOf player) in ["1990_British_Rifleman","1990_British_Rifleman_desert","1990_RM_British_Rifleman_Mix"])then{
+ if((typeOf player) in ["1990_British_Rifleman","1990_British_Rifleman_Desert","1990_RM_British_Rifleman_Mix"])then{
 
     _tmp_weapons =
     [

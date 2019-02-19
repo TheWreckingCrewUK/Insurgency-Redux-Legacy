@@ -22,6 +22,8 @@ twc_surrenderVote = false;
 */
 TWC_Building_Style = "MidEast";
 
+pointlimit = 400;
+publicVariable "pointlimit";
 
 twc_is90 = 1;
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];

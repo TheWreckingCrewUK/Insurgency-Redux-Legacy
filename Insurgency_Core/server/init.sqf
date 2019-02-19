@@ -53,6 +53,7 @@ if(isNil "twc_is90") then{
 
 if(isNil "twc_terp") then{
 twc_terp = objnull;
+publicVariable "twc_terp";
 };
 
 

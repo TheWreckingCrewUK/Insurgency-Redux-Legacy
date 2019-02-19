@@ -15,6 +15,8 @@ waituntil {(( count(allPlayers - entities "HeadlessClient_F")) >= 5)};
 };
 */
 
+if ((["Quartermaster", (typeof player)] call BIS_fnc_inString) && ([player] call TWC_Core_fnc_ismanagement)) exitwith {};
+
 //testing a potential method of filling servers, if they're the first into the server then they get first pick of attachments
 if (( count(allPlayers - entities "HeadlessClient_F")) == (count (units group player))) exitwith {};
 
