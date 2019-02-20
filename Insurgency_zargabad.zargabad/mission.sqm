@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2159;
+		nextID=2160;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3372.7031,32.448551,7168.7788};
-		dir[]={-0.35558647,-0.39295918,0.84805328};
-		up[]={-0.1519649,0.9195388,0.3624309};
-		aside[]={0.92223924,-3.1746458e-007,0.38669026};
+		pos[]={3328.1147,26.375891,7130.1626};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -13996,7 +13996,7 @@ class Mission
 			position[]={3413.7998,31.838686,7215.4409};
 			name="forwardBase_itemSpawn";
 			type="Empty";
-			angle=159.99998;
+			angle=159.99995;
 			id=1731;
 			atlOffset=4.0260811;
 		};
@@ -19762,14 +19762,56 @@ class Mission
 						position[]={3328.0901,23.722649,7131.813};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=2155;
-					type="Modern_British_logitech";
+					id=2159;
+					type="Modern_British_FSTForwardObserver";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes

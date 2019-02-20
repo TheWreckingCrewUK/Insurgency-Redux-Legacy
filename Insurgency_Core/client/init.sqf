@@ -9,18 +9,24 @@
 //#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
+InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
+InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
+
 waitUntil {!isNull player};
 
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 
+twc_firstspawned = 0;
 
-sleep 10;
+player addEventHandler ["Respawn", {
+	params ["_unit", "_corpse"];
+if (twc_firstspawned == 1) exitwith {};
+twc_firstspawned = 1;
 
 vehicle player setVariable ["twc_isenemy",0, true];
 
 #include "sys_restrict\init.sqf";
 
-sleep 10;
 
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
@@ -133,10 +139,10 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 };
 
-sleep 10;
 
 if (sunormoon == 0) then {
 	player addweapon "rhsusf_ANPVS_14";
 };
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";
+}];

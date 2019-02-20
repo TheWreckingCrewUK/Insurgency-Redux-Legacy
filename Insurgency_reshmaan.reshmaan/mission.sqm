@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2160;
+		nextID=2162;
 	};
 	class MarkerIDProvider
 	{
@@ -343,7 +343,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -27079,17 +27079,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3981.4744,138.96906,18095.172};
+						position[]={3981.4741,138.96906,18095.172};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=2091;
-					type="Modern_British_logitech";
+					id=2161;
+					type="Modern_British_FSTForwardObserver";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27111,7 +27111,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};
@@ -27215,17 +27253,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3976.1548,138.96906,18091.574};
+						position[]={3976.155,138.96906,18091.574};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=2094;
-					type="Modern_British_FSTForwardObserver";
+					id=2160;
+					type="Modern_British_FAC";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27247,7 +27285,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};

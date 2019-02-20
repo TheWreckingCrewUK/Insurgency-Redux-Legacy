@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2481;
+		nextID=2486;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7922.0327,300.52771,1814.4899};
-		dir[]={0.39882514,-0.17280637,0.90060741};
-		up[]={0.06997256,0.98495722,0.15800771};
-		aside[]={0.9143638,-3.8044527e-007,-0.40491709};
+		pos[]={7935.5498,312.70032,1809.3906};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -23689,17 +23689,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7938.5171,296.04144,1833.3075};
+						position[]={7938.5171,296.04144,1833.307};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=2424;
-					type="Modern_British_logitech";
+					id=2481;
+					type="Modern_British_FSTForwardObserver";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23721,7 +23721,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male04ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};
@@ -23825,17 +23863,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7933.1973,296.04144,1829.7086};
+						position[]={7933.1968,296.04144,1829.7091};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=2427;
-					type="Modern_British_FSTForwardObserver";
+					id=2485;
+					type="Modern_British_FAC";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23857,7 +23895,45 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};

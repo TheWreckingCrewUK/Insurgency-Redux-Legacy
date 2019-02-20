@@ -491,7 +491,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["ACE_IR_Strobe_Item",5],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["ACE_RangeCard",1],
-		["UK3CB_BAF_MaxiKite",1],
+		["rhsusf_acc_premier_anpvs27",1],
 		["ACE_Tripod",1],
 		["HandGrenade",5]
 	];
