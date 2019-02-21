@@ -55,20 +55,20 @@ player addEventHandler ["InventoryOpened", {
 		if (twc_skipweprestrict == 1) exitwith {};
 	};
 	
-	if ((primaryweapon player) in twc_rarePrimaryWeapons) exitwith {};
+	if ((primaryweapon player) in (missionnamespace getvariable ["twc_rarePrimaryWeapons", [""]])) exitwith {};
 	
 	if((getPos player) distance2D (getMarkerPos "base") > 200) exitwith {};
 	
 	
 	_goodlist = [];
 
-	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach (player getvariable ["twc_allowedweapons", [0]]);
+	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach (player getvariable ["twc_allowedweapons", [""]]);
  
  _origweapons = [(configFile >> "CfgVehicles" >> typeof player), "weapons", "none"] call BIS_fnc_returnConfigEntry;
 
 	{if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x}} foreach _origweapons;
 	
-	if ((primaryweapon player in (player getvariable ["twc_allowedweapons", [0]])) || (primaryweapon player == "")) exitwith {};
+	if ((primaryweapon player in (player getvariable ["twc_allowedweapons", [""]])) || (primaryweapon player == "")) exitwith {};
 
 	_bad = 1;
 	{if ((_x iskindof [(primaryweapon player), configFile >> "CfgWeapons"]) || ((primaryweapon player) iskindof [_x, configFile >> "CfgWeapons"])) then {_bad = 0};} foreach _goodlist;
@@ -114,7 +114,7 @@ if ((count _attacheditems) == 0) exitwith {};
 	{
 	if (_x isKindOf ["Rifle", configFile >> "CfgWeapons"]) then {_goodlist pushback _x};
 	if (_x isKindOf ["itemcore", configFile >> "CfgWeapons"]) then {_itemlist pushback _x};
-	} foreach (player getvariable ["twc_allowedweapons", [0]]);
+	} foreach (player getvariable ["twc_allowedweapons", [""]]);
  
  _origweapons = [(configFile >> "CfgVehicles" >> typeof player), "weapons", "none"] call BIS_fnc_returnConfigEntry;
 
