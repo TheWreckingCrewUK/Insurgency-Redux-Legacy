@@ -18,7 +18,7 @@ _playerunit = player;
 	
  
  //if (_checkedseat != _currentseat) exitwith {// systemchat "no longer in old seat";};
-
+_vehicle = (vehicle player);
  
 	_takenslotplayers = [];
 	_restrictedslots = [];
@@ -40,9 +40,14 @@ _takenslots = fullcrew vehicle player;
 	_stryker = 0;
 	if ((typeof vehicle player) == "CUP_B_M1130_CV_M2_Woodland_Slat") then {_stryker = 1;};
 	
+	_isair = 0;
+	if ((vehicle player) isKindOf "air") then {
+		_isair = 1;
+	};
+	
 	//waits until crew positions aren't filled before doing anything proper. dumb script because fullcrew can't filter multiple types
 	waituntil {(count _restrictedslots > ((count fullCrew [vehicle player, "driver"]) + (count fullCrew [vehicle player, "commander"]) + (count fullCrew [vehicle player, "gunner"]) + (count fullCrew [vehicle player,"turret"]) - _stryker)
-	) && (((gunner vehicle player) == player) || (_vehicle isKindOf "air"))
+	) && (((gunner vehicle player) == player) || (_isair == 1))
 	};
 	
 

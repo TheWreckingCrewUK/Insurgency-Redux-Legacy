@@ -95,8 +95,9 @@ player addEventHandler ["InventoryOpened", {
 
 // secondary systems to restrict the player taking scopes above the power of what they spawn with and taking weapons that they won't need when they get back to base. Didn't work due to weapon classnames changing after picking up the weapon so our twc versions weren't getting picked up, but it was a lot of damn effort and I don't want to waste it so I'm letting it rot for a bit
 
+//BIS_fnc_itemType for scope?
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"]; 
@@ -105,6 +106,7 @@ player addEventHandler ["InventoryClosed", {
 		if (twc_skipweprestrict == 1) exitwith {};
 	};
 	if (primaryweapon player == "") exitwith {};
+	if ((primaryweapon player) in (missionnamespace getvariable ["twc_rarePrimaryWeapons", [""]])) exitwith {};
  _attacheditems = [];
 _attacheditems = primaryWeaponItems player;
 if ((count _attacheditems) == 0) exitwith {};

@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2542;
+		nextID=2560;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6925.3706,378.04184,4525.1162};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={6951.7231,379.58203,4547.0283};
+		dir[]={-0.75587571,-0.60409635,0.25246516};
+		up[]={-0.5729816,0.79690921,0.19137804};
+		aside[]={0.31680235,2.8440263e-007,0.94849956};
 	};
 };
 binarizationWanted=0;
@@ -165,7 +165,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -15816,7 +15816,6 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=2477;
@@ -16183,7 +16182,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=9;
+				items=10;
 				class Item0
 				{
 					dataType="Object";
@@ -16338,6 +16337,64 @@ class Mission
 					};
 					id=2505;
 					type="twc_men_1990_us_d_autorifleman";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6937.293,352.32874,4557.769};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=2542;
+					type="twc_men_1990_us_d_medic";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes

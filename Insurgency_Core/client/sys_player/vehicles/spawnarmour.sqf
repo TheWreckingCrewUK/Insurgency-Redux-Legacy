@@ -23,6 +23,8 @@ publicVariable "twc_armourcount";
 	["DUKE_Hide",1]
 ] call BIS_fnc_initVehicle;
 };
+
+ _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
 	_crewcount = 0;
 
 	{if (typeof _x in _armourcrew) then {_crewcount = _crewcount + 1;}} foreach units group player;

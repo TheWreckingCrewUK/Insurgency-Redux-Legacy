@@ -6,11 +6,13 @@
 *
 *
 */
+params ["_box"];
+
 _boxClass = "ACE_Box_Ammo";
 
-_box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
-(getPos AmmoBoxSpawner)} else 
-{(getPos player)});
+if (isnil "_box") then {
+	_box = _boxClass createVehicle (getPos AmmoBoxSpawner);
+};
 
 clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
@@ -23,7 +25,7 @@ _box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 
 //supplies
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",10];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",20];
 
 _box addItemCargoGlobal ["ACE_fieldDressing",5];
 _box addItemCargoGlobal ["ACE_elasticBandage",5];

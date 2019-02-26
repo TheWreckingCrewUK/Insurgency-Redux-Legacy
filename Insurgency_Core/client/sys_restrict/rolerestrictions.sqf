@@ -1,9 +1,11 @@
 //sleep 5;
-if(!isMultiplayer)exitWith{};
+if(isserver)exitWith{
+	systemchat "role restrict skipped for server";
+};
 
 
 
-if((typeOf player) in ["Modern_British_crewchief", "2000_British_CrewChief", "2000_British_CrewChief_Desert"])then{
+if(["crewchief", typeof player] call BIS_fnc_inString)then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 14) then {
 
 cutText ["", "Black", 0.001];
@@ -43,7 +45,7 @@ if((typeOf player) in ["Modern_British_Medic_Mert","Modern_British_MERT_HeliPilo
 
 
 
-if((typeOf player) in ["Modern_British_HeliPilot","1990_British_HeliPilot_Desert","1990_British_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot"])then{
+if(["helipilot", typeof player] call BIS_fnc_inString)then{
 if (( count(allPlayers - entities "HeadlessClient_F")) < 5) then {
 
 cutText ["", "Black", 0.001];
@@ -85,8 +87,7 @@ execvm "Insurgency_Core\client\sys_restrict\fullrecce.sqf";
 };
 
 
-if((typeOf player) in ["Modern_British_VehicleCrew", "Modern_British_VehicleCommander", "1990_British_Tank_Crew_Desert", "1990_British_Tank_Commander_Desert", "2000_British_Vehicle_Commander", "2000_British_Vehicle_Crew"])then{
-
+if(["armour", str (group player)] call BIS_fnc_inString)then{
 
 execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";
 
@@ -95,7 +96,7 @@ execvm "Insurgency_Core\client\sys_restrict\fullArmourCrew.sqf";
 
 
 
-if((typeOf player) in ["Modern_British_JetPilot", "Modern_British_FSTForwardObserver"])then{
+if(["fixed wing", str (group player)] call BIS_fnc_inString)then{
 
 
 execvm "Insurgency_Core\client\sys_restrict\fulljetteam.sqf";
