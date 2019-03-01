@@ -102,9 +102,7 @@ player addEventHandler ["InventoryOpened", {
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"]; 
 	
-	if (!isnil "twc_skipweprestrict") then {
-		if (twc_skipweprestrict == 1) exitwith {};
-	};
+	if ((missionnamespace getvariable ["twc_skipweprestrict", 0]) == 1) exitwith {};
 	if (primaryweapon player == "") exitwith {};
 	if ((primaryweapon player) in (missionnamespace getvariable ["twc_rarePrimaryWeapons", [""]])) exitwith {};
  _attacheditems = [];

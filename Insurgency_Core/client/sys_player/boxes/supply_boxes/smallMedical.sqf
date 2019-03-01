@@ -20,7 +20,7 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Medical supplies
-_box addItemCargoGlobal ["ACE_fieldDressing",20];
+_box addItemCargoGlobal ["ACE_fieldDressing",30];
 _box addItemCargoGlobal ["ACE_elasticBandage",30];
 _box addItemCargoGlobal ["ACE_quikclot",20];
 _box addItemCargoGlobal ["ACE_packingBandage",30];

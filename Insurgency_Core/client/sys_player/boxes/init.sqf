@@ -12,13 +12,13 @@ crateBox = _boxType createVehicleLocal (getMarkerPos _marker);
 crateBox setPosATL (getMarkerPos _marker);
 crateBox allowDamage false;
 [crateBox] execVM "Insurgency_Core\client\sys_player\boxes\base_box\main_ammo.sqf";
-
+/*
 player addEventHandler ["InventoryClosed", {
 	if((_this select 1) == crateBox)then{
 		[_this select 1]execVM "Insurgency_Core\client\sys_player\boxes\base_box\main_ammo.sqf";
 	};
 }];
-
+*/
 	_twc_repveh = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{alive _target}] call ace_interact_menu_fnc_createAction;
 	["UK3CB_BAF_MAN_HX58_Repair_Sand",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
 	

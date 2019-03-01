@@ -4,13 +4,13 @@
     _tmp_weapons =
     [
         ["twc_ak74_pol",1],
-        ["rhs_weap_M136_hedp",1]
+        ["rhs_weap_M136_hedp",3]
     ];
 
 	_tmp_magazines =
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -30,14 +30,14 @@
 
 	_tmp_magazines =
     [
-        ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
+        ["twc_rhsgref_30rnd_556x45_m21",30],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
 		["HandGrenade",5]
     ];
 	_tmp_items =
 	[
 		["ACRE_PRC148",1],
-		["TWC_Item_Medical_SutureKit_20",1],
+		["TWC_Item_Medical_SutureKit_20",5],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
@@ -63,9 +63,8 @@
 	_tmp_magazines =
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
 		["rhs_VOG25",30],
-		["rhs_VG40TB",30],
 		["rhs_GRD40_White",30],
 		["rhs_GRD40_Green",30],
 		["rhs_GRD40_Red",30],
@@ -87,7 +86,7 @@
 
 	_tmp_magazines =
     [
-        ["rhs_100Rnd_762x54mmR_7N26",10],
+        ["rhs_100Rnd_762x54mmR_7N26",30],
 		["rhs_100Rnd_762x54mmR_green",10],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
@@ -111,14 +110,8 @@
 	_tmp_magazines =
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
-		["rhs_rpg7_OG7V_mag",10],
-		["rhs_rpg7_PG7V_mag",10],
-		["rhs_rpg7_PG7VL_mag",10],
-		["rhs_rpg7_PG7VR_mag",10],
-		["rhs_rpg7_TBG7V_mag",10],
-		["rhs_mag_9k38_rocket",1],
-		["rhs_rpg7_type69_airburst_mag",10],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
+		["rhs_rpg7_PG7VL_mag",20],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -139,7 +132,7 @@
 	_tmp_magazines =
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -147,11 +140,10 @@
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
 		["SatchelCharge_Remote_Mag",1],
-		["DemoCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",1],
 		["rhsusf_ANPVS_14",1],
-		["itemCTAB",1],
 		["ACE_microDAGR",1],
 		["ACRE_PRC117F",1]
 	];
@@ -167,13 +159,12 @@
 	_tmp_magazines =
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
-		["twc_rhsgref_30rnd_556x45_m21_t",50],
+		["twc_rhsgref_30rnd_556x45_m21_t",10],
         ["rhs_100Rnd_762x54mmR_7N26",10],
 		["rhs_100Rnd_762x54mmR_green",10],
 		["rhs_VOG25",30],
 		["rhs_GRD40_White",30],
 		["rhs_rpg7_PG7VL_mag",10],
-		["rhs_rpg7_TBG7V_mag",10],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
@@ -182,7 +173,7 @@
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
 		["SatchelCharge_Remote_Mag",1],
-		["DemoCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",1],
 		["rhsusf_ANPVS_14",1],
