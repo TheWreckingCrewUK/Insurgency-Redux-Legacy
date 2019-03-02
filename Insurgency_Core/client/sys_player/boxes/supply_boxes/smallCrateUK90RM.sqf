@@ -24,15 +24,15 @@ _box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",40];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",10];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",8];
 
-_box addItemCargoGlobal ["ACE_fieldDressing",5];
-_box addItemCargoGlobal ["ACE_elasticBandage",5];
-_box addItemCargoGlobal ["ACE_quikclot",5];
-_box addItemCargoGlobal ["ACE_packingBandage",5];
+_box addItemCargoGlobal ["ACE_fieldDressing",15];
+_box addItemCargoGlobal ["ACE_elasticBandage",15];
+_box addItemCargoGlobal ["ACE_quikclot",15];
+_box addItemCargoGlobal ["ACE_packingBandage",15];
 _box addItemCargoGlobal ["ACE_personalAidKit",1];
 _box addItemCargoGlobal ["ACE_salineIV_500",4];
 _box addItemCargoGlobal ["ACE_atropine",5];

@@ -25,7 +25,7 @@ _box AddWeaponCargoGlobal ["UK3CB_BAF_AT4_CS_AP_Launcher",2];
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 //supplies
 
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",20];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",30];
 _box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",5];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
@@ -40,7 +40,7 @@ _box addItemCargoGlobal ["ACE_fieldDressing",20];
 _box addItemCargoGlobal ["ACE_elasticBandage",20];
 _box addItemCargoGlobal ["ACE_quikclot",20];
 _box addItemCargoGlobal ["ACE_packingBandage",20];
-_box addItemCargoGlobal ["ACE_personalAidKit",5];
+_box addItemCargoGlobal ["ACE_personalAidKit",1];
 _box addItemCargoGlobal ["ACE_salineIV_250",2];
 _box addItemCargoGlobal ["ACE_salineIV_500",2];
 _box addItemCargoGlobal ["ACE_atropine",5];

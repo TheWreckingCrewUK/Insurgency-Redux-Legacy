@@ -25,35 +25,34 @@ _box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 
 //supplies
-_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",5];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",7];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd",10];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd_T",4];
 
-_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",20];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
 _box AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
 
-_box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",4];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",6];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",8];
 
-_box addItemCargoGlobal ["ACE_fieldDressing",5];
-_box addItemCargoGlobal ["ACE_elasticBandage",5];
-_box addItemCargoGlobal ["ACE_quikclot",5];
-_box addItemCargoGlobal ["ACE_packingBandage",5];
-_box addItemCargoGlobal ["ACE_personalAidKit",1];
-_box addItemCargoGlobal ["ACE_salineIV_250",2];
-_box addItemCargoGlobal ["ACE_salineIV_500",4];
+_box addItemCargoGlobal ["ACE_fieldDressing",20];
+_box addItemCargoGlobal ["ACE_elasticBandage",20];
+_box addItemCargoGlobal ["ACE_quikclot",20];
+_box addItemCargoGlobal ["ACE_packingBandage",20];
+_box addItemCargoGlobal ["ACE_personalAidKit",5];
+_box addItemCargoGlobal ["ACE_salineIV_500",2];
 _box addItemCargoGlobal ["ACE_atropine",5];
 _box addItemCargoGlobal ["ACE_epinephrine",5];
 _box addItemCargoGlobal ["ACE_morphine",5];
-_box addItemCargoGlobal ["HandGrenade",2];
-_box addItemCargoGlobal ["SmokeShell",2];
+_box addItemCargoGlobal ["HandGrenade",5];
+_box addItemCargoGlobal ["SmokeShell",5];
 _box addItemCargoGlobal ["SmokeShellRed",2];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

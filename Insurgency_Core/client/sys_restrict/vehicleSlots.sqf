@@ -391,7 +391,7 @@ _list=[
 		["driver", 
 			_pilots
 		],
-		[[0], 
+		["gunner", 
 			_crewchiefs
 		]],3
 	],	
@@ -399,7 +399,7 @@ _list=[
 		["driver", 
 			_pilots
 		],
-		[[0], 
+		["gunner", 
 			_crewchiefs
 		]],3
 	],	
@@ -409,7 +409,7 @@ _list=[
 		["driver", 
 			_pilots
 		],
-		[[0], 
+		["gunner", 
 			_crewchiefs
 		]],0
 	],	
@@ -497,6 +497,55 @@ _list=[
 			_pilots
 		],
 		[[0], 
+			_crewchiefs
+		]],3
+	],
+	
+		["RHS_MELB_H6M",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		["RHS_MELB_MH6M",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		["RHS_MELB_AH6M_M",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		["RHS_MELB_AH6M_L",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		["RHS_MELB_AH6M_H",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
+			_crewchiefs
+		]],3
+	],
+		["RHS_MELB_AH6M",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
 			_crewchiefs
 		]],3
 	],
@@ -672,12 +721,14 @@ twc_fullvehicles = [
  "RHS_M2A3_BUSKIII_wd",
  "rhsgref_ins_t72bb",
  "rhsgref_cdf_b_bmp1",
+ "rhsgref_cdf_b_Mi24D_Early",
+ "rhsgref_cdf_Mi24D_Early",
+ "rhsgref_cdf_Mi35",
  "rhsusf_m1a2sep1tuskid_usarmy",
  "rhsusf_m1a2sep1tuskiwd_usarmy",
  "UK3CB_BAF_FV432_Mk3_RWS_Sand",
  "UK3CB_BAF_FV432_Mk3_RWS_Green",
  "RHS_M6",
- "RHS_M6_wd",
  "RHS_M6_wd",
  "rhsusf_M1117_D"];
 

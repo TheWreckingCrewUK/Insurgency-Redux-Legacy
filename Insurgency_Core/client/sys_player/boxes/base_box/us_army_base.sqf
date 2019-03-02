@@ -38,7 +38,7 @@
     _tmp_weapons =
     [
         ["twc_m4_320_lds_lazer",1],
-        ["CUP_glaunch_M32",1],
+        ["rhs_weap_m32",1],
 		["rhs_weap_M136_hedp",2],
         ["rhsusf_weap_m9",1],
 		["rhsusf_weap_glock17g4",1]
@@ -49,8 +49,8 @@
         ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
 		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell", 30],
-		["CUP_6Rnd_HE_M203", 30],
-		["CUP_6Rnd_Smoke_M203", 30],
+		["rhsusf_mag_6Rnd_M441_HE", 20],
+		["rhsusf_mag_6Rnd_M714_white", 10],
 	    ["1Rnd_Smoke_Grenade_shell", 10],
 	    ["1Rnd_SmokeRed_Grenade_shell", 10],
 	    ["1Rnd_SmokeGreen_Grenade_shell", 10],

@@ -24,21 +24,21 @@ clearitemCargoGlobal _box;
 
 //add 556 mags if it's not 90's, because they have access to M16's
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
-_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",20];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",30];
 _box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",5];
 };
 
-_box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",20];
+_box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",30];
 _box AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm_tracer",5];
 _box AddMagazineCargoGlobal ["rhs_30Rnd_545x39_7N22_AK",5];
 
 _box AddMagazineCargoGlobal ["rhs_mag_9x18_8_57N181S",5];
 
 _box AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",2];
-_box AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",4];
+_box AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",5];
 
 
-_box AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",6];
+_box AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",8];
 
 _box AddMagazineCargoGlobal ["rhs_10Rnd_762x54mmR_7N1",6];
 _box AddMagazineCargoGlobal ["rhsusf_5Rnd_762x51_m993_Mag",10];

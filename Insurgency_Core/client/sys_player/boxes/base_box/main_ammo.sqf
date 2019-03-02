@@ -929,7 +929,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["twc_rhs_weap_m4a1_m203_acog_lazer",1],
-        ["CUP_glaunch_M32",1],
+        ["rhs_weap_m32",1],
 		["rhs_weap_M136_hedp",2],
 		["rhsusf_weap_m1911a1",1]
     ];
@@ -939,8 +939,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
         ["rhs_mag_30Rnd_556x45_M855_Stanag",50],
 		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell", 30],
-		["CUP_6Rnd_HE_M203", 30],
-		["CUP_6Rnd_Smoke_M203", 30],
+		["rhsusf_mag_6Rnd_M441_HE", 20],
+		["rhsusf_mag_6Rnd_M714_white", 20],
 	    ["1Rnd_Smoke_Grenade_shell", 10],
 	    ["1Rnd_SmokeRed_Grenade_shell", 10],
 	    ["1Rnd_SmokeGreen_Grenade_shell", 10],
@@ -1606,7 +1606,7 @@ if (typeOf vehicle player == "twc_ana_mg") then {
     [
         ["rhs_100Rnd_762x54mmR_green",50],
         ["rhs_30Rnd_762x39mm_tracer",50],
-        ["rhs_75Rnd_762x39mm_tracer ",5],
+        ["rhs_75Rnd_762x39mm_tracer",5],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
