@@ -18,7 +18,7 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["UK3CB_BAF_AT4_CS_AP_Launcher",2];
+_box AddWeaponCargoGlobal ["rhs_weap_M136",2];
 
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 

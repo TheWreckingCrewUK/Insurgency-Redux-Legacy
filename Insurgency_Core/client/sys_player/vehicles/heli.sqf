@@ -70,12 +70,12 @@ publicVariable "twc_Helicount";
 	}];
 
 #include "helispecifics.sqf";
-
+/*
 if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["00", twc_missionname] call BIS_fnc_inString))) then {
 	_veh addweaponcargoglobal ["UK3CB_BAF_L22A2", 2];
 	_veh addmagazinecargoglobal ["UK3CB_BAF_556_30Rnd", 4];
 };
-
+*/
 sleep 10;
 waituntil {(_veh distance (getPos AmmoBoxSpawner)) > 20};
 _veh allowdamage true;

@@ -624,7 +624,7 @@ if((typeOf player) in ["1990_British_HeliPilot_Desert","1990_British_HeliPilot",
 	["RHS_UH60M_ESSS"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},_transportcond1] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
 	
