@@ -6,7 +6,7 @@ if(isserver)exitWith{
 
 
 if(["crewchief", typeof player] call BIS_fnc_inString)then{
-if (( count(allPlayers - entities "HeadlessClient_F")) < 14) then {
+if (( count(allPlayers - entities "HeadlessClient_F")) < 11) then {
 
 cutText ["", "Black", 0.001];
 player forceWalk true;

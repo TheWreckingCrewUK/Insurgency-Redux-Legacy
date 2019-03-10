@@ -12,8 +12,9 @@
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
 InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
 twc_news = compile preprocessfilelinenumbers "Insurgency_Core\client\news.sqf";
-
+cutText ["","Black IN",0.001];
 waitUntil {!isNull player};
+cutText ["","Black IN",0.001];
 
 _alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] call ace_interact_menu_fnc_createAction;
 ["TWC_Item_Public_Base_LOCSTAT",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;

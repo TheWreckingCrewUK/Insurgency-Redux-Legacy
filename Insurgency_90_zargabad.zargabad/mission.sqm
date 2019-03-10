@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1831;
+		nextID=1834;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2769.4951,45.091812,3200.7822};
-		dir[]={0.84398127,-0.36302719,0.39486325};
-		up[]={0.32881948,0.93177855,0.1538408};
-		aside[]={0.42377299,2.9348303e-007,-0.90577382};
+		pos[]={3138.7598,16.47493,1116.6877};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -14998,7 +14998,7 @@ class Mission
 			};
 			id=1728;
 			type="Land_InfoStand_V2_F";
-			atlOffset=-0.00026798248;
+			atlOffset=-0.0083341599;
 		};
 		class Item61
 		{
@@ -16412,7 +16412,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=9;
+				items=10;
 				class Item0
 				{
 					dataType="Object";
@@ -16567,6 +16567,64 @@ class Mission
 					};
 					id=1791;
 					type="twc_men_1990_us_d_autorifleman";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3145.198,5.4754987,1125.8781};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1833;
+					type="twc_men_1990_us_d_medic";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -16793,7 +16851,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
@@ -16849,6 +16907,65 @@ class Mission
 										};
 									};
 									value=1.02;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3127.2681,6.8457026,1122.338};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1831;
+					type="1990_British_Crewchief";
+					atlOffset=-4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male04ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
 								};
 							};
 						};

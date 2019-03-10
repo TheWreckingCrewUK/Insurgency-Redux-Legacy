@@ -1,6 +1,6 @@
 _pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot"];
 
-_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert"];
+_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1990_British_Crewchief"];
 
 _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew"];
 

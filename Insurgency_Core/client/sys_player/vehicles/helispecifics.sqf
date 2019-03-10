@@ -40,6 +40,13 @@ if (typeof _veh == "RHS_AH64D") then {
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
 	_veh addItemCargoGlobal ["rhsusf_ihadss",2];
+	if (["90", twc_missionname] call BIS_fnc_inString) then {
+		[
+			_veh,
+			["standard",1], 
+			["radar_hide",1]
+		] call BIS_fnc_initVehicle;
+	};
 };
 
 if (typeof _veh == "ukcw_Gazelle") then {
