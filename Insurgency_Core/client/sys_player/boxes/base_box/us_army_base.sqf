@@ -313,3 +313,35 @@
 		["ACRE_PRC148",1]
 	];
 };
+
+ if((typeOf player) in ["twc_men_1990_us_d_medic","twc_men_1990_us_w_medic"])then{
+    _tmp_weapons =
+    [
+        ["CUP_arifle_M16A2",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["30Rnd_556x45_Stanag",20],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
+		["HandGrenade",2]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1],
+		["TWC_Item_Medical_SutureKit_20", 3],
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV",50],
+		["ACE_salineIV_250",50],
+		["ACE_salineIV_500",50],
+		["ACE_personalAidKit", 1],
+		["ACE_bodyBag", 30]
+	];
+};

@@ -15,7 +15,8 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 
  _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />Infinite ammunition is no longer available from the base supply box.<br /><br />The player requirement for crew chief has been dropped from 14 to 11.<br /><br />90s heli crew chiefs added to all relevant missions";
  
- 
+ _titlemem = "";
+ _textmem = "";
  //secondary files for member and management news, not viewable on github
  //#include "membernews.sqf";
  #include "managementnews.sqf";
