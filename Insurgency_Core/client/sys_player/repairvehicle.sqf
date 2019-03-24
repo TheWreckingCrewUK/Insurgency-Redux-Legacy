@@ -24,7 +24,7 @@ if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 		};
 		_x setdamage 0.1; 
 		_x setdamage 0; 
-		[_x] remoteexec ["twc_rearmvehicle", _x];
+		[_x] remoteexec ["twc_rearmvehicle", 0];
 		_x setfuel 1;
 
 		_veh = _x;
@@ -59,7 +59,7 @@ _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]);
 		};
 		_x setdamage 0.1; 
 		_x setdamage 0; 
-		[_x] remoteexec ["twc_rearmvehicle", _x]; 
+		[_x] remoteexec ["twc_rearmvehicle", 0]; 
 		_x setfuel 1;
 
 		_veh = _x;
@@ -111,7 +111,7 @@ _tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 			};
 			_x setdamage 0.1; 
 			_x setdamage 0; 
-			[_x] remoteexec ["twc_rearmvehicle", _x];
+			[_x] remoteexec ["twc_rearmvehicle", 0];
 			_x setfuel 1;
 
 			_veh = _x;
