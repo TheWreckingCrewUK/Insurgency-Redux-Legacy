@@ -7,18 +7,18 @@ if (isnil "twc_fullrestrictactive") then {
 twc_fullrestrictactive = 0};
 
 if (twc_fullrestrictactive == 1) exitwith { 
-//systemchat "already active"
+////systemchat "already active"
 };
 
 twc_fullrestrictactive = 1;
 
 _playerunit = player;
-	if (vehicle _playerUnit == _playerUnit) exitWith { // systemchat "no longer in vehicle"; 
+	if (vehicle _playerUnit == _playerUnit) exitWith { // //systemchat "no longer in vehicle"; 
 	twc_fullrestrictactive = 0;
 	cutText ["","Black IN",0.001];}; // double check
 	
  
- //if (_checkedseat != _currentseat) exitwith { systemchat "no longer in old seat";};
+ //if (_checkedseat != _currentseat) exitwith { //systemchat "no longer in old seat";};
 _vehicle = (vehicle player);
  
 	_takenslotplayers = [];
@@ -28,7 +28,7 @@ _vehicle = (vehicle player);
 	_restrictedslotsorig = _restrictedslots;
 	
 	
-	//systemchat "2";
+	////systemchat "2";
 _takenslots = fullcrew vehicle player;
 	
 	{
@@ -49,7 +49,7 @@ _takenslots = fullcrew vehicle player;
 	
 	{_restrictedslots deleteat (_restrictedslots find _x)} foreach _takenslotplayers;
 	
-	systemchat format ["%1, %2", _restrictedslots, _takenslotplayers];
+	//systemchat format ["%1, %2", _restrictedslots, _takenslotplayers];
 	
 	if (_isair == 1) then {
 		waituntil {((((vehicle player)) distance twc_basepos) < 300) || ((vehicle _playerUnit == _playerUnit))};
@@ -69,7 +69,7 @@ _takenslots = fullcrew vehicle player;
 	
 	{_restrictedslots deleteat (_restrictedslots find _x)} foreach _takenslotplayers;
 	sleep 3;
-	systemchat format ["%1", random 1];
+	//systemchat format ["%1", random 1];
 	if (_isair == 1) then {
 		waituntil {((((vehicle player)) distance twc_basepos) < 300) || ((vehicle _playerUnit == _playerUnit))};
 		waituntil {((((getposatl (vehicle player)) select 2) < 1) && (speed (vehicle player)) < 10) || ((vehicle _playerUnit == _playerUnit))};
@@ -102,7 +102,7 @@ _takenslots = fullcrew vehicle player;
 	{_restrictedslots deleteat (_restrictedslots find _x)} foreach _takenslotplayers;
  
 	if ((count _restrictedslotsorig) == 0) exitwith {
-		// systemchat "vehicle empty";
+		// //systemchat "vehicle empty";
 		twc_fullrestrictactive = 0;	 
 		cutText ["","Black IN",0.001];
 	};
@@ -110,28 +110,28 @@ _takenslots = fullcrew vehicle player;
 
 		
 	if ((vehicle _playerUnit == _playerUnit) || ((!((gunner vehicle player) == player)) && (_isair == 0))) exitWith {
-		// systemchat "no longer in vehicle";
+		// //systemchat "no longer in vehicle";
 		twc_fullrestrictactive = 0; 
 		cutText ["","Black IN",0.001];
 	}; // double check
  
 
-	//systemchat	format ["%1 restricted, %2 currently", _restrictedslots, _takenslotplayers];
+	////systemchat	format ["%1 restricted, %2 currently", _restrictedslots, _takenslotplayers];
 		
 	cutText ["", "Black", 0.001];
-	// systemchat "get out";
+	// //systemchat "get out";
     ["<t size='1.2'>Vehicle Crew</t><br/><t size='0.6'>This vehicle needs a full crew before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
 	] spawn bis_fnc_dynamictext;
 	sleep 1;
 };
 	if ((vehicle _playerUnit == _playerUnit) || ((!((gunner vehicle player) == player)) && (_isair == 0))) exitWith {
-		// systemchat "no longer in vehicle";
+		// //systemchat "no longer in vehicle";
 		twc_fullrestrictactive = 0; 
 		cutText ["","Black IN",0.001];
 	};
 
 cutText ["","Black IN",0.001];
-// systemchat "you're good";
+// //systemchat "you're good";
 twc_fullrestrictactive = 0;
 //sleep 1;
 
