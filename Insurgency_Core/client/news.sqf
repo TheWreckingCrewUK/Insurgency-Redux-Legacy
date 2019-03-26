@@ -13,7 +13,7 @@ new line = <br />
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>TWC NEWS</t>"; 
 
- _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />Infinite ammunition is no longer available from the base supply box.<br /><br />The player requirement for crew chief has been dropped from 14 to 11.<br /><br />90s heli crew chiefs added to all relevant missions";
+ _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />The playercount requirement for heli pilots and crew chiefs have been removed. Instead, an infantry commander needs to be online for heli pilot and 2 infantry commanders need to be online for a crew chief.";
  
  _titlemem = "";
  _textmem = "";
