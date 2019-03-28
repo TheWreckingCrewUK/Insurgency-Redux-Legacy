@@ -29,7 +29,7 @@ _box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M441_HE",6];
 _box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M714_white",2];
 
 _box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",30];
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",7];
+_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",7];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",10];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
