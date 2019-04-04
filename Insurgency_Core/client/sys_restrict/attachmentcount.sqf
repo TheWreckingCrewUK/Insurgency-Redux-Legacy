@@ -48,7 +48,9 @@ exitwith {
 };
 
 //now use the standard spawn restriction system to let the player know what's up
-
+if(isserver)exitWith{
+	systemchat "attachment restrict tripped but skipped for server";
+};
 cutText ["", "Black", 0.001];
 player forceWalk true;
 while {(((_attachmentcount * twc_attachmentgap)+ 5) > ( count(allPlayers - entities "HeadlessClient_F")))} do {

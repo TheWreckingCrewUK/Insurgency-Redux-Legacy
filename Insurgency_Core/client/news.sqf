@@ -13,7 +13,7 @@ new line = <br />
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>TWC NEWS</t>"; 
 
- _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />The playercount requirement for heli pilots and crew chiefs have been removed. Instead, an infantry commander needs to be online for heli pilot and 2 infantry commanders need to be online for a crew chief.";
+ _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />The playercount requirement for heli pilots and crew chiefs have been removed. Instead, an infantry commander needs to be online for heli pilot and 2 infantry commanders need to be online for a crew chief.<br /><br />A test for SF implementation has been added, check the forum for more info.";
  
  _titlemem = "";
  _textmem = "";
