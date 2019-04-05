@@ -44,8 +44,8 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",8];
 
 _veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
 
-_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",30];
-_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
+_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag",30];
+_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag_Tracer_Red",10];
 
 _veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
