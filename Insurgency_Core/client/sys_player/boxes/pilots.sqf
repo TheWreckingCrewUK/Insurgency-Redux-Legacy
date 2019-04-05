@@ -10,13 +10,13 @@ _transportcond1 = {true};
 _transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
 
 //_cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
-_cascond = {totalpoints > (pointlimit - 200)};
+_cascond = {totalpoints > (pointlimit / 2)};
 
-_attackcond = {(totalpoints > (pointlimit - 400)) && ((count units (group player)) > 1)};
+_attackcond = {(totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)};
 
-_attackcond2 = {(totalpoints > (pointlimit - 400)) && ((count units (group player)) > 1)};
+_attackcond2 = {(totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)};
 
-_attackcond3 = {(totalpoints > (pointlimit - 50)) && ((count units (group player)) > 1)};
+_attackcond3 = {(totalpoints > (pointlimit /2)) && ((count units (group player)) > 1)};
 
 _planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 

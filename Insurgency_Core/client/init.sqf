@@ -22,6 +22,7 @@ _alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] ca
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 
 twc_firstspawned = 0;
+twc_serstarttime = time + 10000;
 
 
 player addEventHandler ["Respawn", {
@@ -34,8 +35,13 @@ if (!(isnull _corpse)) then {
 	};
 };
 
-if (twc_firstspawned == 1) exitwith {};
-twc_firstspawned = 1;
+if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
+	player setvehicleammo 0.2;
+};
+
+if (twc_firstspawned > 1) exitwith {};
+twc_firstspawned = time;
+twc_serstarttime = time;
 
 vehicle player setVariable ["twc_isenemy",0, true];
 
@@ -156,6 +162,14 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 if (sunormoon == 0) then {
 	player addweapon "rhsusf_ANPVS_14";
 };
+
+//Set Radios Correctly
+_radioID = [getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")] call acre_api_fnc_getRadioByType; 
+ if (!isNil "_radioID") then { 
+_channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioChannel"); 
+ _switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
+ Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType"),_channelNumber]; 
+ };
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";
 }];

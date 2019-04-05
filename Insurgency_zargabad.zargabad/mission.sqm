@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2219;
+		nextID=2240;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3309.115,28.48609,7152.4292};
-		dir[]={0.7335664,-0.34846741,-0.58370411};
-		up[]={0.27270156,0.93732339,-0.21699208};
-		aside[]={-0.62273806,9.6019357e-007,-0.78261232};
+		pos[]={3320.4543,25.105885,7127.1987};
+		dir[]={0.53472245,-0.052969459,-0.84352297};
+		up[]={0.028396793,0.99860996,-0.044798419};
+		aside[]={-0.84471709,-1.5402911e-006,-0.53547221};
 	};
 };
 binarizationWanted=0;
@@ -18020,40 +18020,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3326.592,24.042719,7187.1499};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=2055;
-					type="Modern_British_Grenadier";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3330.592,24.15695,7187.1499};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-						isPlayable=1;
-					};
-					id=2057;
-					type="Modern_British_2IC";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={3334.592,24.278929,7187.1499};
 					};
 					side="West";
@@ -18066,7 +18032,7 @@ class Mission
 					id=2059;
 					type="Modern_British_Machinegunner";
 				};
-				class Item4
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
@@ -18083,7 +18049,7 @@ class Mission
 					id=2061;
 					type="Modern_British_Medic";
 				};
-				class Item5
+				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
@@ -18142,7 +18108,7 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item6
+				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
@@ -18159,7 +18125,7 @@ class Mission
 					id=2192;
 					type="Modern_British_Autorifleman_COIN";
 				};
-				class Item7
+				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
@@ -18176,7 +18142,7 @@ class Mission
 					id=2193;
 					type="Modern_British_Autorifleman_COIN";
 				};
-				class Item8
+				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
@@ -18229,6 +18195,124 @@ class Mission
 										};
 									};
 									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3326.592,24.042719,7187.1499};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2238;
+					type="Modern_British_Grenadier_COIN";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3330.592,24.15695,7187.1499};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2239;
+					type="Modern_British_2IC_COIN";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
 								};
 							};
 						};

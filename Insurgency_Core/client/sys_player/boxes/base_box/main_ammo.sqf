@@ -64,6 +64,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_SL_H_A",1]
 	];
 	
 };
@@ -97,6 +98,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
 	];
 	
 };
@@ -130,6 +132,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
 	];
 	
 };
@@ -167,6 +170,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
 	];
 	
 };
@@ -184,6 +188,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
     [
         ["CUP_30Rnd_556x45_Emag",80],
 		["CUP_30Rnd_556x45_Emag_Tracer_Red",30],
+        ["UK3CB_BAF_762_L42A1_20Rnd_T",30],
         ["rhsusf_mag_17Rnd_9x19_JHP",25],
         ["UK3CB_BAF_9_15Rnd",25],
         ["1Rnd_HE_Grenade_shell",25],
@@ -204,6 +209,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
 };
@@ -237,6 +243,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
 	];
 	
 };
@@ -280,6 +287,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 	];
 				_tmp_backpacks = 
 	[ 
+		//["TWC_Backpack_UKSF_Medic_H",1],
+		["UK3CB_BAF_B_Bergen_MTP_Medic_H_B",1]
 	];
 	
 };
