@@ -23,56 +23,7 @@ if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1}
 
 twc_firstspawned = 0;
 
-twc_incogitems = ["CUP_V_OI_TKI_Jacket1_04", "CUP_V_OI_TKI_Jacket1_06", "CUP_V_OI_TKI_Jacket1_05", "CUP_V_OI_TKI_Jacket4_04", "CUP_V_OI_TKI_Jacket4_05", "twc_khet_01", "twc_khet_02", "twc_khet_03", "CUP_H_TKI_Lungee_01", "CUP_H_TKI_Lungee_02", "CUP_H_TKI_Lungee_03", "CUP_H_TKI_Lungee_04", "H_Shemag_olive", "H_ShemagOpen_khk"];
 
-
-if (["uksf", str group player] call BIS_fnc_inString) then {
-	player addEventHandler ["Take", {
-		params ["_unit", "_container", "_item"];
-		_array = missionnamespace getvariable["twc_incogitems", []];
-		if ((backpack player == "") &&(hmd player == "") && (vest player in _array) && (uniform player in _array) && (headgear player in _array)) then {
-			 if ((player getvariable ["twc_isincog",0]) == 0) then {
-				player setvariable ["twc_isincog", 1];
-				_val = player getunittrait "CamouflageCoef";
-				player setvariable ["twc_prevcamo", _val];
-				player  setUnitTrait ["CamouflageCoef",0.001, true];
-				systemchat "You are now incognito";
-			};
-		} else {
-			if ((player getvariable ["twc_isincog",0]) == 1) then {
-				_val = (player getvariable ["twc_prevcamo",1]);
-				player  setUnitTrait ["CamouflageCoef",_val, true];
-				player setvariable ["twc_isincog", 0];
-				systemchat "You are no longer incognito";
-			};
-		};
-	}];
-	player addEventHandler ["InventoryClosed", {
-		params ["_unit", "_container"];
-		_array = missionnamespace getvariable ["twc_incogitems", []];
-		if ((backpack player == "") &&(hmd player == "") && (vest player in _array) && (uniform player in _array) && (headgear player in _array)) then {
-			 if ((player getvariable ["twc_isincog",0]) == 0) then {
-				player setvariable ["twc_isincog", 1];
-				_val = player getunittrait "CamouflageCoef";
-				player setvariable ["twc_prevcamo", _val];
-				player  setUnitTrait ["CamouflageCoef",0.001, true];
-				systemchat "You are now incognito. Read more about this in your diary.";
-			};
-		} else {
-			if ((player getvariable ["twc_isincog",0]) == 1) then {
-				_val = (player getvariable ["twc_prevcamo",1]);
-				player  setUnitTrait ["CamouflageCoef",_val, true];
-				player setvariable ["twc_isincog", 0];
-				systemchat "You are no longer incognito";
-			};
-		};
-	}];
-	waituntil {!(isnil "twc_missionname")};
-	if (["00", twc_missionname] call BIS_fnc_inString) then {
-		player CreateDiaryRecord ["Diary",["Incognito",
-		"You can equip the afghan style robes, Shemagh/Lungee and jacket from your base ammobox to blend in with the enemy if you're not wearing a backpack. Driving, running or shooting near the enemy will make them suspect and likely compromise you. You can use this to perform close reconnaissance and even question civilians inside occupied towns. Be warned though, if you question a civilian and he turns out to be an enemy, he will alert all nearby enemies and you will be compromised."]];
-	};	
-};
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
 
@@ -89,19 +40,6 @@ twc_firstspawned = 1;
 vehicle player setVariable ["twc_isenemy",0, true];
 
 #include "sys_restrict\init.sqf";
-
-if (["uksf", str group player] call BIS_fnc_inString) then {
-	if ((hmd player == "") && (vest player in twc_incogitems) && (uniform player in twc_incogitems) && (headgear player in twc_incogitems)) then {
-		player setvariable ["twc_isincog", 1];
-		player setvariable ["twc_prevcamo", player getunittrait "CamouflageCoef"];
-		player  setUnitTrait ["CamouflageCoef",0.001, true];
-	} else {
-		if ((player getvariable ["twc_isincog",0]) == 1) then {
-			_val = (player getvariable ["twc_prevcamo",1]);
-			player setvariable ["twc_isincog", _val];
-		};
-	};
-};
 
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
