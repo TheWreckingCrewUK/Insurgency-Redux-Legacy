@@ -64,7 +64,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_SL_H_A",1]
+		["TWC_Backpack_UKSF_SL_H",1]
 	];
 	
 };
@@ -227,6 +227,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
     [
         ["UK3CB_BAF_762_L42A1_20Rnd",50],
 		["UK3CB_BAF_762_L42A1_20Rnd_T",30],
+        ["CUP_30Rnd_556x45_Emag",20],
+		["CUP_30Rnd_556x45_Emag_Tracer_Red",5],
         ["rhsusf_mag_17Rnd_9x19_JHP",25],
         ["UK3CB_BAF_9_15Rnd",25],
 		["B_IR_Grenade",2],
@@ -243,7 +245,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
+		["TWC_Backpack_UKSF_Marksman",1]
 	];
 	
 };
@@ -295,7 +297,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
     _tmp_weapons =
     [
-		//["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -330,17 +332,16 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L107A1",1],
-		["TWC_UK3CB_BAF_L119A1_CQB_ACOG",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["rhs_weap_M590_5RD",1]
     ];
 
 	_tmp_magazines =
     [
-        ["CUP_30Rnd_9x19_MP5",50],
         ["rhsusf_5Rnd_00Buck",25],
         ["rhsusf_5Rnd_Slug",25],
-        ["rhs_mag_30Rnd_556x45_M855A1_Stanag",10],
-		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",5],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag",40],
+		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10],
         ["UK3CB_BAF_9_15Rnd",15],
 		["B_IR_Grenade",2],
 		["ACE_M14",2],
@@ -364,7 +365,7 @@ if (typeOf vehicle player in ["2000_UKSF_Base"]) then {
     _tmp_weapons =
     [
 		["rhs_weap_m72a7",3],
-		//["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -394,7 +395,7 @@ if (typeOf vehicle player in ["2000_UKSF_Grenadier"]) then {
     _tmp_weapons =
     [
 		["rhs_weap_m72a7",3],
-		//["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -428,7 +429,7 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
     _tmp_weapons =
     [
 		["rhs_weap_m72a7",5],
-		//["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -461,7 +462,7 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
 if (typeOf vehicle player in ["2000_UKSF_Medic"]) then {
     _tmp_weapons =
     [
-		//["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 

@@ -126,14 +126,22 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Suppressors","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\suppressors.sqf"},{((missionnamespace getvariable ["twc_suppspawned", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 if((typeOf player) in ["2000_UKSF_Sectionleader","2000_UKSF_2ic"])then{
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Jackal (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Jackal (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Suppressors","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\suppressors.sqf"},{((missionnamespace getvariable ["twc_suppspawned", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
@@ -459,7 +467,7 @@ if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","20
 
 
 
-if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_TeamLeader"])then{
+if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_TeamLeader","2000_USMC_Squadleader_d","2000_USMC_Squadleader","2000_USMC_Teamleader_d","2000_USMC_Teamleader"])then{
 
 
 	_hcharlieaction2 = ["SpawnsmallcharlieCreate","Spawn US Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateUS2000.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -470,9 +478,6 @@ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_Tea
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Marksman Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\marksmancrateus.sqf"},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_haction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_haction5,true] call ace_interact_menu_fnc_addActionToClass;

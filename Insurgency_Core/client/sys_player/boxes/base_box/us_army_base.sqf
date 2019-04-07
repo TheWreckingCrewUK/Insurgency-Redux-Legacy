@@ -345,3 +345,241 @@
 		["ACE_bodyBag", 30]
 	];
 };
+
+
+
+ if((typeOf player) in ["2000_USMC_Squadleader_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",3],
+		["ACE_M26_Clacker",1],
+		["ACRE_PRC117F",1],
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Teamleader_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",80],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["UK3CB_BAF_12G_Slugs",50],
+		["UK3CB_BAF_12G_Pellets",50],
+		["1Rnd_HE_Grenade_shell",40],
+		["UGL_FlareGreen_F",20],
+		["UGL_FlareRed_F",20],
+		["UGL_FlareWhite_F",20],
+		["UGL_FlareYellow_F",20],
+		["1Rnd_SmokeBlue_Grenade_shell",20],
+		["1Rnd_SmokeGreen_Grenade_shell",20],
+		["1Rnd_SmokeOrange_Grenade_shell",20],
+		["1Rnd_SmokePurple_Grenade_shell",20],
+		["1Rnd_SmokeRed_Grenade_shell",20],
+		["1Rnd_Smoke_Grenade_shell",20],
+		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",3],
+		["ACE_M26_Clacker",1],
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Breacher_d"])then{
+    _tmp_weapons =
+    [
+        ["CUP_TWC_arifle_M16A4_Grip_clean",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["UK3CB_BAF_12G_Slugs",50],
+		["UK3CB_BAF_12G_Pellets",50],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+ if((typeOf player) in ["2000_USMC_Base_d"])then{
+    _tmp_weapons =
+    [
+        ["rhs_weap_M136",1]
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Grenadier_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["1Rnd_HE_Grenade_shell",20],
+		["UGL_FlareGreen_F",20],
+		["UGL_FlareRed_F",20],
+		["UGL_FlareWhite_F",20],
+		["UGL_FlareYellow_F",20],
+		["1Rnd_SmokeBlue_Grenade_shell",20],
+		["1Rnd_SmokeGreen_Grenade_shell",20],
+		["1Rnd_SmokeOrange_Grenade_shell",20],
+		["1Rnd_SmokePurple_Grenade_shell",20],
+		["1Rnd_SmokeRed_Grenade_shell",20],
+		["1Rnd_Smoke_Grenade_shell",20],
+		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Autorifleman_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["rhs_200rnd_556x45_T_SAW",50],
+		["ACE_SpareBarrel",1],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+ if((typeOf player) in ["2000_USMC_AsstAutorifleman_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["rhs_200rnd_556x45_T_SAW",50],
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["ACE_SpareBarrel",1],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Marksman_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",40],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACRE_PRC148",1]
+	];
+};
+
+
+
+
+ if((typeOf player) in ["2000_USMC_Medic_d"])then{
+    _tmp_weapons =
+    [
+	];
+
+	_tmp_magazines =
+   [            
+		["CUP_30Rnd_556x45_Stanag",50],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["HandGrenade",5]
+    ];
+
+	_tmp_items =
+	[
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["TWC_Item_Medical_SutureKit_20", 5],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1],
+		["optic_MRCO",1],
+		["rhsusf_spc_corpsman",1],
+		["ACRE_PRC148",1]
+	];
+};
+
+
+

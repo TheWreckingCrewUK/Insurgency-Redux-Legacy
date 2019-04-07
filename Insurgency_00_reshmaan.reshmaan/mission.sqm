@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2013;
+		nextID=2027;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14674.92,40.298496,9113.0869};
-		dir[]={0.60984904,-0.51946336,0.59861654};
-		up[]={0.37072745,0.85448462,0.3638992};
-		aside[]={0.70053709,-4.5297202e-007,-0.71368575};
+		pos[]={14643.798,23.281343,9962.4922};
+		dir[]={-0.92990804,-0.31828982,0.18431693};
+		up[]={-0.31221822,0.94799441,0.061884396};
+		aside[]={0.19442783,3.2014214e-007,0.98092294};
 	};
 };
 binarizationWanted=0;
@@ -26160,94 +26160,48 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=9;
+				items=13;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14598.671,24.038939,9970.3945};
+						position[]={14620.578,22.432302,9965.5303};
 					};
 					side="West";
-					flags=7;
+					flags=5;
 					class Attributes
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
 						isPlayable=1;
 					};
-					id=1960;
-					type="twc_ana_commander";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2014;
+					type="2000_USMC_Squadleader_d";
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14601.671,24.027876,9967.3945};
+						position[]={14623.578,22.646994,9962.5303};
 					};
 					side="West";
-					flags=5;
+					flags=7;
 					class Attributes
 					{
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1961;
-					type="twc_ana_base";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2015;
+					type="2000_USMC_Teamleader_d";
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14603.671,23.844751,9967.3945};
+						position[]={14625.578,22.525524,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26256,38 +26210,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1962;
-					type="twc_ana_base";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2016;
+					type="2000_USMC_Breacher_d";
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14605.671,23.664715,9967.3945};
+						position[]={14627.578,22.403812,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26296,38 +26227,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1963;
-					type="twc_ana_rifleman_at";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2017;
+					type="2000_USMC_Grenadier_d";
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14607.671,23.484791,9967.3945};
+						position[]={14629.578,22.271496,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26336,38 +26244,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1964;
-					type="twc_ana_subcommander";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2018;
+					type="2000_USMC_Base_d";
 				};
 				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14609.671,23.304756,9967.3945};
+						position[]={14631.578,22.13755,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26376,38 +26261,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1965;
-					type="twc_ana_mg";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2019;
+					type="2000_USMC_Teamleader_d";
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14611.671,23.162878,9967.3945};
+						position[]={14633.578,22.003147,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26416,38 +26278,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1966;
-					type="twc_ana_mg_as";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2020;
+					type="2000_USMC_Base_d";
 				};
 				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14613.671,22.975622,9967.3945};
+						position[]={14635.578,21.868664,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26456,38 +26295,15 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1967;
-					type="twc_ana_medic";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
+					id=2021;
+					type="2000_USMC_Autorifleman_d";
 				};
 				class Item8
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14615.671,22.737022,9967.3945};
+						position[]={14637.578,21.73299,9962.5303};
 					};
 					side="West";
 					flags=5;
@@ -26496,31 +26312,76 @@ class Mission
 						skill=0.40000001;
 						isPlayable=1;
 					};
-					id=1968;
-					type="twc_ana_interpreter";
-					class CustomAttributes
+					id=2022;
+					type="2000_USMC_AsstAutorifleman_d";
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
 					{
-						class Attribute0
-						{
-							property="acex_headless_blacklist";
-							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"BOOL"
-										};
-									};
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
+						position[]={14639.578,21.555124,9962.5303};
 					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2023;
+					type="2000_USMC_Teamleader_d";
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14641.578,21.418436,9962.5303};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2024;
+					type="2000_USMC_Base_d";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14643.578,21.292704,9962.5303};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2025;
+					type="2000_USMC_Marksman_d";
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14645.578,21.166895,9962.5303};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2026;
+					type="2000_USMC_Medic_d";
 				};
 			};
 			class Attributes
@@ -26544,7 +26405,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="ANA Infantry";
+							value="USMC Infantry";
 						};
 					};
 				};
