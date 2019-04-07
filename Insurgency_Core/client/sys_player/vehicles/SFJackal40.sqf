@@ -1,13 +1,21 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
- 
+ if ((["00", twc_missionname] call BIS_fnc_inString)) then {
 
-_vehtype = "UK3CB_BAF_Jackal2_L134A1_W";
+	_vehtype = "UK3CB_BAF_Jackal2_L134A1_W";
 
-if (twc_wdveh == 0) then {
-_vehtype = "UK3CB_BAF_Jackal2_L134A1_D";
+	if (twc_wdveh == 0) then {
+	_vehtype = "UK3CB_BAF_Jackal2_L134A1_D";
+	};
+} else {
+	_vehtype = "UK3CB_BAF_Coyote_Passenger_L134A1_W";
+
+	if (twc_wdveh == 0) then {
+	_vehtype = "UK3CB_BAF_Coyote_Passenger_L134A1_D";
+	};
 };
- 
+
+	
  _car = _vehtype createvehicle _spawnpos;  
 _veh = _car;
 
@@ -19,13 +27,6 @@ hint _spawntext;
 
 sleep 1;
 
-
-_car spawn {
-params ["_car"];
-_objects = attachedobjects _car;
-waituntil {!alive _car || isnull _car};
-{deletevehicle _x} foreach _objects;
-};
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 

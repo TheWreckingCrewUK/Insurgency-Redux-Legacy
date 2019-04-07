@@ -51,7 +51,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",5],
 		["ACE_M26_Clacker",1],
@@ -92,13 +92,13 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
+		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
 };
@@ -126,13 +126,13 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
+		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
 };
@@ -164,13 +164,13 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",1]
+		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
 };
@@ -203,13 +203,13 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
 	[ 
-		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+		["TWC_Backpack_UKSF_2IC_H",1]
 	];
 	
 };
@@ -237,7 +237,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_MaxiKite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",1],
 		["ACE_IR_Strobe_Item",1]
     ];
@@ -269,7 +269,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 	_tmp_items =
 	[
 		["UK3CB_BAF_Kite", 1],
-		["CUP_NVG_GPNVG_tan", 1],
+		["rhsusf_ANPVS_15", 1],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
@@ -287,8 +287,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 	];
 				_tmp_backpacks = 
 	[ 
-		//["TWC_Backpack_UKSF_Medic_H",1],
-		["UK3CB_BAF_B_Bergen_MTP_Medic_H_B",1]
+		["TWC_Backpack_UKSF_Medic_H",1]
 	];
 	
 };

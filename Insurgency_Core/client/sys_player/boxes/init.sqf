@@ -123,7 +123,14 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 };
 
 
-if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC", "2000_UKSF_Sectionleader","2000_UKSF_2ic"])then{
+if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+};
+
+if((typeOf player) in ["2000_UKSF_Sectionleader","2000_UKSF_2ic"])then{
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Jackal (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Jackal (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{true}] call ace_interact_menu_fnc_createAction;
