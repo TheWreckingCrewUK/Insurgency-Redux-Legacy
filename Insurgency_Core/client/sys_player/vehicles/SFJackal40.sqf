@@ -2,7 +2,12 @@
  
 	_vehtype = "UK3CB_BAF_Jackal2_L134A1_D";
 	
+_is00 = 0;
  if ((["00", twc_missionname] call BIS_fnc_inString)) then {
+ _is00 = 1;
+ };
+	
+ if (_is00 == 1) then {
 
 	_vehtype = "UK3CB_BAF_Jackal2_L134A1_W";
 
