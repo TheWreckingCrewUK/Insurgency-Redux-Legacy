@@ -17,11 +17,9 @@ if(!isMultiplayer)exitWith{};
 
 
 if ((player distance (getmarkerpos "base")) > 300) then {
-		_time = time + 500;
 		
 	hint "You need the forward observer and the pilot online, return to base within the next 10 minutes or get back up to strength";
-		waituntil {((player distance (getmarkerpos "base")) > 300) || (_time < time)};
-		sleep 100;
+		sleep 600;
 		
 	};
 

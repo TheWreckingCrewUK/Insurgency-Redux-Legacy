@@ -22,6 +22,7 @@ _alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] ca
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 
 twc_firstspawned = 0;
+twc_lastspawned = 0;
 twc_serstarttime = time + 10000;
 
 
@@ -34,7 +35,7 @@ if (!(isnull _corpse)) then {
 		_corpse setvehicleammo 0;
 	};
 };
-
+twc_lastspawned = time;
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
 	player setvehicleammo 0.2;
 };

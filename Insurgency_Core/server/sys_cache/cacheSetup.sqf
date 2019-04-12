@@ -6,15 +6,15 @@ Thanks for the consent -[TWC] jayman
 if (isNil "InsP_cacheGroup") then {
 
 	cacheBoxA = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[5,0,0]);
-	_cacheADeath = cacheBoxA addEventHandler ["Killed", {[_this select 0] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers}];
+	[] spawn {_pos = getpos cacheBoxA;waituntil {(!alive cacheBoxA) || ((damage cacheBoxA) > 0.8)};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxA";
 
-	cacheBoxB = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[10,0,0]);;
-	_cacheADeath = cacheBoxB addEventHandler ["Killed", {[_this select 0] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers}];
+	cacheBoxB = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[10,0,0]);
+	[] spawn {_pos = getpos cacheBoxB;waituntil {(!alive cacheBoxB) || ((damage cacheBoxB) > 0.8)};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxB";
 
 	cacheBoxC = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[15,0,0]);;
-	_cacheADeath = cacheBoxC addEventHandler ["Killed", {[_this select 0] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers}];
+	[] spawn {_pos = getpos cacheBoxC;waituntil {(!alive cacheBoxC) || ((damage cacheBoxC) > 0.8)};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxC";
 
 	InsP_cacheGroup = [cacheBoxA, cacheBoxB, cacheBoxC];

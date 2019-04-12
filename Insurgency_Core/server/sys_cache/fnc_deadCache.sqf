@@ -1,4 +1,4 @@
-params["_deadCache"];
+params["_deadCache", "_pos"];
 
 _intelPos = (getPosATL _deadCache);
 
