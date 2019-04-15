@@ -6,15 +6,18 @@ Thanks for the consent -[TWC] jayman
 if (isNil "InsP_cacheGroup") then {
 
 	cacheBoxA = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[5,0,0]);
-	[] spawn {_pos = getpos cacheBoxA;waituntil {(!alive cacheBoxA) || ((damage cacheBoxA) > 0.8)};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
+	cacheBoxA allowdamage false;
+	[] spawn {_pos = getpos cacheBoxA;sleep 60; cacheBoxA allowdamage true;waituntil {(!alive cacheBoxA) || ((damage cacheBoxA) > 0.88)};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxA";
 
 	cacheBoxB = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[10,0,0]);
-	[] spawn {_pos = getpos cacheBoxB;waituntil {(!alive cacheBoxB) || ((damage cacheBoxB) > 0.8)};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
+	cacheBoxB allowdamage false;
+	[] spawn {_pos = getpos cacheBoxB;sleep 60; cacheBoxB allowdamage true; waituntil {(!alive cacheBoxB) || ((damage cacheBoxB) > 0.88)};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxB";
 
-	cacheBoxC = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[15,0,0]);;
-	[] spawn {_pos = getpos cacheBoxC;waituntil {(!alive cacheBoxC) || ((damage cacheBoxC) > 0.8)};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
+	cacheBoxC = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[15,0,0]);
+	cacheBoxC allowdamage false;
+	[] spawn {_pos = getpos cacheBoxC;sleep 60; cacheBoxC allowdamage true; waituntil {(!alive cacheBoxC) || ((damage cacheBoxC) > 0.88)};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxC";
 
 	InsP_cacheGroup = [cacheBoxA, cacheBoxB, cacheBoxC];

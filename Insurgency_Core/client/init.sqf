@@ -18,6 +18,9 @@ cutText ["","Black IN",0.001];
 
 _alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] call ace_interact_menu_fnc_createAction;
 ["TWC_Item_Public_Base_LOCSTAT",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+twc_endmissionplayer = {
+player setvehicleammo 0;
+};
 
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 

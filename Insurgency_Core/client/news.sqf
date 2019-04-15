@@ -17,6 +17,8 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
  
  _titlemem = "";
  _textmem = "";
+ _titlemgmt  = "";
+_textmgmt  = "";
  //secondary files for member and management news, not viewable on github
  //#include "membernews.sqf";
  //only do the management include if the player is management, so that it only CTD's management if the mission has been built without the file

@@ -28,6 +28,9 @@ if ((player distance (getmarkerpos "base")) > 300) then {
 cutText ["", "Black", 0.001];
 player forceWalk true;
 
+
+(group player) setvariable ["twc_teamrestrictedgrp", 1, true];
+
 while {(count (units group player)) < 2}do{
 
 cutText ["", "Black", 0.001];
@@ -38,6 +41,20 @@ cutText ["", "Black", 0.001];
 };
 cutText ["","Black IN",5];
 player forceWalk false;
+
+//legit group system
+(group player) setvariable ["twc_teamrestrictedgrp", 0, true];
+
+if (((group player) getVariable ["twc_attachrestrictedgrp",1]) == 0) then {
+	(group player) setvariable ["twc_legitgrp", time, true];
+};
+
+//last man, to de-legit the group when leaving
+[] spawn {
+	waituntil {(count (units group player)) == 1};
+	(group player) setvariable ["twc_legitgrp", -99999, true];
+};	
+
 
 
 execvm "Insurgency_Core\client\sys_restrict\fulljetteam.sqf";
