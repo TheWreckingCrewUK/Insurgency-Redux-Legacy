@@ -33,7 +33,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -73,7 +73,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -107,7 +107,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["rhs_weap_m72a7",3],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -141,7 +141,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["rhs_weap_m72a7",3],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -179,7 +179,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["rhs_weap_m72a7",5],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -218,7 +218,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["rhs_weap_m72a7",5],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -254,7 +254,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
     _tmp_weapons =
     [
 		["rhsusf_weap_glock17g4",1],
-		["TWC_UK3CB_BAF_L119A2_10_T1",1],
+		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		["UK3CB_BAF_L107A1",1]
     ];
 

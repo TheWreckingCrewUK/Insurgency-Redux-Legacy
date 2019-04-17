@@ -6,6 +6,7 @@ Once they have enough, then it runs itself again to wait until the situation cha
 
 */
 
+if(isserver)exitWith{};
 waitUntil {!isNull player};
 
 
@@ -14,7 +15,6 @@ waituntil {(count (units group player)) < 4};
 //if it's been more than half an hour since they last respawned, and they're more than 1km from base then they can have it
 if (((twc_lastspawned < (time - 1800)) && ((player distance twc_basepos) > 1000))||((twc_lastspawned < (time - 60)) && ((player distance twc_basepos) > 4000))) exitwith {};
 
-if(!isMultiplayer)exitWith{};
 cutText ["", "Black", 0.001];
 player forceWalk true;
 
