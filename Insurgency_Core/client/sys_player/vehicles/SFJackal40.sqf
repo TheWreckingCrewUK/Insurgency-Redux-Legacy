@@ -86,7 +86,8 @@ if (_is00 == 1) then {
 
 	_veh AddMagazineCargoGlobal ["rhsusf_5Rnd_Slug",10];
 	_veh AddMagazineCargoGlobal ["rhsusf_5Rnd_00Buck",10];
-	_veh AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",10];
+	_veh AddMagazineCargoGlobal ["CUP_30Rnd_9x19_MP5",6];
+	_veh AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",6];
 	
 	if ((random 1) < 0.5) then {
 		_veh AddWeaponCargoGlobal ["UK3CB_BAF_L7A2",1];
@@ -99,9 +100,14 @@ if (_is00 == 1) then {
 } else {
 
 	_veh AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",2];
-	_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8*_mult];
+	_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",4*_mult];
 	_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",5*_mult];
 	_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10*_mult];
+	_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",5];
+	_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",4];
+	
+	_mag = (group player) getvariable ["twc_cqbmag", "CUP_30Rnd_556x45_Emag"];
+	_veh AddMagazineCargoGlobal [(_mag select 0),5];
 	
 	if ((random 1) < 0.5) then {
 		_veh AddWeaponCargoGlobal ["UK3CB_BAF_L7A2",1];
