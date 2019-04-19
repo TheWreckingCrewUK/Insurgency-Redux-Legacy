@@ -26,6 +26,7 @@ pointlimit = 400;
 publicVariable "pointlimit";
 
 twc_is90 = 1;
+publicVariable "twc_is90";
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
 sirenlist = [idfalarm,idfalarm_1];

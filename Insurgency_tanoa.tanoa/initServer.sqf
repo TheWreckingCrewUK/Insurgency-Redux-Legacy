@@ -22,6 +22,7 @@ twc_surrenderVote = false;
 */
 TWC_Building_Style = "MidEast";
 twc_is90 = 1;
+publicVariable "twc_is90";
 
 hvtlist = ["rhsgref_ins_squadleader"];
 

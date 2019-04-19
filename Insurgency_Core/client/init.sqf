@@ -31,13 +31,14 @@ twc_serstarttime = time + 10000;
 
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
-
+/*
 if (!(isnull _corpse)) then {
 	[_corpse] spawn {
 		params ["_corpse"];
 		_corpse setvehicleammo 0;
 	};
 };
+*/
 twc_lastspawned = time;
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
 	player setvehicleammo 0.2;

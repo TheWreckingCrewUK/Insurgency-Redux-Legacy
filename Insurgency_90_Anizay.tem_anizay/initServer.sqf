@@ -23,6 +23,7 @@ twc_surrenderVote = false;
 TWC_Building_Style = "MidEast";
 
 twc_is90 = 1;
+publicVariable "twc_is90";
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
 twc_strongholdcount = 0;
