@@ -31,8 +31,6 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
-sleep 1;
-
 
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
@@ -52,7 +50,6 @@ _mult = 1.5;
 };
 
 
-//supplies
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",8*_mult];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",8*_mult];
 
@@ -82,6 +79,9 @@ _veh addItemCargoGlobal ["HandGrenade",2*_mult];
 _veh addItemCargoGlobal ["SmokeShell",3*_mult];
 _veh addItemCargoGlobal ["SmokeShellRed",3*_mult];
 
+_fsgun = ["UK3CB_BAF_L7A2",1];
+_fsmag = ["UK3CB_BAF_762_100Rnd_T",3*_mult];
+
 if (_is00 == 1) then {
 	_veh AddMagazineCargoGlobal ["rhsusf_5Rnd_Slug",10];
 	_veh AddMagazineCargoGlobal ["rhsusf_5Rnd_00Buck",10];
@@ -89,11 +89,8 @@ if (_is00 == 1) then {
 	_veh AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",10];
 	
 	if ((random 1) < 0.5) then {
-		_veh AddWeaponCargoGlobal ["UK3CB_BAF_L7A2",1];
-		_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",3*_mult];
-	} else {
-		_veh AddWeaponCargoGlobal ["TWC_UK3CB_BAF_L110A2_SUSAT",1];
-		_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5*_mult];
+		_fsgun = ["TWC_UK3CB_BAF_L110A2_SUSAT",1];
+		_fsmag = ["UK3CB_BAF_556_200Rnd_T",5*_mult];
 	};
 } else {
 
@@ -105,13 +102,14 @@ if (_is00 == 1) then {
 	_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",4];
 	
 	_mag = (group player) getvariable ["twc_cqbmag", "CUP_30Rnd_556x45_Emag"];
-	_veh AddMagazineCargoGlobal [(_mag select 0),5];
+	_veh AddMagazineCargoGlobal [_mag ,5];
+	
 	
 	if ((random 1) < 0.5) then {
-		_veh AddWeaponCargoGlobal ["UK3CB_BAF_L7A2",1];
-		_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",3*_mult];
-	} else {
-		_veh AddWeaponCargoGlobal ["UK3CB_BAF_L110A2_ELCAN3D",1];
-		_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5*_mult];
+		_fsgun = ["UK3CB_BAF_L110A2_ELCAN3D",1];
+		_fsmag = ["UK3CB_BAF_556_200Rnd_T",5*_mult];
 	};
 };
+
+_veh AddWeaponCargoGlobal _fsgun;
+_veh AddMagazineCargoGlobal _fsmag;

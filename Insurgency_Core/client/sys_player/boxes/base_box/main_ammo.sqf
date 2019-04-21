@@ -74,7 +74,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	_cqbmag = ["CUP_30Rnd_9x19_MP5",30];
 	if (_choice == 1) then {
 		_cqbgun = ["rhsusf_weap_MP7A2_desert",1];
-		_cqbmag = ["rhsusf_mag_40Rnd_46x30_FMJ",25];
+		_cqbmag = "rhsusf_mag_40Rnd_46x30_FMJ";
 	};
 	(group player) setvariable ["twc_cqbmag", _cqbmag, true];
     _tmp_weapons =
@@ -89,7 +89,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
     [
         ["CUP_30Rnd_556x45_Emag",50],
 		["CUP_30Rnd_556x45_Emag_Tracer_Red",20],
-		_cqbmag,
+		[_cqbmag,25],
         ["rhsusf_mag_17Rnd_9x19_JHP",15],
         ["UK3CB_BAF_9_15Rnd",15],
 		["UK3CB_BAF_12G_Pellets",20],
