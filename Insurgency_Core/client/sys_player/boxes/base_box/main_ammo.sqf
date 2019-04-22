@@ -71,7 +71,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
 if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	_choice = floor (random 2);
 	_cqbgun = ["TWC_CUP_smg_MP5A5_flashlight_clean",1];
-	_cqbmag = ["CUP_30Rnd_9x19_MP5",30];
+	_cqbmag = "CUP_30Rnd_9x19_MP5";
 	if (_choice == 1) then {
 		_cqbgun = ["rhsusf_weap_MP7A2_desert",1];
 		_cqbmag = "rhsusf_mag_40Rnd_46x30_FMJ";

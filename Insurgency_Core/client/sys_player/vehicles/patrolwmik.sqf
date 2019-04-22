@@ -46,3 +46,39 @@ _veh AddWeaponCargoGlobal ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1];
 _veh AddWeaponCargoGlobal ["ACE_VMM3",1];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",10];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",10];
+
+//supplies
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",4];
+
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",20];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
+
+_veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
+_veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
+_veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
+
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5];
+
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",3];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",7];
+
+_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",8];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
+
+_veh addItemCargoGlobal ["ACE_DefusalKit",2];
+_veh addItemCargoGlobal ["ACE_EntrenchingTool",2];
+_veh addItemCargoGlobal ["ACE_CableTie",15];
+_veh addItemCargoGlobal ["ACE_fieldDressing",25];
+_veh addItemCargoGlobal ["ACE_elasticBandage",25];
+_veh addItemCargoGlobal ["ACE_quikclot",25];
+_veh addItemCargoGlobal ["ACE_packingBandage",25];
+_veh addItemCargoGlobal ["ACE_personalAidKit",1];
+_veh addItemCargoGlobal ["ACE_salineIV_250",10];
+_veh addItemCargoGlobal ["ACE_salineIV_500",10];
+_veh addItemCargoGlobal ["ACE_atropine",5];
+_veh addItemCargoGlobal ["ACE_epinephrine",10];
+_veh addItemCargoGlobal ["ACE_morphine",10];
+_veh addItemCargoGlobal ["HandGrenade",2];
+_veh addItemCargoGlobal ["SmokeShell",3];
+_veh addItemCargoGlobal ["SmokeShellRed",3];

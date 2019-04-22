@@ -14,6 +14,7 @@ twc_fnc_getRandomNearbyRoad = compile preprocessfilelinenumbers "Insurgency_Core
 twc_fnc_randomBuildingPos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_randomBuildingPos.sqf";
 
 twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
+twc_fnc_startcqbrangeserver = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_cqbrange_server.sqf";
 
 twc_fnc_checkLastDamage = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_checkLastDamage.sqf";
 twc_fnc_addScore = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_addScore.sqf";

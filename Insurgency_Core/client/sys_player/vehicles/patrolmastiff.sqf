@@ -36,8 +36,7 @@ _veh AddWeaponCargoGlobal ["UK3CB_BAF_Tripod",1];
 
 
 //supplies
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",3];
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd",7];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",6];
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
@@ -46,8 +45,7 @@ _veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
 _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];
 
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",7];
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",3];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5];
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",3];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10];
