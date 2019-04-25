@@ -73,8 +73,10 @@ _group = createGroup East;
 [_group,getpos _unit, 150, 7, "MOVE", "SAFE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
 
 
+
 	
 	};
+		[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 };
 /////////////////////////////////////////////////////////////////////////////////////////
 

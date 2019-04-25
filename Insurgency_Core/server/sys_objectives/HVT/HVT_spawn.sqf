@@ -113,6 +113,7 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 
 [_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
+[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 
 
 //wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty

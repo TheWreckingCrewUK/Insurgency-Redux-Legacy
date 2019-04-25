@@ -69,6 +69,9 @@ for "_i" from 1 to _total do {
 	sleep 0.2;
 	
 };
+
+[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+
 _civg = creategroup civilian;
 _fraggertotal = (random 2);
 

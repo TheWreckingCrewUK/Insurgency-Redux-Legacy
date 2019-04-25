@@ -12,7 +12,7 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 */
 
-if (worldname == "zargabad") exitwith {};
+//if (worldname == "zargabad") exitwith {};
 
 
 _id = [_pos, "Stronghold"];
@@ -54,8 +54,12 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 	_num = _num + 1;
 	sleep 0.2;
 };
-	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
-_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+if ((random 1) > 0.5) then {
+	[_pos, nil, (units _group), 200, 2, true, true] call ace_ai_fnc_garrison;
+} else {
+	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+};
+	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
@@ -85,8 +89,10 @@ for "_i" from 1 to 7 do{
 		_num = _num + 1;
 		sleep 0.2;
 	};
+	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 	if (random 1 > 2) then {
-	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
+	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;
+	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";}
 	else
 	{
 	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
@@ -140,7 +146,7 @@ _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
-_trg setTriggerStatements ["count thisList < 4",format ["
+_trg setTriggerStatements ["count thisList < 7",format ["
 ['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent;
 
 _taskID = (str random 1000);

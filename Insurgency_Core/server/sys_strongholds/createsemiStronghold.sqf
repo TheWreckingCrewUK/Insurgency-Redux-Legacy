@@ -11,7 +11,7 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 */
 
-if (worldname == "zargabad") exitwith {};
+//if (worldname == "zargabad") exitwith {};
 
 _id = [_pos, "Stronghold"];
 twc_activestrongholds pushback _id;

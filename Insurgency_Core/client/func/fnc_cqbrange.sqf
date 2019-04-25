@@ -22,8 +22,23 @@ if (count _t == 0) then {
 [_iscomplex] remoteexec ["twc_fnc_startcqbrangeserver", 2];
 
 
+_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>CQB Course</t><br /><br />"; 
+_text1 = "";
+
 if (_first == 0) then {
-	hint "CQB Course Active";
+	_text1 = "The Course is now live. Enemy units have been placed in random locations within the warehouse.";
 } else {
-	hint "CQB Course Restarted";
+	_text1 = "The Course has been restarted. Preexisting units have been removed and fresh enemy units placed.";
 };
+if (_iscomplex) then {
+	if (_first == 0) then {
+		_text1 = "The Course is now live. Enemy units and civilians have been placed in random locations within the warehouse.";
+	} else {
+		_text1 = "The Course has been restarted. Preexisting units have been removed and fresh enemy units and civilians placed.";
+	};
+};
+
+ 
+ _result = parsetext (_title + _text1);
+ 
+ hint _result;

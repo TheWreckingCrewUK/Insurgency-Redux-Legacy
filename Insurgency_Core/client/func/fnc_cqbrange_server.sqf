@@ -40,6 +40,7 @@ if (_iscomplex) then {
 		_unit disableai "PATH";
 		_array pushback _unit;
 			[_unit] joinsilent _group;
+			
 		/*
 		if ((random 1) > 0.03) then {
 			_unit addItemtoUniform "CUP_handgrenade_RGD5";
@@ -59,8 +60,3 @@ if (_iscomplex) then {
 
 missionnamespace setvariable ["twc_cqbtargets", _array, true];
 
-if (_first == 0) then {
-	hint "CQB Course Active";
-} else {
-	hint "CQB Course Restarted";
-};

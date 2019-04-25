@@ -26,7 +26,7 @@ twc_is90 = 1;
 publicVariable "twc_is90";
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
-twc_strongholdcount = 0;
+twc_strongholdcount = 1;
 
 pointLimit = 200;
 publicVariable "pointLimit";

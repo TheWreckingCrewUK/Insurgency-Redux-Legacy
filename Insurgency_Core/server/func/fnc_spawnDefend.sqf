@@ -55,6 +55,7 @@ for "_i" from 1 to _total do{
 _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
+[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 
 	//[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	
