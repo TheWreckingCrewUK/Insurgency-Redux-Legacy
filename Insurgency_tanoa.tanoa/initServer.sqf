@@ -24,6 +24,11 @@ TWC_Building_Style = "MidEast";
 twc_is90 = 1;
 publicVariable "twc_is90";
 
+twc_isminimission = 1;
+
+pointlimit = 300;
+publicvariable "pointlimit";
+
 hvtlist = ["rhsgref_ins_squadleader"];
 
 sirenlist = [idfalarm];

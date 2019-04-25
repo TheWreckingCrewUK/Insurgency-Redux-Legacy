@@ -25,6 +25,12 @@ _group = group _leader;
 _group setSpeedMode "full";
 _enemy = _leader findnearestenemy _leader;
 
+{
+	if ((_x getvariable ["twc_aisuppression", 0]) == 0) then {
+		[_x]  execvm "Insurgency_Core\server\func\ai\fnc_aisuppress.sqf";
+	};
+} foreach units _group;
+
 [(units _group)] call ace_ai_fnc_unGarrison;
 {
 	[_enemy, _x] spawn {
