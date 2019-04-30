@@ -958,7 +958,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",5],
 		["UK3CB_BAF_G_Tactical_Black",1],
-		["ACE_RangeCard",1],
 		["rhsusf_acc_premier_anpvs27",1],
 		["ACE_Tripod",1],
 		["HandGrenade",5]
@@ -2825,7 +2824,6 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACE_RangeCard",1],
 		["ACRE_PRC343",1]
 	];
 };
@@ -3261,7 +3259,6 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACE_RangeCard",1],
 		["ACE_Tripod",1],
 		["ACRE_PRC343",1]
 	];

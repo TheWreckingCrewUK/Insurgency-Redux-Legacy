@@ -26,12 +26,14 @@ execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
 
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
-	addMissionEventHandler ["HandleDisconnect", {
-		params ["_unit", "_id", "_uid", "_name"];
-		if ((count allplayers) ==0) then {
-			"pointVictory" call BIS_fnc_endMissionServer;
+	
+	[] spawn {
+		sleep 600;
+		while {(count allplayers) > 0} do {
+			sleep 60;
 		};
-	}];
+		"pointVictory" call BIS_fnc_endMissionServer;
+	};
 };
 
 if(isNil "twc_attachmentgap") then{

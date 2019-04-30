@@ -13,7 +13,7 @@ new line = <br />
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>TWC NEWS</t>"; 
 
- _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />A fix has been put in for getting restricted when joining already formed attachments. Let Hobbs know if this persists<br /><br />SF Jackals/Coyotes now come with a fire support weapon in the inventory, either a Minimi or a GPMG<br /><br />Gear that is dropped in the field such as backpacks should no longer be deleted as long as its outside base. Equipment discarded inside base will despawn after 10 minutes";
+ _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />Gear that is dropped in the field such as backpacks should no longer be deleted as long as its outside base. Equipment discarded inside base will despawn after 10 minutes";
  
  _titlemem = "";
  _textmem = "";

@@ -37,6 +37,7 @@ _veh AddWeaponCargoGlobal ["UK3CB_BAF_Tripod",1];
 
 //supplies
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",6];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",8];
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",5];
@@ -62,8 +63,8 @@ _veh addItemCargoGlobal ["ACE_elasticBandage",25];
 _veh addItemCargoGlobal ["ACE_quikclot",25];
 _veh addItemCargoGlobal ["ACE_packingBandage",25];
 _veh addItemCargoGlobal ["ACE_personalAidKit",1];
-_veh addItemCargoGlobal ["ACE_salineIV_250",20];
-_veh addItemCargoGlobal ["ACE_salineIV_500",20];
+_veh addItemCargoGlobal ["ACE_salineIV_250",10];
+_veh addItemCargoGlobal ["ACE_salineIV_500",10];
 _veh addItemCargoGlobal ["ACE_atropine",5];
 _veh addItemCargoGlobal ["ACE_epinephrine",10];
 _veh addItemCargoGlobal ["ACE_morphine",10];
