@@ -2,7 +2,16 @@
 //spawn a mortar truck kinda near base that players sometimes trip with the onplayerrespawn system
 _mortartruck = "RHS_Ural_Open_Civ_01" createvehicle [0,0,0];
 
-_pos = [getmarkerpos "base",[1000,3500],random 360,0, [1,250], [50,(typeof _mortartruck)]] call SHK_pos;
+//_pos = [getmarkerpos "base",[1000,3500],random 360,0, [1,250], [50,(typeof _mortartruck)]] call SHK_pos;
+
+maptrg = createTrigger ["EmptyDetector", [worldSize / 2, worldsize / 2, 0]];
+maptrg setTriggerArea [worldSize / 2, worldSize / 2, 0, true];
+
+_pos = [getmarkerpos "base", 1000, 3500, 7, 0, 0.4, 0] call BIS_fnc_findSafePos;
+
+while {!(_pos inarea maptrg)} do {
+	_pos = [getmarkerpos "base", 1000, 3500, 7, 0, 0.4, 0] call BIS_fnc_findSafePos;
+};
 
 _mortartruck setpos _pos;
 

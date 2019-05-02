@@ -18,8 +18,9 @@
 params ["_mortar"];
 
 waituntil {!(isnil "twc_mortar_targetlist")};
-waituntil {(count twc_mortar_targetlist) > 0};
-
+while {(count twc_mortar_targetlist) == 0} do {
+	sleep 10;
+};
 
 _targetpos = twc_mortar_targetlist select 0;
 
