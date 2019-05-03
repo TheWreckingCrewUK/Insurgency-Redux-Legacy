@@ -42,19 +42,21 @@ twc_serstarttime = time + 10000;
 
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
-/*
-if (!(isnull _corpse)) then {
+
+if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 	[_corpse] spawn {
 		params ["_corpse"];
 		_corpse setvehicleammo 0;
+		clearweaponcargoglobal _corpse;
+		clearitemcargoglobal _corpse;
 	};
 };
-*/
-twc_lastspawned = time;
+
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
 	player setvehicleammo 0.2;
 };
 
+twc_lastspawned = time;
 if (twc_firstspawned > 1) exitwith {};
 twc_firstspawned = time;
 twc_serstarttime = time;
@@ -124,7 +126,7 @@ publicVariable "twc_quadbikecount";
 
 if (["pilot", typeof player] call BIS_fnc_inString) then {
 
-	if (typeOf vehicle player == "Modern_British_JetPilot") then {
+	//if (typeOf vehicle player == "Modern_British_JetPilot") then {
 
 		//if (( count(allPlayers - entities "HeadlessClient_F")) >= 6) then 
 		if (( count(allPlayers - entities "HeadlessClient_F")) >= 0) then 
@@ -134,11 +136,11 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 		{
 			hint "You're a pilot, but there are less than 6 people on the server so you can't spawn or fly anything. Choose another slot.";
 		};
-		};
+		//};
 	
 	player CreateDiaryRecord ["Diary",["Pilot", 
  "As a pilot you can move and paradrop very large amounts of ammunition and vehicles, as well as provide combat close air support to troops on the ground. You can spawn aircraft at the main spawner that the infantry uses for ammunition spawning.  
-<br /><br />Your choice of aircraft is limited based on how many people are in the server, and the spawner will only show you aircraft that you have the playercount to fly at that point. This has a cooldown, and you can return aircraft with ace interaction to mitigate this. If you're a fixed wing pilot spawning a plane, that plane will appear on the apron, not the spawn helipad." 
+<br /><br />Your choice of aircraft is limited based on how far the mission has progressed, and the spawner will only show you aircraft that you have the ability to fly at that point. If you're a fixed wing pilot spawning a plane, that plane will appear on the apron, not the spawn helipad." 
 ]]; 
 };
 

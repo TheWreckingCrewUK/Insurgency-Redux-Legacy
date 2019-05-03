@@ -3,7 +3,7 @@
  if (typeOf vehicle player in ["Modern_ger_Base", "Modern_ger_Base_d"]) then {
     _tmp_weapons =
     [
-        ["CUP_arifle_G36A",1],
+        ["twc_G36A_acog",1],
         ["rhs_weap_M136_hedp",2]
     ];
 
@@ -25,7 +25,7 @@
  if (typeOf vehicle player in ["Modern_ger_medic", "Modern_ger_medic_d"]) then {
     _tmp_weapons =
     [
-        ["CUP_arifle_G36A",1]
+        ["twc_G36A_acog",1]
     ];
 
 	_tmp_magazines =
@@ -57,7 +57,7 @@
  if (typeOf vehicle player in ["Modern_ger_grenadier", "Modern_ger_grenadier_d"]) then {
     _tmp_weapons =
     [
-        ["CUP_arifle_AG36",1]
+        ["twc_G36A_AG36_acog",1]
     ];
 
 	_tmp_magazines =
@@ -84,6 +84,7 @@
     [
         ["twc_HK_MG3",1],
         ["twc_MG36_eotech",1],
+        ["twc_MG36_acog",1],
         ["twc_HK_MG4",1]
     ];
 
@@ -108,7 +109,7 @@
  if (typeOf vehicle player in ["Modern_ger_rifleman_at", "Modern_ger_rifleman_at_d"]) then {
     _tmp_weapons =
     [
-        ["CUP_arifle_G36A",1]
+        ["twc_G36A_acog",1]
     ];
 
 	_tmp_magazines =
@@ -130,7 +131,7 @@
     _tmp_weapons =
     [
         ["ACE_Vector",1],
-        ["CUP_arifle_G36A",1]
+        ["twc_G36A_acog",1]
     ];
 
 	_tmp_magazines =
@@ -157,7 +158,7 @@
     _tmp_weapons =
     [
         ["ACE_Vector",1],
-        ["CUP_arifle_G36A",1]
+        ["twc_G36A_acog",1]
     ];
 
 	_tmp_magazines =
