@@ -30,7 +30,7 @@ if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 		_veh = _x;
 		#include "vehicles\planespecifics.sqf";
 		#include "vehicles\helispecifics.sqf";
-		#include "vehicles\armourspecifics.sqf";
+		//#include "vehicles\armourspecifics.sqf";
 
 	} foreach _list;
 
@@ -65,7 +65,7 @@ _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]);
 		_veh = _x;
 		#include "vehicles\planespecifics.sqf";
 		#include "vehicles\helispecifics.sqf";
-		#include "vehicles\armourspecifics.sqf";
+		//#include "vehicles\armourspecifics.sqf";
 
 	} foreach _list;
 
@@ -117,7 +117,7 @@ _tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 			_veh = _x;
 			#include "vehicles\planespecifics.sqf";
 			#include "vehicles\helispecifics.sqf";
-			#include "vehicles\armourspecifics.sqf";
+			//#include "vehicles\armourspecifics.sqf";
 
 			} foreach _list;
 

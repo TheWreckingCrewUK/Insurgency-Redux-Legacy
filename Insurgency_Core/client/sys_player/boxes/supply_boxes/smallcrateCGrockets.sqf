@@ -25,7 +25,7 @@ hint "The Rockets have been spawned. 1 hour remaining until more become availabl
 twc_javtubetimeout = (time + 3600);
  publicVariable "twc_javtubetimeout";
 
-_boxClass = "UK3CB_BAF_Box_WpsLaunch_Javelin";
+_boxClass = "twc_public_launcherbox_small_maaws";
 
 _box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 

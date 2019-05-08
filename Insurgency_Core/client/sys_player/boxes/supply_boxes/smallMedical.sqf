@@ -8,7 +8,7 @@
 */
 
 
-_boxClass = "ACE_medicalSupplyCrate_advanced";
+_boxClass = "twc_public_medicalbox_small";
 
 _box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) then {
 (getPos AmmoBoxSpawner)} else 

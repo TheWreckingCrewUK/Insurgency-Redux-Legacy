@@ -26,7 +26,7 @@ hint _spawntext;
  publicVariable "twc_specjavcount";
 
 
-_boxClass = "UK3CB_BAF_Box_WpsLaunch_Javelin";
+_boxClass = "twc_public_launcherbox_small_jav";
 
 _box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 

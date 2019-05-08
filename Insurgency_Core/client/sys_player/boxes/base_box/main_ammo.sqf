@@ -63,6 +63,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["CUP_B_Predator_Radio_MTP",2],
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_SL_H",1]
 	];
 	
@@ -109,6 +111,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["CUP_B_Predator_MTP",2],
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
@@ -142,6 +146,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["CUP_B_Predator_MTP",2],
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
@@ -179,6 +185,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["CUP_B_Predator_MTP",2],
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_Rifleman",1]
 	];
 	
@@ -218,6 +226,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_2IC_H",1]
 	];
 	
@@ -253,6 +262,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["CUP_B_Predator_MTP",2],
+		["twc_mtp_belt",2],
 		["TWC_Backpack_UKSF_Marksman",1]
 	];
 	
@@ -975,7 +986,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
 		["UK3CB_BAF_L129A1_FGrip_Bipod",1],
-		["ACE_Vector",1],
+		["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -1028,7 +1039,7 @@ if (g_class == "BAF_EOD_SL") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1],
 		["ACE_VMM3",1]
     ];
@@ -1068,7 +1079,7 @@ if (g_class == "BAF_EOD_TECH") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1],
 		["ACE_VMM3",1]
     ];
@@ -1145,7 +1156,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -1294,7 +1305,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     _tmp_weapons =
     [
 		["rhs_weap_m24sws",1],
-		["ACE_Vector",1],
+		["ACE_Vector",0],
 		["rhsusf_weap_m9",1]
     ];
 
@@ -1327,7 +1338,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
     _tmp_weapons =
     [
 		["rhs_weap_m4_carryhandle_pmag",1],
-		["ACE_Vector",1],
+		["ACE_Vector",0],
 		["rhsusf_mag_15Rnd_9x19_JHP",1]
     ];
 
@@ -1674,7 +1685,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
 		["CUP_srifle_M40A3",1],
-		["ACE_Vector",1],
+		["ACE_Vector",0],
 		["rhsusf_weap_m9",1]
     ];
 
@@ -1708,7 +1719,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     [
         ["rhs_weap_m16a4_grip",1],
 		["rhs_weap_m4_carryhandle_pmag",1],
-		["ACE_Vector",1],
+		["ACE_Vector",0],
 		["rhsusf_mag_15Rnd_9x19_JHP",1]
     ];
 
@@ -2590,7 +2601,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
  if (typeOf vehicle player == "Modern_British_VehicleCommander") then {
     _tmp_weapons =
     [
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1]
 	];
 
@@ -3582,7 +3593,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
 	[
         ["UK3CB_BAF_L22A2",1],
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
 		["rhsusf_weap_glock17g4",1]
     ];
 
@@ -3615,7 +3626,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
 	[
         ["UK3CB_BAF_L22A2",1],
-        ["ACE_Vector",1],
+        ["ACE_Vector",0],
         ["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
 		["rhsusf_weap_glock17g4",1]
