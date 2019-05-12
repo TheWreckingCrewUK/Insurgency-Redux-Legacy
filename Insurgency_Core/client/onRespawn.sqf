@@ -35,6 +35,9 @@ if (!((backpack player) == "")) then {
 			_unit allowsprint false;
 			hint "This Role is not used to fighting with a Backpack. You are unable to Sprint";
 		};
+		if (_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
+			_unit allowsprint true;
+		};
 		
 		_playerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
 

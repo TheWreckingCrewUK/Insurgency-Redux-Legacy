@@ -39,6 +39,8 @@ twc_firstspawned = 0;
 twc_lastspawned = 0;
 twc_serstarttime = time + 10000;
 
+twc_pubcamo = 500;
+
 
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
@@ -51,6 +53,7 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 		clearitemcargoglobal _corpse;
 	};
 };
+player setunittrait ["camouflageCoef", twc_pubcamo];
 
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
 	player setvehicleammo 0.2;
@@ -60,6 +63,12 @@ twc_lastspawned = time;
 if (twc_firstspawned > 1) exitwith {};
 twc_firstspawned = time;
 twc_serstarttime = time;
+
+
+player addEventHandler ["GetInMan", {
+	params ["_unit", "_role", "_vehicle", "_turret"];
+	_vehicle setunittrait ["camouflageCoef", twc_pubcamo];
+}];
 
 vehicle player setVariable ["twc_isenemy",0, true];
 

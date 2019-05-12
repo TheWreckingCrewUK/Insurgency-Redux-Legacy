@@ -48,6 +48,7 @@ if(isNil "twc_campaignmode") then{
 
 if(isNil "twc_basepos") then{
 	twc_basepos = getmarkerpos "base";
+	publicVariable "twc_basepos";
 };
 
 if(isNil "twc_mortar_targetlist") then{

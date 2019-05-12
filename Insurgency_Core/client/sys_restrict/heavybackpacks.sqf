@@ -30,6 +30,9 @@ player addEventHandler ["Take", {
 	if (_item isKindOf ["Bag_Base", configFile >> "CfgVehicles"]) then{
 		_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;
 		
+		if (_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
+			_unit allowsprint true;
+		};
 		if (_playerbackpack == "") exitwith {
 			_unit allowsprint false;
 			hint "This Role is not used to fighting with a Backpack. You are unable to Sprint";
