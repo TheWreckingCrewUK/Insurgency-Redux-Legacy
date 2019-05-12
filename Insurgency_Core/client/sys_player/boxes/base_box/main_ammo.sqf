@@ -316,7 +316,6 @@ if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
     _tmp_weapons =
     [
 		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
-		["TWC_CUP_smg_MP5SD6_clean",1],
 		["UK3CB_BAF_L107A1",1]
     ];
 
@@ -343,7 +342,6 @@ if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
     ];
 	_tmp_backpacks = 
 	[ 
-		["twc_genbackPack_oli",1]
 	];
 	
 };
@@ -353,6 +351,7 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
     [
 		["UK3CB_BAF_L107A1",1],
 		["TWC_UK3CB_BAF_L119A1_CQB_EOTECH",1],
+		["TWC_CUP_smg_MP5SD6_clean",1],
 		["rhs_weap_M590_5RD",1]
     ];
 
@@ -376,6 +375,7 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["twc_oli_belt",1],
 		["twc_genbackPack_oli",1]
 	];
 	
@@ -406,6 +406,7 @@ if (typeOf vehicle player in ["2000_UKSF_Base"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["twc_oli_belt",1],
 		["twc_genbackPack_oli",1]
 	];
 	
@@ -440,6 +441,7 @@ if (typeOf vehicle player in ["2000_UKSF_Grenadier"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
+		["twc_oli_belt",1],
 		["twc_genbackPack_oli",1]
 	];
 	
@@ -474,7 +476,7 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
     ];
 				_tmp_backpacks = 
 	[ 
-		["twc_genbackPack_oli",1]
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 	
 };
@@ -514,6 +516,7 @@ if (typeOf vehicle player in ["2000_UKSF_Medic"]) then {
 	];
 				_tmp_backpacks = 
 	[ 
+		["twc_oli_belt",1],
 		["twc_genbackPack_oli",1]
 	];
 	
