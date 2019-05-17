@@ -21,6 +21,7 @@ _light attachto [_cram, [0.7,-2.1,-0.93]];
 	while {(alive _cram)} do {
 		waituntil {(((_cram ammo currentMuzzle (gunner _cram)) == 0) && (alive _cram) && (_cram getvariable ["cram_alarm", 0] == 1)) || (!alive _cram)};
 		if (!alive _cram) exitwith {};
+		sleep 5;
 		while {((_cram ammo currentMuzzle (gunner _cram)) == 0) && (alive _cram) && (_cram getvariable ["cram_alarm", 0] == 1)} do {
 			sleep 1;
 			if ((_cram ammo currentMuzzle (gunner _cram)) == 0) then {

@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2487;
+		nextID=2504;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7935.1748,297.80362,1847.4358};
-		dir[]={0.74475116,-0.054526255,0.66511941};
-		up[]={0.040671907,0.99851233,0.036323112};
-		aside[]={0.66611087,-2.1280721e-007,-0.74586195};
+		pos[]={7923.7852,332.47729,1791.8455};
+		dir[]={0.18899077,-0.71524948,0.67284209};
+		up[]={0.1934171,0.69886941,0.68860036};
+		aside[]={0.96275061,-1.1059456e-008,-0.27042231};
 	};
 };
 binarizationWanted=0;
@@ -12839,7 +12839,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=253;
+		items=254;
 		class Item0
 		{
 			dataType="Marker";
@@ -24963,7 +24963,6 @@ class Mission
 			};
 			id=2461;
 			type="rhsusf_M1220_M2_usarmy_d";
-			atlOffset=0.00012207031;
 		};
 		class Item239
 		{
@@ -24981,7 +24980,6 @@ class Mission
 			};
 			id=2462;
 			type="rhsusf_M1220_M2_usarmy_d";
-			atlOffset=0.00012207031;
 		};
 		class Item240
 		{
@@ -25494,6 +25492,179 @@ class Mission
 			{
 			};
 			id=2477;
+		};
+		class Item253
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7931.6543,296.04144,1813.3132};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2496;
+					type="Modern_British_Blank";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7934.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2497;
+					type="Modern_British_Blank";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7936.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2498;
+					type="Modern_British_Blank";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7938.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2499;
+					type="Modern_British_Blank";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7940.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2500;
+					type="Modern_British_Blank";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7942.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2501;
+					type="Modern_British_Blank";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7944.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2502;
+					type="Modern_British_Blank";
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7946.6543,296.04144,1810.3132};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2503;
+					type="Modern_British_Blank";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2487;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Blank Infantry";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

@@ -56,11 +56,12 @@ if (isNil "InsP_cacheGroup") then {
 		_trg2 setTriggerStatements ["vehicle twc_terp in thislist","[getpos thistrigger, _x] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
 				
 		
-		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 10];
-		_x AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",random 10];
+		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 5];
+		_x AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",random 5];
 		_x AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",random 10];
-		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 5];
-		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 5];
+		_x AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",random 10];
+		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 2];
+		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 2];
 
 		
 		

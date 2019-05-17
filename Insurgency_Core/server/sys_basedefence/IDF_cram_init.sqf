@@ -9,8 +9,11 @@ if (_cram getvariable ["craminit", 0] == 0) then {
 [_cram] spawn twc_fnc_cram_init_2;
 };
 
+_cram disableai "fsm";
+_cram disableai "target";
 _cram disableai "autotarget";
 //systemchat "cram init1";
+_cram setvehicleammo 0;
 
 if (count twc_cram_targetlist == 0) then {_cram dowatch objnull;
 _cram lookat objnull;
@@ -65,6 +68,10 @@ _cram disableai "fsm";
 _cram lookat [(_pos select 0),(_pos select 1),(_pos select 2)+300];
 
 
+
+if ((_cram distance twc_basepos) < 400) then {
+_cram setvehicleammo 1;
+};
 
 while {((_cram animationPhase "sightscorrectionv_vertical") < 0.1)
 
@@ -159,10 +166,6 @@ _complete = 1;
 
 
 };
-};
-
-if ((_cram distance twc_basepos) < 400) then {
-_cram setvehicleammo 1;
 };
 
 [_cram] spawn twc_fnc_cram_init;

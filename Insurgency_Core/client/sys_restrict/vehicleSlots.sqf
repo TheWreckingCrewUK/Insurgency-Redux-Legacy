@@ -6,6 +6,8 @@ _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_Brit
 
 _armourcommanders = ["Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
 
+_sf = ["Modern_UKSF_Base","Modern_UKSF_Pointman","Modern_UKSF_2IC","Modern_UKSF_Squadleader","Modern_UKSF_Grenadier","Modern_UKSF_Marksman","Modern_UKSF_Medic","Modern_British_Sniper_coin","Modern_British_Spotter_coin"];
+
 _list=[
 		["CUP_B_M119_US", [
 		["gunner", 
@@ -482,6 +484,26 @@ _list=[
 			_crewchiefs
 		]],3
 	],
+		["B_Heli_Transport_01_F",[ 
+		["driver", 
+			_pilots
+		],
+		[[0], 
+			_crewchiefs
+		],
+		[[1], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[2], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[3], 
+			_sf + _pilots + _crewchiefs
+		],
+		["cargo", 
+			_sf + _pilots + _crewchiefs
+		]],3
+	],
 	
 		["RHS_UH60M_ESSS",[ 
 		["driver", 
@@ -500,6 +522,14 @@ _list=[
 			_crewchiefs
 		]],3
 	],
+		["CUP_B_MH47E_USA",[ 
+		["driver", 
+			_pilots
+		],
+		[[2], 
+			_crewchiefs
+		]],3
+	],
 	
 		["RHS_MELB_H6M",[ 
 		["driver", 
@@ -515,6 +545,27 @@ _list=[
 		],
 		["gunner", 
 			_crewchiefs
+		],
+		[[1], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[2], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[3], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[4], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[5], 
+			_sf + _pilots + _crewchiefs
+		],
+		[[6], 
+			_sf + _pilots + _crewchiefs
+		],
+		["cargo", 
+			_sf + _pilots + _crewchiefs
 		]],3
 	],
 		["RHS_MELB_AH6M_M",[ 
@@ -745,8 +796,12 @@ TWC_fnc_notAllowedInSeat = {
 	if (_freePassengerSpace > 0) exitWith {
 		_veh = vehicle _playerUnit;
 		moveOut _playerUnit;
-		_playerUnit moveInCargo _veh;
-		_text = "<br />You are not qualified for that slot. Take a seat in back.";
+		_text = "<br />You are not qualified for that slot.";
+		if ((player getvariable ["twc_lastkickedfromveh", -999]) < (time -5)) then {
+			_playerUnit moveInCargo _veh;
+			_text = "<br />You are not qualified for that slot. Take a seat in back.";
+		};
+		player setvariable ["twc_lastkickedfromveh", time];
 		hint parseText (_title + _text);
 	};
 	

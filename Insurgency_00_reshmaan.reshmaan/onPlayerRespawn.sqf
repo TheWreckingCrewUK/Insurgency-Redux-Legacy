@@ -7,7 +7,7 @@
 	player removeMagazines _x;
 }forEach ["IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanBig_Remote_Mag","IEDUrbansmall_Remote_Mag"];
 //If player isn't west then kick them. Apparently players respawning as civ is an issue?
-if(side player != west)then{
+if(side player == civilian) then{
 	call BIS_fnc_endMission;
 };
 

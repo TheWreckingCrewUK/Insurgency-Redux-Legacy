@@ -21,6 +21,8 @@ if(_spawnCivs)then{
 	[_pos, _civnum, _civradius] call twc_spawnCiv;
 };
 
+
+[_pos] remoteExec ["twc_fnc_bluforreport"];
 _enemies = 0;
 _random = random 100;
 if(_random < (2.5 * TWC_insMorale) || _forceSpawn)then{

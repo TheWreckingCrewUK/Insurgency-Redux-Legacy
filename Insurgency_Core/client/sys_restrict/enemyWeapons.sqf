@@ -28,6 +28,8 @@ twc_restrictedSecondaryWeapons = ["CUP_launch_RPG7V"];
 
 player addEventHandler ["Take", {
 	params["_unit","_container","_item"];
+	if ((side player) == east) exitwith {};
+	
 		if (_item in twc_restrictedPrimaryWeapons) then {
 		execvm "Insurgency_Core\client\sys_restrict\restrictedprimary.sqf";
 	};
@@ -37,13 +39,30 @@ player addEventHandler ["Take", {
 					if (random 1>0.98) then {
 			"R_60mm_HE" createVehicle (getPos player);
 			hint "WEAPON DETONATION";	
-			sleep 0.5;
 			player removeweapon secondaryWeapon player;
 		};
 		};
 
 		
 	
+}];
+
+player addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	if ((side player) != east) exitwith {};
+		if (_weapon == secondaryWeapon player) then {
+			if (random 1>0.99) then {
+		deleteVehicle (_this select 6);
+			"R_60mm_HE" createVehicle (getPos player);
+			hint "WEAPON FAILURE";	
+			player removeweapon secondaryWeapon player;		
+		} else {
+			if (_weapon != "CUP_launch_RPG7V") then {
+			systemchat "bang";
+				_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
+			};
+		};
+	};
 }];
 
 /*

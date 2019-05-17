@@ -951,7 +951,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
  if (typeOf vehicle player == "Modern_British_Sniper_coin") then {
     _tmp_weapons =
     [
-		["twc_l115a3_wd",1],
 		["UK3CB_BAF_L107A1",1],
 		["rhsusf_weap_glock17g4",1]
     ];
@@ -987,9 +986,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
  if (typeOf vehicle player == "Modern_British_Spotter_coin") then {
     _tmp_weapons =
     [
-		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
-		["UK3CB_BAF_L129A1_FGrip_Bipod",1],
-		["ACE_Vector",0],
+		["ACE_Vector",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1]
     ];

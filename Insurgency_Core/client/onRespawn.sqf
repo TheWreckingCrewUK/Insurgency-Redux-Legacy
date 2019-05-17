@@ -7,10 +7,13 @@ if (["interpreter", typeof player] call BIS_fnc_inString) then {
 	
 	//make the player middle eastern if they spawn as ANA. Sounds racist, but otherwise it looks dumb
 _me = player;
-if (faction player == "ana_units") then {
+if ((faction player == "ana_units") || ((side player) == east)) then {
 [_me, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _me] 
 };
-
+if ((side player) == east) then {
+	player setVariable ["twc_isenemy",1, true];
+	[player] call ([twc_loadout_insurgent_rifleman,twc_loadout_insurgent_rifleman,twc_loadout_insurgent_medic,twc_loadout_insurgent_grenadier,twc_loadout_insurgent_sniper,twc_loadout_insurgent_MG,twc_loadout_insurgent_RPG] call bis_fnc_selectrandom);
+};
 /*
 _nobackpack = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_nobackpack");
 
@@ -31,11 +34,11 @@ if (!((backpack player) == "")) then {
 
 	if (!((backpack player) == (_playerbackpack))) then {
 			
-		if (_playerbackpack == "") then {
+		if ((_playerbackpack == "") || ((side player) == east)) then {
 			_unit allowsprint false;
-			hint "This Role is not used to fighting with a Backpack. You are unable to Sprint";
+			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
 		};
-		if (_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
+		if ((backpack player) isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
 			_unit allowsprint true;
 		};
 		
@@ -46,7 +49,7 @@ if (!((backpack player) == "")) then {
 		_newload = [(configFile >> "CfgVehicles" >> _newbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
 		
 		if (_newload > (_playerload * 1.1)) then {
-			hint "This Backpack is bigger that what this role is used to fighting with. You are unable to Sprint";
+			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
 			_unit allowsprint false;
 		};
 			

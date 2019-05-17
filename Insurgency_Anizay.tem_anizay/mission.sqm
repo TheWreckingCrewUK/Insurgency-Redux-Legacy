@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2436;
+		nextID=2445;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8957.832,74.593376,7088.0298};
-		dir[]={0.88526553,-0.30312473,-0.35289377};
-		up[]={0.28160426,0.95295215,-0.11225563};
-		aside[]={-0.37031624,-9.1735274e-007,-0.92897099};
+		pos[]={8950.7246,88.852196,7034.0181};
+		dir[]={0.24114744,-0.48618591,0.83999282};
+		up[]={0.13416108,0.87385732,0.4673267};
+		aside[]={0.9612357,-8.9965761e-007,-0.27595416};
 	};
 };
 binarizationWanted=0;
@@ -54,13 +54,14 @@ addons[]=
 	"rhsusf_c_Caiman",
 	"CUP_WheeledVehicles_Mastiff",
 	"CUP_WheeledVehicles_Wolfhound",
-	"rhsusf_vehicles"
+	"rhsusf_vehicles",
+	"twc_1990"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=28;
+		items=29;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -231,6 +232,11 @@ class AddonsMetaData
 		{
 			className="rhsusf_vehicles";
 			name="rhsusf_vehicles";
+		};
+		class Item28
+		{
+			className="twc_1990";
+			name="twc_1990";
 		};
 	};
 };
@@ -12747,7 +12753,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=132;
+		items=133;
 		class Item0
 		{
 			dataType="Marker";
@@ -21787,6 +21793,181 @@ class Mission
 			{
 			};
 			id=2431;
+		};
+		class Item132
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8950.9033,69.330238,7054.8569};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2437;
+					type="2000_British_Blank";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8953.9033,68.142296,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2438;
+					type="2000_British_Blank";
+					atlOffset=7.6293945e-006;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8955.9033,67.770401,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2439;
+					type="2000_British_Blank";
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8957.9033,67.510391,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2440;
+					type="2000_British_Blank";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8959.9033,67.205887,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2441;
+					type="2000_British_Blank";
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8961.9033,67.088043,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2442;
+					type="2000_British_Blank";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8963.9033,66.961594,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2443;
+					type="2000_British_Blank";
+					atlOffset=-7.6293945e-006;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8965.9033,66.873856,7051.8569};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2444;
+					type="2000_British_Blank";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2436;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Blank Infantry";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

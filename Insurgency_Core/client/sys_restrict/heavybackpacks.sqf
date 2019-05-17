@@ -33,7 +33,7 @@ player addEventHandler ["Take", {
 		if (_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
 			_unit allowsprint true;
 		};
-		if (_playerbackpack == "") exitwith {
+		if ((_playerbackpack == "") || ((side player) == east)) exitwith {
 			_unit allowsprint false;
 			hint "This Role is not used to fighting with a Backpack. You are unable to Sprint";
 		};

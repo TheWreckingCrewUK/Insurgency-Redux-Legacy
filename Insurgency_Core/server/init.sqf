@@ -180,6 +180,8 @@ townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVill
 townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
+publicVariable "townLocationArray";
+
 //Event Handler to stop players from  airdropping crates.
 ["ace_cargoUnloaded", {
 	params ["_item", "_vehicle", ["_dropStyle", ""]];

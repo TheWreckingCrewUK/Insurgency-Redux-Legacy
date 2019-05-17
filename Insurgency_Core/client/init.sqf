@@ -106,6 +106,13 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 
 
 
+if (["uksf", typeof player] call BIS_fnc_inString) then {
+	_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+	if (_gr == "cag") then {
+		call twc_loadout_sfgroup_cag;
+	};
+};
+
 if (["fst", typeof player] call BIS_fnc_inString) then {
 {
 _returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
@@ -117,6 +124,11 @@ publicVariable "twc_coyotecount";
 [_x,0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
 
 } foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
+_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+if (_gr == "us") then {
+	[player] call twc_loadout_fstgroup_us_switch;
+};
+
 };
 
 if (["logi", typeof player] call BIS_fnc_inString) then {
@@ -182,6 +194,16 @@ The large vehicles require a full crew of 3 to operate, but the vehicles without
 
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"]) then {
+	_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+	if (_gr == "cag") then {
+		[player] call twc_loadout_snipergroup_cag_switch;
+	};
+	if (_gr == "us") then {
+		[player] call twc_loadout_snipergroup_us_switch;
+	};
+	if (_gr == "usmc") then {
+		[player] call twc_loadout_snipergroup_usmc_switch;
+	};
 	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 };
 

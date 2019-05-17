@@ -1,5 +1,5 @@
 //sleep 5;
-//if(isserver)exitWith{systemchat "role restrict skipped for server";};
+if(isserver)exitWith{systemchat "role restrict skipped for server";};
 
 
 twc_fnc_helicheck = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_restrict\helicheck.sqf";
@@ -63,6 +63,12 @@ execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";
 if ((["uksf", typeof player] call BIS_fnc_inString)) then {
 
 execvm "Insurgency_Core\client\sys_restrict\fullsfteam.sqf";
+
+};
+
+if ((["blank", typeof player] call BIS_fnc_inString)) then {
+
+execvm "Insurgency_Core\client\sys_restrict\blank.sqf";
 
 };
 

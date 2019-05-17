@@ -1,9 +1,10 @@
 
 params ["_shell", "_override"];
 
-if (isnil "crampresent") exitwith {
+if ((isnil "crampresent") && (crampresent == 0)) exitwith {
 //systemchat "no cram"
 };
+
 
 cram disableai "autotarget";
 
@@ -21,18 +22,24 @@ _complete = 0;
 		waituntil {(idfon == 1)}};
 
 
-//systemchat "cram has permission";
 _dir = cram getreldir _shell;
 
+cram setvehicleammo 1;
+
+//systemchat format ["%1", _shell];
+
 _pos = getpos _shell;
+
+cram disableai "autotarget";
+cram disableai "autocombat";
+cram disableai "fsm";
+
 cram lookat [(_pos select 0),(_pos select 1),(_pos select 2)+300];
 
 
-while {((cram animationPhase "sightscorrectionv_vertical") < 0.1) && (!(
-(((((direction cram) - _dir) < 20) && (((direction cram) - _dir) > -1)) || ((((direction cram) - _dir) > -20) && (((direction cram) - _dir) < 1))))
+while {((cram animationPhase "sightscorrectionv_vertical") < 0.1)
 
-
-)} do{
+} do{
 _pos2 = getpos _shell;
 if (!(str _pos2 == "[0,0,0]")) then {_pos = _pos2};
 cram lookat [(_pos select 0),(_pos select 1),(_pos select 2)+100];
@@ -40,12 +47,17 @@ sleep 0.2;
 //systemchat "cram is targetting";
 };
 sleep 1;
-cramactive = 1;
 
+
+//systemchat "cram is ready";
 _time = time;
 
-Waituntil {((getposatl _shell select 2) > 60)|| (((vectorMagnitude (velocity _shell)) > 160) && ((getposatl _shell select 2) > 20))};
+Waituntil {((((getposatl _shell select 2) > 60)|| (((vectorMagnitude (velocity _shell)) > 160) && ((getposatl _shell select 2) > 20))) && ((_shell distance cram) < 2000)) || !alive _shell};
 
+_size = sizeof typeof _shell;
+if (!alive _shell )exitwith {cram lookat objnull};
+cramactive = 1;
+cram setvehicleammo 1;
 _chance = 18;
 if ((vectorMagnitude (velocity _shell)) > 160) then {_chance = 15};
 
@@ -64,27 +76,29 @@ if (!(str _pos2 == "[0,0,0]")) then {_pos = _pos2};
 
 
 [cram, currentweapon cram] call BIS_fnc_fire;
-
+systemchat "woo";
+cram setvehicleammo 1;
 sleep 0.001;
 };
+//systemchat format ["%1", (vectorMagnitude (velocity _shell))];
 
+//harder = higher
 
+_chance = ((8 * (1 + ((_shell distance cram)/1000))) * (0.7 + (((vectorMagnitude (velocity _shell)) + 1) / 250)) / (1 + (_size / 15)));
+systemchat format ["%1", sizeof typeof _shell];
 if (_D20 > _chance) then {
 [_shell] spawn {
 params ["_shell"];
 sleep 1;
 _pos = getpos _shell;
 
-
-//systemchat format ["%1", _pos];
-
-
+systemchat "shell defeated";
 deletevehicle _shell;
 'rhs_ammo_ptb1500' createvehicle _pos;
 _complete = 1;
 
 		if (1 == 1) exitwith {
-cram setvehicleammo 1;
+cram setvehicleammodef 1;
 sleep 15;
 if ((cram ammo (currentWeapon cram)) == 1550) then {
 //cram lookat objnull;cram doWatch objnull;
@@ -102,11 +116,13 @@ if (cramactive == 0) then {cram lookat objnull;cram doWatch objnull;};
 };
 sleep 0.5;
 
-cram setvehicleammo 1;
 
 //systemchat "fire complete";
 
 sleep 15;
 if ((cram ammo (currentWeapon cram)) == 1550) then {
 //cram lookat objnull;cram doWatch objnull;
-cramactive = 0};
+cramactive = 0;
+
+cram setvehicleammo 0;
+};

@@ -1,7 +1,7 @@
 if (idfon == 0) then {
 idfon = 1;
 publicvariable "idfon";
-sleep 1;
+
 //systemchat "Alarm On";
 	
 //_soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;
@@ -11,6 +11,9 @@ sleep 1;
 
 //	[idfalarm, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
 //call TWC_fnc_idfsiren;	
+
+
+lastidftime = time;
 if (twc_is90 == 0) then {
 {
 	[_x, "TWC_sound_idfsiren"] call CBA_fnc_globalSay3d;
@@ -49,8 +52,10 @@ publicvariable "idfreported";
 	sleep 60;
 		basesafe = 0;
 	publicvariable "idfsafe";
-
-terminate execVM "insurgency_core\server\sys_basedefence\IDF_Alarm.sqf";
+	
+	
+waituntil {((lastidftime + 240) < time) && basemode == 0};
+				execVM "insurgency_core\server\sys_basedefence\IDF_Clear.sqf";
 };
 
 

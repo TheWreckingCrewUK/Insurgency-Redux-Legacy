@@ -61,7 +61,7 @@ waitUntil{scriptDone _script};
 
 badTownArray = ["iedrestrictionzone"];
 
-[missionNamespace,"base","Main Base"] call BIS_fnc_addRespawnPosition;
+[west,"base","Main Base"] call BIS_fnc_addRespawnPosition;
 
 //defines how close mortar shells have to be predicted to land before tripping the base alarm. FOB kunduz is 40 as a baseline.
 idfbasesize = 70;

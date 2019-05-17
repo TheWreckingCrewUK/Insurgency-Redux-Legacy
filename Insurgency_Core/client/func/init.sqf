@@ -4,7 +4,13 @@ twc_fnc_startcqbrangeserver = compile preprocessfilelinenumbers "Insurgency_Core
 
 twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
 
+twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
+twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
+
+twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
+
 twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
+twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
 
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 
@@ -17,6 +23,5 @@ player addEventHandler ["CuratorObjectPlaced", {
 	};
 	if ((side _entity) == civilian) then {
 		_entity setVariable ["twc_isenemy",0,true];
-		systemchat "civ placed";
 	};
 }];
