@@ -22,17 +22,25 @@ _pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_Brit
 _groups = [];
 _snowflakes=0;
 
-{if (_x == leader _x) then {
-	if (typeof player in _pilots) then {
-		_snowflakes = _snowflakes + 1;
-	};
-	if (!(["infantry", str (group _x)] call BIS_fnc_inString)) then {
-		if (!(["HQ", str (group _x)] call BIS_fnc_inString)) then {
-			_groups pushback [group _x]
+{
+	if (_x == leader _x) then {
+		if (typeof player in _pilots) then {
+			_snowflakes = _snowflakes + 1;
+		};
+		if (!(["infantry", str (group _x)] call BIS_fnc_inString)) then {
+			if (!(["HQ", str (group _x)] call BIS_fnc_inString)) then {
+				if (!(["heli", str (group _x)] call BIS_fnc_inString)) then {
+					if (!(["blank", typeof _x] call BIS_fnc_inString)) then {
+						if (!(["quartermaster", str (typeof _x)] call BIS_fnc_inString)) then {
+							_groups pushback [group _x];
+						};
+					};
+				};
 			};
 		};
 	};
 } foreach allplayers;
+
 
 //testing a potential method of filling servers, if they're the first into the server then they get first pick of attachments
 if ((( count(allPlayers - entities "HeadlessClient_F")) - _snowflakes) <= (count (units group player))) exitwith {
@@ -89,7 +97,31 @@ cutText ["", "Black", 0.001];
 		], 0, 0.22, 5, 0, 0, 2 
     ] spawn bis_fnc_dynamictext;
 	
+	_groups = [];
+	_snowflakes=0;
+
+	{
+		if (_x == leader _x) then {
+			if (typeof player in _pilots) then {
+				_snowflakes = _snowflakes + 1;
+			};
+			if (!(["infantry", str (group _x)] call BIS_fnc_inString)) then {
+				if (!(["HQ", str (group _x)] call BIS_fnc_inString)) then {
+					if (!(["heli", str (group _x)] call BIS_fnc_inString)) then {
+						if (!(["blank", typeof _x] call BIS_fnc_inString)) then {
+							if (!(["quartermaster", str (typeof _x)] call BIS_fnc_inString)) then {
+								_groups pushback [group _x];
+							};
+						};
+					};
+				};
+			};
+		};
+	} foreach allplayers;
+	
 	sleep 5;
+
+	_attachmentcount = count _groups;
 
 };
 

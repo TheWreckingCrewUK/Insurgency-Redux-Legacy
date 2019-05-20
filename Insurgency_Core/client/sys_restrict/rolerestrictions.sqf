@@ -118,8 +118,35 @@ execvm "Insurgency_Core\client\sys_restrict\fulljetteam.sqf";
 };
 
 
+//blacklist for griefers to keep them out of roles where they commonly cause damage to other players' experiences
+twc_blacklist = [
+"76561198175442753",
+"76561198139434614"
+];
 
+if (((getPlayerUID player) in twc_blacklist)) then {
 
+	if((["leader", str (typeof player)] call BIS_fnc_inString) || (["commander", str (typeof player)] call BIS_fnc_inString) || (["2ic", str (typeof player)] call BIS_fnc_inString) || (["pilot", str (typeof player)] call BIS_fnc_inString) || (["chief", str (typeof player)] call BIS_fnc_inString))then{
 
+		cutText ["", "Black", 0.001];
+		player forceWalk true;
+		
+		while {(((getPlayerUID player) in twc_blacklist))}do{
+			removeAllItems player;
+			removeallweapons player;
+			player setvehicleammo 0;
+		cutText ["", "Black", 0.001];
+
+			[
+				"<t size='1.2'>Blacklisted</t><br/><t size='0.6'>You are unable to take command or pilot roles as a result of bad conduct. Perform well in standard roles for an extended period to have this removed</t>", 0, 0.22, 5, 0, 0, 2
+			] spawn bis_fnc_dynamictext;
+			sleep 5;
+		};
+
+		cutText ["","Black IN",1];
+		player forceWalk false;
+	};
+
+};
 
 

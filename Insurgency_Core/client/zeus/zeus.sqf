@@ -1,4 +1,7 @@
 
+
+twc_fnc_management_tp = compile preprocessfilelinenumbers "Insurgency_Core\zeus\func\fnc_management_tp.sqf";
+
 _curator = Zeus;
 _addCivilians = True;
 

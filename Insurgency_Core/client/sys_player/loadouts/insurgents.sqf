@@ -510,7 +510,7 @@ twc_loadout_insurgent_heavygunner = {
 	_unit addVest _vest;
 	
 	for "_i" from 1 to 7 do {_unit addItemToVest (_wep select 1);};
-	_backpack = (["RHS_NSV_Gun_Bag", "RHS_SPG9_Gun_Bag", "CUP_B_RUS_Backpack"] call bis_fnc_selectrandom);
+	_backpack = (["RHS_NSV_Gun_Bag", "CUP_B_RUS_Backpack"] call bis_fnc_selectrandom);
 	_unit addbackpack _backpack;
 	for "_i" from 1 to 2 do {_unit addItemToBackpack "rhs_fim92_mag";};
 	

@@ -287,7 +287,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
 	
-	["CUP_B_CH47F_GB"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
+	["CUP_B_MH47E_GB"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;

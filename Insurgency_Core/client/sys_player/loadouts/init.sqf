@@ -400,7 +400,7 @@ twc_loadout_insurgentswitch = {
 	
 	twc_ehamy = 18;
 	if ((player getvariable ["twc_hasenemyeh", 0]) == 0) then {
-		player addEventHandler ["FiredMan", {_mult = 0.8; _xvar = 15; if ((vehicle player) != player) then {_mult = 0.7; _xvar = 18}; if ((_this select 1) == (secondaryweapon player)) then {_mult = 0.9; _xvar = 12}; _bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random _xvar) - (_xvar / 2)) * _mult), (velocity _bullet select 1) + (((random _xvar) - (_xvar / 2)) * _mult), 	(velocity _bullet select 2) + (((random twc_ehamy) - (twc_ehamy / 2)) * _mult)];}];
+		player addEventHandler ["FiredMan", {_mult = 0.7; _xvar = 26; if ((vehicle player) != player) then {_mult = 0.8; _xvar = 18}; if ((_this select 1) == (secondaryweapon player)) then {_mult = 1; _xvar = 12}; _bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random _xvar) - (_xvar / 2)) * _mult), (velocity _bullet select 1) + (((random _xvar) - (_xvar / 2)) * _mult), 	(velocity _bullet select 2) + (((random twc_ehamy) - (twc_ehamy / 2)) * _mult)];}];
 		player setvariable ["twc_hasenemyeh", 1];
 		
 		_vehaction1 = ["enemy_Interact","TWC","",{},{true}] call ace_interact_menu_fnc_createAction;

@@ -19,6 +19,5 @@ clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 _veh addbackpackcargoglobal ["RHS_NSV_Tripod_Bag", 1];
-_veh addbackpackcargoglobal ["RHS_SPG9_Tripod_Bag", 1];
 
 hint "A car has been spawned within 30m of your position";

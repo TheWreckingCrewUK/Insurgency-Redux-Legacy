@@ -11,10 +11,13 @@
 		hint "You Cannot place explosives this close to base";
 	};
 	
-	if ((side player) == east) exitwith {};
 	if(typeOf _exp in ["ATMine_Range_Ammo", "rhsusf_mine_m14_ammo", "APERSMine_Range_Ammo", "rhs_ammo_ptm1", "rhs_mine_pmn2_ammo", "rhs_ammo_pfm1", "ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])exitWith{
 		deleteVehicle _exp;
-		hint "You are supposed to clean up the explosives, not plant them";
+		if ((side player) != east) then {
+			hint "You are supposed to clean up the explosives, not plant them";
+		} else {
+			hint "Good thinking, but its caused too much trouble in the past. IED removed.";
+		};
 	};
 }] call CBA_fnc_addEventHandler;
 

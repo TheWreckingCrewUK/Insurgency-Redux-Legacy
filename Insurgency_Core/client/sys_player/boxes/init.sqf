@@ -509,12 +509,14 @@ if ((["commander", typeof player] call BIS_fnc_inString) || (["leader", typeof p
 if([player] call TWC_Core_fnc_ismanagement)then{
 execVM "insurgency_core\client\zeus\camera.sqf";
 
-	_vehaction1 = ["base_Interact","TWC","",{},{true}] call ace_interact_menu_fnc_createAction;
+	_vehaction1 = ["base_Interact","Management","",{},{true}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _vehaction1] call ace_interact_menu_fnc_addActionToObject;
 
-	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_action3 = ["Zeus","TP to/from base","",{execVM "insurgency_core\client\zeus\fnc_management_tp.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action3] call ace_interact_menu_fnc_addActionToObject;
+	_action2 = ["Zeus","Spectator On","",{execVM "insurgency_core\client\zeus\spectator_on.sqf";(player setvariable ["twcmgmt_spectate", 1])},{(player getvariable ["twcmgmt_spectate", 0]) == 0}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action2] call ace_interact_menu_fnc_addActionToObject;
-	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_action3 = ["Zeus","Spectator Off","",{execVM "insurgency_core\client\zeus\spectator_off.sqf";(player setvariable ["twcmgmt_spectate", 0])},{(player getvariable ["twcmgmt_spectate", 0]) == 1}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action3] call ace_interact_menu_fnc_addActionToObject;
 	/*
 	_action4 = ["Zeus","Basemode On","",{execVM "insurgency_core\client\zeus\basemode_on.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -522,7 +524,7 @@ execVM "insurgency_core\client\zeus\camera.sqf";
 	_action5 = ["Zeus","Basemode Off","",{execVM "insurgency_core\client\zeus\basemode_off.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action5] call ace_interact_menu_fnc_addActionToObject;
 	*/
-	_action6 = ["Zeus","Repair Current Vehicle","",{execVM "insurgency_core\client\zeus\zrepair.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_action6 = ["Zeus","Repair Current Vehicle","",{execVM "insurgency_core\client\zeus\zrepair.sqf"},{(vehicle player != player)}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
 	_action6 = ["Zeus","Enemy Siren","",{execVM "insurgency_core\server\sys_basedefence\INF_Alarm.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
