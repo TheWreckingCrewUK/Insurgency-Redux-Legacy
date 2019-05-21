@@ -97,7 +97,7 @@ _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
 units _civg joinsilent _group;
-
+	_rem = [];
 	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	
 	{

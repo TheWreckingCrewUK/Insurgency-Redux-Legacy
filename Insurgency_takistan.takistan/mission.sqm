@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2504;
+		nextID=2505;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7923.7852,332.47729,1791.8455};
-		dir[]={0.18899077,-0.71524948,0.67284209};
-		up[]={0.1934171,0.69886941,0.68860036};
-		aside[]={0.96275061,-1.1059456e-008,-0.27042231};
+		pos[]={8216.5029,331.71893,2017.9098};
+		dir[]={-0.43553552,-0.61074907,0.66135663};
+		up[]={-0.33590978,0.79182374,0.510077};
+		aside[]={0.8352108,3.8172584e-007,0.55002332};
 	};
 };
 binarizationWanted=0;
@@ -69,13 +69,14 @@ addons[]=
 	"CUP_WheeledVehicles_Mastiff",
 	"rhsusf_c_Caiman",
 	"rhsusf_c_Cougar",
-	"CUP_WheeledVehicles_Wolfhound"
+	"CUP_WheeledVehicles_Wolfhound",
+	"A3_Structures_F_Bootcamp_Training"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=39;
+		items=40;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -323,6 +324,13 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_Wolfhound";
 			name="CUP_WheeledVehicles_Wolfhound";
+		};
+		class Item39
+		{
+			className="A3_Structures_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -12839,7 +12847,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=254;
+		items=255;
 		class Item0
 		{
 			dataType="Marker";
@@ -24963,6 +24971,7 @@ class Mission
 			};
 			id=2461;
 			type="rhsusf_M1220_M2_usarmy_d";
+			atlOffset=0.00012207031;
 		};
 		class Item239
 		{
@@ -24980,6 +24989,7 @@ class Mission
 			};
 			id=2462;
 			type="rhsusf_M1220_M2_usarmy_d";
+			atlOffset=0.00012207031;
 		};
 		class Item240
 		{
@@ -25665,6 +25675,22 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item254
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8183.7715,296.89807,2076.7847};
+				angles[]={-0,5.8034391,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2504;
+			type="TargetBootcampHumanSimple_F";
 		};
 	};
 };

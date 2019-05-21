@@ -55,6 +55,14 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 };
 player setunittrait ["camouflageCoef", twc_pubcamo];
 
+[] spawn {
+	_pos = getpos player;
+	_time = time;
+	player allowdamage false;
+	waituntil {((player distance _pos > 40) || (time > (_time + 120)))};
+	player allowdamage true;
+};
+
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
 	player setvehicleammo 0.2;
 };
@@ -109,7 +117,10 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 if (["uksf", typeof player] call BIS_fnc_inString) then {
 	_gr = (group player getvariable ["twc_groupcountry", "baf"]);
 	if (_gr == "cag") then {
-		call twc_loadout_sfgroup_cag;
+		call twc_loadout_sfgroup_cag_switch;
+	};
+	if (_gr == "st6") then {
+		call twc_loadout_sfgroup_st6_switch;
 	};
 };
 
@@ -124,7 +135,11 @@ publicVariable "twc_coyotecount";
 [_x,0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
 
 } foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
+
+
 _gr = (group player getvariable ["twc_groupcountry", "baf"]);
+
+
 if (_gr == "us") then {
 	[player] call twc_loadout_fstgroup_us_switch;
 };
@@ -203,6 +218,9 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	};
 	if (_gr == "usmc") then {
 		[player] call twc_loadout_snipergroup_usmc_switch;
+	};
+	if (_gr == "uksf") then {
+		[player] call twc_loadout_snipergroup_uksf_switch;
 	};
 	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 };

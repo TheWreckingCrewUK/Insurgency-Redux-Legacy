@@ -59,6 +59,7 @@ if (!((backpack player) == "")) then {
 	};
 };
 
+
 [] spawn {
 	waituntil {(!(isnil "twc_missionname"))};
 	waitUntil {!isNull player};

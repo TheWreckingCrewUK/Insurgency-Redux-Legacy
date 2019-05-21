@@ -27,3 +27,16 @@ player addEventHandler ["CuratorObjectPlaced", {
 		_entity setVariable ["twc_isenemy",0,true];
 	};
 }];
+
+
+_UKaction5 = ["10mshoot","5m Shoot","",{[5] execvm "Insurgency_Core\client\func\fnc_shootcomp.sqf"},{(count (player nearobjects ["TargetBootcampHumanSimple_F", 2]) > 0)}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _UKaction5] call ace_interact_menu_fnc_addActionToObject;
+
+_UKaction5 = ["10mshoot","10m Shoot","",{[10] execvm "Insurgency_Core\client\func\fnc_shootcomp.sqf"},{(count (player nearobjects ["TargetBootcampHumanSimple_F", 2]) > 0)}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _UKaction5] call ace_interact_menu_fnc_addActionToObject;
+
+_UKaction5 = ["10mshoot","20m Shoot","",{[20] execvm "Insurgency_Core\client\func\fnc_shootcomp.sqf"},{(count (player nearobjects ["TargetBootcampHumanSimple_F", 2]) > 0)}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _UKaction5] call ace_interact_menu_fnc_addActionToObject;
+
+_UKaction5 = ["10mshoot","30m Shoot","",{[30] execvm "Insurgency_Core\client\func\fnc_shootcomp.sqf"},{(count (player nearobjects ["TargetBootcampHumanSimple_F", 2]) > 0)}] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _UKaction5] call ace_interact_menu_fnc_addActionToObject;

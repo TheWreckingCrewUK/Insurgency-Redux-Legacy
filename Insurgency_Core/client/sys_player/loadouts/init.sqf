@@ -13,6 +13,9 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_snipergroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_snaction1 = ["Spawnsnipbox","SAS","",{call twc_loadout_snipergroup_uksf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "uksf")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_snaction1 = ["Spawnsnipbox","CAG","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag") && (isserver)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -36,6 +39,9 @@ if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","CAG","",{call twc_loadout_sfgroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","DEVGRU","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","SAS","",{call twc_loadout_sfgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
@@ -122,12 +128,55 @@ twc_loadout_sfgroup_cag = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
+	
+	_last = (group player) getvariable ["twc_groupcountry", "baf"];
+	if (_last != "st6") then {
+		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
+		missionnamespace setvariable ["twc_iscagactive", _iscag + 1];
+	};
 	(group player) setvariable ["twc_groupcountry", "cag", true];
 	
-	_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
-	missionnamespace setvariable ["twc_iscagactive", _iscag + 1];
-	
 	{[_x] remoteexec ["twc_loadout_sfgroup_cag_switch", _x]} foreach (units group player);
+};
+
+	twc_loadout_sfgroup_st6_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_UKSF_Base") then {
+			[_unit] call twc_loadout_st6_rifleman;
+		};
+		if (typeof _unit == "Modern_UKSF_Pointman") then {
+			[_unit] call twc_loadout_st6_pointman;
+		};
+		if (typeof _unit == "Modern_UKSF_2IC") then {
+			[_unit] call twc_loadout_st6_2ic;
+		};
+		if (typeof _unit == "Modern_UKSF_Squadleader") then {
+			[_unit] call twc_loadout_st6_sl;
+		};
+		if (typeof _unit == "Modern_UKSF_Grenadier") then {
+			[_unit] call twc_loadout_st6_grenadier;
+		};
+		if (typeof _unit == "Modern_UKSF_Marksman") then {
+			[_unit] call twc_loadout_st6_marksman;
+		};
+		if (typeof _unit == "Modern_UKSF_Medic") then {
+			[_unit] call twc_loadout_st6_medic;
+		};
+	};
+twc_loadout_sfgroup_st6 = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	
+	_last = (group player) getvariable ["twc_groupcountry", "baf"];
+	if (_last != "cag") then {
+		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
+		missionnamespace setvariable ["twc_iscagactive", _iscag + 1];
+	};
+	
+	(group player) setvariable ["twc_groupcountry", "st6", true];
+	{[_x] remoteexec ["twc_loadout_sfgroup_st6_switch", _x]} foreach (units group player);
 };
 
 	twc_loadout_sfgroup_baf_switch = {
@@ -159,7 +208,7 @@ twc_loadout_sfgroup_baf = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	if (_last == "cag") then {
+	if ((_last == "cag") || (_last == "st6")) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1];
 	};
@@ -282,6 +331,32 @@ twc_loadout_snipergroup_baf = {
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
 	(group player) setvariable ["twc_groupcountry", "baf", true];
+	
+	if (_last == "cag") then {
+		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
+		missionnamespace setvariable ["twc_iscagactive", _iscag - 1];
+	};
+
+	{[_x] remoteexec ["twc_loadout_snipergroup_baf_switch", _x]} foreach (units group player);
+};
+
+
+	twc_loadout_snipergroup_uksf_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_British_Sniper_coin") then {
+			[_unit] call twc_loadout_uksfsniper_shooter;
+		};
+		if (typeof _unit == "Modern_British_Spotter_coin") then {
+			[_unit] call twc_loadout_uksfsniper_spotter;
+		};
+	};
+twc_loadout_snipergroup_uksf = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	_last = (group player) getvariable ["twc_groupcountry", "baf"];
+	(group player) setvariable ["twc_groupcountry", "uksf", true];
 	
 	if (_last == "cag") then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
@@ -473,7 +548,7 @@ twc_loadout_insurgentswitch = {
 			if (isnil "twc_enemyplayerspawnpos") then {
 				[] spawn twc_fnc_enemyspawnpos;
 			} else {
-				if (([twc_enemyplayerspawnpos, 1800] call twc_fnc_isnearblufor) || (!([twc_enemyplayerspawnpos, 2500] call twc_fnc_isnearblufor))) then {
+				if (([twc_enemyplayerspawnpos, 1800] call twc_fnc_isnearblufor) || (!([twc_enemyplayerspawnpos, 2500] call twc_fnc_isnearblufor)) || ((((twc_enemyplayerspawnpos) distance getmarkerpos "respawn_west_forwardBase") < 2000))) then {
 					[] spawn twc_fnc_enemyspawnpos;
 				};
 			};

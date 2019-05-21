@@ -20,7 +20,7 @@ _canSpawn = true;
 if(TWC_insMorale < 60)then{
 	_canSpawn = false;
 };
-if(getMarkerColor "respawn_forwardBase" == "")then{
+if(getMarkerColor "respawn_west_forwardBase" == "")then{
 	_canSpawn = false;
 };
 

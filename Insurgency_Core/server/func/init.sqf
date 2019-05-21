@@ -43,6 +43,7 @@ twc_fnc_commandcheck = compile preprocessfilelinenumbers "Insurgency_Core\server
 
 call twc_fnc_spawnmortar;
 
+
 { 
 _x addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];

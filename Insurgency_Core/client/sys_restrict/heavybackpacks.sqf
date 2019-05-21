@@ -35,7 +35,7 @@ player addEventHandler ["Take", {
 		};
 		if ((_playerbackpack == "") || ((side player) == east)) exitwith {
 			_unit allowsprint false;
-			hint "This Role is not used to fighting with a Backpack. You are unable to Sprint";
+			hint "This Role cannot sprint with a Backpack.";
 		};
 		
 		_playerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;

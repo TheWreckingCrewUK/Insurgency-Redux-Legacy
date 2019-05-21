@@ -1,7 +1,7 @@
 params["_player",["_marker","forwardBase_itemSpawn"]];
 _return = "";
 _pos = getMarkerPos _marker;
-if(getMarkerColor "respawn_forwardBase" != "")exitWith{_return = "Forward Base is already Setup"; _return};
+if(getMarkerColor "respawn_west_forwardBase" != "")exitWith{_return = "Forward Base is already Setup"; _return};
 
 {
 	deleteVehicle _x

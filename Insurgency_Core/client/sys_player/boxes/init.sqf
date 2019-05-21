@@ -124,13 +124,16 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 
 
 if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) != "cag"}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) != "cag"}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded RG (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "cag"}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded RG (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) != "baf"}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRZR","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrzr.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) != "baf"}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Suppressors","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\suppressors.sqf"},{((missionnamespace getvariable ["twc_suppspawned", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
@@ -337,6 +340,8 @@ if (["Medic", typeof player] call BIS_fnc_inString) then {
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	
+	player additemtovest "TWC_Item_Medical_SutureKit_20";
 };
 
 

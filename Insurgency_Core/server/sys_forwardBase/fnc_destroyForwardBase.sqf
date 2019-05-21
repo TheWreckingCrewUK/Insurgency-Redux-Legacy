@@ -3,11 +3,11 @@ Function for removing the forward base should the enemy capture it
 
 */
 params["_thisList"];
-_pos = getMarkerPos "respawn_forwardBase";
+_pos = getMarkerPos "respawn_west_forwardBase";
 
 //Removes respawn point and marker
-[missionNamespace,"respawn_forwardBase"] call BIS_fnc_removeRespawnPosition;
-deleteMarker "respawn_forwardBase";
+[missionNamespace,"respawn_west_forwardBase"] call BIS_fnc_removeRespawnPosition;
+deleteMarker "respawn_west_forwardBase";
 
 //Removes the objects
 {

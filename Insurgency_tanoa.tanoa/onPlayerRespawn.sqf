@@ -17,7 +17,7 @@ if(typeOf player in ["Modern_British_Medic","Modern_USMC_Medic"])then{
 };
 
 //Code to run if player spawns on forWardBase
-if((getMarkerPos "respawn_forwardBase") distance2D (getPos player) < 200)then{
+if((getMarkerPos "respawn_west_forwardBase") distance2D (getPos player) < 200)then{
 
 
 };

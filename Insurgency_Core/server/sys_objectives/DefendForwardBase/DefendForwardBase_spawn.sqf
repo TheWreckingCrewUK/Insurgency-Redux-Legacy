@@ -1,14 +1,14 @@
 params ["_objType"];
 
 _playerCount = (count (allPlayers - entities "HeadlessClient_F")) max 1;
-_pos = getMarkerPos "respawn_forwardBase";
+_pos = getMarkerPos "respawn_west_forwardBase";
 
 _time = time;
 
 _taskID = str (random 1000);
 [WEST,[_taskID],["Intercepted insurgent communications tell us that an attack on our forward base is imminent.","Defend the Forward Base"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
 
-[missionNamespace,"respawn_forwardBase"] call BIS_fnc_removeRespawnPosition;
+[missionNamespace,"respawn_west_forwardBase"] call BIS_fnc_removeRespawnPosition;
 
 waitUntil {[_pos,400] call twc_fnc_posNearPlayers || _time + 1200 < time};
 
@@ -65,7 +65,7 @@ while {_baseControl > -10 && _baseControl < 1}do{
 
 if(_baseControl == 1)then{
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
-	[missionNamespace,"respawn_forwardBase","Forward Base"] call BIS_fnc_addRespawnPosition;
+	[missionNamespace,"respawn_west_forwardBase","Forward Base"] call BIS_fnc_addRespawnPosition;
 }else{
 	["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
 	_table = _pos nearObjects ["twc_radioTable",20];
