@@ -55,6 +55,21 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 };
 player setunittrait ["camouflageCoef", twc_pubcamo];
 
+twc_client_nightcamo = {
+	while {(sunOrMoon == 1)} do {
+		sleep 120;
+	};
+	player setunittrait ["camouflageCoef", 3];
+	while {(sunOrMoon == 0)} do {
+		sleep 120;
+	};
+	player setunittrait ["camouflageCoef", twc_pubcamo];
+	
+	[] spawn twc_client_nightcamo;
+	
+};
+[] spawn twc_client_nightcamo;
+
 [] spawn {
 	_pos = getpos player;
 	_time = time;
@@ -71,7 +86,49 @@ twc_lastspawned = time;
 if (twc_firstspawned > 1) exitwith {};
 twc_firstspawned = time;
 twc_serstarttime = time;
+/////////////////////////////////////////////////////////////////
+//first spawn code
+/////////////////////////////////////////////////////////////////
 
+
+if (!("ItemMap" in assigneditems player)) then {
+	addMissionEventHandler ["Map", {
+		params ["_mapIsOpened", "_mapIsForced"];
+		_base = missionnamespace getvariable ["twc_basepos", [0,0,0]];
+		if ((vehicle player == player) && ((player distance _base) > 300)) then {
+			player unassignItem "itemmap";
+			player removeitem "itemmap";
+		} else {
+			if (_mapIsOpened) then {
+				player linkItem "itemmap";
+			} else {
+				player unassignItem "itemmap";
+				player removeitem "itemmap";
+			};			
+		};
+	}];
+	if (!(["blank", typeof player] call BIS_fnc_inString)) then {
+		"Low Tech Role" hintc ["You can view the map from inside any vehicle or at base", "You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"];
+	
+		player CreateDiaryRecord ["Diary",["Maps","You can view the map from inside any vehicle or at base. You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"]];
+	};
+	removegoggles player;
+}	else {
+	player addEventHandler ["GetInMan", {
+		params ["_unit", "_role", "_vehicle", "_turret"];
+		player linkItem "itemmap";
+	}];
+
+	
+	//if they have a map but it's cold war, it's probably a command role and they should be notified that their buddies don't have the same priveledges to stop them running off and expecting the others to be able to follow
+	
+	if ((["70", twc_missionname] call BIS_fnc_inString)) then {
+		removegoggles player;
+		"Low Tech Command Role" hintc ["Your section members do not have a radio or map, keep them close", "You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"];
+	
+		player CreateDiaryRecord ["Diary",["Maps","Section members do not have a radio or map, keep them close. You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"]];
+	};
+};
 
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];

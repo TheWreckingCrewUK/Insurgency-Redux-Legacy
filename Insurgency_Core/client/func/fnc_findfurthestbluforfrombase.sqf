@@ -151,11 +151,6 @@ if ((vehicle _return) != _return) then {
 		};
 	};
 };
-_returninbase = 0;
-if ((_return distance _base) < 300) then {
-	_text2 = "They are in base<br />";
-	_returninbase = 1;
-};
 
 _text3 = "";
 
@@ -166,19 +161,10 @@ if (_basecount == 0) then {
 
 if (_basecount == 1) then {
 	_text3 = "<br />There is 1 player in base";
-	if (_returninbase == 1) then {
-		_text3 = "<br />They are the only player in base";
-	};
 };
 
 if (_basecount > 1) then {
 	_text3 = format ["<br />There are %1 players in base", _basecount];
-	if (_returninbase == 1) then {
-		_text3 = format ["<br />There are %1 other players in base", _basecount - 1];
-		if ((_basecount - 1) == 0) then {
-			_text3 = "<br />There are no other players in base";
-		};
-	};
 };
 
 

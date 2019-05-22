@@ -30,6 +30,7 @@ player addEventHandler ["InventoryClosed", {
 	
 #include "pilots.sqf";
 
+#include "supply_boxes\1970_baf.sqf";
 #include "supply_boxes\modern_ger.sqf";
 #include "supply_boxes\modern_pol.sqf";
 #include "supply_boxes\1990_us.sqf";

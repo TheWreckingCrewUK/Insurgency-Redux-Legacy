@@ -9,9 +9,12 @@ _curpos = getpos player;
 _var = player getvariable ["twc_mgmt_lasttppos", _base];
 if ((player distance _base) > 300) then {
 	_var = _base;
+	player setpos _var;
+} else {
+	(vehicle player) setpos _var;
 };
 
-player setpos _var;
+
 
 if ((_var distance _base) > 10) then {
 	player setvariable ["twc_mgmt_lasttppos", _base];

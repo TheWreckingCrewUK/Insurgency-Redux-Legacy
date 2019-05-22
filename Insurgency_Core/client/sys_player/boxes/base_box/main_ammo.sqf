@@ -24,6 +24,7 @@ _tmp_magazines = [];
 _tmp_items = [];
 _tmp_backpacks = [];
 
+#include "1970_base.sqf";
 #include "pol_base.sqf";
 #include "ger_base.sqf";
 #include "us_army_base.sqf";
@@ -3554,8 +3555,24 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 
-
-
+if (["Medic", typeof player] call BIS_fnc_inString) then {
+	{_tmp_items pushback _x} foreach
+	[
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["TWC_Item_Medical_SutureKit_20", 5],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_bodyBag", 10],
+		["ACE_tourniquet", 10],
+		["ACE_personalAidKit", 1]
+	];
+};
 
 
 /*

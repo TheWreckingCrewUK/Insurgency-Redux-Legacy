@@ -417,7 +417,15 @@ _list=[
 	],	
 
 
-		["CUP_B_CH47F_GB",[ 
+		["CUP_B_CH47F_GB",[
+		["driver", 
+			_pilots
+		],
+		[[3], 
+			_crewchiefs
+		]],3
+	],
+		["ukcw_chinook_hc1",[
 		["driver", 
 			_pilots
 		],
