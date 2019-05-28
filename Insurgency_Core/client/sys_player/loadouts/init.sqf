@@ -53,7 +53,7 @@ twc_loadout_isgroupnearby = {
 	{
 		if ((_x distance player) > 40) then {_check = false};
 	} foreach (units group player);
-	if (_check == false) then {
+	if (!_check) then {
 	
 		_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Team Switch</t>"; 
 

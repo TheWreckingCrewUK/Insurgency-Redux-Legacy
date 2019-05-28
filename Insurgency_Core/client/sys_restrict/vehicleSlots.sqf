@@ -1,10 +1,10 @@
-_pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot"];
+_pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot","1970_British_HeliPilot"];
 
-_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1990_British_Crewchief"];
+_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1990_British_Crewchief","1970_British_Crewchief"];
 
-_armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew"];
+_armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","1970_British_Vehicle_Crew"];
 
-_armourcommanders = ["Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
+_armourcommanders = ["Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander","1970_British_Vehicle_Commander"];
 
 _sf = ["Modern_UKSF_Base","Modern_UKSF_Pointman","Modern_UKSF_2IC","Modern_UKSF_Squadleader","Modern_UKSF_Grenadier","Modern_UKSF_Marksman","Modern_UKSF_Medic","Modern_British_Sniper_coin","Modern_British_Spotter_coin"];
 
@@ -214,7 +214,7 @@ _list=[
 		]],0
 	],	
 	
-		["ukcw_fv432",[ 
+		["ukcw_fv432_gpmg",[ 
 		["driver", 
 			_armourcrew + _armourcommanders
 		]],0
@@ -430,6 +430,14 @@ _list=[
 			_pilots
 		],
 		[[3], 
+			_crewchiefs
+		]],3
+	],
+		["CUP_B_SA330_Puma_HC1_BAF",[
+		["driver", 
+			_pilots
+		],
+		[[0], 
 			_crewchiefs
 		]],3
 	],

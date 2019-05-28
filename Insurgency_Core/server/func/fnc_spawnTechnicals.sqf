@@ -36,6 +36,18 @@ _technicallist = [
 	"t_spg01.sqf"
 ];
 
+if ((["70", twc_missionname] call BIS_fnc_inString)) then {
+
+	_technicallist = [
+		"t_zu23.sqf",
+		"t_kord02.sqf",
+		"t_kord01.sqf",
+		"t_pkm.sqf",
+		"t_spg02.sqf",
+		"t_spg01.sqf"
+	];
+};
+
 for "_i" from 1 to _total do {
 
 

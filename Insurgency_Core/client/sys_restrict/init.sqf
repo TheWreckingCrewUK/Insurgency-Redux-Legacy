@@ -27,7 +27,7 @@ twc_fnc_legitgroup = {
 	(group player) setvariable ["twc_teamrestrictedgrp", 0, true];
 
 	if (((group player) getVariable ["twc_attachrestrictedgrp",1]) == 0) then {
-		(group player) setvariable ["twc_legitgrp", (time - 36000 + 600), true];
+		(group player) setvariable ["twc_legitgrp", (time), true];
 	};
 	//last man, to de-legit the group when leaving
 	[{(count units group (_this select 0)) == 1}, {(group (_this select 0)) setvariable ["twc_legitgrp", time - 36000 + 900, true]}, [player]] call CBA_fnc_waitUntilAndExecute;

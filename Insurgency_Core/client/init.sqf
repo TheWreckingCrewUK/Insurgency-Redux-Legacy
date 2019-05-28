@@ -41,6 +41,12 @@ twc_serstarttime = time + 10000;
 
 twc_pubcamo = 500;
 
+if (["70", twc_missionname] call BIS_fnc_inString) then {
+	twc_pubcamo = 2;
+};
+if (["90", twc_missionname] call BIS_fnc_inString) then {
+	twc_pubcamo = 20;
+};
 
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
@@ -240,7 +246,7 @@ if (["pilot", typeof player] call BIS_fnc_inString) then {
 
 
 
-if((typeOf player) in ["Modern_British_VehicleCommander", "Modern_British_VehicleCrew"]) then {
+if((typeOf player) in ["Modern_British_VehicleCommander", "Modern_British_VehicleCrew", "1970_British_Vehicle_Commander", "1970_British_Vehicle_Crew"]) then {
 	["TWC_ArmourCrewConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
 	
 	

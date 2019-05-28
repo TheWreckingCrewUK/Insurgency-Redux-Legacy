@@ -126,7 +126,7 @@ twc_blacklist = [
 
 if (((getPlayerUID player) in twc_blacklist)) then {
 
-	if((["leader", str (typeof player)] call BIS_fnc_inString) || (["commander", str (typeof player)] call BIS_fnc_inString) || (["2ic", str (typeof player)] call BIS_fnc_inString) || (["pilot", str (typeof player)] call BIS_fnc_inString) || (["chief", str (typeof player)] call BIS_fnc_inString))then{
+	if((["leader", str (typeof player)] call BIS_fnc_inString) || (["commander", str (typeof player)] call BIS_fnc_inString) || (["2ic", str (typeof player)] call BIS_fnc_inString) || (["pilot", str (typeof player)] call BIS_fnc_inString) || (["crew", str (typeof player)] call BIS_fnc_inString))then{
 
 		cutText ["", "Black", 0.001];
 		player forceWalk true;

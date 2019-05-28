@@ -22,6 +22,27 @@ if (twc_wdveh == 1) then {
 
 
 
+if (typeof _veh == "ukcw_fv432_gpmg") then {
+	if ((["70", twc_missionname] call BIS_fnc_inString)) then {
+	_box = _veh;
+		_box AddMagazineCargoGlobal ["UK3CB_BAF_762_20Rnd",40];
+		_box AddMagazineCargoGlobal ["UK3CB_BAF_762_20Rnd_T",15];
+		_box AddMagazineCargoGlobal ["UK3CB_BAF_9_13Rnd",3];
+		_box AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",10];
+		_box addItemCargoGlobal ["ACE_fieldDressing",25];
+		_box addItemCargoGlobal ["ACE_elasticBandage",25];
+		_box addItemCargoGlobal ["ACE_quikclot",25];
+		_box addItemCargoGlobal ["ACE_packingBandage",25];
+		_box addItemCargoGlobal ["ACE_salineIV_500",6];
+		_box addItemCargoGlobal ["ACE_atropine",5];
+		_box addItemCargoGlobal ["ACE_epinephrine",5];
+		_box addItemCargoGlobal ["ACE_morphine",5];
+		_box addItemCargoGlobal ["HandGrenade",2];
+		_box addItemCargoGlobal ["SmokeShell",4];
+		_box addItemCargoGlobal ["SmokeShellRed",4];
+	};
+};
+
 if (typeof _veh == "RHS_M2A3_BUSKIII_wd") then {
 
 if (twc_wdveh == 1) then {
@@ -234,7 +255,7 @@ _box = _veh;
 			_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",40];
 			_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",15];
 
-			_box AddMagazineCargoGlobal ["ukcw_13rd_9x19",3];
+			_box AddMagazineCargoGlobal ["UK3CB_BAF_9_13Rnd",3];
 
 			_box addItemCargoGlobal ["ACE_fieldDressing",15];
 			_box addItemCargoGlobal ["ACE_elasticBandage",15];
@@ -348,7 +369,7 @@ _box = _veh;
 			_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
 			_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd_T",15];
 
-			_box AddMagazineCargoGlobal ["ukcw_13rd_9x19",3];
+			_box AddMagazineCargoGlobal ["UK3CB_BAF_9_13Rnd",3];
 
 			_box addItemCargoGlobal ["ACE_fieldDressing",15];
 			_box addItemCargoGlobal ["ACE_elasticBandage",15];

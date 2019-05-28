@@ -214,7 +214,7 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
 	
-	_unit addWeapon "twc_mk18_us_eotech";
+	_unit addWeapon "TWC_UK3CB_ST6_mk18_10_EOTECH";
 	
 	_unit addWeapon "rhs_weap_M320";
 
@@ -285,7 +285,7 @@ twc_loadout_st6_medic = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform "rhs_uniform_g3_m81";
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -296,7 +296,7 @@ twc_loadout_st6_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_mbav_medic_aor1";
+	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
 	_uint additemtovest "TWC_Item_Medical_SutureKit_20";
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
 	_unit addItemToVest "ACE_MapTools";
@@ -305,12 +305,12 @@ twc_loadout_st6_medic = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "H_HelmetB_light_sand";
 	
-	_unit addWeapon "TWC_UK3CB_ST6_mk18_10_EOTECH";
+	_unit addWeapon "twc_mk18_us_eotech";
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	
-	_unit addBackpack "B_Kitbag_tan";
+	_unit addBackpack "UK3CB_BAF_B_Kitbag_OLI";
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_fieldDressing";};
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_packingBandage";};
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_elasticBandage";};

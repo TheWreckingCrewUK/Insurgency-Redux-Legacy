@@ -1,18 +1,11 @@
 
-if((typeOf player) in ["1970_British_MachineGunner""1970_British_mg_assistant"])then{
+
+if((typeOf player) in ["1970_British_MachineGunner", "1970_British_mg_assistant"])then{
 	_tmp_magazines = [
 		["rhsusf_100Rnd_762x51_m62_tracer",50]
 	];
 };
-if((typeOf player) in ["1970_British_Spotter","1970_British_sniper"])then{
-	_tmp_magazines = [
-		["ukcw_l42_10rnd_mag",50]
-	];
-};
 
-if (!(handgunweapon player == "")) then {
-	_tmp_magazines pushback ["UK3CB_BAF_9_13Rnd",10];
-};
 
 if (["1970_British", typeof player] call BIS_fnc_inString) then {
 	{_tmp_magazines pushback _x} foreach 
@@ -22,4 +15,19 @@ if (["1970_British", typeof player] call BIS_fnc_inString) then {
 	if (!(handgunweapon player == "")) then {
 		_tmp_magazines pushback ["UK3CB_BAF_9_13Rnd",10];
 	};
+};
+
+
+if((typeOf player) in ["1970_British_SectionCommander", "1970_British_2IC"])then{
+    _tmp_items = 
+	[
+		["DemoCharge_Remote_Mag",5],
+		["ACE_M26_Clacker",1]
+    ];
+};
+
+if((typeOf player) in ["1970_British_Spotter","1970_British_sniper"])then{
+	_tmp_magazines = [
+		["ukcw_l42_10rnd_mag",50]
+	];
 };
