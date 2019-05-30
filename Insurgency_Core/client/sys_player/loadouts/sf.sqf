@@ -297,7 +297,7 @@ twc_loadout_st6_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
 	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
-	_uint additemtovest "TWC_Item_Medical_SutureKit_20";
+	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -597,7 +597,7 @@ twc_loadout_uksf_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
 	_unit addVest "rhsusf_spcs_ocp_rifleman";
-	_uint additemtovest "TWC_Item_Medical_SutureKit_20";
+	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -616,6 +616,336 @@ twc_loadout_uksf_medic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 };
+
+
+twc_loadout_anasf_sl = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+	
+	_vest = (["rhsusf_mbav_rifleman", "V_PlateCarrier1_blk", "V_I_G_resistanceLeader_F", "V_PlateCarrier1_rgr"] call bis_fnc_selectrandom);
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
+	_unit addItemToUniform "ACE_MapTools";
+	_unit addVest _vest;
+	_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";
+	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	_unit addHeadgear "CUP_H_USArmy_Helmet_ECH1_Black";
+
+	_unit addWeapon "twc_rhs_weap_m4a1_acog_lazer";
+	
+	_unit addWeapon "rhsusf_weap_m9";
+	_unit addWeapon "ACE_Vector";
+
+	
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+	_unit linkItem "ItemcTab";
+};
+
+twc_loadout_anasf_2ic = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
+	_unit addItemToUniform "ACE_MapTools";
+	_unit addVest "V_PlateCarrier1_rgr";
+	_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";
+	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	_unit addHeadgear "CUP_H_USArmy_Helmet_ECH1_Black";
+
+	_unit addWeapon "twc_rhs_weap_m4a1_acog_lazer";
+	
+	_unit addWeapon "rhsusf_weap_m9";
+	
+	_unit addBackpack "twc_genbackPack_oli";
+
+	
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+};
+
+
+
+twc_loadout_anasf_pointman = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_vest = (["rhsusf_mbav_rifleman", "V_PlateCarrier1_blk", "V_I_G_resistanceLeader_F", "V_PlateCarrier1_rgr"] call bis_fnc_selectrandom);
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	_unit addItemToUniform "ACE_tourniquet";
+	_unit addVest _vest;
+	_unit addItemToVest "ACE_tourniquet";
+	_unit addItemToVest "ACE_MapTools";
+	_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";
+	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	_unit addHeadgear "rhsusf_ach_bare";
+	
+	_unit addWeapon "twc_rhs_weap_m4a1_acog_lazer";
+	
+	_unit addWeapon "rhsusf_weap_m9";
+
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+};
+twc_loadout_anasf_rifleman = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_vest = (["rhsusf_mbav_rifleman", "V_PlateCarrier1_blk", "V_I_G_resistanceLeader_F", "V_PlateCarrier1_rgr"] call bis_fnc_selectrandom);
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	_unit addItemToUniform "ACE_tourniquet";
+	_unit addVest _vest;
+	_unit addItemToVest "ACE_tourniquet";
+	_unit addItemToVest "ACE_MapTools";
+	_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";
+	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	_unit addHeadgear "rhsusf_ach_bare";
+	
+	_unit addWeapon "twc_rhs_weap_m4a1_acog_lazer";
+	
+	_unit addWeapon "rhsusf_weap_m9";
+
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+};
+
+
+twc_loadout_anasf_grenadier = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_vest = (["rhsusf_mbav_rifleman", "V_PlateCarrier1_blk", "V_I_G_resistanceLeader_F", "V_PlateCarrier1_rgr"] call bis_fnc_selectrandom);
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	_unit addItemToUniform "ACE_tourniquet";
+	_unit addVest _vest;
+	_unit addItemToVest "ACE_tourniquet";
+	_unit addItemToVest "ACE_MapTools";
+	_unit addItemToVest "HandGrenade";
+	for "_i" from 1 to 3 do {_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	for "_i" from 1 to 10 do {_unit addItemToVest "1Rnd_HE_Grenade_shell";};
+	for "_i" from 1 to 10 do {_unit addItemToUniform "1Rnd_HE_Grenade_shell";};
+	_unit addHeadgear "rhsusf_ach_bare";
+	
+	_unit addWeapon "twc_rhs_weap_m4a1_m203_acog_lazer";
+	
+	_unit addWeapon "rhsusf_weap_m9";
+
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+};
+
+twc_loadout_anasf_marksman = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_vest = "rhsusf_mbav_mg";
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	_unit addItemToUniform "ACE_tourniquet";
+	_unit addVest _vest;
+	_unit addItemToVest "ACE_tourniquet";
+	_unit addItemToVest "ACE_MapTools";
+	_unit addItemToVest "HandGrenade";
+	for "_i" from 1 to 2 do {_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 4 do {_unit addItemToVest "rhsusf_200rnd_556x45_mixed_box";};
+	_unit addHeadgear "rhsusf_ach_bare";
+	
+	_unit addWeapon "twc_rhs_weap_m249_pip_L_mgo_lazer";
+	_unit addWeapon "rhsusf_weap_m9";
+	for "_i" from 1 to 2 do {_unit addItemToVest "rhsusf_200rnd_556x45_mixed_box";};
+
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+	crateBox addMagazineCargo ["rhsusf_200rnd_556x45_mixed_box", 50];
+};
+
+twc_loadout_anasf_medic = {params ["_unit"];
+
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	removeUniform _unit;
+	removeVest _unit;
+	removeBackpack _unit;
+	removeHeadgear _unit;
+	removeGoggles _unit;
+
+	_uniform = (["rhsgref_uniform_woodland", "rhs_uniform_g3_m81"] call bis_fnc_selectrandom);
+	
+	_vest = (["rhsusf_mbav_rifleman", "V_PlateCarrier1_blk", "V_I_G_resistanceLeader_F", "V_PlateCarrier1_rgr"] call bis_fnc_selectrandom);
+	
+	_unit forceAddUniform _uniform;
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_CableTie";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	_unit addItemToUniform "ACE_tourniquet";
+	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
+	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
+	_unit addItemToVest "ACE_MapTools";
+	_unit addItemToVest "HandGrenade";
+	for "_i" from 1 to 3 do {_unit addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";};
+	_unit addItemToVest "SmokeShell";
+	_unit addItemToVest "B_IR_Grenade";
+	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";};
+	_unit addHeadgear "rhsusf_ach_bare";
+	
+	_unit addWeapon "twc_rhs_weap_m4a1_acog_lazer";
+	_unit addWeapon "rhsusf_weap_m9";
+	
+	_unit addBackpack "UK3CB_BAF_B_Kitbag_OLI";
+	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_fieldDressing";};
+	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_packingBandage";};
+	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_elasticBandage";};
+	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_quikclot";};
+	for "_i" from 1 to 15 do {_unit addItemToBackpack "ACE_salineIV_500";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_salineIV_250";};
+
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemWatch";
+};
+
 
 
 twc_loadout_ussf_sl = {params ["_unit"];
@@ -902,7 +1232,7 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
 	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
-	_uint additemtovest "TWC_Item_Medical_SutureKit_20";
+	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -1123,7 +1453,7 @@ twc_loadout_uksf_grenadier = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "rhsusf_plateframe_grenadier";
+	_unit addVest "rhsusf_spcs_ocp_grenadier";
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";

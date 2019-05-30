@@ -21,8 +21,8 @@ _count = 0;
 	};
 } foreach (player getvariable ["twc_activecomptargets_prestart", []]);
 
-if (_count > 1) exitwith {
-	systemchat "You cannot stack more than 2 of the same distance per target";
+if (_count > 0) exitwith {
+	systemchat "You cannot stack more than 1 of the same distance per target";
 };
 
 _checkarr pushback ([_target, _dis]);
@@ -48,6 +48,18 @@ playsound "hint3";
 playSound3D ["A3\missions_f\data\sounds\click.wss", player];
 
 _startpos = getpos player;
+if ((player getvariable ["twc_shootcomp_shooterready", 0]) == 0) then {
+waituntil {((player getvariable ["twc_shootcomp_shooterready", 1]) >= 1)};
+
+_movetime = time;
+_startpos = getpos player;
+waituntil {((time > (_movetime + (2 + (random 2)))))};
+playSound3D ["a3\Ui_f\data\Sound\ReadOut\readoutClick.wss", player];
+
+_startpos = [0,0,10];
+};
+player setvariable ["twc_shootcomp_shooterready", 2];
+
 
 
 _count = 0;
@@ -60,7 +72,7 @@ _count = 0;
 
 while {_count > 1} do {
 	_count = 0;
-	sleep 0.1;
+	//sleep 0.05;
 	{
 		if (((_x select 0) == _target) && ((_x select 1) == _dis)) then {
 			_count = _count + 1;
@@ -73,7 +85,7 @@ _timeout = time;
 waituntil {_a = player getvariable ["twc_activecomptargets_prestart", [0]];((((_a select 0) select 0) == _target) && (((_a select 0) select 1) == _dis)) || (_timeout < (time - 120))};
 
 
-waituntil {((player distance _startpos) > 1) || (_timeout < (time - 120))};
+waituntil {((player distance _startpos) > 0.5) || (_timeout < (time - 120))};
 
 if (_timeout < (time - 120)) exitwith {
 	systemchat "Shoot cancelled, timed out";
@@ -101,6 +113,8 @@ if (_timeout < (time - 120)) exitwith {
 	_checkarr deleteat (_checkarr find ([_target, _dis]));
 		
 	player setvariable ["twc_activecomptargets_prestart", _checkarr];
+	
+	player setvariable ["twc_shootcomp_shooterready", 1];
 };
 
 _target setvariable ["twcshootcomp_run" + (str _dis) + (name player), ((floor ((time - _t) * 100)) / 100)];
@@ -109,8 +123,6 @@ _checkarr = player getvariable ["twc_activecomptargets", []];
 
 _checkarr pushback ([_target, _dis]);
 player setvariable ["twc_activecomptargets", _checkarr, true];
-
-playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_start.wss", player];
 
 _startrun = player getvariable ["twc_shootcomp_runtotal", -999];
 if ((_startrun == -999)) then {
@@ -146,41 +158,6 @@ if ((_eh1 != -999)) exitwith {
 };
 
 
-twc_shootcomp_addeh1 = {
-	params ["_target", "_player", "_dis"];
-	_target setvariable ["twcshootcomp_hits" + (str _dis) + (name _player), 0, true];
-	_eh1 = _target addEventHandler ["Hit", {
-		params ["_unit", "_source", "_damage", "_instigator"];
-		_unit setdamage 0;
-		[_unit] spawn {
-			params ["_unit"];
-			waitUntil {_unit animationPhase "terc" > 0};
-			_unit animateSource ["terc",0,true];
-		};
-		
-		_targets = _instigator getvariable ["twc_activecomptargets", []];
-		
-		{
-			if ((_x select 0) == _unit) then {
-				_dis = _x select 1;
-				_h = _unit getvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), 0];
-				_unit setvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), (_h + 1) min 5, true];
-				
-				_h = _unit getvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), 0];
-				if ((_instigator getvariable ["twc_shootcomplete", 0]) == 1) then {
-					(_instigator setvariable ["twc_shootcomplete", 0, true]);
-				};
-					
-				
-			};
-		} foreach _targets;
-		
-		
-		
-	}];
-
-	_target setvariable ["twcshootcomp_e1", _eh1, true];
-};
 _me = player;
 [_target, _me, _dis] remoteexec ["twc_shootcomp_addeh1", _target];
 
@@ -190,54 +167,6 @@ twc_shootcomp_removeeh1 = {
 	params ["_eh1", "_target"];
 	_target removeEventHandler ["hit", _eh1];
 };
-
-/*
-
-_eh2 = player addEventHandler ["Fired", {
-player addEventHandler ["Fired", {
-if (true) exitwith {};
-systemchat "gigig";
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-	
-	_h = player getvariable ["twcshootcomp_shots", 0];
-	player setvariable ["twcshootcomp_shots", _h + 1];
-	if (_h == 0) then {
-		_t = player getvariable ["twcshootcomp_start", 0];
-		player setvariable ["twcshootcomp_start", time];
-		player setvariable ["twcshootcomp_rtime", ((floor ((time - _t) * 100)) / 100)];
-	};
-	if (_h == 2) then {
-		player setvariable ["twcshootcomp_firemode", ((weaponstate player) select 2)];
-	};
-	if (_h == 4) then {
-	[] spawn {
-		sleep 0.1;
-		
-		_dis = player getvariable ["twcshootcomp_dis", 0];
-		_t = player getvariable ["twcshootcomp_start", 0];
-		player setvariable ["twcshootcomp_time", ((floor ((time - _t) * 100)) / 100)];
-		
-		_t = player getvariable ["twcshootcomp_total" + (str _dis) + (name player), 0];
-		player setvariable ["twcshootcomp_total" + (str _dis) + (name player), ((floor ((time - _t) * 100)) / 100)];
-		
-		_text = format ["Hobbs - %1m || Total: %2s || Run: %3s || Reaction: %4s || Shoot: %7s || Hits: %5 || Firemode: %6", _dis, player getvariable ["twcshootcomp_total" + (str _dis) + (name player), 0], player getvariable ["twcshootcomp_run", 0], player getvariable ["twcshootcomp_rtime", 0], player getvariable ["twcshootcomp_hits", 0], player getvariable ["twcshootcomp_firemode", "Single"], player getvariable ["twcshootcomp_time", "0"]];
-		
-		_eh1 = player getvariable ["twcshootcomp_e1", 1]; 
-		_eh2 = player getvariable ["twcshootcomp_e2", 1];
-		
-		_target removeEventHandler ["hit", _eh1];
-		player removeEventHandler ["fired", _eh2];
-		_shooter = player;
-		[_text, _shooter] remoteexec ["twc_hintnearbyshootcomp"];
-		_checkarr = player getvariable ["twc_activecomptargets", []];
-		_checkarr deleteat (_checkarr find (str [_target, _dis]));
-		player setvariable ["twc_activecomptargets", _checkarr];
-		};
-	};
-	
-}];
-
-*/
 
 
 _eh2 = player getvariable ["twcshootcomp_e2", -999];
@@ -338,6 +267,7 @@ _eh2 = player addEventHandler ["FiredMan", {
 			};
 			player setvariable ["twc_shootcomp_runtotal", -999];
 			player setvariable ["twc_shootcomp_runtotalneeded", -999];
+			player setvariable ["twc_shootcomp_shooterready", 1];
 		};
 		
 		_targets = player getvariable ["twc_activecomptargets", []];
@@ -376,3 +306,6 @@ _eh2 = player addEventHandler ["FiredMan", {
 player setvariable ["twcshootcomp_e2", _eh2];
 
 };
+
+
+playSound3D ["a3\missions_f_beta\data\sounds\firing_drills\drill_start.wss", player];

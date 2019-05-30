@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2504;
+		nextID=2508;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3509.6345,48.921288,7156.9409};
-		dir[]={-0.7163313,-0.38258255,0.58374482};
-		up[]={-0.29669657,0.92387205,0.24178356};
-		aside[]={0.63178241,-4.3958426e-007,0.77529073};
+		pos[]={3477.2388,39.730568,7186.1133};
+		dir[]={0.7337091,-0.32400507,-0.59745204};
+		up[]={0.25137228,0.94601363,-0.20469266};
+		aside[]={-0.63149166,4.7264621e-008,-0.77552307};
 	};
 };
 binarizationWanted=0;
@@ -60,13 +60,14 @@ addons[]=
 	"A3_Structures_F_Bootcamp_Training",
 	"A3_Structures_F_Training",
 	"A3_Structures_F_EPC_Dominants_GhostHotel",
-	"A3_Structures_F_Exp_Walls_Net"
+	"A3_Structures_F_Exp_Walls_Net",
+	"A3_Soft_F_Quadbike_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=30;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -242,6 +243,13 @@ class AddonsMetaData
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item29
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -12760,7 +12768,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=305;
+		items=309;
 		class Item0
 		{
 			dataType="Marker";
@@ -21317,7 +21325,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3440.5684,32.530247,7286.0757};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			class Attributes
@@ -21357,7 +21365,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3437.4114,32.530247,7283.4644};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			class Attributes
@@ -22213,7 +22221,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3433.5229,32.191513,7281.1519};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22253,7 +22261,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3429.8247,32.191513,7278.7817};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22293,7 +22301,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3425.3845,31.609972,7275.541};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22333,7 +22341,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3422.3267,31.609972,7273.3394};
-				angles[]={-0,5.6723199,0};
+				angles[]={0,5.6723199,0};
 			};
 			side="Empty";
 			flags=4;
@@ -22469,7 +22477,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3409.375,29.990971,7284.2622};
-				angles[]={-0,1.0471976,6.2806959};
+				angles[]={0,1.0471976,6.2806959};
 			};
 			side="Empty";
 			flags=4;
@@ -22867,7 +22875,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3493.5613,31.836721,7168.082};
-				angles[]={-0,5.6723208,0.0075011365};
+				angles[]={0,5.6723208,0.0075011365};
 			};
 			side="Empty";
 			flags=4;
@@ -23484,6 +23492,112 @@ class Mission
 								};
 							};
 							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item305
+		{
+			dataType="Marker";
+			position[]={3492.1831,30.184999,7190.9619};
+			name="range";
+			text="RANGE";
+			type="b_hq";
+			id=2504;
+			atlOffset=-3.8146973e-005;
+		};
+		class Item306
+		{
+			dataType="Trigger";
+			position[]={3462.208,29.975124,7228.0571};
+			angle=4.1015239;
+			class Attributes
+			{
+				name="rangeenter";
+				condition="call{player in thislist}";
+				onActivation="call{""Range Info"" hintc [""You can set up competition shoots by ace self interacting while aiming down sights at a target"", ""You can stack these""];}";
+				sizeB=11.579;
+				sizeC=0;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=2505;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item307
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3504.0254,31.828182,7176.7939};
+				angles[]={6.2806959,0,0.012496647};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2506;
+			type="B_Quadbike_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item308
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3501.0469,31.716923,7174.3896};
+				angles[]={6.2656889,5.5850539,0.01749678};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2507;
+			type="B_Quadbike_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};

@@ -35,13 +35,16 @@ if((typeOf player) in ["Modern_British_FSTCommander"])then{
 
 if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 
-	_ammoaction = ["teamswitch","Switch Team","",{},{isserver}] call ace_interact_menu_fnc_createAction;
+	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","CAG","",{call twc_loadout_sfgroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","CAG","",{call twc_loadout_sfgroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag") && isserver}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","DEVGRU","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","DEVGRU","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6") && isserver}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","ANA","",{call twc_loadout_sfgroup_ana},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "ana") && ((missionnamespace getvariable ["twc_wdveh",0]) == 0))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","SAS","",{call twc_loadout_sfgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
@@ -66,6 +69,8 @@ twc_loadout_isgroupnearby = {
 twc_loadout_canswitch = {
 	
 	_check = true;
+	
+	if (isserver) exitwith {_check};
 	
 	{
 		if ((alive _x) && ((_x distance player) > 20)) then {_check = false};
@@ -134,6 +139,18 @@ twc_loadout_sfgroup_cag = {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag + 1];
 	};
+	
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
 	(group player) setvariable ["twc_groupcountry", "cag", true];
 	
 	{[_x] remoteexec ["twc_loadout_sfgroup_cag_switch", _x]} foreach (units group player);
@@ -175,6 +192,17 @@ twc_loadout_sfgroup_st6 = {
 		missionnamespace setvariable ["twc_iscagactive", _iscag + 1];
 	};
 	
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
 	(group player) setvariable ["twc_groupcountry", "st6", true];
 	{[_x] remoteexec ["twc_loadout_sfgroup_st6_switch", _x]} foreach (units group player);
 };
@@ -213,10 +241,68 @@ twc_loadout_sfgroup_baf = {
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1];
 	};
 	
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
 	(group player) setvariable ["twc_groupcountry", "baf", true];
 	
 	
 	{[_x] remoteexec ["twc_loadout_sfgroup_baf_switch", _x]} foreach (units group player);
+};
+
+	twc_loadout_sfgroup_ana_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_UKSF_Base") then {
+			[_unit] call twc_loadout_anasf_rifleman;
+		};
+		if (typeof _unit == "Modern_UKSF_Pointman") then {
+			[_unit] call twc_loadout_anasf_pointman;
+		};
+		if (typeof _unit == "Modern_UKSF_2IC") then {
+			[_unit] call twc_loadout_anasf_2ic;
+		};
+		if (typeof _unit == "Modern_UKSF_Squadleader") then {
+			[_unit] call twc_loadout_anasf_sl;
+		};
+		if (typeof _unit == "Modern_UKSF_Grenadier") then {
+			[_unit] call twc_loadout_anasf_grenadier;
+		};
+		if (typeof _unit == "Modern_UKSF_Marksman") then {
+			[_unit] call twc_loadout_anasf_marksman;
+		};
+		if (typeof _unit == "Modern_UKSF_Medic") then {
+			[_unit] call twc_loadout_anasf_medic;
+		};
+		
+		_face = face _unit;
+		
+		_unit setvariable ["twc_origface", _face];
+		
+		[_unit, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _unit];
+		
+	};
+twc_loadout_sfgroup_ana = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	_last = (group player) getvariable ["twc_groupcountry", "ana"];
+	if ((_last == "cag") || (_last == "st6")) then {
+		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
+		missionnamespace setvariable ["twc_iscagactive", _iscag - 1];
+	};
+	
+	(group player) setvariable ["twc_groupcountry", "ana", true];
+	
+	
+	{[_x] remoteexec ["twc_loadout_sfgroup_ana_switch", _x]} foreach (units group player);
 };
 
 	twc_loadout_fstgroup_us_switch = {

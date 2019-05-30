@@ -62,7 +62,7 @@ twc_shootcomp_addeh1 = {
 			if ((_x select 0) == _unit) then {
 				_dis = _x select 1;
 				_h = _unit getvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), 0];
-				_unit setvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), (_h + 1), true];
+				_unit setvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), (_h + 1) min 5, true];
 				
 				_h = _unit getvariable ["twcshootcomp_hits" + (str _dis) + (name _instigator), 0];
 				if ((_instigator getvariable ["twc_shootcomplete", 0]) == 1) then {
