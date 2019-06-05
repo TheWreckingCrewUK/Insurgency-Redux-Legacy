@@ -43,7 +43,7 @@ twc_loadout_st6_sl = {params ["_unit"];
 	_unit linkItem "ItemWatch";
 	_unit linkItem "ItemcTab";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -90,7 +90,7 @@ twc_loadout_st6_2ic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -135,7 +135,7 @@ twc_loadout_st6_pointman = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 	crateBox addMagazineCargo ["rhsusf_mag_40Rnd_46x30_FMJ", 50];
 };
@@ -178,7 +178,7 @@ twc_loadout_st6_rifleman = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -222,7 +222,7 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -270,7 +270,7 @@ twc_loadout_st6_marksman = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 	crateBox addMagazineCargo [(_wep select 1), 50];
 };
@@ -322,7 +322,7 @@ twc_loadout_st6_medic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -978,18 +978,20 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_unit addWeapon "twc_mk18_us_lds";
+	_gun = ["twc_mk18_us_lds", "twc_mk18_us_mag", "twc_m4b2_us_spectre", "twc_hk416_spectre_desert", "twc_hk416_spectre_desert"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	_unit addWeapon "ACE_Vector";
 
+	_unit addBackpack "twc_ussf_scoutpack";
 	
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	_unit linkItem "ItemcTab";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -1022,7 +1024,8 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_unit addWeapon "twc_mk18_us_lds";
+	_gun = ["twc_mk18_us_lds", "twc_mk18_us_mag", "twc_m4b2_us_spectre", "twc_hk416_spectre_desert", "twc_hk416_spectre_desert"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	_unit addWeapon "ACE_MX2A";
@@ -1033,7 +1036,7 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -1069,16 +1072,18 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
-	
-	_unit addWeapon "twc_mk18_us_mag";
+
+	_gun = ["twc_mk18_us_mag", "twc_m4b2_us_eotech", "twc_mk18_us_eotech", "twc_hk416_eotech_black", "twc_hk416_t1mag_black", "twc_m4b2_black_us_eotech"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
+	_unit addBackpack "twc_ussf_scoutpack";
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 twc_loadout_ussf_rifleman = {params ["_unit"];
@@ -1111,16 +1116,18 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
-	
-	_unit addWeapon "twc_m4b2_us_eotech";
+
+	_gun = ["twc_mk18_us_mag", "twc_m4b2_us_eotech", "twc_mk18_us_eotech", "twc_hk416_eotech_black", "twc_hk416_t1mag_black", "twc_m4b2_black_us_eotech"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
+	_unit addBackpack "twc_ussf_scoutpack";
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -1155,16 +1162,18 @@ twc_loadout_ussf_grenadier = {params ["_unit"];
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
-	
-	_unit addWeapon "twc_mk18_us_eotech";
+
+	_gun = ["twc_mk18_us_mag", "twc_m4b2_us_eotech", "twc_mk18_us_eotech", "twc_hk416_eotech_black", "twc_hk416_t1mag_black", "twc_m4b2_black_us_eotech"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhs_weap_M320";
+	_unit addBackpack "twc_ussf_scoutpack";
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -1201,12 +1210,13 @@ twc_loadout_ussf_marksman = {params ["_unit"];
 	
 	_unit addWeapon "twc_m4b2_us_marksman";
 	_unit addWeapon "rhsusf_weap_glock17g4";
+	_unit addBackpack "twc_ussf_scoutpack";
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 };
 
@@ -1241,8 +1251,9 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	_unit addHeadgear "rhsusf_mich_bare_norotos_arc_alt_tan";
-	
-	_unit addWeapon "twc_mk18_us_eotech";
+
+	_gun = ["twc_mk18_us_mag", "twc_m4b2_us_eotech", "twc_mk18_us_eotech", "twc_hk416_eotech_black", "twc_hk416_t1mag_black", "twc_m4b2_black_us_eotech"] call bis_fnc_selectrandom;
+	_unit addWeapon _gun;
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	
 	_unit addBackpack "UK3CB_BAF_B_Kitbag_TAN";
@@ -1257,7 +1268,7 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	if ((daytime > 16) || (daytime < 7)) then {
-		crateBox addItemCargo ["CUP_NVG_GPNVG_black", 1];
+		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
 	crateBox addMagazineCargo ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red", 50];
 };

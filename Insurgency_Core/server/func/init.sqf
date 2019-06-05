@@ -17,6 +17,7 @@ twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client
 	waituntil {(!(isnil "townLocationArray" ))};
 	waituntil {(!(isnil "twc_basepos" ))};
 	waituntil {(count townLocationArray ) > 5};
+	sleep 5;
 	[] spawn twc_fnc_enemyspawnpos;
 };
 

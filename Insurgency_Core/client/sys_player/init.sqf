@@ -1,5 +1,6 @@
 #include "boxes\init.sqf";
 #include "loadouts\init.sqf";
+#include "enemy\init.sqf";
 
 twc_fnc_eodflag = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_player\eodflag.sqf";
 

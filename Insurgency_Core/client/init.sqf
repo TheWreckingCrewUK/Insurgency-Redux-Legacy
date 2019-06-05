@@ -293,6 +293,8 @@ if (sunormoon == 0) then {
 	player addweapon "rhsusf_ANPVS_14";
 };
 
+if (time > 200) then {[] spawn twc_fnc_enemyspawnpos;};
+
 //Set Radios Correctly
 _radioID = [getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")] call acre_api_fnc_getRadioByType; 
  if (!isNil "_radioID") then { 

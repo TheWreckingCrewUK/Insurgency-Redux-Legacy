@@ -26,6 +26,14 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 
 _text1 = format["Completion %1 / %2<br /><br />",totalPoints, pointLimit];
 
+if ((side player) == east) then {
+	if (totalPoints < (pointlimit / 2)) then {
+		_text1 = "BLUFOR is less than halfway through the mission";
+	} else {
+		_text1 = "BLUFOR is more than halfway through the mission";
+	};
+};
+
 _text2 = "";
 _text3 = "";
 
@@ -49,7 +57,7 @@ _text4 = "";
 if ((_opforamount) == 0) then {
 	_text4 = "There are no player insurgents active<br /><br />";
 } else {
-	_text4 = format ["There are %1 player insurgents active<br /><br />", (count allplayers) - 1];
+	_text4 = format ["There are %1 player insurgents active<br /><br />", _opforamount];
 };
 
 

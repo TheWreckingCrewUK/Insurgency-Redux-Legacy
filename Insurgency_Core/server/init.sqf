@@ -22,7 +22,7 @@ publicVariable "twc_mortarchance";
 #include "sys_mechanised\init.sqf";
 //#include "sys_strongholds\init.sqf";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
-
+execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";
 execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
 
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {

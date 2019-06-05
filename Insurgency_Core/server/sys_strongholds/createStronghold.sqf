@@ -37,7 +37,7 @@ _group = createGroup East;
 [_pos, 2, 500, _group] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
 
 _num = 0;
-_total = 15;
+_total = 10;
 for "_i" from 1 to _total do{
 _infpos = [_pos, 300] call CBA_fnc_randPos;
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _infpos,[], 5,"NONE"];
@@ -48,7 +48,6 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
 	_unit setVariable ["twc_isenemy",1];
 	_num = _num + 1;

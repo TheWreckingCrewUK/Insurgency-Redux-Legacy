@@ -30,7 +30,7 @@ player addEventHandler ["Take", {
 	if (_item isKindOf ["Bag_Base", configFile >> "CfgVehicles"]) then{
 		_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;
 		
-		if (_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) exitwith {
+		if ((_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) || (_item isKindOf ["CUP_B_ACRScout_m95", configFile >> "CfgVehicles"])) exitwith {
 			_unit allowsprint true;
 		};
 		if ((_playerbackpack == "") || ((side player) == east)) exitwith {
@@ -40,9 +40,14 @@ player addEventHandler ["Take", {
 		
 		_playerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
 		
+		
 		_newbackpack = _item;
 		
 		_newload = [(configFile >> "CfgVehicles" >> _newbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+		
+		if (_newload < (130)) exitwith {
+			_unit allowsprint true;
+		};
 		
 		if (_newload > (_playerload * 1.1)) exitwith {
 			hint "This Backpack is bigger that what this role is used to fighting with. You are unable to Sprint";
