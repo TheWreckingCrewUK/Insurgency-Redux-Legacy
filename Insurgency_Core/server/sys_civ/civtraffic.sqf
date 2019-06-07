@@ -1,21 +1,22 @@
 
+_num = missionnamespace getvariable ["twccivcarcount", 7];
 
 _a = missionnamespace getvariable ["twc_civcars", []];
-while {(((count _a) > 7) || ((count allplayers) == 0) || ((time) < 120))} do {
+while {(((count _a) > _num) || ((count allplayers) == 0) || ((time) < 120))} do {
 	sleep 60;
 	_a = missionnamespace getvariable ["twc_civcars", []];
 };
 
 _pos = [];
 
-_amount = 3000;
+_amount = 2500;
 
 if ((missionnamespace getvariable ["twccancelcars", 0]) == 1) exitwith {};
 
 
 while {(((count _pos) == 0) && (_amount < 4000))} do {
 	{
-		if ((!([getpos _x, 2500] call twc_fnc_posNearPlayers)) && ([getpos _x, _amount] call twc_fnc_posNearPlayers) && (((getpos _x) distance twc_basepos) > 1000) && ((random 1) > 0.7)) then {
+		if ((!([getpos _x, 1500] call twc_fnc_posNearPlayers)) && ([getpos _x, _amount] call twc_fnc_posNearPlayers) && (((getpos _x) distance twc_basepos) > 1000) && ((random 1) > 0.3)) then {
 			_pos = getpos _x;
 		};
 	} foreach townLocationArray;
@@ -23,7 +24,7 @@ while {(((count _pos) == 0) && (_amount < 4000))} do {
 	//systemchat str _amount;
 };
 if (_amount > 3900) exitwith {sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
-//systemchat "search complete2";
+//systemchat "search complete3d";
 
 _vehtype = ["CUP_C_Datsun_4seat", "UK3CB_Civ_LandRover_Soft_Red_A", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Datsun_4seat", "UK3CB_Civ_LandRover_Soft_Red_A", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC"] call bis_fnc_selectrandom;
 
@@ -42,7 +43,12 @@ if (_player == objnull) exitwith {
 		sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf"};
 		
 _spawnpos = [_pos, 200, (random 360), 0, [1,1000],_vehtype] call SHK_pos;
-		
+
+
+_eyecheck = 0;	
+_checkcount = 0;	
+
+
 if ((speed _player) > 30) then {
 	//systemchat "player travelling1";
 	_d = getdir (vehicle _player);
@@ -55,14 +61,32 @@ if ((speed _player) > 30) then {
 	_pos = [_spos, 500, (random 360), 0, [1,1500],_vehtype] call SHK_pos;;
 	_spawnpos = _pos;
 	//systemchat str (_spos distance player);
+	
+} else {
+
+while {((_eyecheck == 0) && (_checkcount < 50))} do {
+	if (([AGLToASL (_spawnpos vectoradd [0,0,4])] call twc_fnc_seenbyplayers) == 0) then {
+		_eyecheck = 1;
+	} else {
+		_spawnpos = [_pos, 200, (random 360), 0, [1,1000],_vehtype] call SHK_pos;
+		_checkcount = _checkcount + 1;
+	};
 };
 
+};
+
+
+if (!(_checkcount < 50)) exitwith {
+//systemchat "find fail";
+sleep 10;
+
+execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
 
 
 _car = _vehtype createvehicle _spawnpos;
 
 _group = creategroup civilian;
-_driver = _group createUnit [(civilianType select (floor random (count civilianType))), _pos, [], 10, "NONE"];
+_driver = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
 
 _driver assignasdriver _car;
 _driver moveindriver _car;
@@ -79,17 +103,21 @@ clearmagazinecargoglobal _car;
 clearitemcargoglobal _car;
 clearbackpackcargoglobal _car;
 
-[_car] spawn {
-	params ["_car"];
+/*
+[_car, _driver] spawn {
+	params ["_car", "_driver"];
 	sleep 150;
-	if (!([_car, 3000] call twc_fnc_posNearPlayers)) then {
+	if (!([getpos _car, 3000] call twc_fnc_posNearPlayers)) then {
 		_array = missionnamespace getvariable ["twc_civcars", []];
-		_driver = _car getvariable ["twccivcar_driver",objnull];
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
 		deletevehicle _car;
+		deletevehicle _driver;
+		systemchat "too slow2 fail";
 	};
 };
+*/
+
 
 _array = missionnamespace getvariable ["twc_civcars", []];
 _array pushback [_driver, _car];
@@ -97,7 +125,7 @@ missionnamespace setvariable ["twc_civcars", _array];
 
 _car addEventHandler ["Killed", {
 	params ["_car", "_killer", "_instigator", "_useEffects"];
-	if (!([getpos _car, 2000] call twc_fnc_posNearPlayers)) then {
+	if ((!([getpos _car, 2000] call twc_fnc_posNearPlayers)) || ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getposasl _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0))) then {
 		deletevehicle _car;
 	};
 	_array = missionnamespace getvariable ["twc_civcars", []];
@@ -127,15 +155,39 @@ _car addEventHandler ["GetOut", {
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
 	};
+	
+
+[_car, _driver] spawn {
+	params ["_car", "_driver"];
+	while {alive _car} do {
+		
+		sleep 60;
+		_array = missionnamespace getvariable ["twc_civcars", []];
+			if ((!([getpos _car, 1500] call twc_fnc_posNearPlayers)) || ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getposasl _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0))) then {
+				deletevehicle (_car);
+				//systemchat "getout eh fail";
+				_num = (_array find [_driver, _car]);
+				if (_num == -1) then {_num = 1;};
+				_array deleteat _num;
+				missionnamespace setvariable ["twc_civcars", _array];
+			};
+		
+	};
+};
 }];
 
 
 _driver addEventHandler ["Killed", {
 	params ["_driver", "_killer", "_instigator", "_useEffects"];
+	_car = _driver getvariable ["twccivcar_car", (vehicle _driver)];
 	if (!([getpos _driver, 2000] call twc_fnc_posNearPlayers)) then {
-		_car = _driver getvariable ["twccivcar_car", objnull];
-		deletevehicle _car;
+		
 		deletevehicle (_driver);
+		//systemchat "driver dead";
+	};
+	
+	if  ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getposasl _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0)) then {
+		deletevehicle _car;
 	};
 	_array = missionnamespace getvariable ["twc_civcars", []];
 	_array deleteat (_array find [_driver, _car]);
@@ -155,6 +207,7 @@ _player = _car;
 if (_player == _car) exitwith {
 		deletevehicle (_car);
 		deletevehicle (_driver);
+		//systemchat "195";
 		_array = missionnamespace getvariable ["twc_civcars", []];
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
@@ -180,7 +233,8 @@ _car setdir _dir;
 
 
 //_gopos1 = ([(getpos _player), 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
-if (count _gopos1 == 0) exitwith {systemchat "wp fail";
+if (count _gopos1 == 0) exitwith {
+//systemchat "wp fail";
 		deletevehicle (_car);
 		deletevehicle (_driver);
 		_array = missionnamespace getvariable ["twc_civcars", []];
@@ -242,17 +296,36 @@ twc_addcivcarwp = {
 };
 
 
-[_driver] spawn {
-	params ["_driver"];
+
+
+[_driver, _car] spawn {
+	params ["_driver", "_car"];
+	
 	while {alive _driver} do {
 		_pos = getpos _driver;
+		_car = _driver getvariable ["twccivcar_car", objnull];
 		sleep 60;
-		if ((((_pos distance (getpos _driver)) < 40) || (vehicle _driver == _driver))) exitwith {
-			_car = vehicle _driver;
+		_array = missionnamespace getvariable ["twc_civcars", []];
+		
+		
+		if ((typeof _car) != (typeof vehicle _driver)) then {
+			if ((!([getpos _driver, 1500] call twc_fnc_posNearPlayers)) || ((!([getpos _driver, 150] call twc_fnc_posNearPlayers)) && (([getposasl _driver vectoradd [0,0,2]] call twc_fnc_seenbyplayers) == 0))) then {
+				deletevehicle (_driver);
+				//systemchat "driver gone";
+				_num = (_array find [_driver, _car]);
+				_array deleteat _num;
+				missionnamespace setvariable ["twc_civcars", _array];
+			};
+		};
 			
-			if (!([getpos _driver, 1000] call twc_fnc_posNearPlayers)) then {
+			
+		if (((_pos distance (getpos _driver)) < 20)) exitwith {
+			
+			
+			if ((!([getpos _driver, 1000] call twc_fnc_posNearPlayers)) || ((!([getpos _driver, 150] call twc_fnc_posNearPlayers)) && (([getposasl _driver vectoradd [0,0,2]] call twc_fnc_seenbyplayers) == 0))) then {
 			deletevehicle (_car);
 			deletevehicle (_driver);
+			//systemchat "bad dis";
 			_array = missionnamespace getvariable ["twc_civcars", []];
 			
 			_num = (_array find [_driver, _car]);

@@ -14,6 +14,9 @@ twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\s
 twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
 
+
+twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_seenbyplayers.sqf";
+
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 
 player addEventHandler ["CuratorObjectPlaced", {

@@ -14,7 +14,7 @@ while {((side player) != west)} do {
 		if (((side _x) == west) || (isserver)) then {
 			if (((_x distance player) < 70) || (isserver)) then {
 				_timeout = player getvariable ["twcenemy_lastshout", -999];
-				if ((_timeout < (time - (20 + (random 30))))) then {
+				if ((_timeout < (time - (15 + (random 10))))) then {
 					
 					_chosenspeak = _speaks call bis_fnc_selectrandom;
 					

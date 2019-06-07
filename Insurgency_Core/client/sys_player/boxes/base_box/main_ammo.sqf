@@ -57,8 +57,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
 		["DemoCharge_Remote_Mag",5],
 		["ACE_M26_Clacker",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC343",0],
+		["ACRE_PRC148",0],
 		["uk3cb_baf_llm_ir_tan",1],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
@@ -108,7 +108,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -143,7 +143,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -182,7 +182,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -223,7 +223,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -259,7 +259,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_MaxiKite", 1],
 		["rhsusf_ANPVS_15", 1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -337,8 +337,8 @@ if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",5],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC343",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC343",0],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
@@ -361,6 +361,7 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
     [
         ["rhsusf_5Rnd_00Buck",25],
         ["rhsusf_5Rnd_Slug",25],
+        ["CUP_30Rnd_9x19_MP5",25],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag",40],
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10],
         ["UK3CB_BAF_9_15Rnd",15],
@@ -372,7 +373,7 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
     _tmp_items = 
 	[
 		["ACE_epinephrine",5],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -403,7 +404,7 @@ if (typeOf vehicle player in ["2000_UKSF_Base"]) then {
     _tmp_items = 
 	[
 		["ACE_epinephrine",5],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -438,7 +439,7 @@ if (typeOf vehicle player in ["2000_UKSF_Grenadier"]) then {
     _tmp_items = 
 	[
 		["ACE_epinephrine",5],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -473,7 +474,7 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
     _tmp_items = 
 	[
 		["ACE_epinephrine",5],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -551,7 +552,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACRE_PRC117F",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_wirecutter", 1],
@@ -592,7 +593,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_Eotech",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -632,7 +633,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	_tmp_items =
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -666,7 +667,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["UK3CB_BAF_Kite",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 
 	_tmp_backpacks = 
@@ -718,7 +719,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	_tmp_items = 
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
@@ -750,7 +751,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	
 	_tmp_items = 
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 
 	_tmp_backpacks = 
@@ -783,7 +784,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_TA648_308",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["UK3CB_underbarrel_acc_fgrip_bipod",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];	
 
 	_tmp_backpacks = 
@@ -884,7 +885,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 
 	_tmp_backpacks = 
@@ -910,7 +911,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 
 	_tmp_backpacks = 
@@ -938,8 +939,8 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0]
 	];
 
 	_tmp_backpacks = 
@@ -969,7 +970,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",5],
 		["UK3CB_BAF_G_Tactical_Black",1],
@@ -1017,7 +1018,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["STKR_Predator",1],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["ACE_Kestrel4500",1],
 		["ACE_RangeCard",1],
@@ -1068,7 +1069,7 @@ if (g_class == "BAF_EOD_SL") then {
 		["UK3CB_BAF_Eotech",1],
 		["STKR_Predator",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["ACRE_PRC117F",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
@@ -1108,7 +1109,7 @@ if (g_class == "BAF_EOD_TECH") then {
 		["UK3CB_BAF_Eotech",1],
 		["STKR_Predator",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
     ];
@@ -1146,7 +1147,7 @@ if (g_class == "BAF_EOD_TECH") then {
 		["UK3CB_BAF_LLM_IR",1],
 		["UK3CB_BAF_Eotech",1],
 		["STKR_Predator",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_G_Tactical_Black",1],
 		["UK3CB_BAF_Javelin_CLU",1],
 		["UK3CB_BAF_LLM_IR_Black",1]
@@ -1180,7 +1181,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
@@ -1225,7 +1226,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 	_tmp_items =
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACRE_PRC152",1],
 		["UK3CB_BAF_LLM_IR_Black",1],
 		["ACE_SpottingScope",1]
@@ -1261,7 +1262,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 	_tmp_items = 
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -1292,7 +1293,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 	_tmp_items = 
 	[
 		["UK3CB_BAF_SpecterLDS_Dot",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -1412,7 +1413,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_anpeq15A",1],
 		["ACE_DAGR",1],
 		["ACRE_PRC117F",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_IR_Strobe_Item",1]
 	];
 };
@@ -1452,7 +1453,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
@@ -1487,7 +1488,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -1519,7 +1520,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -1551,7 +1552,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_ELCAN",1],
 		["rhsusf_acc_anpeq15A",1],
 		["bipod_01_F_blk",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -1583,7 +1584,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 //USMC Machine Gunner
@@ -1607,7 +1608,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
         ["ACE_MapTools",1],
 		["rhsusf_acc_ELCAN",1],
 		["rhsusf_acc_anpeq15A",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -1637,7 +1638,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -1677,7 +1678,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["rhsusf_assault_eagleaiii_ocp",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 /*
@@ -1958,7 +1959,7 @@ if (typeOf vehicle player == "twc_ana_commander") then {
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACRE_PRC117F",1],
 		["ACE_morphine", 20],
 		["rhsgref_helmet_pasgt_olive",1],
@@ -1989,7 +1990,7 @@ if (typeOf vehicle player == "twc_ana_base") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2028,7 +2029,7 @@ if (typeOf vehicle player == "twc_ana_subcommander") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2068,7 +2069,7 @@ if (typeOf vehicle player == "twc_ana_rifleman_at") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2107,7 +2108,7 @@ if (typeOf vehicle player == "twc_ana_mg") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2139,7 +2140,7 @@ if (typeOf vehicle player == "twc_ana_mg_as") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2176,7 +2177,7 @@ if (typeOf vehicle player == "twc_ana_marksman") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsgref_helmet_pasgt_olive",1],
 		["ACE_wirecutter", 1]
     ];
@@ -2215,7 +2216,7 @@ if (typeOf vehicle player == "twc_ana_medic") then {
 		["ACE_fieldDressing",45],
 		["ACE_morphine", 20],
 		["TWC_Item_Medical_SutureKit_20", 5],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
@@ -2259,8 +2260,8 @@ if (typeOf vehicle player == "twc_ana_interpreter") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0],
 		["ACRE_PRC152", 1]
     ];
 				_tmp_backpacks = 
@@ -2295,7 +2296,7 @@ if (typeOf vehicle player == "twc_nac_commander") then {
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACRE_PRC117F",1],
 		["ACE_morphine", 20],
 		["ACE_wirecutter", 1]
@@ -2325,7 +2326,7 @@ if (typeOf vehicle player == "twc_nac_base") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1]
     ];
 				_tmp_backpacks = 
@@ -2361,7 +2362,7 @@ if (typeOf vehicle player == "twc_nac_subcommander") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1]
     ];
 				_tmp_backpacks = 
@@ -2389,7 +2390,7 @@ if (typeOf vehicle player == "twc_nac_mg") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1]
     ];
 				_tmp_backpacks = 
@@ -2417,7 +2418,7 @@ if (typeOf vehicle player == "twc_nac_medic") then {
 	[
 		["ACE_fieldDressing",45],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_wirecutter", 1],
 		["ACE_elasticBandage", 50],
@@ -2456,8 +2457,8 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 	[
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0],
 		["ACRE_PRC152", 1]
     ];
 				_tmp_backpacks = 
@@ -2488,7 +2489,7 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 	[
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
@@ -2512,8 +2513,8 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 	[
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0],
 		["rhsusf_ANPVS_14",1],
 		["itemCTAB",1],
 		["ACE_microDAGR",1]
@@ -2563,8 +2564,8 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
     _tmp_items = 
 	[
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC343",0],
+		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
@@ -2590,7 +2591,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -2616,7 +2617,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["UK3CB_BAF_LLM_IR_Black",1]
 	];
 
@@ -2644,7 +2645,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 	[
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["itemCTAB",1],
 		["rhsusf_ANPVS_14",1],
@@ -2677,7 +2678,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2698,7 +2699,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2719,7 +2720,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2739,7 +2740,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2764,7 +2765,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2785,7 +2786,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_fieldDressing", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_elasticBandage", 50],
@@ -2816,7 +2817,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2837,7 +2838,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2860,7 +2861,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACE_RangeCard",1],
 		["ACRE_PRC117F",1]
 	];
@@ -2883,7 +2884,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2905,7 +2906,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -2933,7 +2934,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACE_DAGR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACRE_PRC117F",1],
 		["ACE_wirecutter", 1],
 		["ACE_IR_Strobe_Item",1]
@@ -2961,7 +2962,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["UK3CB_BAF_SUSAT_3D",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["ACRE_PRC152",1],
 		["ACE_SpottingScope",1]
 	];
@@ -2990,7 +2991,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["rhs_optic_maaws",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3020,7 +3021,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC117F",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3042,7 +3043,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3067,7 +3068,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3100,7 +3101,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3121,7 +3122,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3150,7 +3151,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3171,7 +3172,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3194,7 +3195,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3247,7 +3248,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3273,7 +3274,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACE_Tripod",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3296,9 +3297,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["ACE_RangeCard",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3317,8 +3318,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3337,8 +3338,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1],
-		["ACRE_PRC343",1]
+		["ACRE_PRC148",0],
+		["ACRE_PRC343",0]
 	];
 };
 
@@ -3369,7 +3370,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_M26_Clacker",1],
 		["optic_MRCO",1],
 		["ACRE_PRC117F",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3408,7 +3409,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["rhsusf_spc_teamleader",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3431,7 +3432,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_spc_rifleman",1],
 		["optic_MRCO",1]
 	];
@@ -3468,7 +3469,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["optic_MRCO",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3492,7 +3493,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["rhsusf_spc_mg",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3514,7 +3515,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3551,7 +3552,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_personalAidKit", 1],
 		["optic_MRCO",1],
 		["rhsusf_spc_corpsman",1],
-		["ACRE_PRC148",1]
+		["ACRE_PRC148",0]
 	];
 };
 
@@ -3596,7 +3597,7 @@ if (["Medic", typeof player] call BIS_fnc_inString) then {
 	[
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACRE_PRC117F",1],
 		["itemCTAB",1],
@@ -3628,7 +3629,7 @@ if (["Medic", typeof player] call BIS_fnc_inString) then {
         ["ACE_morphine",10],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
@@ -3661,12 +3662,12 @@ if (["Medic", typeof player] call BIS_fnc_inString) then {
 		["ACE_MapTools",1],
         ["ACE_fieldDressing",20],
         ["ACE_morphine",10],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",1],
 		["UK3CB_BAF_SpecterLDS_Dot_3D",1],
 		["UK3CB_BAF_LLM_IR",1],
-		["ACRE_PRC343",1],
+		["ACRE_PRC343",0],
 		["rhsusf_ANPVS_14",1]
 	];
 };

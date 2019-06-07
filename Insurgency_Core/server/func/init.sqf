@@ -12,6 +12,7 @@ twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\serv
 twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
 twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
+twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_seenbyplayers.sqf";
 
 [] spawn {
 	waituntil {(!(isnil "townLocationArray" ))};
