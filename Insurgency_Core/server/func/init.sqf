@@ -109,6 +109,19 @@ twc_hintnearbyshootcomp = {
 	systemchat _text;
 };
 
+twc_hintfullsection = {
+	params ["_group"];
+	
+	_arr = [];
+	{
+		_arr pushback [name _x, typeof _x];
+	} foreach (units _group);
+	
+	if (!hasinterface) exitwith {
+		diag_log ("twcgoodeggs "+(str _arr));
+	};
+};
+
 { 
 _x addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];

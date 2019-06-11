@@ -20,7 +20,7 @@ while {((side player) != west)} do {
 					
 					if (!(player getVariable ["ACE_isUnconscious", false])) then {
 						
-						playSound3D ["CUP\Dubbing\CUP_Dubbing_Radio_TK\RadioProtocol\" + _voice + "\STEALTH\" + _chosenspeak +".ogg", player, false, getPosasl player, 2, 1, 40];
+						playSound3D ["CUP\Dubbing\CUP_Dubbing_Radio_TK\RadioProtocol\" + _voice + "\STEALTH\" + _chosenspeak +".ogg", player, false, getPosasl player, 3, 1, 40];
 						player setvariable ["twcenemy_lastshout", time];
 					};
 				};

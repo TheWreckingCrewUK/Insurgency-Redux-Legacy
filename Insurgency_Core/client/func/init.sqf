@@ -40,6 +40,19 @@ twc_hintnearbyshootcomp = {
 	systemchat _text;
 };
 
+twc_hintfullsection = {
+	params ["_group"];
+	
+	_arr = [];
+	{
+		_arr pushback [name _x, typeof _x];
+	} foreach (units _group);
+	
+	if (!hasinterface) exitwith {
+		diag_log ("twcgoodeggs "+(str _arr));
+	};
+};
+
 twc_shootcomp_resettarget = {
 	params [ "_target"];
 	_target animateSource ["terc",0,true];

@@ -33,6 +33,10 @@ twc_endmissionplayer = {
 player setvehicleammo 0;
 };
 
+if ((count units group player) > 6) then {
+	[group player] remoteexec ["twc_hintfullsection"];
+};
+
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 
 twc_firstspawned = 0;
@@ -184,6 +188,9 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 	};
 	if (_gr == "st6") then {
 		call twc_loadout_sfgroup_st6_switch;
+	};
+	if (_gr == "ana") then {
+		call twc_loadout_sfgroup_ana_switch;
 	};
 };
 

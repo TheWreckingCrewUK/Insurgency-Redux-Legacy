@@ -36,6 +36,18 @@ if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	};
 };
 
+//list of leaders that can do attachments without the slot system
+twc_goodeggs = [
+"76561198018609662", //sarge
+"76561198050512686", //patty
+"76561198034730503", //cuck
+"76561198053960783", //crow
+"76561198042520910", //aleyboy
+"76561198030665694" //hobbs
+
+];
+publicVariable "twc_goodeggs";
+
 if(isNil "twc_attachmentgap") then{
 	twc_attachmentgap = 12;
 	publicVariable "twc_attachmentgap";

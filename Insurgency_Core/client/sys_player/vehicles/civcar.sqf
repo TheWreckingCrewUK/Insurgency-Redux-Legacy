@@ -5,7 +5,18 @@
 };
  
  
-_vehtype = ["CUP_C_Datsun_4seat", "UK3CB_Civ_LandRover_Soft_Red_A", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Ural_Civ_03", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_TT650_RU"] call bis_fnc_selectrandom;
+_vehtype = ["CUP_C_TT650_RU",
+"CUP_C_TT650_TK_CIV",
+"CUP_C_LR_Transport_CTK",
+"CUP_C_S1203_CIV",
+"CUP_C_V3S_Covered_TKC",
+"CUP_C_Lada_GreenTK_CIV",
+"CUP_C_Lada_TK2_CIV",
+"CUP_C_Volha_Gray_TKCIV",
+"CUP_C_Volha_Blue_TKCIV",
+"CUP_C_Lada_Red_CIV",
+"CUP_C_Lada_White_CIV"
+] call bis_fnc_selectrandom;
 
 _size = ((sizeof _vehtype) + 2);
 
@@ -18,6 +29,7 @@ clearBackpackCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
-_veh addbackpackcargoglobal ["RHS_NSV_Tripod_Bag", 1];
-
+if (totalpoints > (pointlimit * 0.3)) then {
+	_veh addbackpackcargoglobal ["RHS_NSV_Tripod_Bag", 1];
+};
 hint "A car has been spawned within 30m of your position";

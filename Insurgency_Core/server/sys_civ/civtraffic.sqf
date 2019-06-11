@@ -26,7 +26,12 @@ while {(((count _pos) == 0) && (_amount < 4000))} do {
 if (_amount > 3900) exitwith {sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
 //systemchat "search complete3d";
 
-_vehtype = ["CUP_C_Datsun_4seat", "UK3CB_Civ_LandRover_Soft_Red_A", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Datsun_4seat", "UK3CB_Civ_LandRover_Soft_Red_A", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC"] call bis_fnc_selectrandom;
+_vehtype = ["CUP_C_Datsun_4seat", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC",
+"CUP_C_LR_Transport_CTK"
+,"CUP_C_S1203_CIV"
+,"CUP_C_V3S_Covered_TKC"
+,"CUP_C_Lada_GreenTK_CIV"
+,"CUP_C_Lada_TK2_CIV"] call bis_fnc_selectrandom;
 
 
 _val = 15000;

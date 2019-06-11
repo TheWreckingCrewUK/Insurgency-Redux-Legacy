@@ -628,6 +628,14 @@ twc_loadout_insurgentswitch = {
 			};
 		};
 		
+		//players seem to be turning blufor when handcuffed and released
+		["ace_captiveStatusChanged",  {
+			params ["_unit"]; 
+			if (_unit != player) exitwith {};
+			_group = creategroup east;
+			_unit joinsilent _group;
+		}] call CBA_fnc_addEventHandler; 
+		
 		player addEventHandler ["Killed", {
 			params ["_unit", "_killer", "_instigator", "_useEffects"];
 	
