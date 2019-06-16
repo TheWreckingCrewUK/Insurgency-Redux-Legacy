@@ -44,7 +44,7 @@ twc_lastspawned = 0;
 twc_serstarttime = time + 10000;
 
 twc_pubcamo = 500;
-
+waituntil {!isnil "twc_missionname"};
 if (["70", twc_missionname] call BIS_fnc_inString) then {
 	twc_pubcamo = 2;
 };
@@ -152,11 +152,15 @@ vehicle player setVariable ["twc_isenemy",0, true];
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
 };
-
+["en", "English"] call acre_api_fnc_babelAddLanguageType;
+["pa", "Pashto"] call acre_api_fnc_babelAddLanguageType;
+["en"] call acre_api_fnc_babelSetSpokenLanguages;
 //systemchat "terp init";
 if (["interpreter", typeof player] call BIS_fnc_inString) then {
 	twc_terp = player;
 	publicvariable "twc_terp";
+	["en", "pa"] call acre_api_fnc_babelSetSpokenLanguages;
+	["en"] call acre_api_fnc_babelSetSpeakingLanguage;
 	"You're an interpreter. Read more about this in the diary on your map" remoteExec ["hint",twc_terp];
 	
 	player CreateDiaryRecord ["Diary",["Interpreter",

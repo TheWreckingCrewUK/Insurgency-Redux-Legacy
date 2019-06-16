@@ -76,7 +76,8 @@ if ((random 1) < 0.5) then {
 
 if ((random 1) < 0.2) then {
 	_fsgun = ["rhs_weap_maaws_optic",1];
-	_fsmag = ["rhs_mag_maaws_HEDP",6];
+	_fsmag = ["rhs_mag_maaws_HEDP",4];
+	_fsmag = ["rhs_mag_maaws_flechette",2];
 };
 
 

@@ -6,14 +6,14 @@ params ["_time"];
  
 twc_terp = _x;
 publicVariable "twc_terp"}; 
-} forEach allUnits; 
+} forEach allplayers; 
 
 
  
 if (isnull twc_terp) exitwith {terpChannel = 0; publicvariable "terpChannel"}; 
 1;
 [{ 
-_terpradio = ["ACRE_PRC152", twc_terp] call acre_api_fnc_getRadioByType;   
+_terpradio = ["ACRE_PRC152", [twc_terp]] call acre_api_fnc_getRadioByType;   
  if (isnil "_terpradio") exitwith {}; 
 terpChannel = [_terpradio] call acre_api_fnc_getRadioChannel; 
 publicVariable "terpChannel"; 

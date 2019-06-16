@@ -1,4 +1,4 @@
-twc_enemychannel = ceil (random 5);
+twc_enemychannel = 1 + (ceil (random 4));
 //twc_enemychannel = 1;
 publicVariable "twc_enemychannel";
 terptimer = 0;

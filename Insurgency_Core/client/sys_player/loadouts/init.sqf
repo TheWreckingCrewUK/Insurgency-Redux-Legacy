@@ -558,7 +558,7 @@ twc_loadout_insurgentswitch = {
 	_t0 = floor (twc_enemyplayerspawnpos select 0);
 	_t1 = floor (twc_enemyplayerspawnpos select 1);
 	hint format ["You've spawned in %3 at grid 0%1 0%2. You can spawn a car from the self interact menu if there are no coalition forces within 2km of you.", _t0, _t1, _location];
-	
+	["pa"] call acre_api_fnc_babelSetSpokenLanguages;
 	twc_ehamy = 18;
 	if ((player getvariable ["twc_hasenemyeh", 0]) == 0) then {
 		player addEventHandler ["FiredMan", {_mult = 0.7; _xvar = 26; if ((vehicle player) != player) then {_mult = 0.8; _xvar = 18}; if ((_this select 1) == (secondaryweapon player)) then {_mult = 1; _xvar = 12}; _bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random _xvar) - (_xvar / 2)) * _mult), (velocity _bullet select 1) + (((random _xvar) - (_xvar / 2)) * _mult), 	(velocity _bullet select 2) + (((random twc_ehamy) - (twc_ehamy / 2)) * _mult)];}];
@@ -607,7 +607,7 @@ twc_loadout_insurgentswitch = {
 		twc_fn_getcivcar = ["getcivcar","Spawn Car","",{execvm "insurgency_core\client\sys_player\vehicles\civcar.sqf"},{(!([getpos player, 2000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;
 	
-		twc_fn_getcivcar = ["getcivcar","Find Enemy","",{call twc_fnc_findnearestblufor},{(!([getpos player, 500] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000)}] call ace_interact_menu_fnc_createAction;
+		twc_fn_getcivcar = ["getcivcar","Find Enemy","",{call twc_fnc_findnearestblufor},{(!([getpos player, 500] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000) && (call twc_fnc_checkenemyradio)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;
 		
 		for "_i" from 1 to 3 do {

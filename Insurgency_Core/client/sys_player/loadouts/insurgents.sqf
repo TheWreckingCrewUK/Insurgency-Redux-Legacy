@@ -99,6 +99,12 @@ twc_loadout_insurgent_rifleman = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -185,6 +191,12 @@ twc_loadout_insurgent_grenadier = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -269,6 +281,12 @@ twc_loadout_insurgent_sniper = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -325,6 +343,12 @@ twc_loadout_insurgent_heavysniper = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -411,6 +435,12 @@ twc_loadout_insurgent_MG = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -502,6 +532,12 @@ twc_loadout_insurgent_heavygunner = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -600,6 +636,12 @@ twc_loadout_insurgent_RPG = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
@@ -697,6 +739,12 @@ twc_loadout_insurgent_medic = {
 	removeGoggles _unit;
 
 	_unit forceAddUniform _uniform;
+	
+	_unit addItemToUniform "ACRE_PRC152";
+	[] spawn {sleep 1;_radioID = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;
+	_channelNumber = missionnamespace getvariable ["twc_enemychannel", 2]; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel;};
+	
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};

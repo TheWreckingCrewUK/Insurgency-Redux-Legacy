@@ -2,6 +2,8 @@ params ["_pos"];
 
 
 if ((side player) != east) exitwith {};
+_check = call twc_fnc_checkenemyradio;
+if (!_check) exitwith {};
 _t0 = floor (_pos select 0);
 _t1 = floor (_pos select 1);
 _location = "Unnamed Village";

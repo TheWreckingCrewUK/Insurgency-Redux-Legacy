@@ -8,6 +8,7 @@ twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\serve
 twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
 
 twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
+twc_fnc_checkenemyradio = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_checkenemyradio.sqf";
 
 twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findoutsideblufor.sqf";
 

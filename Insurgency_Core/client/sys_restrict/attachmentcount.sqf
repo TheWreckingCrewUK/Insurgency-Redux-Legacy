@@ -24,7 +24,7 @@ _freepass = 0;
 	};
 } foreach (units group player);
 
-if (_freepass == 1) exitwith {};
+if (_freepass == 1) exitwith {(group player) setvariable ["twc_attachrestrictedgrp", 0, true];};
 
 if ((["Quartermaster", (typeof player)] call BIS_fnc_inString) && ([player] call TWC_Core_fnc_ismanagement)) exitwith {};
 
