@@ -28,7 +28,7 @@
 		["rhsusf_acc_anpeq15A",1],
 		["ACE_DAGR",1],
 		["ACRE_PRC117F",1],
-		["twc_acc_nt4_black",1],
+		["twc_acc_nt4_black",0],
 		["ACE_IR_Strobe_Item",1]
 	];
 };
@@ -69,7 +69,7 @@
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["twc_acc_nt4_black",1],
+		["twc_acc_nt4_black",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
@@ -103,7 +103,7 @@
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -128,7 +128,7 @@
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -154,7 +154,7 @@
         ["ACE_MapTools",1],
 		["rhsusf_acc_ELCAN",1],
 		["rhsusf_acc_anpeq15A",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -190,7 +190,7 @@
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -224,7 +224,7 @@
 		["twc_men_1990_us_w_backpack_squadlead",1],
 		["ACE_DAGR",1],
 		["ACRE_PRC117F",1],
-		["twc_acc_nt4_black",1],
+		["twc_acc_nt4_black",0],
 		["ACE_IR_Strobe_Item",1]
 	];
 };
@@ -250,7 +250,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1],
+		["twc_acc_nt4_black",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1]
@@ -271,7 +271,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -290,7 +290,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -309,7 +309,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -328,7 +328,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1],
+		["twc_acc_nt4_black",0],
 		["TWC_Item_Medical_SutureKit_20", 3],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
@@ -365,7 +365,7 @@
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC117F",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -403,7 +403,7 @@
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -427,7 +427,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -446,7 +446,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -479,7 +479,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -500,7 +500,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -520,7 +520,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -540,7 +540,7 @@
 
 	_tmp_items =
 	[
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
@@ -576,7 +576,7 @@
 		["ACE_personalAidKit", 1],
 		["optic_MRCO",1],
 		["rhsusf_spc_corpsman",1],
-		["twc_acc_nt4_black",1]
+		["twc_acc_nt4_black",0]
 	];
 };
 
