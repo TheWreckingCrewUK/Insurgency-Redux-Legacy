@@ -114,7 +114,7 @@ twc_hintfullsection = {
 	
 	_arr = [];
 	{
-		_arr pushback [name _x, typeof _x];
+		_arr pushback [name _x, typeof _x, getPlayerUID _x];
 	} foreach (units _group);
 	
 	if (!hasinterface) exitwith {

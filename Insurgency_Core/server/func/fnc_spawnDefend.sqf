@@ -58,7 +58,7 @@ _group setSpeedMode "LIMITED";
 [leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 
 	//[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
-	
+	_rem = [];
 	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	
 	{

@@ -58,7 +58,7 @@ _enemy = _leader findnearestenemy _leader;
 				[[_unit]] call ace_ai_fnc_unGarrison;
 				sleep 3;
 				[[_unit]] call ace_ai_fnc_unGarrison;
-				sleep 80;
+				sleep 40;
 				if ((random 1) > 0.5) then {
 					[[_pos select 0,_pos select 1, 1], nil, [_unit], 10, 1, true, false] call ace_ai_fnc_garrison;
 				};
@@ -83,7 +83,7 @@ _enemy = _leader findnearestenemy _leader;
 	};
 } foreach units _group;
 
-sleep 100;
+sleep 40;
 
 if ((count units _group)> 0) then {
 	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";

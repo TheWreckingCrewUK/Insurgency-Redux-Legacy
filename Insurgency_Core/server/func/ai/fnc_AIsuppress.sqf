@@ -27,7 +27,7 @@ if (_inittime < (time - 600)) exitwith {_unit setvariable ["twc_aisuppression", 
 
 
 while {((getSuppression _unit) < 0.2) && (alive _unit)} do {
-	sleep 3;
+	sleep 2;
 };
 if (!(alive _unit)) exitwith {};
 
@@ -88,6 +88,6 @@ if ((random 1) > 0.5) then {
 
 
 
-sleep 20;
+sleep 10;
 
 [_unit, _inittime] execvm "Insurgency_Core\server\func\ai\fnc_aisuppress.sqf";

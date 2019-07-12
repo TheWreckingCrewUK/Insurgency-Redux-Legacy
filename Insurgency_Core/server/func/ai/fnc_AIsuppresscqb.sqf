@@ -56,6 +56,6 @@ if ((random 1) > 0.5) then {
 
 
 
-sleep 20;
+sleep 10;
 
 [_unit, _inittime] execvm "Insurgency_Core\server\func\ai\fnc_aisuppress.sqf";

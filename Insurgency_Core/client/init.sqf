@@ -63,9 +63,11 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 		clearitemcargoglobal _corpse;
 	};
 };
-player setunittrait ["camouflageCoef", twc_pubcamo];
-
+	if ((!(["sniper", typeof player] call BIS_fnc_inString)) && (!(["spotter", typeof player] call BIS_fnc_inString))) then {
+		player setunittrait ["camouflageCoef", twc_pubcamo];
+	};
 twc_client_nightcamo = {
+	if (((["sniper", typeof player] call BIS_fnc_inString)) && ((["spotter", typeof player] call BIS_fnc_inString))) exitwith {};
 	while {(sunOrMoon == 1)} do {
 		sleep 120;
 	};

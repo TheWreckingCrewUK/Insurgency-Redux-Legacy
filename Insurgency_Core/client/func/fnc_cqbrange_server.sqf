@@ -10,7 +10,7 @@ params [["_iscomplex", false]];
 
 _group = creategroup east;
 
-_num = ((count allplayers) + 8) min 15;
+_num = ((count allplayers * 2) + 8) min 20;
 
 {
 	if (!isnull _x) then {
@@ -33,6 +33,7 @@ for "_i" from 1 to _num do {
 	_unit disableai "PATH";
 	_array pushback _unit;
 };
+[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 
 if (_iscomplex) then {
 	for "_i" from 1 to (_num / 2) do {
