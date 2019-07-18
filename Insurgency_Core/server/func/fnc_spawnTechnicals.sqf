@@ -74,7 +74,7 @@ for "_i" from 1 to _total do {
 		params ["_group"];
 		sleep 20;
 		
-		[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+		[leader _group] spawn TWC_Core_fnc_aiscramble;
 	};
 };
 
