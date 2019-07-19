@@ -33,7 +33,7 @@ for "_i" from 1 to _num do {
 	_unit disableai "PATH";
 	_array pushback _unit;
 };
-[leader _group] spawn TWC_Core_fnc_aiscramble;
+[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 
 if (_iscomplex) then {
 	for "_i" from 1 to (_num / 2) do {

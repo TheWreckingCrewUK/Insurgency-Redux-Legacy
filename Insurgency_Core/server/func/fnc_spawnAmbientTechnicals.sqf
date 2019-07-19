@@ -76,7 +76,7 @@ _group = createGroup East;
 
 	
 	};
-		[leader _group] spawn TWC_Core_fnc_aiscramble;
+		[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 };
 /////////////////////////////////////////////////////////////////////////////////////////
 
