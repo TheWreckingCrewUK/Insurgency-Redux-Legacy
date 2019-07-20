@@ -90,8 +90,7 @@ for "_i" from 1 to 7 do{
 	};
 	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
 	if (random 1 > 2) then {
-	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;
-	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";}
+	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
 	else
 	{
 	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;

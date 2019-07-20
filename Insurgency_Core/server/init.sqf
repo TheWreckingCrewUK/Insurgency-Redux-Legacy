@@ -24,6 +24,7 @@ publicVariable "twc_mortarchance";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";
 execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
+CIVILIAN setFriend [EAST, 1];
 
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	
