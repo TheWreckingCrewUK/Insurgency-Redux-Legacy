@@ -70,7 +70,7 @@ for "_i" from 1 to _total do {
 	
 };
 
-[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+[leader _group] spawn TWC_fnc_aiscramble;
 
 _civg = creategroup civilian;
 _fraggertotal = (random 2);

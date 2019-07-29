@@ -53,7 +53,7 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 	_num = _num + 1;
 	sleep 0.2;
 };
-	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+	[leader _group] spawn TWC_fnc_aiscramble;
 if ((random 1) > 0.5) then {
 	[_pos, nil, (units _group), 200, 2, true, true] call ace_ai_fnc_garrison;
 } else {
@@ -88,7 +88,7 @@ for "_i" from 1 to 7 do{
 		_num = _num + 1;
 		sleep 0.2;
 	};
-	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+	[leader _group] spawn TWC_fnc_aiscramble;
 	if (random 1 > 2) then {
 	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
 	else

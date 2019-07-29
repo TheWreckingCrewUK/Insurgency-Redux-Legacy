@@ -70,12 +70,7 @@ for "_i" from 1 to _total do {
 	_chosentechnical = "Insurgency_Core\server\func\technicalvariants\" + (_technicallist call bis_fnc_selectrandom);
 	
 	[_spawnpos, _group, 0] execVM _chosentechnical;
-	[_group] spawn {
-		params ["_group"];
-		sleep 20;
-		
-		[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
-	};
+
 };
 
 

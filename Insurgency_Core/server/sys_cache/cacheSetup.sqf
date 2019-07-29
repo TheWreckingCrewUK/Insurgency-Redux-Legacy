@@ -85,7 +85,7 @@ if (isNil "InsP_cacheGroup") then {
 			sleep 0.2;
 		};
 		
-		[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+		[leader _group, 1] spawn TWC_fnc_aiscramble;
 		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 		for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {

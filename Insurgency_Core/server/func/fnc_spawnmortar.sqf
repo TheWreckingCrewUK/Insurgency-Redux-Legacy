@@ -72,7 +72,7 @@ _group = createGroup East;
 	
 	};
 	
-[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+[leader _group, 1] spawn TWC_fnc_aiscramble;
 	[_mortar] spawn twc_fnc_mortarattack;
 	/*
 	_mortar addEventHandler ["Fired", {

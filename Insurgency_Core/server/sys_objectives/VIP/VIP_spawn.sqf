@@ -89,7 +89,7 @@ _group = createGroup East;
 		sleep 0.2;
 	};
 	[_group, _group, 50, 3, false] call CBA_fnc_TaskDefend;
-	[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+	[leader _group, 1] spawn TWC_fnc_aiscramble;
 };
 
 //wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
