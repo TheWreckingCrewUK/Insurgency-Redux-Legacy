@@ -1,7 +1,7 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
 
-_vehtype = "rhsusf_M1238A1_M2_socom_d";
+_vehtype = "twc_M1238A1_M2_socom_d";
 
 
  
@@ -35,13 +35,12 @@ clearitemCargoGlobal _veh;
 _mult = 1;
 
 
-//_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",8*_mult];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",4*_mult];
 
 _veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1*_mult];
 
-_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red",20*_mult];
+_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red",10*_mult];
 
-_veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",5*_mult];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10*_mult];
 _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5*_mult];
 
@@ -66,17 +65,16 @@ _fsgun = ["twc_rhs_weap_m240B_mgo_lazer",1];
 _fsmag = ["UK3CB_BAF_762_100Rnd_T",5*_mult];
 
 
-_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",4*_mult];
 
 if ((random 1) < 0.5) then {
-	_fsgun = ["UK3CB_BAF_L110A1",1];
-	_fsmag = ["UK3CB_BAF_556_200Rnd_T",5*_mult];
+	_fsgun = ["twc_m249_mgo_lazer",1];
+	_fsmag = ["rhsusf_200Rnd_556x45_mixed_soft_pouch",5*_mult];
 };
 
 
 if ((random 1) < 0.2) then {
 	_fsgun = ["rhs_weap_maaws_optic",1];
-	_fsmag = ["rhs_mag_maaws_HEDP",4];
+	_veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEDP",4];
 	_fsmag = ["rhs_mag_maaws_flechette",2];
 };
 

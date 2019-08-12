@@ -547,6 +547,15 @@ _list=[
 		]],3
 	],
 	
+		["RHS_CH_47F",[ 
+		["driver", 
+			_pilots
+		],
+		[[0], 
+			_crewchiefs
+		]],3
+	],
+	
 		["RHS_MELB_H6M",[ 
 		["driver", 
 			_pilots
