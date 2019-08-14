@@ -51,7 +51,6 @@ _veh addItemCargoGlobal ["ACE_fieldDressing",25*_mult];
 _veh addItemCargoGlobal ["ACE_elasticBandage",15*_mult];
 _veh addItemCargoGlobal ["ACE_quikclot",15*_mult];
 _veh addItemCargoGlobal ["ACE_packingBandage",15*_mult];
-_veh addItemCargoGlobal ["ACE_personalAidKit",1*_mult];
 _veh addItemCargoGlobal ["ACE_salineIV_250",15*_mult];
 _veh addItemCargoGlobal ["ACE_salineIV_500",15*_mult];
 _veh addItemCargoGlobal ["ACE_atropine",5*_mult];

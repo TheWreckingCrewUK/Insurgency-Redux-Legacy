@@ -29,7 +29,7 @@ twc_loadout_st6_sl = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
 
 	_unit addWeapon "twc_hk416_mag_desert";
@@ -73,7 +73,7 @@ twc_loadout_st6_2ic = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
 
 	_unit addWeapon "twc_hk416_mag_desert";
@@ -81,7 +81,7 @@ twc_loadout_st6_2ic = {params ["_unit"];
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	_unit addWeapon "ACE_MX2A";
 	_unit addBackpack "twc_genbackPack_tan";
-	for "_i" from 1 to 10 do {_unit addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "CUP_30Rnd_556x45_Emag";};
 	_unit addItemToBackpack "ACE_EntrenchingTool";
 	_unit addItemToBackpack "DemoCharge_Remote_Mag";
 	_unit addItemToBackpack "ACE_M26_Clacker";
@@ -167,7 +167,7 @@ twc_loadout_st6_rifleman = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
 	
 	_unit addWeapon "twc_hk416_mag_desert";
@@ -211,7 +211,7 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	for "_i" from 1 to 16 do {_unit addItemToVest "1Rnd_HE_Grenade_shell";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
 	
 	_unit addWeapon "twc_hk416_mag_desert";
@@ -304,7 +304,7 @@ twc_loadout_st6_medic = {params ["_unit"];
 	for "_i" from 1 to 3 do {_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "H_HelmetB_light_sand";
 	
 	_unit addWeapon "twc_hk416_mag_desert";
@@ -975,10 +975,10 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1021,10 +1021,10 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1070,10 +1070,10 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1114,10 +1114,10 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1160,10 +1160,10 @@ twc_loadout_ussf_grenadier = {params ["_unit"];
 	for "_i" from 1 to 16 do {_unit addItemToVest "1Rnd_HE_Grenade_shell";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhs_weap_M320";
@@ -1205,7 +1205,7 @@ twc_loadout_ussf_marksman = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 8 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 	
 	_unit addWeapon "twc_m4b2_us_marksman";
@@ -1249,10 +1249,10 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	for "_i" from 1 to 3 do {_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 6 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_mich_bare_norotos_arc_alt_tan";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	
@@ -1270,7 +1270,7 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	if ((daytime > 16) || (daytime < 7)) then {
 		_unit linkitem "CUP_NVG_GPNVG_black";
 	};
-	crateBox addMagazineCargo ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red", 50];
+	crateBox addMagazineCargo ["CUP_30Rnd_556x45_Emag", 50];
 };
 
 
