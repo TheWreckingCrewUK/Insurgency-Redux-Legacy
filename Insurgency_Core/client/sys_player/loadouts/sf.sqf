@@ -24,13 +24,16 @@ twc_loadout_st6_sl = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "twc_aor1_spcs_SL";
+	
+	_vest = ["twc_aor1_spc_squadleader", "twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "rhsusf_plateframe_teamleader", "twc_rhsusf_plateframe_SL_aor1"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 
 	_unit addWeapon "twc_hk416_mag_desert";
 	
@@ -68,13 +71,17 @@ twc_loadout_st6_2ic = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
+	
+	_vest = ["twc_aor1_spc_squadleader", "twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "rhsusf_plateframe_teamleader", "twc_rhsusf_plateframe_SL_aor1", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit addVest "twc_rhsusf_plateframe_rifleman_aor1";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 
 	_unit addWeapon "twc_hk416_mag_desert";
 	
@@ -117,7 +124,10 @@ twc_loadout_st6_pointman = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_pointman_aor1";
+	
+	_vest = ["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
@@ -125,7 +135,7 @@ twc_loadout_st6_pointman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "rhsusf_mag_40Rnd_46x30_FMJ";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 	
 	_unit addWeapon "rhsusf_weap_MP7A2_desert";
 	
@@ -160,7 +170,10 @@ twc_loadout_st6_rifleman = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	
+	_vest = ["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
@@ -168,7 +181,7 @@ twc_loadout_st6_rifleman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 	
 	_unit addWeapon "twc_hk416_mag_desert";
 	
@@ -204,7 +217,10 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	
+	_vest = ["twc_rhsusf_plateframe_grenadier_mtp", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -212,7 +228,7 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 	
 	_unit addWeapon "twc_hk416_mag_desert";
 	
@@ -261,7 +277,7 @@ twc_loadout_st6_marksman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest (_wep select 1);};
-	_unit addHeadgear "rhsusf_opscore_aor1_pelt";
+	_unit addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
 	
 	_unit addWeapon (_wep select 0);
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -296,7 +312,10 @@ twc_loadout_st6_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	
+	_vest = ["twc_rhsusf_mbav_medic_aor1", "twc_aor1_spc_squadleader"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
+	
 	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
 	_unit addItemToVest "ACE_MapTools";
@@ -317,6 +336,8 @@ twc_loadout_st6_medic = {params ["_unit"];
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_quikclot";};
 	for "_i" from 1 to 15 do {_unit addItemToBackpack "ACE_salineIV_500";};
 	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_salineIV_250";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_epinephrine";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_morphine";};
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
@@ -351,7 +372,7 @@ twc_loadout_uksf_sl = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_teamleader_alt";
+	_unit addVest "twc_mtp_spc_squadleader";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
@@ -393,7 +414,7 @@ twc_loadout_uksf_2ic = {
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_medic";
+	_unit addVest "twc_rhsusf_mbav_rifleman_mtp";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
@@ -940,6 +961,8 @@ twc_loadout_anasf_medic = {params ["_unit"];
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_quikclot";};
 	for "_i" from 1 to 15 do {_unit addItemToBackpack "ACE_salineIV_500";};
 	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_salineIV_250";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_epinephrine";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_morphine";};
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
@@ -970,13 +993,15 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_teamleader";
+	_vest = ["rhsusf_spcs_ocp_teamleader", "twc_rhsusf_plateframe_SL_mtp", "twc_mtp_spc_squadleader"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
@@ -1016,13 +1041,15 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_vest = ["twc_rhsusf_plateframe_rifleman_mtp", "twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
@@ -1063,7 +1090,8 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_vest = ["twc_rhsusf_plateframe_rifleman_mtp", "twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
@@ -1071,7 +1099,8 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
@@ -1107,7 +1136,8 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_vest = ["twc_rhsusf_plateframe_rifleman_mtp", "twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
@@ -1115,7 +1145,8 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
@@ -1153,7 +1184,8 @@ twc_loadout_ussf_grenadier = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "rhsusf_plateframe_grenadier";
+	_vest = ["rhsusf_plateframe_grenadier", "twc_rhsusf_mbav_grenadier_mtp", "twc_rhsusf_plateframe_grenadier_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -1161,7 +1193,8 @@ twc_loadout_ussf_grenadier = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
@@ -1198,7 +1231,8 @@ twc_loadout_ussf_marksman = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_vest = ["twc_rhsusf_plateframe_rifleman_mtp", "twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit addItemToVest "ACE_tourniquet";
 	_unit addItemToVest "ACE_MapTools";
 	_unit addItemToVest "HandGrenade";
@@ -1206,7 +1240,8 @@ twc_loadout_ussf_marksman = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 8 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
-	_unit addHeadgear "rhsusf_opscore_ut_pelt";
+	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	_unit addHeadgear _headgear;
 	
 	_unit addWeapon "twc_m4b2_us_marksman";
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1241,7 +1276,8 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addItemToUniform "ACE_tourniquet";
-	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
+	_vest = ["twc_rhsusf_plateframe_rifleman_mtp", "twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom;
+	_unit addVest _vest;
 	_unit additemtovest "TWC_Item_Medical_SutureKit_20";
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_tourniquet";};
 	_unit addItemToVest "ACE_MapTools";
@@ -1263,7 +1299,9 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	for "_i" from 1 to 25 do {_unit addItemToBackpack "ACE_quikclot";};
 	for "_i" from 1 to 15 do {_unit addItemToBackpack "ACE_salineIV_500";};
 	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_salineIV_250";};
-
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_epinephrine";};
+	for "_i" from 1 to 10 do {_unit addItemToBackpack "ACE_morphine";};
+//morphine epi
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";

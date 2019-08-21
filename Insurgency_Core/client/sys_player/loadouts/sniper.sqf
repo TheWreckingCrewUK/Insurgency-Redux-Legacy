@@ -27,7 +27,7 @@ twc_loadout_ussniper_shooter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 17 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
+	for "_i" from 1 to 37 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addHeadgear "rhsusf_ach_bare_tan_headset";
 
 	_unit addWeapon "twc_m24_usarmy";
@@ -69,7 +69,7 @@ twc_loadout_ussniper_spotter = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	for "_i" from 1 to 20 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
+	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addItemTobackpack "ACRE_PRC148";
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
@@ -122,7 +122,7 @@ twc_loadout_usmcsniper_shooter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 17 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
+	for "_i" from 1 to 37 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
 	
 	if ((missionnamespace getvariable ["twc_wdveh",0]) == 1) then {
 		_unit addHeadgear "rhsusf_mich_helmet_marpatwd_headset";
@@ -174,7 +174,7 @@ twc_loadout_usmcsniper_spotter = {params ["_unit"];
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	for "_i" from 1 to 20 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
+	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addItemTobackpack "ACRE_PRC148";
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
@@ -230,8 +230,8 @@ twc_loadout_bafsniper_shooter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 6 do {_unit addItemToVest "ACE_10Rnd_338_300gr_HPBT_Mag";};
-	for "_i" from 1 to 6 do {_unit addItemToBackpack "ACE_10Rnd_338_300gr_HPBT_Mag";};
+	for "_i" from 1 to 9 do {_unit addItemToVest "ACE_10Rnd_338_300gr_HPBT_Mag";};
+	for "_i" from 1 to 8 do {_unit addItemToBackpack "ACE_10Rnd_338_300gr_HPBT_Mag";};
 	
 	_unit addHeadgear "UK3CB_BAF_H_Mk7_Scrim_A";
 	
@@ -414,7 +414,7 @@ twc_loadout_cagsniper_shooter = {
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 11 do {_unit addItemToVest "rhsusf_5Rnd_300winmag_xm2010";};
+	for "_i" from 1 to 41 do {_unit addItemToVest "rhsusf_5Rnd_300winmag_xm2010";};
 	
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
 	
@@ -463,7 +463,7 @@ twc_loadout_cagsniper_spotter = {
 	_unit addItemToVest "SmokeShell";
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
-	for "_i" from 1 to 20 do {_unit addItemToBackpack "rhsusf_5Rnd_300winmag_xm2010";};
+	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_300winmag_xm2010";};
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
 	_unit addItemTobackpack "ACE_Tripod";

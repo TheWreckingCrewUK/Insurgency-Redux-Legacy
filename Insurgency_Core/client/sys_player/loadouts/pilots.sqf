@@ -53,6 +53,16 @@ twc_loadout_pilotcag_pilot = {params ["_unit"];
 	removeUniform _unit;
 
 	_unit forceAddUniform "CUP_U_B_USMC_PilotOverall";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
+	_unit addItemToUniform "ACE_MapTools";
 };
 
 twc_loadout_pilotcag_crewchief = {params ["_unit"];
@@ -60,6 +70,16 @@ twc_loadout_pilotcag_crewchief = {params ["_unit"];
 	removeUniform _unit;
 
 	_unit forceAddUniform "CUP_U_B_USMC_PilotOverall";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
+	_unit addItemToUniform "ACE_EarPlugs";
+	_unit addItemToUniform "ACRE_PRC148";
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
+	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
+	_unit addItemToUniform "ACE_morphine";
+	_unit addItemToUniform "ACE_epinephrine";
+	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
+	_unit addItemToUniform "ACE_MapTools";
 };
 
 twc_loadout_pilotbaf_pilot = {params ["_unit"];
