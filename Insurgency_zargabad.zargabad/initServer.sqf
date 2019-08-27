@@ -28,7 +28,7 @@ hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
 twc_strongholdcount = 1;
 
-pointLimit = 200;
+pointLimit = 300;
 publicVariable "pointLimit";
 
 sirenlist = [idfalarm,idfalarm_1];

@@ -1606,7 +1606,6 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ELCAN",1],
 		["rhsusf_acc_anpeq15A",1],
 		["ACRE_PRC148",0]
 	];

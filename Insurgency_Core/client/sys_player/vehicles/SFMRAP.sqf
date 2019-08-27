@@ -8,7 +8,7 @@
  
 if ((twc_sfmraptimeout > (time)) && !isserver) exitwith {
 	_title ="<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>";
-	_text1 = format ["<br />The MRAP spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The MRZR's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
+	_text1 = format ["<br />The MRAP spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The RG's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
 	hint parsetext (_title + _text1);
 	while {(twc_sfmraptimeout-time) > 0} do {
 		sleep 20;
