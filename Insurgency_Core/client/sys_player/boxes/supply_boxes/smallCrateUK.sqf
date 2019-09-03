@@ -59,6 +59,6 @@ _box addItemCargoGlobal ["SmokeShell",2];
 _box addItemCargoGlobal ["SmokeShellRed",2];
 
 _mag = (group player) getvariable ["twc_cqbmag", ["CUP_30Rnd_556x45_Emag"]];
-_veh AddMagazineCargoGlobal [(_mag select 0),10];
+_box AddMagazineCargoGlobal [(_mag select 0),10];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

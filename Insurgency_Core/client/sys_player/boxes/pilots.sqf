@@ -309,19 +309,12 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 
 	
-//snowflake stuff. not possible yet as the infantry can't switch to cag so the pilot can't get cag, and if the pilot can't get cag then they can't spawn these. Also only available right near the end of the mission and only sf and snipers can even ride them. Largely pointless, and intentionally so
+//snowflake stuff. Only available right near the end of the mission and only sf and snipers can even ride them. Largely pointless, and intentionally so
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Littlebird","",{
 	
 	["RHS_MELB_MH6M"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
 	},{(totalpoints > (pointlimit * 0.7)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Nighthawk","",{
-	
-	["B_Heli_Transport_01_F"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},{(totalpoints > (pointlimit -10)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{

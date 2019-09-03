@@ -36,7 +36,7 @@ twc_loadout_fstus_sl = {params ["_unit"];
 	_unit addWeapon "ACE_Vector";
 	_unit addBackpack "UK3CB_BAF_B_Bergen_TAN_SL_A";
 	for "_i" from 1 to 7 do {_unit addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	_unit addItemToBackpack "ACRE_PRC117";
+	_unit addItemToBackpack "ACRE_PRC117F";
 
 	comment "Add items";
 	_unit linkItem "ItemMap";

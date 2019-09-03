@@ -12,8 +12,8 @@
     [
         ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
 		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
-        ["rhsusf_mag_17Rnd_9x19_JHP",15],
-        ["rhsusf_mag_15Rnd_9x19_JHP",15],
+        ["rhsusf_mag_17Rnd_9x19_JHP",40],
+        ["rhsusf_mag_15Rnd_9x19_JHP",40],
 		["HandGrenade",5]
 	];
 
@@ -57,8 +57,8 @@
 	    ["1Rnd_SmokePurple_Grenade_shell", 10],
         ["1Rnd_SmokeBlue_Grenade_shell", 10],
 		["UGL_FlareWhite_F", 20],
-        ["rhsusf_mag_17Rnd_9x19_JHP",15],
-        ["rhsusf_mag_15Rnd_9x19_JHP",15],
+        ["rhsusf_mag_17Rnd_9x19_JHP",40],
+        ["rhsusf_mag_15Rnd_9x19_JHP",40],
 		["HandGrenade",5]
 	];
 
@@ -92,8 +92,8 @@
     [
         ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
 		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
-		["rhsusf_8Rnd_00Buck",10],
-		["rhsusf_8Rnd_Slug",10],
+		["rhsusf_8Rnd_00Buck",40],
+		["rhsusf_8Rnd_Slug",40],
 		["HandGrenade",5]
     ];
 
@@ -143,16 +143,15 @@
 
     _tmp_magazines =
     [
-        ["rhsusf_100Rnd_556x45_mixed_soft_pouch",20],
-		["rhs_200rnd_556x45_T_SAW",10],
-		["ACE_SpareBarrel",1],
+        ["rhsusf_100Rnd_556x45_mixed_soft_pouch",50],
+		["rhs_200rnd_556x45_T_SAW",20],
+		["ACE_SpareBarrel",2],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ELCAN",1],
 		["rhsusf_acc_anpeq15A",1],
 		["twc_acc_nt4_black",0]
 	];
@@ -204,7 +203,7 @@
     [
         ["30Rnd_556x45_Stanag",50],
 		["30Rnd_556x45_Stanag_Tracer_Red",20],
-        ["rhsusf_mag_7x45acp_MHP",15],
+        ["rhsusf_mag_7x45acp_MHP",40],
 		["1Rnd_HE_Grenade_shell", 20],
 	    ["1Rnd_Smoke_Grenade_shell", 10],
 	    ["1Rnd_SmokeRed_Grenade_shell", 10],
@@ -238,7 +237,7 @@
     _tmp_magazines =
     [
 		["1Rnd_HE_Grenade_shell", 30],
-		["1Rnd_Smoke_Grenade_shell", 10],
+		["1Rnd_Smoke_Grenade_shell", 20],
 		["1Rnd_SmokeRed_Grenade_shell", 10],
 		["1Rnd_SmokeGreen_Grenade_shell", 10],
 		["1Rnd_SmokeYellow_Grenade_shell", 10],
@@ -380,7 +379,7 @@
 	_tmp_magazines =
    [            
 		["CUP_30Rnd_556x45_Stanag",80],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["CUP_30Rnd_556x45_Stanag_Tracer_Red",30],
 		["UK3CB_BAF_12G_Slugs",50],
 		["UK3CB_BAF_12G_Pellets",50],
 		["1Rnd_HE_Grenade_shell",40],

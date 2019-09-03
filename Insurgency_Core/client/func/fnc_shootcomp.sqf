@@ -155,6 +155,12 @@ _eh1 = _target getvariable ["twcshootcomp_e1", -999];
 
 if ((_eh1 != -999)) exitwith {
 	hint "This target is already in use by another player";
+	player setvariable ["twc_activecomptargets_prestart", []];
+		
+		
+	player setvariable ["twc_shootcomp_runtotal", -999];
+	player setvariable ["twc_shootcomp_runtotalneeded", -999];
+	player setvariable ["twc_shootcomp_shooterready", 1];
 };
 
 
@@ -185,7 +191,13 @@ _eh2 = player addEventHandler ["FiredMan", {
 		
 		_h = _target getvariable ["twcshootcomp_shots" + (str _dis) + (name player), 0];
 		if (_h > _shotcount) exitwith {
-			systemchat "overshoot";
+			systemchat "overshoot, full reset";
+			player setvariable ["twc_activecomptargets_prestart", []];
+				
+				
+			player setvariable ["twc_shootcomp_runtotal", -999];
+			player setvariable ["twc_shootcomp_runtotalneeded", -999];
+			player setvariable ["twc_shootcomp_shooterready", 1];
 		};
 		//systemchat format ["%1", _h +1];
 		if (_h < _shotcount) then {

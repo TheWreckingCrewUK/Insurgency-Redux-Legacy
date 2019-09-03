@@ -72,7 +72,7 @@ deleteVehicle _target;
 
 
 
-	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},{(["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)}] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
 
 

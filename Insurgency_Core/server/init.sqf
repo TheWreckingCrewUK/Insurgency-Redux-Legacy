@@ -37,6 +37,8 @@ if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	};
 };
 
+skiptime (random 30);
+
 //list of leaders that can do attachments without the slot system
 twc_goodeggs = [
 "76561198018609662", //sarge
