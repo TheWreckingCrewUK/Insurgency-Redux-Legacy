@@ -114,6 +114,9 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	while {(_canfit) && ((random 1) < 2)} do {
 		_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
 		_unit setVariable ["twc_isenemy",1];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+		}];
 		_canfit = _unit moveinany _car;
 		if (!_canfit) then {
 			deletevehicle _unit;
@@ -128,7 +131,9 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver moveindriver _car;
 };
 
-
+_driver addEventHandler ["Killed",{
+	[(_this select 0)] call twc_fnc_deleteDead;
+}];
 
 _car setvariable ["twccivcar_driver",_driver];
 _driver setvariable ["twccivcar_car",_car];
