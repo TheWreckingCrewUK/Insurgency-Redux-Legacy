@@ -336,7 +336,7 @@ twc_loadout_sfgroup_ana = {
 	
 	(group player) setvariable ["twc_groupcountry", "us", true];
 	
-	{[_x] remoteexec ["twc_loadout_pilotgroup_baf_switch", _x]} foreach (units group player);
+	{[_x] remoteexec ["twc_loadout_pilotgroup_us_switch", _x]} foreach (units group player);
 };
 
 	twc_loadout_pilotgroup_baf_switch = {
