@@ -36,6 +36,29 @@ _dir2 = _dir + 30;
 _num = 0;
 _total = ([_pos] call twc_fnc_calculateSpawnAmount) * _multiplier;
 
+_side = east;
+
+if (_multiplier == 0.5) then {
+_Trg = createTrigger ["EmptyDetector", _pos];
+_Trg setTriggerArea [700, 700, 0, false];
+_Trg setTriggerActivation ["east", "not present", false];
+_Trg setTriggerTimeout [0,0,0, true];
+_Trg setTriggerStatements ["this","if (!isserver) exitwith {};missionnamespace setvariable ['twcenemycount' + (str getpos thistrigger), 0]",""];
+
+
+sleep 1;
+
+_count = missionnamespace getvariable ['twcenemycount' + (str _pos), 1];
+
+_isfriend = missionnamespace getvariable ['twcenemytown' + (str _pos), 1];
+
+if ((_count == 0) && (_isfriend == 1)) then {
+	systemchat "friendly town, yay";
+	_side = independent;
+} else {
+	missionnamespace setvariable ['twcenemytown' + (str _pos), 0];
+};
+};
 sleep 1;
 
 if (!(isnull twc_terp)) then {
@@ -47,7 +70,7 @@ if (!(isnull twc_terp)) then {
 };
 
 //Spawning hostiles
-_group = createGroup East;
+_group = createGroup _side;
 //_spawnPos = [_pos,_groupradius,[_dir1,_dir2]] call SHK_pos;
 _spawnPos = [0,0,0];
 
@@ -63,8 +86,32 @@ for "_i" from 1 to _total do {
 			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
 		};
 	}];
-	_unit setVariable ["unitsHome",_pos,false];
+	
+	if (_side == independent) then {
+		[_unit] joinsilent _group;
+		_unit addEventHandler ["Hit", {
+			params ["_unit", "_source", "_damage", "_instigator"];
+			if ((isplayer _instigator) && ((side _instigator) == west)) then {
+				independent setFriend [west, 0];
+				twc_lastbetrayal = time;
+				[{if (twc_lastbetrayal < (time - 36000)) then {independent setFriend [west, 1];};}, [], 36002] call CBA_fnc_waitAndExecute;
+			};
+		}];
+		
+		["ace_captiveStatusChanged", {
+			params ["_unit", "_state", "_reason"];
+	 
+			if ((random 1) > 0.4) then {
+				independent setFriend [west, 0];
+				twc_lastbetrayal = time;
+				[{if (twc_lastbetrayal < (time - 36000)) then {independent setFriend [west, 1];};}, [], 36002] call CBA_fnc_waitAndExecute;
+			};
+		}] call CBA_fnc_addEventHandler;
+	_unit setVariable ["twc_isenemy",0];
+	} else {
 	_unit setVariable ["twc_isenemy",1];
+	};
+	_unit setVariable ["unitsHome",_pos,false];
 	//_num = _num + 1;
 	sleep 0.2;
 	

@@ -26,7 +26,7 @@ if((west countSide _thisList) == 0)then{
 	_trg setTriggerArea [700, 700, 0, false];
 	_trg setTriggerActivation ["West", "PRESENT", False];
 	_trg setTriggerTimeout[2, 2, 2, true];
-	_trg setTriggerStatements ["{(((getPosATL _x) select 2) < 50)} count thislist > 0;","[(getPos thisTrigger),0,100,[100,200],thisList,false,true] spawn twc_townSetup",""];
+	_trg setTriggerStatements ["{(((getPosATL _x) select 2) < 50)} count thislist > 0;","[(getPos thisTrigger),0,100,[100,200],thisList,false,false] spawn twc_townSetup",""];
 	
 }else{
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;

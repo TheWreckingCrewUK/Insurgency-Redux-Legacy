@@ -1,16 +1,16 @@
 
 
-params["_town"];
+params["_pos"];
 
 //Trigger to identify town
-_pos = getPos _town;
-/*
+//_pos = getPos _town;
+
 _marker = createMarker [str _pos,_pos];
 _marker setMarkerShape "Ellipse";
-_marker setMarkerBrush "Grid";
 _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
-*/
+_marker setMarkerAlpha 0.5;
+
 
 //if (worldname == "zargabad") exitwith {};
 
@@ -18,7 +18,8 @@ _marker setMarkerColor "colorOpfor";
 _id = [_pos, "Stronghold"];
 twc_activestrongholds pushback _id;
 publicVariable "twc_activestrongholds";
-_rand = (str random 1000);
+//_rand = (str random 1000);
+_rand = _id;
 
 missionNamespace setVariable [format["stronghold_%1", _rand], 5];
 
@@ -141,7 +142,7 @@ for "_i" from 1 to 4 do{
 _idpos = twc_activestrongholds find _id;
 // Creates Trigger that checks when East is dead and awards points
 _trg = createTrigger ["EmptyDetector", _pos];
-_trg setTriggerArea [300, 300, 0, false];
+_trg setTriggerArea [600, 600, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
 _trg setTriggerStatements ["count thisList < 7",format ["
@@ -158,13 +159,24 @@ _taskID = (str random 1000);
 	_marker setMarkerText ('Stronghold Cleared');
 	_marker setMarkerSize [0.75, 0.75];
 	
-	missionNamespace setVariable [format['stronghold_%1', %1], 2];
+	missionNamespace setVariable ['stronghold_%1', 2];
 ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;", _rand],""];
 
-waituntil {
-	(missionNamespace getVariable [format['stronghold_%1', _rand], 0]) == 2};
 
-deletevehicle _trg2;
+_trg = createTrigger ["EmptyDetector", _pos];
+_trg setTriggerArea [300, 300, 0, false];
+_trg setTriggerActivation ["EAST", "PRESENT", True];
+_trg setTriggerTimeout[2, 2, 2, true];
+_trg setTriggerStatements [format ["((count thisList < 50) && ((missionNamespace getVariable ['stronghold_%1', 0]) != 2))", _rand],format ["
+_t = [%1, count thisList] call twc_fnc_strongholdreinforcements; while {((((count thisList) + _t))) < 60} do {
+_t2 = [%1, count thisList] call twc_fnc_strongholdreinforcements; _t = _t + _t2;}", _rand],""];
+
+while {
+	(missionNamespace getVariable [format['stronghold_%1', _rand], 0]) != 2} do {
+		sleep 60;
+	};
+
+//deletevehicle _trg2;
 
 		twc_activestrongholds deleteAt (twc_activestrongholds find _id);
 publicVariable 'twc_activestrongholds';

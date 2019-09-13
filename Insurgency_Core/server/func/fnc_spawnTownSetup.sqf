@@ -25,13 +25,13 @@ if(_spawnCivs)then{
 [_pos] remoteExec ["twc_fnc_bluforreport"];
 _enemies = 0;
 _random = random 100;
-if(_random < (2.5 * TWC_insMorale) || _forceSpawn)then{
+if(_random < ((2.5 * TWC_insMorale) min 50) || _forceSpawn)then{
 	_enemies = 1;
 	[_pos] spawn twc_spawnDefend;
 };
 
 _random = random 100;
-if(_random < (2.5 * TWC_insMorale) || _forceSpawn)then{
+if(_random < ((2.5 * TWC_insMorale) min 50) || _forceSpawn)then{
 	_enemies = 1;
 	[_pos, _groupradius,_thisList] spawn twc_spawnAIUnits;
 };
@@ -41,6 +41,6 @@ _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [800, 800, 0, false];
 _trg setTriggerActivation ["ANY", "PRESENT", False];
 _trg setTriggerTimeout [15,15,15, true];
-_trg setTriggerStatements ["{side (group _x) == WEST} count thisList == 0 || {side (group _x) == EAST && (str (_x getVariable 'unitsHome') == str (thisTrigger getVariable 'unitsHome'))} count thisList < 5","[(thisTrigger getVariable 'unitsHome'),thisList] spawn twc_fnc_townDeciding",""];
+_trg setTriggerStatements ["{side (group _x) == WEST} count thisList == 0 || {((side (group _x) == EAST) || (side (group _x) == independent)) && (str (_x getVariable 'unitsHome') == str (thisTrigger getVariable 'unitsHome'))} count thisList < 5","[(thisTrigger getVariable 'unitsHome'),thisList] spawn twc_fnc_townDeciding",""];
 
 _trg setVariable ["unitsHome",_pos];

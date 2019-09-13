@@ -25,6 +25,9 @@ execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
 execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";
 execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
 CIVILIAN setFriend [EAST, 1];
+independent setFriend [EAST, 0];
+east setFriend [independent, 0];
+independent setFriend [west, 1];
 
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	
@@ -179,10 +182,43 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
 		townLocationArray = townLocationArray - [_town];
-		_strongholdArray pushback _town;
+		_strongholdArray pushback (getpos _town);
 		};
 	};
 };
+//persistent stronghold system
+
+//future: make a system for management to deleteat find mission in order to reset strongholds on a per mission basis
+
+_p1 = profilenamespace getvariable ["twc_perstrongholds", []];
+_found = 0;
+
+{
+	if ((_x select 0) == missionname) then {
+		_found = 1;
+		_strongholdArray = (_x select 1);
+	};
+} foreach _p1;
+
+if ((random 1) < 0.3) then {
+// do the while again, so that if there are less strongholds in the persistent array then create a new one
+while{count _strongholdArray <= twc_strongholdcount}do{
+	_town = townLocationArray call bis_fnc_selectRandom;
+	if(!((text _town) in badTownArray))then{
+	if ((_town distance getmarkerpos "base")>1000) then {
+		townLocationArray = townLocationArray - [_town];
+		_strongholdArray pushback (getpos _town);
+		};
+	};
+};
+};
+_perstrongholds = [missionname, _strongholdArray];
+
+if (_found == 0) then {_p1 pushback _perstrongholds};
+
+profilenamespace setvariable ["twc_perstrongholds", _p1];
+
+saveprofilenamespace;
 
 if(isNil "customlocations") then{
 	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
@@ -195,7 +231,7 @@ townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVill
 {
 	[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
 }forEach _strongholdArray;
-townLocationArray = townLocationArray - _strongholdArray;
+//townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
 publicVariable "townLocationArray";
