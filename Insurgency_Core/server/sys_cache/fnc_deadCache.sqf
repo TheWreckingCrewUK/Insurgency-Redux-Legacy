@@ -8,6 +8,8 @@ _marker setMarkerColor "ColorOrange";
 _marker setMarkerText ("Cache Destroyed");
 _marker setMarkerSize [0.75, 0.75];
 
+[_pos] call twc_fnc_counterattack;
+
 InsP_cacheGroup deleteat (InsP_cacheGroup find _deadcache);
 
 ["TWC_Insurgency_adjustPoints",150] call CBA_fnc_serverEvent;

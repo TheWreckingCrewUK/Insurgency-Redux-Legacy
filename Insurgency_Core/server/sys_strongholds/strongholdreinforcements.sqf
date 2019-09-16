@@ -1,8 +1,7 @@
 
 
-params["_id", "_num"];
+params["_pos", "_num"];
 
-_pos = _id select 0;
 
 _max = 900;
 _spawnpos = [_pos, 700, _max, 3, 0, 20, 0] call BIS_fnc_findSafePos;
@@ -29,12 +28,6 @@ _unit addEventHandler ['Killed',{
 }];
 };
 
-/*
-_final = _num + _total;
-if (_final < 50) then {
-	[_id, _final] call twc_fnc_strongholdreinforcements;
-};
-*/
 
 _group setvariable ["twc_strongholdpos", _pos];
 [leader _group] spawn TWC_fnc_aiscramble;

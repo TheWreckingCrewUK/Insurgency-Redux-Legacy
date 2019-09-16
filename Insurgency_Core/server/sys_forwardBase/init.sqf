@@ -1,4 +1,5 @@
 //Event Handler to keep track of player respawns
+/*
 attackForwardBaseCheck = 0;
 addMissionEventHandler ["EntityRespawned",{
 	params["_unit","_oldUnit"];
@@ -12,3 +13,4 @@ addMissionEventHandler ["EntityRespawned",{
 		};
 	};
 }];
+*/

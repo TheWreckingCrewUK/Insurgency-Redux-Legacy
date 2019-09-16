@@ -62,7 +62,7 @@ _car2 = "UK3CB_BAF_LandRover_Snatch_NI_A";
 
 };
 
-_playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.5) +2) max 2;
+_playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.1) +2) max 2;
 if (count (_boxpos nearentities ["car", 200]) >_playercount) exitwith {hint "there are already enough vehicles here"};
 if (count (_boxpos nearobjects ["Vysilacka", 200]) == 0) exitwith {hint "There's no forward base here"};
 

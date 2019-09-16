@@ -11,6 +11,9 @@ _marker setMarkerSize [250,250];
 _marker setMarkerColor "colorOpfor";
 _marker setMarkerAlpha 0.5;
 
+_marker = createMarker [str _pos + "flag",_pos];
+_marker setMarkerType "Faction_CUP_TKM";
+
 
 //if (worldname == "zargabad") exitwith {};
 
@@ -38,7 +41,7 @@ _group = createGroup East;
 [_pos, 2, 500, _group] execvm "Insurgency_Core\server\func\fnc_spawnTechnicals.sqf";
 
 _num = 0;
-_total = 10;
+_total = 7;
 for "_i" from 1 to _total do{
 _infpos = [_pos, 300] call CBA_fnc_randPos;
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _infpos,[], 5,"NONE"];
@@ -70,7 +73,7 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _infpos,[], 25,"NONE"];
 };
 };
 
-for "_i" from 1 to 7 do{
+for "_i" from 1 to 6 do{
 	_num = 0;
 	_total = 5 + random 5;
 	_group = createGroup East;
@@ -162,14 +165,15 @@ _taskID = (str random 1000);
 	missionNamespace setVariable ['stronghold_%1', 2];
 ['TWC_Insurgency_adjustCivilianMorale', 15] call CBA_fnc_serverEvent;", _rand],""];
 
+waituntil {!isnil "InsP_cacheGroup"};
 
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", True];
 _trg setTriggerTimeout[2, 2, 2, true];
-_trg setTriggerStatements [format ["((count thisList < 50) && ((missionNamespace getVariable ['stronghold_%1', 0]) != 2))", _rand],format ["
-_t = [%1, count thisList] call twc_fnc_strongholdreinforcements; while {((((count thisList) + _t))) < 60} do {
-_t2 = [%1, count thisList] call twc_fnc_strongholdreinforcements; _t = _t + _t2;}", _rand],""];
+_trg setTriggerStatements [format ["((count thisList < (35 + ((count InsP_cacheGroup) * 5))) && ((missionNamespace getVariable ['stronghold_%1', 0]) != 2))", _rand],format ["
+_t = [(getpos thistrigger), count thisList] call twc_fnc_strongholdreinforcements; while {((((count thisList) + _t))) < (40 + ((count InsP_cacheGroup) * 5))} do {
+_t2 = [(getpos thistrigger), count thisList] call twc_fnc_strongholdreinforcements; _t = _t + _t2;}", _rand],""];
 
 while {
 	(missionNamespace getVariable [format['stronghold_%1', _rand], 0]) != 2} do {

@@ -40,6 +40,9 @@ _side = east;
 
 if (_multiplier == 0.5) then {
 _Trg = createTrigger ["EmptyDetector", _pos];
+
+missionnamespace setvariable ['twcenemycount' + (str (getpos _Trg)), 1];
+
 _Trg setTriggerArea [700, 700, 0, false];
 _Trg setTriggerActivation ["east", "not present", false];
 _Trg setTriggerTimeout [0,0,0, true];
@@ -48,15 +51,16 @@ _Trg setTriggerStatements ["this","if (!isserver) exitwith {};missionnamespace s
 
 sleep 1;
 
-_count = missionnamespace getvariable ['twcenemycount' + (str _pos), 1];
+_count = missionnamespace getvariable ['twcenemycount' + (str (getpos _Trg)), 1];
 
-_isfriend = missionnamespace getvariable ['twcenemytown' + (str _pos), 1];
+_isfriend = profilenamespace getvariable ['twcenemytown' + (str _pos), 1];
 
 if ((_count == 0) && (_isfriend == 1)) then {
-	systemchat "friendly town, yay";
+	
 	_side = independent;
 } else {
-	missionnamespace setvariable ['twcenemytown' + (str _pos), 0];
+	profilenamespace setvariable ['twcenemytown' + (str _pos), 0];
+	saveprofilenamespace;
 };
 };
 sleep 1;
@@ -82,8 +86,13 @@ for "_i" from 1 to _total do {
 		[(_this select 0)] call twc_fnc_deleteDead;
 
 		if (side (_this select 1) == WEST) then{
-			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
-			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+			if (((_this select 0) getvariable ["twc_isenemy", 0]) == 0) then{
+				["TWC_Insurgency_adjustInsurgentMorale", 0.25] call CBA_fnc_serverEvent;
+				["TWC_Insurgency_adjustCivilianMorale", -0.25] call CBA_fnc_serverEvent;
+			} else {
+				["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+				["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+			};
 		};
 	}];
 	
@@ -92,9 +101,10 @@ for "_i" from 1 to _total do {
 		_unit addEventHandler ["Hit", {
 			params ["_unit", "_source", "_damage", "_instigator"];
 			if ((isplayer _instigator) && ((side _instigator) == west)) then {
-				independent setFriend [west, 0];
-				twc_lastbetrayal = time;
-				[{if (twc_lastbetrayal < (time - 36000)) then {independent setFriend [west, 1];};}, [], 36002] call CBA_fnc_waitAndExecute;
+				//independent setFriend [west, 0];
+				
+				[getpos _unit] call twc_fnc_betrayal;
+				
 			};
 		}];
 		
@@ -102,12 +112,10 @@ for "_i" from 1 to _total do {
 			params ["_unit", "_state", "_reason"];
 	 
 			if ((random 1) > 0.4) then {
-				independent setFriend [west, 0];
-				twc_lastbetrayal = time;
-				[{if (twc_lastbetrayal < (time - 36000)) then {independent setFriend [west, 1];};}, [], 36002] call CBA_fnc_waitAndExecute;
+				[(getpos _unit)] call twc_fnc_betrayal;
 			};
 		}] call CBA_fnc_addEventHandler;
-	_unit setVariable ["twc_isenemy",0];
+	_unit setVariable ["twc_isenemy",0, true];
 	} else {
 	_unit setVariable ["twc_isenemy",1];
 	};

@@ -153,7 +153,10 @@ publicVariable "twc_activemissions";
 	
 
 	[_hvt, _group] spawn {
-		waitUntil { !([(_this select 0), 750] call CBA_fnc_nearPlayer) };
+	_pos = getpos _hvt;
+		while {!( !([(_this select 0), 750] call CBA_fnc_nearPlayer)) } do {
+			sleep 10;
+		};
 		deleteVehicle (_this select 0);
 		
 		{
@@ -162,7 +165,7 @@ publicVariable "twc_activemissions";
 	};
 
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
-	
+	[_pos] call twc_fnc_counterattack;
 		twc_activemissions deleteAt (twc_activemissions find _id);
 publicVariable "twc_activemissions";
 		

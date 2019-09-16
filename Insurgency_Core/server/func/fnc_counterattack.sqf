@@ -1,13 +1,12 @@
-//Script that spawns the attack on the forward base.
-_pos = getMarkerPos "respawn_west_forwardBase";
+params ["_pos"];
 
-_distance = 2000;
+_distance = 3000;
 _town = [0];
 
 {
 	_isfriend = profilenamespace getvariable ['twcenemytown' + (str _x), 5];
 	
-	if (_isfriend == 1) then {
+	if ((_isfriend == 1) || (_isfriend == 5)) then {
 		if (((_x distance _pos) < _distance) && (!([_x,1000] call twc_fnc_posNearPlayers))) then {
 			_town = _x;
 			_distance = (_x distance _pos);
@@ -15,8 +14,10 @@ _town = [0];
 	};
 } foreach twc_locationarray_trgs;
 
-if ((count _town ) == 1) exitwith {};
-
+if ((count _town ) == 1) exitwith {
+//systemchat "f1";
+};
+//systemchat "s1";
 _spawnpos = [_town, 1, 50, 5, 0, 20, 0] call BIS_fnc_findSafePos;
 
 
@@ -36,8 +37,12 @@ for "_i" from 1 to _total do {
 	
 	_unit setVariable ["twc_isenemy",1];
 	
+//systemchat (typeof _unit);
 };
 
 [leader _group] spawn TWC_fnc_aiscramble;
 
- _group addwaypoint [_spawnPos, 200]; 
+_wp =  _group addwaypoint [_pos, 200]; 
+_wp setWaypointformation (["column", "STAG COLUMN", "file"] call bis_fnc_selectrandom);
+
+_wp setWaypointStatements ["true", "[group this, getPos this, 4000] call bis_fnc_taskPatrol"];

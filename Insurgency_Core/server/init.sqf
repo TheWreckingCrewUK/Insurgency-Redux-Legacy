@@ -151,6 +151,12 @@ if (isNil "twc_armourcrew") then {
 	publicVariable "twc_armourcrew";
 };
 
+//array of positions that are used for the allegiance system, so that players can get distances and nearest locations from them
+if (isNil "twc_locationarray_trgs") then {
+	twc_locationarray_trgs = [];
+	publicVariable "twc_locationarray_trgs";
+};
+
 if (isNil "twc_sniperteam") then {
 	twc_sniperteam = [];
 	publicVariable "twc_sniperteam";
@@ -181,7 +187,7 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
-		townLocationArray = townLocationArray - [_town];
+		//townLocationArray = townLocationArray - [_town];
 		_strongholdArray pushback (getpos _town);
 		};
 	};
@@ -206,12 +212,16 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
-		townLocationArray = townLocationArray - [_town];
+		//townLocationArray = townLocationArray - [_town];
 		_strongholdArray pushback (getpos _town);
 		};
 	};
 };
 };
+
+twc_strongholdArray = [];
+{twc_strongholdArray pushback (str _x)} foreach _strongholdArray;
+
 _perstrongholds = [missionname, _strongholdArray];
 
 if (_found == 0) then {_p1 pushback _perstrongholds};
@@ -231,7 +241,7 @@ townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVill
 {
 	[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
 }forEach _strongholdArray;
-//townLocationArray = townLocationArray - _strongholdArray;
+townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
 publicVariable "townLocationArray";

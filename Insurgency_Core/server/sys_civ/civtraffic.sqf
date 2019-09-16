@@ -96,7 +96,16 @@ execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
 
 _car = _vehtype createvehicle _spawnpos;
 
-_enemychance = 0.1;
+_securepos = twc_basepos;
+
+if ((str (getmarkerpos "respawn_west_forwardbase")) != "[0,0,0]") then {
+	if ((_spawnpos distance twc_basepos) > (_spawnpos distance (getmarkerpos "respawn_west_forwardbase"))) then {
+		_securepos = (getmarkerpos "respawn_west_forwardbase");
+	};
+};
+
+_enemychance = ((-0.1 + ((_spawnpos distance _securepos) / 20000)) min 0.8);
+
 
 _driver = objnull;
 _group = grpnull;
@@ -111,7 +120,18 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver setVariable ["twc_isenemy",1];
 	
 	_canfit = true;
-	while {(_canfit) && ((random 1) < 2)} do {
+	if ((random 1) < 0.8) then {
+		_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
+		_unit setVariable ["twc_isenemy",1];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+		}];
+		_canfit = _unit moveinany _car;
+		if (!_canfit) then {
+			deletevehicle _unit;
+		};
+	};
+	while {(_canfit) && ((random 1) < 0.6)} do {
 		_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
 		_unit setVariable ["twc_isenemy",1];
 		_unit addEventHandler ["Killed",{
@@ -129,6 +149,30 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
 	_driver assignasdriver _car;
 	_driver moveindriver _car;
+	
+	_canfit = true;
+	if ((random 1) < 0.8) then {
+		_unit = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
+		_unit setVariable ["twc_isenemy",1];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+		}];
+		_canfit = _unit moveinany _car;
+		if (!_canfit) then {
+			deletevehicle _unit;
+		};
+	};
+	while {(_canfit) && ((random 1) < 0.6)} do {
+		_unit = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
+		_unit setVariable ["twc_isenemy",1];
+		_unit addEventHandler ["Killed",{
+			[(_this select 0)] call twc_fnc_deleteDead;
+		}];
+		_canfit = _unit moveinany _car;
+		if (!_canfit) then {
+			deletevehicle _unit;
+		};
+	};
 };
 
 _driver addEventHandler ["Killed",{

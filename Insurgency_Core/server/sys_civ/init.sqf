@@ -1,3 +1,6 @@
+
+
+/*
 params["_civ"];
 //if (random 1 > 0.2) exitwith {};
  
@@ -19,3 +22,5 @@ waitUntil {
 _civ addMagazines [_mag select 0, 4];
 _civ addWeapon ((_groundWeapon select 0) select 0);
 deleteVehicle (_groundObj select 0);
+
+*/
