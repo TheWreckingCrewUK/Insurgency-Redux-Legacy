@@ -12,4 +12,4 @@ _marker setMarkerSize [0.75, 0.75];
 
 InsP_cacheGroup deleteat (InsP_cacheGroup find _deadcache);
 
-["TWC_Insurgency_adjustPoints",150] call CBA_fnc_serverEvent;
+["TWC_Insurgency_adjustPoints",100] call CBA_fnc_serverEvent;

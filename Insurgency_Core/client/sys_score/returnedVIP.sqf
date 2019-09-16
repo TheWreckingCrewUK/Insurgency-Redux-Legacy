@@ -1,4 +1,4 @@
-_action = ["ActionRescuedVIP","Rescue VIP","",{["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent; 
+_action = ["ActionRescuedVIP","Rescue VIP","",{["TWC_Insurgency_adjustPoints", 50] call CBA_fnc_serverEvent; 
 deleteVehicle _target;
 
 this setVariable ["active",0,true];

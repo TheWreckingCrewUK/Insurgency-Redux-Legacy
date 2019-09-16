@@ -141,7 +141,7 @@ publicVariable "twc_activemissions";
 	if (!alive _hvt) then {
 	
 	deletevehicle _trg2;
-		["TWC_Insurgency_adjustPoints", 50] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_adjustPoints", 30] call CBA_fnc_serverEvent;
 	}else{
 	
 	deletevehicle _trg2;

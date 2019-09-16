@@ -149,7 +149,7 @@ _trg setTriggerArea [600, 600, 0, false];
 _trg setTriggerActivation ["EAST", "PRESENT", False];
 _trg setTriggerTimeout[2, 2, 2, true];
 _trg setTriggerStatements ["count thisList < 7",format ["
-['TWC_Insurgency_adjustPoints', 50] call CBA_fnc_serverEvent;
+['TWC_Insurgency_adjustPoints', 150] call CBA_fnc_serverEvent;
 
 _taskID = (str random 1000);
 
