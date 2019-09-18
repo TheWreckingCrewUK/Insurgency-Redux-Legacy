@@ -11,7 +11,9 @@ Once they have enough, then it runs itself again to wait until the situation cha
 
 waitUntil {!isNull player};
 
-waituntil {(count (units group player)) < 2};
+while {(count (units group player)) == 2} do {
+	sleep 10;
+};
 
 if(!isMultiplayer)exitWith{};
 

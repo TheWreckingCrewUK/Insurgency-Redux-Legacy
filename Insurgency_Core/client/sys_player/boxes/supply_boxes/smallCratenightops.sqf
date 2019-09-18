@@ -27,6 +27,10 @@ _box AddWeaponCargoGlobal ["twc_L5A4_green",4];
 //_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",1];
 
 _box addItemCargoGlobal ["rhsusf_ANPVS_14",15];
+_box addItemCargoGlobal ["Chemlight_red",20];
+_box addItemCargoGlobal ["Chemlight_blue",20];
+_box addItemCargoGlobal ["Chemlight_green",20];
+_box addItemCargoGlobal ["Chemlight_ir",20];
 _box addItemCargoGlobal ["ACE_Flashlight_KSF1",15];
 _box addItemCargoGlobal ["ACE_HandFlare_White",15];
 _box addItemCargoGlobal ["ACE_HandFlare_Green",15];

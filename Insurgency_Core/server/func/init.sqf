@@ -18,6 +18,11 @@ twc_fnc_counterattack = compile preprocessfilelinenumbers "Insurgency_Core\serve
 twc_fnc_betrayal = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_betrayal.sqf";
 
 
+twc_fnc_perspb_trigger = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_trigger.sqf";
+twc_fnc_perspb_write = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_write.sqf";
+
+
+
 [] spawn {
 	waituntil {(!(isnil "townLocationArray" ))};
 	waituntil {(!(isnil "twc_basepos" ))};

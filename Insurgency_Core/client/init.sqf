@@ -193,13 +193,13 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 		waituntil {(player distance _pos) > 3};
 		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
 		if (_gr == "cag") then {
-			call twc_loadout_sfgroup_cag_switch;
+			[player] call twc_loadout_sfgroup_cag_switch;
 		};
 		if (_gr == "st6") then {
-			call twc_loadout_sfgroup_st6_switch;
+			[player] call twc_loadout_sfgroup_st6_switch;
 		};
 		if (_gr == "ana") then {
-			call twc_loadout_sfgroup_ana_switch;
+			[player] call twc_loadout_sfgroup_ana_switch;
 		};
 	};
 };

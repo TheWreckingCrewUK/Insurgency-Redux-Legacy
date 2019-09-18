@@ -138,6 +138,9 @@
     [
         ["CUP_30Rnd_556x45_G36",50],
 		["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -166,6 +169,9 @@
         ["CUP_30Rnd_556x45_G36",50],
 		["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",10],
 		["ACE_SpareBarrel",1],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 	_tmp_items =

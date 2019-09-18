@@ -174,7 +174,7 @@ clearweaponcargoglobal _car;
 clearitemcargoglobal _car; 
 clearmagazinecargoglobal _car; 
 
-if (typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A") then {[ 
+if ((typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A") || (typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A")) then {[ 
 _car, 
  nil, 
  ["AirIntakeSnorkel_Hide",0,"CamoNet_Hide",1,"stripdowndoorrear_hide",1,"AerialAtuL_Hide",1,"AerialAtuR_Hide",1,"AerialFL_Hide",0,"AerialFR_Hide",1,"Flag_Hide",0,"sparewheel_hide",0,"javelintubespare_hide",1,"radio_hide",0] 

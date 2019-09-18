@@ -27,7 +27,7 @@ if (isNil "InsP_cacheGroup") then {
 
 	{
 		//Cache cannot cause near to Blufor respawn
- 		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 500 } do {			
+ 		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 1500 } do {			
 			_cacheMarker = "";
 	
 			_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];

@@ -13,7 +13,6 @@ if (_marker != "null") then {
 };
 
 _colour = "colorOpfor";
-systemchat "go";
 
 if (_side == 1) then {
 	_colour = "colorBlufor";
@@ -21,7 +20,6 @@ if (_side == 1) then {
 };
 if (_count == 0) then {
 	_colour = "colorGreen";
-	systemchat "green";
 };
 
 _marker = createMarker [str _pos,_pos];

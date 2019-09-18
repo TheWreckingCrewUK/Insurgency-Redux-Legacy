@@ -39,7 +39,9 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		if ((count twc_activemissions) > 0) then {_rand = (floor (random 7));};
 
 		if (_rand <= 1)then{
-				
+		
+		_rand = 3
+			/*	
 		if ((count twc_activestrongholds) == 0) then {_rand = 3} else {
 		
 			_color = "ColorGreen";
@@ -52,6 +54,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerText (str(_distance) + "m: STRONGHOLD");
 			_marker setMarkerSize [0.5,0.5];
 			};
+			*/
 		};		
 		
 		//non-situation stuff like caches

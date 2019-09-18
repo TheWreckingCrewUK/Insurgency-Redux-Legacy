@@ -15,7 +15,7 @@ if(isNil "_vehicle") then{
 	["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
 };
 //{(_target (distance (getMarkerPos "base")) < 40)}
-_pos = [getPos _town,[0,200],[0,360],0] call SHK_pos;
+_pos = [getpos _town, 1, 150, 7, 0, 0.7, 0] call BIS_fnc_findSafePos;
 _veh = _vehicle createVehicle _pos;
 /*
 {_recaction = ["ActionRescuevehicle","Recover Vehicle","",{["TWC_Insurgency_adjustPoints", 40] call CBA_fnc_serverEvent; deleteVehicle _target},{((GetPos player) distance (getMarkerPos "base") < 40)}] call ace_interact_menu_fnc_createAction;
@@ -26,6 +26,7 @@ _veh = _vehicle createVehicle _pos;
 */
 
 clearItemCargoGlobal _veh;
+clearWeaponCargoGlobal _veh;
 //Spawning the enemies
 [_veh]spawn{
 _veh = (_this select 0);

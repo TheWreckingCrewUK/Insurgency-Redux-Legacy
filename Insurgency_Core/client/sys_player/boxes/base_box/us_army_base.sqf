@@ -14,6 +14,9 @@
 		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["rhsusf_mag_15Rnd_9x19_JHP",40],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
 	];
 
@@ -59,6 +62,9 @@
 		["UGL_FlareWhite_F", 20],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["rhsusf_mag_15Rnd_9x19_JHP",40],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
 	];
 
@@ -573,7 +579,6 @@
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
-		["optic_MRCO",1],
 		["rhsusf_spc_corpsman",1],
 		["twc_acc_nt4_black",0]
 	];

@@ -15,7 +15,7 @@
 */ 
 
 _weapons = [["twc_L5A4_white",1]];
-_magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",10], ["Chemlight_yellow",10], ["Chemlight_red",10], ["Chemlight_blue",10],["ACE_Chemlight_IR",10]];
+_magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10]];
 _items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 
 
@@ -44,6 +44,9 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
 		["CUP_30Rnd_556x45_Emag_Tracer_Red",20],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["UK3CB_BAF_9_15Rnd",40],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["B_IR_Grenade",2],
 		["HandGrenade",5]
     ];
@@ -213,6 +216,9 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
         ["1Rnd_SmokeBlue_Grenade_shell",25],
         ["1Rnd_SmokeRed_Grenade_shell",25],
         ["1Rnd_Smoke_Grenade_shell",25],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["B_IR_Grenade",2],
 		["ACE_M84",3],
 		["HandGrenade",5]
@@ -327,6 +333,9 @@ if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",20],
 		["CUP_30Rnd_9x19_MP5",30],
         ["UK3CB_BAF_9_15Rnd",40],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["B_IR_Grenade",2],
 		["HandGrenade",5]
     ];
@@ -463,6 +472,9 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag",80],
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",30],
         ["UK3CB_BAF_9_15Rnd",25],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
         ["1Rnd_HE_Grenade_shell",25],
         ["1Rnd_SmokeBlue_Grenade_shell",25],
         ["1Rnd_SmokeRed_Grenade_shell",25],
@@ -551,6 +563,9 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["ACE_DAGR",1],
 		["ACRE_PRC343",0],
 		["ACRE_PRC117F",1],
@@ -713,6 +728,9 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		//Marksman
         ["UK3CB_BAF_762_L42A1_20Rnd",25],
 		["UK3CB_BAF_762_L42A1_20Rnd_T",10],	
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
 	];
 
@@ -1170,6 +1188,9 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UK3CB_BAF_556_30Rnd_T",20],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["UK3CB_BAF_9_15Rnd",5],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -1286,6 +1307,9 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
 		["rhsusf_mag_17Rnd_9x19_JHP",40],
+		["SmokeShellBlue",15],
+		["SmokeShellGreen",15],
+		["SmokeShellRed",15],
 		["UK3CB_BAF_9_15Rnd",5],
 		["HandGrenade",5]
 	];
@@ -1397,6 +1421,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	    ["1Rnd_SmokeYellow_Grenade_shell", 10],
 	    ["1Rnd_SmokePurple_Grenade_shell", 10],
         ["1Rnd_SmokeBlue_Grenade_shell", 10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["UGL_FlareWhite_F", 20],
 		["HandGrenade",5]
 	];
@@ -1440,6 +1467,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	    ["1Rnd_SmokeYellow_Grenade_shell", 10],
 	    ["1Rnd_SmokePurple_Grenade_shell", 10],
         ["1Rnd_SmokeBlue_Grenade_shell", 10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["UGL_FlareWhite_F", 20],
         ["rhsusf_mag_7x45acp_MHP",40],
 		["HandGrenade",5]
@@ -2668,6 +2698,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",10],
 		["UK3CB_BAF_9_13Rnd",10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -2756,6 +2789,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",30],
 		["UK3CB_BAF_9_13Rnd",20],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -3011,6 +3047,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
 		["UK3CB_BAF_9_15Rnd",20],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -3142,6 +3181,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_9_13Rnd",20],
 		["UK3CB_BAF_556_200Rnd_T",20],
 		["UK3CB_BAF_762_200Rnd_T",20],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -3359,6 +3401,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 
@@ -3399,6 +3444,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["1Rnd_SmokeRed_Grenade_shell",20],
 		["1Rnd_Smoke_Grenade_shell",20],
 		["1Rnd_SmokeYellow_Grenade_shell",20],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 

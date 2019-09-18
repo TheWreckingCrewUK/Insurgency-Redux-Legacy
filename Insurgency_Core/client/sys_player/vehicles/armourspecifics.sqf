@@ -2,6 +2,59 @@
 
 */
 
+
+if ((typeof _veh == "UK3CB_BAF_LandRover_Soft_Green_A") || (typeof _veh == "UK3CB_BAF_LandRover_Soft_Green_A")) then {[ 
+_veh, 
+ nil, 
+ ["AirIntakeSnorkel_Hide",0,"CamoNet_Hide",1,"stripdowndoorrear_hide",1,"AerialAtuL_Hide",1,"AerialAtuR_Hide",1,"AerialFL_Hide",0,"AerialFR_Hide",1,"Flag_Hide",0,"sparewheel_hide",0,"javelintubespare_hide",1,"radio_hide",0] 
+] call BIS_fnc_initVehicle; 
+
+};
+
+if (typeof _veh == "C_Offroad_01_F") then {
+_veh  
+ setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"]; 
+ [ 
+ _veh, 
+ ["Beige",1],  
+ ["HideDoor1",0,"HideDoor2",0,"HideDoor3",1,"HideBackpacks",1,"HideBumper1",1,"HideBumper2",0,"HideConstruction",1,"hidePolice",1,"HideServices",1,"BeaconsStart",0,"BeaconsServicesStart",0] 
+] call BIS_fnc_initVehicle;
+};
+
+
+
+if (typeof _veh == "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A") then {
+[ 
+ _veh, 
+ nil, 
+ ["AirIntakeSnorkel_Hide",0,"CamoNet_Hide",1,"Gear_Hide",1,"AerialAtuL_Hide",1,"AerialAtuR_Hide",1,"AerialFL_Hide",0,"AerialFR_Hide",1,"Flag_Hide",0,"sparewheel_hide",0,"javelintubespare_hide",1,"radio_hide",0] 
+] call BIS_fnc_initVehicle; 
+
+_veh addmagazinecargoglobal ["UK3CB_BAF_762_200Rnd_T", 10];
+
+
+	if (twc_wdveh == 0) then {
+
+_veh setObjectTextureGlobal [2, "uk3cb_baf_vehicles\addons\uk3cb_baf_vehicles_landrover\data\lr_base_baf_sand2_co.paa"];
+
+_veh setObjectTextureGlobal [7, "uk3cb_baf_vehicles\addons\uk3cb_baf_vehicles_landrover\data\lr_wmik_pannier_sand_co.paa"];
+
+};
+
+};
+
+if (typeof _veh == "I_G_Offroad_01_armed_F") then {
+  
+ [ 
+ _veh, 
+ ["Beige",1],  
+ ["HideDoor1",0,"HideDoor2",0,"HideDoor3",1,"HideBackpacks",1,"HideBumper1",1,"HideBumper2",0,"HideConstruction",1,"hidePolice",1,"HideServices",1,"BeaconsStart",0,"BeaconsServicesStart",0] 
+] call BIS_fnc_initVehicle;
+
+
+_veh setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"];
+};
+
 //rosomak, polish APC
 if (typeof _veh == "B_APC_Wheeled_01_cannon_F") then {
 

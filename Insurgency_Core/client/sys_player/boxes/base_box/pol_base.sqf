@@ -132,6 +132,9 @@
     [
         ["twc_rhsgref_30rnd_556x45_m21",50],
 		["twc_rhsgref_30rnd_556x45_m21_t",10],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -164,6 +167,9 @@
 		["rhs_GRD40_White",30],
 		["rhs_rpg7_PG7VL_mag",10],
 		["ACE_SpareBarrel",1],
+		["SmokeShellBlue",5],
+		["SmokeShellGreen",5],
+		["SmokeShellRed",5],
 		["HandGrenade",5]
     ];
 	_tmp_items =

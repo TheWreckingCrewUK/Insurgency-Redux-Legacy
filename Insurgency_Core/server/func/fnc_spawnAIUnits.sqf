@@ -102,17 +102,18 @@ for "_i" from 1 to _total do {
 			params ["_unit", "_source", "_damage", "_instigator"];
 			if ((isplayer _instigator) && ((side _instigator) == west)) then {
 				//independent setFriend [west, 0];
-				
-				[getpos _unit] call twc_fnc_betrayal;
-				
+				if (((_unit) getvariable ["twc_isenemy", 0]) == 0) then{
+					[getpos _unit] call twc_fnc_betrayal;
+				};
 			};
 		}];
 		
 		["ace_captiveStatusChanged", {
 			params ["_unit", "_state", "_reason"];
-	 
-			if ((random 1) > 0.4) then {
-				[(getpos _unit)] call twc_fnc_betrayal;
+			if (((_unit) getvariable ["twc_isenemy", 0]) == 0) then{
+				if ((random 1) > 0.4) then {
+					[(getpos _unit)] call twc_fnc_betrayal;
+				};
 			};
 		}] call CBA_fnc_addEventHandler;
 	_unit setVariable ["twc_isenemy",0, true];

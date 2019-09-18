@@ -57,6 +57,8 @@ twc_goodeggs = [
 ];
 publicVariable "twc_goodeggs";
 
+publicvariable "townspawn";
+
 if(isNil "twc_attachmentgap") then{
 	twc_attachmentgap = 12;
 	publicVariable "twc_attachmentgap";
@@ -192,7 +194,9 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 		};
 	};
 };
-//persistent stronghold system
+//persistent system
+
+execvm "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_read.sqf";
 
 //future: make a system for management to deleteat find mission in order to reset strongholds on a per mission basis
 

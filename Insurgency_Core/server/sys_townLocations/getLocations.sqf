@@ -13,7 +13,7 @@
 		_trg setTriggerArea [700, 700, 0, false];
 		_trg setTriggerActivation ["West", "PRESENT", False];
 		_trg setTriggerTimeout[2, 2, 2, true];
-		_trg setTriggerStatements ["{(((getPosATL _x) select 2) < 50)} count thislist > 0;",format["[(thisTrigger getvariable ['unitsHome', (getpos thistrigger)]),%1,100,[100,200],thisList] spawn twc_townSetup; systemchat 'getloc';",_count],""];
+		_trg setTriggerStatements ["{(((getPosATL _x) select 2) < 50)} count thislist > 0;",format["[(thisTrigger getvariable ['unitsHome', (getpos thistrigger)]),%1,100,[100,200],thisList] spawn twc_townSetup;",_count],""];
 		_trg setVariable ["unitsHome",getPos _x];
 		//this line will make each town's allegiance apparent at the beginning of the mission, provided it has been explored at some point in the past. currently commented out to facilitate exploration
 		//[getPos _trg, 1] call twc_fnc_townmarker;
