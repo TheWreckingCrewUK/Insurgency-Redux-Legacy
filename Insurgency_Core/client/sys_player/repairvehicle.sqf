@@ -12,7 +12,7 @@ params ["_vehicle"];
 };
 
 if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
-	_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]); 
+	_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 30]); 
 	_time = time;
 
 	hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
@@ -95,14 +95,14 @@ _tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 		};
 
 	if (twc_repairtickets > 0) then {
-		_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]); 
+		_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 30]); 
 
 		_time = time;
 
 		hint format ["Repairing. %1 Seconds Remaining.", (count _list * 10)];
 		waituntil {time > _time + (count _list * 10)};
 
-		if ((count _list) == (count (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 10]))) then {
+		if ((count _list) == (count (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 30]))) then {
 		
 			
 			{

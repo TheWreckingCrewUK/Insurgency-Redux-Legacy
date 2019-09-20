@@ -8,7 +8,7 @@ _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ["ANYPLAYER", "PRESENT", True];
 _trg setTriggerTimeout[2, 2, 2, true];
-_trg setTriggerStatements ["this","thistrigger setvariable ['twcpb_active', 1];[thistrigger] call twc_fnc_perspb_trgwrite;","[thistrigger] call twc_fnc_perspb_write; thistrigger setvariable ['twcpb_active', 0];"];
+_trg setTriggerStatements ["this","thistrigger setvariable ['twcpb_active', 1];[thistrigger] call twc_fnc_perspb_trgwrite;","[thistrigger] call twc_fnc_perspb_write; thistrigger setvariable ['twcpb_active', 0];_profile = profilenamespace getvariable ['twcpb' + missionname, []]; diag_log ('patrolbasebackup' + (str _profile));"];
 
 
 twc_fnc_perspb_trgwrite = {

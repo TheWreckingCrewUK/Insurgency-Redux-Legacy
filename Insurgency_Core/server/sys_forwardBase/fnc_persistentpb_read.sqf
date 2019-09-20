@@ -6,7 +6,7 @@ takes the info provided be persistentpb_write and recreates it
 
 _primary = profilenamespace getvariable ["twcpb" + missionname, []];
 
-if ((count _primary) == 0) exitwith {systemchat "no patrol base found"};
+if ((count _primary) == 0) exitwith {};
 
 _table = objnull;
 

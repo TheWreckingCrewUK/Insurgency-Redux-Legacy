@@ -17,7 +17,7 @@ _final = [];
 // && ((isvehiclecargo _x) == objnull) && (((getposatl _x) select 2) > 0)
 {
 	_objarray = [];
-	if (((damage _x) < 1) && (((getposatl _x) select 2) > -30) && (isnull (isvehiclecargo _x))) then {
+	if (((damage _x) < 1) && (((getposatl _x) select 2) > -30) && (isnull (isvehiclecargo _x)) && (({alive _x} count (crew _x)) == 0)) then {
 		_cargo = (_x getvariable ["ace_cargo_loaded", []]);
 		_cargoarray = [];
 		{
