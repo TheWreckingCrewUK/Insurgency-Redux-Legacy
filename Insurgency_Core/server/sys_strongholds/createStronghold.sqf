@@ -184,3 +184,24 @@ while {
 
 		twc_activestrongholds deleteAt (twc_activestrongholds find _id);
 publicVariable 'twc_activestrongholds';
+
+
+_p1 = profilenamespace getvariable ["twc_perstrongholds", []];
+
+_strongholdArray = [];
+_entry = [];
+{
+	if ((_x select 0) == missionname) then {
+		
+		_entry = _x;
+	};
+} foreach _p1;
+_list = _entry select 1;
+
+		_list deleteAt (_list find _pos);
+		_p1 deleteat (_p1 find _entry);
+		
+		_p1 pushback [missionname, _list];
+		profilenamespace setvariable ["twc_perstrongholds", _p1];
+	
+		saveprofilenamespace;

@@ -210,9 +210,10 @@ _found = 0;
 	};
 } foreach _p1;
 
-if ((random 1) < 0.3) then {
+if ((random 1) < 10.3) then {
 // do the while again, so that if there are less strongholds in the persistent array then create a new one
 while{count _strongholdArray <= twc_strongholdcount}do{
+
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((text _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
@@ -228,8 +229,8 @@ twc_strongholdArray = [];
 
 _perstrongholds = [missionname, _strongholdArray];
 
-if (_found == 0) then {_p1 pushback _perstrongholds};
-
+//if (_found == 0) then {_p1 pushback _perstrongholds};
+_p1 pushback _perstrongholds;
 profilenamespace setvariable ["twc_perstrongholds", _p1];
 
 saveprofilenamespace;

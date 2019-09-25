@@ -1238,7 +1238,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 		["UGL_FlareWhite_F", 20],
 		["1Rnd_SmokeBlue_Grenade_shell", 20],
 		["HandGrenade",5],
-		["Laserbatteries",1],
+		["Laserbatteries",10],
 		["ACE_HandFlare_White",5],
 		["B_IR_Grenade",2]
 		
@@ -2989,7 +2989,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
 		["HandGrenade",5],
-		["Laserbatteries",1],
+		["Laserbatteries",10],
 		["ACE_HandFlare_White",5],
 		["B_IR_Grenade",2]
     ];

@@ -28,6 +28,8 @@ _table = objnull;
 		_table = _obj;
 	};
 	
+	_obj allowdamage false;
+	
 	//see if it needs anything special from the loadout system, like colours or dynamic loadouts
 	[_obj] execVM "Insurgency_Core\client\sys_player\vehicles\persistentpb_primer.sqf";
 	
@@ -53,6 +55,8 @@ _table = objnull;
 		for "_i" from 0 to ((count (_mags select 0)) - 1) do {
 			_obj addmagazinecargoglobal [(_mags select 0) select _i, (_mags select 1) select _i];
 		};
+		sleep 30;
+		_obj allowdamage true;
 	};
 	//ace cargo
 	

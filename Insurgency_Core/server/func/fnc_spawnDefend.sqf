@@ -57,13 +57,20 @@ _group setSpeedMode "LIMITED";
 
 [leader _group] spawn TWC_fnc_aiscramble;
 
+_gopos = [_pos select 0, _pos select 1, 0];
+
 	//[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	_rem = [];
-	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	_rem = [_gopos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	
+	if (isnil "_rem") then {
+		_rem = units _group;
+	};
 	
 	{
 		deletevehicle _x;
 	} foreach _rem;
+	
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 /*
@@ -75,7 +82,7 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 */
 
 	sleep 5;
-	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+	[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_array1 = [];
 	_array2 = [];
@@ -87,11 +94,11 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
+	[_gopos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
+	[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
 	
 	

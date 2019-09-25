@@ -18,6 +18,8 @@ twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client
 
 twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_seenbyplayers.sqf";
 
+twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_player\loadouts\fnc_startingloadout.sqf";
+
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 
 player addEventHandler ["CuratorObjectPlaced", {

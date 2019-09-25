@@ -48,6 +48,7 @@ _Trg setTriggerActivation ["east", "not present", false];
 _Trg setTriggerTimeout [0,0,0, true];
 _Trg setTriggerStatements ["this","if (!isserver) exitwith {};missionnamespace setvariable ['twcenemycount' + (str getpos thistrigger), 0]",""];
 
+_multiplier = 1;
 
 sleep 1;
 
@@ -128,6 +129,8 @@ for "_i" from 1 to _total do {
 
 [leader _group] spawn TWC_fnc_aiscramble;
 
+if (_side != independent) then {
+
 _civg = creategroup civilian;
 _fraggertotal = (random 2);
 
@@ -153,15 +156,24 @@ _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
 units _civg joinsilent _group;
+};
+
+
 	_rem = [];
-	_rem = [_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	
+	_gopos = [_pos select 0, _pos select 1, 0];
+	
+	_rem = [_gopos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	if (isnil "_rem") then {
+		_rem = units _group;
+	};
 	
 	{
 		deletevehicle _x;
 	} foreach _rem;
 	
 	sleep 3;
-	[_pos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+	[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	_array1 = [];
 	_array2 = [];
@@ -173,11 +185,11 @@ units _civg joinsilent _group;
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
+	[_gopos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
 	
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_pos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
+	[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
 	

@@ -91,17 +91,68 @@ twc_client_nightcamo = {
 };
 
 if ((time > (twc_serstarttime + 600)) && (twc_firstspawned > 1)) exitwith {
-	player setvehicleammo 0.2;
+
+	_items = (backpackitems player);
+	{player removeitemfrombackpack _x} foreach (backpackitems player);
+	player setvehicleammo 0.8;
+	{
+		player additemtobackpack _x;
+	} foreach _items;
 };
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//persistent loadout stuff
+[] spawn {
+sleep 10;
+player addEventHandler ["Inventoryclosed", {
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+}];
+
+player addEventHandler ["Reloaded", {
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+}];
+
+player addEventHandler ["Hit", {
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+}];
+};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 twc_lastspawned = time;
-if (twc_firstspawned > 1) exitwith {};
+if (twc_firstspawned > 1) exitwith {
+
+_role = typeof vehicle player;
+
+_profile = profilenamespace getvariable ["twcpubloadout" + _role, []];
+
+if ((count _profile) > 0) then {
+	profilenamespace setvariable ["twcpubloadout" + _role, [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+};
+};
 twc_firstspawned = time;
 twc_serstarttime = time;
 /////////////////////////////////////////////////////////////////
 //first spawn code
 /////////////////////////////////////////////////////////////////
 
+
+[] spawn {
+sleep 2;
+call twc_fnc_pubstartingloadout;
+};
 
 if (!("ItemMap" in assigneditems player)) then {
 	addMissionEventHandler ["Map", {
