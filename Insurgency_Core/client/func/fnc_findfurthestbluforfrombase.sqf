@@ -26,7 +26,7 @@ _base = missionnamespace getvariable ["twc_basepos", [0,0,0]];
 _basecount = 0;
 
 {
-	if (((_x distance [0,0,0]) > 50) && ((_x distance player) > 40) && ((side _x) == west) && (alive _x) && ((_base distance _x) > _val) && ((_base distance _x) > 300)) then {
+	if (((_x distance [0,0,0]) > 50) && ((_x distance player) > 140) && ((side _x) == west) && (alive _x) && ((_base distance _x) > _val) && ((_base distance _x) > 300)) then {
 		_return = _x;
 		_val = (_base distance _x);
 	};

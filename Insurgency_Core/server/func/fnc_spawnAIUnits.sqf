@@ -41,18 +41,17 @@ _side = east;
 if (_multiplier == 0.5) then {
 _Trg = createTrigger ["EmptyDetector", _pos];
 
-missionnamespace setvariable ['twcenemycount' + (str (getpos _Trg)), 1];
 
 _Trg setTriggerArea [700, 700, 0, false];
-_Trg setTriggerActivation ["east", "not present", false];
+_Trg setTriggerActivation ["east", "present", false];
 _Trg setTriggerTimeout [0,0,0, true];
-_Trg setTriggerStatements ["this","if (!isserver) exitwith {};missionnamespace setvariable ['twcenemycount' + (str getpos thistrigger), 0]",""];
+_Trg setTriggerStatements ["(count thislist) > 2","if (!isserver) exitwith {};missionnamespace setvariable ['twcenemycount' + (str getpos thistrigger), 1]",""];
 
 _multiplier = 1;
 
 sleep 1;
 
-_count = missionnamespace getvariable ['twcenemycount' + (str (getpos _Trg)), 1];
+_count = missionnamespace getvariable ['twcenemycount' + (str (getpos _Trg)), 0];
 
 _isfriend = profilenamespace getvariable ['twcenemytown' + (str _pos), 1];
 
