@@ -38,7 +38,7 @@ if (!((backpack player) == "")) then {
 			_unit allowsprint false;
 			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
 		};
-		if ((_item isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) || (_item isKindOf ["CUP_B_ACRScout_m95", configFile >> "CfgVehicles"])) exitwith {
+		if (((backpack player) isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) || ((backpack player) isKindOf ["CUP_B_ACRScout_m95", configFile >> "CfgVehicles"])) exitwith {
 			_unit allowsprint true;
 		};
 		

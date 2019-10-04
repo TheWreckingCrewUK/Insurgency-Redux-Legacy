@@ -25,7 +25,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 	nonQuestionableList pushBack _civilianQuestioned;
 	publicVariable "nonQuestionableList";
 
-	if (_givenNumber == 0) then {
+	if ((_givenNumber == 0) || (isserver)) then {
 		switch (True) do {
 			case (floor TWC_civMorale <= 15):{_textarray pushback "I've marked a location on your map, I hope you die trying to get there."};
 			case (floor TWC_civMorale <= 20):{_textarray pushback "I'll mark a spot. Now LEAVE."};

@@ -6,7 +6,7 @@ Once they have enough, then it runs itself again to wait until the situation cha
 
 */
 
-//if(isserver)exitWith{};
+if(isserver)exitWith{};
 waitUntil {!isNull player};
 
 while {(count (units group player)) > 3} do {

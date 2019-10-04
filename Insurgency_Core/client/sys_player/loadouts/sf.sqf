@@ -12,7 +12,7 @@ twc_loadout_st6_sl = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -24,9 +24,10 @@ twc_loadout_st6_sl = {params ["_unit"];
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	
 	_vest = ["twc_aor1_spc_squadleader", "twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "rhsusf_plateframe_teamleader", "twc_rhsusf_plateframe_SL_aor1"] call bis_fnc_selectrandom;
 	_unit addVest _vest;
+	
+	//"CUP_V_B_Armatus_US_MCam", "CUP_V_B_Armatus_OD", "CUP_V_B_Armatus_BB_US_MCam", "CUP_V_B_Armatus_BB_OD", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_B_JPC_MCam", "CUP_V_B_JPC_OD" after cup update
 	
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
@@ -37,7 +38,7 @@ twc_loadout_st6_sl = {params ["_unit"];
 
 	_unit addWeapon "twc_hk416_mag_desert";
 	
-	_unit addWeapon "rhsusf_weap_glock17g4";
+	_unit addWeapon "rhsusf_weap_glock17g4"; //CUP_hgun_MP7_desert after cup update
 	_unit addWeapon "ACE_Vector";
 
 	
@@ -60,7 +61,7 @@ twc_loadout_st6_2ic = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -113,7 +114,7 @@ twc_loadout_st6_pointman = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -159,7 +160,7 @@ twc_loadout_st6_rifleman = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -206,7 +207,7 @@ twc_loadout_st6_grenadier = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -258,7 +259,7 @@ twc_loadout_st6_marksman = {params ["_unit"];
 	["twc_m2010_scope", "rhsusf_5Rnd_300winmag_xm2010"]
 	] call bis_fnc_selectrandom;
 
-	_unit forceAddUniform "rhs_uniform_FROG01_d";
+	_unit forceAddUniform (["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -982,6 +983,9 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	removeHeadgear _unit;
 
 	_unit forceAddUniform "rhs_uniform_g3_mc";
+	
+	//"CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"after cup update
+	
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC148";
@@ -994,6 +998,10 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
 	_vest = ["rhsusf_spcs_ocp_teamleader", "twc_rhsusf_plateframe_SL_mtp", "twc_mtp_spc_squadleader"] call bis_fnc_selectrandom;
+	
+	//"CUP_V_B_Armatus_US_MCam", "CUP_V_B_Armatus_OD", "CUP_V_B_Armatus_BB_US_MCam", "CUP_V_B_Armatus_BB_OD", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_B_JPC_MCam", "CUP_V_B_JPC_OD" after cup update
+	
+	
 	_unit addVest _vest;
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
@@ -1001,6 +1009,9 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	_unit addItemToVest "B_IR_Grenade";
 	for "_i" from 1 to 7 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
+	
+	//"CUP_H_OpsCore_Covered_MCAM_US_SF", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Tan_SF" after cup update
+	
 	_unit addHeadgear _headgear;
 
 	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;

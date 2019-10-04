@@ -46,7 +46,20 @@ if(isNil "hvtlist") then{
 _unitString = hvtlist call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
-_vehspawnPos = [_pos,[5,30],random 360,0, [1,30]] call SHK_pos; 
+
+
+_nil = [_pos, nil, [_hvt], 20, 2, false, true] call ace_ai_fnc_garrison;
+
+//garrison should return
+if (!isnil "_nil") then {
+	if ((count _nil) > 0) then {
+		_nil = [_pos, nil, [_hvt], 50, 2, false, true] call ace_ai_fnc_garrison;
+	};
+};
+
+_pos = [_pos, 1, 20, 3, 0, 0.7, 0] call BIS_fnc_findSafePos;
+
+_vehspawnPos = [_pos, 1, 30, 5, 0, 0.7, 0] call BIS_fnc_findSafePos; 
 _hvtveh = createvehicle ["CUP_C_Volha_Limo_TKCIV", _vehspawnPos];
 
 _hvtveh setvehiclelock "locked";
@@ -90,6 +103,8 @@ for "_i" from 1 to _total do{
 	//_num = _num + 1;
 	sleep 0.2;
 };
+
+_nil = [_pos, nil, (units _group), 50, 2, false, true] call ace_ai_fnc_garrison;
 
 _id = [_pos, "HVT"];
 twc_activemissions pushback _id;
@@ -154,10 +169,10 @@ publicVariable "twc_activemissions";
 
 	[_hvt, _group] spawn {
 	_pos = getpos _hvt;
-		while {!( !([(_this select 0), 750] call CBA_fnc_nearPlayer)) } do {
-			sleep 10;
+		while {!( !([(_this select 0), 1500] call CBA_fnc_nearPlayer)) } do {
+			sleep 30;
 		};
-		deleteVehicle (_this select 0);
+		//deleteVehicle (_this select 0);
 		
 		{
 			deleteVehicle _x;

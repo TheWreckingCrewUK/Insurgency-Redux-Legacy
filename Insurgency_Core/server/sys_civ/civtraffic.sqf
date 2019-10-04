@@ -323,6 +323,13 @@ if ((_speed > 50) && ((random 1) < 0.3)) then {
 	_gopos1 = ([(getpos _player), 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
 };
 
+_cd = 100;
+while {((_gopos1 distance twc_basepos) < 1000)} do {
+	_cpos1 = _gopos1 getpos [(_amount + _cd), _dir];
+	_gopos1 = ([_cpos1, 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
+	_cd = _cd + 200;
+};
+
 _car setdir _dir;
 
 //_gopos1 = _car getpos [(_amount * 2), _dir];
@@ -368,7 +375,7 @@ twc_addcivcarwp = {
 
 	_gopos2 = ([_gopos2, 500, (random 360), 0, [2,2000],_car] call SHK_pos);
 	
-	while {((_gopos2 distance _car) < 100)} do {
+	while {((_gopos2 distance _car) < 100) || ((_gopos2 distance twc_basepos) < 1000)} do {
 		_gopos2 = _car getpos [(1000), (random 360)];
 
 		_gopos2 = ([_gopos2, 500, (random 360), 0, [2,2000],_car] call SHK_pos);

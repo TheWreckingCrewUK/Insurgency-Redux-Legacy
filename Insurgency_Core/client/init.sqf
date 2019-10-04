@@ -9,11 +9,10 @@
 //#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
+
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
 InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
 twc_news = compile preprocessfilelinenumbers "Insurgency_Core\client\news.sqf";
-cutText ["","Black IN",0.001];
-waitUntil {!isNull player};
 cutText ["","Black IN",0.001];
 
 _alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] call ace_interact_menu_fnc_createAction;
@@ -37,7 +36,6 @@ if ((count units group player) > 6) then {
 	[group player] remoteexec ["twc_hintfullsection"];
 };
 
-if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
 
 twc_firstspawned = 0;
 twc_lastspawned = 0;
@@ -237,7 +235,6 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 };
 
 
-
 if (["uksf", typeof player] call BIS_fnc_inString) then {
 	[] spawn {
 		_pos = getpos player;
@@ -373,3 +370,9 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";
 }];
+
+
+
+waitUntil {!isNull player};
+cutText ["","Black IN",0.001];
+if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
