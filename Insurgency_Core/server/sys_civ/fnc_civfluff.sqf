@@ -1,0 +1,138 @@
+/*
+by Hobbs
+creates civs in a natural manner in places that cannot be seen by players, then have them move around naturally before deleting themselves when not seen by players and outside of a sane radius to avoid performance issues
+*/
+
+params ["_pos"];
+
+
+{
+	if ((_x distance _pos) < 1000) then {
+		[_pos, _x] spawn {
+			params ["_pos", "_player"];
+			_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+			while {_var >= 20} do {
+				sleep 30;
+				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+			};
+			
+			while {(alive _player) && ((_pos distance _player) < 1000) && (_var < 20)} do {
+				_gop = [getpos _player, 10, 60, 3, false] call twc_fnc_findsneakypos;
+				
+				if ((_gop distance _player) > 10) then {
+					_group = creategroup civilian; 
+					_group setbehaviour "safe";
+					_group setspeedmode "limited";
+					_unit = _group createUnit [(selectRandom civilianType), _gop, [], 5, "NONE"];
+					
+					_unit setVariable ["twc_isenemy",0, true];
+					
+					_westKilled = _unit addEventHandler ["Killed", {
+						params ["_unit", "_killer", "_instigator", "_useEffects"];
+						
+						_pos = _unit getvariable ["unitshome", ""];
+						_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+						missionnamespace setvariable [("twccivfluff" + (str _pos)), _var - 1];
+						[_unit] call twc_fnc_deleteDead;
+						if (_unit getvariable ["twc_isenemy", 0] == 1) exitwith {};
+						_instigator = _unit getVariable ["ace_medical_lastDamageSource", _instigator];
+						if (isPlayer _instigator) then {
+							["TWC_Insurgency_adjustPoints", -5] call CBA_fnc_serverEvent;
+							["TWC_Insurgency_adjustCivilianMorale", -1] call CBA_fnc_serverEvent;
+							if (_unit getvariable ["twc_isenemy", 0] == 0) then {
+								diag_log format ["%1 - %2 killed a civilian", time, name _instigator];
+								systemchat format ["%1 - %2 killed a civilian", time, name _instigator];
+							};
+						};
+					}];
+					
+					_unit addEventHandler["FiredNear", {
+						params["_civ"];
+						_isBrickingIt = _civ getVariable ["unitIsBrickingIt", false];
+						
+						if (!(_isBrickingIt) && alive _civ && (_civ getvariable ["twc_isenemy", 0] == 0)) then {
+						_civ setVariable ["unitIsBrickingIt", true, false];
+							switch (round(random 2)) do {
+								case 0:{_civ switchMove "ApanPercMstpSnonWnonDnon_G01";};
+								case 1:{_civ playMoveNow "ApanPknlMstpSnonWnonDnon_G01";};
+								case 2:{_civ playMoveNow "ApanPpneMstpSnonWnonDnon_G01";};
+								default{_civ playMoveNow "ApanPknlMstpSnonWnonDnon_G01";};
+							};
+							
+							_civ setSpeedMode "FULL";
+
+							switch (round(random 2)) do {
+								case 0;
+								case 1: {
+									_house = nearestBuilding (getPos _civ);
+									_count = 0;
+									while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
+									if (_c > 0) then {
+										_ranNum = floor(random _c);
+										_pos = (_house buildingPos _ranNum);
+									};
+									_civ doMove (_buildingLocations buildingPos 1);
+								};
+								case 2: {
+									_newHideyHole = [(position _civ), 100] call CBA_fnc_randPos;
+									_civ doMove _newHideyHole;
+								};
+								default {};
+							};
+							[_civ] spawn{
+								params["_civ"];
+								_time = time + 120;
+								waitUntil {unitReady _civ || _time < time};
+								_civ setVariable ["unitIsBrickingIt", false, false];
+								_civ switchMove "";
+								_civ doMove ((_civ getVariable "unitsHome"));
+								_civ setSpeedMode "LIMITED";
+								waitUntil {unitReady _civ || _civ getVariable "unitIsBrickingIt"};
+								if(_civ getVariable "unitIsBrickingIt")exitWith{};
+								doStop _civ;
+							};
+						};
+					}];
+					_wppos = [getpos _player, 10, 40, 3, false] call twc_fnc_findsneakypos;
+					_wp = _group addwaypoint [_wppos, 0];
+					_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
+					_wppos = [getpos _player, 10, 40, 3, false] call twc_fnc_findsneakypos;
+					_wp = _group addwaypoint [_wppos, 0];
+					_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
+					
+					_unit setvariable ["unitshome", (_pos)];
+					
+					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+					missionnamespace setvariable [("twccivfluff" + (str _pos)), _var + 1];
+					while {_var >= 20} do {
+						sleep 30;
+						_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+					};
+				};
+				sleep 2;
+			};
+		};
+		
+	};
+} foreach allplayers;
+
+twc_fnc_newfluffwp = {
+	params ["_unit"];
+	_group = group _unit;
+	_pos = getpos _unit;
+	if ((!([_pos,30] call twc_fnc_posNearPlayers)) && (([_pos] call twc_fnc_seenbyplayers) == 0)) exitwith {
+		deletevehicle _unit;
+		
+		_pos = _unit getvariable ["unitshome", ""];
+		_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+		missionnamespace setvariable [("twccivfluff" + (str _pos)), _var - 1];
+		
+	};
+	_gop = [_pos, 50, 160, 3, false] call twc_fnc_findsneakypos;
+	if ((_gop distance _pos) > 10) then {
+		_wp = _group addwaypoint [(_gop), 0];
+		_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
+	} else {
+		[_unit] call twc_fnc_newfluffwp;
+	};
+};
