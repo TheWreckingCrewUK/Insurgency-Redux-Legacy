@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2508;
+		nextID=2509;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3322.1265,52.224049,7248.1401};
-		dir[]={0.68526739,-0.27810749,-0.67329746};
-		up[]={0.19850111,0.96051568,-0.19503532};
-		aside[]={-0.70091951,1.1104858e-006,-0.71339047};
+		pos[]={3377.5769,32.239315,7232.8521};
+		dir[]={0.72508138,-0.30951598,-0.61540186};
+		up[]={0.23610924,0.95085537,-0.20039552};
+		aside[]={-0.64715034,1.1944212e-006,-0.76249897};
 	};
 };
 binarizationWanted=0;
@@ -61,13 +61,14 @@ addons[]=
 	"A3_Structures_F_Training",
 	"A3_Structures_F_EPC_Dominants_GhostHotel",
 	"A3_Structures_F_Exp_Walls_Net",
-	"A3_Soft_F_Quadbike_01"
+	"A3_Soft_F_Quadbike_01",
+	"CUP_WheeledVehicles_Wolfhound"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -252,6 +253,11 @@ class AddonsMetaData
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item30
+		{
+			className="CUP_WheeledVehicles_Wolfhound";
+			name="CUP_WheeledVehicles_Wolfhound";
 		};
 	};
 };
@@ -12768,7 +12774,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=305;
+		items=306;
 		class Item0
 		{
 			dataType="Marker";
@@ -15207,8 +15213,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3465.8979,30.11611,7153.6772};
-				angles[]={6.2631865,2.5307279,0.02999169};
+				position[]={3465.8979,30.116098,7153.6768};
+				angles[]={6.2631841,2.5307274,0.029984757};
 			};
 			side="Empty";
 			flags=4;
@@ -15217,7 +15223,29 @@ class Mission
 			};
 			id=1861;
 			type="Land_CamoNet_NATO_EP1";
-			atlOffset=1.9073486e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item57
 		{
@@ -16895,8 +16923,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3384.8457,28.715317,7214.5322};
-				angles[]={0.0024897563,2.9595966,0.044969428};
+				position[]={3384.8455,28.715504,7214.5322};
+				angles[]={0.0024958209,2.9595897,0.044977132};
 			};
 			side="Empty";
 			flags=4;
@@ -16906,7 +16934,6 @@ class Mission
 			};
 			id=1980;
 			type="UK3CB_BAF_Jackal2_L134A1_D";
-			atlOffset=-0.00019836426;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -23541,6 +23568,24 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item305
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3390.4319,26.893515,7224.6396};
+				angles[]={6.2706885,2.4434609,0.047455505};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2508;
+			type="CUP_B_Wolfhound_LMG_GB_D";
+			atlOffset=0.0065498352;
 		};
 	};
 };

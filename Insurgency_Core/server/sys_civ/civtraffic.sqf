@@ -104,7 +104,7 @@ if ((str (getmarkerpos "respawn_west_forwardbase")) != "[0,0,0]") then {
 	};
 };
 
-_enemychance = ((-0.1 + ((_spawnpos distance _securepos) / 20000)) min 0.8);
+_enemychance = ((-0.3 + ((_spawnpos distance _securepos) / 10000)) min 0.8);
 
 
 _driver = objnull;
@@ -324,12 +324,16 @@ if ((_speed > 50) && ((random 1) < 0.3)) then {
 };
 
 _cd = 100;
-while {((_gopos1 distance twc_basepos) < 1000)} do {
-	_cpos1 = _gopos1 getpos [(_amount + _cd), _dir];
-	_gopos1 = ([_cpos1, 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
-	_cd = _cd + 200;
-};
 
+
+//something in here is causing a 0 elements provided, 3 expected error
+if (!isnil "_gopos1") then {
+	while {((_gopos1 distance twc_basepos) < 1000)} do {
+		_cpos1 = (_gopos1 getpos [(_amount + _cd), _dir]);
+		_gopos1 = ([_cpos1, 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
+		_cd = _cd + 200;
+	};
+};
 _car setdir _dir;
 
 //_gopos1 = _car getpos [(_amount * 2), _dir];

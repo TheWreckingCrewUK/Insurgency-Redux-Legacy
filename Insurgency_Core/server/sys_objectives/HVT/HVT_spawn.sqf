@@ -59,7 +59,14 @@ if (!isnil "_nil") then {
 
 _pos = [_pos, 1, 20, 3, 0, 0.7, 0] call BIS_fnc_findSafePos;
 
+if ((count _pos) == 2) then {
+	_pos = [_pos select 0, _pos select 1, 0];
+};
+
 _vehspawnPos = [_pos, 1, 30, 5, 0, 0.7, 0] call BIS_fnc_findSafePos; 
+if ((count _vehspawnPos) == 2) then {
+	_vehspawnPos = [_vehspawnPos select 0, _vehspawnPos select 1, 0];
+};
 _hvtveh = createvehicle ["CUP_C_Volha_Limo_TKCIV", _vehspawnPos];
 
 _hvtveh setvehiclelock "locked";

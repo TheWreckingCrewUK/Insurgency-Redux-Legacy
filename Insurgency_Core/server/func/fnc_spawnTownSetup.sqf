@@ -21,6 +21,8 @@ if(_spawnCivs)then{
 	[_pos, _civnum, _civradius] call twc_spawnCiv;
 };
 
+[_pos] call twc_fnc_civfluff;
+
 _isfriend = profilenamespace getvariable ['twcenemytown' + (str _pos), 5];
 
 _enemies = 0;

@@ -31,6 +31,37 @@ _tmp_backpacks = [];
 #include "us_army_base.sqf";
 
 
+if (["quartermaster", typeof player] call BIS_fnc_inString) then {
+	
+
+    _tmp_weapons = 
+	[
+		["TWC_CUP_smg_MP5A5_flashlight_clean", 1]
+	];
+
+	_tmp_magazines =
+    [
+        ["CUP_30Rnd_9x19_MP5",50],
+        ["CUP_30Rnd_556x45_Emag",50]
+    ];
+	
+    _tmp_items = 
+	[
+		["itemCTAB", 2],
+		["SatchelCharge_Remote_Mag",1],
+		["DemoCharge_Remote_Mag",5],
+		["ACE_M26_Clacker",1],
+		["ACE_DAGR",1],
+		["ACRE_PRC343",5],
+		["ACRE_PRC148",5]
+    ];
+				_tmp_backpacks = 
+	[ 
+		["twc_mtp_belt",2],
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",5]
+	];
+};
+
 if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     _tmp_weapons =
     [

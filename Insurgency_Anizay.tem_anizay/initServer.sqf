@@ -42,6 +42,9 @@ AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";
 AATeams = 6;
 AATeam = ["twc_greek_officer", "twc_greek_aa", "twc_greek_aa", "twc_greek_aa"];
 
+
+twc_bluflufflist = ["Modern_British_Pointman_Light", "Modern_USMC_Rifleman_d", "TWC_Modern_US_Army_Rifleman", "Modern_pol_Base_d", "twc_ana_base", "Modern_British_Quartermaster", "Modern_ger_Base_d", "Modern_UKSF_Base", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Quartermaster"];
+
 //List of Spoof Objects
 iedSpoofs = ["Land_Garbage_square3_F", "Land_Garbage_square5_F", "Land_Garbage_line_F"];
 

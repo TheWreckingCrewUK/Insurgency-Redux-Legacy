@@ -36,6 +36,8 @@ publicvariable "sirenlist";
 
 civilianType = ["Tak_Civ_Men_KTL1", "CUP_C_TK_Man_04_Jack", "Tak_Civ_Men_KTL2","CUP_C_TK_Man_07_Coat", "Tak_Civ_Men_KTL3", "Tak_Civ_Men_KTL4", "Tak_Civ_Men_KTs1", "Tak_Civ_Men_KTs2", "Tak_Civ_Men_KTs3", "Tak_Civ_Men_KTs4",  "CUP_C_TK_Man_05_Jack", "Tak_Civ_Men_J1", "Tak_Civ_Men_J2", "Tak_Civ_Men_J3"];
 
+twc_bluflufflist = ["1990_British_SectionCommander_Desert", "1990_British_Gunner_Desert", "1990_British_2IC_Desert", "1990_RM_British_SectionCommander_Mix", "1990_RM_British_Marksman_Mix", "1990_RM_British_Rifleman_AT_Mix", "twc_men_1990_us_d_teamleader", "twc_men_1990_us_d_rifleman", "twc_ana_base", "1990_British_Platoon_Commander_Desert", "1990_British_quartermaster_Desert", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank"];
+
 publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
 

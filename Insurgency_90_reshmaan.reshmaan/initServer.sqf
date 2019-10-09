@@ -32,6 +32,8 @@ civilianType = ["Tak_Civ_Men_KTL1", "CUP_C_TK_Man_04_Jack", "Tak_Civ_Men_KTL2","
 publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
 
+twc_bluflufflist = ["1990_British_SectionCommander_Desert", "1990_British_Gunner_Desert", "1990_British_2IC_Desert", "1990_RM_British_SectionCommander_Mix", "1990_RM_British_Marksman_Mix", "1990_RM_British_Rifleman_AT_Mix", "twc_men_1990_us_d_teamleader", "twc_men_1990_us_d_rifleman", "twc_ana_base", "1990_British_Platoon_Commander_Desert", "1990_British_quartermaster_Desert", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank", "2000_British_Blank"];
+
 AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";
 AATeams = 6;
 AATeam = ["twc_greek_officer", "twc_greek_aa", "twc_greek_aa", "twc_greek_aa"];

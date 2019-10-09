@@ -174,6 +174,15 @@ if (isNil "twc_strongholdcount") then {
 twc_strongholdcount = 3;
 };
 
+
+
+_trg = createTrigger ["EmptyDetector", twc_basepos];
+_trg setTriggerArea [1000, 1000, 0, false];
+_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+_trg setTriggerTimeout [0,0,0, true];
+
+_trg setTriggerStatements ["this","[twc_basepos, true] call twc_fnc_civfluff;",""];
+
 // List of civilians who were already questioned
 nonQuestionableList = [];
 publicVariable "nonQuestionableList";

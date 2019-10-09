@@ -15,6 +15,7 @@ twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client
 twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_seenbyplayers.sqf";
 twc_fnc_lookedatbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_lookedatbyplayers.sqf";
 twc_fnc_findsneakypos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findsneakypos.sqf";
+twc_fnc_civfluff = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civfluff.sqf";
 twc_fnc_townmarker = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_townmarker.sqf";
 twc_fnc_counterattack = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_counterattack.sqf";
 twc_fnc_betrayal = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_betrayal.sqf";

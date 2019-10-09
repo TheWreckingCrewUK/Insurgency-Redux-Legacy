@@ -3,29 +3,57 @@ by Hobbs
 creates civs in a natural manner in places that cannot be seen by players, then have them move around naturally before deleting themselves when not seen by players and outside of a sane radius to avoid performance issues
 */
 
-params ["_pos"];
-
-
+params ["_pos", ["_isblufor", false]];
+//systemchat "fluff 7";
+if (_isblufor && (isnil "twc_bluflufflist")) exitwith {};
+//systemchat "fluf2f 9";
+missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 {
 	if ((_x distance _pos) < 1000) then {
-		[_pos, _x] spawn {
-			params ["_pos", "_player"];
+	//systemchat "fluff 13";
+		[_pos, _x, _isblufor] spawn {
+			params ["_pos", "_player", "_isblufor"];
 			_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-			while {_var >= 20} do {
-				sleep 30;
+			//systemchat "fluff 16";
+			
+			//if it's spawning civs, then don't spawn them near base. if it's spawning blufor, don't spawn them far from base. Last time anything jumped through this many hoops it was on crufts
+			while {(_var >= 20) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250))))) || ((_isblufor) && ((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)} do {
+				sleep 20;
 				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 			};
+			//systemchat "fluff 21";
+			while {(alive _player) && ((_pos distance _player) < 1000) && (_var < 22)} do {
 			
-			while {(alive _player) && ((_pos distance _player) < 1000) && (_var < 20)} do {
-				_gop = [getpos _player, 10, 60, 3, false] call twc_fnc_findsneakypos;
+			
+				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+				while {(_var >= 20) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 450))))) || ((_isblufor) && ((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)} do {
+					sleep 20;
+					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+				};
+				_gop = [(_player getRelPos [(((speed _player) + 0.1) * ((speed _player) + 0.1)), 0]), 10, 80, 3, false] call twc_fnc_findsneakypos;
 				
-				if ((_gop distance _player) > 10) then {
-					_group = creategroup civilian; 
+				if (((_gop distance _player) > 10) && ((_gop distance _player) < 80)) then {
+					_side = civilian;
+					if (_isblufor) then {
+						_side = west;
+					};
+					
+					_group = creategroup _side; 
+					
+					_type = civilianType;
+					if (_isblufor) then {
+						_type = twc_bluflufflist;
+					};
+					
+					_unit = _group createUnit [(selectRandom _type), _gop, [], 5, "NONE"];
+					//systemchat ("fluff created a " + typeof _unit);
+					_unit setVariable ["twc_isenemy",0, true];
+					
 					_group setbehaviour "safe";
 					_group setspeedmode "limited";
-					_unit = _group createUnit [(selectRandom civilianType), _gop, [], 5, "NONE"];
 					
-					_unit setVariable ["twc_isenemy",0, true];
+					
+					if (!_isblufor) then {
 					
 					_westKilled = _unit addEventHandler ["Killed", {
 						params ["_unit", "_killer", "_instigator", "_useEffects"];
@@ -41,7 +69,7 @@ params ["_pos"];
 							["TWC_Insurgency_adjustCivilianMorale", -1] call CBA_fnc_serverEvent;
 							if (_unit getvariable ["twc_isenemy", 0] == 0) then {
 								diag_log format ["%1 - %2 killed a civilian", time, name _instigator];
-								systemchat format ["%1 - %2 killed a civilian", time, name _instigator];
+								//systemchat format ["%1 - %2 killed a civilian", time, name _instigator];
 							};
 						};
 					}];
@@ -60,10 +88,10 @@ params ["_pos"];
 							};
 							
 							_civ setSpeedMode "FULL";
-
-							switch (round(random 2)) do {
-								case 0;
-								case 1: {
+/*
+							switch (round(random 1)) do {
+								//case 0;
+								case 0: {
 									_house = nearestBuilding (getPos _civ);
 									_count = 0;
 									while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
@@ -73,26 +101,58 @@ params ["_pos"];
 									};
 									_civ doMove (_buildingLocations buildingPos 1);
 								};
-								case 2: {
+								case 1: {
 									_newHideyHole = [(position _civ), 100] call CBA_fnc_randPos;
 									_civ doMove _newHideyHole;
 								};
 								default {};
 							};
+							*/
+							
+							_nil = [getpos _civ, nil, [_civ], 50, 2, false, false] call ace_ai_fnc_garrison;
+							
+							
 							[_civ] spawn{
 								params["_civ"];
 								_time = time + 120;
 								waitUntil {unitReady _civ || _time < time};
 								_civ setVariable ["unitIsBrickingIt", false, false];
 								_civ switchMove "";
-								_civ doMove ((_civ getVariable "unitsHome"));
+								//_civ doMove ((_civ getVariable "unitsHome"));
 								_civ setSpeedMode "LIMITED";
-								waitUntil {unitReady _civ || _civ getVariable "unitIsBrickingIt"};
+								//this waituntil isn't returning true properly, redo it
+								waitUntil {unitReady _civ || (_civ getVariable ["unitIsBrickingIt", true])};
 								if(_civ getVariable "unitIsBrickingIt")exitWith{};
 								doStop _civ;
 							};
 						};
 					}];
+					
+					} else {
+					//blufor code. They act as base security on top of ambience, so make them invincible, highly visible, and wearing guard duty kit
+						_unit allowdamage false;
+						_unit setVariable ["twc_isenemy",0, true];
+						_unit setunittrait ["camouflageCoef", 500];
+						removebackpack _unit;
+						if ((secondaryWeapon _unit) != "") then {
+							_unit removeweapon (secondaryWeapon _unit);
+						};
+						
+						_unit addEventHandler["FiredNear", {
+							params["_unit", "_shooter"];
+							if (((count (weapons _unit)) == 0)) then {
+									if ((side _shooter) == east) then {
+									_var = _unit getvariable ["twc_lastbrick", 0];
+									if (_var < (time - 30)) then {
+										_nil = [getpos _unit, nil, [_unit], 50, 2, false, false] call ace_ai_fnc_garrison;
+										_unit setvariable ["twc_lastbrick", time];
+									};
+								};
+							};
+						}];
+					};
+					removegoggles _unit;
+					
 					_wppos = [getpos _player, 10, 40, 3, false] call twc_fnc_findsneakypos;
 					_wp = _group addwaypoint [_wppos, 0];
 					_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
@@ -102,12 +162,34 @@ params ["_pos"];
 					
 					_unit setvariable ["unitshome", (_pos)];
 					
+					[_unit] spawn {
+						params ["_unit"];
+						
+						_pos = _unit getvariable ["unitshome", ""];
+						sleep 300;
+						while {alive _unit} do {
+							
+							
+							if ((!([(getpos _unit),30] call twc_fnc_posNearPlayers)) && (([(getpos _unit)] call twc_fnc_seenbyplayers) == 0) && (!([(getpos _unit)] call twc_fnc_lookedatbyplayers))) exitwith {
+								deletevehicle _unit;
+								
+								_pos = _unit getvariable ["unitshome", ""];
+								_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
+								missionnamespace setvariable [("twccivfluff" + (str _pos)), _var - 1];
+								
+							};
+							sleep 30;
+						};
+					};
+					
 					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 					missionnamespace setvariable [("twccivfluff" + (str _pos)), _var + 1];
 					while {_var >= 20} do {
 						sleep 30;
 						_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 					};
+				} else {
+					////systemchat "fluff pos fail";
 				};
 				sleep 2;
 			};
@@ -120,6 +202,7 @@ twc_fnc_newfluffwp = {
 	params ["_unit"];
 	_group = group _unit;
 	_pos = getpos _unit;
+	_group setbehaviour "safe";
 	if ((!([_pos,30] call twc_fnc_posNearPlayers)) && (([_pos] call twc_fnc_seenbyplayers) == 0)) exitwith {
 		deletevehicle _unit;
 		

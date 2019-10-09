@@ -37,8 +37,9 @@ if ((_checkvis == 0) && ((_checkpos distance _pos) < _max)) then {
 	_fncreturn = _checkpos;
 } else {
 
-	while {(_checkvis > 0) && (_checkcount < 50)} do {
-		_checkpos = ([_pos, _min, _max, _size, 0, 1, 0] call BIS_fnc_findSafePos);
+	_newmax = ((_max - _min) / 80);
+	while {(_checkvis > 0) && (_checkcount < 80)} do {
+		_checkpos = ([_pos, _min, (_min + (_newmax * _checkcount)), _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		
 		
 		if ((count _checkpos) == 2) then {
@@ -74,7 +75,7 @@ if ((!_checkvis) && ((_checkpos distance _pos) > _min)) then {
 } else {
 
 	while {((_checkvis) || ((_checkpos distance _pos) < _min)) && (_checkcount < 100)} do {
-		systemchat "b";
+		
 		_checkpos = ([_pos, _min, _max, _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		if ((count _checkpos) == 2) then {
 			_checkpos = [(_checkpos select 0), (_checkpos select 1), 0];
@@ -111,7 +112,7 @@ if ((str _fncreturn) != (str _pos)) then {
 */
 
 } else {
-	systemchat "fail";
+	//systemchat "sneakypos fail";
 };
 
 
