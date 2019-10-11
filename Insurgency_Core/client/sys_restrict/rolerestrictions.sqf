@@ -1,5 +1,5 @@
 //sleep 5;
-//if(isserver)exitWith{systemchat "role restrict skipped for server";};
+if(isserver)exitWith{systemchat "role restrict skipped for server";};
 
 
 twc_fnc_helicheck = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_restrict\helicheck.sqf";

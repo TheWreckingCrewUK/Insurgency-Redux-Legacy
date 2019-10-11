@@ -61,19 +61,24 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 		clearitemcargoglobal _corpse;
 	};
 };
-	if ((!(["sniper", typeof player] call BIS_fnc_inString)) && (!(["spotter", typeof player] call BIS_fnc_inString))) then {
+	if ((!(["sniper", typeof player] call BIS_fnc_inString)) && (!(["spotter", typeof player] call BIS_fnc_inString)) && (!(["uksf", typeof player] call BIS_fnc_inString))) then {
 		player setunittrait ["camouflageCoef", twc_pubcamo];
 	};
 twc_client_nightcamo = {
-	if (((["sniper", typeof player] call BIS_fnc_inString)) && ((["spotter", typeof player] call BIS_fnc_inString))) exitwith {};
+	_namount = 2;
+	_damount = twc_pubcamo;
+	if (((["sniper", typeof player] call BIS_fnc_inString)) || ((["spotter", typeof player] call BIS_fnc_inString)) || ((["uksf", typeof player] call BIS_fnc_inString))) then {
+		_namount = 0.5;
+		_damount = 3;
+	};
 	while {(sunOrMoon == 1)} do {
 		sleep 120;
 	};
-	player setunittrait ["camouflageCoef", 3];
+	player setunittrait ["camouflageCoef", _namount];
 	while {(sunOrMoon == 0)} do {
 		sleep 120;
 	};
-	player setunittrait ["camouflageCoef", twc_pubcamo];
+	player setunittrait ["camouflageCoef", _damount];
 	
 	[] spawn twc_client_nightcamo;
 	
@@ -191,10 +196,6 @@ if (!("ItemMap" in assigneditems player)) then {
 	};
 };
 
-player addEventHandler ["GetInMan", {
-	params ["_unit", "_role", "_vehicle", "_turret"];
-	_vehicle setunittrait ["camouflageCoef", twc_pubcamo];
-}];
 
 vehicle player setVariable ["twc_isenemy",0, true];
 

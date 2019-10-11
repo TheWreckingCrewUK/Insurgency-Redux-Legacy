@@ -5,6 +5,10 @@ publicVariable "twc_missionname";
 twc_mortarchance = 0.01;
 publicVariable "twc_mortarchance";
 
+if (isNil "twc_aaman") then {
+twc_aaman = "CUP_O_TK_INS_Soldier_AA";
+};
+
 // Includes
 #include "func\init.sqf";
 #include "sys_controllers\init.sqf";

@@ -28,8 +28,11 @@ sirenlist = [idfalarm,idfalarm_1,idfalarm_2,idfalarm_3,idfalarm_4,idfalarm_5];
 publicvariable "sirenlist";
 
 civilianType = ["C_man_polo_3_F_afro", "C_man_polo_1_F_afro", "C_man_polo_4_F_afro","C_man_polo_5_F_afro", "C_man_polo_6_F_afro", "C_man_p_fugitive_F_afro"];
-
 publicvariable "civiliantype";
+
+twc_aaman = "twc_farc_men_rif_aa";
+
+
 homeEnemy = ["twc_greek_rifleman"];
 
 AA_VEHICLE_TYPE = "CUP_O_ZU23_TK_INS";
@@ -43,9 +46,9 @@ paradropVehicleWhitelist = ["CUP_B_C130J_GB", "CUP_B_C130J_Cargo_GB"];
 
 cacheBoxType = "Box_FIA_Wps_F";
 
-townSpawn = ["twc_farc_men_off","twc_farc_men_rif_m16","twc_farc_men_mg_m60","twc_farc_men_mg_pkp","twc_farc_men_mg_as","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4"];
+townSpawn = ["twc_farc_men_off","twc_farc_men_rif_m16","twc_farc_men_mg_m60","twc_farc_men_mg_pkp","twc_farc_men_mg_as","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4", "rhsgref_tla_squadleader", "rhsgref_tla_rifleman_pm63", "rhsgref_tla_rifleman_vz58", "rhsgref_tla_medic", "rhsgref_tla_rifleman_M16", "rhsgref_tla_rifleman_l1a1", "rhsgref_tla_rifleman_akms"];
 
-townSquadWave = ["twc_farc_men_off","twc_farc_men_rif_m16","twc_farc_men_mg_m60","twc_farc_men_mg_pkp","twc_farc_men_mg_as","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4"];
+townSquadWave = ["twc_farc_men_off","twc_farc_men_rif_m16","twc_farc_men_mg_m60","twc_farc_men_mg_pkp","twc_farc_men_mg_as","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4","twc_farc_men_rif_akm","twc_farc_men_rif_m21","twc_farc_men_rif_hk416","twc_farc_men_rif_ak104","twc_farc_men_rif_ak74","twc_farc_men_rif_at","twc_farc_men_rif_m4", "rhsgref_tla_squadleader", "rhsgref_tla_rifleman_pm63", "rhsgref_tla_rifleman_vz58", "rhsgref_tla_medic", "rhsgref_tla_rifleman_M16", "rhsgref_tla_rifleman_l1a1", "rhsgref_tla_rifleman_akms"];
 
 vehicleList = ["CUP_C_UAZ_Unarmed_TK_CIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Datsun_Plain", "CUP_C_Ural_Open_Civ_03"];
 

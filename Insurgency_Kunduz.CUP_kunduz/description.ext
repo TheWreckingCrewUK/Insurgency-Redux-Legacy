@@ -1,0 +1,39 @@
+#include "defines.hpp"
+#include "dialogs.hpp"
+
+DisabledAI		= 1;
+joinUnassigned	= 1;
+disableChannels[]={0,1,2,3,4,6};
+
+
+#include "onLoadMission.hpp"
+onLoadMission = "http://www.thewreckingcrew.eu/";
+author = "Jayman[TWC] / Bosenator[TWC] / Hobbs [TWC]";
+loadScreen = "twc_ui\insurgency\loading.jpg";
+
+class Header {
+	gameType   = Coop;
+	minPlayers = 1;
+	maxPlayers = 60;
+};
+
+//Respawn settings
+respawn="BASE";
+respawndelay = 5;
+respawnTemplates[] = {"MenuPosition"};
+respawnDialog = true;
+respawnOnStart = 1;
+
+enableDebugConsole = 1;
+
+class CfgDebriefing {
+	#include "Insurgency_Core\includes\VictoryScreens.hpp"
+	#include "Insurgency_Core\includes\LosingScreens.hpp"
+	#include "Insurgency_Core\includes\RestrictedScreens.hpp"
+};
+
+//ACE3 Settings
+class ACE_Settings {
+	#include "Insurgency_Core\includes\AceSettings.hpp"
+};
+#include "Insurgency_Core\includes\KillScreens.hpp"

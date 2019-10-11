@@ -128,7 +128,7 @@ _trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[getpos thistrigge
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
-_group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
+_group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 };
 };
 };
@@ -173,6 +173,11 @@ publicVariable "twc_activemissions";
 	//deleteMarker _markerstr;
 	//deleteMarker _markerstr2;
 	
+_marker = createMarker [str _markerPos,_markerPos];
+_marker setMarkerType "mil_triangle";
+_marker setMarkerColor "ColorBlue";
+_marker setMarkerText ('HVT Killed');
+_marker setMarkerSize [0.75, 0.75];
 
 	[_hvt, _group] spawn {
 	_pos = getpos _hvt;

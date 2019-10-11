@@ -68,7 +68,7 @@ if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
 if ((random 1) < 0.15) then {
 		_infpos = [_pos, 300] call CBA_fnc_randPos;
-_group createUnit ["CUP_O_TK_INS_Soldier_AA", _infpos,[], 25,"NONE"];
+_group createUnit [twc_aaman, _infpos,[], 25,"NONE"];
 };
 };
 };

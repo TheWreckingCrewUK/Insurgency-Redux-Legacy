@@ -295,6 +295,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_MaxiKite", 1],
+		["cup_optic_an_pas_13c1", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -815,8 +816,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
         ["UK3CB_BAF_L129A1_FGrip_Bipod",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
-		["launch_NLAW_F",3],
-		["rhs_weap_M136_hedp",2]
+		["rhs_weap_M136_hedp",4]
 	];
        
     _tmp_magazines =
@@ -831,8 +831,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	_tmp_items = 
 	[
 		["UK3CB_BAF_TA648_308",1],
-		["UK3CB_BAF_LLM_IR_Black",1],
-		["UK3CB_underbarrel_acc_fgrip_bipod",1],
+		["UK3CB_BAF_MaxiKite",1],
 		["ACRE_PRC343",0]
 	];	
 
@@ -1024,7 +1023,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["ACRE_PRC343",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",5],
-		["UK3CB_BAF_G_Tactical_Black",1],
+		["cup_optic_an_pas_13c1",1],
 		["rhsusf_acc_premier_anpvs27",1],
 		["ACE_Tripod",1],
 		["HandGrenade",5]
@@ -1062,21 +1061,16 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
-		["RKSL_optic_LDS",1],
-		["UK3CB_BAF_LLM_IR",1],
 		["UK3CB_BAF_Silencer_L115A3",1],
-		["UK3CB_BAF_Eotech",1],
-		["STKR_Predator",1],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",1],
 		["ACRE_PRC343",0],
-		["UK3CB_BAF_G_Tactical_Black",1],
+		["APERSTripMine_Wire_Mag",3],
 		["ACE_Kestrel4500",1],
 		["ACE_RangeCard",1],
 		["ACE_SpottingScope",1],
 		["ACE_MX2A",1],
 		["ACRE_PRC117F_ID_1",1],
-		["UK3CB_BAF_LLM_IR_Black",1],
 		["UK3CB_BAF_MaxiKite",1],
 		["ACE_ATragMX",1],
 		["ACE_Tripod",1]
@@ -2893,6 +2887,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["twc_l96_d",1],
+        ["UK3CB_BAF_L85A1_SUSAT3D",1],
         ["UK3CB_BAF_L9A1",1]
 	];
 
@@ -2900,12 +2895,14 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
-		["UK3CB_BAF_9_13Rnd",10],
-		["HandGrenade",5]
+		["UK3CB_BAF_9_13Rnd",10]
     ];
 
 	_tmp_items =
 	[
+		["ACE_Tripod",1],
+		["cup_optic_an_pvs_4",1],
+		["ACE_SpottingScope",1],
 		["ACRE_PRC343",0]
 	];
 };
@@ -2914,6 +2911,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["twc_l96_d",1],
         ["UK3CB_BAF_L9A1",1]
 	];
 
@@ -2923,15 +2921,23 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
-		["UK3CB_BAF_9_13Rnd",10],
-		["HandGrenade",5]
+		["UK3CB_BAF_9_13Rnd",10]
     ];
 
 	_tmp_items =
 	[
 		["ACRE_PRC343",0],
+		["ACE_Tripod",1],
+		["cup_optic_an_pvs_4",3],
+		["APERSTripMine_Wire_Mag",3],
+		["ACE_SpottingScope",1],
 		["ACE_RangeCard",1],
 		["ACRE_PRC117F",1]
+	];
+
+	_tmp_backpacks =
+	[
+		["TWC_Backpack_1990_spotter_L",1]
 	];
 };
 
@@ -3347,6 +3353,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 	_tmp_items =
 	[
+		["rhsusf_acc_premier_anpvs27",1],
 		["ACE_Tripod",1],
 		["ACRE_PRC343",0]
 	];
@@ -3372,6 +3379,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC148",0],
+		["rhsusf_acc_premier_anpvs27",0],
+		["APERSTripMine_Wire_Mag",3],
 		["ACE_RangeCard",1],
 		["ACRE_PRC343",0]
 	];
