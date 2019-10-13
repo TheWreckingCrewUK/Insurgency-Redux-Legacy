@@ -65,12 +65,17 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 		player setunittrait ["camouflageCoef", twc_pubcamo];
 	};
 twc_client_nightcamo = {
-	_namount = 2;
+	_namount = 3;
 	_damount = twc_pubcamo;
-	if (((["sniper", typeof player] call BIS_fnc_inString)) || ((["spotter", typeof player] call BIS_fnc_inString)) || ((["uksf", typeof player] call BIS_fnc_inString))) then {
+	if (((["sniper", typeof player] call BIS_fnc_inString)) || ((["spotter", typeof player] call BIS_fnc_inString))) then {
 		_namount = 0.5;
-		_damount = 3;
+		_damount = 1;
 	};
+	if (((["uksf", typeof player] call BIS_fnc_inString))) then {
+		_namount = 1;
+		_damount = 5;
+	};
+	player setunittrait ["camouflageCoef", _damount];
 	while {(sunOrMoon == 1)} do {
 		sleep 120;
 	};
