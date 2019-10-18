@@ -57,6 +57,8 @@ _table = objnull;
 		};
 		sleep 30;
 		_obj allowdamage true;
+		_obj setdamage 0.1;
+		_obj setdamage 0;
 	};
 	//ace cargo
 	

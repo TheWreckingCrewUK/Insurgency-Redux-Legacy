@@ -6,7 +6,7 @@ creates civs in a natural manner in places that cannot be seen by players, then 
 params ["_pos", ["_isblufor", false]];
 //systemchat "fluff 7";
 if (_isblufor && (isnil "twc_bluflufflist")) exitwith {};
-//systemchat "fluff3 9";
+//systemchat "fluff4 9";
 missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 {
 	if ((_x distance _pos) < 1000) then {
@@ -17,29 +17,31 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 			//systemchat "fluff 16";
 			
 			_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 25) * ((sunormoon * - 1) + 2);
-			//systemchat ("max gets " + (str _maxcivs));
+			//systemchat ("max2 gets " + (str _maxcivs));
 			
 			//if it's spawning civs, then don't spawn them near base. if it's spawning blufor, don't spawn them far from base. Last time anything jumped through this many hoops it was on crufts
-			while {(_var >= _maxcivs) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250))))) || ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0)))} do {
-				sleep 20;
+			while {(_var >= _maxcivs) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250) || (((count (nearestObjects [_player, ['vysilacka'], 100])) > 0)))) || ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0))) && ((_pos distance _player) < 1000)} do {
+				sleep 10;
 				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-				_maxcivs = (((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon - 1) * -1);
+				_maxcivs = (((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2);
+				//systemchat ("fluff 27 with max at " + (str (_var >= _maxcivs)) + (str ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250)))) + (str ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0)))));
 			};
-			//systemchat "fluff 21";
-			while {(alive _player) && ((_pos distance _player) < 1000) && (_var < (_maxcivs + 1))} do {
+			//systemchat "fluff 29";
+			while {(alive _player) && ((_pos distance _player) < 1000)} do {
 			
 			
 				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-				while {(_var >= _maxcivs) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250))))) || ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0)))} do {
-					sleep 20;
+				while {(_var >= _maxcivs) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250) || (((count (nearestObjects [_player, ['vysilacka'], 100])) > 0)))) || ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0))) && ((_pos distance _player) < 1000)} do {
+					sleep 10;
+					//systemchat "fluff wait 36";
 					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-					_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 25) * ((sunormoon - 1) * -1);
+					_maxcivs = (((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2);
 				};
 				
 				_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 25);
-				//systemchat ("max gets " + (str _maxcivs));
+				//systemchat ("max2 gets " + (str _maxcivs) + "with current of " + (str _var));
 				
-				_gop = [(_player getRelPos [(((speed _player) + 0.1) * ((speed _player) + 0.1)), 0]), 10, 80, 3, false] call twc_fnc_findsneakypos;
+				_gop = [(_player getRelPos [(((speed _player) + 0.1) * ((speed _player) + 0.1)), 0]), 50, 150, 3, false] call twc_fnc_findsneakypos;
 				
 				if (((_gop distance _player) > 10) && ((_gop distance _player) < 80)) then {
 					_side = civilian;
@@ -194,7 +196,8 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 					missionnamespace setvariable [("twccivfluff" + (str _pos)), _var + 1];
 					while {_var >= 20} do {
-						sleep 30;
+						sleep 20;
+						//systemchat "fluff 199";
 						_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 					};
 				} else {
