@@ -28,8 +28,8 @@ _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 _box AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag",30];
 _box AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag_Tracer_Red",5];
 
-_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",15];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",10];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug",15];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets",10];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",20];

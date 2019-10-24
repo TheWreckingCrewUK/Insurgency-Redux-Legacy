@@ -42,8 +42,8 @@ _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",7];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",5];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",5];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",8];
-_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets",8];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug",8];
 
 _box addItemCargoGlobal ["ACE_fieldDressing",15];
 _box addItemCargoGlobal ["ACE_elasticBandage",15];

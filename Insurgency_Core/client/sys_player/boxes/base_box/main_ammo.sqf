@@ -117,7 +117,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	(group player) setvariable ["twc_cqbmag", _cqbmag, true];
     _tmp_weapons =
     [
-		["UK3CB_BAF_L128A1_Eotech",1],
+		["twc_benelli_m4",1],
 		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		_cqbgun,
 		["UK3CB_BAF_L107A1",1]
@@ -130,8 +130,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 		[_cqbmag,25],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["UK3CB_BAF_9_15Rnd",40],
-		["UK3CB_BAF_12G_Pellets",20],
-		["UK3CB_BAF_12G_Slugs",30],
+		["CUP_8Rnd_B_Beneli_74Pellets",30],
+		["CUP_8Rnd_B_Beneli_74Slug",30],
 		["B_IR_Grenade",2],
 		["ACE_M14",2],
 		["HandGrenade",5]
@@ -616,7 +616,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
-		["UK3CB_BAF_L128A1_Eotech",1],
+		["TWC_L128A1_Eotech",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
 		["rhs_weap_m72a7",4],
@@ -629,8 +629,8 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     [	
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
-		["UK3CB_BAF_12G_Pellets",20],
-		["UK3CB_BAF_12G_Slugs",30],
+		["CUP_8Rnd_B_Beneli_74Pellets",30],
+		["CUP_8Rnd_B_Beneli_74Slug",30],
 		["rhsusf_mag_17Rnd_9x19_JHP",40],
 		["UK3CB_BAF_9_15Rnd",40],
 		["HandGrenade",5]
@@ -738,8 +738,8 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",30],
 		//Shotgun
-		["UK3CB_BAF_12G_Pellets",20],
-		["UK3CB_BAF_12G_Slugs",20],
+		["CUP_8Rnd_B_Beneli_74Pellets",30],
+		["CUP_8Rnd_B_Beneli_74Slug",30],
 		//Pistol ammo
 		["rhsusf_mag_17Rnd_9x19_JHP",40],
 		["UK3CB_BAF_9_15Rnd",40],
@@ -1178,8 +1178,8 @@ if (g_class == "BAF_EOD_TECH") then {
     [	
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",20],
-		["UK3CB_BAF_12G_Pellets",10],
-		["UK3CB_BAF_12G_Slugs",10],
+		["CUP_8Rnd_B_Beneli_74Pellets",10],
+		["CUP_8Rnd_B_Beneli_74Slug",10],
 		["rhsusf_mag_17Rnd_9x19_JHP",40],
 		["HandGrenade",5]
 	];
@@ -1534,8 +1534,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
         ["rhs_mag_30Rnd_556x45_M855_Stanag",50],
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10],
         ["rhsusf_mag_7x45acp_MHP",40],
-		["rhsusf_8Rnd_00Buck",20],
-		["rhsusf_8Rnd_Slug",30],
+		["CUP_8Rnd_B_Beneli_74Pellets",30],
+		["CUP_8Rnd_B_Beneli_74Slug",30],
 		["HandGrenade",5]
     ];
 

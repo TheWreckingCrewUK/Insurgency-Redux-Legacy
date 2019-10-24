@@ -39,8 +39,8 @@ _box AddMagazineCargoGlobal ["rhs_200rnd_556x45_M_SAW",5];
 _box AddMagazineCargoGlobal ["rhsusf_200Rnd_556x45_soft_pouch",5];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP",20];
-_box AddMagazineCargoGlobal ["rhsusf_8Rnd_00Buck",5];
-_box AddMagazineCargoGlobal ["rhsusf_8Rnd_Slug",5];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets",5];
+_box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug",5];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M441_HE",2];
 
