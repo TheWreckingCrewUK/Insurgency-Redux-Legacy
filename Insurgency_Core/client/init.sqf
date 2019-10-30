@@ -256,6 +256,11 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 			[player] call twc_loadout_sfgroup_ana_switch;
 		};
 	};
+	if (sunormoon == 0) then {
+		_uniformitems = uniformitems player;
+		player forceadduniform "rhs_uniform_g3_blk";
+		{player additemtouniform _x} foreach _uniformitems;
+	};
 };
 
 if (["fst", typeof player] call BIS_fnc_inString) then {

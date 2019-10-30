@@ -40,4 +40,6 @@ _box AdditemCargoGlobal ["twc_L85_suppressor",15];
 //supplies
 _box AdditemCargoGlobal ["twc_acc_rotex5_grey",15];
 _box AdditemCargoGlobal ["twc_acc_nt4_tan",1];
+_box AdditemCargoGlobal ["rhsusf_acc_omega9k",2];
+_box AdditemCargoGlobal ["cup_acc_cz_m3x",2];
 };

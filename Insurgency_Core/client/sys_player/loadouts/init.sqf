@@ -142,6 +142,11 @@ twc_loadout_canswitch = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			[_unit] call twc_loadout_ussf_medic;
 		};
+		if (sunormoon == 0) then {
+			_uniformitems = uniformitems _unit;
+			_unit forceadduniform "rhs_uniform_g3_blk";
+			{_unit additemtouniform _x} foreach _uniformitems;
+		};
 	};
 twc_loadout_sfgroup_cag = {
 
@@ -194,6 +199,11 @@ twc_loadout_sfgroup_cag = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			[_unit] call twc_loadout_st6_medic;
 		};
+		if (sunormoon == 0) then {
+			_uniformitems = uniformitems _unit;
+			_unit forceadduniform "rhs_uniform_g3_blk";
+			{_unit additemtouniform _x} foreach _uniformitems;
+		};
 	};
 twc_loadout_sfgroup_st6 = {
 
@@ -244,6 +254,11 @@ twc_loadout_sfgroup_st6 = {
 		};
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			[_unit] call twc_loadout_uksf_medic;
+		};
+		if (sunormoon == 0) then {
+			_uniformitems = uniformitems _unit;
+			_unit forceadduniform "rhs_uniform_g3_blk";
+			{_unit additemtouniform _x} foreach _uniformitems;
 		};
 	};
 twc_loadout_sfgroup_baf = {

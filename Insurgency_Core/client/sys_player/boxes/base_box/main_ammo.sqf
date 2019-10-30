@@ -117,7 +117,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	(group player) setvariable ["twc_cqbmag", _cqbmag, true];
     _tmp_weapons =
     [
-		["twc_benelli_m4",1],
+		["CUP_sgun_M1014_Entry_vfg",1],
+		["twc_hgun_MP7A1",1],
 		([["TWC_UK3CB_BAF_L119A2_10_T1",1], ["TWC_UK3CB_BAF_L119A2_10_EOTECH", 1], ["TWC_UK3CB_BAF_L119A2_10_MAG", 1]] call bis_fnc_selectrandom),
 		_cqbgun,
 		["UK3CB_BAF_L107A1",1]
@@ -127,11 +128,12 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
     [
         ["CUP_30Rnd_556x45_Emag",50],
 		["CUP_30Rnd_556x45_Emag_Tracer_Red",20],
+		["rhsusf_mag_40Rnd_46x30_FMJ",20],
 		[_cqbmag,25],
         ["rhsusf_mag_17Rnd_9x19_JHP",40],
         ["UK3CB_BAF_9_15Rnd",40],
-		["CUP_8Rnd_B_Beneli_74Pellets",30],
-		["CUP_8Rnd_B_Beneli_74Slug",30],
+		["CUP_6Rnd_B_Beneli_74Pellets",30],
+		["CUP_6Rnd_B_Benelli_74Slug",30],
 		["B_IR_Grenade",2],
 		["ACE_M14",2],
 		["HandGrenade",5]

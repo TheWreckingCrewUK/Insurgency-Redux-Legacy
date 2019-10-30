@@ -33,7 +33,7 @@ _checkvis = ([_checkpos] call twc_fnc_seenbyplayers);
 //systemchat ("a" + (str _checkvis));
 _checkcount = 0;
 
-if ((_checkvis == 0) && ((_checkpos distance _pos) < _max)) then {
+if ((_checkvis == 0) && ((_checkpos distance _pos) < _max) && (!([_checkpos,50] call twc_fnc_posNearPlayers))) then {
 	_fncreturn = _checkpos;
 } else {
 
@@ -47,7 +47,7 @@ if ((_checkvis == 0) && ((_checkpos distance _pos) < _max)) then {
 		};
 		_checkvis = ([_checkpos] call twc_fnc_seenbyplayers);
 		//systemchat ("b" + (str _checkvis));
-		if ((_checkvis == 0) && ((_checkpos distance _pos) < _max)) then {
+		if ((_checkvis == 0) && ((_checkpos distance _pos) < _max) && (!([_checkpos,50] call twc_fnc_posNearPlayers))) then {
 			_fncreturn = _checkpos;
 		};
 		_checkcount = (_checkcount + 1);
@@ -70,7 +70,7 @@ if (((str _fncreturn) == (str _pos)) && _fallback) then {
 //systemchat ((str _checkvis) + (str _checkcount) + (str ((_checkpos distance _pos) < _min)));
 
 
-if ((!_checkvis) && ((_checkpos distance _pos) > _min)) then {
+if ((!_checkvis) && ((_checkpos distance _pos) > _min) && (!([_pos,50] call twc_fnc_posNearPlayers))) then {
 	_fncreturn = _checkpos;
 } else {
 

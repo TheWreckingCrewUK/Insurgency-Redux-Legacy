@@ -120,7 +120,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerColor _color;
 			_marker setMarkerText (str(_distance) + "m");
 			_marker setMarkerSize [0.5,0.5];
-			_textarray pushback (["They planted a bomb in the ground there.", "They've got a bomb set up with some very bad people ready to hurt you if you set it off", "I heard there was a bomb set there."] call bis_fnc_selectrandom);
+			_textarray pushback ([" They planted a bomb in the ground there.", " They've got a bomb set up with some very bad people ready to hurt you if you set it off", " I heard there was a bomb set there."] call bis_fnc_selectrandom);
 		};
 		
 		if (_rand >= 4)then{
@@ -136,13 +136,13 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerText (str(_distance) + "m: " + _objectname);
 			_marker setMarkerSize [0.5,0.5];
 			if (_objectname == "hostage") then {
-				_textarray pushback (["They're holding someone hostage there", "They're holding someone there, I dont know who.", "They've got a reporter held hostage in there.", "They have a press man held prisoner last I heard."] call bis_fnc_selectrandom);
+				_textarray pushback ([" They're holding someone hostage there", " They're holding someone there, I dont know who.", " They've got a reporter held hostage in there.", " They have a press man held prisoner last I heard."] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "hvt") then {
-				_textarray pushback (["I heard that the bastard son of Hitler and Jimmy Saville is living there", "A really bad man lives there, I heard he eats babies to consume their youth", "There's a man there, he takes people's heads if they don't obey him"] call bis_fnc_selectrandom);
+				_textarray pushback ([" I heard that the bastard son of Hitler and Jimmy Saville is living there", " A really bad man lives there, I heard he eats babies to consume their youth", " There's a man there, he takes people's heads if they don't obey him"] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "minefield") then {
-				_textarray pushback (["My cousin stepped on a landmine somewhere around there, left over from the Russians.", "The rumour is there's dozens of old mines around there.", "The russians laid a load of mines there and never cleaned up after themselves.", "The russians didn't clean up after themselves at all, they left a load of landmines there. All these years and they still torment us."] call bis_fnc_selectrandom);
+				_textarray pushback ([" My cousin stepped on a landmine somewhere around there, left over from the Russians.", " The rumour is there's dozens of old mines around there.", " The russians laid a load of mines there and never cleaned up after themselves.", " The russians didn't clean up after themselves at all, they left a load of landmines there. All these years and they still torment us."] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "recovery") then {
 				_textarray pushback (["There's an American vehicle there, I think it needs recovering", "A vehicle was abandoned there by the good guys", "Some soldiers got hit by a bomb there and had to leave their vehicle behind"] call bis_fnc_selectrandom);

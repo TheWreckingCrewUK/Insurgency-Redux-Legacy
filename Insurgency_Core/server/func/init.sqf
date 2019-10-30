@@ -9,6 +9,8 @@ twc_fnc_aiWounds = compile preprocessfilelinenumbers "Insurgency_Core\server\fun
 
 twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
 
+twc_fnc_enemychatter = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemychatter.sqf";
+
 twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
 twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";

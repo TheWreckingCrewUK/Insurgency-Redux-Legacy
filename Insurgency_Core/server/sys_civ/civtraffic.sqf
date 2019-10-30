@@ -1,3 +1,4 @@
+waituntil {!isnil "twc_basepos"};
 
 _num = missionnamespace getvariable ["twccivcarcount", 7];
 
@@ -325,19 +326,26 @@ if ((_speed > 50) && ((random 1) < 0.3)) then {
 
 _cd = 100;
 
-
+_chkva = (floor (random 100));
+//systemchat ((str _chkva) + "start");
 //something in here is causing a 0 elements provided, 3 expected error
 if (!isnil "_gopos1") then {
 	while {((_gopos1 distance twc_basepos) < 1000)} do {
 		_cpos1 = (_gopos1 getpos [(_amount + _cd), _dir]);
-		_gopos1 = ([_cpos1, 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
+		_gopos1 = ([_cpos1, 500, (random 360), 0, [2,4000],_vehtype] call SHK_pos);
 		_cd = _cd + 200;
+		sleep 1;
 	};
 };
+//systemchat ((str _chkva) + "end");
 _car setdir _dir;
 
 //_gopos1 = _car getpos [(_amount * 2), _dir];
 
+if (count _gopos1 == 2) then {
+	_gopos1 = [_gopos1 select 0, _gopos1 select 1, 0];
+	//systemchat "yep its 2";
+};
 
 //_gopos1 = ([(getpos _player), 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
 if (count _gopos1 == 0) exitwith {

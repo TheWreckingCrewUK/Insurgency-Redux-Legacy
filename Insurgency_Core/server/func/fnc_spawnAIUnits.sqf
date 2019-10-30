@@ -96,6 +96,8 @@ for "_i" from 1 to _total do {
 		};
 	}];
 	
+	[_unit] spawn twc_fnc_enemychatter;
+	
 	if (_side == independent) then {
 		[_unit] joinsilent _group;
 		_unit addEventHandler ["Hit", {
