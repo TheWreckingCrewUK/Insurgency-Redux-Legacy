@@ -8,6 +8,14 @@ publicVariable "twc_mortarchance";
 if (isNil "twc_aaman") then {
 twc_aaman = "CUP_O_TK_INS_Soldier_AA";
 };
+_marker = "crate";  // marker used to spawn.
+_boxType = "CUP_BAF_VehicleBox";  // the type of ammobox used.
+
+// create and fill the box.
+crateBox = _boxType createVehicle (getMarkerPos _marker);
+crateBox setPosATL (getMarkerPos _marker);
+crateBox allowDamage false;
+publicvariable "crateBox";
 
 // Includes
 #include "func\init.sqf";
@@ -32,6 +40,7 @@ CIVILIAN setFriend [EAST, 1];
 independent setFriend [EAST, 0];
 east setFriend [independent, 0];
 independent setFriend [west, 1];
+
 
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	
