@@ -31,9 +31,10 @@ _array = [];
 for "_i" from 1 to _num do {
 	_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), ["cqbrange"] call CBA_fnc_randPosArea, [], 0, "NONE"]; 
 	_unit disableai "PATH";
+	_unit setunitpos (["up", "middle"] call bis_fnc_selectrandom);
 	_array pushback _unit;
 };
-[leader _group] execvm "Insurgency_Core\server\func\ai\fnc_aiscramble.sqf";
+[leader _group, 1] call twc_fnc_aiscramble;
 
 if (_iscomplex) then {
 	for "_i" from 1 to (_num / 2) do {
@@ -42,19 +43,6 @@ if (_iscomplex) then {
 		_array pushback _unit;
 			[_unit] joinsilent _group;
 			
-		/*
-		if ((random 1) > 0.03) then {
-			_unit addItemtoUniform "CUP_handgrenade_RGD5";
-			_unit addItemtoUniform "CUP_handgrenade_RGD5";
-		} else {
-			_unit addEventHandler ["Killed",{
-
-				if (side (_this select 1) == WEST) then{
-					hint "Civilian Killed";
-				};
-			}];
-		};
-		*/
 	};
 };
 

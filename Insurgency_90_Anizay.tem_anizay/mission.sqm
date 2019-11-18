@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1848;
+		nextID=1851;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2983.6301,165.39232,8543.0371};
-		dir[]={0.44738826,-0.75311005,-0.4824062};
-		up[]={0.51211125,0.65789032,-0.55219555};
-		aside[]={-0.73323554,-3.3481047e-007,-0.68000996};
+		pos[]={3060.0583,172.57028,8500.6045};
+		dir[]={-0.54785693,-0.81049705,0.20751262};
+		up[]={-0.75794172,0.58575273,0.2870875};
+		aside[]={0.35423243,-5.4272823e-007,0.93521029};
 	};
 };
 binarizationWanted=0;
@@ -43,13 +43,14 @@ addons[]=
 	"CUP_CAMisc_E_WF",
 	"twc_1990",
 	"UK3CB_BAF_Vehicles_MAN",
-	"rhsusf_vehicles"
+	"rhsusf_vehicles",
+	"CUP_WheeledVehicles_MTVR"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -158,6 +159,11 @@ class AddonsMetaData
 		{
 			className="rhsusf_vehicles";
 			name="rhsusf_vehicles";
+		};
+		class Item18
+		{
+			className="CUP_WheeledVehicles_MTVR";
+			name="CUP_WheeledVehicles_MTVR";
 		};
 	};
 };
@@ -12674,7 +12680,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=66;
+		items=68;
 		class Item0
 		{
 			dataType="Marker";
@@ -13721,8 +13727,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3036.0959,145.69444,8471.7256};
-				angles[]={6.2312298,3.8772235,0.049958061};
+				position[]={3034.5647,145.6739,8472.8193};
+				angles[]={6.2312312,3.8772235,0.051954471};
 			};
 			side="Empty";
 			flags=4;
@@ -13760,7 +13766,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3034.9763,145.63818,8471.085};
+				position[]={3033.4451,145.62656,8472.1787};
 				angles[]={6.2312312,0.66192484,0.051954471};
 			};
 			side="Empty";
@@ -13771,7 +13777,6 @@ class Mission
 			};
 			id=1467;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=-0.010971069;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13801,8 +13806,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3039.6685,145.81737,8470.0479};
-				angles[]={6.215291,0.21271181,0.049958061};
+				position[]={3038.1372,145.81015,8471.1416};
+				angles[]={6.2312298,0.21271181,0.049958061};
 			};
 			side="Empty";
 			flags=4;
@@ -13812,15 +13817,14 @@ class Mission
 			};
 			id=1468;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=-0.012481689;
 		};
 		class Item20
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3032.7041,145.66391,8473.8877};
-				angles[]={6.2312312,1.0977645,0.051954471};
+				position[]={3031.1729,145.65546,8474.9814};
+				angles[]={6.2172809,1.0977645,0.051955618};
 			};
 			side="Empty";
 			flags=4;
@@ -13830,7 +13834,6 @@ class Mission
 			};
 			id=1469;
 			type="UK3CB_BAF_LandRover_Hard_Sand_A";
-			atlOffset=-0.013000488;
 		};
 		class Item21
 		{
@@ -14787,7 +14790,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3061.0688,145.16885,8474.7559};
+				position[]={3064.4199,145.11383,8474.6299};
 				angles[]={6.2591896,5.8632774,6.2671833};
 			};
 			side="Empty";
@@ -14798,7 +14801,7 @@ class Mission
 			};
 			id=1742;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=-0.0016479492;
+			atlOffset=-1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14828,7 +14831,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3056.7466,145.51358,8473.4053};
+				position[]={3060.0977,145.41438,8473.2793};
 				angles[]={0,6.1853719,0};
 			};
 			side="Empty";
@@ -14838,15 +14841,15 @@ class Mission
 			};
 			id=1743;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=0.31817627;
+			atlOffset=0.31819153;
 		};
 		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3052.5066,145.3886,8474.6729};
-				angles[]={6.2172809,0.39645195,6.251195};
+				position[]={3055.8577,145.28638,8474.5469};
+				angles[]={6.2252488,0.39645195,6.2551923};
 			};
 			side="Empty";
 			flags=4;
@@ -14856,7 +14859,7 @@ class Mission
 			};
 			id=1744;
 			type="UK3CB_BAF_LandRover_Snatch_Sand_A";
-			atlOffset=-0.007598877;
+			atlOffset=-1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -16475,8 +16478,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3057.2544,145.2422,8473.3691};
-				angles[]={6.2252488,3.0634913,6.2551923};
+				position[]={3060.6055,145.16895,8473.2432};
+				angles[]={6.2252488,3.0634913,0.018000545};
 			};
 			side="Empty";
 			flags=4;
@@ -16485,7 +16488,6 @@ class Mission
 			};
 			id=1455;
 			type="Land_CamoNetB_NATO_EP1";
-			atlOffset=-1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17214,6 +17216,86 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item66
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3043.8777,145.96164,8501.4736};
+				angles[]={0.02599225,1.3026053,6.2392135};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1849;
+			type="CUP_B_MTVR_USA";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item67
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3048.3862,145.40318,8468.4482};
+				angles[]={6.1677046,6.1675296,6.2212629};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=1850;
+			type="CUP_B_MTVR_USA";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
