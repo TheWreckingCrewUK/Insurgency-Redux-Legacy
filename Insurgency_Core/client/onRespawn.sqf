@@ -28,6 +28,7 @@ if (!isnil "_nobackpack") then {
 };
 */
 
+if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
 if (!((backpack player) == "")) then {
 	_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;
 	_unit = player;
@@ -62,7 +63,11 @@ if (!((backpack player) == "")) then {
 		};
 	};
 };
-
+} else {
+	
+	player removeItem "ACRE_PRC343";
+	player removeItem "ACRE_PRC343_ID_1";
+};
 
 [] spawn {
 	waituntil {(!(isnil "twc_missionname"))};

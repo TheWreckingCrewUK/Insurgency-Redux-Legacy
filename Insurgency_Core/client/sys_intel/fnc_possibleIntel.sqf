@@ -128,7 +128,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_object = twc_activemissions call BIS_fnc_selectRandom;
 			_objectname = _object select 1;
 			_objectpos = _object select 0;
-			_distance = 50 + ((floor (1 * (random 20))) * 50);
+			_distance = 50 + ((floor (1 * (random 10))) * 50);
 			_intelPos = [_objectpos, _distance] call CBA_fnc_randPos;
 			_marker = createMarker [format["%1%2", _objectpos, (str _intelPos)], _intelPos];
 			_marker setMarkerType "hd_join";
@@ -145,7 +145,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 				_textarray pushback ([" My cousin stepped on a landmine somewhere around there, left over from the Russians.", " The rumour is there's dozens of old mines around there.", " The russians laid a load of mines there and never cleaned up after themselves.", " The russians didn't clean up after themselves at all, they left a load of landmines there. All these years and they still torment us."] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "recovery") then {
-				_textarray pushback (["There's an American vehicle there, I think it needs recovering", "A vehicle was abandoned there by the good guys", "Some soldiers got hit by a bomb there and had to leave their vehicle behind"] call bis_fnc_selectrandom);
+				_textarray pushback (["There's an army vehicle there, I think it needs recovering", "A vehicle was abandoned there by the good guys", "Some soldiers got hit by a bomb there and had to leave their vehicle behind"] call bis_fnc_selectrandom);
 			};
 		};
 		

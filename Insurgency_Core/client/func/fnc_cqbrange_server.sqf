@@ -11,6 +11,9 @@ params [["_iscomplex", false]];
 _group = creategroup east;
 
 _num = ((count allplayers * 2) + 8) min 20;
+if (hasinterface) then {
+	_num = 20;
+};
 
 {
 	if (!isnull _x) then {

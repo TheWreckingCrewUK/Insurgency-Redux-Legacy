@@ -45,7 +45,7 @@ if ((random 1) < 0.5) then {
 _wp = _group addwaypoint [_gopos, 0];
 _wp setWaypointCompletionRadius 100;
 _wp setWaypointformation (["column", "line", "vee", "file"] call bis_fnc_selectrandom);
-_wp setWaypointStatements ["true", "_pos = (group this) getvariable ['twc_strongholdpos', (getpos this)];[_pos, nil, thislist, 300, 2, true, false] call ace_ai_fnc_garrison;[group this, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;['TWC_Insurgency_adjustInsurgentMorale', 1] call CBA_fnc_serverEvent;
+_wp setWaypointStatements ["true", "_pos = (group this) getvariable ['twc_strongholdpos', (getpos this)];{[_x] call twc_fnc_aispreadout;} foreach thislist;[group this, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;['TWC_Insurgency_adjustInsurgentMorale', 1] call CBA_fnc_serverEvent;
 _trg = createTrigger ['EmptyDetector', _pos];
 _trg setTriggerArea [300, 300, 0, false];
 _trg setTriggerActivation ['EAST', 'PRESENT', False];

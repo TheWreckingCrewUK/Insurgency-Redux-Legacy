@@ -24,15 +24,13 @@ _truck setVehicleLock "LOCKEDPLAYER";
 _truck setobjecttextureglobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
 
 _direction = 180;	
-_nearRoads = _pos nearRoads 10;
+_nearRoads = _pos nearRoads 30;
 
 if(count _nearRoads > 0) then
 {
 	_road = _nearRoads select 0;
-	_roadConnectedTo = roadsConnectedTo _road;
-	_connectedRoad = _road;
-	_connectedRoad = _roadConnectedTo select 0;
-	_direction = [_road, _connectedRoad] call BIS_fnc_DirTo;
+	_road2 = _nearRoads select 1;
+	_direction = _road2 getdir _road;
 };
 
 if (((_direction + 180 -(_truck getdir _pos)) < -90) || ((_direction + 180 -(_truck getdir _pos)) > 90)) then { 

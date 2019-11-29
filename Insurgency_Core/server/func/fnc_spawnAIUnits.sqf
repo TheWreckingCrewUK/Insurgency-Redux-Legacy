@@ -76,11 +76,13 @@ if (!(isnull twc_terp)) then {
 //Spawning hostiles
 _group = createGroup _side;
 //_spawnPos = [_pos,_groupradius,[_dir1,_dir2]] call SHK_pos;
-_spawnPos = [0,0,0];
+_spawnPos = _pos;
+_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 
 if (isNil "townSpawn") exitWith {};
 
 for "_i" from 1 to _total do {
+	_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 	_unit = _group createUnit [(selectRandom townSpawn), _spawnPos, [], 5, "NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
@@ -163,7 +165,7 @@ units _civg joinsilent _group;
 	_rem = [];
 	
 	_gopos = [_pos select 0, _pos select 1, 0];
-	
+	/*
 	_rem = [_gopos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	if (isnil "_rem") then {
 		_rem = units _group;
@@ -172,9 +174,16 @@ units _civg joinsilent _group;
 	{
 		deletevehicle _x;
 	} foreach _rem;
+	*/
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach units _group;
 	
-	sleep 3;
-	[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+	sleep 30;
+	//[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach units _group;
 	
 	_array1 = [];
 	_array2 = [];
@@ -186,11 +195,18 @@ units _civg joinsilent _group;
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_gopos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
+	//[_gopos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach _array1;
 	
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
+	//[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach _array2;
+};
 	

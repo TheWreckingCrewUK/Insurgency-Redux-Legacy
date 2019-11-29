@@ -16,7 +16,7 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	_snaction1 = ["Spawnsnipbox","SAS","",{call twc_loadout_snipergroup_uksf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "uksf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","ACE","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 };
@@ -53,10 +53,10 @@ if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","ACE","",{call twc_loadout_sfgroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_sfgroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","NSWDG","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","SEALS","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","ANA","",{call twc_loadout_sfgroup_ana},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "ana") && ((missionnamespace getvariable ["twc_wdveh",0]) == 0))}] call ace_interact_menu_fnc_createAction;

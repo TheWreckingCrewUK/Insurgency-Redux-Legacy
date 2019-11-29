@@ -47,22 +47,18 @@ _unitString = hvtlist call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
 
+_buildingarray = nearestObjects [_pos, ["House", "Building"], 300];
+_building = (_buildingarray select 0);
+_pos = (_building buildingPos 0);
 
-_nil = [_pos, nil, [_hvt], 20, 2, false, true] call ace_ai_fnc_garrison;
+_hvt setpos _pos;
 
-//garrison should return
-if (!isnil "_nil") then {
-	if ((count _nil) > 0) then {
-		_nil = [_pos, nil, [_hvt], 50, 2, false, true] call ace_ai_fnc_garrison;
-	};
-};
-
-_pos = [_pos, 1, 20, 3, 0, 0.7, 0] call BIS_fnc_findSafePos;
+/*_pos = [_pos, 1, 20, 3, 0, 0.7, 0] call BIS_fnc_findSafePos;
 
 if ((count _pos) == 2) then {
 	_pos = [_pos select 0, _pos select 1, 0];
 };
-
+*/
 _vehspawnPos = [_pos, 1, 30, 5, 0, 0.7, 0] call BIS_fnc_findSafePos; 
 if ((count _vehspawnPos) == 2) then {
 	_vehspawnPos = [_vehspawnPos select 0, _vehspawnPos select 1, 0];
@@ -111,7 +107,10 @@ for "_i" from 1 to _total do{
 	sleep 0.2;
 };
 
-_nil = [_pos, nil, (units _group), 50, 2, false, true] call ace_ai_fnc_garrison;
+//_nil = [_pos, nil, (units _group), 50, 2, false, true] call ace_ai_fnc_garrison;
+{
+	[_x, 40] call twc_fnc_aispreadout;
+} foreach units _group;
 
 _id = [_pos, "HVT"];
 twc_activemissions pushback _id;
@@ -134,12 +133,12 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 };
 
 
-[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
+//[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 [leader _group, 1] spawn TWC_fnc_aiscramble;
 
 
 //wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
-waituntil {time > (_spawntime + 60)};
+sleep (_spawntime + 60);
 	if (!alive _hvt) exitwith {
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
 	

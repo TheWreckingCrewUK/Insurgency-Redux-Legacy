@@ -58,11 +58,9 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 	sleep 0.2;
 };
 	[leader _group] spawn TWC_fnc_aiscramble;
-if ((random 1) > 0.5) then {
-	[_pos, nil, (units _group), 200, 2, true, true] call ace_ai_fnc_garrison;
-} else {
-};
-	_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach units _group;
 
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
@@ -93,13 +91,18 @@ for "_i" from 1 to 6 do{
 		sleep 0.2;
 	};
 	[leader _group] spawn TWC_fnc_aiscramble;
+{
+	[_x, 400] call twc_fnc_aispreadout;
+} foreach units _group;
+_group setbehaviour "safe";
+_group setspeedmode "limited";
 	if (random 1 > 2) then {
 	[_group, _pos, 400, 5, "MOVE","SAFE","YELLOW","LIMITED","COLUMN"] call CBA_fnc_taskPatrol;}
 	else
 	{
-	{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
+	//{[_pos, nil, [_x], 200, 2, true, true] call ace_ai_fnc_garrison;} foreach units _group;
 	//using the inferior cba defence function after the ace garrison teleport, so that if ace can't find a building then cba takes over
-	[_group, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;
+	//[_group, _pos, 300, 3, 0.5, 0.5] call CBA_fnc_taskDefend;
 	};
 };
 //[_pos, 5, 75] call twc_spawnCiv;

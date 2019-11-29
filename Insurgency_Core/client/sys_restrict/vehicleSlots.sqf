@@ -1,10 +1,10 @@
-_pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot","1970_British_HeliPilot"];
+_pilots = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot","1970_British_HeliPilot","CUP_O_RU_Pilot_VDV_EMR"];
 
-_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1990_British_Crewchief","1970_British_Crewchief"];
+_crewchiefs = ["Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1990_British_Crewchief","1970_British_Crewchief","CUP_O_RU_Pilot_VDV"];
 
-_armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","1970_British_Vehicle_Crew"];
+_armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","1970_British_Vehicle_Crew", "CUP_O_RU_Crew_VDV_EMR"];
 
-_armourcommanders = ["Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander","1970_British_Vehicle_Commander"];
+_armourcommanders = ["Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander","1970_British_Vehicle_Commander","CUP_O_RU_Crew_VDV_EMR"];
 
 _sf = ["Modern_UKSF_Base","Modern_UKSF_Pointman","Modern_UKSF_2IC","Modern_UKSF_Squadleader","Modern_UKSF_Grenadier","Modern_UKSF_Marksman","Modern_UKSF_Medic","Modern_British_Sniper_coin","Modern_British_Spotter_coin"];
 
@@ -29,6 +29,24 @@ _list=[
 		],
 		["commander", 
 			_armourcommanders
+		]],5
+	],
+		["rhs_btr70_msv",[ 
+		["gunner", 
+			_armourcrew
+		]],5
+	],
+		["CUP_O_MTLB_pk_WDL_RU",[ 
+		["gunner", 
+			_armourcrew
+		]],5
+	],
+		["rhs_bmp1_msv",[ 
+		["driver", 
+			_armourcrew
+		],
+		["gunner", 
+			_armourcrew
 		]],5
 	],
 	
@@ -386,6 +404,22 @@ _list=[
 			_pilots
 		],
 		[[2], 
+			_crewchiefs
+		]],3
+	],	
+		["RHS_Mi8T_vvsc",[ 
+		["driver", 
+			_pilots + _crewchiefs
+		],
+		[[0], 
+			_crewchiefs + _pilots
+		]],3
+	],	
+		["RHS_Mi24P_vvsc",[ 
+		["driver", 
+			_pilots
+		],
+		["gunner", 
 			_crewchiefs
 		]],3
 	],	
@@ -797,6 +831,7 @@ twc_fullvehicles = [
  "RHS_M2A3_BUSKIII_wd",
  "rhsgref_ins_t72bb",
  "rhsgref_cdf_b_bmp1",
+ "RHS_Mi24P_vvsc",
  "rhsgref_cdf_b_Mi24D_Early",
  "rhsgref_cdf_Mi24D_Early",
  "rhsgref_cdf_Mi35",

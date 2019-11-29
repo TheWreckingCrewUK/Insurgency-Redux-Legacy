@@ -11,6 +11,8 @@ if (((count _pos) == 2)) then {
 	if ((vehicle _x) != _x) then {
 		if (vehicle _x isKindOf "Air") then {
 			_pos = eyePos _x vectoradd [0,0,-4];
+		} else {
+			_pos = eyePos _x vectoradd [0,0,4];
 		};
 	};
 	_check = [objNull, "VIEW"] checkVisibility [eyePos _x, ((AGLToASL _pos) vectoradd [0,0,2])];

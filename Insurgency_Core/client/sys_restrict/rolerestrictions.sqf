@@ -4,7 +4,7 @@ if(isserver)exitWith{systemchat "role restrict skipped for server";};
 
 twc_fnc_helicheck = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_restrict\helicheck.sqf";
 
-if(["helipilot", typeof player] call BIS_fnc_inString)then{
+if ((["helipilot", typeof player] call BIS_fnc_inString) || ((typeof player) == "CUP_O_RU_Pilot_VDV_EMR")) then{
 _return = call twc_fnc_helicheck;
 if ((_return) < 1) then {
 
@@ -29,7 +29,7 @@ player forceWalk false;
 };
 };
 
-if(["crewchief", typeof player] call BIS_fnc_inString)then{
+if((["crewchief", typeof player] call BIS_fnc_inString) || ((typeof player) == "CUP_O_RU_Pilot_VDV"))then{
 _return = call twc_fnc_helicheck;
 if (((_return) < 2)) then {
 

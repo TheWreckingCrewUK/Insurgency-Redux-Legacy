@@ -22,6 +22,8 @@ twc_fnc_townmarker = compile preprocessfilelinenumbers "Insurgency_Core\server\f
 twc_fnc_counterattack = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_counterattack.sqf";
 twc_fnc_betrayal = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_betrayal.sqf";
 
+twc_fnc_aispreadout = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aispreadout.sqf";
+
 
 twc_fnc_perspb_trigger = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_trigger.sqf";
 twc_fnc_perspb_write = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_write.sqf";

@@ -20,8 +20,8 @@ params["_pos"];
 //if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 
-//_spawnPos = [_pos, 50] call CBA_fnc_randPos;
-_spawnPos = [0,0,0];
+_spawnPos = _pos;
+_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10;
 
@@ -38,6 +38,7 @@ if ((twc_terp distance _pos) < 1000) then {
 _group = createGroup East;
 for "_i" from 1 to _total do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _spawnPos,[], 5,"NONE"];
+	_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 		if (side (_this select 1) == WEST) then{
@@ -60,6 +61,7 @@ _group setSpeedMode "LIMITED";
 _gopos = [_pos select 0, _pos select 1, 0];
 
 	//[_pos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
+	/*
 	_rem = [];
 	_rem = [_gopos, nil, units _group, 300, 0, false, true] call ace_ai_fnc_garrison;
 	
@@ -70,7 +72,11 @@ _gopos = [_pos select 0, _pos select 1, 0];
 	{
 		deletevehicle _x;
 	} foreach _rem;
+	*/
 	
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach units _group;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 /*
@@ -82,7 +88,10 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 */
 
 	sleep 5;
-	[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+	//[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach units _group;
 	
 	_array1 = [];
 	_array2 = [];
@@ -94,11 +103,18 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_gopos, nil, _array1, 600, 2, true, false] call ace_ai_fnc_garrison;
+	//[_gopos, nil, , 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach _array1;
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
-	[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;};
+	//[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;
+{
+	[_x] call twc_fnc_aispreadout;
+} foreach _array2;
+	};
 	
 	

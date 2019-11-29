@@ -26,6 +26,7 @@ _tmp_items = [];
 _tmp_backpacks = [];
 
 #include "1970_base.sqf";
+#include "1970_rus_base.sqf";
 #include "pol_base.sqf";
 #include "ger_base.sqf";
 #include "us_army_base.sqf";
@@ -2004,12 +2005,15 @@ if (typeOf vehicle player == "twc_ana_commander") then {
     ];
 	
 	if (!(isnil "twc_missionname")) then {
-		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["70", twc_missionname] call BIS_fnc_inString))) then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
 		};
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
+	};
 		
     _tmp_items = 
 	[
@@ -2054,12 +2058,16 @@ if (typeOf vehicle player == "twc_ana_base") then {
     ];
 	
 	if (!(isnil "twc_missionname")) then {
-		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["70", twc_missionname] call BIS_fnc_inString))) then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
 		};
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
+		
+	};
 				_tmp_backpacks = 
 	[
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
@@ -2093,17 +2101,20 @@ if (typeOf vehicle player == "twc_ana_subcommander") then {
     ];
 	
 	if (!(isnil "twc_missionname")) then {
-		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["70", twc_missionname] call BIS_fnc_inString))) then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
+			};
+		
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
-		};
+	};
 				_tmp_backpacks = 
 	[
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
-	
 };
 
 
@@ -2133,7 +2144,7 @@ if (typeOf vehicle player == "twc_ana_rifleman_at") then {
     ];
 	
 	if (!(isnil "twc_missionname")) then {
-		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["70", twc_missionname] call BIS_fnc_inString))) then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
@@ -2144,6 +2155,9 @@ if (typeOf vehicle player == "twc_ana_rifleman_at") then {
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
+	if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+		_tmp_items pushback ["ACRE_PRC343",1];
+	};
 };
 
 
@@ -2175,6 +2189,9 @@ if (typeOf vehicle player == "twc_ana_mg") then {
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
+	if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+		_tmp_items pushback ["ACRE_PRC343",1];
+	};
 };
 
 
@@ -2204,12 +2221,15 @@ if (typeOf vehicle player == "twc_ana_mg_as") then {
     ];
 	
 	if (!(isnil "twc_missionname")) then {
-		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
+		if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["70", twc_missionname] call BIS_fnc_inString))) then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
 		};
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
+	};
 				_tmp_backpacks = 
 	[
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
@@ -2244,8 +2264,11 @@ if (typeOf vehicle player == "twc_ana_marksman") then {
 		if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 		_tmp_weapons pushback ["rhs_weap_m24sws_blk_ana",1];
 		_tmp_magazines pushback ["rhsusf_5Rnd_762x51_m993_Mag",50];
+			};
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
-		};
+	};
 	
 				_tmp_backpacks = 
 	[
@@ -2292,8 +2315,11 @@ if (typeOf vehicle player == "twc_ana_medic") then {
 		_tmp_weapons pushback ["twc_ana_m16a4",1];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855_Stanag",50];
 		_tmp_magazines pushback ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
+			};
+		if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+			_tmp_items pushback ["ACRE_PRC343",1];
 		};
-		};
+	};
 				_tmp_backpacks = 
 	[
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
@@ -2319,7 +2345,6 @@ if (typeOf vehicle player == "twc_ana_interpreter") then {
 		["ACE_fieldDressing",25],
 		["ACE_morphine", 20],
 		["ACRE_PRC148",0],
-		["ACRE_PRC343",0],
 		["ACRE_PRC152", 1]
     ];
 				_tmp_backpacks = 
@@ -2327,6 +2352,9 @@ if (typeOf vehicle player == "twc_ana_interpreter") then {
 //		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 	
+	if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
+		_tmp_items pushback ["ACRE_PRC343",1];
+	};
 };
 
 //colombian army

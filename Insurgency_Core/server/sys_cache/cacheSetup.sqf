@@ -94,7 +94,10 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 };
 };
 
-	[_pos, nil, units _group, 10, 2, true, true] call ace_ai_fnc_garrison;
+	//[_pos, nil, units _group, 10, 2, true, true] call ace_ai_fnc_garrison;
+{
+	[_x, 30] call twc_fnc_aispreadout;
+} foreach units _group;
 		_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	} forEach InsP_cacheGroup;
 };

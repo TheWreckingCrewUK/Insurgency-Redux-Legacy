@@ -69,6 +69,24 @@ if (typeof _veh == "RHS_MELB_MH6M") then {
 	hint "This is an SF helicopter. Only SF and sniper teams are able to ride in it";
 };
 
+if ((typeof _veh == "RHS_Mi8T_vvsc") || (typeof _veh == "RHS_Mi24P_vvsc")) then {
+
+_box= _veh;
+_box additemcargoglobal ["ACE_fieldDressing",20];
+_box additemcargoglobal ["ACE_packingBandage",15];
+_box additemcargoglobal ["ACE_quikclot",15];
+_box additemcargoglobal ["ACE_morphine",5];
+_box additemcargoglobal ["ACE_epinephrine",3];
+_box additemcargoglobal ["ACE_personalAidKit",1];
+
+_box addmagazinecargoglobal ["rhs_30Rnd_545x39_7N6M_AK",25]; 
+_box addmagazinecargoglobal ["rhs_mag_9x18_8_57N181S",5]; 
+_box addmagazinecargoglobal ["rhs_GRD40_White",5]; 
+_box addmagazinecargoglobal ["rhs_GRD40_White",8]; 
+_box addmagazinecargoglobal ["rhs_rpg7_PG7V_mag",3]; 
+_box addmagazinecargoglobal ["rhs_rpg7_PG7V_mag",5]; 
+};
+
 if (typeof _veh == "CUP_B_UH60M_FFV_US") then {
 
 	clearWeaponCargoGlobal _veh;

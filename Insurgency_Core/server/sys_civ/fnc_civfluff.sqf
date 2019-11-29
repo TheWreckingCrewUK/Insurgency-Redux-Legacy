@@ -181,7 +181,7 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 						while {alive _unit} do {
 							
 							
-							if ((!([(getpos _unit),30] call twc_fnc_posNearPlayers)) && (([(getpos _unit)] call twc_fnc_seenbyplayers) == 0) && (!([(getpos _unit)] call twc_fnc_lookedatbyplayers))) exitwith {
+							if ((!([(getpos _unit),30] call twc_fnc_posNearPlayers)) && (([(getpos _unit)] call twc_fnc_seenbyplayers) == 0) && (!([(getpos _unit)] call twc_fnc_lookedatbyplayers)) && ((vehicle _unit) == _unit)) exitwith {
 								deletevehicle _unit;
 								
 								_pos = _unit getvariable ["unitshome", ""];
@@ -215,7 +215,7 @@ twc_fnc_newfluffwp = {
 	_group = group _unit;
 	_pos = getpos _unit;
 	_group setbehaviour "safe";
-	if ((!([_pos,30] call twc_fnc_posNearPlayers)) && (([_pos] call twc_fnc_seenbyplayers) == 0)) exitwith {
+	if ((!([_pos,30] call twc_fnc_posNearPlayers)) && (([_pos] call twc_fnc_seenbyplayers) == 0) && ((vehicle _unit) == _unit)) exitwith {
 		deletevehicle _unit;
 		
 		_pos = _unit getvariable ["unitshome", ""];
