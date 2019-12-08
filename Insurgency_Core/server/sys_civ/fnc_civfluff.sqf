@@ -120,7 +120,7 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 							};
 							*/
 							
-							_nil = [getpos _civ, nil, [_civ], 50, 2, false, false] call ace_ai_fnc_garrison;
+							//_nil = [getpos _civ, nil, [_civ], 50, 2, false, false] call ace_ai_fnc_garrison;
 							
 							
 							[_civ] spawn{
@@ -155,7 +155,7 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 									if ((side _shooter) == east) then {
 									_var = _unit getvariable ["twc_lastbrick", 0];
 									if (_var < (time - 30)) then {
-										_nil = [getpos _unit, nil, [_unit], 50, 2, false, false] call ace_ai_fnc_garrison;
+										//_nil = [getpos _unit, nil, [_unit], 50, 2, false, false] call ace_ai_fnc_garrison;
 										_unit setvariable ["twc_lastbrick", time];
 									};
 								};
