@@ -21,10 +21,39 @@
 _group = createGroup civilian;
 params["_pos", "_civnum", "_civradius"];
 
+
+
+_spawnposarray = [];
+_timer = time;
+_buildings = nearestObjects [_pos, ["House"], 800];
+systemchat ("nearestobjects took " + (str (time - _timer)));
+_timer = time;
+/*
+{
+	_check = [];
+	if ((count _spawnposarray) < (_civnum * 2)) then {
+		_check = [_x] call BIS_fnc_buildingPositions;
+		if ((count _check) > 0) then {
+			_potential = [getpos _x, 2, 50, 2, true] call twc_fnc_findsneakypos;
+			if (((str _potential) != (str _x))) then {
+				_spawnposarray pushback _potential;
+			};
+		};
+	};
+} foreach _buildings;
+systemchat ("array took " + (str (time - _timer)));
+*/
+if ((count _buildings) == 0) exitwith {
+	systemchat "no potential, civ exiting";
+	twc_lastcompletion = time;
+};
+//systemchat ("civ finds " + (str (count _spawnposarray)) + " potentials");
+
+
 _num = 0;
 
-for "_i" from 1 to _civnum do {
-	_individualCiv = _group createUnit [(civilianType select (floor random (count civilianType))), _pos, [], _civradius, "NONE"];
+for "_i" from 1 to (_civnum min (count _buildings)) do {
+	_individualCiv = _group createUnit [(civilianType select (floor random (count civilianType))), ([getpos (_buildings call bis_fnc_selectrandom), 2, 50, 2, true] call twc_fnc_findsneakypos), [], 0, "NONE"];
 	_civHeading = (random 360);
 	_individualCiv setFormDir _civHeading;
 	_individualCiv setDir _civHeading;

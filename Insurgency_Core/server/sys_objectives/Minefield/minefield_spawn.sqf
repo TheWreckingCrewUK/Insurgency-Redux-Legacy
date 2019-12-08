@@ -2,16 +2,16 @@ params ["_objType"];
 
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
-_pos = getPos _town;
+_pos = _town;
 _attemptcount = 0;
 while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 2000 || _town in badTownArray}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
-	_pos = getPos _town;
+	_pos =  _town;
 	_attemptcount = _attemptcount + 1;
 if (_attemptcount > 50) exitwith {
 		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;};
 };
-_pos = [getPos _town, 500, 2000, 1, 0, 0.7, 0, [], [getPos _town, getPos _town]] call BIS_fnc_findSafePos;
+_pos = [ _town, 500, 2000, 1, 0, 0.7, 0, [], [ _town,  _town]] call BIS_fnc_findSafePos;
 if (random 1 < 0.8) then {
 _trg = createTrigger ["EmptyDetector", _pos];
 _trg setTriggerArea [800, 800, 0, false];

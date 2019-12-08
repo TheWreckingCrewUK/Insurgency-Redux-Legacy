@@ -22,6 +22,22 @@ InsP_fnc_enemyIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\
 InsP_fnc_possibleIntel = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_possibleIntel.sqf";
 InsP_fnc_Evidence = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\fnc_evidence.sqf";
 
+
+player addEventHandler ["InventoryOpened", {
+	params ["_unit", "_container"];
+	
+	if (!(_container == crateBox)) exitwith {};
+	_backpack = (backpackitems player);
+	_iedarray = ["IEDLandSmall_Remote_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandBig_Remote_Mag", "IEDUrbanBig_Remote_Mag"];
+	{
+		if (_x in _iedarray) then {
+			player removeitem _x;
+			["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+			hint "IED Parts recovered";
+		};
+	} foreach _backpack;
+}];
+
 //Adds question action to all civilians whose classname is defined in array civiliantype	
 {
 	_questionAction = ["QuestionPerson","Question Person","",{[_this select 0] call InsP_fnc_questionDisplay},{alive (_this select 0) && !((_this select 0) getVariable ["ACE_isUnconscious",false]) && (((_this select 0) getVariable ["twc_isenemy",1]) == 0)}] call ace_interact_menu_fnc_createAction;

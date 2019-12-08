@@ -15,15 +15,22 @@
 						  
 params["_pos","_civnum","_civradius","_groupradius","_thisList",["_spawnCivs",true],["_forceSpawn",false], "_posid"];
 
+[_pos] call twc_fnc_civfluff;
+
+if ((_pos distance twc_basepos) < 1500) exitwith {[_pos, 0] call twc_fnc_townmarker;};
+
 _civnum = (_civnum min 10) max 5;
 
 if(_spawnCivs)then{
 	[_pos, _civnum, _civradius] call twc_spawnCiv;
 };
 
-[_pos] call twc_fnc_civfluff;
 
 _isfriend = profilenamespace getvariable ['twcenemytown' + (str _pos), 5];
+
+if (((_pos distance twc_basepos) < 2000) || (((getmarkerpos "respawn_west_forwardbase") distance _pos) < 1500)) then {
+	_isfriend = 1;
+};
 
 _enemies = 0;
 
@@ -52,7 +59,7 @@ if ((_isfriend == 5) || (_isfriend == 0) || ((missionnamespace getvariable ["twc
 	};
 
 } else {
-	//systemchat "friendly profile spotter";
+	//systemchat "friendly profile spotted";
 };
 
 if(_enemies == 0) then {
@@ -65,11 +72,11 @@ if(_enemies == 0) then {
 saveprofilenamespace;
 
 _trg = createTrigger ["EmptyDetector", _pos];
-_trg setTriggerArea [900, 900, 0, false];
+_trg setTriggerArea [1100, 1100, 0, true];
 _trg setTriggerActivation ["ANY", "PRESENT", False];
 _trg setTriggerTimeout [10,10,10, true];
 
-_trg setTriggerStatements ["{(side (_x)) == WEST} count thisList == 0 || (({((count (weapons _x)) > 0) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList < 1))","[thistrigger, (({((count (weapons _x)) > 0) && ((vehicle _x) == _x) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList))] spawn {params ['_trg', '_lst'];_time = 100; if (hasinterface) then {_time = 0;};sleep _time;[(_trg getVariable 'unitsHome'), _lst] call twc_fnc_townmarker;};[(thisTrigger getVariable 'unitsHome'), thisList] spawn twc_fnc_townDeciding; ",""];
+_trg setTriggerStatements ["{((side (_x)) == WEST) && (isplayer _x)} count thisList == 0","[thistrigger, thislist] spawn {params ['_trg', '_lst'];sleep 5;[(_trg getVariable 'unitsHome'), _lst] spawn twc_fnc_townDeciding;}; _lst = (({((count (weapons _x)) > 0) && ((vehicle _x) == _x) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList)); [(thistrigger getVariable 'unitsHome'), _lst] call twc_fnc_townmarker;",""];
 
 
 // && {(side (group _x)) == guer} count thisList < 2

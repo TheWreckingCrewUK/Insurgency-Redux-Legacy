@@ -17,8 +17,8 @@ if ((missionnamespace getvariable ["twccancelcars", 0]) == 1) exitwith {};
 
 while {(((count _pos) == 0) && (_amount < 4000))} do {
 	{
-		if ((!([getpos _x, 1500] call twc_fnc_posNearPlayers)) && ([getpos _x, _amount] call twc_fnc_posNearPlayers) && (((getpos _x) distance twc_basepos) > 1000) && ((random 1) > 0.3)) then {
-			_pos = getpos _x;
+		if ((!([ _x, 1500] call twc_fnc_posNearPlayers)) && ([ _x, _amount] call twc_fnc_posNearPlayers) && ((( _x) distance twc_basepos) > 1000) && ((random 1) > 0.3)) then {
+			_pos =  _x;
 		};
 	} foreach townLocationArray;
 	_amount = _amount + 300;

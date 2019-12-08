@@ -77,13 +77,36 @@ if (!(isnull twc_terp)) then {
 _group = createGroup _side;
 //_spawnPos = [_pos,_groupradius,[_dir1,_dir2]] call SHK_pos;
 _spawnPos = _pos;
-_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 
+_spawnposarray = [];
+_buildings = nearestObjects [_spawnPos, ["House"], 800];
+/*
+{
+	_check = [];
+	if ((count _spawnposarray) < (_total * 2)) then {
+		_check = [_x] call BIS_fnc_buildingPositions;
+		if ((count _check) > 0) then {
+			_potential = [getpos _x, 2, 50, 2, true] call twc_fnc_findsneakypos;
+			if (((str _potential) != (str _x))) then {
+				_spawnposarray pushback _potential;
+			};
+		};
+	};
+} foreach _buildings;
+
+
+
+systemchat ("aiunits finds " + (str (count _spawnposarray)) + " potentials");
+*/
+if ((count _buildings) == 0) exitwith {
+	//systemchat "no potential, spawnaiunits exiting";
+	twc_lastcompletion = time;
+};
 if (isNil "townSpawn") exitWith {};
 
-for "_i" from 1 to _total do {
-	_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
-	_unit = _group createUnit [(selectRandom townSpawn), _spawnPos, [], 5, "NONE"];
+for "_i" from 1 to (_total min (count _buildings)) do {
+	//_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
+	_unit = _group createUnit [(selectRandom townSpawn), ([getpos (_buildings call bis_fnc_selectrandom), 2, 50, 2, true] call twc_fnc_findsneakypos), [], 0, "NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 
@@ -126,7 +149,7 @@ for "_i" from 1 to _total do {
 	};
 	_unit setVariable ["unitsHome",_pos,false];
 	//_num = _num + 1;
-	sleep 0.2;
+	//sleep 0.2;
 	
 };
 
@@ -138,7 +161,7 @@ _civg = creategroup civilian;
 _fraggertotal = (random 2);
 
 for "_i" from 1 to _fraggertotal do {
-	_unit = _civg createUnit [(selectRandom civilianType), _spawnPos, [], 5, "NONE"];
+	_unit = _civg createUnit [(selectRandom civilianType), ([getpos (_buildings call bis_fnc_selectrandom), 2, 50, 2, true] call twc_fnc_findsneakypos), [], 5, "NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
 
@@ -152,9 +175,9 @@ for "_i" from 1 to _fraggertotal do {
 	//_num = _num + 1;
 	_unit addItemtoUniform "CUP_handgrenade_RGD5";
 	_unit addItemtoUniform "CUP_handgrenade_RGD5";
-	sleep 0.2;
+	//sleep 0.2;
 };
-sleep 1;
+//sleep 1;
 _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 

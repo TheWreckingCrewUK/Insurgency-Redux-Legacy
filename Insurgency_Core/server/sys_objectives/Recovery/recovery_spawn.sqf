@@ -2,10 +2,10 @@ params ["_objType"];
 
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
-_pos = getPos _town;
+_pos = _town;
 while{([_pos,500] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos "base") < 1000 || _town in badTownArray}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
-	_pos = getPos _town;
+	_pos = _town;
 };
 //Creating the truck
 
@@ -15,7 +15,7 @@ if(isNil "_vehicle") then{
 	["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
 };
 //{(_target (distance (getMarkerPos "base")) < 40)}
-_pos = [getpos _town, 1, 150, 7, 0, 0.7, 0] call BIS_fnc_findSafePos;
+_pos = [_town, 1, 150, 7, 0, 0.7, 0] call BIS_fnc_findSafePos;
 _veh = _vehicle createVehicle _pos;
 /*
 {_recaction = ["ActionRescuevehicle","Recover Vehicle","",{["TWC_Insurgency_adjustPoints", 40] call CBA_fnc_serverEvent; deleteVehicle _target},{((GetPos player) distance (getMarkerPos "base") < 40)}] call ace_interact_menu_fnc_createAction;

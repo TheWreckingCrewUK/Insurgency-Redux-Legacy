@@ -196,15 +196,36 @@ publicVariable "nonQuestionableList";
 goodcivlist = [];
 publicVariable "goodcivlist";
 
+
+/*EXPERIEMENTAL grid system
 // Array of the locations and the strongholds
-townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
+_gridarray = [];
+
+for "_1" from 0 to (worldSize / 1000) do {
+	for "_2" from 0 to (worldSize / 1000) do {
+		_pos = [(_1 * 1000) + 500, (_2 * 1000) + 500, 0];
+		//if (!((str _pos) in (str _gridarray))) then {
+			_gridarray pushback (ATLToASL _pos);
+		//};
+	};
+};
+townLocationArray = _gridarray;
+*/
+
+_townarray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))];
+townLocationArray = [];
+{
+	townLocationArray pushback (getpos _x);
+} foreach _townarray;
+
+//townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
 _strongholdArray = [];
 while{count _strongholdArray <= twc_strongholdcount}do{
 	_town = townLocationArray call bis_fnc_selectRandom;
-	if(!((text _town) in badTownArray))then{
-	if ((_town distance getmarkerpos "base")>1000) then {
+	if(!((str _town) in badTownArray))then{
+	if ((_town distance getmarkerpos "base")>2000) then {
 		//townLocationArray = townLocationArray - [_town];
-		_strongholdArray pushback (getpos _town);
+		_strongholdArray pushback (_town);
 		};
 	};
 };
@@ -229,10 +250,10 @@ if ((random 1) < 10.3) then {
 while{count _strongholdArray <= twc_strongholdcount}do{
 
 	_town = townLocationArray call bis_fnc_selectRandom;
-	if(!((text _town) in badTownArray))then{
+	if(!((str _town) in badTownArray))then{
 	if ((_town distance getmarkerpos "base")>1000) then {
 		//townLocationArray = townLocationArray - [_town];
-		_strongholdArray pushback (getpos _town);
+		_strongholdArray pushback (_town);
 		};
 	};
 };
@@ -253,8 +274,9 @@ if(isNil "customlocations") then{
 	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
 	};
 	{
-	_location = createLocation [ "NameVillage" , getpos _x, 100, 100];
-townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
+	//_location = createLocation [ "NameVillage" , getpos _x, 100, 100];
+//townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
+townLocationArray = townLocationArray + (_x);} foreach customlocations;
 
 //Strongholds
 {

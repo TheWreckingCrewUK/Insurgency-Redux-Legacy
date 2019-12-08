@@ -21,9 +21,33 @@ params["_pos"];
 
 
 _spawnPos = _pos;
-_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
+//_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
+
 _num = 0;
 _total = (([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10;
+
+_spawnposarray = [];
+_buildings = nearestObjects [_pos, ["House"], 800];
+/*
+{
+	_check = [];
+	if ((count _spawnposarray) < (_total * 2)) then {
+		_check = [_x] call BIS_fnc_buildingPositions;
+		if ((count _check) > 0) then {
+			_potential = [getpos _x, 2, 50, 2, true] call twc_fnc_findsneakypos;
+			if (((str _potential) != (str _x))) then {
+				_spawnposarray pushback _potential;
+			};
+		};
+	};
+} foreach _buildings;
+*/
+//if ((count _spawnposarray) == 0) exitwith {
+if ((count _buildings) == 0) exitwith {
+	//systemchat "no potential, defend exiting";
+	twc_lastcompletion = time;
+};
+
 
 sleep 1;
 
@@ -36,8 +60,8 @@ if ((twc_terp distance _pos) < 1000) then {
 
 
 _group = createGroup East;
-for "_i" from 1 to _total do{
-	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _spawnPos,[], 5,"NONE"];
+for "_i" from 1 to (_total min (count _buildings)) do{
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), ([getpos (_buildings call bis_fnc_selectrandom), 2, 50, 2, true] call twc_fnc_findsneakypos),[], 0,"NONE"];
 	_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
@@ -49,7 +73,7 @@ for "_i" from 1 to _total do{
 	_unit setVariable ["unitsHome",_pos,false];
 	_unit setVariable ["twc_isenemy",1];
 	_num = _num + 1;
-	sleep 0.1;
+	//sleep 0.1;
 	
 	
 };
