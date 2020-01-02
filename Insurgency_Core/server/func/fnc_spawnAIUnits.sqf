@@ -63,15 +63,8 @@ if ((_count == 0) && (_isfriend == 1)) then {
 	saveprofilenamespace;
 };
 };
-sleep 1;
 
-if (!(isnull twc_terp)) then {
-	if (_total > 0) then {
-	if ((twc_terp distance _pos) < 1000) then {
-		[_pos] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"
-	};
-	};
-};
+[_pos, (str _side)] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf";
 
 //Spawning hostiles
 _group = createGroup _side;

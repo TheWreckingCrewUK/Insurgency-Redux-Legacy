@@ -1,3 +1,6 @@
+//cancelled out as part of the strippening of 2020
+if (true) exitwith {};
+
 //////////
 //spawn a mortar truck kinda near base that players sometimes trip with the onplayerrespawn system
 _mortartruck = "RHS_Ural_Open_Civ_01" createvehicle [0,0,0];

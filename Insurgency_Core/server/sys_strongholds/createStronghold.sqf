@@ -32,7 +32,7 @@ _trg2 = createTrigger ["EmptyDetector", _pos];
 _trg2 setTriggerArea [_randsize, _randsize, 30, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["(VEHICLE twc_terp) in thislist","[nearestObjects [thistrigger, ['soldiergb'], 500], getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_stronghold.sqf'",""];
+_trg2 setTriggerStatements ["({(_x getvariable ['twc_isterp', 0] == 1)} count thislist) > 0","[nearestObjects [thistrigger, ['soldiergb'], 500], getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_stronghold.sqf'",""];
 
 
 //Spawning a load of hostiles and the civs

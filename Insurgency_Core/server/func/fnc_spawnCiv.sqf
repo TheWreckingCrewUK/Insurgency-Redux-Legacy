@@ -26,7 +26,7 @@ params["_pos", "_civnum", "_civradius"];
 _spawnposarray = [];
 _timer = time;
 _buildings = nearestObjects [_pos, ["House"], 800];
-systemchat ("nearestobjects took " + (str (time - _timer)));
+//systemchat ("nearestobjects took " + (str (time - _timer)));
 _timer = time;
 /*
 {

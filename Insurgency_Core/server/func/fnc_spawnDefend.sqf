@@ -48,14 +48,9 @@ if ((count _buildings) == 0) exitwith {
 	twc_lastcompletion = time;
 };
 
-
-sleep 1;
-
-if (!(isnull twc_terp)) then {
 if (_total > 0) then {
-if ((twc_terp distance _pos) < 1000) then {
-[_pos] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf"};
-};
+	_side = "east";
+	[_pos, (str _side)] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf";
 };
 
 

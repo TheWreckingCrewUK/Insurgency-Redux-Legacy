@@ -28,7 +28,33 @@ twc_fnc_aispreadout = compile preprocessfilelinenumbers "Insurgency_Core\server\
 twc_fnc_perspb_trigger = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_trigger.sqf";
 twc_fnc_perspb_write = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_write.sqf";
 
+twc_fnc_getDisplayName = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_getDisplayName.sqf";
+twc_fnc_showSandBagItems = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_showSandBagItems.sqf";
+twc_fnc_startcqbrangeserver = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_cqbrange_server.sqf";
 
+twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
+
+twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
+twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
+
+twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
+twc_fnc_checkenemyradio = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_checkenemyradio.sqf";
+
+twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findoutsideblufor.sqf";
+
+twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
+twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
+
+
+
+twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_seenbyplayers.sqf";
+twc_fnc_lookedatbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_lookedatbyplayers.sqf";
+twc_fnc_findsneakypos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findsneakypos.sqf";
+
+twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_player\loadouts\fnc_startingloadout.sqf";
+
+twc_terp_timer = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";
+twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_msgcheck.sqf";
 
 [] spawn {
 	waituntil {(!(isnil "townLocationArray" ))};

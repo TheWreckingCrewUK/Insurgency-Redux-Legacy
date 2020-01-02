@@ -23,6 +23,9 @@ twc_fnc_findsneakypos = compile preprocessfilelinenumbers "Insurgency_Core\serve
 
 twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_player\loadouts\fnc_startingloadout.sqf";
 
+twc_terp_timer = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";
+twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_msgcheck.sqf";
+
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 
 player addEventHandler ["CuratorObjectPlaced", {

@@ -36,6 +36,8 @@ twc_isminimission = 1;
 pointLimit = 400;
 publicVariable "pointLimit";
 
+twc_daytimeonly = true;
+
 sirenlist = [idfalarm,idfalarm_1];
 publicvariable "sirenlist";
 

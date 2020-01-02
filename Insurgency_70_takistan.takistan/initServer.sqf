@@ -69,6 +69,8 @@ badTownArray = ["iedrestrictionzone"];
 idfbasesize = 70;
 publicvariable "idfbasesize";
 
+twc_daytimeonly = true;
+
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;
 ["AllVehicles","init",{

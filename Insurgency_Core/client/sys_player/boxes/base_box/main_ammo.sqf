@@ -16,8 +16,14 @@
 
 _weapons = [["twc_L5A4_white",1]];
 _magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10]];
-_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["rhsusf_ANPVS_14",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
+_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 
+if ((!(["70", twc_missionname] call BIS_fnc_inString)) && (!(["90", twc_missionname] call BIS_fnc_inString))) then {
+	_items pushback ["rhsusf_ANPVS_14",1];
+};
+if ((["90", twc_missionname] call BIS_fnc_inString)) then {
+	_items pushback ["CUP_NVG_PVS7",1];
+};
 
 _backpacks = [];
 _tmp_weapons = [];
@@ -577,6 +583,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
+		["UK3CB_BAF_L85A3_RIS_ELCAN3D",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1]
     ];
@@ -619,6 +626,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
+		["UK3CB_BAF_L85A3_RIS_ELCAN3D",1],
 		["TWC_L128A1_Eotech",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
@@ -730,6 +738,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
+		["UK3CB_BAF_L85A3_RIS_ELCAN3D",1],
 		["rhsusf_weap_glock17g4",1],
 		["UK3CB_BAF_L107A1",1],
 		["rhs_weap_m72a7",4]
@@ -882,6 +891,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
+		["UK3CB_BAF_L85A3_RIS_ELCAN3D",1],
 		["UK3CB_BAF_L107A1",1],
 		["rhsusf_weap_glock17g4",1]
 	];

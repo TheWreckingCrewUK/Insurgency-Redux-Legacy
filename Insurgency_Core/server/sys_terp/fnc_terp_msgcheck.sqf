@@ -1,22 +1,26 @@
-//checks that all is good with the interpreter before sending any message to him. called by the primary functions and returns 0 if anything is wrong, returns 1 if everything is ok
-params ["_time"];
+//if (!hasinterface) exitwith {};
+{
 
-{ 
- if ((_x isKindOf "twc_nac_interpreter") || (_x isKindOf "twc_ana_interpreter")) then { 
- 
-twc_terp = _x;
-publicVariable "twc_terp"}; 
+	_isterp = _x getvariable ["twc_isterp",0];
+	if (_isterp == 0) then {
+		if (["interpreter", typeof _x] call BIS_fnc_inString) then { 
+			_x setvariable ["twc_isterp",1,true];
+		}; 
+	};
+	 
+	 
+	[{
+	params ["_unit"];
+	_terpradio = ["ACRE_PRC152", [player]] call acre_api_fnc_getRadioByType;   
+	 if (isnil "_terpradio") exitwith {}; 
+	_terpChannel = [_terpradio] call acre_api_fnc_getRadioChannel; 
+
+	player setvariable ["twc_terpchannel",_terpChannel,true];
+
+	
+	}] remoteExec ["bis_fnc_call", _x];
+	 
 } forEach allplayers; 
 
 
  
-if (isnull twc_terp) exitwith {terpChannel = 0; publicvariable "terpChannel"}; 
-1;
-[{ 
-_terpradio = ["ACRE_PRC152", [twc_terp]] call acre_api_fnc_getRadioByType;   
- if (isnil "_terpradio") exitwith {}; 
-terpChannel = [_terpradio] call acre_api_fnc_getRadioChannel; 
-publicVariable "terpChannel"; 
-If (terpChannel != twc_enemychannel) exitwith {0}; 
-1; 
-}] remoteExec ["bis_fnc_call", twc_terp];

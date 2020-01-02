@@ -1,7 +1,7 @@
 
 
 	if((typeOf player) in ["CUP_O_RUS_SpecOps", "CUP_O_RU_Soldier_AR_EMR", "CUP_O_RU_Soldier_AR_VDV_EMR", "CUP_O_RU_Soldier_AT_VDV_EMR", "CUP_O_RU_Soldier_MG_VDV_EMR", "CUP_O_RU_Soldier_EMR", "CUP_O_RU_Crew_VDV_EMR"])then{_magazines = [["rhs_mag_rdg2_white",10], ["CUP_HandGrenade_RGD5",2]];
-	_items = [["ACE_EarPlugs",1],["rhs_1PN138",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
+	_items = [["ACE_EarPlugs",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 	
 	player removeItem "ACRE_PRC343";
 	player removeItem "ACRE_PRC343_ID_1";
@@ -110,6 +110,29 @@ if((typeOf player) in ["CUP_O_RU_Soldier_MG_VDV_EMR"])then{
 if((typeOf player) in ["CUP_O_RU_Soldier_EMR"])then{
 	_tmp_magazines = [
 		["rhs_30Rnd_545x39_7N6_AK",50]
+	];
+};
+
+//medic
+if((typeOf player) in ["CUP_O_RU_Medic_VDV_EMR"])then{
+	_tmp_magazines = [
+		["rhs_30Rnd_545x39_7N6_AK",50]
+	];
+	_tmp_items =
+	[
+		["ACRE_PRC148",0],
+		["TWC_Item_Medical_SutureKit_20",5],
+		["ACE_fieldDressing", 50],
+		["ACE_elasticBandage", 50],
+		["ACE_quikclot", 50],
+		["ACE_packingBandage", 50],
+		["ACE_morphine", 50],
+		["ACE_epinephrine", 50],
+		["ACE_atropine", 50],
+		["ACE_salineIV_500", 50],
+		["ACE_salineIV_250", 50],
+		["ACE_personalAidKit", 1],
+		["ACE_bodyBag", 10]
 	];
 };
 

@@ -127,6 +127,6 @@ _rocket setVectorDirAndUp [
  [ [ sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D         
 ]; _rocket setvelocity [((_range / 9) + (random 20)) * (sin (getdir _shooter + (-5 + random 10))), ((_range / 9) + (random 20)) * (cos (getdir _shooter + (-5 + random 10))), (40+ (random 10))]; deletevehicle _holder; deletevehicle _shooter;_bang = createvehicle ["rhsusf_mine_m14_ammo", position _shooter, [], 0, "can_collide"]; _bang setdamage 1; [(_spawnpos), (_rocket)] call twc_fnc_idf};      
 };    
-
+*/
 
 

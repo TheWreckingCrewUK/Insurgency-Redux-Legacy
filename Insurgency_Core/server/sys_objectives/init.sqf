@@ -78,7 +78,7 @@ TWC_ObjCanSpawn = {
 	{
 		if ((_x select 0) == _objID) then {
 			_return = call (_x select 1);
-			systemChat format ["TWC_ObjCanSpawn matched HAM %1 and returned %2", _objID, _return];
+			//systemChat format ["TWC_ObjCanSpawn matched HAM %1 and returned %2", _objID, _return];
 		};
 	} forEach heartsAndMindsObjs;
 	
@@ -86,7 +86,7 @@ TWC_ObjCanSpawn = {
 		{
 			if ((_x select 0) == _objID) then {
 				_return = call (_x select 1);
-				systemChat format ["TWC_ObjCanSpawn matched SAD %1 and returned %2", _objID, _return];
+				//systemChat format ["TWC_ObjCanSpawn matched SAD %1 and returned %2", _objID, _return];
 			};
 		} forEach searchAndDestroyObjs;
 	};

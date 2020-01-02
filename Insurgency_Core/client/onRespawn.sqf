@@ -1,10 +1,5 @@
 
 
-if (["interpreter", typeof player] call BIS_fnc_inString) then {
-	twc_terp = player;
-	publicvariable "twc_terp";
-	};
-	
 	//make the player middle eastern if they spawn as ANA. Sounds racist, but otherwise it looks dumb
 _me = player;
 if ((faction player == "ana_units") || ((side player) == east)) then {
@@ -107,10 +102,11 @@ if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 	
 };
  
-sleep 10;
+//sleep 10;
 
 
-
+/*
+//mortar removed in the strippening 2020
 if ((random 1)< twc_mortarchance) then {
 _ran = (random 3);
 waituntil {(!(isnil "twc_mortar_targetlist"))};
@@ -119,7 +115,7 @@ twc_mortar_targetlist pushback ((getpos player) vectoradd [random 1,random 1,ran
 publicVariable "twc_mortar_targetlist";
 };
 };
-
+*/
 
 	if ((!(["sniper", typeof player] call BIS_fnc_inString)) && (!(["spotter", typeof player] call BIS_fnc_inString)) && (!(["uksf", typeof player] call BIS_fnc_inString))) then {
 		player setunittrait ["camouflageCoef", twc_pubcamo];
@@ -223,7 +219,7 @@ twc_serstarttime = time;
 
 
 [] spawn {
-sleep 2;
+sleep 1;
 call twc_fnc_pubstartingloadout;
 };
 
@@ -286,11 +282,19 @@ if ((str (side player)) == "east") then {
 [_lan] call acre_api_fnc_babelSetSpokenLanguages;
 //systemchat "terp init";
 if (["interpreter", typeof player] call BIS_fnc_inString) then {
-	twc_terp = player;
-	publicvariable "twc_terp";
+	
+	[twc_terp_msgcheck] remoteExec ["bis_fnc_call", 2];
+	[] spawn {
+		waituntil {!isnil "twc_terp_timer"};
+		sleep 30;
+		[] spawn twc_terp_timer;
+	};
 	["en", "pa"] call acre_api_fnc_babelSetSpokenLanguages;
 	["en"] call acre_api_fnc_babelSetSpeakingLanguage;
-	"You're an interpreter. Read more about this in the diary on your map" remoteExec ["hint",twc_terp];
+	_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Interpreter</t>"; 
+	_text1 = "<br />You're an interpreter. Read more about this in the diary on your map";
+	_terptext = parsetext (_title + _text1);
+	hint _terptext;
 	
 	player CreateDiaryRecord ["Diary",["Interpreter",
 	"As an interpreter you can gain access to valuable information regarding enemy activity. As you move through the area you will receive hints regarding cache locations, currently defended towns, IED's and even estimates of stronghold strength. <br /><br />You will only get this information if your PRC152 is set to the correct channel however, and you will need to find the correct channel yourself. You can speed this process up by ACE interacting on a High Value Target (HVT) and getting the radio channel that way."

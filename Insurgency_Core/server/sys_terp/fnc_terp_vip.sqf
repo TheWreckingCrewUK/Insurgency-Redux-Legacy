@@ -3,22 +3,30 @@ params ["_pos", "_id"];
 
 if (!(_id in twc_activemissions)) exitwith {};
 
-_terpdis = ((vehicle twc_terp) distance _pos);
+{
+_isterp = _x getvariable ["twc_isterp",0];
 
-_sent = 0;
+if (_isterp == 1) then {
+[_x, _pos] spawn {
+params ["_unit", "_pos"];
+_terpdis = ((vehicle _unit) distance _pos);
 
 
-while {(((vehicle twc_terp) distance _pos) < (_terpdis + 50)) && (_sent == 0)} do {
+_channel = _unit getvariable ["twc_terpchannel", -5];
+while {(((vehicle _unit) distance _pos) < (_terpdis + 50)) && (_channel != twc_enemychannel)} do {
 
-[0] call twc_terp_msgcheck; 
+[] call twc_terp_msgcheck; 
  
 
 sleep 2;
 
-If (terptimer == 0) then {
+_channel = _unit getvariable ["twc_terpchannel", -5];
+};
 
-If (terpChannel == twc_enemychannel) exitwith { 
-[10] call twc_terp_timer;   
+
+
+
+If (_channel == twc_enemychannel) exitwith { 
 
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Enemy Intel - Hostage</t>"; 
@@ -26,11 +34,14 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
  _text1 = "<br />You hear chatter that suggests a hostage is being held nearby";
  _terptext = parsetext (_title + _text1);
  
- [_terptext] remoteExec ["hint",owner twc_terp];
+ _list = _unit getvariable ["twc_terp_msglist", []];
+ _list pushback _terptext;
  
-_sent = 1;
+ _unit setvariable ["twc_terp_msglist", _list, true];
+ 
 };
-};
-sleep 20;
 };
 
+};
+
+} foreach allplayers;
