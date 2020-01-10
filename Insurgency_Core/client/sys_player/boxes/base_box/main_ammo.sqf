@@ -92,6 +92,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
     _tmp_items = 
 	[
 		["ACE_epinephrine",5],
+		["twc_acc_rotex5_grey", 1],
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
 		["SatchelCharge_Remote_Mag",1],
@@ -150,6 +151,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
+		["twc_acc_rotex5_grey", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -185,6 +187,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Base"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
+		["twc_acc_rotex5_grey", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -224,6 +227,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Grenadier"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
+		["twc_acc_rotex5_grey", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -268,6 +272,7 @@ if (typeOf vehicle player in ["Modern_UKSF_2IC"]) then {
 	[
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_Kite", 1],
+		["twc_acc_rotex5_grey", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -305,6 +310,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Marksman"]) then {
 		["ACE_epinephrine",5],
 		["UK3CB_BAF_MaxiKite", 1],
 		["cup_optic_an_pas_13c1", 1],
+		["twc_acc_nt4_tan", 1],
 		["rhsusf_ANPVS_15", 1],
 		["ACRE_PRC343",0],
 		["ACE_IR_Strobe_Item",1]
@@ -339,6 +345,7 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 	[
 		["UK3CB_BAF_Kite", 1],
 		["rhsusf_ANPVS_15", 1],
+		["twc_acc_rotex5_grey", 1],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
@@ -387,6 +394,7 @@ if (typeOf vehicle player in ["2000_UKSF_Sectionleader"]) then {
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",5],
 		["ACE_M26_Clacker",1],
+		["twc_l85_suppressor", 1],
 		["ACRE_PRC343",0],
 		["ACRE_PRC148",0],
 		["ACE_wirecutter", 1],
@@ -424,6 +432,7 @@ if (typeOf vehicle player in ["2000_UKSF_Pointman"]) then {
 	[
 		["ACE_epinephrine",5],
 		["ACRE_PRC343",0],
+		["twc_l85_suppressor", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -455,6 +464,7 @@ if (typeOf vehicle player in ["2000_UKSF_Base"]) then {
 	[
 		["ACE_epinephrine",5],
 		["ACRE_PRC343",0],
+		["twc_l85_suppressor", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -490,6 +500,7 @@ if (typeOf vehicle player in ["2000_UKSF_Grenadier"]) then {
 	[
 		["ACE_epinephrine",5],
 		["ACRE_PRC343",0],
+		["twc_l85_suppressor", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -528,6 +539,7 @@ if (typeOf vehicle player in ["2000_UKSF_2ic"]) then {
 	[
 		["ACE_epinephrine",5],
 		["ACRE_PRC343",0],
+		["twc_l85_suppressor", 1],
 		["ACE_IR_Strobe_Item",1]
     ];
 				_tmp_backpacks = 
@@ -568,6 +580,7 @@ if (typeOf vehicle player in ["2000_UKSF_Medic"]) then {
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
+		["twc_l85_suppressor", 1],
 		["ACRE_PRC343", 1]
 	];
 				_tmp_backpacks = 

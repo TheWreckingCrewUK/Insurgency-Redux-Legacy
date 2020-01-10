@@ -29,7 +29,7 @@ twc_is90 = 1;
 publicVariable "twc_is90";
 hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 
-twc_strongholdcount = -10;
+twc_strongholdcount = 0;
 
 pointLimit = 400;
 publicVariable "pointLimit";
@@ -72,12 +72,17 @@ badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilf
 //defines how close mortar shells have to be predicted to land before tripping the base alarm. FOB kunduz is 40 as a baseline.
 idfbasesize = 70;
 publicvariable "idfbasesize";
+diag_log "hoblog initserver 75";
 
+/*
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;
 ["AllVehicles","init",{
 	[false,(_this select 0),1000] spawn twc_fnc_initVehicleCache
 }, true, ["Man","Static"], true] call CBA_fnc_addClassEventHandler;
 };
+*/
+
+
 // event handlers run in the non-scheduled environment (can't be execVM)
 [] call compile preprocessFile "Insurgency_Core\server\init.sqf";

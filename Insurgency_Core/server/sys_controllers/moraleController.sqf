@@ -43,6 +43,6 @@ addMissionEventHandler ["buildingChanged", {
 	// In the future, there could be a (map specific) list of objects that have higher affect
 	// Such as a mosque, or a bridge etc. Would need to be a hardcoded check list, sadly.
 	if (_isRuin) then {
-		["TWC_Insurgency_adjustCivilianMorale", [-2.5]] call CBA_fnc_serverEvent;
+		["TWC_Insurgency_adjustCivilianMorale", -2.5] call CBA_fnc_serverEvent;
 	};
 }];

@@ -1,6 +1,7 @@
 //Selects a random town then makes sure it is far enough from base and friendlies
 _town = townLocationArray call bis_fnc_selectRandom;
-_pos = getPos _town;
+//_pos = getPos _town;
+_pos = _town;
 //systemchat format ["%1", _this];
 _minepos =  _this select 0;
 

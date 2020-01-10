@@ -21,23 +21,28 @@ while {sunormoon < 1} do {
 };
 // Includes
 #include "func\init.sqf";
+diag_log "hoblog init 24";
 #include "sys_controllers\init.sqf";
-#include "sys_townLocations\init.sqf";
+diag_log "hoblog init 26";
+
 #include "sys_civilianVehicles\init.sqf";
-#include "sys_vehicleRespawn\init.sqf";
+diag_log "hoblog init 32";
 #include "sys_cleanup\init.sqf";
+diag_log "hoblog init 34";
 #include "sys_ied\init.sqf";
+diag_log "hoblog init 36";
+
 #include "sys_cache\init.sqf";
+diag_log "hoblog init 38";
 #include "sys_objectives\init.sqf";
-#include "sys_forwardBase\init.sqf";
 //#include "sys_chat\init.sqf";
-//#include "sys_basedefence\init.sqf";
+#include "sys_basedefence\init.sqf";
 #include "sys_terp\init.sqf";
-//#include "sys_mechanised\init.sqf";
-#include "sys_strongholds\init.sqf";
+#include "sys_mechanised\init.sqf";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
-execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";
-//execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
+diag_log "hoblog init 48";
+//execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";
+
 CIVILIAN setFriend [EAST, 1];
 independent setFriend [EAST, 0];
 east setFriend [independent, 0];
@@ -202,7 +207,7 @@ publicvariable "basemode";
 };
 
 if (isNil "twc_strongholdcount") then {
-twc_strongholdcount = 3;
+twc_strongholdcount = 1;
 };
 
 
@@ -214,6 +219,7 @@ _trg setTriggerTimeout [0,0,0, true];
 
 _trg setTriggerStatements ["this","[twc_basepos, true] call twc_fnc_civfluff;",""];
 
+diag_log "hoblog init 227";
 // List of civilians who were already questioned
 nonQuestionableList = [];
 publicVariable "nonQuestionableList";
@@ -222,28 +228,35 @@ publicVariable "nonQuestionableList";
 goodcivlist = [];
 publicVariable "goodcivlist";
 
-
-/*EXPERIEMENTAL grid system
-// Array of the locations and the strongholds
-_gridarray = [];
-
-for "_1" from 0 to (worldSize / 1000) do {
-	for "_2" from 0 to (worldSize / 1000) do {
-		_pos = [(_1 * 1000) + 500, (_2 * 1000) + 500, 0];
-		//if (!((str _pos) in (str _gridarray))) then {
-			_gridarray pushback (ATLToASL _pos);
-		//};
-	};
-};
-townLocationArray = _gridarray;
-*/
-
-_townarray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))];
 townLocationArray = [];
-{
-	townLocationArray pushback (getpos _x);
-} foreach _townarray;
 
+_expomode = missionnamespace getvariable ["twc_gridspawnmode", -1];
+if (_expomode == -1) then {
+	//twc_gridspawnmode = 1;
+};
+_expomode = missionnamespace getvariable ["twc_gridspawnmode", 0];
+if (_expomode == 1) then {
+	//EXPERIEMENTAL grid system
+	// Array of the locations and the strongholds
+	_gridarray = [];
+
+	for "_1" from 0 to (worldSize / 1000) do {
+		for "_2" from 0 to (worldSize / 1000) do {
+			_pos = [(_1 * 1000) + 500, (_2 * 1000) + 500, 0];
+			//if (!((str _pos) in (str _gridarray))) then {
+				_gridarray pushback (ATLToASL _pos);
+			//};
+		};
+	};
+	townLocationArray = _gridarray;
+} else {
+
+	_townarray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))];
+
+	{
+		townLocationArray pushback (getpos _x);
+	} foreach _townarray;
+};
 //townLocationArray = nearestLocations [[worldSize/2,worldSize/2], ["NameVillage","NameCity","NameCityCapital","nameLocal"], (sqrt 2 *(worldSize / 2))] ;
 _strongholdArray = [];
 while{count _strongholdArray <= twc_strongholdcount}do{
@@ -257,9 +270,9 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 };
 //persistent system
 
+diag_log "hoblog init 271";
 execvm "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_read.sqf";
 
-//future: make a system for management to deleteat find mission in order to reset strongholds on a per mission basis
 
 _p1 = profilenamespace getvariable ["twc_perstrongholds", []];
 _found = 0;
@@ -288,6 +301,7 @@ while{count _strongholdArray <= twc_strongholdcount}do{
 twc_strongholdArray = [];
 {twc_strongholdArray pushback (str _x)} foreach _strongholdArray;
 
+diag_log "hoblog init 303";
 _perstrongholds = [missionname, _strongholdArray];
 
 //if (_found == 0) then {_p1 pushback _perstrongholds};
@@ -295,7 +309,7 @@ _p1 pushback _perstrongholds;
 profilenamespace setvariable ["twc_perstrongholds", _p1];
 
 saveprofilenamespace;
-
+/*
 if(isNil "customlocations") then{
 	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
 	};
@@ -303,7 +317,7 @@ if(isNil "customlocations") then{
 	//_location = createLocation [ "NameVillage" , getpos _x, 100, 100];
 //townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
 townLocationArray = townLocationArray + (_x);} foreach customlocations;
-
+*/
 //Strongholds
 {
 	[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
@@ -312,7 +326,10 @@ townLocationArray = townLocationArray - _strongholdArray;
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
 publicVariable "townLocationArray";
+diag_log "hoblog init 328";
 
+
+/*
 //Event Handler to stop players from  airdropping crates.
 ["ace_cargoUnloaded", {
 	params ["_item", "_vehicle", ["_dropStyle", ""]];
@@ -335,6 +352,8 @@ publicVariable "townLocationArray";
 
 	if (_isJIP) then { { [_x, _message, _owner] call twc_fnc_sendCTabMessage; } forEach allPlayers; };
 }] call BIS_fnc_addStackedEventHandler;
+*/
+
 /*
 ["TWC_ArmourCrewConnected", {
 	params ["_caller"];
@@ -366,3 +385,5 @@ publicVariable "townLocationArray";
 	
 	
 }] call BIS_fnc_addStackedEventHandler;
+*/
+

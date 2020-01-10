@@ -77,11 +77,14 @@ badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilf
 idfbasesize = 70;
 publicvariable "idfbasesize";
 
+/*
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;
 ["AllVehicles","init",{
 	[false,(_this select 0),1000] spawn twc_fnc_initVehicleCache
 }, true, ["Man","Static"], true] call CBA_fnc_addClassEventHandler;
 };
+*/
+
 // event handlers run in the non-scheduled environment (can't be execVM)
 [] call compile preprocessFile "Insurgency_Core\server\init.sqf";

@@ -7,7 +7,7 @@
 *
 */
 
-
+/*
 if (totalpoints < (pointlimit / 2)) exitwith {
 	
 	_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Suppressors</t>"; 
@@ -15,7 +15,7 @@ if (totalpoints < (pointlimit / 2)) exitwith {
 	 _text1 = "<br />You need to be more than halfway through the mission before suppressors become available";
 	hint parsetext (_title + _text1);
 };
-
+*/
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Suppressors</t>"; 
 

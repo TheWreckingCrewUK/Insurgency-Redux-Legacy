@@ -8,9 +8,14 @@
 		_count = count _houseList;
 		_count = round (_count / 20);
 		
+	_dis = 800;
+	_expomode = missionnamespace getvariable ["twc_gridspawnmode", 0];
+	if (_expomode == 1) then {
+		_dis = 1800;
+	};
 // Creates trigger to spawn the civilians.
 		_trg = createTrigger ["EmptyDetector",  _x];
-		_trg setTriggerArea [800, 800, 0, true];
+		_trg setTriggerArea [_dis, _dis, 0, true];
 		_trg setTriggerActivation ["West", "PRESENT", False];
 		_trg setTriggerTimeout[2, 2, 2, true];
 		_trg setTriggerStatements ["(({(((getPosATL _x) select 2) < 20)} count thislist > 0) && (({isplayer _x} count thislist) > 0))",format["[(thisTrigger getvariable ['unitsHome', (getpos thistrigger)]),%1,100,[100,200],thisList] spawn twc_townSetup;",_count],""];

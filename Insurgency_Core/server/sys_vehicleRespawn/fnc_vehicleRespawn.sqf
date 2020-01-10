@@ -66,7 +66,7 @@ _veh addEventHandler ["GetOut",{
 				}else{
 					_respawnInfo = _veh getVariable "respawnInfo";
 					waituntil {basemode == 0};
-					deleteVehicle _veh;
+					_veh remoteExecCall ["deleteVehicle",_veh];
 					sleep 20;
 		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
 		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
@@ -145,8 +145,9 @@ _veh addEventHandler ["Killed",{
 		
 		_respawnInfo = _veh getVariable "respawnInfo";
 		[_veh]spawn{
-		waitUntil {!([(_this select 0),500] call CBA_fnc_nearPlayer)};
-		deleteVehicle (_this select 0);
+		params ["_veh"];
+		waitUntil {!([_veh,500] call CBA_fnc_nearPlayer)};
+		_veh remoteExecCall ["deleteVehicle",_veh];
 		};
 		sleep 10;
 		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0.5];

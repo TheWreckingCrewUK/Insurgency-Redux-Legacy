@@ -1,8 +1,10 @@
 _handle = addMissionEventHandler ["HandleDisconnect",{
 	params["_unit","_id","_uid","_name"];
-	if(_unit distance2D (getMarkerPos "base") < 200) then{
-		deleteVehicle _unit;
-	}else{
-		[_unit] spawn twc_fnc_deleteDead;
-	};
+	_unit remoteExecCall ["deleteVehicle",_unit];
+	if ((count allplayers) > 0) exitwith {};
+	{
+		if (!alive _x) then {
+			_x remoteExecCall ["deleteVehicle",_x];
+		};
+	} foreach allunits;
 }];

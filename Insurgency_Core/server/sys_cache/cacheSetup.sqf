@@ -2,35 +2,37 @@
 Not to be used without consent from TWC or WiredTiger
 Thanks for the consent -[TWC] jayman
 */
-
+diag_log "hoblog cachesetup 5";
 if (isNil "InsP_cacheGroup") then {
 
 	cacheBoxA = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[5,0,0]);
 	cacheBoxA allowdamage false;
-	[] spawn {_pos = getpos cacheBoxA;sleep 60; cacheBoxA allowdamage true;waituntil {(!alive cacheBoxA) || ((damage cacheBoxA) > 0.88)};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
+	[] spawn {_pos = getpos cacheBoxA;sleep 60; cacheBoxA allowdamage true;while {(alive cacheBoxA) && ((damage cacheBoxA) < 0.88)} do {sleep 30;};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxA";
-
+diag_log "hoblog cachesetup 12";
 	cacheBoxB = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[10,0,0]);
 	cacheBoxB allowdamage false;
-	[] spawn {_pos = getpos cacheBoxB;sleep 60; cacheBoxB allowdamage true; waituntil {(!alive cacheBoxB) || ((damage cacheBoxB) > 0.88)};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
+	[] spawn {_pos = getpos cacheBoxB;sleep 60; cacheBoxB allowdamage true; while {(alive cacheBoxB) && ((damage cacheBoxB) < 0.88)} do {sleep 30;};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxB";
 
 	cacheBoxC = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[15,0,0]);
 	cacheBoxC allowdamage false;
-	[] spawn {_pos = getpos cacheBoxC;sleep 60; cacheBoxC allowdamage true; waituntil {(!alive cacheBoxC) || ((damage cacheBoxC) > 0.88)};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
+	[] spawn {_pos = getpos cacheBoxC;sleep 60; cacheBoxC allowdamage true; while {(alive cacheBoxC) && ((damage cacheBoxC) < 0.88)} do {sleep 30;};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxC";
 
 	InsP_cacheGroup = [cacheBoxA, cacheBoxB, cacheBoxC];
 	publicVariable "InsP_cacheGroup";
-	
+	diag_log "hoblog cachesetup 25";
 	waitUntil {!(isNil "cacheBoxA") && !(isNil "cacheBoxB") &&!(isNil "cacheBoxC") && !(isNil "InsP_cacheGroup")};
-
+diag_log "hoblog cachesetup 27";
+_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	{
 		//Cache cannot cause near to Blufor respawn
+		
  		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 1500 } do {			
 			_cacheMarker = "";
 	
-			_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
+			
 			sleep .25;
 			_c = 0;
 			_house = _houseList call BIS_fnc_selectRandom;
@@ -46,7 +48,7 @@ if (isNil "InsP_cacheGroup") then {
 		clearWeaponcargoGlobal _x;
 		clearMagazineCargoGlobal _x;
 		clearBackpackCargoGlobal _x;
-		
+		diag_log "hoblog cachesetup 49";
 		_randsize = 250 + (random 500);
 		_randtime = 2;
 		_trg2 = createTrigger ["EmptyDetector", getpos _x];
@@ -55,7 +57,7 @@ if (isNil "InsP_cacheGroup") then {
 		_trg2 setTriggerActivation ["west", "PRESENT", True];
 		_trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 		_trg2 setTriggerStatements ["({(_x getvariable ['twc_isterp', 0] == 1)} count thislist) > 0","[getpos thistrigger, (thistrigger getvariable ['twc_cache', objnull])] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
-				
+				diag_log "hoblog cachesetup 58";
 		
 		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 5];
 		_x AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",random 5];

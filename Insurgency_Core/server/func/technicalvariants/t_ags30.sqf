@@ -35,7 +35,10 @@ if(count _nearRoads > 0) then
 {
 	_road = _nearRoads select 0;
 	_road2 = _nearRoads select 1;
-	_direction = _road2 getdir _road;
+	_direction = random 360;
+	if (!isnil "_road2") then {
+		_direction = _road2 getdir _road;
+	};
 };
 
 if (((_direction + 180 -(_truck getdir _pos)) < -90) || ((_direction + 180 -(_truck getdir _pos)) > 90)) then { 

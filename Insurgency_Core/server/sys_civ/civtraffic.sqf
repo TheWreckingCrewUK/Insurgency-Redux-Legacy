@@ -14,18 +14,21 @@ _amount = 2500;
 
 if ((missionnamespace getvariable ["twccancelcars", 0]) == 1) exitwith {};
 
-
+_found = 0;
 while {(((count _pos) == 0) && (_amount < 4000))} do {
 	{
-		if ((!([ _x, 1500] call twc_fnc_posNearPlayers)) && ([ _x, _amount] call twc_fnc_posNearPlayers) && ((( _x) distance twc_basepos) > 1000) && ((random 1) > 0.3)) then {
-			_pos =  _x;
+		if (_found == 0) then {
+			if ((!([ _x, 1500] call twc_fnc_posNearPlayers)) && ([ _x, _amount] call twc_fnc_posNearPlayers) && ((( _x) distance twc_basepos) > 1000) && ((random 1) > 0.3)) then {
+				_pos =  _x;
+				_found = 1;
+			};
 		};
 	} foreach townLocationArray;
 	_amount = _amount + 300;
-	//systemchat str _amount;
+	systemchat str _amount;
 };
 if (_amount > 3900) exitwith {sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
-//systemchat "search complete3d";
+systemchat "search complete3d";
 
 
 _vehtype = ["CUP_C_Datsun_4seat", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC",
@@ -193,21 +196,6 @@ clearmagazinecargoglobal _car;
 clearitemcargoglobal _car;
 clearbackpackcargoglobal _car;
 
-/*
-[_car, _driver] spawn {
-	params ["_car", "_driver"];
-	sleep 150;
-	if (!([getpos _car, 3000] call twc_fnc_posNearPlayers)) then {
-		_array = missionnamespace getvariable ["twc_civcars", []];
-		_array deleteat (_array find [_driver, _car]);
-		missionnamespace setvariable ["twc_civcars", _array];
-		deletevehicle _car;
-		deletevehicle _driver;
-		systemchat "too slow2 fail";
-	};
-};
-*/
-
 
 _array = missionnamespace getvariable ["twc_civcars", []];
 _array pushback [_driver, _car];
@@ -365,6 +353,14 @@ _wp setwaypointcompletionradius 30;
 twc_addcivcarwp = {
 	params ["_car", "_driver", "_group"];
 	//systemchat "new waypoint";
+	if ((count allplayers) == 0) exitwith {
+		
+		deletevehicle (_driver);
+		_array = missionnamespace getvariable ["twc_civcars", []];
+		_array deleteat (_array find [_driver, _car]);
+		missionnamespace setvariable ["twc_civcars", _array];
+	};
+		
 	
 	_last = _car getvariable ["twc_lastwptime", 0];
 	

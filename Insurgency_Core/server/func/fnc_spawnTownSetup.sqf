@@ -71,8 +71,15 @@ if(_enemies == 0) then {
 };
 saveprofilenamespace;
 
+
+_dis = 1100;
+_expomode = missionnamespace getvariable ["twc_gridspawnmode", 0];
+if (_expomode == 1) then {
+	_dis = 2100;
+};
+
 _trg = createTrigger ["EmptyDetector", _pos];
-_trg setTriggerArea [1100, 1100, 0, true];
+_trg setTriggerArea [_dis, _dis, 0, true];
 _trg setTriggerActivation ["ANY", "PRESENT", False];
 _trg setTriggerTimeout [10,10,10, true];
 

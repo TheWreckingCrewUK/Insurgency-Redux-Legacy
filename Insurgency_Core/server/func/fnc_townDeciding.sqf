@@ -22,8 +22,14 @@ if((west countSide _thisList) == 0)then{
 		};
 	}forEach _thisList;
 	
+	_dis = 800;
+	_expomode = missionnamespace getvariable ["twc_gridspawnmode", 0];
+	if (_expomode == 1) then {
+		_dis = 1800;
+	};
+	
 	_trg = createTrigger ["EmptyDetector", _pos];
-	_trg setTriggerArea [800, 800, 0, true];
+	_trg setTriggerArea [_dis, _dis, 0, true];
 	_trg setTriggerActivation ["West", "PRESENT", False];
 	_trg setTriggerTimeout[2, 2, 2, true];
 	_trg setTriggerStatements ["(({(((getPosATL _x) select 2) < 20)} count thislist > 0) && (({isplayer _x} count thislist) > 0))","[(thisTrigger getvariable ['unitsHome', (getpos thistrigger)]),0,100,[100,200],thisList,false,false] spawn twc_townSetup;",""];

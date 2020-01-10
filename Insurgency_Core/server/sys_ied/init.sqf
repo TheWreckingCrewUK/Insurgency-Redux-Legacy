@@ -1,3 +1,4 @@
+diag_log "hoblog iedinit 1";
 INS_fnc_spawnIED = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIED.sqf";
 INS_fnc_spawnIED_Large = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIED_Large.sqf";
 INS_fnc_spawnIEDOnRoad = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_spawnIEDOnRoad.sqf";
@@ -6,6 +7,7 @@ INS_fnc_startIEDPlantLoop = compile preprocessFileLineNumbers "Insurgency_Core\s
 INS_fnc_daisychain = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_daisychain.sqf";
 
 INS_fnc_iedcounterattack = compile preprocessFileLineNumbers "Insurgency_Core\server\sys_ied\fnc_iedcounterattack.sqf";
+diag_log "hoblog iedinit 10";
 
 if (isNil "InsP_iedGroup") then {
 	InsP_iedGroup = [];
@@ -21,10 +23,11 @@ if (isNil "InsP_iedDestroyed") then {
 	InsP_iedDestroyed = 0;
 	publicVariable "InsP_iedDestroyed";
 };
-
+diag_log "hoblog iedinit 26";
 private _startingIEDCount = (ceil (worldSize / 150)) max 5; // 5 or higher, depending on map size
-
+diag_log "hoblog iedinit 28";
 [_startingIEDCount, ["iedRestrictionZone"]] call INS_fnc_populateIEDs;
 
 // repopulate an IED, start after 10 minutes
-[600] call INS_fnc_startIEDPlantLoop;
+//[600] call INS_fnc_startIEDPlantLoop;
+diag_log "hoblog iedinit 33";

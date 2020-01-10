@@ -76,9 +76,11 @@ _veh = (_this select 0);
 _objType = (_this select 1);
 _id = (_this select 2);
 
-	waituntil{((GetPos _veh) distance (getMarkerPos "base") < 100)};
-	sleep 60;
-	deletevehicle _veh;
+	//waituntil{((GetPos _veh) distance (getMarkerPos "base") < 100)};
+	while {((GetPos _veh) distance (getMarkerPos "base") > 100)} do {
+		sleep 60;
+	};
+	_veh remoteExecCall ["deleteVehicle",_veh];
 	["TWC_Insurgency_objCompleted", ["Recovery", _objType]] call CBA_fnc_serverEvent;
 	deleteMarker _markerstr;
 	deleteMarker _markerstr2;
@@ -87,7 +89,7 @@ _id = (_this select 2);
 	//Creating the task
 	
 _taskID = str (random 1000);
-[WEST,[_taskID],["Allied forces have had to abandon a vehicle in this area. It has since been recovered by our forces.","Recovery"],_markerstr2,0,2,true] call BIS_fnc_taskCreate;
+[WEST,[_taskID],["Allied forces had to abandon a vehicle in this area. It has since been recovered by our forces.","Recovery"],_markerstr2,"CREATED",2,false] call BIS_fnc_taskCreate;
 
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 		twc_activemissions deleteAt (twc_activemissions find _id);
@@ -122,8 +124,9 @@ publicVariable "twc_activemissions";
 
 
 
-waitUntil {(!alive _veh)};
-sleep 30;
+while {(alive _veh)} do {
+	sleep 30;
+};
 
 if (!(_id in twc_activemissions)) exitwith {};
 

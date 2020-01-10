@@ -30,6 +30,8 @@ hvtlist = ["CUP_O_TK_INS_Commander_twc"];
 sirenlist = [idfalarm,idfalarm_1];
 publicvariable "sirenlist";
 
+//twc_gridspawnmode = 1;
+
 civilianType = ["Tak_Civ_Men_KTL1", "CUP_C_TK_Man_04_Jack", "Tak_Civ_Men_KTL2","CUP_C_TK_Man_07_Coat", "Tak_Civ_Men_KTL3", "Tak_Civ_Men_KTL4", "Tak_Civ_Men_KTs1", "Tak_Civ_Men_KTs2", "Tak_Civ_Men_KTs3", "Tak_Civ_Men_KTs4",  "CUP_C_TK_Man_05_Jack", "Tak_Civ_Men_J1", "Tak_Civ_Men_J2", "Tak_Civ_Men_J3"];
 publicvariable "civiliantype";
 homeEnemy = ["twc_greek_rifleman"];
@@ -68,11 +70,16 @@ badTownArray = ["airfield","Loy Manara","Jaza","sultansafe","loy manara oilfield
 idfbasesize = 70;
 publicvariable "idfbasesize";
 
+
+/*
 //Sets up the unit Caching. I have no idea why i have to sleep and wait.
 []spawn{sleep 120;
 ["AllVehicles","init",{
 	[false,(_this select 0),1000] spawn twc_fnc_initVehicleCache
 }, true, ["Man","Static"], true] call CBA_fnc_addClassEventHandler;
 };
+*/
+
+
 // event handlers run in the non-scheduled environment (can't be execVM)
 [] call compile preprocessFile "Insurgency_Core\server\init.sqf";

@@ -40,7 +40,7 @@ _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
 _trg setTriggerActivation ["west", "PRESENT", True];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};'ammo_Bomb_SDB' createvehicle getpos thistrigger; 
+_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {}; [getpos thistrigger] call INS_fnc_iedcounterattack;'ammo_Bomb_SDB' createvehicle getpos thistrigger; 
 deleteVehicle thisTrigger;",""];
 
 _randsize = 150 + (random 200);

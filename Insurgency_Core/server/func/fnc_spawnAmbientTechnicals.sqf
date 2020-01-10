@@ -17,13 +17,13 @@
 */
 
 //Recieved Parameters
-params ["_pos","_total","_radius"];
+params ["_total"];
 
 
 //if(_pos distance (getmarkerpos "base") < 1000) exitwith {};
 
 
-if ((count(_pos nearRoads _radius)) == 0) exitwith {};
+//if ((count(_pos nearRoads _radius)) == 0) exitwith {};
 
 _technicallist = [
 	"t_zu23.sqf",
@@ -36,16 +36,22 @@ _technicallist = [
 	"t_spg01.sqf"
 ];
 
+
+_roadList = profilenamespace getvariable [("twcroads" + worldname), []];
+
+if ((count _roadlist) == 0) exitwith {
+	diag_log "ambienttechnicals exiting";
+};
+
 for "_i" from 1 to _total do {
 
 
 
 	if (isNil "townSpawn") exitWith {};
 	
-	_spawnpos = _pos;
-	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
+	_spawnpos = (_roadList call bis_fnc_selectrandom);
 while {((_spawnpos distance (getmarkerpos "base")) < 2000)} do {
-	_spawnpos = getpos ((_pos nearRoads _radius) call bis_fnc_selectrandom);
+	_spawnpos = (_roadList call bis_fnc_selectrandom);
 	};
 if ((_spawnpos distance (getmarkerpos "base")) > 2000) then {
 

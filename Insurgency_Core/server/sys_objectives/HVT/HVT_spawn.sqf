@@ -41,12 +41,13 @@ _group = createGroup East;
 if(isNil "hvtlist") then{
 	hvtlist = ["CUP_O_TK_INS_Commander_twc","rhsgref_ins_squadleader"];
 };
-
+publicvariable "hvtlist";
 
 _unitString = hvtlist call bis_fnc_selectRandom;
 _hvt = _group createUnit [_unitString,_pos,[],0,"NONE"];
 _hvt disableAi "PATH";
 
+_hvt allowdamage false;
 _buildingarray = nearestObjects [_pos, ["House", "Building"], 300];
 _building = (_buildingarray select 0);
 _pos = (_building buildingPos 0);
@@ -124,7 +125,10 @@ _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["({(_x getvariable ['twc_isterp', 0] == 1)} count thislist) > 0","_id = thistrigger getvariable ['twc_vipid', 'none'];[getpos thistrigger, _id] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_hvt.sqf'",""];
 
-_trg2 setvariable ["twc_vipid", _id];
+_trg2 setvariable ["twc_vipid", _id, true];
+_trg2 setvariable ["twc_vipobjtype", _objType, true];
+
+_hvt setvariable ["twchvttrg2", _trg2, true];
 
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
@@ -139,72 +143,50 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 [leader _group, 1] spawn TWC_fnc_aiscramble;
 
 
-//wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
-sleep (_spawntime + 60);
-	if (!alive _hvt) exitwith {
+sleep 10;
+_hvt allowdamage true;
+
+
+
+
+
+_hvt addEventHandler ["Killed", {
+	params ["_hvt", "_killer", "_instigator", "_useEffects"];
+	_trg2 = _hvt getvariable ["twchvttrg2", objnull];
+	_id = _trg2 getvariable ["twc_vipid", 0];
+	_objType = _trg2 getvariable ["twc_vipobjtype", 0];
+	_taskID = str (random 1000);
+	
 	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
 	
 	deletevehicle _trg2;
+	["TWC_Insurgency_adjustPoints", 30] call CBA_fnc_serverEvent;
 	
-		twc_activemissions deleteAt (twc_activemissions find _id);
-publicVariable "twc_activemissions";
-};
-
-// let's start monitoring conditions to satisfy completion/failure
-[_hvt, _taskID, _group, _objType, _id, _markerPos,_trg2] spawn {
-	params ["_hvt", "_taskID", "_group", "_objType", "_id", "_markerPos", "_trg2"];
+	[getpos _hvt] call twc_fnc_counterattack;
 	
-	_maxTime = time + ((10*60)*60);
-	
-	while {alive _hvt} do {
-		if (time > _maxTime) exitWith {};
-		sleep 5;
-	};
-
-	if (!alive _hvt) then {
-	
-	deletevehicle _trg2;
-		["TWC_Insurgency_adjustPoints", 30] call CBA_fnc_serverEvent;
-	}else{
-	
-	deletevehicle _trg2;
-		["TWC_Insurgency_adjustPoints", -15] call CBA_fnc_serverEvent;
-	};
-
-	//deleteMarker _markerstr;
-	//deleteMarker _markerstr2;
-	
-_marker = createMarker [str _markerPos,_markerPos];
-_marker setMarkerType "mil_triangle";
-_marker setMarkerColor "ColorBlue";
-_marker setMarkerText ('HVT Killed');
-_marker setMarkerSize [0.75, 0.75];
-
-	[_hvt, _group] spawn {
-	_pos = getpos _hvt;
-		while {!( !([(_this select 0), 1500] call CBA_fnc_nearPlayer)) } do {
-			sleep 30;
-		};
-		//deleteVehicle (_this select 0);
+	_iscaptured = _hvt getvariable ["twc_ishvtcaptured", 0];
+	if (_iscaptured == 0) then {
+		_marker = createMarker [str (getpos _hvt),getpos _hvt];
+		_marker setMarkerType "mil_triangle";
+		_marker setMarkerColor "ColorBlue";
+		_marker setMarkerText ('HVT Killed');
+		_marker setMarkerSize [0.75, 0.75];
 		
-		{
-			deleteVehicle _x;
-		} forEach units (_this select 1);
 	};
-
-	["TWC_Insurgency_objCompleted", ["HVT", _objType]] call CBA_fnc_serverEvent;
-	[_pos] call twc_fnc_counterattack;
-		twc_activemissions deleteAt (twc_activemissions find _id);
-publicVariable "twc_activemissions";
+	
+	twc_activemissions deleteAt (twc_activemissions find _id);
+	publicVariable "twc_activemissions";
 		
 	
-	[WEST,[_taskID],["We have located and eliminated a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
+	[WEST,[_taskID],["We have located and eliminated a high ranking insurgent. Killing him will send ripples through the whole insurgency.","High Value Target"],getpos _hvt,"CREATED",2,true] call BIS_fnc_taskCreate;
 	
 	[_taskID,"Succeeded"] call BIS_fnc_taskSetState;
 	
-	deletevehicle _trg2;
+}];
 
-};
+
+
+
 
 };
 

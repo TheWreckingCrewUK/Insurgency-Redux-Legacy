@@ -33,10 +33,10 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 50
 //Creating the VIP
 _group = createGroup civilian;
 _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
+_vip allowdamage false;
 [_vip, true] call ACE_captives_fnc_setSurrendered;
 _vip setVariable ["twc_isenemy",0, true];
 
-_vip setVariable ["active",1,true];
 
 //Adds a Marker with a bit of an offset so players know where to go
 _markerPos = [_pos, 2] call CBA_fnc_randPos;
@@ -54,7 +54,9 @@ _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["({(_x getvariable ['twc_isterp', 0] == 1)} count thislist) > 0","_id = thistrigger getvariable ['twc_vipid', 'none'];[getpos thistrigger, _id] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_vip.sqf'",""];
 
-_trg2 setvariable ["twc_vipid", _id];
+_trg2 setvariable ["twc_vipid", _id, true];
+_vip setvariable ["twchvttrg2", _trg2, true];
+_trg2 setvariable ["twc_vipobjtype", _objType, true];
 
 /*
 _markerstr = createMarker [str (random 1000),_markerPos];
@@ -94,46 +96,29 @@ _group = createGroup East;
 	[leader _group, 1] spawn TWC_fnc_aiscramble;
 };
 
-//wait 60 seconds and see if he's still alive after spawn, if he's dead then just cancel the task without any reward/penalty
-waituntil {time > (_spawntime + 60)};
-	if (!alive _vip) exitwith {
-["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
+
+sleep 10;
+_vip allowdamage true;
+
+
+
+
+_vip addEventHandler ["Killed", {
+	params ["_vip", "_killer", "_instigator", "_useEffects"];
+	_trg2 = _vip getvariable ["twchvttrg2", objnull];
+	_id = _trg2 getvariable ["twc_vipid", 0];
+	_objType = _trg2 getvariable ["twc_vipobjtype", "0"];
+	["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
 	
-		twc_activemissions deleteAt (twc_activemissions find _id);
-publicVariable "twc_activemissions";
-};
-	
-//Waits until the vip isn't around anymore
-waitUntil {(!alive _vip)};
-
-//End of Tasks stuff
-["TWC_Insurgency_objCompleted", ["VIP", _objType]] call CBA_fnc_serverEvent;
-//deleteMarker _markerstr;
-//deleteMarker _markerPos;
-
-
 	deletevehicle _trg2;
+	["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
+	twc_activemissions deleteAt (twc_activemissions find _id);
+	publicVariable "twc_activemissions";
+	
+	[_vip] spawn twc_fnc_deletedead;
+	_taskID = str (random 1000);
+	[WEST,[_taskID],["A member of the press was captured by insurgents, and later died","Hostage Rescue"],(getpos _vip),"CREATED",2,true] call BIS_fnc_taskCreate;
 
-
-sleep 1;
-
-if (!((_vip getvariable "active") == 0)) then {
-
-//Creates the task
-_taskID = str (random 1000);
-[WEST,[_taskID],["A member of the press was captured by insurgents, and later died","Hostage Rescue"],_markerPos,0,2,true] call BIS_fnc_taskCreate;
-
-	[_taskID,"Failed"] call BIS_fnc_taskSetState;
-	};
-		twc_activemissions deleteAt (twc_activemissions find _id);
-publicVariable "twc_activemissions";
-
-sleep 600;
-
-
-deleteVehicle _vip;
-
-//If vip is returned then it exits not hurting score
-if(isNil "_vip")exitWith{};
-
-["TWC_Insurgency_adjustPoints", -20] call CBA_fnc_serverEvent;
+	[_taskID,"Failed", true] call BIS_fnc_taskSetState;
+	
+}];

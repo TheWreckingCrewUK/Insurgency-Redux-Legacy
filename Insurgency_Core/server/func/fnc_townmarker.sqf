@@ -42,9 +42,17 @@ _trg setTriggerStatements ["this","thistrigger setvariable ['twcenemieseast', {(
 	};
 	_time = 100; if (hasinterface) then {_time = 0;};
 	sleep _time;
+	
+	
+	_type = "ellipse";
+	_expomode = missionnamespace getvariable ["twc_gridspawnmode", 0];
+	if (_expomode == 1) then {
+		_type = "rectangle";
+	};
+	
 	_marker = createMarker [str _pos,_pos];
 	//_marker setMarkerShape "rectangle";
-	_marker setMarkerShape "ellipse";
+	_marker setMarkerShape _type;
 	_marker setMarkerSize [500,500];
 	_marker setMarkerColor _colour;
 	_marker setMarkerAlpha 0.2;

@@ -42,7 +42,7 @@ _trg = createTrigger ["EmptyDetector", getpos _ied];
 _trg setTriggerArea [_randsize, _randsize, 30, false];
 _trg setTriggerActivation ["west", "PRESENT", True];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};_iedtype = ['ammo_Missile_Cruise_01', 'Bomb_03_F', 'Bo_GBU12_LGB'] call bis_fnc_selectrandom; _iedtype createvehicle getpos thistrigger;  [getpos thistrigger, thislist] call INS_fnc_iedcounterattack; deleteVehicle thisTrigger;",""];
+_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {};_iedtype = ['ammo_Missile_Cruise_01', 'Bomb_03_F', 'Bo_GBU12_LGB'] call bis_fnc_selectrandom; _iedtype createvehicle getpos thistrigger;  [getpos thistrigger] call INS_fnc_iedcounterattack; deleteVehicle thisTrigger;",""];
 
 _randsize = 150 + (random 200);
 _randtime = random 2;

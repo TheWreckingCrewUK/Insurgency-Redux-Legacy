@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2775;
+		nextID=2778;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9675.7119,494.90543,4957.1987};
-		dir[]={-0.61331856,-0.51836306,0.59597528};
-		up[]={-0.37176442,0.85515654,0.36125115};
-		aside[]={0.69690651,2.8731301e-007,0.7171886};
+		pos[]={9156.1836,467.44858,4689.9102};
+		dir[]={0.93099874,-0.3539497,0.090088069};
+		up[]={0.35234189,0.93525559,0.034095142};
+		aside[]={0.096324019,4.4779154e-007,-0.99541646};
 	};
 };
 binarizationWanted=0;
@@ -71,13 +71,14 @@ addons[]=
 	"acre_sys_prc117f",
 	"CUP_Creatures_Military_Germany",
 	"acre_sys_prc152",
-	"CUP_Weapons_Ammunition"
+	"CUP_Weapons_Ammunition",
+	"CUP_WheeledVehicles_UAZ"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=45;
+		items=46;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -358,6 +359,11 @@ class AddonsMetaData
 		{
 			className="CUP_Weapons_Ammunition";
 			name="CUP_Weapons_Ammunition";
+		};
+		class Item45
+		{
+			className="CUP_WheeledVehicles_UAZ";
+			name="CUP_WheeledVehicles_UAZ";
 		};
 	};
 };
@@ -12874,7 +12880,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=49;
+		items=52;
 		class Item0
 		{
 			dataType="Marker";
@@ -20918,6 +20924,126 @@ class Mission
 								};
 							};
 							value="Heli Infantry Support";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item49
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9174.3604,446.28894,4679.0972};
+				angles[]={6.181139,2.3218114,6.1732349};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2775;
+			type="CUP_O_UAZ_Unarmed_RU";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_RPG18_M""],[20,2]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item50
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9169.166,446.84943,4679.2627};
+				angles[]={6.1700721,2.3218114,6.1843095};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2776;
+			type="CUP_O_UAZ_Unarmed_RU";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_RPG18_M""],[20,2]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item51
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9168.9219,446.69687,4682.834};
+				angles[]={0.24610423,2.3218114,6.1732354};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2777;
+			type="CUP_O_UAZ_Unarmed_RU";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_RPG18_M""],[20,2]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};

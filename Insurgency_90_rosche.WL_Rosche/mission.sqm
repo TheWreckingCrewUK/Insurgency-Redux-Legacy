@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2116;
+		nextID=2120;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8905.9033,33.068542,8680.2461};
-		dir[]={0.7918756,-0.49663663,0.35555214};
-		up[]={0.45310256,0.86793679,0.20344347};
-		aside[]={0.40963221,1.4717225e-006,-0.91232443};
+		pos[]={8823.8701,55.480656,8719.6143};
+		dir[]={0.33207121,-0.86895669,-0.36713544};
+		up[]={0.58288974,0.49491686,-0.64443761};
+		aside[]={-0.74168932,2.4423935e-006,-0.67085087};
 	};
 };
 binarizationWanted=0;
@@ -46,7 +46,6 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"twc_modern",
 	"CUP_Misc_e_Config",
-	"ukcw_bedford",
 	"A3_Structures_F_Exp_Military_Fortifications",
 	"twc_1990"
 };
@@ -54,7 +53,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=20;
+		items=19;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -159,17 +158,12 @@ class AddonsMetaData
 		};
 		class Item17
 		{
-			className="ukcw_bedford";
-			name="ukcw_bedford";
-		};
-		class Item18
-		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item18
 		{
 			className="twc_1990";
 			name="twc_1990";
@@ -12689,7 +12683,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=173;
+		items=175;
 		class Item0
 		{
 			dataType="Marker";
@@ -16727,86 +16721,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8863.7695,29.98807,8631.8438};
-				angles[]={0,4.6032538,6.272521};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2034;
-			type="ukcw_bedford_cover";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item160
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={8863.8936,29.986752,8625.1641};
-				angles[]={0,4.6032538,6.272521};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2035;
-			type="ukcw_bedford_cover";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item161
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={8834.626,28.734407,8696.3018};
 				angles[]={0,1.4380956,0};
 			};
@@ -16818,7 +16732,7 @@ class Mission
 			id=2054;
 			type="Land_CncWall4_F";
 		};
-		class Item162
+		class Item160
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16857,7 +16771,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item163
+		class Item161
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16873,7 +16787,7 @@ class Mission
 			id=2057;
 			type="Land_CncWall4_F";
 		};
-		class Item164
+		class Item162
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16890,7 +16804,7 @@ class Mission
 			type="Land_CncWall4_F";
 			atlOffset=0.047611237;
 		};
-		class Item165
+		class Item163
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16906,7 +16820,7 @@ class Mission
 			id=2059;
 			type="Land_CncWall4_F";
 		};
-		class Item166
+		class Item164
 		{
 			dataType="Object";
 			class PositionInfo
@@ -16922,7 +16836,7 @@ class Mission
 			id=2060;
 			type="Land_arrows_desk_R";
 		};
-		class Item167
+		class Item165
 		{
 			dataType="Group";
 			side="West";
@@ -17339,7 +17253,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item168
+		class Item166
 		{
 			dataType="Group";
 			side="West";
@@ -17755,7 +17669,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item169
+		class Item167
 		{
 			dataType="Group";
 			side="West";
@@ -18173,7 +18087,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item170
+		class Item168
 		{
 			dataType="Group";
 			side="West";
@@ -18312,7 +18226,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item171
+		class Item169
 		{
 			dataType="Group";
 			side="West";
@@ -18446,7 +18360,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item172
+		class Item170
 		{
 			dataType="Group";
 			side="West";
@@ -18698,6 +18612,144 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item171
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8849.2646,28.884911,8706.2393};
+				angles[]={0.015998369,4.9407778,6.2671871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2116;
+			type="UK3CB_BAF_LandRover_Snatch_NI_A";
+			atlOffset=-0.00015068054;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item172
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8842.4053,28.966362,8707.7646};
+				angles[]={0.02666023,4.8923655,6.2738566};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2117;
+			type="UK3CB_BAF_LandRover_Snatch_NI_A";
+			atlOffset=-0.00086402893;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item173
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8835.3779,28.93824,8709.4805};
+				angles[]={0.017329043,4.8720875,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2118;
+			type="UK3CB_BAF_LandRover_Snatch_NI_A";
+			atlOffset=-0.0003490448;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item174
+		{
+			dataType="Marker";
+			position[]={8900.3252,99.339355,8679.2256};
+			name="iedRestrictionZone_1";
+			markerType="RECTANGLE";
+			type="rectangle";
+			fillName="Border";
+			a=700;
+			b=900;
+			angle=7.6530542;
+			drawBorder=1;
+			id=2119;
+			atlOffset=72.572975;
 		};
 	};
 };

@@ -1,9 +1,8 @@
-params ["_iedpos", "_thislist"];
+params ["_iedpos", ["_chance", 0.5]];
 
-//if (random 1 >0.3) exitwith {};
+if (random 1 > _chance) exitwith {};
 //systemchat "counterattack called";
 
-if (isnil "_thislist") then {_thislist = [];};
 
 
 	_pos = [_iedpos, 50, 400, 3, false] call twc_fnc_findsneakypos;
@@ -34,8 +33,13 @@ if (isnil "_thislist") then {_thislist = [];};
 		
 	};
 	
-	_wp = _group addwaypoint [_iedpos, 0];
+_wp = _group addwaypoint [_iedpos, 0];
 
 [leader _group] spawn TWC_fnc_aiscramble;
 
 _wp setWaypointStatements ["true", "[group this, getPos this, 2000] call bis_fnc_taskPatrol"];
+
+
+if (random 1 >0.5) then {
+	[_iedpos] call INS_fnc_iedcounterattack;
+};

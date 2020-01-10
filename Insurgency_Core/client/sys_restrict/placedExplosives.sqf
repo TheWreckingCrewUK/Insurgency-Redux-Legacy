@@ -26,6 +26,15 @@
 	if(typeOf _exp in ["ATMine_Range_Ammo", "rhsusf_mine_m14_ammo", "APERSMine_Range_Ammo", "rhs_ammo_ptm1", "rhs_mine_pmn2_ammo", "rhs_ammo_pfm1", "ACE_IEDLandBig_Range_Ammo","ACE_IEDLandSmall_Range_Ammo","ACE_IEDUrbanBig_Range_Ammo","ACE_IEDUrbanSmall_Range_Ammo"])then{
 	//totalPoints = totalPoints + 5;
 	//publicVariable "totalPoints";
-	//	["TWC_Insurgency_adjustPoints", 5] call CBA_fnc_serverEvent;
+	
+	if (!hasinterface) exitwith {};
+	if (player != _unit) exitwith {};
+	["TWC_Insurgency_adjustPoints", 5] call CBA_fnc_serverEvent;
+	_marker = createMarker [format ["%1", _exp], getpos _exp];
+	_marker setMarkerType "mil_triangle";
+	_marker setMarkerColor "ColorYellow";
+	_marker setMarkerText ("IED Defused");
+	_marker setMarkerSize [0.75, 0.75];
+	hint "IED Defused. Bring it back to base and deposit it in your main ammobox for extra points and intel";
 	};
 }] call CBA_fnc_addEventHandler;

@@ -44,9 +44,9 @@ if (!((backpack player) == "")) then {
 		
 		_newload = [(configFile >> "CfgVehicles" >> _newbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
 		
-		if (_newload < (130)) exitwith {
+		if (_newload < (130)) then {
 			_unit allowsprint true;
-		};
+		} else {
 		
 		if (_newload > (_playerload * 1.1)) then {
 			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
@@ -56,12 +56,16 @@ if (!((backpack player) == "")) then {
 		if (_newload < (_playerload * 1.1)) then {
 			_unit allowsprint true;
 		};
+		};
 	};
 };
 } else {
-	
-	player removeItem "ACRE_PRC343";
-	player removeItem "ACRE_PRC343_ID_1";
+	[] spawn {
+		sleep 5;
+		{
+			if ("PRC343" in _x) then {player removeItem  _x};
+		} foreach ((vestitems player) + (uniformitems player) + (backpackitems player));
+	};
 };
 
 [] spawn {
@@ -169,36 +173,10 @@ if ((time > (_timer + 600)) && (_firsttimer > 1)) exitwith {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//persistent loadout stuff
-[] spawn {
-sleep 10;
-player addEventHandler ["Inventoryclosed", {
-	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
-	saveprofilenamespace;
-}];
-
-player addEventHandler ["Reloaded", {
-	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
-	saveprofilenamespace;
-}];
-
-player addEventHandler ["Hit", {
-	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
-	saveprofilenamespace;
-}];
-};
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 
 twc_lastspawned = time;
-if (twc_firstspawned > 1) exitwith {
+if (_firsttimer > 1) exitwith {
 
 _role = typeof vehicle player;
 
@@ -218,10 +196,42 @@ twc_serstarttime = time;
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//persistent loadout stuff
+
 [] spawn {
 sleep 1;
 call twc_fnc_pubstartingloadout;
 };
+
+[] spawn {
+sleep 10;
+player addEventHandler ["Inventoryclosed", {
+	_array =profilenamespace getvariable ["twcpubloadout" + (typeof player), []];
+	if ((str _array) == (str ([uniformitems player, vestitems player, backpackitems player]))) exitwith {};
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+}];
+
+player addEventHandler ["Reloaded", {
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	saveprofilenamespace;
+}];
+
+player addEventHandler ["killed", {
+	profilenamespace setvariable ["twcpubloadout" + (typeof player), [uniformitems player, vestitems player, backpackitems player]];
+	[] spawn {
+		sleep 3;
+		saveprofilenamespace;
+	};
+}];
+};
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 if (!("ItemMap" in assigneditems player)) then {
 	addMissionEventHandler ["Map", {
@@ -239,6 +249,7 @@ if (!("ItemMap" in assigneditems player)) then {
 			};			
 		};
 	}];
+
 	if (!(["blank", typeof player] call BIS_fnc_inString)) then {
 		"Low Tech Role" hintc ["You can view the map from inside any vehicle or at base", "You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"];
 	
@@ -256,9 +267,9 @@ if (!("ItemMap" in assigneditems player)) then {
 	
 	if ((["70", twc_missionname] call BIS_fnc_inString)) then {
 		removegoggles player;
-		"Low Tech Command Role" hintc ["Your section members do not have a radio or map, keep them close", "You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"];
+		"Low Tech Command Role" hintc ["Your section members do not have a radio or map, stay together", "You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"];
 	
-		player CreateDiaryRecord ["Diary",["Maps","Section members do not have a radio or map, keep them close. You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"]];
+		player CreateDiaryRecord ["Diary",["Maps","Section members do not have a radio or map, stay together. You can find other players in the field using the BLUFOR intel function in ACE Self Interact (hold CTRL+Win key by default)"]];
 	};
 };
 

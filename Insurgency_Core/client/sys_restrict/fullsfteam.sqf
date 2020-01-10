@@ -9,9 +9,7 @@ Once they have enough, then it runs itself again to wait until the situation cha
 if(isserver)exitWith{};
 waitUntil {!isNull player};
 
-while {(count (units group player)) > 3} do {
-	sleep 10;
-};
+if {(count (units group player)) > 3} exitwith {};
 
 //if it's been more than half an hour since they last respawned, and they're more than 1km from base then they can have it
 //if (((twc_lastspawned < (time - 1800)) && ((player distance twc_basepos) > 1000))||((twc_lastspawned < (time - 60)) && ((player distance twc_basepos) > 4000))) exitwith {};
@@ -27,7 +25,7 @@ while {(count (units group player)) < 4}do{
 cutText ["", "Black", 0.001];
 
     [
-        "<t size='1.2'>SAS Section</t><br/><t size='0.6'>You need at least 4 people in the SAS Section before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
+        "<t size='1.2'>SAS Section</t><br/><t size='0.6'>You need at least 4 people in the SF Section before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
 	sleep 5;
 };

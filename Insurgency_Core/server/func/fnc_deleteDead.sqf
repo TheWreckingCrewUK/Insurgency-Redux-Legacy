@@ -6,6 +6,7 @@ params["_unit"];
 	//initial timer, don't do anything in the first 5 minutes. More efficient way would be to push them back to a central array then base the timeout on how big the array is
 	sleep 300;
 	while{_bluClose == 1}do{
+		if (isnull _unit) exitwith {};
 		sleep 60;
 		
 		_checkvis = 1;
@@ -18,5 +19,5 @@ params["_unit"];
 			_bluClose = 0;
 		};
 	};
-	deleteVehicle _unit;
+	_unit remoteExecCall ["deleteVehicle",_unit];
 };

@@ -120,7 +120,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerColor _color;
 			_marker setMarkerText (str(_distance) + "m");
 			_marker setMarkerSize [0.5,0.5];
-			_textarray pushback ([" They planted a bomb in the ground there.", " They've got a bomb set up with some very bad people ready to hurt you if you set it off", " I heard there was a bomb set there."] call bis_fnc_selectrandom);
+			_textarray pushback ([" They planted a bomb in the ground there.", " They've got a bomb set up with some very bad people ready to hurt you if you set it off", " I heard there was a bomb set there.", "I think someone made a bomb there and used Michael Bay movies as inspiration", "Someone put a bomb in the road there and it’s messing with the public transport schedule, please deal with it", "There’s an IED there with fighters waiting somewhere around this area. You’ll live if God wills it.", "There’s a wizard who commands the ancient ways, he trained for years in the art of combustion and fire and his latest work is sitting by the road waiting for coalition blood to set it off. Either that or it’s a bomb, I didn’t get close enough to see properly."] call bis_fnc_selectrandom);
 		};
 		
 		if (_rand >= 4)then{
@@ -136,22 +136,23 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_marker setMarkerText (str(_distance) + "m: " + _objectname);
 			_marker setMarkerSize [0.5,0.5];
 			if (_objectname == "hostage") then {
-				_textarray pushback ([" They're holding someone hostage there", " They're holding someone there, I dont know who.", " They've got a reporter held hostage in there.", " They have a press man held prisoner last I heard."] call bis_fnc_selectrandom);
+				_textarray pushback ([" They're holding someone hostage there", " They're holding someone there, I dont know who.", " They've got a reporter held hostage in there.", " They have a press man held prisoner last I heard.", " There’s a photographer being held hostage there, I heard he got an ankle picture of Warlord Abessha’s third wife and now he’s being tortured until he gives it up", " There’s a Daily Mail writer being held hostage there. Probably no big loss if he dies, but you should probably at least have a go at rescuing him", "I heard a journalist is being held hostage there, my brother says he saw a man looking like a frog so I’m pretty sure it’s Ross Kemp", " My brother was kidnapped and he’s being held there. He’s wearing a press outfit but he’s not actually a journalist. Anyway, if you could rescue him and bring him back to your cutting edge medical facilities that would be great, he has some dental issues that we’re too poor to fix right now and that seems a suitable compensation for the trauma he’s being put through"] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "hvt") then {
-				_textarray pushback ([" I heard that the bastard son of Hitler and Jimmy Saville is living there", " A really bad man lives there, I heard he eats babies to consume their youth", " There's a man there, he takes people's heads if they don't obey him"] call bis_fnc_selectrandom);
+				_textarray pushback ([" I heard that the bastard son of Hitler and Jimmy Saville is living there", " A really bad man lives there, I heard he eats babies to consume their youth", " There's a man there, he takes people's heads if they don't obey him", " I hear that Iranian guy faked his death and is hiding there", " A reliable source told me Jeffrey Epstein’s caretaker is living there", " Some idiot got hold of a golden AK and now he thinks he’s hot shit", " A monster in human clothing lives there, he feasts on the souls of the unbelieving and tears flesh from infidels to clothe his family of devils", " There’s an old farmer there, he pledged to destroy any coalition forces that cross his path after an airstrike killed his wife a few years back, he’s been fighting ever since."] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "minefield") then {
 				_textarray pushback ([" My cousin stepped on a landmine somewhere around there, left over from the Russians.", " The rumour is there's dozens of old mines around there.", " The russians laid a load of mines there and never cleaned up after themselves.", " The russians didn't clean up after themselves at all, they left a load of landmines there. All these years and they still torment us."] call bis_fnc_selectrandom);
 			};
 			if (_objectname == "recovery") then {
-				_textarray pushback (["There's an army vehicle there, I think it needs recovering", "A vehicle was abandoned there by the good guys", "Some soldiers got hit by a bomb there and had to leave their vehicle behind"] call bis_fnc_selectrandom);
+				_textarray pushback ([" There's an army vehicle there, I think it needs recovering", " A vehicle was abandoned there by the good guys", " Some soldiers got hit by a bomb there and had to leave their vehicle behind"] call bis_fnc_selectrandom);
 			};
 		};
 		
 		
 	}else{
 		switch (True) do {
+			case (((random 1) < 0.01) && ((count allplayers) > 2)):{_name = (name (selectrandom allplayers)); while {_name == name player} do {_name = (name (selectrandom allplayers))};_textarray pushback ("Hey, if you shoot " + _name + " I promise to give you every piece of information I have. Until then though, I have nothing for you.")};
 			case (floor TWC_civMorale <= 15):{_textarray pushback "I wish nothing but death upon scum like you. The moment you invaded our country you showed your true selves as inbred worthless cowards. Nothing would give me more pleasure than seeing your bleeding corpse on the side of the road."};
 			case (floor TWC_civMorale <= 20):{_textarray pushback "You've done bad things here, I've heard tales. Even if I did happen to know something I wouldn't tell you."};
 			case (floor TWC_civMorale <= 30):{_textarray pushback "I can't help you, I don't know what to think about you people coming here but please leave our village."};
