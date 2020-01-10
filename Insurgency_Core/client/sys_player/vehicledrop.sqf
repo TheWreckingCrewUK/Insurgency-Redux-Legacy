@@ -25,12 +25,28 @@ _car2 = "CUP_B_HMMWV_M2_USA";
 };
 
 
+if (["70", twc_missionname] call BIS_fnc_inString) then {
+
+
+	if (["twc_ana", typeof player] call BIS_fnc_inString) then {
+		_car1 = "CUP_C_V3S_Open_TKC";
+		_car2 = "CUP_I_Datsun_4seat_TK";
+	};
+	if (["CUP_O_RU", typeof player] call BIS_fnc_inString) then {
+		_car1 = "CUP_O_UAZ_Unarmed_RU";
+		_car2 = "CUP_O_Ural_Open_RU";
+	};
+};
+
+
 if (["90", twc_missionname] call BIS_fnc_inString) then {
 
 
 	if (twc_wdveh == 0) then {
-_car1 = "UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";} else {
-_car1 = "UK3CB_BAF_LandRover_Snatch_FFR_Green_A"};
+	_car1 = "UK3CB_BAF_LandRover_Snatch_FFR_Sand_A";
+} else {
+	_car1 = "UK3CB_BAF_LandRover_Snatch_FFR_Green_A";
+};
 
 
 _car2 = "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A";
