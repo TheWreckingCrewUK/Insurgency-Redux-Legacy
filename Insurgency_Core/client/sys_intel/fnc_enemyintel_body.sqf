@@ -2,8 +2,17 @@ hintSilent "Intel Received From Enemy Corpse";
 		_rand = (floor (random 2));
 		if (_rand <= 1)then{
 			_color = "ColorOrange";
-			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
+			_cachearray = [];
+			{
+				_isdead = _x getvariable ["twccachehasbeenhit", 0];
+				if (_isdead == 0) then {
+					_cachearray pushback _x;
+				};
+			} foreach InsP_cacheGroup;
+			_object = _cachearray call BIS_fnc_selectRandom;
 			_distance = [250,500,750] call BIS_fnc_selectRandom;
+			_precision = count (nearestObjects [_object, ["house"], 300]);
+			_distance = ((round ((_distance / (1 + (_precision / 10))) / 50)) * 50) max 25;
 			_intelPos = [_object, _distance] call CBA_fnc_randPos;
 			_marker = createMarker [format["%1%2", _object, (str _intelPos)], _intelPos];
 			_marker setMarkerType "hd_join";

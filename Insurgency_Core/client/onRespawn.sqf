@@ -23,6 +23,8 @@ if (!isnil "_nobackpack") then {
 };
 */
 
+[player, false] execvm "insurgency_core\client\sys_player\vehicledrop.sqf";
+
 if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
 if (!((backpack player) == "")) then {
 	_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;

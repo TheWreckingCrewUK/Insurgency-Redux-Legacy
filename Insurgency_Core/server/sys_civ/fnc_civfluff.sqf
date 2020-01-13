@@ -16,7 +16,7 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 			_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 			//systemchat "fluff 16";
 			
-			_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 25) * ((sunormoon * - 1) + 2);
+			_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 15) * ((sunormoon * - 1) + 2);
 			//systemchat ("max2 gets " + (str _maxcivs));
 			
 			//if it's spawning civs, then don't spawn them near base. if it's spawning blufor, don't spawn them far from base. Last time anything jumped through this many hoops it was on crufts

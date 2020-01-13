@@ -135,7 +135,7 @@ if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded RG (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded SF MATV (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;

@@ -21,9 +21,6 @@ clearitemCargoGlobal _box;
 //supplies
 
 _box addItemCargoGlobal ["UK3CB_BAF_H_Beret_Mer",30];
-_box addItemCargoGlobal ["ACE_Banana",20];
-_box addItemCargoGlobal ["ACE_bodyBag",20];
-_box addItemCargoGlobal ["ItemMap",20];
 _box addItemCargoGlobal ["CUP_Item_Money",20];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

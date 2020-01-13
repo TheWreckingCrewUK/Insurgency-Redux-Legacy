@@ -37,7 +37,7 @@ _wp = _group addwaypoint [_iedpos, 0];
 
 [leader _group] spawn TWC_fnc_aiscramble;
 
-_wp setWaypointStatements ["true", "[group this, getPos this, 2000] call bis_fnc_taskPatrol"];
+_wp setWaypointStatements ["true", "{[_x] call twc_fnc_deleteDead} foreach (units (group this))"];
 
 
 if (random 1 >0.5) then {

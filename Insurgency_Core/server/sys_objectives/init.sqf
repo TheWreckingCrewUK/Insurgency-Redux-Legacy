@@ -56,7 +56,7 @@ _spawn_DefendForwardBase = compile preprocessFileLineNumbers (_ROOT + "DefendFor
 //_spawn_IEDFactory = compile preprocessFileLineNumbers (_ROOT + "IEDFactory\IEDFactory_spawn.sqf");
 
 heartsAndMindsObjs = [
-	//["Blank", _canSpawn_Blank, _spawn_Blank],
+	["Blank", _canSpawn_Blank, _spawn_Blank],
 //	["CrashedHeli", _canSpawn_CrashedHeli, _spawn_CrashedHeli],
 //	["CarBomb", _canSpawn_CarBomb, _spawn_CarBomb],
 	//["Recovery", _canSpawn_Recovery, _spawn_Recovery],
@@ -65,7 +65,7 @@ heartsAndMindsObjs = [
 ];
 
 searchAndDestroyObjs = [
-	//["Blank", _canSpawn_Blank, _spawn_Blank],
+	["Blank", _canSpawn_Blank, _spawn_Blank],
 	["HVT", _canSpawn_HVT, _spawn_HVT]
 	//["Convoy", _canSpawn_Convoy, _spawn_Convoy]
 	// ["IEDFactory", _canSpawn_IEDFactory, _spawn_IEDFactory]

@@ -7,17 +7,14 @@ if (isNil "InsP_cacheGroup") then {
 
 	cacheBoxA = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[5,0,0]);
 	cacheBoxA allowdamage false;
-	[] spawn {_pos = getpos cacheBoxA;sleep 60; cacheBoxA allowdamage true;while {(alive cacheBoxA) && ((damage cacheBoxA) < 0.88)} do {sleep 30;};[cacheBoxA, _pos] call InsP_fnc_deadCache; [cacheBoxA] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxA";
 diag_log "hoblog cachesetup 12";
 	cacheBoxB = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[10,0,0]);
-	cacheBoxB allowdamage false;
-	[] spawn {_pos = getpos cacheBoxB;sleep 60; cacheBoxB allowdamage true; while {(alive cacheBoxB) && ((damage cacheBoxB) < 0.88)} do {sleep 30;};[cacheBoxB, _pos] call InsP_fnc_deadCache; [cacheBoxB] call InsP_fnc_deleteMarkers};
+	
+	
 	publicVariable "cacheBoxB";
 
 	cacheBoxC = "Box_FIA_Ammo_F" createVehicle (getMarkerPos "cacheSpawn" vectorAdd[15,0,0]);
-	cacheBoxC allowdamage false;
-	[] spawn {_pos = getpos cacheBoxC;sleep 60; cacheBoxC allowdamage true; while {(alive cacheBoxC) && ((damage cacheBoxC) < 0.88)} do {sleep 30;};[cacheBoxC, _pos] call InsP_fnc_deadCache; [cacheBoxC] call InsP_fnc_deleteMarkers};
 	publicVariable "cacheBoxC";
 
 	InsP_cacheGroup = [cacheBoxA, cacheBoxB, cacheBoxC];
@@ -28,7 +25,7 @@ diag_log "hoblog cachesetup 27";
 _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
 	{
 		//Cache cannot cause near to Blufor respawn
-		
+		_x allowdamage false;
  		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 1500 } do {			
 			_cacheMarker = "";
 	
@@ -65,6 +62,41 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 		_x AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",random 10];
 		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 2];
 		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 2];
+		
+		
+		[_x] spawn {
+		params ["_cache"];
+		_pos = getpos _cache;
+		sleep 30;
+		_cache allowdamage true;};
+
+		_x addMPEventHandler ["MPKilled", {
+			params ["_cache", "_killer", "_instigator", "_useEffects"];
+			
+			if (!(local _cache)) exitwith {};
+			
+			_var = _cache getvariable ["twccachehasbeenhit", 0];
+			//this is set by deadcache, don't set it here
+			if (_var == 1) exitwith {};
+			
+			[_cache] call InsP_fnc_deadCache;
+			
+		}];
+		
+		
+		_x addMPEventHandler ["MPHit", {
+			params ["_cache", "_source", "_damage", "_instigator"];
+			
+			if (!(local _cache)) exitwith {};
+			
+			_var = _cache getvariable ["twccachehasbeenhit", 0];
+			//this is set by deadcache, don't set it here
+			if (_var == 1) exitwith {};
+			
+			if ((damage _cache) > 0.88) then {
+				[_cache] call InsP_fnc_deadCache;
+			};
+		}];
 
 		
 		
@@ -98,7 +130,7 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 
 	//[_pos, nil, units _group, 10, 2, true, true] call ace_ai_fnc_garrison;
 {
-	[_x, 30] call twc_fnc_aispreadout;
+	[_x, 10] call twc_fnc_aispreadout;
 } foreach units _group;
 		_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 	} forEach InsP_cacheGroup;

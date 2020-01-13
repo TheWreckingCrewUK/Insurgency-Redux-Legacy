@@ -25,10 +25,10 @@ while {(((count _pos) == 0) && (_amount < 4000))} do {
 		};
 	} foreach townLocationArray;
 	_amount = _amount + 300;
-	systemchat str _amount;
+	//systemchat str _amount;
 };
 if (_amount > 3900) exitwith {sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf";};
-systemchat "search complete3d";
+//systemchat "search complete3d";
 
 
 _vehtype = ["CUP_C_Datsun_4seat", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC",
@@ -58,7 +58,8 @@ _player = objnull;
 if (_player == objnull) exitwith {
 		sleep 120; execvm "Insurgency_Core\server\sys_civ\civtraffic.sqf"};
 		
-_spawnpos = [_pos, 200, (random 360), 0, [1,1000],_vehtype] call SHK_pos;
+		
+_spawnpos = ([_pos, 1, 1000, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
 
 
 _eyecheck = 0;	
@@ -68,23 +69,30 @@ if ((speed _player) > 30) then {
 	//systemchat "player travelling1";
 	_d = getdir (vehicle _player);
 	//_pos = _pos getpos [(3000), _d];
-	_spos = [_pos, random 500, (_d + (random 30) - 15), 0, [1,1000],_vehtype] call SHK_pos;
+	_spos = ([_pos, 1, 500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
 	while {((([_spos, 2000] call twc_fnc_posNearPlayers)) || (!([_spos, 5000] call twc_fnc_posNearPlayers)) || (((_spos) distance twc_basepos) < 1000) || ((count _spos)== 0))} do {
-		//_spos = [_pos, 1500] call CBA_fnc_randPos;
-		_spos =  [_pos, (1000 + (random 1500)), (random 360), 0, [1,2500],_vehtype] call SHK_pos;
+		
+		_spos =  ([_pos, 1, 1500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
 	};
-	_pos = [_spos, 500, (random 360), 0, [1,1500],_vehtype] call SHK_pos;;
+	_pos = getpos ([_spos, 500] call twc_fnc_findnearestroad);
 	_spawnpos = _pos;
 	//systemchat str (_spos distance player);
 	
 } else {
-//AGLToASL
+
+_spawnpos = getpos ([_spawnpos, 500, 2000] call twc_fnc_findnearestroad);
 while {((_eyecheck == 0) && (_checkcount < 10))} do {
+	if ((count _spawnpos) == 2) then {
+		_spawnpos = [_spawnpos select 0, _spawnpos select 1, 0];
+	};
+	//systemchat "line 88 civtraffic search";
 	if (([ (_spawnpos vectoradd [0,0,4])] call twc_fnc_seenbyplayers) == 0) then {
 		_eyecheck = 1;
 	} else {
-		_spawnpos = [_pos, 200, (random 360), 0, [1,1000],_vehtype] call SHK_pos;
+		_spawnpos =  ([_pos, 1, 1500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+		_spawnpos = getpos ([_spawnpos, 800] call twc_fnc_findnearestroad);
 		_checkcount = _checkcount + 1;
+		//systemchat "line 94 civtraffic search";
 		//typeof player createvehicle _spawnpos;
 	};
 };
@@ -124,18 +132,9 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver setVariable ["twc_isenemy",1];
 	
 	_canfit = true;
-	if ((random 1) < 0.8) then {
-		_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
-		_unit setVariable ["twc_isenemy",1];
-		_unit addEventHandler ["Killed",{
-			[(_this select 0)] call twc_fnc_deleteDead;
-		}];
-		_canfit = _unit moveinany _car;
-		if (!_canfit) then {
-			deletevehicle _unit;
-		};
-	};
-	while {(_canfit) && ((random 1) < 0.6)} do {
+	
+	_passengers = ((count (fullCrew [_car, "cargo", true])) * (random 1)) - 1;
+	for "_i" from 0 to _passengers do {
 		_unit = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
 		_unit setVariable ["twc_isenemy",1];
 		_unit addEventHandler ["Killed",{
@@ -155,20 +154,11 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver moveindriver _car;
 	
 	_canfit = true;
-	if ((random 1) < 0.8) then {
+	
+	_passengers = ((count (fullCrew [_car, "cargo", true])) * (random 1)) - 1;
+	for "_i" from 0 to _passengers do {
 		_unit = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
-		_unit setVariable ["twc_isenemy",1];
-		_unit addEventHandler ["Killed",{
-			[(_this select 0)] call twc_fnc_deleteDead;
-		}];
-		_canfit = _unit moveinany _car;
-		if (!_canfit) then {
-			deletevehicle _unit;
-		};
-	};
-	while {(_canfit) && ((random 1) < 0.6)} do {
-		_unit = _group createUnit [(civilianType call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
-		_unit setVariable ["twc_isenemy",1];
+		_unit setVariable ["twc_isenemy",0];
 		_unit addEventHandler ["Killed",{
 			[(_this select 0)] call twc_fnc_deleteDead;
 		}];
@@ -297,19 +287,26 @@ if (_player == _car) exitwith {
 
 _speed = speed _player;
 
-_nearestRoad = [getposatl _car, 50] call BIS_fnc_nearestRoad;
+_nearestRoad = ([getposatl _car, 50] call twc_fnc_findnearestroad);
 _dir = _car getdir _player;
 _dir = getdir _nearestRoad;
 
 _gopos1 = _car getpos [(_amount * 2), _dir];
+_gopos1s = _gopos1;
 
 if ((_speed > 50) && ((random 1) < 0.3)) then {
 	_dir =_dir + 180;
 	//systemchat "run away";
-	_gopos1 = ([(getpos _car), 1500, _dir, 0, [2,700],_vehtype] call SHK_pos);
+	_gopos1s = ([(getpos _car), 1, 1500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+	_gopos1 = getpos ([_gopos1s, 500] call twc_fnc_findnearestroad);
 } else {
 	
-	_gopos1 = ([(getpos _player), 500, (random 360), 0, [2,2000],_vehtype] call SHK_pos);
+	_gopos1s = ([(getpos _player), 1, 500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+	_gopos1 = (getpos ([_gopos1s, 500] call twc_fnc_findnearestroad));
+};
+
+if ((str _gopos1) == "[0,0,0]") then {
+	_gopos1 = (getpos ([_gopos1s, 750] call twc_fnc_findnearestroad));
 };
 
 _cd = 100;
@@ -320,12 +317,20 @@ _chkva = (floor (random 100));
 if (!isnil "_gopos1") then {
 	while {((_gopos1 distance twc_basepos) < 1000)} do {
 		_cpos1 = (_gopos1 getpos [(_amount + _cd), _dir]);
-		_gopos1 = ([_cpos1, 500, (random 360), 0, [2,4000],_vehtype] call SHK_pos);
+		_gopos1s = ([_cpos1, 1, 500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+		_gopos1 = (getpos ([_gopos1s, 750] call twc_fnc_findnearestroad));
 		_cd = _cd + 200;
+		if ((str _gopos1) == "[0,0,0]") then {
+			_gopos1 = (getpos ([_gopos1s, 2500] call twc_fnc_findnearestroad));
+		};
 		sleep 1;
 	};
 };
-//systemchat ((str _chkva) + "end");
+
+
+	
+//systemchat ((str _chkva) + "end1");
+//systemchat ((str _gopos1) + "line 333");
 _car setdir _dir;
 
 //_gopos1 = _car getpos [(_amount * 2), _dir];
@@ -355,7 +360,7 @@ twc_addcivcarwp = {
 	//systemchat "new waypoint";
 	if ((count allplayers) == 0) exitwith {
 		
-		deletevehicle (_driver);
+		{deletevehicle _x} foreach (units _group);
 		_array = missionnamespace getvariable ["twc_civcars", []];
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
@@ -364,29 +369,31 @@ twc_addcivcarwp = {
 	
 	_last = _car getvariable ["twc_lastwptime", 0];
 	
-	if ((!([getpos _driver, 2500] call twc_fnc_posNearPlayers)) || ((!([getpos _driver, 1000] call twc_fnc_posNearPlayers)) && (_last > (time - 2))) || ((!([getpos _driver, 1000] call twc_fnc_posNearPlayers)) && ((vehicle _driver) == _driver))) exitwith {
+	if ((!([getpos (leader _group), 2500] call twc_fnc_posNearPlayers)) || ((!([getpos (vehicle _driver), 1000] call twc_fnc_posNearPlayers)) && (_last > (time - 2))) || ((!([getpos (vehicle (leader _group)), 1000] call twc_fnc_posNearPlayers)) && ((vehicle (leader _group)) == (leader _group)))) exitwith {
 		
-		deletevehicle (_driver);
+		{deletevehicle _x} foreach (units _group);
 		_array = missionnamespace getvariable ["twc_civcars", []];
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
 	};
-	if ((!([getpos _car, 2500] call twc_fnc_posNearPlayers))) then {
+	if ((!([getpos (vehicle (leader _group)), 2500] call twc_fnc_posNearPlayers))) then {
 		_array = missionnamespace getvariable ["twc_civcars", []];
 		_array deleteat (_array find [_driver, _car]);
 		missionnamespace setvariable ["twc_civcars", _array];
-		deletevehicle (_driver);
+		{deletevehicle _x} foreach (units _group);
 		deletevehicle (_car);
 	};
 	
 	_gopos2 = _car getpos [(1000), (getdir _car)];
 
-	_gopos2 = ([_gopos2, 500, (random 360), 0, [2,2000],_car] call SHK_pos);
+	_gopos2s = ([_gopos2, 1, 500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+	_gopos2 = getpos ([_gopos2s, 750] call twc_fnc_findnearestroad);
 	
 	while {((_gopos2 distance _car) < 100) || ((_gopos2 distance twc_basepos) < 1000)} do {
 		_gopos2 = _car getpos [(1000), (random 360)];
 
-		_gopos2 = ([_gopos2, 500, (random 360), 0, [2,2000],_car] call SHK_pos);
+		_gopos2s = ([_gopos2, 1, 500, 10, 0, 0.7, 0] call BIS_fnc_findSafePos);
+		_gopos2 = getpos ([_gopos2s, 750] call twc_fnc_findnearestroad);
 	};
 	
 	if (count _gopos2 == 0) exitwith {
@@ -400,7 +407,7 @@ twc_addcivcarwp = {
 			_array deleteat (_array find [_driver, _car]);
 			missionnamespace setvariable ["twc_civcars", _array];
 			deletevehicle (_car);
-			deletevehicle (_driver);
+			{deletevehicle _x} foreach (units _group);
 		};
 	};
 	
@@ -425,7 +432,7 @@ twc_addcivcarwp = {
 		
 		if ((typeof _car) != (typeof vehicle _driver)) then {
 			if ((!([getpos _driver, 1500] call twc_fnc_posNearPlayers)) || ((!([getpos _driver, 150] call twc_fnc_posNearPlayers)) && (([getposasl _driver vectoradd [0,0,2]] call twc_fnc_seenbyplayers) == 0))) then {
-				deletevehicle (_driver);
+				{deletevehicle _x} foreach (units (group _driver));
 				//systemchat "driver gone";
 				_num = (_array find [_driver, _car]);
 				_array deleteat _num;
@@ -439,7 +446,7 @@ twc_addcivcarwp = {
 			
 			if ((!([getpos _driver, 1000] call twc_fnc_posNearPlayers)) || ((!([getpos _driver, 150] call twc_fnc_posNearPlayers)) && (([getposasl _driver vectoradd [0,0,2]] call twc_fnc_seenbyplayers) == 0))) then {
 			deletevehicle (_car);
-			deletevehicle (_driver);
+			{deletevehicle _x} foreach (units (group _driver));
 			//systemchat "bad dis";
 			_array = missionnamespace getvariable ["twc_civcars", []];
 			

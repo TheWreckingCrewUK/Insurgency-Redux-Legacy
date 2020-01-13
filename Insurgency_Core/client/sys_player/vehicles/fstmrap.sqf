@@ -1,6 +1,6 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
-_vehtype = "rhsusf_M1220_M153_M2_usarmy_d";
+_vehtype = "twc_rhsusf_m1240a1_m2crows_usarmy_d";
 	
 
 if (twc_wdveh == 1) then {

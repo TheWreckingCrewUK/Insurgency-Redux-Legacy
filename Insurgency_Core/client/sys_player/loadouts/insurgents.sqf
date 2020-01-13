@@ -18,38 +18,6 @@ twc_approvedenemies = [
 "76561198018609662",
 "76561198042520910"];
 
-_boxaction = ["enemymenu","Switch to Enemy","",{
-},{((getPlayerUID player) in twc_approvedenemies)}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","Rifleman","",{["rifleman"] call twc_loadout_insurgentswitch;
-},{true}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","MG","",{["mg"] call twc_loadout_insurgentswitch;
-},{true}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","Grenadier","",{["grenadier"] call twc_loadout_insurgentswitch;
-},{true}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","RPG Gunner","",{["rpg"] call twc_loadout_insurgentswitch;
-},{true}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","Sniper","",{["sniper"] call twc_loadout_insurgentswitch;
-},{true}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","Heavy Gunner","",{["heavygunner"] call twc_loadout_insurgentswitch;
-},{(totalpoints > (pointlimit * 0.3))}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
-_boxaction = ["enemymenurif","Heavy Sniper","",{["heavysniper"] call twc_loadout_insurgentswitch;
-},{(totalpoints > (pointlimit * 0.8))}] call ace_interact_menu_fnc_createAction;
-[crateBox,0,["ACE_MainActions", "enemymenu"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
-
 
 twc_loadout_insurgent_rifleman = {
 

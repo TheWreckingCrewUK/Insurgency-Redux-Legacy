@@ -1,5 +1,11 @@
 params["_deadCache", "_pos"];
 
+_var = _deadCache getvariable ["twccachehasbeenhit", 0];
+			
+if (_var == 1) exitwith {};
+
+_deadCache setvariable ["twccachehasbeenhit", 1, true];
+
 _intelPos = (getPosATL _deadCache);
 
 _marker = createMarker [format ["%1", _deadCache], _intelPos];

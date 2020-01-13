@@ -1,7 +1,8 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
 
-_vehtype = "twc_M1238A1_M2_socom_d";
+//_vehtype = "twc_M1238A1_M2_socom_d";
+_vehtype = "twc_rhsusf_m1245_m2crows_socom_deploy";
 
 
  
@@ -15,12 +16,21 @@ _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
 if (twc_wdveh == 1) then {
-	[
-		_veh,
-		["rhs_woodland",1], 
-		["DUKE_Hide",0,"hide_rhino",0,"hide_spare",0,"hide_towbar",0,"hide_srchlight_cvr",0]
-	] call BIS_fnc_initVehicle;
+	
+[
+	_veh,
+	["rhs_olive",1], 
+	["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",0,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
+] call BIS_fnc_initVehicle;
+
+} else {
+[
+	_veh,
+	["rhs_desert",1], 
+	["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",0,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
+] call BIS_fnc_initVehicle;
 };
+
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 
@@ -35,10 +45,11 @@ clearitemCargoGlobal _veh;
 _mult = 1;
 
 
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",4*_mult];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",8];
 
 _veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1*_mult];
 
+_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull",20*_mult];
 _veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red",10*_mult];
 
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10*_mult];
@@ -51,12 +62,11 @@ _veh addItemCargoGlobal ["ACE_fieldDressing",25*_mult];
 _veh addItemCargoGlobal ["ACE_elasticBandage",15*_mult];
 _veh addItemCargoGlobal ["ACE_quikclot",15*_mult];
 _veh addItemCargoGlobal ["ACE_packingBandage",15*_mult];
-_veh addItemCargoGlobal ["ACE_salineIV_250",15*_mult];
-_veh addItemCargoGlobal ["ACE_salineIV_500",15*_mult];
-_veh addItemCargoGlobal ["ACE_atropine",5*_mult];
+_veh addItemCargoGlobal ["ACE_salineIV_250",10];
+_veh addItemCargoGlobal ["ACE_salineIV_500",10];
 _veh addItemCargoGlobal ["ACE_epinephrine",10*_mult];
 _veh addItemCargoGlobal ["ACE_morphine",10*_mult];
-_veh addItemCargoGlobal ["HandGrenade",2*_mult];
+_veh addItemCargoGlobal ["HandGrenade",4];
 _veh addItemCargoGlobal ["SmokeShell",3*_mult];
 _veh addItemCargoGlobal ["SmokeShellRed",3*_mult];
 
@@ -73,7 +83,7 @@ if ((random 1) < 0.5) then {
 
 if ((random 1) < 0.2) then {
 	_fsgun = ["rhs_weap_maaws_optic",1];
-	_veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEDP",4];
+	_veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEDP",6];
 	_fsmag = ["rhs_mag_maaws_flechette",2];
 };
 

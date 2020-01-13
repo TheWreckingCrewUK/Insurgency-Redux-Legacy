@@ -26,7 +26,7 @@ twc_loadout_ussniper_shooter = {params ["_unit"];
 	_unit addVest "rhsusf_spcs_ocp_sniper";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	for "_i" from 1 to 37 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addHeadgear "rhsusf_ach_bare_tan_headset";
 
@@ -67,8 +67,8 @@ twc_loadout_ussniper_spotter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
+	_unit addItemToVest "ACE_Chemlight_IR";
+	for "_i" from 1 to 11 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
 	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addItemTobackpack "ACRE_PRC148";
 	_unit addItemToVest "ACE_ATragMX";
@@ -121,7 +121,7 @@ twc_loadout_usmcsniper_shooter = {params ["_unit"];
 	_unit addVest "rhsusf_mbav_rifleman";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	for "_i" from 1 to 37 do {_unit addItemToVest "rhsusf_5Rnd_762x51_m993_Mag";};
 	
 	if ((missionnamespace getvariable ["twc_wdveh",0]) == 1) then {
@@ -172,8 +172,8 @@ twc_loadout_usmcsniper_spotter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
+	_unit addItemToVest "ACE_Chemlight_IR";
+	for "_i" from 1 to 11 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
 	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";};
 	_unit addItemTobackpack "ACRE_PRC148";
 	_unit addItemToVest "ACE_ATragMX";
@@ -229,7 +229,7 @@ twc_loadout_bafsniper_shooter = {params ["_unit"];
 	_unit addVest "UK3CB_BAF_V_Osprey_Rifleman_A";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	for "_i" from 1 to 9 do {_unit addItemToVest "ACE_10Rnd_338_300gr_HPBT_Mag";};
 	for "_i" from 1 to 8 do {_unit addItemToBackpack "ACE_10Rnd_338_300gr_HPBT_Mag";};
 	
@@ -272,7 +272,7 @@ twc_loadout_bafsniper_spotter = {params ["_unit"];
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	for "_i" from 1 to 7 do {_unit addItemToVest "UK3CB_BAF_762_L42A1_20Rnd_T";};
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
@@ -327,7 +327,11 @@ twc_loadout_uksfsniper_shooter = {
 	_unit addPrimaryweaponitem "RKSL_optic_PMII_525";
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	_unit addWeapon "ACE_Vector";
+	
+	_unit addbackpack "twc_tan_belt";
 
+	for "_i" from 1 to 8 do {_unit addItemToBackpack "ACE_7Rnd_408_305gr_Mag";};
+	
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
@@ -362,18 +366,25 @@ twc_loadout_uksfsniper_spotter = {
 	_unit addVest "CUP_V_O_SLA_M23_1_OD";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
 	for "_i" from 1 to 5 do {_unit addItemToUniform "UK3CB_BAF_762_L42A1_20Rnd_T";};
 	for "_i" from 1 to 6 do {_unit addItemToVest "UK3CB_BAF_762_L42A1_20Rnd_T";};
 	for "_i" from 1 to 8 do {_unit addItemToVest "ACE_7Rnd_408_305gr_Mag";};
+	
+	_unit addbackpack "CUP_B_AlicePack_OD";
+	for "_i" from 1 to 4 do {_unit addItemToBackpack "UK3CB_BAF_762_L42A1_20Rnd_T";};
+	for "_i" from 1 to 16 do {_unit addItemToBackpack "ACE_7Rnd_408_305gr_Mag";};
+	_unit addItemToBackpack "ACE_Vector";
+	
+	
 	_unit addItemToVest "ACE_Tripod";
 	_unit addHeadgear "rhsusf_opscore_mc_cover_pelt";
 
 	_unit addWeapon "TWC_HK417_scope_bipod";
 	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addWeapon "ACE_Vector";
+	_unit addWeapon "UK3CB_BAF_Soflam_Laserdesignator";
 
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
@@ -413,7 +424,7 @@ twc_loadout_cagsniper_shooter = {
 	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
+	_unit addItemToVest "ACE_Chemlight_IR";
 	for "_i" from 1 to 41 do {_unit addItemToVest "rhsusf_5Rnd_300winmag_xm2010";};
 	
 	_unit addHeadgear "rhsusf_opscore_ut_pelt";
@@ -426,6 +437,8 @@ twc_loadout_cagsniper_shooter = {
 	_unit linkItem "ItemMap";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
+	
+	_unit addbackpack "twc_ussf_scoutpack";
 	
 	crateBox addMagazineCargo ["rhsusf_5Rnd_300winmag_xm2010", 50];
 	if ((daytime > 16) || (daytime < 7)) then {
@@ -457,13 +470,14 @@ twc_loadout_cagsniper_spotter = {
 	_unit addItemToUniform "ACE_epinephrine";
 	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
 	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_sniper";
+	_unit addVest "twc_rhsusf_plateframe_rifleman_mtp";
 	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
 	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
 	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
+	_unit addItemToVest "ACE_Chemlight_IR";
+	for "_i" from 1 to 12 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";};
 	for "_i" from 1 to 40 do {_unit addItemToBackpack "rhsusf_5Rnd_300winmag_xm2010";};
+	_unit addItemToBackpack "twc_acc_rotex5_grey";
 	_unit addItemToVest "ACE_ATragMX";
 	_unit addItemToVest "ACE_Kestrel4500";
 	_unit addItemTobackpack "ACE_Tripod";

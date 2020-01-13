@@ -1,7 +1,9 @@
 _givenNumber = (_this select 0) select 0;
 _civilianQuestioned = (_this select 0) select 1;
 //adding in 100% certainty for the interpreter to weasle info out of someone, unless they've been questioned already
-if (player == twc_terp) then {
+_isterp = player getvariable ["twc_isterp",0];
+_hasmoney = (_civilianQuestioned getVariable ["twc_hasmoney",0]);
+if ((_isterp == 1) || ((_hasmoney == 1) && ((random 1) > 0.5)) || (((headgear player) == "UK3CB_BAF_H_Beret_Mer") && ((random 1) > 0.5))) then {
 _givenNumber = 0};
 //systemChat str _givenNumber;
 //[_civilianQuestioned] execvm "Insurgency_Core\server\sys_civ\evilCiv.sqf";
@@ -44,7 +46,7 @@ if (_civilianQuestioned in nonQuestionableList) then {
 
 		if (_rand <= 1)then{
 		
-		_rand = 3
+		_rand = 3;
 			/*	
 		if ((count twc_activestrongholds) == 0) then {_rand = 3} else {
 		
@@ -64,8 +66,19 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		//non-situation stuff like caches
 		if (_rand == 2)then{
 			_color = "ColorOrange";
-			_object = InsP_cacheGroup call BIS_fnc_selectRandom;
+			_cachearray = [];
+			{
+				_isdead = _x getvariable ["twccachehasbeenhit", 0];
+				if (_isdead == 0) then {
+					_cachearray pushback _x;
+				};
+			} foreach InsP_cacheGroup;
+			_object = _cachearray call BIS_fnc_selectRandom;
 			_distance = [250,500,500,750,750,1000,1000,1500,2000] call BIS_fnc_selectRandom;
+			_precision = count (nearestObjects [_object, ["house"], 300]);
+			_distance = ((round ((_distance / (1 + (_precision / 50))) / 50)) * 50) max 25;
+			
+			
 			_intelPos = [_object, _distance] call CBA_fnc_randPos;
 			_marker = createMarker [format["%1%2", _object, (str _intelPos)], _intelPos];
 			_marker setMarkerType "hd_join";
@@ -79,17 +92,17 @@ if (_civilianQuestioned in nonQuestionableList) then {
 				case (cacheBoxC): {cacheCMarkers pushBack _marker; publicVariable "cacheCMarkers"};
 				default {hint "Something went wrong";};
 			};
-		switch (True) do {
-			case (floor TWC_insMorale <= 15):{_textarray pushback " They should have a large amount of bombs and guns there, it may be all they have left."};
-			case (floor TWC_insMorale <= 20):{_textarray pushback " I saw it with my own eyes, they have rockets and guns and all kinds of stuff sitting in a box."};
-			case (floor TWC_insMorale <= 30):{_textarray pushback " My Brother says they have a box full of bombs in there, he says he's seen it."};
-			case (floor TWC_insMorale <= 45):{_textarray pushback " Last I heard they were storing weapons and ammunition around this place."};
-			case (floor TWC_insMorale <= 60):{_textarray pushback " I think there's a weapons cache there."};
-			case (floor TWC_insMorale <= 75):{_textarray pushback " I heard they've got a room full of guns around here."};
-			case (floor TWC_insMorale <= 90):{_textarray pushback " They've got bombs and rockets in a box here, sort that out and maybe the enemy can actually be pushed back."};
-			case (floor TWC_insMorale > 90):{_textarray pushback " They are storing guns here, please just deal with it."};
-			default {_textarray pushback "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
-		};
+			switch (True) do {
+				case (floor TWC_insMorale <= 15):{_textarray pushback " They should have a large amount of bombs and guns there, it may be all they have left."};
+				case (floor TWC_insMorale <= 20):{_textarray pushback " I saw it with my own eyes, they have rockets and guns and all kinds of stuff sitting in a box."};
+				case (floor TWC_insMorale <= 30):{_textarray pushback " My Brother says they have a box full of bombs in there, he says he's seen it."};
+				case (floor TWC_insMorale <= 45):{_textarray pushback " Last I heard they were storing weapons and ammunition around this place."};
+				case (floor TWC_insMorale <= 60):{_textarray pushback " I think there's a weapons cache there."};
+				case (floor TWC_insMorale <= 75):{_textarray pushback " I heard they've got a room full of guns around here."};
+				case (floor TWC_insMorale <= 90):{_textarray pushback " They've got bombs and rockets in a box here, sort that out and maybe the enemy can actually be pushed back."};
+				case (floor TWC_insMorale > 90):{_textarray pushback " They are storing guns here, please just deal with it."};
+				default {_textarray pushback "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
+			};
 		};
 /*
 		if (_rand == 2)then{
@@ -129,6 +142,8 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			_objectname = _object select 1;
 			_objectpos = _object select 0;
 			_distance = 50 + ((floor (1 * (random 10))) * 50);
+			_precision = count (nearestObjects [_object select 0, ["house"], 300]);
+			_distance = ((round ((_distance / (1 + (_precision / 50))) / 50)) * 50) max 25;
 			_intelPos = [_objectpos, _distance] call CBA_fnc_randPos;
 			_marker = createMarker [format["%1%2", _objectpos, (str _intelPos)], _intelPos];
 			_marker setMarkerType "hd_join";
@@ -151,18 +166,33 @@ if (_civilianQuestioned in nonQuestionableList) then {
 		
 		
 	}else{
-		switch (True) do {
-			case (((random 1) < 0.01) && ((count allplayers) > 2)):{_name = (name (selectrandom allplayers)); while {_name == name player} do {_name = (name (selectrandom allplayers))};_textarray pushback ("Hey, if you shoot " + _name + " I promise to give you every piece of information I have. Until then though, I have nothing for you.")};
-			case (floor TWC_civMorale <= 15):{_textarray pushback "I wish nothing but death upon scum like you. The moment you invaded our country you showed your true selves as inbred worthless cowards. Nothing would give me more pleasure than seeing your bleeding corpse on the side of the road."};
-			case (floor TWC_civMorale <= 20):{_textarray pushback "You've done bad things here, I've heard tales. Even if I did happen to know something I wouldn't tell you."};
-			case (floor TWC_civMorale <= 30):{_textarray pushback "I can't help you, I don't know what to think about you people coming here but please leave our village."};
-			case (floor TWC_civMorale <= 40):{_textarray pushback "I know you people have done well but I don't know anything."};
-			case (floor TWC_civMorale <= 50):{_textarray pushback "I'd help you if I could but I'm afraid I don't know anything, sorry. I've heard stories of the good you've done here, but unfortunately nothing of use about our enemies."};
-			case (floor TWC_civMorale <= 70):{_textarray pushback "I've heard a lot of good things about you people but I'm afraid I don't have any information for you"};
-			case (floor TWC_civMorale <= 90):{_textarray pushback "I've heard many stories of all the good things that have been achieved since you came. However, I'm afraid I have nothing of use to you personally."};
-			case (floor TWC_civMorale > 90):{_textarray pushback "I really wish I could help you, but I don't know anything."};
-			default {_textarray pushback "For some reson this Civilian doesn't know the morale status. Please inform management of this bug."};
+	
+		if (_hasmoney == 0) then {
+			switch (True) do {
+				case (((random 1) < 0.01) && ((count allplayers) > 2)):{_name = (name (selectrandom allplayers)); while {_name == name player} do {_name = (name (selectrandom allplayers))};_textarray pushback ("Hey, if you shoot " + _name + " I promise to give you every piece of information I have. Until then though, I have nothing for you.")};
+				case (floor TWC_civMorale <= 15):{_textarray pushback "I wish nothing but death upon scum like you. The moment you invaded our country you showed your true selves as inbred worthless cowards. Nothing would give me more pleasure than seeing your bleeding corpse on the side of the road."};
+				case (floor TWC_civMorale <= 20):{_textarray pushback "You've done bad things here, I've heard tales. Even if I did happen to know something I wouldn't tell you."};
+				case (floor TWC_civMorale <= 30):{_textarray pushback "I can't help you, I don't know what to think about you people coming here but please leave our village."};
+				case (floor TWC_civMorale <= 40):{_textarray pushback "I know you people have done well but I don't know anything."};
+				case (floor TWC_civMorale <= 50):{_textarray pushback "I'd help you if I could but I'm afraid I don't know anything, sorry. I've heard stories of the good you've done here, but unfortunately nothing of use about our enemies."};
+				case (floor TWC_civMorale <= 70):{_textarray pushback "I've heard a lot of good things about you people but I'm afraid I don't have any information for you"};
+				case (floor TWC_civMorale <= 90):{_textarray pushback "I've heard many stories of all the good things that have been achieved since you came. However, I'm afraid I have nothing of use to you personally."};
+				case (floor TWC_civMorale > 90):{_textarray pushback "I really wish I could help you, but I don't know anything."};
+				default {_textarray pushback "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
+			};
+		} else {
+			switch (True) do {
+				case (floor TWC_civMorale <= 20):{_textarray pushback "Did you think giving me money would suddenly make me know more? You're as bad as the insurgents, go away."};
+				case (floor TWC_civMorale <= 30):{_textarray pushback "I appreciate the cash and everything but I don't actually know anything."};
+				case (floor TWC_civMorale <= 40):{_textarray pushback "I know you people have done well and the money is great but I don't know anything."};
+				case (floor TWC_civMorale <= 50):{_textarray pushback "I'd help you if I could but I'm afraid I don't know anything, sorry. Still appreciate the money though."};
+				case (floor TWC_civMorale <= 70):{_textarray pushback "You guys are great and I'm so thankful for the money, but I'm afraid I don't know anything."};
+				case (floor TWC_civMorale > 90):{_textarray pushback "Oh I'm so sorry, I don't actually know anything. Thanks again for the cash though!"};
+				default {_textarray pushback "For some reason this Civilian doesn't know the morale status. Please inform management of this bug."};
+			};
+		
 		};
+	
 	};
 };
 

@@ -1,5 +1,5 @@
 // add vehicles to forward base, requestable by leaders
-params ["_boxpos"];
+params ["_boxpos", ["_showhint", false]];
 
 _car1 = "UK3CB_BAF_LandRover_Soft_Sand_A";
 
@@ -26,7 +26,8 @@ _car2 = "CUP_B_HMMWV_M2_USA";
 
 
 if (["70", twc_missionname] call BIS_fnc_inString) then {
-
+	_car1 = "UK3CB_BAF_LandRover_Snatch_NI_A";
+	_car2 = "UK3CB_BAF_LandRover_Snatch_NI_A";
 
 	if (["twc_ana", typeof player] call BIS_fnc_inString) then {
 		_car1 = "CUP_C_V3S_Open_TKC";
@@ -67,25 +68,26 @@ _car2 = "CUP_B_HMMWV_M2_USA";
 };
 
 
-if (["carraig", twc_missionname] call BIS_fnc_inString) then {
-
-_car1 = "UK3CB_BAF_LandRover_Snatch_NI_A";
-
-_car2 = "UK3CB_BAF_LandRover_Snatch_NI_A";
-
-};
-
 
 };
 
 _playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.1) +2) max 2;
-if (count (_boxpos nearentities ["car", 200]) >_playercount) exitwith {hint "there are already enough vehicles here"};
-if (count (_boxpos nearobjects ["Vysilacka", 200]) == 0) exitwith {hint "There's no forward base here"};
+if (count (_boxpos nearentities ["car", 200]) >_playercount) exitwith {
+	if (_showhint) then {
+		hint "there are already enough vehicles here";
+	};
+};
+if (count (_boxpos nearobjects ["Vysilacka", 200]) == 0) exitwith {
+	if (_showhint) then {
+		hint "There's no forward base here"
+	};
+};
 
 _vehicle = createvehicle [_car1, [0,0,0]];
 _total = (ceil (((_playercount * 0.5)-(count (_boxpos nearentities ["car", 200])))* 1.5) max 1) min 4;
-hint format ["Spawning %1 Vehicles", _total *2];
-
+if (_showhint) then {
+	hint format ["Spawning %1 Vehicles", _total *2];
+};
 //vehdrop = {
 //params ["_boxpos"];
 

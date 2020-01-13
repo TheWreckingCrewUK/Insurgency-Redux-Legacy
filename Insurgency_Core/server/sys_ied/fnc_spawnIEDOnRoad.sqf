@@ -69,9 +69,18 @@ _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["VEHICLE twc_terp in thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_ied.sqf'",""];
 
 
+
+
 _ied addEventHandler ["Killed", {
+	params ["_exp", "_killer", "_instigator", "_useEffects"];
+	
+	
 	["TWC_Insurgency_adjustPoints", -1] call CBA_fnc_serverEvent;
-	["TWC_Insurgency_iedDestroyed", [_position]] call CBA_fnc_serverEvent;
+	_marker = createMarker [format ["%1", _exp], getpos _exp];
+	_marker setMarkerType "mil_triangle";
+	_marker setMarkerColor "ColorYellow";
+	_marker setMarkerText ("IED Detonated");
+	_marker setMarkerSize [0.75, 0.75];
 }];
 
 InsP_iedGroup pushback _ied;

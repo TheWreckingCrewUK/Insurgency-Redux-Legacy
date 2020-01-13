@@ -536,7 +536,7 @@ twc_loadout_snipergroup_uksf = {
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
 
-	{[_x] remoteexec ["twc_loadout_snipergroup_baf_switch", _x]} foreach (units group player);
+	{[_x] remoteexec ["twc_loadout_snipergroup_uksf_switch", _x]} foreach (units group player);
 };
 
 //not ready yet, pending RHS update. there's an isserver check in the ace interact to allow testing
