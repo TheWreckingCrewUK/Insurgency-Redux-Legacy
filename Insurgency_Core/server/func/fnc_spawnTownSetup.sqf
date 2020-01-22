@@ -83,7 +83,8 @@ _trg setTriggerArea [_dis, _dis, 0, true];
 _trg setTriggerActivation ["ANY", "PRESENT", False];
 _trg setTriggerTimeout [10,10,10, true];
 
-_trg setTriggerStatements ["{((side (_x)) == WEST) && (isplayer _x)} count thisList == 0","[thistrigger, thislist] spawn {params ['_trg', '_lst'];sleep 5;[(_trg getVariable 'unitsHome'), _lst] spawn twc_fnc_townDeciding;}; _lst = (({((count (weapons _x)) > 0) && ((vehicle _x) == _x) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList)); [(thistrigger getVariable 'unitsHome'), _lst] call twc_fnc_townmarker;",""];
+_trg setTriggerStatements ["({((side (_x)) == WEST) && (isplayer _x)} count thisList == 0) || ({((alive (_x))) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList == 0) ","[thistrigger, thislist] spawn {params ['_trg', '_lst'];sleep 5;[(_trg getVariable 'unitsHome'), _lst] spawn twc_fnc_townDeciding;}; _lst = (({((count (weapons _x)) > 0) && ((vehicle _x) == _x) && (alive _x) && ((str (_x getvariable ['unitshome', [1,1,1]])) == (str (thisTrigger getVariable 'unitsHome')))} count thisList)); [(thistrigger getVariable 'unitsHome'), _lst] call twc_fnc_townmarker;",""];
+
 
 
 // && {(side (group _x)) == guer} count thisList < 2

@@ -23,4 +23,16 @@ clearitemCargoGlobal _box;
 _box addItemCargoGlobal ["UK3CB_BAF_H_Beret_Mer",30];
 _box addItemCargoGlobal ["CUP_Item_Money",20];
 
+_box addItemCargoGlobal ["ACE_MRE_SteakVegetables",5];
+_box addItemCargoGlobal ["ACE_MRE_MeatballsPasta",5];
+_box addItemCargoGlobal ["ACE_MRE_LambCurry",5];
+_box addItemCargoGlobal ["ACE_MRE_CreamTomatoSoup",5];
+_box addItemCargoGlobal ["ACE_MRE_CreamChickenSoup",5];
+_box addItemCargoGlobal ["ACE_MRE_ChickenHerbDumplings",5];
+_box addItemCargoGlobal ["ACE_MRE_ChickenTikkaMasala",5];
+_box addItemCargoGlobal ["ACE_MRE_BeefStew",5];
+
+_box addItemCargoGlobal ["ACE_WaterBottle",10];
+
+
 [player, _box] call ace_cargo_fnc_startLoadIn;

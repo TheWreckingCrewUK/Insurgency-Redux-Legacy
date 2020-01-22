@@ -6,10 +6,6 @@ if(isNil "twc_repairtickets") then{
 	twc_repairtickets = 5;
 	publicvariable "twc_repairtickets";
 };
-twc_rearmvehicle = {
-params ["_vehicle"];
-	_vehicle setVehicleAmmo 1; 
-};
 
 if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 	_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 30]); 

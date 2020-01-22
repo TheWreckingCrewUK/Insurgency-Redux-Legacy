@@ -49,6 +49,19 @@ east setFriend [independent, 0];
 independent setFriend [west, 1];
 
 
+twc_fortifyobjectsbudget = [["twc_Land_BagFence_Long_F", 200], ["twc_Land_BagFence_Round_F", 200], ["twc_Land_BagFence_End_F", 100], ["Land_Shed_06_F", 500],["twc_Land_HBarrier_Big_F", 250], ["twc_Land_HBarrier_5_F", 250], ["twc_Land_HBarrierTower_F", 350]];
+
+twc_fortifyobjects = [];
+{
+	twc_fortifyobjects pushback (_x select 0);
+} foreach twc_fortifyobjectsbudget;
+
+publicvariable "twc_fortifyobjects";
+
+[west, 2000, twc_fortifyobjectsbudget] call acex_fortify_fnc_registerObjects;
+
+//make twc variants of ["Land_HBarrier_Big_F", 250], ["Land_HBarrier_5_F", 250] Land_HBarrierTower_F Land_Shed_06_F so that nearobjects can't pick up mapobjects with the same classname
+
 if ((missionnamespace getvariable ["twc_isminimission", 0]) == 1) then {
 	
 	[] spawn {

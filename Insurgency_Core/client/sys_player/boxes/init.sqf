@@ -535,8 +535,13 @@ execVM "insurgency_core\client\zeus\camera.sqf";
 	_action5 = ["Zeus","Basemode Off","",{execVM "insurgency_core\client\zeus\basemode_off.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action5] call ace_interact_menu_fnc_addActionToObject;
 	*/
+	_action6 = ["Zeus","Unflip Current Vehicle","",{(vehicle player) setpos ((getpos (vehicle player)) vectoradd [0,0,2]);(vehicle player) setvectordirandup [vectordir (vehicle player), [0,0,1]]},{(vehicle player != player)}] call ace_interact_menu_fnc_createAction;
+	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
+	
 	_action6 = ["Zeus","Repair Current Vehicle","",{execVM "insurgency_core\client\zeus\zrepair.sqf"},{(vehicle player != player)}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
+	
+	
 	_action6 = ["Zeus","Enemy Siren","",{execVM "insurgency_core\server\sys_basedefence\INF_Alarm.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions", "base_Interact"], _action6] call ace_interact_menu_fnc_addActionToObject;
 	

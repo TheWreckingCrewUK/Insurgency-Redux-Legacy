@@ -38,15 +38,19 @@ clearitemCargoGlobal _veh;
 
 
 
-_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>plane Spawner</t>"; 
+_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Plane Spawner</t>"; 
 
- _text1 =  "<br />The Plane Has Been Spawned On The Taxiway.";
+ _text1 =  "<br />The Plane has been spawned on the Taxiway.";
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
 _boxaction = ["deleteCreate","Return Plane","",{deleteVehicle this;
 twc_planecount=twc_planecount - 1;
 publicVariable "twc_planecount";
+},{(count (player nearobjects ["Land_InfoStand_V1_F", 500]) > 0)}] call ace_interact_menu_fnc_createAction;
+[_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
+
+_boxaction = ["deleteCreate","Rearm Plane","",{[this] remoteexec ["twc_rearmvehicle", 0];
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 500]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 

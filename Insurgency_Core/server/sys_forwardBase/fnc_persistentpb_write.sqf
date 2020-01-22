@@ -11,13 +11,14 @@ _radio = _pos nearObjects ["vysilacka",200];
 
 if ((count _radio) == 0) exitwith {deletevehicle _trigger;};
 
-_primary = nearestObjects [_pos, ["landvehicle", "air", "NATO_Box_Base", "UK3CB_BAF_MAN_HX58_Container_Green", "twc_radiotable", "twc_portableGenerator"], 100];
+_primary = nearestObjects [_pos, (["landvehicle", "air", "NATO_Box_Base", "UK3CB_BAF_MAN_HX58_Container_Green", "twc_radiotable", "twc_portableGenerator"]) + twc_fortifyobjects, 100];
 
 _final = [];
 // && ((isvehiclecargo _x) == objnull) && (((getposatl _x) select 2) > 0)
 {
 	_objarray = [];
 	if (((damage _x) < 1) && (((getposatl _x) select 2) > -30) && (isnull (isvehiclecargo _x)) && (({alive _x} count (crew _x)) == 0)) then {
+		_vector = [vectordir _x, vectorup _x];
 		_cargo = (_x getvariable ["ace_cargo_loaded", []]);
 		_cargoarray = [];
 		{
@@ -83,7 +84,7 @@ _final = [];
 		
 		
 		
-		_objarray = [typeof _x, getpos _x, getdir _x, getitemcargo _x, getweaponcargo _x, getmagazinecargo _x, _cargoarray, _vivarray];
+		_objarray = [typeof _x, getpos _x, getdir _x, getitemcargo _x, getweaponcargo _x, getmagazinecargo _x, _cargoarray, _vivarray, _vector];
 		_final pushback _objarray;
 	};
 } foreach _primary;

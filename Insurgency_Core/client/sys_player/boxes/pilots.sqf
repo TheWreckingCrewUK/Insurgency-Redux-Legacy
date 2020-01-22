@@ -223,20 +223,6 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 if((typeOf player) in ["1970_British_HeliPilot","1970_British_Crewchief"])then{
 	
 
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
-	
-	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle (Armed)","",{
-	
-	["ukcw_Gazelle_dyn"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
 	
 	["ukcw_chinook_hc1"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
@@ -269,12 +255,6 @@ if((typeOf player) in ["1970_British_HeliPilot","1970_British_Crewchief"])then{
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "Modern_British_logitech"])then{
 
 
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
-	
-	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Merlin","",{
 	
@@ -314,7 +294,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	["RHS_MELB_MH6M"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(totalpoints > (pointlimit * 0.7)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
@@ -476,12 +456,6 @@ if((typeOf player) in ["2000_British_HeliPilot_Desert","2000_British_HeliPilot",
 	
 
 
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
-	
-	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Puma","",{
 	
@@ -616,22 +590,6 @@ if((typeOf player) in ["1990_British_HeliPilot_Desert","1990_British_HeliPilot",
 	_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
-
-
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle","",{
-	
-	["ukcw_Gazelle"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnutility"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-
-	
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Gazelle (Armed)","",{
-	
-	["ukcw_Gazelle_dyn"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},_cascond] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Puma","",{
 	

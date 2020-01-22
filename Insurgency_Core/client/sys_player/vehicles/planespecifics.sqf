@@ -16,6 +16,8 @@ private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _
 { _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon") } forEach getPylonMagazines _veh;
 { _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;
 
+_veh setVariable ["ace_pylons_magazineWhitelist", ["PylonWeapon_300Rnd_20mm_shells","CUP_PylonPod_19Rnd_CRV7_FAT_plane_M","CUP_PylonPod_19Rnd_CRV7_HE_plane_M","PylonMissile_1Rnd_Bomb_04_F","PylonMissile_1Rnd_Mk82_F","CUP_PylonPod_1Rnd_AGM65_Maverick_M","CUP_PylonPod_ANAAQ_28","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"], true];
+
 };
 
 

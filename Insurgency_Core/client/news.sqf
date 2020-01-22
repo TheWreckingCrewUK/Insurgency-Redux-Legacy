@@ -13,7 +13,7 @@ new line = <br />
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>TWC NEWS</t>"; 
 
- _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />Gear that is dropped in the field such as backpacks should no longer be deleted as long as its outside base. Equipment discarded inside base will despawn after 10 minutes";
+ _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />Minor fortifications can now be built in the Patrol Base with the ACE Fortify function, available in the self interaction menu.<br /><br />The food and water system has been activated on a very loose basis, if you are on the server for an extended period you will see an icon notifying you of hunger or thirst. This is because I intend to make civilian objectives involving food and water in future. If you expect to be on the server for longer than 10 hours then command roles can spawn a hearts and minds box which includes food and water. Letting yourself starve or run out of water results in loss of stamina.";
  
  _titlemem = "";
  _textmem = "";
@@ -29,4 +29,3 @@ _textmgmt  = "";
  
  hint _news;
 };
-

@@ -19,6 +19,7 @@ _table = objnull;
 	_mags = _x select 5;
 	_cargo = _x select 6;
 	_vivcargo = _x select 7;
+	_vector = _x select 8;
 	
 	//create the object at the defined position but raised up, because setdir is mean)
 	_obj = _type createvehicle (_pos vectoradd [0,0, 30 + (random 1000)]);
@@ -38,9 +39,27 @@ _table = objnull;
 	_obj setdir _dir;
 	//set the final position
 	_obj setpos (_pos vectoradd [0,0,1]);
-	[_obj, _items, _weapons, _mags] spawn {
-		params ["_obj", "_items", "_weapons", "_mags"];
+	if (_type in twc_fortifyobjects) then {
+		_obj setpos _pos;
+		
+		if (!isnil "_vector") then {
+			_obj setvectordirandup _vector;
+		};
+		
+		_fortifycost = 0;
+		{
+			if ((_x select 0) == _type) then {
+				_fortifycost = _fortifycost + (_x select 1);
+			};
+		} foreach twc_fortifyobjectsbudget;
+		_budget = 2000 - _fortifycost;
+		[west, _budget, twc_fortifyobjectsbudget] call acex_fortify_fnc_registerObjects;
+		systemchat "modifying budgettwc";
+	};
+	[_obj, _items, _weapons, _mags, _pos] spawn {
+		params ["_obj", "_items", "_weapons", "_mags", "_pos"];
 		sleep 1;
+		
 		//inventory adding
 		clearitemcargoglobal _obj;
 		clearweaponcargoglobal _obj;

@@ -113,7 +113,7 @@ for "_i" from 1 to (_total min (count _buildings)) do {
 			};
 		};
 	}];
-	
+	_unit addItemtoUniform "ACE_WaterBottle";
 	[_unit] spawn twc_fnc_enemychatter;
 	
 	if (_side == independent) then {
@@ -177,7 +177,7 @@ _group setSpeedMode "LIMITED";
 units _civg joinsilent _group;
 };
 
-
+//_townarray = missionnamespace getvariable [("twc_townsoldiers" + (str _pos)), []];
 	_rem = [];
 	
 	_gopos = [_pos select 0, _pos select 1, 0];
@@ -193,8 +193,9 @@ units _civg joinsilent _group;
 	*/
 {
 	[_x] call twc_fnc_aispreadout;
+	//_townarray pushback _x;
 } foreach units _group;
-	
+//missionnamespace setvariable [("twc_townsoldiers" + (str _pos)), _townarray];
 	sleep 30;
 	//[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
 {
