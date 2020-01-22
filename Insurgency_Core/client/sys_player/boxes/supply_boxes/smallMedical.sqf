@@ -20,10 +20,11 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Medical supplies
-_box addItemCargoGlobal ["ACE_fieldDressing",30];
+_box addItemCargoGlobal ["ACE_fieldDressing",60];
 _box addItemCargoGlobal ["ACE_elasticBandage",30];
 _box addItemCargoGlobal ["ACE_quikclot",20];
-_box addItemCargoGlobal ["ACE_packingBandage",30];
+_box addItemCargoGlobal ["ACE_painkillers",30];
+_box addItemCargoGlobal ["ACE_splint",10];
 _box addItemCargoGlobal ["ACE_personalAidKit",1];
 _box addItemCargoGlobal ["TWC_Item_Medical_SutureKit_20",1];
 _box addItemCargoGlobal ["ACE_salineIV_500",10];

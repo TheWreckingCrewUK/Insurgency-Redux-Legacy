@@ -16,7 +16,7 @@
 
 _weapons = [["twc_L5A4_white",1]];
 _magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10]];
-_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
+_items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",40],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_Painkillers",20], ["ACE_splint", 4], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 
 if ((!(["70", twc_missionname] call BIS_fnc_inString)) && (!(["90", twc_missionname] call BIS_fnc_inString))) then {
 	_items pushback ["rhsusf_ANPVS_14",1];
@@ -349,8 +349,9 @@ if (typeOf vehicle player in ["Modern_UKSF_Medic"]) then {
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
+		["ACE_splint", 20],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
@@ -570,8 +571,9 @@ if (typeOf vehicle player in ["2000_UKSF_Medic"]) then {
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
+		["ACE_splint", 20],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
@@ -864,41 +866,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 	[ 
 	];
 };
- if (typeOf vehicle player == "Modern_British_Medic_Mert") then {
-    _tmp_weapons =
-    [
-		["rhsusf_weap_glock17g4",1],
-		["UK3CB_BAF_L107A1",1]
-	];
-
-    _tmp_magazines =
-	[
-        ["rhsusf_mag_17Rnd_9x19_JHP",40],
-        ["UK3CB_BAF_9_15Rnd",40]
-    ];
-
-	_tmp_items =
-	[
-		["ACE_fieldDressing", 50],
-		["ACE_elasticBandage", 50],
-		["TWC_Item_Medical_SutureKit_20", 5],
-		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
-		["ACE_morphine", 50],
-		["ACE_epinephrine", 50],
-		["ACE_atropine", 50],
-		["ACE_salineIV_500", 50],
-		["ACE_salineIV_250", 50],
-		["ACE_bodyBag", 10],
-		["ACE_tourniquet", 10],
-		["ACE_personalAidKit", 1],
-		["ACRE_PRC343", 1]
-	];
-
-	_tmp_backpacks = 
-	[ 
-	];
-};
 
  if (typeOf vehicle player in ["Modern_British_Medic", "Modern_British_Medic_Light"]) then {
     _tmp_weapons =
@@ -924,7 +891,8 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
+		["ACE_splint", 20],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
@@ -1745,7 +1713,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_fieldDressing",50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
+		["ACE_splint", 20],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_personalAidKit", 1],
 		["ACE_morphine",50],
@@ -1992,7 +1961,7 @@ if (g_class == "ANA_TL") then {
 		["ACE_fieldDressing",50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_personalAidKit", 50],
 		["ACE_morphine",50],
 		["ACE_epinephrine",50],
@@ -2321,10 +2290,11 @@ if (typeOf vehicle player == "twc_ana_medic") then {
 		["ACE_morphine", 20],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACRE_PRC148",0],
+		["ACE_splint", 20],
 		["ACE_wirecutter", 1],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
@@ -2531,8 +2501,9 @@ if (typeOf vehicle player == "twc_nac_medic") then {
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_wirecutter", 1],
 		["ACE_elasticBandage", 50],
+		["ACE_splint", 20],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
 		["ACE_salineIV_500", 50],
@@ -2889,6 +2860,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["1990_British_Medic","1990_British_Medic_Desert","1990_RM_British_Medic_Mix"])then{
     _tmp_weapons =
     [
+        ["ACE_Flashlight_Maglite_ML300L",1],
         ["UK3CB_BAF_L85A1_SUSAT3D",1]
 	];
 
@@ -2905,8 +2877,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_fieldDressing", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_elasticBandage", 50],
+		["ACE_splint", 20],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
@@ -3337,6 +3310,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["2000_British_Medic_Desert","2000_British_Medic","2000_British_Medic_Desert_light","2000_British_Medic_light"])then{
     _tmp_weapons =
     [
+        ["ACE_Flashlight_Maglite_ML300L",1],
         ["UK3CB_BAF_L85A2_SUSAT",1]
 	];
 
@@ -3353,7 +3327,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_elasticBandage", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_splint", 20],
+		["ACE_Painkillers", 50],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
 		["ACE_atropine", 50],
@@ -3667,6 +3642,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
  if((typeOf player) in ["TWC_2000_US_Army_Medic"])then{
     _tmp_weapons =
     [
+        ["ACE_Flashlight_Maglite_ML300L",1],
         ["rhs_m4_compm4",1]
 	];
 
@@ -3681,8 +3657,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
+		["ACE_splint", 20],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
@@ -3699,13 +3676,22 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 
+if ((["1990", typeof player] call BIS_fnc_inString) || (["2000", typeof player] call BIS_fnc_inString) || (["ana", typeof player] call BIS_fnc_inString)) then {
+	{_tmp_weapons pushback _x} foreach
+	[
+		["ACE_Flashlight_Maglite_ML300L", 1]
+	];
+};
+
+
 if (["Medic", typeof player] call BIS_fnc_inString) then {
 	{_tmp_items pushback _x} foreach
 	[
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
 		["ACE_quikclot", 50],
-		["ACE_packingBandage", 50],
+		["ACE_Painkillers", 50],
+		["ACE_splint", 20],
 		["TWC_Item_Medical_SutureKit_20", 5],
 		["ACE_morphine", 50],
 		["ACE_epinephrine", 50],
@@ -3715,6 +3701,10 @@ if (["Medic", typeof player] call BIS_fnc_inString) then {
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1]
+	];
+	{_tmp_weapons pushback _x} foreach
+	[
+		["ACE_Flashlight_Maglite_ML300L", 1]
 	];
 };
 

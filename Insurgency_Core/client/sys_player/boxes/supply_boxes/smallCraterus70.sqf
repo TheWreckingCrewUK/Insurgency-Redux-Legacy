@@ -2,8 +2,7 @@
 _box = "rhs_3Ya40_1_single" createvehicle (getpos ammoboxspawner);
 clearmagazinecargoglobal _box;
 
-_box additemcargoglobal ["ACE_fieldDressing",20];
-_box additemcargoglobal ["ACE_packingBandage",15];
+_box additemcargoglobal ["ACE_fieldDressing",30];
 _box additemcargoglobal ["ACE_quikclot",15];
 _box additemcargoglobal ["ACE_morphine",5];
 _box additemcargoglobal ["ACE_epinephrine",3];
