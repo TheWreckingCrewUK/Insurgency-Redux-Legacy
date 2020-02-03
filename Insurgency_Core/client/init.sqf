@@ -73,3 +73,4 @@ if ((!(isnull _corpse)) && ((_corpse distance twc_basepos) < 500)) then {
 waitUntil {!isNull player};
 cutText ["","Black IN",0.001];
 if ((!(forcedMap select 0)) && ((forcedMap select 1))) then {player setdamage 1};
+

@@ -49,7 +49,7 @@ east setFriend [independent, 0];
 independent setFriend [west, 1];
 
 
-twc_fortifyobjectsbudget = [["twc_Land_BagFence_Long_F", 200], ["twc_Land_BagFence_Round_F", 200], ["twc_Land_BagFence_End_F", 100], ["Land_Shed_06_F", 500],["twc_Land_HBarrier_Big_F", 250], ["twc_Land_HBarrier_5_F", 250], ["twc_Land_HBarrierTower_F", 350]];
+twc_fortifyobjectsbudget = [["twc_Land_BagFence_Long_F", 20], ["twc_Land_BagFence_Round_F", 20], ["twc_Land_BagFence_End_F", 10], ["Land_Shed_06_F", 50],["Land_PortableLight_single_F", 25],["twc_Land_HBarrier_Big_F", 25], ["twc_Land_HBarrier_5_F", 25], ["twc_Land_HBarrierTower_F", 35]];
 
 twc_fortifyobjects = [];
 {
@@ -168,6 +168,26 @@ if (twc_ismini == 1) then {
 if(isNil "twc_convoyallowed") then{
 	twc_convoyallowed = 1;
 };
+
+
+["ace_captiveStatusChanged", {
+	params ["_unit", "_state", "_reason"];
+	if (isplayer _unit) exitwith {};
+	if ((_unit getVariable ["twc_bluefluff",0]) == 0) exitwith {};
+	deletevehicle _unit;
+}] call CBA_fnc_addEventHandler;
+
+
+["ace_captiveStatusChanged", {
+	params ["_unit", "_state", "_reason"];
+	if (isplayer _unit) exitwith {};
+	if (side _unit == west) exitwith {};
+	if (((_unit) getvariable ["twc_isenemy", 0]) == 0) then{
+		if ((random 1) > 0.4) then {
+			[(getpos _unit)] call twc_fnc_betrayal;
+		};
+	};
+}] call CBA_fnc_addEventHandler;
 
 
 if(isNil "twc_heavies") then{

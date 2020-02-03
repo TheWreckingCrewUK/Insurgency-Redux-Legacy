@@ -32,6 +32,11 @@ publicvariable "civiliantype";
 
 twc_aaman = "twc_farc_men_rif_aa";
 
+twc_wdveh = 1;
+publicvariable "twc_wdveh";
+
+twc_bluflufflist = ["Modern_British_Pointman_Light", "Modern_USMC_Rifleman", "TWC_Modern_US_Army_Rifleman", "Modern_pol_Base", "twc_nac_base", "Modern_British_Quartermaster", "Modern_ger_Base", "Modern_UKSF_Base", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Blank", "Modern_British_Quartermaster"];
+
 
 homeEnemy = ["twc_greek_rifleman"];
 

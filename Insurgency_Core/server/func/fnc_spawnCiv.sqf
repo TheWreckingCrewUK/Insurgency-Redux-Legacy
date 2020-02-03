@@ -21,7 +21,7 @@
 _group = createGroup civilian;
 params["_pos", "_civnum", "_civradius"];
 
-
+if ((_pos distance (getmarkerpos "respawn_west_forwardbase")) < 700) exitwith {};
 
 _spawnposarray = [];
 _timer = time;

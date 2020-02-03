@@ -35,7 +35,7 @@ clearBackpackCargoGlobal _veh;
 //clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
-
+_veh setVariable ["ace_pylons_magazineWhitelist", [], true];
 
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Plane Spawner</t>"; 

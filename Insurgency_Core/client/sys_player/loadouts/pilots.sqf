@@ -34,6 +34,7 @@ twc_loadout_pilotus_pilot = {params ["_unit"];
 	_unit addWeapon "rhsusf_weap_glock17g4";
 
 	_unit linkItem "ItemMap";
+	_unit linkItem "ItemcTab";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	
@@ -114,6 +115,7 @@ twc_loadout_pilotbaf_pilot = {params ["_unit"];
 	_unit addWeapon "rhsusf_weap_glock17g4";
 
 	_unit linkItem "ItemMap";
+	_unit linkItem "ItemcTab";
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 	

@@ -4,6 +4,8 @@ if (typeof _veh == "rhsgref_cdf_b_Mi24D_Early") then {
 
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
+	
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_fab500_m54","rhs_mag_upk23_mixed"], true];
 };
 
 if (typeof _veh == "RHS_AH1Z") then {
@@ -11,6 +13,7 @@ if (typeof _veh == "RHS_AH1Z") then {
 	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["PylonRack_4Rnd_ACE_Hellfire_AGM114K","rhs_mag_M229_19_green"], true];
 };
 
 					
@@ -32,6 +35,7 @@ if (typeof _veh == "RHS_UH60M_ESSS") then {
 	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_M151_19"], true];
 };
 
 if (typeof _veh == "RHS_AH64D") then {
@@ -40,6 +44,7 @@ if (typeof _veh == "RHS_AH64D") then {
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
 	_veh addItemCargoGlobal ["rhsusf_ihadss",2];
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_M151_19", "PylonRack_4Rnd_ACE_Hellfire_AGM114K", "PylonRack_4Rnd_ACE_Hellfire_AGM114L"], true];
 	if (["90", twc_missionname] call BIS_fnc_inString) then {
 		[
 			_veh,

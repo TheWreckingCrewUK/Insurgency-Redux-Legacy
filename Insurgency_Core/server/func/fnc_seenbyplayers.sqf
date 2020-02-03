@@ -1,5 +1,8 @@
 params ["_pos"];
 
+if (isnil "_pos") exitwith {0};
+if ((count _pos) == 0) exitwith {0};
+
 _return = 0;
 if (((count _pos) == 2)) then {
 	_pos = [(_pos select 0), (_pos select 1), 0];

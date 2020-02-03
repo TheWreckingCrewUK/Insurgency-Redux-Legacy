@@ -2,7 +2,7 @@
 by Hobbs
 creates civs in a natural manner in places that cannot be seen by players, then have them move around naturally before deleting themselves when not seen by players and outside of a sane radius to avoid performance issues
 */
-
+if (true) exitwith {};
 params ["_pos", ["_isblufor", false]];
 //systemchat "fluff 7";
 if (_isblufor && (isnil "twc_bluflufflist")) exitwith {};
@@ -16,14 +16,14 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 			_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
 			//systemchat "fluff 16";
 			
-			_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 15) * ((sunormoon * - 1) + 2);
+			_maxcivs = ((((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2)) / (0.1 + (count allplayers));
 			//systemchat ("max2 gets " + (str _maxcivs));
 			
 			//if it's spawning civs, then don't spawn them near base. if it's spawning blufor, don't spawn them far from base. Last time anything jumped through this many hoops it was on crufts
 			while {(_var >= _maxcivs) || ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250) || (((count (nearestObjects [_player, ['vysilacka'], 100])) > 0)))) || ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0))) && ((_pos distance _player) < 1000)} do {
 				sleep 10;
 				_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-				_maxcivs = (((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2);
+				_maxcivs = ((((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2)) / (0.1 + (count allplayers));
 				//systemchat ("fluff 27 with max at " + (str (_var >= _maxcivs)) + (str ((!_isblufor) && ((((nearestBuilding _player) distance _player) > 50) || (((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) < 250)))) + (str ((_isblufor) && ((((missionnamespace getvariable ["twc_basepos", [0,0,0]]) distance _player) > 250)) && (((count (nearestObjects [_player, ['vysilacka'], 100])) == 0)))));
 			};
 			//systemchat "fluff 29";
@@ -35,7 +35,7 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 					sleep 10;
 					//systemchat "fluff wait 36";
 					_var = missionnamespace getvariable [("twccivfluff" + (str _pos)), 0];
-					_maxcivs = (((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2);
+					_maxcivs = ((((count (nearestObjects [_player, ["house", "vysilacka"], 100])) / 2) min 25) * ((sunormoon * -1) + 2)) / (0.1 + (count allplayers));
 				};
 				
 				_maxcivs = (((count ((getpos _player) nearObjects ["House", 100])) / 2) min 25);
@@ -142,7 +142,8 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 					} else {
 					//blufor code. They act as base security on top of ambience, so make them invincible, highly visible, and wearing guard duty kit
 						_unit allowdamage false;
-						_unit setVariable ["twc_isenemy",0, true];
+						_unit setVariable ["twc_isenemy",0];
+						_unit setVariable ["twc_bluefluff",1];
 						_unit setunittrait ["camouflageCoef", 500];
 						removebackpack _unit;
 						if ((secondaryWeapon _unit) != "") then {
@@ -161,14 +162,16 @@ missionnamespace setvariable [("twccivfluff" + (str _pos)), 0];
 								};
 							};
 						}];
+						
+						
 					};
 					removegoggles _unit;
 					
 					_wppos = [getpos _player, 10, 40, 3, false] call twc_fnc_findsneakypos;
-					_wp = _group addwaypoint [_wppos, 0];
+					_wp = _group addwaypoint [_wppos, 20];
 					_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
 					_wppos = [getpos _player, 10, 40, 3, false] call twc_fnc_findsneakypos;
-					_wp = _group addwaypoint [_wppos, 0];
+					_wp = _group addwaypoint [_wppos, 20];
 					_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
 					
 					_unit setvariable ["unitshome", (_pos)];
@@ -225,7 +228,7 @@ twc_fnc_newfluffwp = {
 	};
 	_gop = [_pos, 50, 160, 3, false] call twc_fnc_findsneakypos;
 	if ((_gop distance _pos) > 10) then {
-		_wp = _group addwaypoint [(_gop), 0];
+		_wp = _group addwaypoint [(_gop), 20];
 		_wp setwaypointstatements ["true", "[this] call twc_fnc_newfluffwp;"];
 	} else {
 		[_unit] call twc_fnc_newfluffwp;

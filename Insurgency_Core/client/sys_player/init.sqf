@@ -25,34 +25,27 @@ if ((getPlayerUID player) in _arr) then {
 };
 
 
-["ace_interactMenuOpened", {_forwardbase = getmarkerpos "respawn_west_forwardbase"; if ((player distance _forwardbase) < 100) then {if (!("ACE_Fortify" in ((uniformitems player) + (vestitems player) + (backpackitems player)))) then {[player, "ACE_Fortify"] call twc_core_fnc_additem;};} else {while {("ACE_Fortify" in (items player))} do {player removeitem "ACE_Fortify";};};}] call CBA_fnc_addEventHandler;
+["ace_interactMenuOpened", {_forwardbase = getmarkerpos "respawn_west_forwardbase"; if (!((getplayeruid player) in twc_approvedenemies)) exitwith {};if ((player distance _forwardbase) < 300) then {if (!("ACE_Fortify" in ((uniformitems player) + (vestitems player) + (backpackitems player)))) then {[player, "ACE_Fortify"] call twc_core_fnc_additem;};} else {while {("ACE_Fortify" in (items player))} do {player removeitem "ACE_Fortify";};};}] call CBA_fnc_addEventHandler;
 
 ["acex_fortify_objectPlaced", {player removeitem "ACE_Fortify";}] call CBA_fnc_addEventHandler;
 
 [{
     params ["_unit", "_object", "_cost"];
-    private _return = ((getPosATL _object) distance (getmarkerpos "respawn_west_forwardbase")) < 100;
+    private _return = ((getPosATL _object) distance (getmarkerpos "respawn_west_forwardbase")) < 300;
 	if (!_return) then {
-		hint "You can only place defenses within 100m of the Patrol Base";
+		hint "You can only place defenses within 300m of the Patrol Base";
+	};
+	if (!((getplayeruid player) in twc_approvedenemies)) then {
+		_return = false;
+		hint "Fortify is restricted to certain players to prevent abuse.";
 	};
     _return
 }] call acex_fortify_fnc_addDeployHandler;
 
-[] spawn {
-waituntil {(!(isnil "twc_fortifyobjects"))};
-{
-_action = ["ActionRescuedVIP","Destroy Emplacement","",{
-_target remoteExecCall ["deleteVehicle",_target];
-
-
-},{(((GetPos player) distance (getMarkerPos "respawn_west_forwardbase") < 100))}] call ace_interact_menu_fnc_createAction;
-
-[_x,0,["ACE_MainActions"],_action,true] call ace_interact_menu_fnc_addActionToClass;
-} foreach twc_fortifyobjects;
-
-};
 
 //gas blowback simulation for firing with suppressors
+
+twc_suppressgasblowback = ppEffectCreate ["DynamicBlur", 401];
 
 player addEventHandler ["Fired", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
@@ -94,18 +87,18 @@ player addEventHandler ["Fired", {
 	
 	if ((count _lastblowback) < _tolerance) exitwith {};
 	
-	_severity = 0.03 * (count _lastblowback);
+	_severity = 0.05 * (count _lastblowback);
 	
 	["DynamicBlur", 400, [_severity], _thistime] spawn {
 	params ["_name", "_priority", "_effect", "_thistime"];
 	_time = _effect select 0;
 	twc_suppressgasblowback ppEffectEnable true; 
 	twc_suppressgasblowback ppEffectAdjust _effect; 
-	twc_suppressgasblowback ppEffectCommit _time;
-	uiSleep _time;
+	twc_suppressgasblowback ppEffectCommit _time * 2;
+	uiSleep (_time * 2);
 	twc_suppressgasblowback ppEffectAdjust [0];
-	twc_suppressgasblowback ppEffectCommit (_time * 0.5);
-	uiSleep (_time * 0.5);
+	twc_suppressgasblowback ppEffectCommit (_time);
+	uiSleep (_time);
 	_lastblowback = player getvariable ["twc_lastgasblowback", []];
 	if ((_lastblowback select ((count _lastblowback) - 1)) != _thistime) exitwith {};
 	twc_suppressgasblowback ppEffectEnable false; 

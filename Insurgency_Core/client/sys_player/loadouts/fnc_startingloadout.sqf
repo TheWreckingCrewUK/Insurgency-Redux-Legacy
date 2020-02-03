@@ -14,6 +14,11 @@ if (!("ACE_EarPlugs" in (_profile select 0))) then {
 	player additemtouniform "ACE_EarPlugs";
 };
 
+if (!("ACE_Canteen" in (_profile select 0))) then {
+	player additemtouniform "ACE_Canteen";
+};
+player removeitem "ACE_Canteen_Empty";
+player removeitem "ACE_Canteen_Half";
 
 {
 	

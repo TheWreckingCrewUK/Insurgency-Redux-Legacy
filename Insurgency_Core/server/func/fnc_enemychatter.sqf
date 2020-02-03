@@ -28,7 +28,7 @@ while {(alive _unit) && (([(getpos _unit),50] call twc_fnc_posNearPlayers))} do 
 		_modepath = "\default\combat\";
 	};
 
-	playSound3D ["CUP\Dubbing\CUP_Dubbing_Radio_TK\RadioProtocol\" + _voice + _modepath + _chosenspeak +".ogg", player, false, getPosasl player, 3, 1, 40];
+	playSound3D ["CUP\Dubbing\CUP_Dubbing_Radio_TK\RadioProtocol\" + _voice + _modepath + _chosenspeak +".ogg", _unit, false, getPosasl _unit, 3, 1, 40];
 	sleep (20 + (random 20));
 };
 

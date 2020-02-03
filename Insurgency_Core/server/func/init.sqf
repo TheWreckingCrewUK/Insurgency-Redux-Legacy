@@ -18,13 +18,18 @@ twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\serve
 twc_fnc_lookedatbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_lookedatbyplayers.sqf";
 twc_fnc_findsneakypos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findsneakypos.sqf";
 twc_fnc_civfluff = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civfluff.sqf";
+twc_fnc_civfluff_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civfluff_server.sqf";
 twc_fnc_townmarker = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_townmarker.sqf";
 twc_fnc_counterattack = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_counterattack.sqf";
 twc_fnc_findnearestroad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestroad.sqf";
+
+twc_fnc_civtraffic_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civtraffic_server.sqf";
+
 twc_fnc_betrayal = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_betrayal.sqf";
 
 twc_fnc_aispreadout = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aispreadout.sqf";
 
+twc_fnc_flipvehicle = compile preprocessfilelinenumbers "insurgency_core\client\sys_player\flipvehicle.sqf";
 
 twc_fnc_perspb_trigger = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_trigger.sqf";
 twc_fnc_perspb_write = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_write.sqf";

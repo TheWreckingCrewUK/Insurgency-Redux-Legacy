@@ -22,6 +22,13 @@ player addEventHandler ["InventoryClosed", {
 	};
 }];
 */
+
+	_twc_repveh = ["repveh","Recover Vehicle","",{_isflipping = _target getvariable ["twc_vehisflipping", false];
+
+if (_isflipping) exitwith {hint "this vehicle is being recovered already";};[_target, player] remoteexec ["twc_fnc_flipvehicle", _target];},{(alive _target) && (1 < (vectorUp _target) vectorDistance (surfaceNormal getPosATL _target))}] call ace_interact_menu_fnc_createAction;
+	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	
 	_twc_repveh = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{alive _target}] call ace_interact_menu_fnc_createAction;
 	["UK3CB_BAF_MAN_HX58_Repair_Sand",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
 	

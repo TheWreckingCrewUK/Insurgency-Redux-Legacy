@@ -38,6 +38,7 @@ clearBackpackCargoGlobal _veh;
 //clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
+_veh setVariable ["ace_pylons_magazineWhitelist", [], true];
 
 //we want the mags if it's 3cb because the vehicle guns use them, so only clear them if 3cb isn't in the classname
 if (!(["3CB", typeof _veh] call BIS_fnc_inString)) then {

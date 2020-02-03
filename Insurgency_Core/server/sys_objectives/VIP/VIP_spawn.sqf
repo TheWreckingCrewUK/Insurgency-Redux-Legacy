@@ -30,9 +30,14 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 50
 	};
 	sleep 0.25;
 };
+
+
 //Creating the VIP
 _group = createGroup civilian;
 _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
+
+_vip setidentity (["vip_1", "vip_2", "vip_3", "vip_4", "vip_5"] call bis_fnc_selectrandom);
+
 _vip allowdamage false;
 [_vip, true] call ACE_captives_fnc_setSurrendered;
 _vip setVariable ["twc_isenemy",0, true];

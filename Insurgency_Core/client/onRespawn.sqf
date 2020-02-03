@@ -207,6 +207,8 @@ twc_serstarttime = time;
 sleep 1;
 call twc_fnc_pubstartingloadout;
 };
+[player] call twc_fnc_civfluff_client;
+[player] call twc_fnc_civtraffic_client;
 
 [] spawn {
 sleep 10;

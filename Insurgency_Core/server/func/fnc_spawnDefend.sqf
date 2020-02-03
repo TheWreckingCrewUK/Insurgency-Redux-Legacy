@@ -17,6 +17,12 @@
 params["_pos"];
 
 
+if ((_pos distance (getmarkerpos "respawn_west_forwardbase")) < 700) exitwith {};
+
+_isclear = missionnamespace getvariable ['twcenemytown_cleared' + (str _pos), 0];
+
+if (_isclear == 1) exitwith {};
+
 //if ([_pos,200] call twc_fnc_posNearPlayers) exitwith {};
 
 

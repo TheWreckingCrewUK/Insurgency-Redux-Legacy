@@ -10,11 +10,25 @@ twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server
 twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
 twc_fnc_checkenemyradio = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_checkenemyradio.sqf";
 
+twc_fnc_civfluff_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civfluff_server.sqf";
+
+twc_fnc_civfluff_client = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_civfluff_client.sqf";
+
+twc_fnc_findnearestroad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestroad.sqf";
+
+twc_fnc_civtraffic_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civtraffic_server.sqf";
+
+twc_fnc_civtraffic_client = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_civtraffic_client.sqf";
+
 twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findoutsideblufor.sqf";
 
 twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
 
+
+twc_fnc_flipvehicle = compile preprocessfilelinenumbers "insurgency_core\client\sys_player\flipvehicle.sqf";
+
+twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
 
 
 twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_seenbyplayers.sqf";

@@ -19,6 +19,13 @@
 //Recieved Parameters
 params ["_pos","_groupradius","_thisList", ["_multiplier",1]];
 
+
+_isclear = missionnamespace getvariable ['twcenemytown_cleared' + (str _pos), 0];
+
+if (_isclear == 1) exitwith {};
+
+if ((_pos distance (getmarkerpos "respawn_west_forwardbase")) < 700) exitwith {};
+
 if (twc_campaignmode == 1) then {
 	call twc_fnc_commandcheck;
 };
@@ -128,14 +135,6 @@ for "_i" from 1 to (_total min (count _buildings)) do {
 			};
 		}];
 		
-		["ace_captiveStatusChanged", {
-			params ["_unit", "_state", "_reason"];
-			if (((_unit) getvariable ["twc_isenemy", 0]) == 0) then{
-				if ((random 1) > 0.4) then {
-					[(getpos _unit)] call twc_fnc_betrayal;
-				};
-			};
-		}] call CBA_fnc_addEventHandler;
 	_unit setVariable ["twc_isenemy",0, true];
 	} else {
 	_unit setVariable ["twc_isenemy",1];

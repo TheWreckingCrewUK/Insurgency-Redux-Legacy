@@ -20,6 +20,7 @@ params["_pos", "_count"];
 	};
 	if (_count == 0) then {
 		_colour = "colorGreen";
+		missionnamespace setvariable ['twcenemytown_cleared' + (str _pos), 1];
 	};
 
 	_time = 100;
