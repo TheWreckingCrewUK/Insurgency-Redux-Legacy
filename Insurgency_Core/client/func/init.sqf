@@ -4,6 +4,10 @@ twc_fnc_startcqbrangeserver = compile preprocessfilelinenumbers "Insurgency_Core
 
 twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
 
+twc_fnc_buildmagarray = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_buildmagarray.sqf";
+
+twc_fnc_genericfillvehicle = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_genericfillvehicle.sqf";
+
 twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
 twc_fnc_isnearblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_isnearblufor.sqf";
 

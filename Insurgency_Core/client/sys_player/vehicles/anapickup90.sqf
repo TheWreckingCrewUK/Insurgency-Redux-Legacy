@@ -21,6 +21,7 @@ _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
 
+[_veh, player, 4] call twc_fnc_genericfillvehicle;
 
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;

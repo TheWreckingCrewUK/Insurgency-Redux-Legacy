@@ -69,8 +69,8 @@ _veh AddWeaponCargoGlobal ["UK3CB_BAF_M6",1];
 _veh AddWeaponCargoGlobal ["rhs_weap_maaws_optic",1];
 _veh AddWeaponCargoGlobal ["ACE_Yardage450",1];
 
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag",30];
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag_Tracer_Red",15];
+_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag",20];
+_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag_Tracer_Red",10];
 
 _veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEAT",4];
 _veh AddMagazineCargoGlobal ["rhs_mag_maaws_flechette",2];
@@ -85,13 +85,13 @@ _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",2];
 _veh addItemCargoGlobal ["SatchelCharge_Remote_Mag",1];
 _veh addItemCargoGlobal ["ACE_Clacker",1];
 _veh addItemCargoGlobal ["ACE_EntrenchingTool",1];
-_veh addItemCargoGlobal ["ACE_fieldDressing",25];
+_veh addItemCargoGlobal ["ACE_fieldDressing",15];
 _veh addItemCargoGlobal ["ACE_elasticBandage",10];
 _veh addItemCargoGlobal ["ACE_packingBandage",10];
 _veh addItemCargoGlobal ["ACE_salineIV_250",5];
 _veh addItemCargoGlobal ["ACE_epinephrine",3];
 _veh addItemCargoGlobal ["ACE_morphine",3];
-_veh addItemCargoGlobal ["HandGrenade",2];
+_veh addItemCargoGlobal ["HandGrenade",1];
 _veh addItemCargoGlobal ["SmokeShell",3];
 _veh addItemCargoGlobal ["SmokeShellRed",3];
 _veh addbackpackCargoGlobal ["B_AssaultPack_cbr",2];
@@ -114,5 +114,6 @@ _veh AddMagazineCargoGlobal _fsmag;
 
 
 
+[_veh, player, 5] call twc_fnc_genericfillvehicle;
 
 

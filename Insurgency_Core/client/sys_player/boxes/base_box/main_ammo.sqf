@@ -3396,6 +3396,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_magazines =
    [            
 		["UK3CB_BAF_556_30Rnd",50],
+		["UK3CB_BAF_9_15Rnd",20],
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",30]
     ];
@@ -3422,13 +3423,14 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd_T",30],
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
+		["UK3CB_BAF_9_15Rnd",20],
 		["UK3CB_BAF_556_30Rnd",50]
     ];
 
 	_tmp_items =
 	[
 		["ACRE_PRC148",0],
-		["rhsusf_acc_premier_anpvs27",0],
+		["rhsusf_acc_premier_anpvs27",1],
 		["APERSTripMine_Wire_Mag",3],
 		["ACE_RangeCard",1],
 		["ACRE_PRC343",0]

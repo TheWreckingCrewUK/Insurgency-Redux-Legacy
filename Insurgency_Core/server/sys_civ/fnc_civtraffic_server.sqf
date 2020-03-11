@@ -48,6 +48,14 @@ if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 	_driver moveindriver _car;
 	_driver setVariable ["twc_isenemy",1];
 	
+	if (_vehtype in _enemyvehs) then {
+		_gunner = _group createUnit [(townspawn call bis_fnc_selectrandom), _spawnpos, [], 10, "NONE"];
+		_gunner assignasgunner _car;
+		_gunner moveingunner _car;
+		_gunner setVariable ["twc_isenemy",1];
+		_car setvehiclelock "lockedplayer";
+	};
+	
 	_canfit = true;
 	
 	_passengers = ((count (fullCrew [_car, "cargo", true])) * (random 1)) - 1;

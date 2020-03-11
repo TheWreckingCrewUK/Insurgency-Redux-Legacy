@@ -85,3 +85,5 @@ _veh addItemCargoGlobal ["ACE_morphine",10];
 _veh addItemCargoGlobal ["HandGrenade",2];
 _veh addItemCargoGlobal ["SmokeShell",3];
 _veh addItemCargoGlobal ["SmokeShellRed",3];
+
+[_veh, player, 3] call twc_fnc_genericfillvehicle;

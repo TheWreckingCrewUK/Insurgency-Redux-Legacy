@@ -59,3 +59,5 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",2];
 };
 
 #include "armourspecifics.sqf";
+
+[_veh, player, 1] call twc_fnc_genericfillvehicle;

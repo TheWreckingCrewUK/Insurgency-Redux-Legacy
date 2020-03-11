@@ -1,5 +1,5 @@
 
-
+/*
 
 twc_loadout_st6_sl = {params ["_unit"];
 
@@ -730,7 +730,7 @@ twc_loadout_uksf_medic = {params ["_unit"];
 	_unit linkItem "ItemCompass";
 	_unit linkItem "ItemWatch";
 };
-
+*/
 
 twc_loadout_anasf_sl = {params ["_unit"];
 

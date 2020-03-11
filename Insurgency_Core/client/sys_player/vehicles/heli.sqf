@@ -62,6 +62,8 @@ publicVariable "twc_Helicount";
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 
 
+_veh additemcargoglobal ["ToolKit", 1];
+_veh addbackpackcargoglobal ["B_AssaultPack_rgr", 1];
 
 _veh addEventHandler ["Killed",{
  [] spawn { sleep 36000;
@@ -71,12 +73,9 @@ publicVariable "twc_Helicount";
 	}];
 
 #include "helispecifics.sqf";
-/*
-if ((!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["00", twc_missionname] call BIS_fnc_inString))) then {
-	_veh addweaponcargoglobal ["UK3CB_BAF_L22A2", 2];
-	_veh addmagazinecargoglobal ["UK3CB_BAF_556_30Rnd", 4];
-};
-*/
+[_veh, player, 0.5] call twc_fnc_genericfillvehicle;
+
+
 sleep 10;
 waituntil {(_veh distance (getPos AmmoBoxSpawner)) > 20};
 _veh allowdamage true;

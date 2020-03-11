@@ -21,7 +21,7 @@ clearitemCargoGlobal _box;
 _box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_M33",5];
 _box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_mk211",3];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",10];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",10];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd",7];
@@ -36,5 +36,7 @@ _box addItemCargoGlobal ["ACE_morphine",5];
 _box addItemCargoGlobal ["HandGrenade",2];
 _box addItemCargoGlobal ["SmokeShell",2];
 _box addItemCargoGlobal ["SmokeShellRed",2];
+
+[_box, player, 2] spawn twc_fnc_genericfillvehicle;
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

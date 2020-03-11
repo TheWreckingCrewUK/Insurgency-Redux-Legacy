@@ -80,3 +80,4 @@ if ((random 1) < 0.5) then {
 
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;
+[_veh, player, 5] call twc_fnc_genericfillvehicle;

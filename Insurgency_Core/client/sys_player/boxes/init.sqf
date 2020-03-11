@@ -86,7 +86,7 @@ deleteVehicle _target;
 
 
 
-	_twc_repveh2 = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_twc_repveh2 = ["repveh","Repair/Rearm Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	[_x,0,["ACE_MainActions"],_twc_repveh2,true] call ace_interact_menu_fnc_addActionToClass;	
 
 
@@ -146,6 +146,9 @@ if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Hilux","",{execvm "insurgency_core\client\sys_player\vehicles\sfpickup.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
@@ -230,10 +233,10 @@ if ((["90", twc_missionname] call BIS_fnc_inString) || (["00", twc_missionname] 
 	
 	} else {
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Armed)","",{["I_G_Offroad_01_armed_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Armed)","",{["CUP_O_Hilux_M2_TK_INS"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 
-	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Unarmed)","",{["C_Offroad_01_F"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Truck (Unarmed)","",{["CUP_O_Hilux_unarmed_TK_INS"] execvm "insurgency_core\client\sys_player\vehicles\anapickup.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	};
 
 };
@@ -477,6 +480,9 @@ if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","20
 
 
 	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Anti Material Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\barretrifle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Sniper Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratesniper2000.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 

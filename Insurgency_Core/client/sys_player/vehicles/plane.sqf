@@ -54,6 +54,8 @@ _boxaction = ["deleteCreate","Rearm Plane","",{[this] remoteexec ["twc_rearmvehi
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 500]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 
+_veh additemcargoglobal ["ToolKit", 1];
+_veh addbackpackcargoglobal ["B_AssaultPack_rgr", 1];
 
 
 _veh addEventHandler ["Killed",{
@@ -66,3 +68,4 @@ publicVariable "twc_planecount";
 
 #include "planespecifics.sqf";
 
+[_veh, player, 0.5] call twc_fnc_genericfillvehicle;

@@ -27,6 +27,7 @@ if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 		#include "vehicles\planespecifics.sqf";
 		#include "vehicles\helispecifics.sqf";
 		//#include "vehicles\armourspecifics.sqf";
+		
 
 	} foreach _list;
 
@@ -48,7 +49,6 @@ if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
 _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); 
-
 	{
 		if ((!(_x isKindOf "Car")) && (!((typeof _x) in _excemptlist))) then {
 			_x setVehicleAmmoDef 1; 
@@ -62,7 +62,8 @@ _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]);
 		#include "vehicles\planespecifics.sqf";
 		#include "vehicles\helispecifics.sqf";
 		//#include "vehicles\armourspecifics.sqf";
-
+		[_x, player, 2] spawn twc_fnc_genericfillvehicle;
+		
 	} foreach _list;
 
 hint format ["%1 Vehicles Repaired", count _list];
@@ -114,9 +115,9 @@ _tsv = ["UK3CB_BAF_MAN_HX58_Repair_Sand", "UK3CB_BAF_MAN_HX58_Repair_Green"];
 			#include "vehicles\planespecifics.sqf";
 			#include "vehicles\helispecifics.sqf";
 			//#include "vehicles\armourspecifics.sqf";
-
+			
 			} foreach _list;
-
+			
 			twc_repairtickets = twc_repairtickets - 1;
 			publicvariable "twc_repairtickets";
 			

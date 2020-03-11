@@ -165,11 +165,11 @@ _timer = missionnamespace getvariable ["twc_serstarttime", 9999];
 _firsttimer = missionnamespace getvariable ["twc_firstspawned", 0];
 if ((time > (_timer + 600)) && (_firsttimer > 1)) exitwith {
 
-	_items = (backpackitems player);
-	{player removeitemfrombackpack _x} foreach (backpackitems player);
+	_items = (vestitems player);
+	{player removeitemfromvest _x} foreach (vestitems player);
 	player setvehicleammo 0.8;
 	{
-		player additemtobackpack _x;
+		player additemtovest _x;
 	} foreach _items;
 };
 
@@ -346,11 +346,16 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 		if (_gr == "ana") then {
 			[player] call twc_loadout_sfgroup_ana_switch;
 		};
-	};
-	if (sunormoon == 0) then {
-		_uniformitems = uniformitems player;
-		player forceadduniform "rhs_uniform_g3_blk";
-		{player additemtouniform _x} foreach _uniformitems;
+		if (_gr == "1erre") then {
+			[player] call twc_loadout_sfgroup_1erre_switch;
+		};
+	
+		if (((daytime > 16) || (daytime < 5)) && (!( _gr in ["ana", "1erre"]))) then {
+			_uniformitems = uniformitems player;
+			player forceadduniform "rhs_uniform_g3_blk";
+			{player additemtouniform _x} foreach _uniformitems;
+		};
+	
 	};
 };
 

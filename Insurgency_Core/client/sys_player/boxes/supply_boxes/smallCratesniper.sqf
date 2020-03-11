@@ -37,4 +37,6 @@ _box addItemCargoGlobal ["HandGrenade",2];
 _box addItemCargoGlobal ["SmokeShell",2];
 _box addItemCargoGlobal ["SmokeShellRed",2];
 
+[_box, player, 2] spawn twc_fnc_genericfillvehicle;
+
 [player, _box] call ace_cargo_fnc_startLoadIn;

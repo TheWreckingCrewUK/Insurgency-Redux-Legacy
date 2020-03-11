@@ -38,6 +38,7 @@ hint _spawntext;
 
 
 
+[_veh, player, 4] call twc_fnc_genericfillvehicle;
 
 
 _veh addEventHandler ["Killed",{

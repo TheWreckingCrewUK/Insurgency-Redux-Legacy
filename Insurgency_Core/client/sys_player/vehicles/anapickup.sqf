@@ -5,14 +5,12 @@ if(isNil "_heli")exitWith{hint "No vehicle was given to the spawn system, please
 
 _veh = _heli createvehicle (getPos AmmoBoxSpawner);
 
-
-_veh setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"]; [ 
- _veh, 
- ["Beige",1],  
- ["HideDoor1",0,"HideDoor2",0,"HideDoor3",1,"HideBackpacks",1,"HideBumper1",1,"HideBumper2",0,"HideConstruction",1,"hidePolice",1,"HideServices",1,"BeaconsStart",0,"BeaconsServicesStart",0] 
+_colour = (["White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);
+[
+	_veh,
+	[_colour,1], 
+	true
 ] call BIS_fnc_initVehicle;
-
-
 
 
 clearWeaponCargoGlobal _veh;
@@ -27,6 +25,7 @@ _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
 
+[_veh, player, 1] call twc_fnc_genericfillvehicle;
 
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;

@@ -29,3 +29,5 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",12];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",8];
 _veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",20];
 _veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10];
+
+[_veh, player, 5] call twc_fnc_genericfillvehicle;

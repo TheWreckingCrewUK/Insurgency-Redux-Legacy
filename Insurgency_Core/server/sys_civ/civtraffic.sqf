@@ -33,12 +33,18 @@ if (_amount > 3900) exitwith {sleep 120; execvm "Insurgency_Core\server\sys_civ\
 
 _vehtype = ["CUP_C_Datsun_4seat", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Lada_White_CIV", "CUP_C_Lada_Red_CIV", "CUP_C_Volha_Gray_TKCIV", "CUP_C_Volha_Blue_TKCIV", "CUP_C_TT650_TK_CIV", "CUP_C_Ural_Civ_03", "CUP_C_TT650_RU", "CUP_C_Ikarus_TKC",
 "CUP_C_LR_Transport_CTK"
+,"CUP_O_Hilux_unarmed_TK_INS"
 ,"CUP_C_S1203_CIV"
 ,"CUP_C_V3S_Covered_TKC"
 ,"CUP_C_Lada_GreenTK_CIV"
 ,"CUP_C_Lada_TK2_CIV"] call bis_fnc_selectrandom;
 
 _enemyvehs = ["CUP_O_LR_MG_TKA",
+"CUP_O_Hilux_SPG9_TK_INS",
+"CUP_O_Hilux_SPG9_TK_INS",
+"CUP_O_Hilux_DSHKM_TK_INS",
+"CUP_O_Hilux_DSHKM_TK_INS",
+"CUP_O_Hilux_DSHKM_TK_INS",
 "CUP_O_LR_SPG9_TKM"];
 
 if ((random 1) < 0.03) then {
