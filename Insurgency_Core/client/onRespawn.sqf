@@ -1,4 +1,5 @@
 
+#include "newstext.sqf";
 
 	//make the player middle eastern if they spawn as ANA. Sounds racist, but otherwise it looks dumb
 _me = player;
@@ -29,18 +30,22 @@ if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
 if (!((backpack player) == "")) then {
 	_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;
 	_unit = player;
+	
+	_conplayerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+		
+	_playerload = missionnamespace getvariable ["twc_maxbagload", _conplayerload];
 
 	if (!((backpack player) == (_playerbackpack))) then {
 			
-		if ((_playerbackpack == "") || ((side player) == east)) then {
-			_unit allowsprint false;
-			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
-		};
 		if (((backpack player) isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) || ((backpack player) isKindOf ["CUP_B_ACRScout_m95", configFile >> "CfgVehicles"])) exitwith {
 			_unit allowsprint true;
 		};
+		if ((_playerload == 0) || ((side player) == east)) then {
+			_unit allowsprint false;
+			//hint "This Role is unable to fight with a Backpack. You cannot Sprint";
+		};
 		
-		_playerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+		
 
 		_newbackpack = backpack player;
 		
@@ -51,7 +56,7 @@ if (!((backpack player) == "")) then {
 		} else {
 		
 		if (_newload > (_playerload * 1.1)) then {
-			hint "This Role is unable to fight with a Backpack. You cannot Sprint";
+			//hint "This Backpack is bigger that what this role is used to fighting with. You are unable to Sprint";
 			_unit allowsprint false;
 		};
 			
@@ -474,5 +479,18 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
  _switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
  Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType"),_channelNumber]; 
  };
+ 
+ _newstextold = profilenamespace getvariable ["twc_newstext", ""];
+ _newstextnew = missionnamespace getvariable ["twc_newstext", ""];
+ if (!(str _newstextold == str _newstextnew)) then {
+	_pos = getpos player;
+	waituntil {(_pos distance player) > 5};
+	sleep 1;
+	_pos = getpos player;
+	waituntil {(_pos distance player) > 5};
+	playSound "RHS_APS_Warning";
+	hint _newstextnew;
+	profilenamespace setvariable ["twc_newstext", _newstextnew];
+};
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";

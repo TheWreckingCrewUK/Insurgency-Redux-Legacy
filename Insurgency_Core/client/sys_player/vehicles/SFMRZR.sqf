@@ -62,7 +62,7 @@ _veh addItemCargoGlobal ["HandGrenade",2];
 _veh addItemCargoGlobal ["SmokeShell",3];
 _veh addItemCargoGlobal ["SmokeShellRed",3];
 
-_fsgun = ["twc_rhs_weap_m240B_mgo_lazer",1];
+_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
 _fsmag = ["UK3CB_BAF_762_100Rnd_T",5];
 
 _veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",4];
@@ -73,10 +73,6 @@ _mag = (group player) getvariable ["twc_cqbmag", "CUP_30Rnd_556x45_Emag"];
 _veh AddMagazineCargoGlobal [_mag ,5];
 
 
-if ((random 1) < 0.5) then {
-	_fsgun = ["UK3CB_BAF_L110A1",1];
-	_fsmag = ["UK3CB_BAF_556_200Rnd_T",5];
-};
 
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.78539819;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=2928;
+		nextID=2935;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4472.8521,154.97652,18047.553};
-		dir[]={-0.92094493,-0.27778986,-0.2736859};
-		up[]={-0.2663382,0.9606393,-0.079151399};
-		aside[]={-0.2848947,1.7619459e-007,0.95866281};
+		pos[]={3984.1965,147.23239,18085.539};
+		dir[]={-0.46681839,-0.58230048,0.66561562};
+		up[]={-0.33435333,0.81297505,0.47673938};
+		aside[]={0.81872976,-1.0038493e-006,0.57420433};
 	};
 };
 binarizationWanted=0;
@@ -12739,7 +12739,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=721;
+		items=722;
 		class Item0
 		{
 			dataType="Marker";
@@ -25352,7 +25352,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=2;
+				items=4;
 				class Item0
 				{
 					dataType="Object";
@@ -25409,6 +25409,87 @@ class Mission
 						isPlayable=1;
 					};
 					id=2097;
+					type="Modern_British_Sniper_coin";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3979.2854,138.96906,18088.428};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2930;
+					type="Modern_British_Spotter_coin";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3981.6697,138.96906,18087.518};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2932;
 					type="Modern_British_Sniper_coin";
 					class CustomAttributes
 					{
@@ -41984,6 +42065,31 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item721
+		{
+			dataType="Trigger";
+			position[]={4382.6362,142.29378,17708.154};
+			angle=0.81212527;
+			class Attributes
+			{
+				text="basemode";
+				condition="call{this}";
+				onActivation="call{basemode = 1; publicVariable ""basemode"";execVM ""insurgency_core\server\sys_basedefence\INF_Alarm.sqf"";}";
+				onDeactivation="call{[] spawn {sleep 15; execVM ""insurgency_core\server\sys_basedefence\INF_Alarmclear.sqf"";basemode = 0; publicVariable ""basemode"";}}";
+				sizeA=350.49313;
+				sizeB=405.0538;
+				sizeC=0;
+				timeout[]={30,30,30};
+				interuptable=1;
+				repeatable=1;
+				activationBy="EAST";
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=2928;
+			type="EmptyDetectorAreaR250";
+			atlOffset=7.0511627;
 		};
 	};
 };

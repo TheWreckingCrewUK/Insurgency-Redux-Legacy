@@ -1095,7 +1095,7 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	
 	
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
@@ -1125,7 +1125,7 @@ twc_loadout_ussf_sl = {params ["_unit"];
 	
 	_unit addHeadgear _headgear;
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_mag"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1156,7 +1156,7 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1176,7 +1176,7 @@ twc_loadout_ussf_2ic = {params ["_unit"];
 	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
 	_unit addHeadgear _headgear;
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_mag"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1208,7 +1208,7 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1230,7 +1230,7 @@ twc_loadout_ussf_pointman = {params ["_unit"];
 	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
 	_unit addHeadgear _headgear;
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_mag"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1257,7 +1257,7 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1279,7 +1279,7 @@ twc_loadout_ussf_rifleman = {params ["_unit"];
 	_headgear = ["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom;
 	_unit addHeadgear _headgear;
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_mag"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	
 	_unit addWeapon "rhsusf_weap_glock17g4";
@@ -1308,7 +1308,7 @@ twc_loadout_ussf_grenadier = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1363,7 +1363,7 @@ twc_loadout_ussf_marksman = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1411,7 +1411,7 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	removeBackpack _unit;
 	removeHeadgear _unit;
 
-	_unit forceAddUniform (["CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
+	_unit forceAddUniform (["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "rhs_uniform_g3_mc", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll"] call bis_fnc_selectrandom);
 	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	_unit addItemToUniform "ACRE_PRC152";
@@ -1433,7 +1433,7 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	for "_i" from 1 to 6 do {_unit addItemToVest "CUP_30Rnd_556x45_Emag";};
 	_unit addHeadgear "rhsusf_mich_bare_norotos_arc_alt_tan";
 
-	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_shortdot"] call bis_fnc_selectrandom;
+	_gun = ["twc_m4b2_us_mag", "twc_m4b2_us_spectre", "twc_m4b2_us_eotech", "twc_m4b2_us_mag"] call bis_fnc_selectrandom;
 	_unit addWeapon _gun;
 	_unit addWeapon "rhsusf_weap_glock17g4";
 	

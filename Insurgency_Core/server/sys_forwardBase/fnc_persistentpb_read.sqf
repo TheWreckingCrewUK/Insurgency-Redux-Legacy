@@ -71,10 +71,14 @@ _table = objnull;
 		for "_i" from 0 to ((count (_weapons select 0)) - 1) do {
 			_obj addweaponcargoglobal [(_weapons select 0) select _i, (_weapons select 1) select _i];
 		};
+		
+		sleep 10;
+		clearmagazinecargoglobal _obj;
+		sleep 10;
 		for "_i" from 0 to ((count (_mags select 0)) - 1) do {
 			_obj addmagazinecargoglobal [(_mags select 0) select _i, (_mags select 1) select _i];
 		};
-		sleep 30;
+		sleep 10;
 		_obj allowdamage true;
 		_obj setdamage 0.1;
 		_obj setdamage 0;

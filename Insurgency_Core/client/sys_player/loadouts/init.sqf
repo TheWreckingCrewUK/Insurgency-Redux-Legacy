@@ -1,4 +1,4 @@
-#include "bluforloadouts.sqf";
+execvm "Insurgency_Core\client\sys_player\loadouts\bluforloadouts.sqf";
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
@@ -31,6 +31,18 @@ if((typeOf player) in ["Modern_British_FSTCommander"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_fstgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+};
+
+if((typeOf player) in ["Modern_British_FAC"])then{
+
+	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","USAF","",{call twc_loadout_facgroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_facgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
@@ -153,6 +165,7 @@ twc_loadout_canswitch = {
 			_unit forceadduniform "rhs_uniform_g3_blk";
 			{_unit additemtouniform _x} foreach _uniformitems;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_sfgroup_cag = {
@@ -206,6 +219,7 @@ twc_loadout_sfgroup_cag = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			twc_loadout_st6_medic call twc_loadout_switchloadout;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_sfgroup_st6 = {
@@ -258,6 +272,7 @@ twc_loadout_sfgroup_st6 = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			twc_loadout_uksf_medic call twc_loadout_switchloadout;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 
@@ -284,6 +299,7 @@ twc_loadout_sfgroup_st6 = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			twc_loadout_1erre_medic call twc_loadout_switchloadout;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_sfgroup_baf = {
@@ -368,6 +384,7 @@ twc_loadout_sfgroup_1erre = {
 		_unit setvariable ["twc_origface", _face];
 		
 		[_unit, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _unit];
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 		
 	};
@@ -395,6 +412,7 @@ twc_loadout_sfgroup_ana = {
 		if (typeof _unit == "Modern_British_crewchief") then {
 			[_unit] call twc_loadout_pilotus_crewchief;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 	twc_loadout_pilotgroup_us = {
@@ -415,6 +433,7 @@ twc_loadout_sfgroup_ana = {
 		if (typeof _unit == "Modern_British_crewchief") then {
 			[_unit] call twc_loadout_pilotbaf_crewchief;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 	twc_loadout_pilotgroup_baf = {
@@ -435,6 +454,7 @@ twc_loadout_sfgroup_ana = {
 		if (typeof _unit == "Modern_British_crewchief") then {
 			[_unit] call twc_loadout_pilotcag_crewchief;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 	twc_loadout_pilotgroup_cag = {
@@ -458,6 +478,7 @@ twc_loadout_sfgroup_ana = {
 		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
 			[_unit] call twc_loadout_fstus_observer;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_fstgroup_us = {
@@ -481,6 +502,7 @@ twc_loadout_fstgroup_us = {
 		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
 			[_unit] call twc_loadout_fstbaf_observer;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_fstgroup_baf = {
@@ -493,6 +515,54 @@ twc_loadout_fstgroup_baf = {
 	{[_x] remoteexec ["twc_loadout_fstgroup_baf_switch", _x]} foreach (units group player);
 };
 
+	twc_loadout_facgroup_us_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_British_FAC") then {
+			twc_loadout_usaf_jtac call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_British_FSTAssistant") then {
+			[_unit] call twc_loadout_fstus_assistant;
+		};
+		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
+			[_unit] call twc_loadout_fstus_observer;
+		};
+		[player] call twc_fnc_buildmagarray_set;
+		[player] call twc_fnc_buildmagarray;
+	};
+twc_loadout_facgroup_us = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	(group player) setvariable ["twc_groupcountry", "us", true];
+	
+	{[_x] remoteexec ["twc_loadout_facgroup_us_switch", _x]} foreach (units group player);
+};
+
+	twc_loadout_facgroup_baf_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_British_FAC") then {
+			twc_loadout_baf_jtac call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_British_FSTAssistant") then {
+			[_unit] call twc_loadout_fstbaf_assistant;
+		};
+		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
+			[_unit] call twc_loadout_fstbaf_observer;
+		};
+		[player] call twc_fnc_buildmagarray_set;
+		[player] call twc_fnc_buildmagarray;
+	};
+twc_loadout_facgroup_baf = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	(group player) setvariable ["twc_groupcountry", "baf", true];
+	
+	{[_x] remoteexec ["twc_loadout_facgroup_baf_switch", _x]} foreach (units group player);
+};
+
 	twc_loadout_snipergroup_us_switch = {
 		params ["_unit"];
 		if (typeof player == "Modern_British_Sniper_coin") then {
@@ -501,6 +571,7 @@ twc_loadout_fstgroup_baf = {
 		if (typeof player == "Modern_British_Spotter_coin") then {
 			[_unit] call twc_loadout_ussniper_spotter;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 
@@ -528,6 +599,7 @@ twc_loadout_snipergroup_us = {
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
 			[_unit] call twc_loadout_usmcsniper_spotter;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_snipergroup_usmc = {
@@ -555,6 +627,7 @@ twc_loadout_snipergroup_usmc = {
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
 			[_unit] call twc_loadout_bafsniper_spotter;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_snipergroup_baf = {
@@ -582,6 +655,7 @@ twc_loadout_snipergroup_baf = {
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
 			[_unit] call twc_loadout_uksfsniper_spotter;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_snipergroup_uksf = {
@@ -610,6 +684,7 @@ twc_loadout_snipergroup_uksf = {
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
 			[_unit] call twc_loadout_cagsniper_spotter;
 		};
+		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 twc_loadout_snipergroup_cag = {

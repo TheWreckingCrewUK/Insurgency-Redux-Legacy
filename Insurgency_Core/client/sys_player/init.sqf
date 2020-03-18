@@ -138,3 +138,133 @@ player addEventHandler ["InventoryClosed", {
 	player setvariable ["twc_hassuppmessage", true];
 	
 }];
+player addEventHandler ["Put", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehiclemagcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehiclemagcargo", -999];
+	hint "Magazines removed";
+	if (_unit != player) exitwith {};
+	_magcargo = magazinecargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not a magazine";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearmagazinecargoglobal _veh;
+	{
+		_veh addmagazinecargo [_x, 1];
+	} foreach _magcargo;
+}];
+
+player addEventHandler ["Put", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehicleitemcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehicleitemcargo", -999];
+	hint "Items removed";
+	
+	if (_unit != player) exitwith {};
+	_magcargo = itemcargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not an item";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearitemcargoglobal _veh;
+	{
+		_veh additemcargo [_x, 1];
+	} foreach _magcargo;
+}];
+
+player addEventHandler ["Put", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehicleweaponcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehicleweaponcargo", -999];
+	hint "Weapons removed";
+	
+	if (_unit != player) exitwith {};
+	_magcargo = weaponcargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not an item or only one in cargo";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearweaponcargoglobal _veh;
+	{
+		_veh addweaponcargo [_x, 1];
+	} foreach _magcargo;
+	
+}];
+player addEventHandler ["Take", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehiclemagcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehiclemagcargo", -999];
+	hint "Magazines removed";
+	if (_unit != player) exitwith {};
+	_magcargo = magazinecargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not a magazine";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearmagazinecargoglobal _veh;
+	{
+		_veh addmagazinecargo [_x, 1];
+	} foreach _magcargo;
+	player removeitem _item;
+}];
+
+player addEventHandler ["Take", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehicleitemcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehicleitemcargo", -999];
+	hint "Items removed";
+	
+	if (_unit != player) exitwith {};
+	_magcargo = itemcargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not an item";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearitemcargoglobal _veh;
+	{
+		_veh additemcargo [_x, 1];
+	} foreach _magcargo;
+	player removeitem _item;
+}];
+
+player addEventHandler ["Take", { 
+	params ["_unit", "_veh", "_item"];
+	_var = player getvariable ["twc_isclearingvehicleweaponcargo", -999];
+	if (_var < (time - 20)) exitwith {};
+	player setvariable ["twc_isclearingvehicleweaponcargo", -999];
+	hint "Weapons removed";
+	
+	if (_unit != player) exitwith {};
+	_magcargo = weaponcargo _veh;
+	if (!(_item in _magcargo)) exitwith {hint "Purge cancelled, not an item or only one in cargo";};
+	
+
+	while {(_item in _magcargo)} do {
+		_magcargo deleteat (_magcargo find _item);
+	};
+	clearweaponcargoglobal _veh;
+	{
+		_veh addweaponcargo [_x, 1];
+	} foreach _magcargo;
+	if (_item in (items player)) then {
+		player removeitem _item;
+	} else {
+		player removeweapon _item;
+	};
+}];

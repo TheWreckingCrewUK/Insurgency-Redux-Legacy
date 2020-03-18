@@ -6,7 +6,7 @@ if(isNil "twc_repairtickets") then{
 	twc_repairtickets = 5;
 	publicvariable "twc_repairtickets";
 };
-
+playSound3D ["A3\missions_f\data\sounds\click.wss", player];
 if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 	_list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 30]); 
 	_time = time;
@@ -62,7 +62,7 @@ _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]);
 		#include "vehicles\planespecifics.sqf";
 		#include "vehicles\helispecifics.sqf";
 		//#include "vehicles\armourspecifics.sqf";
-		[_x, player, 2] spawn twc_fnc_genericfillvehicle;
+		//[_x, player, 2] spawn twc_fnc_genericfillvehicle;
 		
 	} foreach _list;
 

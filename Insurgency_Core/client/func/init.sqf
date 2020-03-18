@@ -6,6 +6,8 @@ twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\serv
 
 twc_fnc_buildmagarray = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_buildmagarray.sqf";
 
+twc_fnc_buildmagarray_set = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_buildmagarray_set.sqf";
+
 twc_fnc_genericfillvehicle = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_genericfillvehicle.sqf";
 
 twc_fnc_enemyspawnpos = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemyspawnpos.sqf";
@@ -43,6 +45,11 @@ twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\
 
 twc_terp_timer = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";
 twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_msgcheck.sqf";
+
+twc_ailookat = {
+	params ["_ai", "_player"];
+	_ai lookat _player;
+};
 
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 

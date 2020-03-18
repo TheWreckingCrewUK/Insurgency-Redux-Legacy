@@ -60,4 +60,10 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",2];
 
 #include "armourspecifics.sqf";
 
-[_veh, player, 1] call twc_fnc_genericfillvehicle;
+_val = 1;
+
+if (["infantry", str (group player)] call BIS_fnc_inString) then {
+	_val = 4;
+};
+
+[_veh, player, _val] call twc_fnc_genericfillvehicle;

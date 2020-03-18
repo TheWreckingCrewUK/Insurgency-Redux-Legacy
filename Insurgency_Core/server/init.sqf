@@ -11,13 +11,13 @@ twc_aaman = "CUP_O_TK_INS_Soldier_AA";
 
 
 while {sunormoon > 0} do {
-	skiptime 1;
+	skiptime 2;
 };
 while {sunormoon < 1} do {
 	while {sunormoon < 1} do {
-		skiptime 1;
+		skiptime (0.5 + (random 1));
 	};
-	skiptime 0.3;
+	skiptime (random 0.5);
 };
 // Includes
 #include "func\init.sqf";

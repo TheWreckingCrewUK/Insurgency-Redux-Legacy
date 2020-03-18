@@ -1,6 +1,8 @@
 params["_removeQuestioning"];
 _randNumber = floor(random 2);
 
+[_removeQuestioning, player] remoteexec ["twc_ailookat", _removeQuestioning];
+
 if (captive (_this select 0)) exitwith {hint "Civilians will not speak while handcuffed"};
 //evilciv removed until I get remoteexec on the evilciv code, because addweapon isn't global
 if ((random 1>0.9) && (!(_this select 0 in nonQuestionableList)) && (!(_this select 0 in goodcivlist))) exitwith {

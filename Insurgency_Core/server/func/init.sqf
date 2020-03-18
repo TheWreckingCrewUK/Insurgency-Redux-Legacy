@@ -70,6 +70,11 @@ twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sy
 	[] spawn twc_fnc_enemyspawnpos;
 };
 
+twc_ailookat = {
+	params ["_ai", "_player"];
+	_ai lookat _player;
+};
+
 twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
 
 twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findoutsideblufor.sqf";

@@ -24,7 +24,9 @@ player addEventHandler ["Take", {
 			hint "This Role cannot sprint with a Backpack.";
 		};
 		
-		_playerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+		_conplayerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
+		
+		_playerload = missionnamespace getvariable ["twc_maxbagload", _conplayerload];
 		
 		
 		_newbackpack = _item;

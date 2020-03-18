@@ -97,15 +97,10 @@ _veh addItemCargoGlobal ["SmokeShellRed",3];
 _veh addbackpackCargoGlobal ["B_AssaultPack_cbr",2];
 
 
-_fsgun = ["twc_rhs_weap_m240B_mgo_lazer",1];
+_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
 _fsmag = ["UK3CB_BAF_762_100Rnd_T",8*_mult];
 
 
-
-if ((random 1) < 0.5) then {
-	_fsgun = ["twc_m249_mgo_lazer",1];
-	_fsmag = ["rhsusf_200Rnd_556x45_mixed_soft_pouch",8*_mult];
-};
 
 
 

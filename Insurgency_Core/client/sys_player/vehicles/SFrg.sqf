@@ -70,23 +70,8 @@ _veh addItemCargoGlobal ["HandGrenade",4];
 _veh addItemCargoGlobal ["SmokeShell",3*_mult];
 _veh addItemCargoGlobal ["SmokeShellRed",3*_mult];
 
-_fsgun = ["twc_rhs_weap_m240B_mgo_lazer",1];
+_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
 _fsmag = ["UK3CB_BAF_762_100Rnd_T",5*_mult];
-
-
-
-if ((random 1) < 0.5) then {
-	_fsgun = ["twc_m249_mgo_lazer",1];
-	_fsmag = ["rhsusf_200Rnd_556x45_mixed_soft_pouch",5*_mult];
-};
-
-
-if ((random 1) < 0.2) then {
-	_fsgun = ["rhs_weap_maaws_optic",1];
-	_veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEDP",6];
-	_fsmag = ["rhs_mag_maaws_flechette",2];
-};
-
 
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;

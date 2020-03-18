@@ -24,8 +24,10 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
+_veh addweaponcargoglobal ["rhs_weap_pkm", 1];
+_veh addmagazinecargoglobal ["rhs_100Rnd_762x54mmR_green", 1];
 
-[_veh, player, 1] call twc_fnc_genericfillvehicle;
+[_veh, player, 2] call twc_fnc_genericfillvehicle;
 
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;

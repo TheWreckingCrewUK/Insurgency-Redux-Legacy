@@ -134,13 +134,6 @@ if((typeOf player) in ["Modern_British_VehicleCommander"])then{
 	_armouraction1 = ["spawnl111","Spawn LAV 25","",{["CUP_B_LAV25_desert_USMC"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
-
-
-	_armouraction1 = ["spawnl111","Spawn Scimitar","",{["ukcw_cvrt_Scim_d"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
 
 
 	_armouraction1 = ["spawnl111","Spawn AAV","",{["CUP_B_AAV_USMC"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
@@ -205,9 +198,6 @@ if((typeOf player) in ["1990_British_Tank_Commander_Desert", "2000_British_Vehic
 	_armouraction1 = ["spawnl111","Spawn Abrams","",{["rhsusf_m1a1aimwd_usarmy"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 
-
-	_armouraction1 = ["spawnl111","Spawn Scimitar","",{["ukcw_cvrt_Scim_w_L1"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
 
@@ -234,7 +224,7 @@ if((typeOf player) in ["2000_British_Vehicle_Commander", "2000_British_Vehicle_C
 if((typeOf player) in ["1990_British_Tank_Commander_Desert", "1990_British_Tank_Crew_Desert"])then{
 
 	
-	_armouraction1 = ["spawnl111","Spawn FV432","",{["ukcw_fv432_gpmg"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn FV432","",{["CUP_B_FV432_GB_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 	
@@ -245,20 +235,12 @@ if((typeOf player) in ["1970_British_Vehicle_Commander", "1970_British_Vehicle_C
 	_vehaction = ["vehiclespawnwoodland","Spawn Vehicles","",{},_armourlow] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_armouraction1 = ["spawnl111","Spawn FV432","",{["ukcw_fv432_gpmg"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn FV432","",{["CUP_B_FV432_GB_GPMG"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	if((typeOf player) in ["1970_British_Vehicle_Commander"]) then {
 	
-		_armouraction1 = ["spawnl111","Spawn Scorpion","",{["ukcw_Scorpion_w_L1"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(!(["infantry", str (group player)] call BIS_fnc_inString)) && ((count units group player) >= 3)}] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-		
 	
-		_armouraction1 = ["spawnl111","Spawn Scimitar","",{["ukcw_cvrt_Scim_w_L1"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(!(["infantry", str (group player)] call BIS_fnc_inString)) && ((count units group player) >= 3)}] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-		_armouraction1 = ["spawnl111","Spawn Chieftain","",{["ukcw_ChieftainMK10"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(!(["infantry", str (group player)] call BIS_fnc_inString)) && ((count units group player) >= 3)}] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 		_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;

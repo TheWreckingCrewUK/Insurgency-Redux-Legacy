@@ -1,4 +1,5 @@
 #include "func\init.sqf";
+[player] call twc_fnc_buildmagarray_set;
 #include "sys_cleanup\init.sqf";
 #include "sys_diary\init.sqf";
 #include "sys_forwardBase\init.sqf";
@@ -9,7 +10,6 @@
 //#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
-[player] call twc_fnc_buildmagarray;
 
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
 InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";

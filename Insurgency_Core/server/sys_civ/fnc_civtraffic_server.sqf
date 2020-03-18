@@ -8,9 +8,12 @@ _vehtype = ["CUP_C_Datsun_4seat", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_White_CIV
 ,"CUP_C_S1203_CIV"
 ,"CUP_C_V3S_Covered_TKC"
 ,"CUP_C_Lada_GreenTK_CIV"
+,"CUP_O_Hilux_unarmed_TK_INS"
 ,"CUP_C_Lada_TK2_CIV"] call bis_fnc_selectrandom;
 
-_enemyvehs = ["CUP_O_LR_MG_TKA",
+_enemyvehs = ["CUP_O_LR_MG_TKA","CUP_O_Hilux_DSHKM_TK_INS","CUP_O_Hilux_DSHKM_TK_INS",
+"CUP_O_Hilux_zu23_TK_INS",
+"CUP_O_Hilux_SPG9_TK_INS",
 "CUP_O_LR_SPG9_TKM"];
 
 if ((random 1) < 0.03) then {
