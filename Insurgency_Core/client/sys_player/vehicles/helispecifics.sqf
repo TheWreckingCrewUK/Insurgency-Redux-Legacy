@@ -1,11 +1,15 @@
 if (typeof _veh == "rhsgref_cdf_b_Mi24D_Early") then {
-	private _pylons = ["rhs_mag_fab500_m54","rhs_mag_fab500_m54","rhs_mag_upk23_mixed","rhs_mag_upk23_mixed","",""];
+	private _pylons = ["rhs_mag_fab500_m54","rhs_mag_fab500_m54","rhs_mag_upk23_ofzt","rhs_mag_upk23_ofzt","",""];
 	private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
 
 	{ _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon"); } forEach (getPylonMagazines _veh);
 	{ _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]; } forEach _pylons;
 	
-	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_fab500_m54","rhs_mag_upk23_mixed"], true];
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_b13l1_s13of","rhs_mag_fab500_m54","rhs_mag_kmgu2_pfm1","rhs_mag_upk23_ofzt","rhs_ASO2_CMFlare_Chaff_Magazine_x4"], true];
+};
+
+if (typeof _veh == "RHS_MELB_AH6M_L") then {
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_m134_pylon_3000","rhs_mag_M151_7"], true];
 };
 
 if (typeof _veh == "RHS_AH1Z") then {
@@ -52,6 +56,7 @@ if (typeof _veh == "RHS_AH64D") then {
 			["radar_hide",1]
 		] call BIS_fnc_initVehicle;
 	};
+	_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_M229_19","rhsusf_M130_CMFlare_Chaff_Magazine_x2","PylonRack_4Rnd_ACE_Hellfire_AGM114K","rhs_mag_M151_19","PylonRack_4Rnd_ACE_Hellfire_AGM114L"], true];
 };
 
 if (typeof _veh == "B_Heli_Transport_01_F") then {
@@ -104,6 +109,7 @@ if (typeof _veh == "CUP_B_UH60M_FFV_US") then {
 		["Black",1], 
 		["Hide_ESSS2x",1,"Hide_ESSS4x",1,"Hide_Nose",0,"Navyclan_hide",1,"Navyclan2_hide",1,"Blackhawk_Hide",0,"Hide_FlirTurret",0,"Hide_Probe",0,"Doorcock_Hide",1,"Filters_Hide",0]
 	] call BIS_fnc_initVehicle;
+
 };
 
 if (typeof _veh in ["RHS_UH60M", "UK3CB_BAF_Wildcat_AH1_HEL_6A", "RHS_UH1Y_d", "ukcw_lynx_2gpmg", "CUP_O_Mi8_CHDKZ"]) then {

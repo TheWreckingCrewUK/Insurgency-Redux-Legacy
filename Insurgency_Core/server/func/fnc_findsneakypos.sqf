@@ -38,7 +38,7 @@ if ((_checkvis == 0) && ((_checkpos distance _pos) < _max) && (!([_checkpos,50] 
 } else {
 
 	_newmax = ((_max - _min) / 80);
-	while {(_checkvis > 0) && (_checkcount < 80)} do {
+	while {(_checkvis > 0) && (_checkcount < 5)} do {
 		_checkpos = ([_pos, _min, (_min + (_newmax * _checkcount)), _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		
 		

@@ -18,10 +18,16 @@
 params ["_pos", "_group", "_flag"];
 
 
-_truck = "CUP_O_Datsun_PK" createvehicle _pos; 
+_truck = "CUP_O_Hilux_DSHKM_TK_INS" createvehicle _pos; 
 _truck setVehicleLock "LOCKEDPLAYER";
 _truck setfuel 0;
-_truck setobjecttextureglobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_datsun\data\datsun_trup1_civ_co.paa"];
+
+_colour = (["White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);
+[
+	_truck,
+	[_colour,1], 
+	true
+] call BIS_fnc_initVehicle;
 
 _direction = 180;	
 _nearRoads = _pos nearRoads 30;

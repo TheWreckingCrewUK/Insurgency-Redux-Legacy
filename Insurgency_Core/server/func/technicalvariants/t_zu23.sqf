@@ -17,11 +17,27 @@
 */
 params ["_pos", "_group", "_flag"];
 
+_type = selectrandom ["RHS_Ural_Zu23_MSV_01", "CUP_O_Hilux_zu23_TK_INS", "RHS_ZU23_MSV"];
 
-_truck = "RHS_Ural_Zu23_MSV_01" createvehicle _pos; 
+if (_type == "RHS_ZU23_MSV") then {
+	_pos = [_pos, 2000, 50, 10] call BIS_fnc_findOverwatch;
+};
+
+_truck = _type createvehicle _pos; 
 _truck setVehicleLock "LOCKEDPLAYER";
 _truck setfuel 0;
-_truck setobjecttextureglobal [0, "rhsafrf\addons\rhs_a2port_car\ural\data\ural_kabina_civil_co.paa"];
+if (_type == "RHS_Ural_Zu23_MSV_01") then {
+	_truck setobjecttextureglobal [0, "rhsafrf\addons\rhs_a2port_car\ural\data\ural_kabina_civil_co.paa"];
+};
+
+if (_type == "CUP_O_Hilux_zu23_TK_INS") then {
+	_colour = (["White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);
+[
+	_truck,
+	[_colour,1], 
+	true
+] call BIS_fnc_initVehicle;
+};
 
 _direction = 180;	
 _nearRoads = _pos nearRoads 30;
@@ -40,6 +56,12 @@ if (((_direction + 180 -(_truck getdir _pos)) < -90) || ((_direction + 180 -(_tr
 	
 	_direction = _direction +180;
 };
+
+_truck addEventHandler ["Fired", {  
+   params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"]; 
+   _mult = 3; _projectile setvelocity [(velocity _projectile select 0) + (((random 16) - 8) * _mult), (velocity _projectile select 1) + (((random 16) - 8) * _mult),  (velocity _projectile select 2) + (((random 8) - 3) * _mult)];;  
+     
+  }];
 
 _truck setdir _direction;
 	

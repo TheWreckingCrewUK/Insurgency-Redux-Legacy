@@ -12,7 +12,8 @@ _group = creategroup east;
 
 _num = ((count allplayers * 2) + 8) min 20;
 if (hasinterface) then {
-	_num = 20;
+	_num = 30;
+	systemchat "hard mode";
 };
 
 {

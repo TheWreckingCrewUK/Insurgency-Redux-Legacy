@@ -50,7 +50,7 @@ if (!_alt) exitwith {};
 _timer = player getvariable ["twc_mapclicktimer", -999]; if (_timer < (time - 3)) exitwith {[] spawn {hint "Circle Creator: Mark set"; sleep 2; hint "";};player setvariable ["twc_mapclickmarkerpos", _pos];player setvariable ["twc_mapclicktimer", time];}; _markerpos = player getvariable ["twc_mapclickmarkerpos", [0,0,0]];_marker1 = createMarkerLocal [(STR (RANDOM 200)), _markerpos]; _meters = _markerpos distance _pos; _marker1 setMarkerShapeLocal "ELLIPSE"; _marker1 setMarkerSizeLocal [_meters, _meters]; _marker1 setMarkerBrushLocal "Border";}];
 
 
-player addEventHandler ["InventoryOpened", {  
+player addEventHandler ["InventoryOpened", { 
 	params ["_unit", "_container"];
 	_check = player getvariable ["twc_bodysearch", objnull];
 	if (!isnull _check) exitwith {};

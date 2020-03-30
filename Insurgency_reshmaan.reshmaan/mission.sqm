@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=2935;
+		nextID=2967;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3984.1965,147.23239,18085.539};
-		dir[]={-0.46681839,-0.58230048,0.66561562};
-		up[]={-0.33435333,0.81297505,0.47673938};
-		aside[]={0.81872976,-1.0038493e-006,0.57420433};
+		pos[]={3955.4893,143.62985,18123.496};
+		dir[]={0.86838955,-0.34544334,0.35604349};
+		up[]={0.31965408,0.93843967,0.13105942};
+		aside[]={0.37938771,-4.1630119e-007,-0.92532605};
 	};
 };
 binarizationWanted=0;
@@ -24788,7 +24788,7 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=2;
+				items=4;
 				class Item0
 				{
 					dataType="Object";
@@ -24845,6 +24845,87 @@ class Mission
 						isPlayable=1;
 					};
 					id=2086;
+					type="Modern_British_crewchief";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3976.4966,138.96906,18102.369};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.44999999;
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=2936;
+					type="Modern_British_HeliPilot";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3979.4966,138.96906,18099.369};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						skill=0.40000001;
+						isPlayable=1;
+					};
+					id=2937;
 					type="Modern_British_crewchief";
 					class CustomAttributes
 					{

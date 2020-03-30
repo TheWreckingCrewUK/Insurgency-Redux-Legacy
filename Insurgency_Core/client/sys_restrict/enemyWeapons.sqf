@@ -49,18 +49,24 @@ player addEventHandler ["Take", {
 
 player addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-	if ((side player) != east) exitwith {};
+	if ((side player) == west) then {
 		if (_weapon == secondaryWeapon player) then {
 			if (random 1>0.99) then {
-		deleteVehicle (_this select 6);
-			"R_60mm_HE" createVehicle (getPos player);
-			hint "WEAPON FAILURE";	
-			player removeweapon secondaryWeapon player;		
-		} else {
-			if (_weapon != "CUP_launch_RPG7V") then {
-			systemchat "bang";
-				_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
+				deleteVehicle (_this select 6);
+				"R_60mm_HE" createVehicle (getPos player);
+				hint "WEAPON FAILURE";	
+				player removeweapon secondaryWeapon player;		
+			} else {
+				if (_weapon != "CUP_launch_RPG7V") then {
+				
+					_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
+				};
 			};
+		};
+	} else {
+		if (_weapon == secondaryWeapon player) then {
+			_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
+			[_unit, _projectile] call twc_fnc_idf;
 		};
 	};
 }];

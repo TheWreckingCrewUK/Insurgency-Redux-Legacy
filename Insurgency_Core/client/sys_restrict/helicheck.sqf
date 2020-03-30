@@ -1,4 +1,4 @@
-
+if (isserver) exitwith {2};
 _count = 0;
 {
 	if (_x == leader _x) then {
@@ -7,5 +7,10 @@ _count = 0;
 		};
 	};
 } foreach allplayers;
+
+if (((count allplayers) > 1) && ((count (units (group player))) == (count allplayers))) then {
+	_count = 2;
+	group player setvariable ["twc_oversize", true, true];
+};
 
 _count

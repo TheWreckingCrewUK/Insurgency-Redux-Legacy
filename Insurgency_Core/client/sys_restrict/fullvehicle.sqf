@@ -1,6 +1,6 @@
 params ["_checkedseat", "_roles", "_vehicle"];
 
-
+if (isserver) exitwith {};
 
 // putting in an active check because the get in eventhandler seems to fire multiple times
 if (isnil "twc_fullrestrictactive") then {

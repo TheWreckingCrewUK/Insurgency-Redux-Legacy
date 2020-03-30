@@ -70,8 +70,14 @@ _veh addItemCargoGlobal ["HandGrenade",4];
 _veh addItemCargoGlobal ["SmokeShell",3*_mult];
 _veh addItemCargoGlobal ["SmokeShellRed",3*_mult];
 
-_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
-_fsmag = ["UK3CB_BAF_762_100Rnd_T",5*_mult];
+
+_fsgun = ["twc_rhs_weap_m240G_mdo_lazer",1];
+_fsmag = ["UK3CB_BAF_762_100Rnd_T",8*_mult];
+
+_grouptype = (group player) getvariable ["twc_groupcountry", "baf"];
+if (_grouptype == "st6") then {
+	_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
+};
 
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;

@@ -637,10 +637,10 @@ _list=[
 	],
 		["RHS_MELB_AH6M_L",[ 
 		["driver", 
-			_pilots
+			_pilots + _crewchiefs
 		],
 		["gunner", 
-			_crewchiefs
+			_pilots + _crewchiefs
 		]],3
 	],
 		["RHS_MELB_AH6M_H",[ 

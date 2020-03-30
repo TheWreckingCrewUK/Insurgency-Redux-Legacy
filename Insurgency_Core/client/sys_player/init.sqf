@@ -106,6 +106,15 @@ player addEventHandler ["Fired", {
 	};
 }];
 
+player addEventHandler ["Fired", { 
+ params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+if (!(_unit == player)) exitwith {};
+if (!((vehicle player) == player)) exitwith {}; 
+if ((speed _projectile) < 1350) exitwith {};[_projectile] spawn {params ["_projectile"];waituntil {((((speed _projectile) < 1300) && ((speed _projectile) > 1200))) || (!alive _projectile)};if (!alive _projectile) exitwith {}; 
+//systemchat ("transonic at " + (str(player distance _projectile)) + "m");
+_mult = 0.2;if ((_projectile distance player) < 300) then {_mult = 0.05;};while {alive _projectile} do {
+_projectile setvelocity [(velocity _projectile select 0) + (((random 8) - 4) * _mult), (velocity _projectile select 1) + (((random 8) - 4) * _mult), 	(velocity _projectile select 2) + (((random 4) - 2) * _mult)];sleep (random 1)};}}];
+
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 	_suppressors = [

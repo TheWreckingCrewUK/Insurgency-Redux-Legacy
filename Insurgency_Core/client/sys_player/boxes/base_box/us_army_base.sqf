@@ -82,6 +82,10 @@
 		["ACE_IR_Strobe_Item",1]
 		
 	];
+	_tmp_backpacks = 
+	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //USMC breacher
@@ -111,6 +115,10 @@
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["twc_acc_nt4_black",0]
 	];
+	_tmp_backpacks = 
+	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 //USMC Rifleman
@@ -136,6 +144,10 @@
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["twc_acc_nt4_black",0]
 	];
+	_tmp_backpacks = 
+	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -160,6 +172,10 @@
         ["ACE_MapTools",1],
 		["rhsusf_acc_anpeq15A",1],
 		["twc_acc_nt4_black",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 
@@ -196,6 +212,10 @@
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["twc_acc_nt4_black",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A",1]
 	];
 };
 

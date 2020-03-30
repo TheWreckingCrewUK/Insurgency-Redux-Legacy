@@ -34,7 +34,7 @@ cutText ["", "Black", 0.001];
 cutText ["","Black IN",1];
 player forceWalk false;
 
-"AGGRESSORS" hintc ["ACE interact on the base ammobox to become enemy", "Don't exploit players that dont want to spend their evening looking backwards. Harass or ambush from a distance.", "Dont enter the BLUFOR base"];
+"AGGRESSORS" hintc ["Don't exploit players that dont want to spend their evening looking backwards. Harass or ambush from a distance.", "Dont enter the BLUFOR base"];
 
 waituntil {!isnil "townLocationArray"};
 waituntil {!isnil "twc_enemyplayerspawnpos"};
@@ -46,3 +46,8 @@ player setVariable ["twc_isenemy",1, true];
 
 _role = ["rifleman", "grenadier", "mg", "rpg", "sniper", "medic", "heavygunner"] call bis_fnc_selectrandom;
 [_role] call twc_loadout_insurgentswitch;
+
+player addEventHandler ["FiredMan", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
+	addCamShake [5, 0.7, 15];[] spawn { sleep 0.8;addCamShake [3, 8, 0.5];};
+}];

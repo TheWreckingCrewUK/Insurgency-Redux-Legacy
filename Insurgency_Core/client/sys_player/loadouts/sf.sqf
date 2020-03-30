@@ -1084,7 +1084,7 @@ twc_loadout_anasf_medic = {params ["_unit"];
 };
 
 
-
+/*
 twc_loadout_ussf_sl = {params ["_unit"];
 
 	removeAllWeapons _unit;
@@ -1459,4 +1459,4 @@ twc_loadout_ussf_medic = {params ["_unit"];
 	};
 	crateBox addMagazineCargo ["CUP_30Rnd_556x45_Emag", 50];
 };
-
+*/

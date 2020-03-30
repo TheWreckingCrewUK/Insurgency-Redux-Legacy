@@ -72,6 +72,9 @@ if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 	_snaction1 = ["Spawnsnipbox","SEALS","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_snaction1 = ["Spawnsnipbox","ACE","",{call twc_loadout_sfgroup_ace},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "ace")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_snaction1 = ["Spawnsnipbox","ANA","",{call twc_loadout_sfgroup_ana},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "ana") && ((missionnamespace getvariable ["twc_wdveh",0]) == 0))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -79,6 +82,9 @@ if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","2 REI","",{call twc_loadout_sfgroup_1erre},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "1erre")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","What's this?","",{execvm "Insurgency_Core\client\sys_player\loadouts\teaminfo.sqf";},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
@@ -140,25 +146,25 @@ twc_loadout_canswitch = {
 	twc_loadout_sfgroup_cag_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_UKSF_Base") then {
-			[_unit] call twc_loadout_ussf_rifleman;
+			twc_loadout_ussf_rifleman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			[_unit] call twc_loadout_ussf_pointman;
+			twc_loadout_ussf_pointman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_2IC") then {
-			[_unit] call twc_loadout_ussf_2ic;
+			twc_loadout_ussf_2ic call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			[_unit] call twc_loadout_ussf_sl;
+			twc_loadout_ussf_sl call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			[_unit] call twc_loadout_ussf_grenadier;
+			twc_loadout_ussf_grenadier call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			[_unit] call twc_loadout_ussf_marksman;
+			twc_loadout_ussf_marksman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Medic") then {
-			[_unit] call twc_loadout_ussf_medic;
+			twc_loadout_ussf_medic call twc_loadout_switchloadout;
 		};
 		if (sunormoon == 0) then {
 			_uniformitems = uniformitems _unit;
@@ -168,6 +174,8 @@ twc_loadout_canswitch = {
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
+
+twc_snowflakeunits = ["cag", "st6", "ace"];
 twc_loadout_sfgroup_cag = {
 
 	_check = call twc_loadout_canswitch;
@@ -175,7 +183,7 @@ twc_loadout_sfgroup_cag = {
 	
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	if (_last != "st6") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag + 1,true];
 	};
@@ -229,7 +237,7 @@ twc_loadout_sfgroup_st6 = {
 	
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	if (_last != "cag") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag + 1, true];
 	};
@@ -247,6 +255,59 @@ twc_loadout_sfgroup_st6 = {
 	
 	(group player) setvariable ["twc_groupcountry", "st6", true];
 	{[_x] remoteexec ["twc_loadout_sfgroup_st6_switch", _x]} foreach (units group player);
+};
+
+	twc_loadout_sfgroup_ace_switch = {
+		params ["_unit"];
+		if (typeof _unit == "Modern_UKSF_Base") then {
+			twc_loadout_ace_rifleman call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_Pointman") then {
+			twc_loadout_ace_pointman call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_2IC") then {
+			twc_loadout_ace_2ic call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_Squadleader") then {
+			twc_loadout_ace_sl call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_Grenadier") then {
+			twc_loadout_ace_grenadier call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_Marksman") then {
+			twc_loadout_ace_marksman call twc_loadout_switchloadout;
+		};
+		if (typeof _unit == "Modern_UKSF_Medic") then {
+			twc_loadout_ace_medic call twc_loadout_switchloadout;
+		};
+		[player] call twc_fnc_buildmagarray_set;
+		[player] call twc_fnc_buildmagarray;
+	};
+twc_loadout_sfgroup_ace = {
+
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	
+	_last = (group player) getvariable ["twc_groupcountry", "baf"];
+	if (!(_last in twc_snowflakeunits)) then {
+		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
+		missionnamespace setvariable ["twc_iscagactive", _iscag + 1, true];
+	};
+	
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
+	(group player) setvariable ["twc_groupcountry", "ace", true];
+	{[_x] remoteexec ["twc_loadout_sfgroup_ace_switch", _x]} foreach (units group player);
 };
 
 	twc_loadout_sfgroup_baf_switch = {
@@ -307,7 +368,7 @@ twc_loadout_sfgroup_baf = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	if ((_last == "cag") || (_last == "st6")) then {
+	if ((_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -333,7 +394,7 @@ twc_loadout_sfgroup_1erre = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	if ((_last == "cag") || (_last == "st6")) then {
+	if ((_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -393,7 +454,7 @@ twc_loadout_sfgroup_ana = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "ana"];
-	if ((_last == "cag") || (_last == "st6")) then {
+	if ((_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -830,6 +891,9 @@ twc_loadout_insurgentswitch = {
 	
 		twc_fn_getcivcar = ["getcivcar","Spawn Car","",{execvm "insurgency_core\client\sys_player\vehicles\civcar.sqf"},{(!([getpos player, 2000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;
+	
+		twc_fn_getarmedcar = ["getcivcar","Spawn Technical","",{execvm "insurgency_core\client\sys_player\vehicles\enemytechnical.sqf"},{(!([getpos player, 8000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 8000)}] call ace_interact_menu_fnc_createAction;
+		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getarmedcar] call ace_interact_menu_fnc_addActionToObject;
 	
 		twc_fn_getcivcar = ["getcivcar","Find Enemy","",{call twc_fnc_findnearestblufor},{(!([getpos player, 500] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000) && (call twc_fnc_checkenemyradio)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;

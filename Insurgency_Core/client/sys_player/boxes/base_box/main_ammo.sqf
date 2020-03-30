@@ -14,7 +14,7 @@
 				This reduces players lag as it no longer fills every 240 seconds.
 */ 
 
-_weapons = [["twc_L5A4_white",1]];
+_weapons = [["twc_L5A4_white",1], ["ACE_Flashlight_Maglite_ML300L",1]];
 _magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10]];
 _items = [["ACE_EarPlugs",1],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],["ACE_WaterBottle",2],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 twc_crateweapons = [];
@@ -673,6 +673,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
 
@@ -711,8 +712,10 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["UK3CB_BAF_LLM_IR_Black",0]
 	];
 
+
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
 
@@ -746,6 +749,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
 
@@ -805,6 +809,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
 
@@ -834,6 +839,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
  
@@ -865,6 +871,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
  if (typeOf vehicle player == "Modern_British_Medic_Mert") then {
@@ -941,6 +948,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 
 	_tmp_backpacks = 
 	[ 
+		[(selectrandom ["rhsgref_hidf_alicepack", "TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", "UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A", "CUP_B_Motherlode_MTP", "CUP_B_Predator_MTP"]),1]
 	];
 };
 
@@ -1547,6 +1555,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_IR_Strobe_Item",1]
 		
 	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
+	];
 };
 
 //USMC breacher
@@ -1576,6 +1588,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["ACRE_PRC148",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
 	];
 };
 
@@ -1609,6 +1625,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["ACRE_PRC148",0]
 	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
+	];
 };
 
 
@@ -1640,6 +1660,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_anpeq15A",1],
 		["bipod_01_F_blk",1],
 		["ACRE_PRC148",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
 	];
 };
 
@@ -1695,6 +1719,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_anpeq15A",1],
 		["ACRE_PRC148",0]
 	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
+	];
 };
 
 //USMC Machine Gunner Assistant
@@ -1724,6 +1752,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["ACRE_PRC148",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
 	];
 };
 
@@ -1763,6 +1795,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["ACRE_PRC148",0]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_khk",1]
 	];
 };
 /*

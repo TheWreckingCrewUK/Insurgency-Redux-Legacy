@@ -3,26 +3,26 @@ _attackcond = {( count(allPlayers - entities "HeadlessClient_F")) >= 14};
 
 _attackcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 14};
 
-_utilitycond = {(totalpoints > 100) && ( count(allPlayers - entities "HeadlessClient_F")) >= 8};
+_utilitycond = {((totalpoints > 100) && ( count(allPlayers - entities "HeadlessClient_F")) >= 8) || (((count units (group player)) == (count allplayers)))};
 
 _transportcond1 = {true};
 
-_transportcond2 = {( count(allPlayers - entities "HeadlessClient_F")) >= 7};
+_transportcond2 = {(( count(allPlayers - entities "HeadlessClient_F")) >= 7) || (((count units (group player)) == (count allplayers)))};
 
 //_cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
-_cascond = {totalpoints > (pointlimit / 2)};
+_cascond = {(totalpoints > (pointlimit / 2))};
 
-_attackcond = {(totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)};
+_attackcond = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
 
-_attackcond2 = {(totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)};
+_attackcond2 = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
 
-_attackcond3 = {(totalpoints > (pointlimit /2)) && ((count units (group player)) > 1)};
+_attackcond3 = {((totalpoints > (pointlimit /2)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
 
 _planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 
 _planecondmid = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 
-_planecondhi = {( count(allPlayers - entities "HeadlessClient_F")) >= 12};
+_planecondhi = {(( count(allPlayers - entities "HeadlessClient_F")) >= 12) || (((count units (group player)) == (count allplayers)))};
 
 _helicrew = ["Modern_British_HeliPilot","Modern_British_MERT_HeliPilot","2000_British_HeliPilot_Desert","2000_British_HeliPilot","1990_British_HeliPilot","1990_British_Crewchief","1990_British_HeliPilot_Desert","Modern_British_MERT_HeliPilot","Modern_British_crewchief","2000_British_CrewChief","2000_British_CrewChief_Desert","1970_British_HeliPilot","1970_British_Crewchief"];
 
@@ -296,6 +296,12 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Littlebird (Armed)","",{
+	
+	["RHS_MELB_AH6M_L"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
+	
+	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag") && ((count (units (group player))) > 1)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
 	
@@ -362,7 +368,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	["rhsgref_cdf_b_Mi24D_Early"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{count units group player == 2}] call ace_interact_menu_fnc_createAction;
+	},{count units group player > 1}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	
@@ -535,7 +541,7 @@ if((typeOf player) in ["2000_British_HeliPilot_Desert","2000_British_HeliPilot",
 	
 	["rhsgref_cdf_b_Mi24D_Early"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{count units group player == 2}] call ace_interact_menu_fnc_createAction;
+	},{count units group player > 1}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawncas"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	

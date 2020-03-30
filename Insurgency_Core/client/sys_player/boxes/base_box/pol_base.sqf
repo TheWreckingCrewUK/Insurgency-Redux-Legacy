@@ -19,6 +19,10 @@
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_cbr",1]
+	];
 };
 
 
@@ -75,6 +79,10 @@
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_cbr",1]
+	];
 };
 
  if (typeOf vehicle player in ["Modern_pol_mg", "Modern_pol_mg_d"]) then {
@@ -95,6 +103,10 @@
         ["ACE_MapTools",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_cbr",1]
 	];
 };
 
@@ -118,6 +130,10 @@
         ["ACE_MapTools",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
+	];
+	_tmp_backpacks = 
+	[ 
+		["B_Carryall_cbr",1]
 	];
 };
 
@@ -182,6 +198,10 @@
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_microDAGR",1]
+	];
+	_tmp_backpacks = 
+	[ 
+		["rhsgref_hidf_alicepack",1]
 	];
 };
 

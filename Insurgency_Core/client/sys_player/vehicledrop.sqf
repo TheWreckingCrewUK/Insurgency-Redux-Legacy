@@ -130,6 +130,8 @@ _wmik setdamage 0;
 clearweaponcargoglobal _wmik; 
 clearitemcargoglobal _wmik; 
 clearmagazinecargoglobal _wmik; 
+clearbackpackcargoglobal _wmik;
+[_wmik, player, 0.5] call twc_fnc_genericfillvehicle;
 
 if (typeof _wmik == "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A") then {
 [ 
@@ -191,6 +193,8 @@ _car setdamage 0;
 clearweaponcargoglobal _car; 
 clearitemcargoglobal _car; 
 clearmagazinecargoglobal _car; 
+clearbackpackcargoglobal _car;
+[_car, player, 0.5] call twc_fnc_genericfillvehicle;
 
 if ((typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A") || (typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A")) then {[ 
 _car, 
