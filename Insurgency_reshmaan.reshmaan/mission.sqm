@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=2967;
+		nextID=2971;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3955.4893,143.62985,18123.496};
-		dir[]={0.86838955,-0.34544334,0.35604349};
-		up[]={0.31965408,0.93843967,0.13105942};
-		aside[]={0.37938771,-4.1630119e-007,-0.92532605};
+		pos[]={4339.897,142.12093,18113.09};
+		dir[]={-0.20281349,-0.17530034,-0.96350574};
+		up[]={-0.036121897,0.98451912,-0.17160423};
+		aside[]={-0.97863817,-1.8911669e-007,0.20599863};
 	};
 };
 binarizationWanted=0;
@@ -79,10 +79,10 @@ addons[]=
 	"CUP_CAStructures_Castle",
 	"A3_Structures_F_EPB_Items_Vessels",
 	"A3_Structures_F_EPC_Dominants_GhostHotel",
-	"UK3CB_BAF_Vehicles_Husky",
 	"A3_Props_F_Jets_Military_Trolley",
 	"A3_Supplies_F_Heli_Slingload",
-	"ace_rearm"
+	"ace_rearm",
+	"UK3CB_BAF_Vehicles_Husky"
 };
 class AddonsMetaData
 {
@@ -374,31 +374,31 @@ class AddonsMetaData
 		};
 		class Item46
 		{
-			className="UK3CB_BAF_Vehicles_Husky";
-			name="3CB BAF Vehicles - Husky";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
-		class Item47
-		{
 			className="A3_Props_F_Jets";
 			name="Arma 3 Jets - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item47
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item48
 		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
+		};
+		class Item49
+		{
+			className="UK3CB_BAF_Vehicles_Husky";
+			name="3CB BAF Vehicles - Husky";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
@@ -41779,166 +41779,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4333.646,141.66573,18062.617};
-				angles[]={0,3.1197555,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2908;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item714
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4333.8374,141.66573,18072.178};
-				angles[]={0,3.1197555,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2909;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item715
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4333.4038,141.66573,18081.457};
-				angles[]={0,3.1197555,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2910;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item716
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4333.4351,141.66573,18091.828};
-				angles[]={0,3.1197555,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
-			};
-			id=2911;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item717
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={4249.3496,139.70163,18203.359};
 				angles[]={0,1.3068326,0};
 			};
@@ -41992,7 +41832,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item718
+		class Item714
 		{
 			dataType="Object";
 			class PositionInfo
@@ -42050,7 +41890,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item719
+		class Item715
 		{
 			dataType="Object";
 			class PositionInfo
@@ -42108,7 +41948,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item720
+		class Item716
 		{
 			dataType="Object";
 			class PositionInfo
@@ -42147,7 +41987,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item721
+		class Item717
 		{
 			dataType="Trigger";
 			position[]={4382.6362,142.29378,17708.154};
@@ -42171,6 +42011,166 @@ class Mission
 			id=2928;
 			type="EmptyDetectorAreaR250";
 			atlOffset=7.0511627;
+		};
+		class Item718
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4334.0288,141.66573,18062.078};
+				angles[]={0,3.1008215,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2967;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item719
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4333.8267,141.66573,18071.906};
+				angles[]={0,3.1008215,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2968;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item720
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4333.7095,141.66573,18081.703};
+				angles[]={0,3.1008215,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2969;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item721
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4333.9575,141.66573,18092.113};
+				angles[]={0,3.1008215,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2970;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

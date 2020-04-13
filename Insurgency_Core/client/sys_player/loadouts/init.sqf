@@ -142,6 +142,8 @@ twc_loadout_canswitch = {
 	};
 	_check;
 };
+twc_snowflakeunits = ["cag", "st6", "ace"];
+
 
 	twc_loadout_sfgroup_cag_switch = {
 		params ["_unit"];
@@ -166,16 +168,10 @@ twc_loadout_canswitch = {
 		if (typeof _unit == "Modern_UKSF_Medic") then {
 			twc_loadout_ussf_medic call twc_loadout_switchloadout;
 		};
-		if (sunormoon == 0) then {
-			_uniformitems = uniformitems _unit;
-			_unit forceadduniform "rhs_uniform_g3_blk";
-			{_unit additemtouniform _x} foreach _uniformitems;
-		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 
-twc_snowflakeunits = ["cag", "st6", "ace"];
 twc_loadout_sfgroup_cag = {
 
 	_check = call twc_loadout_canswitch;
@@ -419,25 +415,25 @@ twc_loadout_sfgroup_1erre = {
 	twc_loadout_sfgroup_ana_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_UKSF_Base") then {
-			[_unit] call twc_loadout_anasf_rifleman;
+			twc_loadout_ana_rifleman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			[_unit] call twc_loadout_anasf_pointman;
+			twc_loadout_ana_pointman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_2IC") then {
-			[_unit] call twc_loadout_anasf_2ic;
+			twc_loadout_ana_2ic call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			[_unit] call twc_loadout_anasf_sl;
+			twc_loadout_ana_sl call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			[_unit] call twc_loadout_anasf_grenadier;
+			twc_loadout_ana_grenadier call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			[_unit] call twc_loadout_anasf_marksman;
+			twc_loadout_ana_marksman call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_UKSF_Medic") then {
-			[_unit] call twc_loadout_anasf_medic;
+			twc_loadout_ana_medic call twc_loadout_switchloadout;
 		};
 		
 		_face = face _unit;
@@ -468,10 +464,10 @@ twc_loadout_sfgroup_ana = {
 	twc_loadout_pilotgroup_us_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_HeliPilot") then {
-			[_unit] call twc_loadout_pilotus_pilot;
+			twc_loadout_usaf_helipilot call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_crewchief") then {
-			[_unit] call twc_loadout_pilotus_crewchief;
+			twc_loadout_usaf_crewchief call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -489,10 +485,10 @@ twc_loadout_sfgroup_ana = {
 	twc_loadout_pilotgroup_baf_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_HeliPilot") then {
-			[_unit] call twc_loadout_pilotbaf_pilot;
+			twc_loadout_baf_helipilot call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_crewchief") then {
-			[_unit] call twc_loadout_pilotbaf_crewchief;
+			twc_loadout_baf_crewchief call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -510,10 +506,10 @@ twc_loadout_sfgroup_ana = {
 	twc_loadout_pilotgroup_cag_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_HeliPilot") then {
-			[_unit] call twc_loadout_pilotcag_pilot;
+			twc_loadout_soar_helipilot call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_crewchief") then {
-			[_unit] call twc_loadout_pilotcag_crewchief;
+			twc_loadout_soar_crewchief call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -948,6 +944,5 @@ twc_removeoldenemyrole = {
 
 #include "insurgents.sqf";
 #include "sniper.sqf";
-#include "pilots.sqf";
 #include "fst.sqf";
 #include "sf.sqf";

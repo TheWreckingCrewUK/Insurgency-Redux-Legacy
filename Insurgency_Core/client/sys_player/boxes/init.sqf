@@ -113,6 +113,13 @@ deleteVehicle _target;
 
 	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},{(["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+
+	_infaction1 = ["clearbox","Wait Until Night","",{_cond = call twc_issidenearby;if (!_cond) exitwith {};[0] remoteExec ["twc_fnc_changedaynight", 2];},{((["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)) && (sunormoon != 0)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_infaction1 = ["clearbox","Wait Until Day","",{_cond = call twc_issidenearby;if (!_cond) exitwith {};[1] remoteExec ["twc_fnc_changedaynight", 2];},{((["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)) && (sunormoon != 1)}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
 {
 
 
@@ -182,8 +189,17 @@ if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 	_UKaction5 = ["SpawnmedCreate","Spawn Loaded SF MATV (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana") && (((group player) getvariable ["twc_groupcountry", "cag"]) != "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["heavyveh","Heavy Vehicles","",{},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Stryker (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfstryker.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Hilux","",{execvm "insurgency_core\client\sys_player\vehicles\sfpickup.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;

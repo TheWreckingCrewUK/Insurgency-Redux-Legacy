@@ -7,6 +7,8 @@ twc_fnc_deleteDead = compile preprocessfilelinenumbers "Insurgency_Core\server\f
 
 twc_fnc_aiWounds = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aiWounds.sqf";
 
+twc_fnc_changedaynight = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_changedaynight.sqf";
+
 twc_fnc_campaignserver = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_campaignserver.sqf";
 
 twc_fnc_enemychatter = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_enemychatter.sqf";

@@ -14,12 +14,13 @@ _array = [];
 	_roadList = [worldSize / 2, worldSize / 2] nearRoads _spawnRadius;
 	
 	{_array pushback (getpos _x)} foreach _roadlist;
-	if (!hasinterface) then {
-		profilenamespace setvariable [("twcroads" + worldname), _array];
-		saveprofilenamespace;
-	} else {
-		profilenamespace setvariable [("twcroads" + worldname), []];
-		saveprofilenamespace;
+	
+	twcroads = _array;
+	
+	_check = profilenamespace getvariable [("twcroads" + worldname), []];
+	
+	if ((count _check) > 0) then {
+		profilenamespace setvariable [("twcroads" + worldname), nil];
 	};
 //};
 

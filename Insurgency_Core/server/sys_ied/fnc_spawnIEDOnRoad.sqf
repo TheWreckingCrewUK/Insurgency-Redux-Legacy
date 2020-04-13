@@ -43,7 +43,7 @@ _ied = "Arma is Retarded";
 _ied = createVehicle [_iedType,_position,[],0,"NONE"];
 
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // Still no idea why Mike did this
+_ied setPos (getPos _ied vectorAdd [0,0,-0.0]); // Still no idea why Mike did this
 
 /*
 _marker = createMarker [str getpos _ied,getpos _ied];

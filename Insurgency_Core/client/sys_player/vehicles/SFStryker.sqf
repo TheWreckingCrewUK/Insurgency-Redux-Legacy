@@ -1,8 +1,27 @@
+
+ if (isnil "twc_sfmraptimeout") then {
+ twc_sfmraptimeout = - 3600;
+ publicVariable "twc_sfmraptimeout";
+ };
+ 
+if ((twc_sfmraptimeout > (time)) && !isserver) exitwith {
+	_title ="<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>";
+	_text1 = format ["<br />The Heavy Vehicle spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The M-ATV's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
+	hint parsetext (_title + _text1);
+	while {(twc_sfmraptimeout-time) > 0} do {
+		sleep 20;
+	};
+	hint "Another Heavy Vehicle is now available from the spawner";
+	
+};
+
+twc_sfmraptimeout = time + 3600;
+
+
  _spawnpos = getpos AmmoBoxSpawner;
  
 
-//_vehtype = "twc_M1238A1_M2_socom_d";
-_vehtype = "twc_rhsusf_m1245_m2crows_socom_deploy";
+_vehtype = "twc_stryker_wd";
 
 
  
@@ -16,29 +35,25 @@ _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
 if (twc_wdveh == 1) then {
-	[
-		_veh,
-		["rhs_olive",1], 
-		["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",0,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-	] call BIS_fnc_initVehicle;
+	
+[
+	_veh,
+	["Olive",1], 
+	["Hatch_Commander",0,"Hatch_Front",0,"Hatch_Left",0,"Hatch_Right",0,"Ramp",0,"Hide_Antenna_1",0,"Hide_Antenna_2",0,"Hide_Antenna_3",0,"Extend_Mirrors",1,"Hatch_Driver",1]
+] call BIS_fnc_initVehicle;
+
+
 } else {
-	if ((random 1) < 0.2) then {
-		[
-			_veh,
-			["rhs_sofdeploy",1], 
-			["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",1,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-		] call BIS_fnc_initVehicle;
-	} else {
-		[
-			_veh,
-			["rhs_desert",1], 
-			["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",1,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-		] call BIS_fnc_initVehicle;
-	};
+[
+	_veh,
+	["Tan",1], 
+	["Hatch_Commander",1,"Hatch_Front",0,"Hatch_Left",0,"Hatch_Right",0,"Ramp",1,"Hide_Antenna_1",0,"Hide_Antenna_2",0,"Hide_Antenna_3",0,"Extend_Mirrors",1,"Hatch_Driver",1]
+] call BIS_fnc_initVehicle;
+
 };
 
 
-_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;twc_sfmraptimeout = -999;
 
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
@@ -72,16 +87,7 @@ _veh addItemCargoGlobal ["ACE_morphine",10*_mult];
 _veh addItemCargoGlobal ["HandGrenade",4];
 _veh addItemCargoGlobal ["SmokeShell",3*_mult];
 _veh addItemCargoGlobal ["SmokeShellRed",3*_mult];
+_veh addbackpackCargoGlobal ["B_AssaultPack_cbr",2];
 
 
-_fsgun = ["twc_rhs_weap_m240G_mdo_lazer",1];
-_fsmag = ["UK3CB_BAF_762_100Rnd_T",5*_mult];
-
-_grouptype = (group player) getvariable ["twc_groupcountry", "baf"];
-if (_grouptype == "st6") then {
-	_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
-};
-
-_veh AddWeaponCargoGlobal _fsgun;
-_veh AddMagazineCargoGlobal _fsmag;
 [_veh, player, 5] call twc_fnc_genericfillvehicle;

@@ -19,7 +19,6 @@
 //Recieved Parameters
 params ["_total"];
 
-
 //if(_pos distance (getmarkerpos "base") < 1000) exitwith {};
 
 
@@ -36,8 +35,7 @@ _technicallist = [
 	"t_spg01.sqf"
 ];
 
-
-_roadList = profilenamespace getvariable [("twcroads" + worldname), []];
+_roadList = missionnamespace getvariable ["twcroads", []];
 
 if ((count _roadlist) == 0) exitwith {
 	diag_log "ambienttechnicals exiting";

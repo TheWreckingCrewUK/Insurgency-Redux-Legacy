@@ -1,3 +1,5 @@
+//deprecated by civtraff server
+
 waituntil {!isnil "twc_basepos"};
 
 _num = missionnamespace getvariable ["twccivcarcount", 7];

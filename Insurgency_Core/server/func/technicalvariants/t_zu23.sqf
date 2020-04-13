@@ -65,11 +65,11 @@ _truck addEventHandler ["Fired", {
 
 _truck setdir _direction;
 	
-	sleep 5;
+	
 
 [_pos, _truck, _group] spawn {
 	params ["_pos", "_truck", "_group"];
-	
+	sleep 5;
 	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
@@ -85,3 +85,10 @@ _truck setdir _direction;
 	_group addvehicle _truck;
 	_unit moveIngunner _truck;
 };
+
+	
+_truck addEventHandler ["Killed",{
+	["TWC_Insurgency_adjustInsurgentMorale", -1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustCivilianMorale", 1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+}];

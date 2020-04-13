@@ -16,7 +16,7 @@
 
 _weapons = [["twc_L5A4_white",1], ["ACE_Flashlight_Maglite_ML300L",1]];
 _magazines = [["SmokeShell",10], ["SmokeShellYellow",5], ["SmokeShellRed",5], ["SmokeShellGreen",5], ["SmokeShellPurple",5], ["SmokeShellBlue",5], ["SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10]];
-_items = [["ACE_EarPlugs",1],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],["ACE_WaterBottle",2],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
+_items = [["ACE_EarPlugs",1],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],[(["ACE_MRE_SteakVegetables","ACE_MRE_MeatballsPasta","ACE_MRE_LambCurry","ACE_MRE_CreamTomatoSoup","ACE_MRE_CreamChickenSoup","ACE_MRE_ChickenHerbDumplings","ACE_MRE_ChickenTikkaMasala","ACE_MRE_BeefStew"] call bis_fnc_selectrandom),3],["ACE_WaterBottle",2],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",40],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 twc_crateweapons = [];
 twc_cratemagazines = [];
 twc_crateitems = [];
@@ -123,8 +123,8 @@ if (typeOf vehicle player in ["Modern_UKSF_Squadleader"]) then {
 
 if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
 	_choice = floor (random 2);
-	_cqbgun = ["TWC_CUP_smg_MP5A5_flashlight_clean",1];
-	_cqbmag = "CUP_30Rnd_9x19_MP5";
+	_cqbgun = ["rhsusf_weap_MP7A2_desert",1];
+	_cqbmag = "rhsusf_mag_40Rnd_46x30_FMJ";
 	(group player) setvariable ["twc_cqbmag", _cqbmag, true];
     _tmp_weapons =
     [
@@ -140,7 +140,6 @@ if (typeOf vehicle player in ["Modern_UKSF_Pointman"]) then {
         ["CUP_30Rnd_556x45_Emag",50],
 		["CUP_30Rnd_556x45_Emag_Tracer_Red",15],
 		["rhsusf_mag_40Rnd_46x30_FMJ",20],
-		[_cqbmag,25],
         ["rhsusf_mag_17Rnd_9x19_JHP",15],
         ["UK3CB_BAF_9_15Rnd",15],
 		["CUP_6Rnd_B_Beneli_74Pellets",30],
@@ -1567,8 +1566,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     [
         ["twc_rhs_weap_m4a1_acog_lazer",1],
 		["ACE_VMM3",1],
-        ["rhsusf_weap_m1911a1",1],
-		["rhs_weap_M590_8RD",1]
+        ["rhsusf_weap_m1911a1",1]
 	];
 
     _tmp_magazines =

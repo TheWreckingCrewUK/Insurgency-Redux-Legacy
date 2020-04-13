@@ -1,5 +1,4 @@
  
- 
 
  if (isnil "twc_sfmraptimeout") then {
  twc_sfmraptimeout = - 3600;
@@ -8,15 +7,14 @@
  
 if ((twc_sfmraptimeout > (time)) && !isserver) exitwith {
 	_title ="<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>";
-	_text1 = format ["<br />The MRAP spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The RG's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
+	_text1 = format ["<br />The Heavy Vehicle spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The M-ATV's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
 	hint parsetext (_title + _text1);
 	while {(twc_sfmraptimeout-time) > 0} do {
 		sleep 20;
 	};
-	hint "Another MRAP is now available from the spawner";
+	hint "Another Heavy Vehicle is now available from the spawner";
 	
 };
-
 twc_sfmraptimeout = time + 3600;
  
  
@@ -63,14 +61,11 @@ clearBackpackCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 _mult = 1;
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",4*_mult];
+_veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",5];
 
 _veh AddWeaponCargoGlobal ["UK3CB_BAF_M6",1];
 _veh AddWeaponCargoGlobal ["rhs_weap_maaws_optic",1];
 _veh AddWeaponCargoGlobal ["ACE_Yardage450",1];
-
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag",20];
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag_Tracer_Red",10];
 
 _veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEAT",4];
 _veh AddMagazineCargoGlobal ["rhs_mag_maaws_flechette",2];
@@ -79,8 +74,8 @@ _veh AddMagazineCargoGlobal ["rhs_mag_maaws_flechette",2];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",15];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",4];
 
-_veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
-_veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",2];
+_veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",20];
+_veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",4];
 
 _veh addItemCargoGlobal ["SatchelCharge_Remote_Mag",1];
 _veh addItemCargoGlobal ["ACE_Clacker",1];
@@ -96,6 +91,8 @@ _veh addItemCargoGlobal ["SmokeShell",3];
 _veh addItemCargoGlobal ["SmokeShellRed",3];
 _veh addbackpackCargoGlobal ["B_AssaultPack_cbr",2];
 
+
+
 _fsgun = ["twc_rhs_weap_m240G_mdo_lazer",1];
 _fsmag = ["UK3CB_BAF_762_100Rnd_T",8*_mult];
 
@@ -105,7 +102,6 @@ if (_grouptype == "st6") then {
 };
 
 
-
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;
 
@@ -113,4 +109,4 @@ _veh AddMagazineCargoGlobal _fsmag;
 
 [_veh, player, 5] call twc_fnc_genericfillvehicle;
 
-
+_veh setvariable ["ace_cargo_loaded", ["ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel"]];

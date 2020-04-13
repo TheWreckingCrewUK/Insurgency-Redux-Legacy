@@ -54,6 +54,7 @@ player addEventHandler ["Fired", {
 	_suppressors = [
 	"twc_l85_suppressor",
 	"twc_acc_rotex5_grey",
+	"rhsusf_acc_aac_762sd_silencer",
 	"twc_acc_nt4_tan",
 	"rhsusf_acc_omega9k"
 	];

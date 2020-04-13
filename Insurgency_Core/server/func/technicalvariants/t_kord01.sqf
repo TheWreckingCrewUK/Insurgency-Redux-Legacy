@@ -47,11 +47,11 @@ if (((_direction + 180 -(_truck getdir _pos)) < -90) || ((_direction + 180 -(_tr
 
 _truck setdir _direction;
 	
-	sleep 5;
+	
 
 [_pos, _gun, _group] spawn {
 	params ["_pos", "_gun", "_group"];
-	
+	sleep 5;
 	_unit = _group createUnit [(selectRandom townSpawn), [0,0,0], [], 5, "NONE"];
 	_unit addEventHandler ["Killed",{
 		[(_this select 0)] call twc_fnc_deleteDead;
@@ -67,3 +67,10 @@ _truck setdir _direction;
 	_group addvehicle _gun;
 	_unit moveIngunner _gun;
 };
+
+	
+_truck addEventHandler ["Killed",{
+	["TWC_Insurgency_adjustInsurgentMorale", -1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustCivilianMorale", 1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+}];

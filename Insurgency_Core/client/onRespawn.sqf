@@ -342,6 +342,9 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
 		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+		if (_gr == "baf") then {
+			[player] call twc_loadout_sfgroup_baf_switch;
+		};
 		if (_gr == "cag") then {
 			[player] call twc_loadout_sfgroup_cag_switch;
 		};
@@ -354,13 +357,26 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 		if (_gr == "1erre") then {
 			[player] call twc_loadout_sfgroup_1erre_switch;
 		};
-	
-		if (((daytime > 16) || (daytime < 5)) && (!( _gr in ["ana", "1erre"]))) then {
-			_uniformitems = uniformitems player;
-			player forceadduniform "rhs_uniform_g3_blk";
-			{player additemtouniform _x} foreach _uniformitems;
+		if (_gr == "ace") then {
+			[player] call twc_loadout_sfgroup_ace_switch;
 		};
-	
+	};
+};
+
+if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
+	[] spawn {
+		_pos = getpos player;
+		waituntil {(player distance _pos) > 3};
+		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+		if (_gr == "us") then {
+			[player] call twc_loadout_pilotgroup_us_switch;
+		};
+		if (_gr == "cag") then {
+			[player] call twc_loadout_pilotgroup_cag_switch;
+		};
+		if (_gr == "baf") then {
+			[player] call twc_loadout_pilotgroup_baf_switch;
+		};
 	};
 };
 

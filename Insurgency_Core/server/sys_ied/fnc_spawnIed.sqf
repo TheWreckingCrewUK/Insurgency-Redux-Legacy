@@ -25,7 +25,7 @@ _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], _spawnRadius, "NONE"];
 _ied setDir (random 360);
-_ied setPos (getPos _ied vectorAdd [0,0,-0.03]); // ????? I'm not sure why Mike did this but I'm scared to remove it
+_ied setPos (getPos _ied vectorAdd [0,0,-0.0]);
 
 /*
 _marker = createMarker [str getpos _ied,getpos _ied];

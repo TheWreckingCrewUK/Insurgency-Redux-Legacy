@@ -7,7 +7,7 @@
 #include "sys_player\init.sqf";
 #include "sys_basedefence\init.sqf";
 #include "sys_intel\init.sqf";
-//#include "sys_ragdoll\init.sqf";
+#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
 
@@ -47,7 +47,7 @@ if ((count units group player) > 6) then {
 addMissionEventHandler ["MapSingleClick", {
 params ["_units", "_pos", "_alt", "_shift"];
 if (!_alt) exitwith {};
-_timer = player getvariable ["twc_mapclicktimer", -999]; if (_timer < (time - 3)) exitwith {[] spawn {hint "Circle Creator: Mark set"; sleep 2; hint "";};player setvariable ["twc_mapclickmarkerpos", _pos];player setvariable ["twc_mapclicktimer", time];}; _markerpos = player getvariable ["twc_mapclickmarkerpos", [0,0,0]];_marker1 = createMarkerLocal [(STR (RANDOM 200)), _markerpos]; _meters = _markerpos distance _pos; _marker1 setMarkerShapeLocal "ELLIPSE"; _marker1 setMarkerSizeLocal [_meters, _meters]; _marker1 setMarkerBrushLocal "Border";}];
+_timer = player getvariable ["twc_mapclicktimer", -999]; if (_timer < (time - 3)) exitwith {[] spawn {hint "Circle Creator: Mark set"; sleep 2; hint "";};player setvariable ["twc_mapclickmarkerpos", _pos];player setvariable ["twc_mapclicktimer", time];}; _markerpos = player getvariable ["twc_mapclickmarkerpos", [0,0,0]];_marker1 = createMarkerLocal [(STR (RANDOM 200)), _markerpos]; _meters = _markerpos distance _pos; _marker1 setMarkerShapeLocal "ELLIPSE"; _marker1 setMarkerSizeLocal [_meters, _meters]; _marker1 setMarkerBrushLocal "Border";player setvariable ["twc_mapclicktimer", -999];}];
 
 
 player addEventHandler ["InventoryOpened", { 

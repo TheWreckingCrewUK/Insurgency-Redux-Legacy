@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2560;
+		nextID=2578;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7932.7725,300.33514,1884.3741};
-		dir[]={-0.88081223,-0.17860252,-0.43875036};
-		up[]={-0.15994586,0.98391134,-0.07966999};
-		aside[]={-0.44590265,-1.498498e-006,0.89517677};
+		pos[]={8246.8018,316.71332,2071.7668};
+		dir[]={-0.10236685,-0.31618205,0.94329071};
+		up[]={-0.034117911,0.94868302,0.31440637};
+		aside[]={0.99425268,-1.4085672e-006,0.1078926};
 	};
 };
 binarizationWanted=0;
@@ -69,13 +69,16 @@ addons[]=
 	"rhsusf_c_Caiman",
 	"CUP_WheeledVehicles_Wolfhound",
 	"A3_Structures_F_Bootcamp_Training",
-	"UK3CB_BAF_Vehicles_Husky"
+	"UK3CB_BAF_Vehicles_Husky",
+	"A3_Props_F_Jets_Military_Trolley",
+	"A3_Supplies_F_Heli_Slingload",
+	"ace_rearm"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=39;
+		items=42;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -323,6 +326,27 @@ class AddonsMetaData
 			name="3CB BAF Vehicles - Husky";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
+		};
+		class Item39
+		{
+			className="A3_Props_F_Jets";
+			name="Arma 3 Jets - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item40
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="ace_rearm";
+			name="ACE3 - Rearm";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -12839,7 +12863,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=256;
+		items=260;
 		class Item0
 		{
 			dataType="Marker";
@@ -25722,8 +25746,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8175.6577,298.7381,2124.9631};
-				angles[]={0,1.0405434,0};
+				position[]={8204.9941,298.7341,2139.342};
+				angles[]={0,1.0846,0.0031939524};
 			};
 			side="Empty";
 			flags=4;
@@ -25731,8 +25755,8 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2542;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
+			id=2570;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25762,8 +25786,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8183.4536,298.7381,2129.4453};
-				angles[]={0,1.0405434,0};
+				position[]={8196.21,298.7381,2134.9253};
+				angles[]={0,1.0846,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25771,8 +25795,8 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2552;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
+			id=2571;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25802,8 +25826,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8192.3203,298.73581,2134.1873};
-				angles[]={0,1.0405434,0.0015822123};
+				position[]={8187.4204,298.7381,2130.5991};
+				angles[]={0,1.0846,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25811,8 +25835,8 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2553;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
+			id=2572;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25842,8 +25866,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8200.9102,298.7334,2138.9741};
-				angles[]={0.0032018756,1.0405434,0};
+				position[]={8177.9185,298.73596,2126.3374};
+				angles[]={0.0015822123,1.0846,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25851,8 +25875,8 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2554;
-			type="UK3CB_BAF_Husky_Passenger_HMG_Sand";
+			id=2573;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -25871,6 +25895,219 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item256
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8182.0444,296.77402,2034.953};
+				angles[]={0,3.9189205,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2574;
+			type="Land_Bomb_Trolley_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_rearm_rearmCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=9999999;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item257
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8177.7344,296.77402,2032.5798};
+				angles[]={0,0.7965337,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2575;
+			type="Land_Bomb_Trolley_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_rearm_rearmCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=9999999;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item258
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8180.5806,296.77402,2031.8988};
+				angles[]={0,4.5280008,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2576;
+			type="Land_Bomb_Trolley_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isRepairFacility";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_rearm_rearmCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=9999999;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item259
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8178.8208,297.40204,2036.6418};
+				angles[]={0,1.0470506,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2577;
+			type="B_Slingload_01_Ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
 						};
 					};
 				};

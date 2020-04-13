@@ -63,3 +63,10 @@ _truck setdir _direction;
 	_group addvehicle _truck;
 	_unit moveIngunner _truck;
 };
+
+	
+_truck addEventHandler ["Killed",{
+	["TWC_Insurgency_adjustInsurgentMorale", -1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustCivilianMorale", 1] call CBA_fnc_serverEvent;
+	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+}];

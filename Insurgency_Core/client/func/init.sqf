@@ -51,6 +51,25 @@ twc_ailookat = {
 	_ai lookat _player;
 };
 
+
+twc_issidenearby = {
+	_check = true;
+	{
+		if ((side _x) == (side player)) then {
+			if ((_x distance player) > 40) then {_check = false};
+		};
+	} foreach (allplayers);
+	if (!_check) then {
+	
+		_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Time Skip</t>"; 
+
+		 _text1 = "<br />All members of the side need to be nearby to switch team";
+		hint parsetext (_title + _text1);
+	};
+	_check;
+};
+
+
 //execVM "Insurgency_Core\client\func\fnc_gasattack.sqf";
 
 player addEventHandler ["CuratorObjectPlaced", {
