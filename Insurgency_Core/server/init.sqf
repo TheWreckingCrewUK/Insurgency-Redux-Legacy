@@ -169,6 +169,10 @@ if(isNil "twc_convoyallowed") then{
 	twc_convoyallowed = 1;
 };
 
+diwako_ragdoll_fnc_initRagdoll = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_ragdoll\fn_initRagdoll.sqf";
+
+[] call diwako_ragdoll_fnc_initRagdoll;
+
 
 ["ace_captiveStatusChanged", {
 	params ["_unit", "_state", "_reason"];

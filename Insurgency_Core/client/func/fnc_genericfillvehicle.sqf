@@ -74,7 +74,7 @@ if (_domags) then {
 				
 				
 				
-				if (_count < (((_v1 select 1) * _mult) min 30)) then {
+				if (_count < (((_v1 select 1) * _mult) min ((30 * (1 + (_mult * 0.3))) min 60))) then {
 					if ((_veh canadd [(_x select 0), 2]) && (_veh canadd ["UK3CB_BAF_127_100Rnd", 2])) then {
 						_veh addmagazinecargoglobal [(_x select 0), 1];
 					} else {
@@ -159,7 +159,7 @@ if (_doitems) then {
 				_v1 = _x;
 				_count = ({_x == (_v1 select 0)} count ((itemcargo _veh) + (weaponcargo _veh)));
 				
-				if ((_count < (((_v1 select 1) * (_mult / 1)) min 30)) && (!( "ACRE" in (_v1 select 0)))) then {
+				if ((_count < (((_v1 select 1) * (_mult / 1)) min ((30 * (1 + (_mult * 0.2))) min 40))) && (!( "ACRE" in (_v1 select 0)))) then {
 					if (_veh canadd [(_x select 0), 3]) then {
 						_veh additemcargoglobal [(_x select 0), 1];
 					} else {

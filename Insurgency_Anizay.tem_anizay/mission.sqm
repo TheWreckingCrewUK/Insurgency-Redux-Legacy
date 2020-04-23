@@ -8,7 +8,7 @@ class EditorData
 	toggles=545;
 	class ItemIDProvider
 	{
-		nextID=2464;
+		nextID=2468;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8306.4453,183.1613,6940.2397};
-		dir[]={0.29231745,-0.63812941,0.71239078};
-		up[]={0.24224453,0.76994914,0.59035963};
-		aside[]={0.92521411,-5.7742e-008,-0.37964913};
+		pos[]={8327.418,140.72455,6980.7837};
+		dir[]={0.5870834,-0.7325179,0.34487686};
+		up[]={0.63159859,0.68077379,0.37102565};
+		aside[]={0.50655442,2.4342444e-007,-0.86231428};
 	};
 };
 binarizationWanted=0;
@@ -54,13 +54,14 @@ addons[]=
 	"rhsusf_c_Caiman",
 	"CUP_WheeledVehicles_Mastiff",
 	"CUP_WheeledVehicles_Wolfhound",
-	"rhsusf_vehicles"
+	"rhsusf_vehicles",
+	"UK3CB_BAF_Vehicles_Husky"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=28;
+		items=29;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -231,6 +232,13 @@ class AddonsMetaData
 		{
 			className="rhsusf_vehicles";
 			name="rhsusf_vehicles";
+		};
+		class Item28
+		{
+			className="UK3CB_BAF_Vehicles_Husky";
+			name="3CB BAF Vehicles - Husky";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
@@ -12747,7 +12755,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=134;
+		items=138;
 		class Item0
 		{
 			dataType="Marker";
@@ -13638,7 +13646,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8342.2148,113.64844,6992.1621};
-				angles[]={0,6.277545,0};
+				angles[]={0,6.2775478,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13824,6 +13832,7 @@ class Mission
 					};
 					id=2037;
 					type="B_UAV_AI";
+					atlOffset=7.6293945e-006;
 				};
 			};
 			class Attributes
@@ -13852,7 +13861,7 @@ class Mission
 				};
 			};
 			id=2036;
-			atlOffset=3.9846268;
+			atlOffset=3.9846344;
 		};
 		class Item35
 		{
@@ -13873,7 +13882,7 @@ class Mission
 			};
 			id=2038;
 			type="B_AAA_System_01_F";
-			atlOffset=3.9846268;
+			atlOffset=3.9846344;
 		};
 		class Item36
 		{
@@ -22112,6 +22121,166 @@ class Mission
 								};
 							};
 							value="Blank Infantry";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item134
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8351.0625,114.2381,6992.9434};
+				angles[]={-0,1.5707964,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2464;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item135
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8351.1377,114.2381,6987.9385};
+				angles[]={-0,1.5707964,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2465;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item136
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8360.7969,114.2381,6987.9204};
+				angles[]={-0,1.5707964,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2466;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item137
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8360.7217,114.2381,6992.9253};
+				angles[]={-0,1.5707964,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
+			};
+			id=2467;
+			type="UK3CB_BAF_Husky_Logistics_HMG_Sand";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[""UK3CB_BAF_127_100Rnd""],[8]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};

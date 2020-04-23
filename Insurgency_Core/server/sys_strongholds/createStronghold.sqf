@@ -2,6 +2,8 @@
 
 params["_pos"];
 
+if (hasinterface) exitwith {};
+
 //Trigger to identify town
 //_pos = getPos _town;
 

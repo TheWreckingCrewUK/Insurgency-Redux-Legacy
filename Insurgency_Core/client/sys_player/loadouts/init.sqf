@@ -1,25 +1,28 @@
-execvm "Insurgency_Core\client\sys_player\loadouts\bluforloadouts.sqf";
+#include "bluforloadouts.sqf";
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
 	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","US","",{call twc_loadout_snipergroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_snaction1 = ["Spawnsnipbox","USMC","",{call twc_loadout_snipergroup_usmc},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usmc")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_snipergroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
 	_snaction1 = ["Spawnsnipbox","SAS","",{call twc_loadout_snipergroup_uksf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "uksf")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","USMC FORECON","",{call twc_loadout_snipergroup_usmc},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usmc")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","US Army","",{call twc_loadout_snipergroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_snipergroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	
+	_snaction1 = ["Spawnsnipbox","What's this?","",{["sniper"] execvm "Insurgency_Core\client\sys_player\loadouts\teaminfo.sqf";},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 if((typeOf player) in ["Modern_British_FSTCommander"])then{
@@ -623,10 +626,10 @@ twc_loadout_facgroup_baf = {
 	twc_loadout_snipergroup_us_switch = {
 		params ["_unit"];
 		if (typeof player == "Modern_British_Sniper_coin") then {
-			[_unit] call twc_loadout_ussniper_shooter;
+			twc_loadout_usarmysniper_shooter call twc_loadout_switchloadout;
 		};
 		if (typeof player == "Modern_British_Spotter_coin") then {
-			[_unit] call twc_loadout_ussniper_spotter;
+			twc_loadout_usarmysniper_spotter call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -651,10 +654,10 @@ twc_loadout_snipergroup_us = {
 	twc_loadout_snipergroup_usmc_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			[_unit] call twc_loadout_usmcsniper_shooter;
+			twc_loadout_usmcsniper_shooter call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			[_unit] call twc_loadout_usmcsniper_spotter;
+			twc_loadout_usmcsniper_spotter call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -679,10 +682,10 @@ twc_loadout_snipergroup_usmc = {
 	twc_loadout_snipergroup_baf_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			[_unit] call twc_loadout_bafsniper_shooter;
+			twc_loadout_bafsniper_shooter call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			[_unit] call twc_loadout_bafsniper_spotter;
+			twc_loadout_bafsniper_spotter call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -707,10 +710,10 @@ twc_loadout_snipergroup_baf = {
 	twc_loadout_snipergroup_uksf_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			[_unit] call twc_loadout_uksfsniper_shooter;
+			twc_loadout_uksfsniper_shooter call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			[_unit] call twc_loadout_uksfsniper_spotter;
+			twc_loadout_uksfsniper_spotter call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -736,10 +739,10 @@ twc_loadout_snipergroup_uksf = {
 	twc_loadout_snipergroup_cag_switch = {
 		params ["_unit"];
 		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			[_unit] call twc_loadout_cagsniper_shooter;
+			twc_loadout_rangersniper_shooter call twc_loadout_switchloadout;
 		};
 		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			[_unit] call twc_loadout_cagsniper_spotter;
+			twc_loadout_rangersniper_spotter call twc_loadout_switchloadout;
 		};
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
@@ -943,6 +946,4 @@ twc_removeoldenemyrole = {
 };
 
 #include "insurgents.sqf";
-#include "sniper.sqf";
 #include "fst.sqf";
-#include "sf.sqf";

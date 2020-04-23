@@ -28,7 +28,7 @@ if(_spawnCivs)then{
 
 _isfriend = profilenamespace getvariable ['twcenemytown' + (str _pos), 5];
 
-if (((_pos distance twc_basepos) < 2000) || (((getmarkerpos "respawn_west_forwardbase") distance _pos) < 1500)) then {
+if (((_pos distance twc_basepos) < 1000) || (((getmarkerpos "respawn_west_forwardbase") distance _pos) < 1500)) then {
 	_isfriend = 1;
 };
 

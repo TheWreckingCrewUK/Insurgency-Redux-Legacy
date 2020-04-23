@@ -135,7 +135,7 @@ twc_client_nightcamo = {
 	_namount = 3;
 	_damount = twc_pubcamo;
 	if (((["sniper", typeof player] call BIS_fnc_inString)) || ((["spotter", typeof player] call BIS_fnc_inString))) then {
-		_namount = 0.5;
+		_namount = 0.3;
 		_damount = 1;
 	};
 	if (((["uksf", typeof player] call BIS_fnc_inString))) then {
@@ -183,16 +183,19 @@ if ((time > (_timer + 600)) && (_firsttimer > 1)) exitwith {
 
 
 twc_lastspawned = time;
-if (_firsttimer > 1) exitwith {
+if ((_firsttimer > 1)) exitwith {
+	_skiploadout = (group player) getvariable ["twc_nopersistentloadout", false];
+		if  (!(_skiploadout)) then {
+		_role = typeof vehicle player;
 
-_role = typeof vehicle player;
+		_profile = profilenamespace getvariable ["twcpubloadout" + _role, []];
 
-_profile = profilenamespace getvariable ["twcpubloadout" + _role, []];
+		if ((count _profile) > 0) then {
+			profilenamespace setvariable ["twcpubloadout" + _role, [uniformitems player, vestitems player, backpackitems player]];
+			saveprofilenamespace;
+		};
 
-if ((count _profile) > 0) then {
-	profilenamespace setvariable ["twcpubloadout" + _role, [uniformitems player, vestitems player, backpackitems player]];
-	saveprofilenamespace;
-};
+	};
 };
 twc_firstspawned = time;
 twc_serstarttime = time;
@@ -380,6 +383,31 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	};
 };
 
+
+if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"]) then {
+	[] spawn {
+		_pos = getpos player;
+		waituntil {(player distance _pos) > 3};
+		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+		if (_gr == "baf") then {
+			[player] call twc_loadout_snipergroup_baf_switch;
+		};
+		if (_gr == "cag") then {
+			[player] call twc_loadout_snipergroup_cag_switch;
+		};
+		if (_gr == "us") then {
+			[player] call twc_loadout_snipergroup_us_switch;
+		};
+		if (_gr == "usmc") then {
+			[player] call twc_loadout_snipergroup_usmc_switch;
+		};
+		if (_gr == "uksf") then {
+			[player] call twc_loadout_snipergroup_uksf_switch;
+		};
+	};
+};
+
+
 if (["fst", typeof player] call BIS_fnc_inString) then {
 {
 _returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
@@ -463,26 +491,9 @@ The large vehicles require a full crew of 3 to operate, but the vehicles without
 };
 
 
+_suntime = date call BIS_fnc_sunriseSunsetTime;
 
-if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"]) then {
-	_gr = (group player getvariable ["twc_groupcountry", "baf"]);
-	if (_gr == "cag") then {
-		[player] call twc_loadout_snipergroup_cag_switch;
-	};
-	if (_gr == "us") then {
-		[player] call twc_loadout_snipergroup_us_switch;
-	};
-	if (_gr == "usmc") then {
-		[player] call twc_loadout_snipergroup_usmc_switch;
-	};
-	if (_gr == "uksf") then {
-		[player] call twc_loadout_snipergroup_uksf_switch;
-	};
-	["TWC_SniperConnected", [getPlayerUID player]] call CBA_fnc_serverEvent;
-};
-
-
-if (sunormoon == 0) then {
+if ((daytime < ((_suntime select 0) - 0.5)) || (daytime > ((_suntime select 1) - 1))) then {
 	player addweapon "rhsusf_ANPVS_14";
 };
 
@@ -508,5 +519,7 @@ _channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "t
 	hint _newstextnew;
 	profilenamespace setvariable ["twc_newstext", _newstextnew];
 };
+
+player linkitem "itemwatch";
 
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";

@@ -6,7 +6,7 @@
 *
 *
 */
-_boxClass = "ACE_Box_Ammo";
+_boxClass = "Box_NATO_Equip_F";
 
 _box = _boxClass createVehicle (getPos AmmoBoxSpawner);
 
@@ -14,6 +14,8 @@ clearWeaponCargoGlobal _box;
 clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
+
+[_box, 4] call ace_cargo_fnc_setSize;
 
 //Weapons
 
@@ -29,6 +31,6 @@ _box addItemCargoGlobal ["HandGrenade",2];
 _box addItemCargoGlobal ["SmokeShell",2];
 _box addItemCargoGlobal ["SmokeShellRed",2];
 
-[_box, player, 3] spawn twc_fnc_genericfillvehicle;
+[_box, player, 6] spawn twc_fnc_genericfillvehicle;
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

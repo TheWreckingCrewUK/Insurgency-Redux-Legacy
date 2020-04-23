@@ -41,11 +41,10 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	_fstaction21 = ["spawnl7","Spawn L7 GPMG","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL7.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "weaponspawn"],_fstaction21,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
-	
 	_fstaction5 = ["spawnm6","Spawn M6 Mortar","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortar.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "weaponspawn"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["spawnm6","Spawn L16 Mortar","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL16.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "weaponspawn"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_fstaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -58,11 +57,33 @@ if((typeOf player) in ["Modern_British_FSTAssistant","Modern_British_Quartermast
 	_fstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_fstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	
+	_fstaction5 = ["spawn60mmas","Spawn 60mm Ammo","",{},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "spawn60mm"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["spawn60mma","HE","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "spawn60mmas"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["spawn60mma","Smoke","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo_smoke.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "spawn60mmas"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["spawn60mma","Illum","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo_illum.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "spawn60mmas"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["l16ammo","Spawn 81mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_actionempty = ["SpawnemptyCreate","Spawn Large Empty Crate","",{"TWC_AmmoBox_Other_Pallet_pub" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_actionempty,true] call ace_interact_menu_fnc_addActionToClass;
+	_fstaction5 = ["l16he","HE","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL16_HE.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "l16ammo"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["l16he","Illum","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL16_illum.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "l16ammo"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_fstaction5 = ["l16he","Smoke","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL16_smoke.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "l16ammo"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 		_hfstaction3 = ["spawn50","Spawn Spare Wheels","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\Repairkit.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn"],_hfstaction3,true] call ace_interact_menu_fnc_addActionToClass;

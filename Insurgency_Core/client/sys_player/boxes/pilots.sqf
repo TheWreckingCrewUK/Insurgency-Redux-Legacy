@@ -223,13 +223,6 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 if((typeOf player) in ["1970_British_HeliPilot","1970_British_Crewchief"])then{
 	
 
-	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
-	
-	["ukcw_chinook_hc1"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
-	
-	},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
-
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Puma","",{
 	
 	["CUP_B_SA330_Puma_HC1_BAF"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"

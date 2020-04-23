@@ -1,5 +1,9 @@
 _role = typeof vehicle player;
 
+_skip = (group player) getvariable ["twc_nopersistentloadout", false];
+
+if (_skip) exitwith {};
+
 _profile = profilenamespace getvariable ["twcpubloadout" + _role, []];
 
 if ((count _profile) == 0) exitwith {

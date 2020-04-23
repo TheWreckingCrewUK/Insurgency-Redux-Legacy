@@ -18,6 +18,8 @@ twc_fnc_checkenemyradio = compile preprocessfilelinenumbers "Insurgency_Core\cli
 
 twc_fnc_civfluff_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civfluff_server.sqf";
 
+twc_fnc_heliparadrop = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_heliparadrop.sqf";
+
 twc_fnc_civfluff_client = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_civfluff_client.sqf";
 
 twc_fnc_findnearestroad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestroad.sqf";

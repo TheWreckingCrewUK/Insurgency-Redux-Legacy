@@ -152,7 +152,11 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 
 
 	if ((typeof player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"]) then {
+
 		_UKaction = ["SpawnsmallUKCreate","Spawn Small Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+		_UKaction = ["SpawnsmallUKCreate","Spawn Large Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\largeCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	} else {
 		_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -390,7 +394,10 @@ if((typeOf player) in ["Modern_Artillery_Commander"])then{
 
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
-	_snaction1 = ["Spawnsnipbox","Spawn Sniper Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratesniper.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","Spawn Small Sniper Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_snaction1 = ["Spawnsnipbox","Spawn Large Sniper Ammo Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\largeCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
@@ -535,7 +542,7 @@ if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","20
 	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Anti Material Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\barretrifle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Sniper Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratesniper2000.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Sniper Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
