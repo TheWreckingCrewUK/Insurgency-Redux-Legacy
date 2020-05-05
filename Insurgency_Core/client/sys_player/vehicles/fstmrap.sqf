@@ -31,7 +31,7 @@ clearitemCargoGlobal _veh;
 
 _mult = 1;
 
-
+_veh setammocargo 0;
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",7];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",8];
 _veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_PMAG",6];

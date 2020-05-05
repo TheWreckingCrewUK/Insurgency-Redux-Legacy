@@ -36,7 +36,7 @@ if (twc_wdveh == 1) then {
 		] call BIS_fnc_initVehicle;
 	};
 };
-
+_veh setammocargo 0;
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 

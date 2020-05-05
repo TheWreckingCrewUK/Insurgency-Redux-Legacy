@@ -27,7 +27,7 @@ _vehtype = "twc_stryker_wd";
  
  _car = _vehtype createvehicle _spawnpos;   
 _veh = _car;
-
+_veh setammocargo 0;
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>"; 
 
  _text1 =  "<br />The Vehicle Has Been Spawned. It's Already Loaded With Ammunition";

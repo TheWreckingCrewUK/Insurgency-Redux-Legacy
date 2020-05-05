@@ -54,6 +54,7 @@ player addeventhandler ["getoutman", {
 }];
 
 twc_staticlinevehs = [
+"RHS_Mi8AMT_vdv",
 "CUP_O_Mi8_CHDKZ",
 "CUP_B_UH60M_FFV_US",
 "CUP_B_SA330_Puma_HC2_BAF",

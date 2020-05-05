@@ -20,6 +20,6 @@ clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
-_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White",3];
+_box addItemCargoGlobal ["ACE_1Rnd_82mm_Mo_Smoke",6];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

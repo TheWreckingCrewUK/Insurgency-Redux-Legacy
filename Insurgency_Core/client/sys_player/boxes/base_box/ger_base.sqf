@@ -3,7 +3,7 @@
  if (typeOf vehicle player in ["Modern_ger_Base", "Modern_ger_Base_d"]) then {
     _tmp_weapons =
     [
-        ["twc_G36A_acog",1],
+        ["twc_G36A_acog",0],
         ["rhs_weap_M136_hedp",2]
     ];
 
@@ -15,8 +15,11 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -29,7 +32,7 @@
  if (typeOf vehicle player in ["Modern_ger_medic", "Modern_ger_medic_d"]) then {
     _tmp_weapons =
     [
-        ["twc_G36A_acog",1]
+        ["twc_G36A_acog",0]
     ];
 
 	_tmp_magazines =
@@ -40,7 +43,10 @@
     ];
 	_tmp_items =
 	[
-		["ACRE_PRC148",1],
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
+		["ACRE_PRC148",0],
 		["TWC_Item_Medical_SutureKit_20", 2],
 		["ACE_fieldDressing", 50],
 		["ACE_elasticBandage", 50],
@@ -61,7 +67,7 @@
  if (typeOf vehicle player in ["Modern_ger_grenadier", "Modern_ger_grenadier_d"]) then {
     _tmp_weapons =
     [
-        ["twc_G36A_AG36_acog",1]
+        ["twc_G36A_AG36_acog",0]
     ];
 
 	_tmp_magazines =
@@ -77,8 +83,11 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -92,7 +101,7 @@
     [
         ["twc_HK_MG3",1],
         ["twc_MG36_eotech",1],
-        ["twc_MG36_acog",1],
+        ["twc_MG36_acog",0],
         ["twc_HK_MG4",1]
     ];
 
@@ -107,8 +116,10 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -118,10 +129,10 @@
 };
 
 
- if (typeOf vehicle player in ["Modern_ger_rifleman_at", "Modern_ger_rifleman_at_d"]) then {
+ if (typeOf vehicle player in ["Modern_ger_rif_AT", "Modern_ger_rif_AT_d"]) then {
     _tmp_weapons =
     [
-        ["twc_G36A_acog",1]
+        ["twc_G36A_acog",0]
     ];
 
 	_tmp_magazines =
@@ -133,8 +144,11 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -147,7 +161,7 @@
     _tmp_weapons =
     [
         ["ACE_Vector",1],
-        ["twc_G36A_acog",1]
+        ["twc_G36A_acog",0]
     ];
 
 	_tmp_magazines =
@@ -161,12 +175,15 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_microDAGR",1],
 		["ACRE_PRC117F",1]
@@ -177,7 +194,7 @@
     _tmp_weapons =
     [
         ["ACE_Vector",1],
-        ["twc_G36A_acog",1]
+        ["twc_G36A_acog",0]
     ];
 
 	_tmp_magazines =
@@ -192,12 +209,15 @@
     ];
 	_tmp_items =
 	[
+        ["cup_optic_g36optics15x",1],
+        ["cup_optic_g36optics_holo",1],
+        ["cup_optic_g36optics",1],
 		["ACE_DAGR",1],
         ["ACE_MapTools",1],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["ACRE_PRC148",1],
+		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_microDAGR",1]
 	];

@@ -31,7 +31,7 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
-
+_veh setammocargo 0;
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 
