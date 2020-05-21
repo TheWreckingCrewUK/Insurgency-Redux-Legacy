@@ -131,6 +131,33 @@ deleteVehicle _target;
 
 } foreach ["Land_InfoStand_V1_F", "twc_SuppliesBox", "UK3CB_BAF_MAN_HX58_Container_Green"];
 
+
+	
+	_ammoaction = ["weaponspawn","Spawn Heavy Weapons","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+//	, "weaponspawn"
+
+	_ammoaction = ["ammospawn","Spawn Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn"
+
+	_ammoaction2 = ["ammospawnlight","Light Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction2,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnlight"
+	
+	_ammoaction3 = ["ammospawnsupport","Support Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnsupport"
+	
+	_ammoaction4 = ["ammospawnheavy","Heavy Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction4,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnheavy"
+
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light","Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 
 	if((typeOf player) in ["Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light"])then{
@@ -145,72 +172,77 @@ if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","M
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Launcher","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav.sqf"},{((count units group player) > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "weaponspawn"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_alphaaction = ["SpawnsmallAlphaCreate","Spawn Javelin Tubes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{((count units group player) > 3)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 
 	if ((typeof player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"]) then {
 
 		_UKaction = ["SpawnsmallUKCreate","Spawn Small Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 		_UKaction = ["SpawnsmallUKCreate","Spawn Large Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\largeCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	} else {
 		_UKaction = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-		["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+		["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	};
 	_UKaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\heartsminds.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_UKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_alphaaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 
 
 if((typeOf player) in ["Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
+	
+	_UKaction5 = ["heavyveh","Spawn Vehicles","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded SF MATV (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana") && (((group player) getvariable ["twc_groupcountry", "cag"]) != "cag")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["heavyveh","Heavy Vehicles","",{},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+
+
+	_UKaction5 = ["SpawnmedCreate","Coyote (GMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal40.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Loaded Stryker (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfstryker.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["SpawnmedCreate","Coyote (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfjackal50.sqf"},{((group player) getvariable ["twc_groupcountry", "baf"]) == "baf"}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Hilux","",{execvm "insurgency_core\client\sys_player\vehicles\sfpickup.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","SF MATV (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfrg.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","MRZR","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrzr.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) in ["cag", "ace", "st6"])}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "baf") && (((group player) getvariable ["twc_groupcountry", "ana"]) != "ana") && (((group player) getvariable ["twc_groupcountry", "cag"]) != "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","MRAP (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfmrap.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Stryker (HMG)","",{execvm "insurgency_core\client\sys_player\vehicles\sfstryker.sqf"},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction5 = ["SpawnmedCreate","Hilux","",{execvm "insurgency_core\client\sys_player\vehicles\sfpickup.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "heavyveh"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
 	_UKaction5 = ["SpawnmedCreate","Spawn Suppressors","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\suppressors.sqf"},{((missionnamespace getvariable ["twc_suppspawned", 0]) == 0)}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 if((typeOf player) in ["2000_UKSF_Sectionleader","2000_UKSF_2ic"])then{

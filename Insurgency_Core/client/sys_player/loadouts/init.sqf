@@ -148,34 +148,20 @@ twc_loadout_canswitch = {
 twc_snowflakeunits = ["cag", "st6", "ace"];
 
 
-	twc_loadout_sfgroup_cag_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_ussf_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_ussf_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_ussf_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_ussf_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_ussf_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_ussf_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_ussf_medic call twc_loadout_switchloadout;
-		};
+	twc_loadout_generic_switch = {
+		params ["_team"];
+		_role = player getvariable ["twc_loadoutrole", "rifleman"];
+		_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []];
+		
+		_var call twc_loadout_switchloadout;
 		[player] call twc_fnc_buildmagarray_set;
 		[player] call twc_fnc_buildmagarray;
 	};
 
+
 twc_loadout_sfgroup_cag = {
+
+	_teamstring = "ussf";
 
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
@@ -200,37 +186,12 @@ twc_loadout_sfgroup_cag = {
 	
 	(group player) setvariable ["twc_groupcountry", "cag", true];
 	
-	{[_x] remoteexec ["twc_loadout_sfgroup_cag_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_sfgroup_st6_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_st6_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_st6_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_st6_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_st6_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_st6_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_st6_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_st6_medic call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_sfgroup_st6 = {
 
+	_teamstring = "st6";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
@@ -253,37 +214,12 @@ twc_loadout_sfgroup_st6 = {
 	};
 	
 	(group player) setvariable ["twc_groupcountry", "st6", true];
-	{[_x] remoteexec ["twc_loadout_sfgroup_st6_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_sfgroup_ace_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_ace_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_ace_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_ace_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_ace_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_ace_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_ace_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_ace_medic call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_sfgroup_ace = {
 
+	_teamstring = "ace";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
@@ -306,64 +242,12 @@ twc_loadout_sfgroup_ace = {
 	};
 	
 	(group player) setvariable ["twc_groupcountry", "ace", true];
-	{[_x] remoteexec ["twc_loadout_sfgroup_ace_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_sfgroup_baf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_uksf_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_uksf_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_uksf_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_uksf_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_uksf_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_uksf_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_uksf_medic call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
-
-	twc_loadout_sfgroup_1erre_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_1erre_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_1erre_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_1erre_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_1erre_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_1erre_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_1erre_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_1erre_medic call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_sfgroup_baf = {
 
+	_teamstring = "uksf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
@@ -383,13 +267,15 @@ twc_loadout_sfgroup_baf = {
 		} foreach (units group player);
 	};
 	
-	(group player) setvariable ["twc_groupcountry", "baf", true];
+	(group player) setvariable ["twc_groupcountry", "uksf", true];
 	
 	
-	{[_x] remoteexec ["twc_loadout_sfgroup_baf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
+
 twc_loadout_sfgroup_1erre = {
 
+	_teamstring = "1erre";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
@@ -412,44 +298,13 @@ twc_loadout_sfgroup_1erre = {
 	(group player) setvariable ["twc_groupcountry", "1erre", true];
 	
 	
-	{[_x] remoteexec ["twc_loadout_sfgroup_1erre_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_sfgroup_ana_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_UKSF_Base") then {
-			twc_loadout_ana_rifleman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Pointman") then {
-			twc_loadout_ana_pointman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_2IC") then {
-			twc_loadout_ana_2ic call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Squadleader") then {
-			twc_loadout_ana_sl call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Grenadier") then {
-			twc_loadout_ana_grenadier call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Marksman") then {
-			twc_loadout_ana_marksman call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_UKSF_Medic") then {
-			twc_loadout_ana_medic call twc_loadout_switchloadout;
-		};
-		
-		_face = face _unit;
-		
-		_unit setvariable ["twc_origface", _face];
-		
-		[_unit, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _unit];
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-		
-	};
 twc_loadout_sfgroup_ana = {
 
+	_teamstring = "ana";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	_last = (group player) getvariable ["twc_groupcountry", "ana"];
@@ -458,308 +313,186 @@ twc_loadout_sfgroup_ana = {
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
 	
+	_unit = player;
+	_face = face _unit;
+	
+	_unit setvariable ["twc_origface", _face];
+	
+	[_unit, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _unit];
+	
 	(group player) setvariable ["twc_groupcountry", "ana", true];
 	
 	
-	{[_x] remoteexec ["twc_loadout_sfgroup_ana_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_pilotgroup_us_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_HeliPilot") then {
-			twc_loadout_usaf_helipilot call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_crewchief") then {
-			twc_loadout_usaf_crewchief call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 	twc_loadout_pilotgroup_us = {
 
+	_teamstring = "usaf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	(group player) setvariable ["twc_groupcountry", "us", true];
 	
-	{[_x] remoteexec ["twc_loadout_pilotgroup_us_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_pilotgroup_baf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_HeliPilot") then {
-			twc_loadout_baf_helipilot call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_crewchief") then {
-			twc_loadout_baf_crewchief call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 	twc_loadout_pilotgroup_baf = {
 
+	_teamstring = "baf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	(group player) setvariable ["twc_groupcountry", "baf", true];
 	
-	{[_x] remoteexec ["twc_loadout_pilotgroup_baf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
-
-	twc_loadout_pilotgroup_cag_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_HeliPilot") then {
-			twc_loadout_soar_helipilot call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_crewchief") then {
-			twc_loadout_soar_crewchief call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 	twc_loadout_pilotgroup_cag = {
 
+	_teamstring = "soar";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "cag", true];
+	(group player) setvariable ["twc_groupcountry", "soar", true];
 	
-	{[_x] remoteexec ["twc_loadout_pilotgroup_cag_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
-
-	twc_loadout_fstgroup_us_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_FSTCommander") then {
-			[_unit] call twc_loadout_fstus_sl;
-		};
-		if (typeof _unit == "Modern_British_FSTAssistant") then {
-			[_unit] call twc_loadout_fstus_assistant;
-		};
-		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
-			[_unit] call twc_loadout_fstus_observer;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_fstgroup_us = {
 
+	_teamstring = "fstus";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "us", true];
+	(group player) setvariable ["twc_groupcountry", "fstus", true];
 	
-	{[_x] remoteexec ["twc_loadout_fstgroup_us_switch", _x]} foreach (units group player);
+	{[_x] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_fstgroup_baf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_FSTCommander") then {
-			[_unit] call twc_loadout_fstbaf_sl;
-		};
-		if (typeof _unit == "Modern_British_FSTAssistant") then {
-			[_unit] call twc_loadout_fstbaf_assistant;
-		};
-		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
-			[_unit] call twc_loadout_fstbaf_observer;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_fstgroup_baf = {
 
+	_teamstring = "fstbaf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "baf", true];
+	(group player) setvariable ["twc_groupcountry", "fstbaf", true];
 	
-	{[_x] remoteexec ["twc_loadout_fstgroup_baf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_facgroup_us_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_FAC") then {
-			twc_loadout_usaf_jtac call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_FSTAssistant") then {
-			[_unit] call twc_loadout_fstus_assistant;
-		};
-		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
-			[_unit] call twc_loadout_fstus_observer;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_facgroup_us = {
 
+	_teamstring = "usaf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "us", true];
+	(group player) setvariable ["twc_groupcountry", "usaf", true];
 	
-	{[_x] remoteexec ["twc_loadout_facgroup_us_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-	twc_loadout_facgroup_baf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_FAC") then {
-			twc_loadout_baf_jtac call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_FSTAssistant") then {
-			[_unit] call twc_loadout_fstbaf_assistant;
-		};
-		if (typeof _unit == "Modern_British_FSTForwardObserver") then {
-			[_unit] call twc_loadout_fstbaf_observer;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_facgroup_baf = {
 
+	_teamstring = "baf";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	(group player) setvariable ["twc_groupcountry", "baf", true];
 	
-	{[_x] remoteexec ["twc_loadout_facgroup_baf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
-
-	twc_loadout_snipergroup_us_switch = {
-		params ["_unit"];
-		if (typeof player == "Modern_British_Sniper_coin") then {
-			twc_loadout_usarmysniper_shooter call twc_loadout_switchloadout;
-		};
-		if (typeof player == "Modern_British_Spotter_coin") then {
-			twc_loadout_usarmysniper_spotter call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 
 twc_loadout_snipergroup_us = {
 
+	_teamstring = "usarmysniper";
+
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "us", true];
+	(group player) setvariable ["twc_groupcountry", "usarmysniper", true];
 	
 	if (_last == "cag") then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
-	{[_x] remoteexec ["twc_loadout_snipergroup_us_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
 
-	twc_loadout_snipergroup_usmc_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			twc_loadout_usmcsniper_shooter call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			twc_loadout_usmcsniper_spotter call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
+
 twc_loadout_snipergroup_usmc = {
 
+	_teamstring = "usmcsniper";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "usmc", true];
+	(group player) setvariable ["twc_groupcountry", "usmcsniper", true];
 	
 	if (_last == "cag") then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
 
-	{[_x] remoteexec ["twc_loadout_snipergroup_usmc_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
 
-	twc_loadout_snipergroup_baf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			twc_loadout_bafsniper_shooter call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			twc_loadout_bafsniper_spotter call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_snipergroup_baf = {
 
+	_teamstring = "bafsniper";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "baf", true];
+	(group player) setvariable ["twc_groupcountry", "bafsniper", true];
 	
 	if (_last == "cag") then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
 
-	{[_x] remoteexec ["twc_loadout_snipergroup_baf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
 
-	twc_loadout_snipergroup_uksf_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			twc_loadout_uksfsniper_shooter call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			twc_loadout_uksfsniper_spotter call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_snipergroup_uksf = {
 
+	_teamstring = "uksfsniper";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "uksf", true];
+	(group player) setvariable ["twc_groupcountry", "uksfsniper", true];
 	
 	if (_last == "cag") then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
 
-	{[_x] remoteexec ["twc_loadout_snipergroup_uksf_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
-//not ready yet, pending RHS update. there's an isserver check in the ace interact to allow testing
 
-	twc_loadout_snipergroup_cag_switch = {
-		params ["_unit"];
-		if (typeof _unit == "Modern_British_Sniper_coin") then {
-			twc_loadout_rangersniper_shooter call twc_loadout_switchloadout;
-		};
-		if (typeof _unit == "Modern_British_Spotter_coin") then {
-			twc_loadout_rangersniper_spotter call twc_loadout_switchloadout;
-		};
-		[player] call twc_fnc_buildmagarray_set;
-		[player] call twc_fnc_buildmagarray;
-	};
 twc_loadout_snipergroup_cag = {
 
+	_teamstring = "rangersniper";
+	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "cag", true];
+	(group player) setvariable ["twc_groupcountry", "rangersniper", true];
 	
 	_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 	missionnamespace setvariable ["twc_iscagactive", _iscag + 1, true];
 	
 
-	{[_x] remoteexec ["twc_loadout_snipergroup_cag_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
 

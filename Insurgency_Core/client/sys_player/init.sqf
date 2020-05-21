@@ -54,6 +54,7 @@ player addeventhandler ["getoutman", {
 }];
 
 twc_staticlinevehs = [
+"twc_c5_hercules",
 "RHS_Mi8AMT_vdv",
 "CUP_O_Mi8_CHDKZ",
 "CUP_B_UH60M_FFV_US",
@@ -72,13 +73,13 @@ twc_staticlinevehs = [
 	
 
 _prepline = ["preline","Prepare Static Line","",{player setvariable ["twc_staticlineready", true];hint "Static Line Connected. Eject above 200m to deploy parachute";},{((vehicle player) != player) && ((typeof (vehicle player)) in twc_staticlinevehs) && (!(player getvariable ["twc_staticlineready", false]))}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _prepline] call ace_interact_menu_fnc_addActionToObject;
+["Air", 1, ["ACE_SelfActions"], _prepline, true] call ace_interact_menu_fnc_addActionToClass;
 
 _prepline = ["preline","Disconnect Static Line","",{player setvariable ["twc_staticlineready", false];hint "Static Line Disconnected.";},{((vehicle player) != player) && ((typeof (vehicle player)) in twc_staticlinevehs) && ((player getvariable ["twc_staticlineready", false]))}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _prepline] call ace_interact_menu_fnc_addActionToObject;
+["Air", 1, ["ACE_SelfActions"], _prepline, true] call ace_interact_menu_fnc_addActionToClass;
 
 _prepline = ["preline","Cut Away","",{moveout player},{((typeof (vehicle player)) == "rhs_d6_Parachute")}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _prepline] call ace_interact_menu_fnc_addActionToObject;
+["Air", 1, ["ACE_SelfActions"], _prepline, true] call ace_interact_menu_fnc_addActionToClass;
 
 
 //gas blowback simulation for firing with suppressors

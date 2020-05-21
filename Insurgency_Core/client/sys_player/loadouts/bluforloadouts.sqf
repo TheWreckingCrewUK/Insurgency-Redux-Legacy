@@ -11,6 +11,7 @@ twc_loadout_basiclinkeditems = ["ItemMap", "ItemCompass", "ItemWatch"];
 
 waituntil {!isnil "twc_crateitems"};
 
+#include "defines.sqf";
 #include "pilots.sqf";
 #include "sniper.sqf";
 #include "sf.sqf";

@@ -344,24 +344,14 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
-		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
-		if (_gr == "baf") then {
-			[player] call twc_loadout_sfgroup_baf_switch;
-		};
-		if (_gr == "cag") then {
-			[player] call twc_loadout_sfgroup_cag_switch;
-		};
-		if (_gr == "st6") then {
-			[player] call twc_loadout_sfgroup_st6_switch;
-		};
-		if (_gr == "ana") then {
-			[player] call twc_loadout_sfgroup_ana_switch;
-		};
-		if (_gr == "1erre") then {
-			[player] call twc_loadout_sfgroup_1erre_switch;
-		};
-		if (_gr == "ace") then {
-			[player] call twc_loadout_sfgroup_ace_switch;
+		
+		_team = player getvariable ["twc_groupcountry", "uksf"]; 
+		_role = player getvariable ["twc_loadoutrole", ""]; 
+		if (_role != "") then {
+			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
+			_var call twc_loadout_switchloadout; 
+			[player] call twc_fnc_buildmagarray_set; 
+			[player] call twc_fnc_buildmagarray;
 		};
 	};
 };
@@ -370,15 +360,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
-		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
-		if (_gr == "us") then {
-			[player] call twc_loadout_pilotgroup_us_switch;
-		};
-		if (_gr == "cag") then {
-			[player] call twc_loadout_pilotgroup_cag_switch;
-		};
-		if (_gr == "baf") then {
-			[player] call twc_loadout_pilotgroup_baf_switch;
+		
+		_team = player getvariable ["twc_groupcountry", "baf"]; 
+		_role = player getvariable ["twc_loadoutrole", ""]; 
+		if (_role != "") then {
+			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
+			_var call twc_loadout_switchloadout; 
+			[player] call twc_fnc_buildmagarray_set; 
+			[player] call twc_fnc_buildmagarray;
 		};
 	};
 };
@@ -388,60 +377,44 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
-		_gr = (group player getvariable ["twc_groupcountry", "baf"]);
-		if (_gr == "baf") then {
-			[player] call twc_loadout_snipergroup_baf_switch;
-		};
-		if (_gr == "cag") then {
-			[player] call twc_loadout_snipergroup_cag_switch;
-		};
-		if (_gr == "us") then {
-			[player] call twc_loadout_snipergroup_us_switch;
-		};
-		if (_gr == "usmc") then {
-			[player] call twc_loadout_snipergroup_usmc_switch;
-		};
-		if (_gr == "uksf") then {
-			[player] call twc_loadout_snipergroup_uksf_switch;
+		
+		_team = player getvariable ["twc_groupcountry", "baf"]; 
+		_role = player getvariable ["twc_loadoutrole", ""]; 
+		if (_role != "") then {
+			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
+			_var call twc_loadout_switchloadout; 
+			[player] call twc_fnc_buildmagarray_set; 
+			[player] call twc_fnc_buildmagarray;
 		};
 	};
 };
 
 
 if (["fst", typeof player] call BIS_fnc_inString) then {
-{
-_returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+	{
+		_returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
 
-twc_coyotecount=twc_coyotecount - 1;
-publicVariable "twc_coyotecount";
+		twc_coyotecount=twc_coyotecount - 1;
+		publicVariable "twc_coyotecount";
 
-},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
-[_x,0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
+		},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
+		[_x,0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
 
-} foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
-
-
-_gr = (group player getvariable ["twc_groupcountry", "baf"]);
+	} foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
 
 
-if (_gr == "us") then {
-	[player] call twc_loadout_fstgroup_us_switch;
+		
+	_team = player getvariable ["twc_groupcountry", "baf"]; 
+	_role = player getvariable ["twc_loadoutrole", ""];
+	if (_role != "") then {
+		_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
+		_var call twc_loadout_switchloadout; 
+		[player] call twc_fnc_buildmagarray_set; 
+		[player] call twc_fnc_buildmagarray;
+	};
 };
 
-};
 
-if (["logi", typeof player] call BIS_fnc_inString) then {
-
-_returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
-
-twc_quadbikecount=twc_quadbikecount - 1;
-publicVariable "twc_quadbikecount";
-
-},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
-["B_Quadbike_01_F",0,["ACE_MainActions"],_returnvehicle,true] call ace_interact_menu_fnc_addActionToClass;
-
-
-};
 
 
 if (["pilot", typeof player] call BIS_fnc_inString) then {

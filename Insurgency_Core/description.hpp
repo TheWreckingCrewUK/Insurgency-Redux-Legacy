@@ -45,4 +45,22 @@ class CfgIdentities
 		speaker		= "Male05ENG";
 		pitch		= 1.1;
 	};
+	class vip_6
+	{
+		name		= "John Lennon";
+		nameSound	= "Givens"; // Arma 3 only!
+		face		= "whiteHead_02";
+		glasses		= "None";
+		speaker		= "Male05ENG";
+		pitch		= 1.1;
+	};
+	class vip_7
+	{
+		name		= "Mike Wazowski";
+		nameSound	= "Givens"; // Arma 3 only!
+		face		= "whiteHead_02";
+		glasses		= "None";
+		speaker		= "Male05ENG";
+		pitch		= 1.1;
+	};
 };

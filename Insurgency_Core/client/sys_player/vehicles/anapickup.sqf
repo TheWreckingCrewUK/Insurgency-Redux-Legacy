@@ -157,7 +157,7 @@ _veh addmagazinecargoglobal ["rhs_100Rnd_762x54mmR_green", 1];
 [_veh, player, 2] call twc_fnc_genericfillvehicle;
 
 
-_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+_boxaction = ["deleteCreate","Return Vehicle","",{{deleteVehicle _x} foreach (attachedobjects this); deleteVehicle this;
 
 },{(count (player nearobjects ["Land_InfoStand__veh_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;

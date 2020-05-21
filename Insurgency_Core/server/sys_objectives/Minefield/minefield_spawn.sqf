@@ -12,15 +12,17 @@ if (_attemptcount > 50) exitwith {
 		["TWC_Insurgency_objCompleted", ["Minefield", (_this select 0)]] call CBA_fnc_serverEvent;};
 };
 _pos = [ _town, 500, 2000, 1, 0, 0.7, 0, [], [ _town,  _town]] call BIS_fnc_findSafePos;
+
+/*trigger disabled because triggering it would occasionally cause crashes
 if (random 1 < 0.8) then {
-_trg = createTrigger ["EmptyDetector", _pos];
-_trg setTriggerArea [800, 800, 0, false];
-_trg setTriggerActivation ["west", "PRESENT", False];
-_trg setTriggerTimeout [7,7,7, true];
-_trg setTriggerStatements ["this","[thistrigger] execVM 'Insurgency_Core\server\sys_objectives\Minefield\minefield_patrolspawn.sqf' ",""];
+	_trg = createTrigger ["EmptyDetector", _pos];
+	_trg setTriggerArea [800, 800, 0, false];
+	_trg setTriggerActivation ["west", "PRESENT", False];
+	_trg setTriggerTimeout [7,7,7, true];
+	_trg setTriggerStatements ["this","[thistrigger] execVM 'Insurgency_Core\server\sys_objectives\Minefield\minefield_patrolspawn.sqf' ",""];
 };
 //[_pos] execVM "Insurgency_Core\server\sys_objectives\Minefield\minefield_patrolspawn.sqf";
-
+*/
 
 //Adds a marker with a bit of an offset
 _markerPos = [_pos, 10] call CBA_fnc_randPos;

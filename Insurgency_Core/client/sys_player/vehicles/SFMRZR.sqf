@@ -42,9 +42,6 @@ clearitemCargoGlobal _veh;
 _veh AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
 _veh AddWeaponCargoGlobal ["UK3CB_BAF_Javelin_Slung_Tube",2];
 
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag",20];
-_veh AddMagazineCargoGlobal ["CUP_30Rnd_556x45_Emag_Tracer_Red",5];
-
 _veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",2];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",7];
 _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",3];
@@ -64,19 +61,12 @@ _veh addItemCargoGlobal ["SmokeShellRed",3];
 
 
 _fsgun = ["twc_rhs_weap_m240G_mdo_lazer",1];
-_fsmag = ["UK3CB_BAF_762_100Rnd_T",8*_mult];
+_fsmag = ["UK3CB_BAF_762_100Rnd_T",4];
 
 _grouptype = (group player) getvariable ["twc_groupcountry", "baf"];
 if (_grouptype == "st6") then {
 	_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
 };
-
-_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",4];
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",5];
-_veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10];
-
-_mag = (group player) getvariable ["twc_cqbmag", "CUP_30Rnd_556x45_Emag"];
-_veh AddMagazineCargoGlobal [_mag ,5];
 
 
 
