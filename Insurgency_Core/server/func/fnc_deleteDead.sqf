@@ -1,7 +1,8 @@
 params["_unit"];
 
-//currently deactivated function, to see if there's a conflict between this and our framework cleanup
-if (!hasinterface) exitwith {};
+if (true) exitwith {};
+//deactivated function, there's a cba variant run from the server
+
 [_unit] spawn{
 	params ["_unit"];
 	_bluClose = 1;

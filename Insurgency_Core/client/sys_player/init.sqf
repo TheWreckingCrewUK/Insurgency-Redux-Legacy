@@ -1,6 +1,7 @@
 #include "boxes\init.sqf";
 #include "loadouts\init.sqf";
 #include "enemy\init.sqf";
+#include "landscaping.sqf";
 
 twc_fnc_eodflag = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_player\eodflag.sqf";
 
@@ -206,7 +207,7 @@ player addEventHandler ["Put", {
 	};
 	clearmagazinecargoglobal _veh;
 	{
-		_veh addmagazinecargo [_x, 1];
+		_veh addmagazinecargoglobal [_x, 1];
 	} foreach _magcargo;
 }];
 
@@ -227,7 +228,7 @@ player addEventHandler ["Put", {
 	};
 	clearitemcargoglobal _veh;
 	{
-		_veh additemcargo [_x, 1];
+		_veh additemcargoglobal [_x, 1];
 	} foreach _magcargo;
 }];
 
@@ -248,7 +249,7 @@ player addEventHandler ["Put", {
 	};
 	clearweaponcargoglobal _veh;
 	{
-		_veh addweaponcargo [_x, 1];
+		_veh addweaponcargoglobal [_x, 1];
 	} foreach _magcargo;
 	
 }];
@@ -268,7 +269,7 @@ player addEventHandler ["Take", {
 	};
 	clearmagazinecargoglobal _veh;
 	{
-		_veh addmagazinecargo [_x, 1];
+		_veh addmagazinecargoglobal [_x, 1];
 	} foreach _magcargo;
 	player removeitem _item;
 }];
@@ -290,7 +291,7 @@ player addEventHandler ["Take", {
 	};
 	clearitemcargoglobal _veh;
 	{
-		_veh additemcargo [_x, 1];
+		_veh additemcargoglobal [_x, 1];
 	} foreach _magcargo;
 	player removeitem _item;
 }];
@@ -312,7 +313,7 @@ player addEventHandler ["Take", {
 	};
 	clearweaponcargoglobal _veh;
 	{
-		_veh addweaponcargo [_x, 1];
+		_veh addweaponcargoglobal [_x, 1];
 	} foreach _magcargo;
 	if (_item in (items player)) then {
 		player removeitem _item;

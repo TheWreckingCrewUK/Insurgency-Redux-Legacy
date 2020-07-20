@@ -287,13 +287,13 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	["RHS_MELB_MH6M"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "soar")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Littlebird (Armed)","",{
 	
 	["RHS_MELB_AH6M_L"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "cag") && ((count (units (group player))) > 1)}] call ace_interact_menu_fnc_createAction;
+	},{(totalpoints > (pointlimit * 0.5)) && (((group player) getvariable ["twc_groupcountry", "baf"]) == "soar") && ((count (units (group player))) > 1)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawnattack"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
@@ -307,7 +307,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	["CUP_B_MH47E_USA"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "soar")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Chinook","",{
@@ -331,14 +331,14 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	
 	["RHS_UH60M"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "cag")}] call ace_interact_menu_fnc_createAction;
+	},{(((group player) getvariable ["twc_groupcountry", "baf"]) != "soar")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Blackhawk","",{
 	
 	["CUP_B_UH60M_FFV_US"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
 	
-	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "cag")}] call ace_interact_menu_fnc_createAction;
+	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "soar")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
@@ -393,7 +393,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 
 	
 	_UKaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\heartsminds.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcrateuk.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;	

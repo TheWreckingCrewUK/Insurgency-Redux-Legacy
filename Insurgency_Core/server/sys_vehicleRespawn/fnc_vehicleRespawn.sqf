@@ -19,6 +19,9 @@ if(isNil "_veh")exitWith{hint "twc_fnc_vehicleRespawn was not even given a vehic
 
 _veh setVariable ["twc_cacheDisabled",true];
 
+_veh setrepaircargo -1;
+_veh setammocargo -1;
+
 if(isNil {_veh getVariable "respawnInfo"})then{
 	_weapons = getWeaponCargo _veh;
 	_items = getitemCargo _veh;

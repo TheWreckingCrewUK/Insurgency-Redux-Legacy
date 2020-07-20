@@ -1554,7 +1554,7 @@ twc_loadout_ussf_medic = [
 
 twc_loadout_uksf_sl = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1], ["ACE_MapTools", 1], ["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -1587,7 +1587,7 @@ twc_loadout_uksf_sl = [
 
 twc_loadout_uksf_2ic = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
@@ -1652,7 +1652,7 @@ twc_loadout_uksf_pointman = [
 
 twc_loadout_uksf_rifleman = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1684,7 +1684,7 @@ twc_loadout_uksf_rifleman = [
 
 twc_loadout_uksf_grenadier = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1716,7 +1716,7 @@ twc_loadout_uksf_grenadier = [
 
 twc_loadout_uksf_marksman = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1748,7 +1748,7 @@ twc_loadout_uksf_marksman = [
 
 twc_loadout_uksf_medic = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "CUP_U_CRYE_V3_Full", "CUP_U_CRYE_V1_Roll", "CUP_U_CRYE_V2_Roll", "CUP_U_CRYE_V3_Roll", "CUP_U_CRYE_RGR_Full", "CUP_U_CRYE_RGR_Roll"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),

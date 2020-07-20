@@ -77,14 +77,6 @@ twc_ailookat = {
 	_ai lookat _player;
 };
 
-addMissionEventHandler ["EntityKilled", {
-	params ["_unit", "_killer", "_instigator", "_useEffects"];
-	[_unit] spawn {
-		params ["_unit"];
-		sleep 30;
-		deletevehicle _unit;
-	};
-}];
 
 
 twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";

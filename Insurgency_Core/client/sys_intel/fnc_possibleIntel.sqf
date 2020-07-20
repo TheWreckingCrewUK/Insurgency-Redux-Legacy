@@ -70,7 +70,9 @@ if (_civilianQuestioned in nonQuestionableList) then {
 			{
 				_isdead = _x getvariable ["twccachehasbeenhit", 0];
 				if (_isdead == 0) then {
-					_cachearray pushback _x;
+					if ((_x distance [0,0,0]) > 200) then {
+						_cachearray pushback _x;
+					};
 				};
 			} foreach InsP_cacheGroup;
 			_object = _cachearray call BIS_fnc_selectRandom;

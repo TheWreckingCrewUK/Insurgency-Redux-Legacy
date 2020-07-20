@@ -11,8 +11,8 @@ params["_pos","_distance"];
 
 _near = false;
 {
-	if(_pos distance2D _x < _distance) then{
+	if((_pos distance2D (vehicle _x)) < _distance) then{
 		_near = true;
 	};
-}forEach (allPlayers - entities "HeadlessClient_F");
+}forEach (allPlayers - (entities "HeadlessClient_F"));
 _near

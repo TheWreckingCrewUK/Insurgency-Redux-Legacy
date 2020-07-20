@@ -100,7 +100,7 @@ publicVariable "twc_groupcount";
 };
 
 
-systemchat format ["I see %1", _groups];
+//systemchat format ["I see %1", _groups];
 //find out if the other infantry groups have any space
 _space = 0;
 {	if(!(str group player == str _x)) then {

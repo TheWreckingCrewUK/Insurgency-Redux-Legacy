@@ -14,7 +14,7 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	_snaction1 = ["Spawnsnipbox","US Army","",{call twc_loadout_snipergroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "rangersniper")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_snipergroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
@@ -57,7 +57,7 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 	_snaction1 = ["Spawnsnipbox","US","",{call twc_loadout_pilotgroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","160th SOAR","",{call twc_loadout_pilotgroup_cag},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag") && ((missionnamespace getvariable ["twc_iscagactive", 0]) > 0))}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","160th SOAR","",{call twc_loadout_pilotgroup_cag},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "soar") && ((missionnamespace getvariable ["twc_iscagactive", 0]) > 0))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_pilotgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
@@ -69,7 +69,7 @@ if((typeOf player) in ["Modern_UKSF_Squadleader"])then{
 	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_sfgroup_cag;},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "cag")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_sfgroup_cag;},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "ussf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","SEALS","",{call twc_loadout_sfgroup_st6},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "st6")}] call ace_interact_menu_fnc_createAction;
@@ -145,7 +145,7 @@ twc_loadout_canswitch = {
 	};
 	_check;
 };
-twc_snowflakeunits = ["cag", "st6", "ace"];
+twc_snowflakeunits = ["ussf", "st6", "ace", "rangersniper"];
 
 
 	twc_loadout_generic_switch = {
@@ -184,7 +184,7 @@ twc_loadout_sfgroup_cag = {
 		} foreach (units group player);
 	};
 	
-	(group player) setvariable ["twc_groupcountry", "cag", true];
+	(group player) setvariable ["twc_groupcountry", "ussf", true];
 	
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
@@ -213,7 +213,7 @@ twc_loadout_sfgroup_st6 = {
 		} foreach (units group player);
 	};
 	
-	(group player) setvariable ["twc_groupcountry", "st6", true];
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
@@ -412,7 +412,7 @@ twc_loadout_snipergroup_us = {
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
 	(group player) setvariable ["twc_groupcountry", "usarmysniper", true];
 	
-	if (_last == "cag") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -431,7 +431,7 @@ twc_loadout_snipergroup_usmc = {
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
 	(group player) setvariable ["twc_groupcountry", "usmcsniper", true];
 	
-	if (_last == "cag") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -450,7 +450,7 @@ twc_loadout_snipergroup_baf = {
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
 	(group player) setvariable ["twc_groupcountry", "bafsniper", true];
 	
-	if (_last == "cag") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};
@@ -469,7 +469,7 @@ twc_loadout_snipergroup_uksf = {
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
 	(group player) setvariable ["twc_groupcountry", "uksfsniper", true];
 	
-	if (_last == "cag") then {
+	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
 	};

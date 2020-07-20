@@ -2845,6 +2845,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
  if((typeOf player) in ["1990_British_Rifleman_AT","1990_British_Rifleman_AT_Desert","1990_RM_British_Rifleman_AT_Mix"])then{
@@ -2866,6 +2870,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_OLI_Rifleman_A",1]
+	];
 };
 
  
@@ -2885,6 +2893,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["UK3CB_BAF_B_Bergen_OLI_Rifleman_A",1]
 	];
 };
 
@@ -2913,6 +2925,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 };
 
@@ -2947,6 +2963,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_personalAidKit", 1],
 		["ACE_bodyBag", 10]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -2966,6 +2986,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
  if (typeOf vehicle player == "1990_British_Sniper_desert") then {
@@ -2973,6 +2997,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     [
         ["twc_l96_d",1],
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
+        ["twc_rhs_weap_M107",1],
         ["UK3CB_BAF_L9A1",1]
 	];
 
@@ -2980,6 +3005,9 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",3],
+		["UK3CB_BAF_556_30Rnd",10],
 		["UK3CB_BAF_9_13Rnd",10]
     ];
 
@@ -2990,6 +3018,11 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_SpottingScope",1],
 		["ACRE_PRC343",0]
 	];
+
+	_tmp_backpacks =
+	[
+		["twc_AlicePack_tan",1]
+	];
 };
 
  if (typeOf vehicle player == "1990_British_Spotter_desert") then {
@@ -2997,6 +3030,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
     [
         ["UK3CB_BAF_L85A1_SUSAT3D",1],
         ["twc_l96_d",1],
+        ["ACE_Yardage450",1],
+        ["Binocular",1],
         ["UK3CB_BAF_L9A1",1]
 	];
 
@@ -3004,6 +3039,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",3],
 		["UK3CB_BAF_556_30Rnd",50],
 		["UK3CB_BAF_556_30Rnd_T",10],
 		["UK3CB_BAF_9_13Rnd",10]
@@ -3013,7 +3050,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0],
 		["ACE_Tripod",1],
-		["cup_optic_an_pvs_4",3],
+		["cup_optic_an_pvs_4",2],
 		["APERSTripMine_Wire_Mag",3],
 		["ACE_SpottingScope",1],
 		["ACE_RangeCard",1],
@@ -3207,6 +3244,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -3231,6 +3272,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 };
 
@@ -3265,6 +3310,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	[
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -3285,6 +3334,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 };
 
@@ -3318,6 +3371,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC343",0]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -3338,6 +3395,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 };
 
@@ -3361,6 +3422,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	_tmp_items =
 	[
 		["ACRE_PRC343",0]
+	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
 	];
 };
 
@@ -3396,6 +3461,10 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["ACE_personalAidKit", 1],
 		["ACRE_PRC343", 1]
 	];
+	_tmp_backpacks = 
+	[
+		["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A",1]
+	];
 };
 
 
@@ -3426,6 +3495,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["twc_l96_d",1],
 		["ACE_Yardage450",1],
 		["UK3CB_BAF_L85A2_SUSAT",1],
+        ["twc_rhs_weap_M107",1],
 		["UK3CB_BAF_L107A1",1]
 	];
 
@@ -3435,7 +3505,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 		["UK3CB_BAF_9_15Rnd",20],
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
 		["UK3CB_BAF_762_L42A1_10Rnd_T",30],
-		["rhsusf_mag_10Rnd_STD_50BMG_M33",15]
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",3]
     ];
 
 	_tmp_items =
@@ -3460,6 +3531,8 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
    [            
 		["UK3CB_BAF_762_L42A1_10Rnd_T",30],
 		["UK3CB_BAF_762_L42A1_10Rnd",50],
+		["rhsusf_mag_10Rnd_STD_50BMG_M33",20],
+		["rhsusf_mag_10Rnd_STD_50BMG_mk211",3],
 		["UK3CB_BAF_9_15Rnd",20],
 		["UK3CB_BAF_556_30Rnd",50]
     ];

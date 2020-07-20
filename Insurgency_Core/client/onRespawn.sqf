@@ -345,7 +345,7 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
 		
-		_team = player getvariable ["twc_groupcountry", "uksf"]; 
+		_team = (group player) getvariable ["twc_groupcountry", "uksf"]; 
 		_role = player getvariable ["twc_loadoutrole", ""]; 
 		if (_role != "") then {
 			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 

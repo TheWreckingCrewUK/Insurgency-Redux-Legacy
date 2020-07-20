@@ -72,7 +72,9 @@ publicVariable "twc_activemissions";
 
 sleep 20;
 
-waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))};
+while {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines - (2 + random 3))} do {
+	sleep 120;
+};
 [
 	{
 		["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
@@ -82,7 +84,10 @@ waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines - (2 
 ] call CBA_fnc_waitAndExecute;
 
 //Complete or fail
-waituntil {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines /2)};
+while {count (_markerpos nearobjects ["minebase", 150]) < (_totalmines /2)} do {
+	sleep 120;
+};
+
 [
 	{
 		[(_this select 1), "SUCCEEDED"] call BIS_fnc_taskSetState;

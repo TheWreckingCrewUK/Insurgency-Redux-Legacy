@@ -16,9 +16,12 @@
 params ["_objType"];
 //Finds the random building position away from base and not near players
 _pos = [0,0,0];
+
+_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
+
 while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || [_pos,500] call twc_fnc_posNearPlayers} do {			
 
-	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
+	
 	sleep .25;
 	_c = 0;
 	_house = _houseList call BIS_fnc_selectRandom;

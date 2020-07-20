@@ -40,7 +40,7 @@ _car = _vehtype createvehicle _spawnpos;
 
 _car setdir (_car getdir (_waypoints select 0));
 
-_enemychance = ((-0.3 + ((_spawnpos distance _securepos) / 10000)) min 0.8);
+_enemychance = ((-0.3 + ((_spawnpos distance _securepos) / 7000)) min 0.5);
 
 if (((random 1) < _enemychance) || (_vehtype in _enemyvehs)) then {
 

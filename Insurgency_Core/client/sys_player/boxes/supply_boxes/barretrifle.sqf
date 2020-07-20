@@ -39,4 +39,4 @@ _box AddweaponCargoGlobal ["twc_rhs_weap_M107",1];
 
 _box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_M33",20];
 _box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_AMAX",10];
-_box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_mk211",3];
+_box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_mk211",6];

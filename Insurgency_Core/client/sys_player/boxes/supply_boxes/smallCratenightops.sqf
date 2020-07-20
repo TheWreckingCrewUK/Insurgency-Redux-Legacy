@@ -19,8 +19,6 @@ clearitemCargoGlobal _box;
 
 //Weapons
 _box AddWeaponCargoGlobal ["twc_L5A4_white",4];
-_box AddWeaponCargoGlobal ["twc_L5A4_red",4];
-_box AddWeaponCargoGlobal ["twc_L5A4_green",4];
 
 
 //supplies
@@ -35,8 +33,6 @@ _box addItemCargoGlobal ["ACE_Flashlight_KSF1",15];
 _box addItemCargoGlobal ["ACE_HandFlare_White",15];
 _box addItemCargoGlobal ["ACE_HandFlare_Green",15];
 _box addItemCargoGlobal ["twc_l5a4_w",20];
-_box addItemCargoGlobal ["twc_l5a4_g",20];
-_box addItemCargoGlobal ["twc_l5a4_r",20];
 _box addItemCargoGlobal ["ACE_IR_Strobe_Item",10];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

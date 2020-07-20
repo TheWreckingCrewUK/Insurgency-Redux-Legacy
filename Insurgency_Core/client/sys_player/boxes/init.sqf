@@ -29,7 +29,7 @@ if (_isflipping) exitwith {hint "this vehicle is being recovered already";};[_ta
 	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
-	_twc_repveh = ["prepveh","Prep Supplies","",{[_target, player, 2] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
+	_twc_repveh = ["prepveh","Prep Supplies","",{[_target, player, 2] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(getNumber (configFile >> "CfgVehicles" >> (typeof (_target)) >> "maximumload") > 0) && (alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
 	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_twc_repveh = ["prepvehm","Prep Magazines Only","",{[_target, player, 2, true, false] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
@@ -567,15 +567,32 @@ if((typeOf player) in ["2000_British_SectionCommander_Desert","2000_British_Sect
 
 
 
-if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","2000_British_Sniper","2000_British_Sniper_desert"])then{
+if((typeOf player) in ["2000_British_Spotter", "2000_British_Spotter_desert","2000_British_Sniper","2000_British_Sniper_desert", "1990_British_Spotter", "1990_British_Spotter_desert","1990_British_Sniper","1990_British_Sniper_desert"])then{
+
+_UKaction1 = ["Spawnheartscrate","Spawn Hearts And Minds Kit","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\heartsminds.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_UKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_alphaaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 
 
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Small Ammo Crate","",{execvm "Insurgency_Core\client\sys_player\boxes\supply_boxes\smallCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Anti Material Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\barretrifle.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
-
-	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Sniper Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_hUKaction3 = ["SpawnsmallUKCreate","Spawn Large Ammo Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\largeCrategeneric.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_hUKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
 	

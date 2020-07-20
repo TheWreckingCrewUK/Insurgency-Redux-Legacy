@@ -3,12 +3,12 @@ params ["_vehicle", "_caller"];
 _mass = getmass _vehicle;
 
 ("Recovery initiated. Stand back.") remoteExec ["hint", _caller];
-
-if (_mass > 7500) exitwith {
+//just sticking with the non-physx method for now, because it looks bad on non-local clients
+if ((_mass > 7500) || true) exitwith {
 
 	_helpers = {isplayer _x} count (_vehicle nearEntities ["Man", 50]);
 	
-	_neededhelpers = (round ((_mass / 1200) min ((count allplayers) * 0.8)));
+	_neededhelpers = (round ((_mass / 1200) min ((((side player) countside allplayers)) * 0.8)));
 	
 	if (_helpers >= _neededhelpers) then {
 		_vehicle allowdamage false;
@@ -18,7 +18,7 @@ if (_mass > 7500) exitwith {
 		_vehicle allowdamage true;
 		("Recovery complete.") remoteExec ["hint", _caller];
 	} else {
-		(format ["You need %1 players nearby to shift this vehicle", _neededhelpers]) remoteExec ["hint", _caller];
+		(format ["You need %1 players nearby to recover this vehicle", _neededhelpers]) remoteExec ["hint", _caller];
 	};
 };
 

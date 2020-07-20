@@ -72,7 +72,7 @@ _car2 = "CUP_B_HMMWV_M2_USA";
 };
 
 _playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.1) +2) max 2;
-if (count (_boxpos nearentities ["car", 200]) >_playercount) exitwith {
+if (count (_boxpos nearentities [_car2, 200]) >_playercount) exitwith {
 	if (_showhint) then {
 		hint "there are already enough vehicles here";
 	};
@@ -84,7 +84,7 @@ if (count (_boxpos nearobjects ["Vysilacka", 200]) == 0) exitwith {
 };
 
 _vehicle = createvehicle [_car1, [0,0,0]];
-_total = (ceil (((_playercount * 0.5)-(count (_boxpos nearentities ["car", 200])))* 1.5) max 1) min 4;
+_total = (ceil (((_playercount * 0.5)-(count (_boxpos nearentities [_car1, 200])))* 1.5) max 1) min 4;
 if (_showhint) then {
 	hint format ["Spawning %1 Vehicles", _total *2];
 };

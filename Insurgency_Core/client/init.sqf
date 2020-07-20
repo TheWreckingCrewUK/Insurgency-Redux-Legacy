@@ -7,7 +7,7 @@
 #include "sys_player\init.sqf";
 #include "sys_basedefence\init.sqf";
 #include "sys_intel\init.sqf";
-#include "sys_ragdoll\init.sqf";
+//#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
 
