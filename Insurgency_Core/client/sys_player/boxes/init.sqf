@@ -22,44 +22,6 @@ player addEventHandler ["InventoryClosed", {
 	};
 }];
 */
-
-	_twc_repveh = ["repveh","Recover Vehicle","",{_isflipping = _target getvariable ["twc_vehisflipping", false];
-
-if (_isflipping) exitwith {hint "this vehicle is being recovered already";};[_target, player] remoteexec ["twc_fnc_flipvehicle", _target];},{(alive _target) && (1 < (vectorUp _target) vectorDistance (surfaceNormal getPosATL _target))}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-
-	_twc_repveh = ["prepveh","Prep Supplies","",{[_target, player, 2] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(getNumber (configFile >> "CfgVehicles" >> (typeof (_target)) >> "maximumload") > 0) && (alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["prepvehm","Prep Magazines Only","",{[_target, player, 2, true, false] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "prepveh"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["prepvehi","Prep Items Only","",{[_target, player, 2, false, true] call twc_fnc_genericfillvehicle;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{(alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "prepveh"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
-	_twc_repveh = ["clearsupplies","Clear Supplies","",{},{(alive _target) && (((getPos AmmoBoxSpawner) distance _target) < 20) && ((["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3))}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesweps","Clear Weapons","",{clearweaponcargoglobal _target;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{((count (weaponcargo _target)) > 0)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesweps2","Clear Specific Weapon","",{player setvariable ["twc_isclearingvehicleweaponcargo", time];playSound3D ["A3\missions_f\data\sounds\click.wss", player];hint "The next weapon you put in or take from the vehicle within 20 seconds will be completely removed from the vehicle";},{true}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies", "clearsuppliesweps"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesitems","Clear All Items","",{clearitemcargoglobal _target;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{((count (itemcargo _target)) > 0)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesiweps","Clear Specific Item","",{player setvariable ["twc_isclearingvehicleitemcargo", time];playSound3D ["A3\missions_f\data\sounds\click.wss", player];hint "The next item you put in or take from the vehicle within 20 seconds will be completely removed from the vehicle";},{true}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies", "clearsuppliesitems"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesmags","Clear All Magazines","",{clearmagazinecargoglobal _target;playSound3D ["A3\missions_f\data\sounds\click.wss", player];},{((count (magazinecargo _target)) > 0)}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_twc_repveh = ["clearsuppliesiweps","Clear Specific Magazine","",{player setvariable ["twc_isclearingvehiclemagcargo", time];playSound3D ["A3\missions_f\data\sounds\click.wss", player]; hint "The next magazine you put in or take from the vehicle within 20 seconds will be completely removed from the vehicle";},{true}] call ace_interact_menu_fnc_createAction;
-	["landvehicle",0,["ACE_MainActions", "clearsupplies", "clearsuppliesmags"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
-	
 	
 	_twc_repveh = ["repveh","Repair Nearby Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\repairvehicle.sqf"},{alive _target}] call ace_interact_menu_fnc_createAction;
 	["UK3CB_BAF_MAN_HX58_Repair_Sand",0,["ACE_MainActions"],_twc_repveh,true] call ace_interact_menu_fnc_addActionToClass;
@@ -635,7 +597,7 @@ if((typeOf player) in ["TWC_2000_US_Army_SectionCommander","TWC_2000_US_Army_Tea
 
 
 if ((["commander", typeof player] call BIS_fnc_inString) || (["leader", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["spotter", typeof player] call BIS_fnc_inString)) then {
-	_vic = ["spawn762","Spawn Vehicles","",{[_target] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_vic = ["spawn762","Spawn Vehicles","",{[_target, true] execvm "insurgency_core\client\sys_player\vehicledrop.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["UK3CB_BAF_MAN_HX58_Container_Green",0,["ACE_MainActions"],_vic,true] call ace_interact_menu_fnc_addActionToClass;};
 
 //if((typeOf player) in ["Modern_British_Quartermaster","2000_British_quartermaster_Desert","1990_British_quartermaster_Desert"])then{

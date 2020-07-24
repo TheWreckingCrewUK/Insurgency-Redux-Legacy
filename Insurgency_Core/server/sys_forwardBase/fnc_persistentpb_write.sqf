@@ -11,7 +11,7 @@ _radio = _pos nearObjects ["vysilacka",200];
 
 if ((count _radio) == 0) exitwith {deletevehicle _trigger;};
 
-_primary = nearestObjects [_pos, (["landvehicle", "air", "NATO_Box_Base", "UK3CB_BAF_MAN_HX58_Container_Green", "twc_radiotable", "twc_portableGenerator"]) + twc_fortifyobjects, 300];
+_primary = nearestObjects [_pos, (["landvehicle", "air", "NATO_Box_Base", "UK3CB_BAF_MAN_HX58_Container_Green", "twc_radiotable", "twc_portableGenerator", "B_supplyCrate_F"]) + twc_fortifyobjects, 300];
 
 _final = [];
 // && ((isvehiclecargo _x) == objnull) && (((getposatl _x) select 2) > 0)

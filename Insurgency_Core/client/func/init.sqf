@@ -34,8 +34,6 @@ twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\fun
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
 
 
-twc_fnc_flipvehicle = compile preprocessfilelinenumbers "insurgency_core\client\sys_player\flipvehicle.sqf";
-
 twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
 
 

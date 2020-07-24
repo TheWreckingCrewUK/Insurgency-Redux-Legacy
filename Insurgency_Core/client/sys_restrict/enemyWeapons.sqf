@@ -13,16 +13,8 @@ player addEventHandler ["InventoryOpened", {
 	};
 }];
 */
-_local_restrictedPrimaryWeapons = ["twc_ksvk", "CUP_srifle_SVD_des_ghillie_pso", "CUP_arifle_M16A2", "CUP_arifle_FNFAL", "CUP_lmg_PKM", "CUP_arifle_AK74_GL", "CUP_arifle_AK74", "CUP_arifle_AKM", "CUP_arifle_AKS_Gold", "CUP_arifle_M16A2", "CUP_arifle_AKS", "CUP_arifle_AK74"];
+twc_enemymags = ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_30Rnd_545x39_AK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_556x45_Stanag"];
 
-twc_rarePrimaryWeapons = ["rhs_weap_M107", "rhs_weap_m14ebrri_leu", "twc_l96_w", "rhs_weap_svdp_pso1", "twc_pol_svd"];
-
-if(isNil "twc_restrictedPrimaryWeapons") then{
-twc_restrictedPrimaryWeapons = _local_restrictedPrimaryWeapons;
-publicVariable "twc_restrictedPrimaryWeapons";
-} else {
-{twc_restrictedPrimaryWeapons pushback _x} foreach _local_restrictedPrimaryWeapons;
-publicVariable "twc_restrictedPrimaryWeapons";};
 
 twc_restrictedSecondaryWeapons = ["CUP_launch_RPG7V"];
 
@@ -30,9 +22,7 @@ player addEventHandler ["Take", {
 	params["_unit","_container","_item"];
 	if ((side player) == east) exitwith {};
 	
-		if (_item in twc_restrictedPrimaryWeapons) then {
-		execvm "Insurgency_Core\client\sys_restrict\restrictedprimary.sqf";
-	};
+	
 	
 		if(_item in twc_restrictedSecondaryWeapons)then{
 		execvm "Insurgency_Core\client\sys_restrict\restrictedsecondary.sqf";
@@ -48,21 +38,23 @@ player addEventHandler ["Take", {
 }];
 
 player addEventHandler ["Fired", {
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-	if ((side player) == west) then {
-		if (_weapon == secondaryWeapon player) then {
-			if (random 1>0.99) then {
-				deleteVehicle (_this select 6);
-				"R_60mm_HE" createVehicle (getPos player);
-				hint "WEAPON FAILURE";	
-				player removeweapon secondaryWeapon player;		
-			} else {
-				if (_weapon != "CUP_launch_RPG7V") then {
-				
-					_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
-				};
+params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+if ((side player) == west) then {
+	if ((random 1) > 0.97) then {
+		if (_weapon == "CUP_launch_RPG7V") then {
+			deleteVehicle _ammo;
+			player removeweapon secondaryWeapon player;
+			"R_60mm_HE" createVehicle (getPos player);
+			hint "WEAPON FAILURE";
+		} else {
+			if (_magazine in twc_enemymags) then {
+				[player, currentWeapon player] call ace_overheating_fnc_jamWeapon;	
 			};
 		};
+	};
+	if (_weapon == "CUP_launch_RPG7V") then {
+		_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];
+	};
 	} else {
 		if (_weapon == secondaryWeapon player) then {
 			_mult = 0.6;_bullet = _this select 6; _bullet setvelocity [(velocity _bullet select 0) + (((random 24) - 12) * _mult), (velocity _bullet select 1) + (((random 24) - 12) * _mult), 	(velocity _bullet select 2) + (((random 4) - 2) * _mult)];

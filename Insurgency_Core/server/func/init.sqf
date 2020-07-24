@@ -31,7 +31,8 @@ twc_fnc_betrayal = compile preprocessfilelinenumbers "Insurgency_Core\server\sys
 
 twc_fnc_aispreadout = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_aispreadout.sqf";
 
-twc_fnc_flipvehicle = compile preprocessfilelinenumbers "insurgency_core\client\sys_player\flipvehicle.sqf";
+twc_fnc_flipvehicle_server = compile preprocessfilelinenumbers "Insurgency_Core\client\interactions\recovervehicle.sqf";
+call twc_fnc_flipvehicle_server;
 
 twc_fnc_perspb_trigger = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_trigger.sqf";
 twc_fnc_perspb_write = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_forwardbase\fnc_persistentpb_write.sqf";

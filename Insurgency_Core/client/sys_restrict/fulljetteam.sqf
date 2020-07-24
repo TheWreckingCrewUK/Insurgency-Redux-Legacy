@@ -40,6 +40,9 @@ cutText ["", "Black", 0.001];
         "<t size='1.2'>Fixed Wing Team</t><br/><t size='0.6'>You need both members of the Fixed Wing team online to proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
 	sleep 5;
+	if ((player distance twc_basepos) > 10) then {
+		player setpos twc_basepos;
+	};
 };
 cutText ["","Black IN",5];
 player forceWalk false;

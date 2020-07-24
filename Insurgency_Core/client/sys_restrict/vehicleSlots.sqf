@@ -534,6 +534,14 @@ _list=[
 			_crewchiefs
 		]],3
 	],
+		["RHS_UH60M_d",[ 
+		["driver", 
+			_pilots
+		],
+		[[0], 
+			_crewchiefs
+		]],3
+	],
 		["B_Heli_Transport_01_F",[ 
 		["driver", 
 			_pilots

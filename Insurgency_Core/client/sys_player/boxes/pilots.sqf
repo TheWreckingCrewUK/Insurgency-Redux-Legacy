@@ -12,11 +12,11 @@ _transportcond2 = {(( count(allPlayers - entities "HeadlessClient_F")) >= 7) || 
 //_cascond = {( count(allPlayers - entities "HeadlessClient_F")) >= 8};
 _cascond = {(totalpoints > (pointlimit / 2))};
 
-_attackcond = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
+_attackcond = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (((count units (group player)) == (count allplayers))))};
 
-_attackcond2 = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
+_attackcond2 = {((totalpoints > (pointlimit /3)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (((count units (group player)) == (count allplayers))))};
 
-_attackcond3 = {((totalpoints > (pointlimit /2)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (group player getvariable ["twc_oversize", false]))};
+_attackcond3 = {((totalpoints > (pointlimit /2)) && ((count units (group player)) > 1)) || (((count units (group player)) > 1) && (((count units (group player)) == (count allplayers))))};
 
 _planecondlow = {( count(allPlayers - entities "HeadlessClient_F")) >= 0};
 

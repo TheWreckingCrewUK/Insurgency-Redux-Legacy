@@ -1,16 +1,5 @@
-//Mission Status:
-InsP_fnc_MissionStatus = compile preProcessFileLineNumbers "Insurgency_Core\client\sys_intel\MissionStatus.sqf";
 
-InsP_MissionStatus = ["MissionStatus","Mission Status","",{call InsP_fnc_MissionStatus},{(twc_campaignmode == 0) || (isnil "twc_campaignmode")}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], InsP_MissionStatus] call ace_interact_menu_fnc_addActionToObject;
 
-InsP_MissionStatus = ["MissionStatus","BLUFOR Intel","",{execvm "Insurgency_Core\client\func\fnc_findfurthestbluforfrombase.sqf"},{((side player) == west)}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], InsP_MissionStatus] call ace_interact_menu_fnc_addActionToObject;
-
-/*
-InsP_stopcivs = ["stopcivs","Shout Down","",{[player] remoteexec ["twc_fnc_stopcivs", 2]},{true}] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], InsP_stopcivs] call ace_interact_menu_fnc_addActionToObject;
-*/
 
 execvm "Insurgency_Core\client\sys_intel\stopcivsinit.sqf";
 

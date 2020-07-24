@@ -19,9 +19,9 @@ _car2 = "CUP_O_Hilux_M2_TK_INS";
 
 if (["usmc", typeof player] call BIS_fnc_inString) then {
 
-_car1 = "CUP_B_HMMWV_Unarmed_USA";
+_car1 = "rhsusf_m1025_d";
 
-_car2 = "CUP_B_HMMWV_M2_USA";
+_car2 = "rhsusf_m1043_d_m2";
 };
 
 
@@ -62,9 +62,9 @@ _car2 = "CUP_I_Datsun_PK_TK_Random";
 
 if (["usmc", typeof player] call BIS_fnc_inString) then {
 
-_car1 = "CUP_B_HMMWV_Unarmed_USA";
+_car1 = "rhsusf_m1025_d";
 
-_car2 = "CUP_B_HMMWV_M2_USA";
+_car2 = "rhsusf_m1043_d_m2";
 };
 
 
@@ -94,13 +94,12 @@ if (_showhint) then {
 //_pos = [_boxpos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
 _pos = [_boxpos, 5, 50, 10, 0, 1, 0, [], [_boxpos, _boxpos]] call BIS_fnc_findSafePos;
 
-for "_i" from 1 to _total do{ 
+for "_i" from 1 to _total do{
 
 //_spawnPos = [_pos,[5,50],random 360,0, [1,40], [50,(typeof _vehicle)]] call SHK_pos; 
 _spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _wmik = createvehicle [_car2, _spawnPos];  
 clearweaponcargoglobal _wmik; 
-_wmik addmagazinecargoglobal ["UK3CB_BAF_762_200Rnd_T", 5];
 
 
 
@@ -165,8 +164,8 @@ if (typeof _wmik == "I_G_Offroad_01_armed_F") then {
 _wmik setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"];
 };
 
-if (typeof _wmik == "CUP_B_HMMWV_M2_USA") then {
-
+if (typeof _wmik == "rhsusf_m1043_d_m2") then {
+	_wmik addmagazinecargoglobal ["UK3CB_BAF_127_100Rnd", 3];
 };
 
 //_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
@@ -214,7 +213,7 @@ _car
 ] call BIS_fnc_initVehicle;
 };
 
-if (typeof _car == "CUP_B_HMMWV_Unarmed_USA") then {
+if (typeof _car == "rhsusf_m1025_d") then {
 
 };
 

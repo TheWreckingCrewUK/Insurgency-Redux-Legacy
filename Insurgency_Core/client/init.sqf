@@ -7,34 +7,17 @@
 #include "sys_player\init.sqf";
 #include "sys_basedefence\init.sqf";
 #include "sys_intel\init.sqf";
+#include "interactions\init.sqf";
 //#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
 
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
 InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
-twc_news = compile preprocessfilelinenumbers "Insurgency_Core\client\news.sqf";
+
 cutText ["","Black IN",0.001];
 
-_alphaaction = ["SpawnsmallAlphaCreate","TWC News","",{call twc_news},{true}] call ace_interact_menu_fnc_createAction;
-["TWC_Item_Public_Base_LOCSTAT",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
-_alphaaction = ["SpawnsmallAlphaCreate","Start Simple CQB Course","",{execvm "Insurgency_Core\client\func\fnc_cqbrange.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-["Infostand_1_EP1",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-_alphaaction = ["SpawnsmallAlphaCreate","Start Complex CQB Course","",{[true] execvm "Insurgency_Core\client\func\fnc_cqbrange.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-["Infostand_1_EP1",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-_alphaaction = ["SpawnsmallAlphaCreate","Reset CQB Course","",{execvm "Insurgency_Core\client\func\fnc_cqbrange_reset.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-["Infostand_1_EP1",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-
-_alphaaction = ["SpawnsmallAlphaCreate","Teleport to Patrol Base","",{player setpos (getmarkerpos "respawn_west_forwardbase")},{((str (getmarkerpos "respawn_west_forwardbase")) != "[0,0,0]") && (!(player getvariable ["ace_dragging_isdragging", false])) && (!(player getvariable ["ace_dragging_iscarrying", false]))}] call ace_interact_menu_fnc_createAction;
-["Land_InfoStand_V1_F",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-
-_alphaaction = ["SpawnsmallAlphaCreate","Teleport to Main Base","",{player setpos twc_basepos},{((player distance twc_basepos) > 400) && (!(player getvariable ["ace_dragging_isdragging", false])) && (!(player getvariable ["ace_dragging_iscarrying", false]))}] call ace_interact_menu_fnc_createAction;
-["TWC_Item_Public_Base_LOCSTAT",0,["ACE_MainActions"],_alphaaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 twc_endmissionplayer = {
 player setvehicleammo 0;

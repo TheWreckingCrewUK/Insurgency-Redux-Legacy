@@ -63,4 +63,13 @@ class CfgIdentities
 		speaker		= "Male05ENG";
 		pitch		= 1.1;
 	};
+	class vip_8
+	{
+		name		= "Uvuvwevwevwe Onyetenyevwe Ugwemuhwem Osas";
+		nameSound	= "Givens"; // Arma 3 only!
+		face		= "whiteHead_02";
+		glasses		= "None";
+		speaker		= "Male05ENG";
+		pitch		= 1.1;
+	};
 };

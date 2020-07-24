@@ -28,6 +28,9 @@ cutText ["", "Black", 0.001];
         "<t size='1.2'>Sniper Team</t><br/><t size='0.6'>You need both members of the sniper team online to proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
 	sleep 5;
+	if ((player distance twc_basepos) > 10) then {
+		player setpos twc_basepos;
+	};
 };
 cutText ["","Black IN",5];
 player forceWalk false;
@@ -38,12 +41,6 @@ player forceWalk false;
 if (((group player) getVariable ["twc_attachrestrictedgrp",1]) == 0) then {
 	(group player) setvariable ["twc_legitgrp", time, true];
 };
-
-//last man, to de-legit the group when leaving
-[] spawn {
-	waituntil {(count (units group player)) == 1};
-	(group player) setvariable ["twc_legitgrp", -99999, true];
-};	
 
 
 //execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";

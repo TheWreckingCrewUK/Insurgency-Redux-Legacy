@@ -8,7 +8,7 @@ _count = 0;
 	};
 } foreach allplayers;
 
-if (((count allplayers) > 1) && ((count (units (group player))) == (count allplayers))) then {
+if (((count (units (group player))) == (count allplayers))) then {
 	_count = 2;
 	group player setvariable ["twc_oversize", true, true];
 };

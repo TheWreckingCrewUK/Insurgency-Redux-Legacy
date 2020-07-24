@@ -124,9 +124,9 @@ clearbackpackcargoglobal _car;
 	}];
 } foreach (crew _car);
 
-_array = missionnamespace getvariable ["twc_civcars", []];
-_array pushback [_driver, _car];
-missionnamespace setvariable ["twc_civcars", _array, true];
+		_count = missionnamespace getvariable ["twc_civcars", 0];
+		_count = _count + 1;
+		missionnamespace setvariable ["twc_civcars", _count, true];
 
 
 _car addEventHandler ["Killed", {
@@ -134,18 +134,17 @@ _car addEventHandler ["Killed", {
 	if ((!([getpos _car, 2000] call twc_fnc_posNearPlayers)) || ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getposasl _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0))) then {
 		deletevehicle _car;
 	};
-	_array = missionnamespace getvariable ["twc_civcars", []];
-	_driver = _car getvariable ["twccivcar_driver",objnull];
-	_array deleteat (_array find [_driver, _car]);
-	missionnamespace setvariable ["twc_civcars", _array, true];
+		_count = missionnamespace getvariable ["twc_civcars", 0];
+		_count = _count - 1;
+		missionnamespace setvariable ["twc_civcars", _count, true];
 }];
 
 _car addEventHandler ["GetOut", {
 	params ["_car", "_role", "_driver", "_turret"];
 	if (!([getpos _car, 1200] call twc_fnc_posNearPlayers)) exitwith {
-		_array = missionnamespace getvariable ["twc_civcars", []];
-		_array deleteat (_array find [_driver, _car]);
-		missionnamespace setvariable ["twc_civcars", _array, true];
+		_count = missionnamespace getvariable ["twc_civcars", 0];
+		_count = _count - 1;
+		missionnamespace setvariable ["twc_civcars", _count, true];
 		deletevehicle _driver;
 		{deletevehicle _x} foreach crew _car;
 		deletevehicle _car;
@@ -158,9 +157,9 @@ _car addEventHandler ["GetOut", {
 	};
 	
 	if (!alive _driver) then {
-		_array = missionnamespace getvariable ["twc_civcars", []];
-		_array deleteat (_array find [_driver, _car]);
-		missionnamespace setvariable ["twc_civcars", _array, true];
+		_count = missionnamespace getvariable ["twc_civcars", 0];
+		_count = _count - 1;
+		missionnamespace setvariable ["twc_civcars", _count, true];
 	};
 	
 }];

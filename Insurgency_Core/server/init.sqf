@@ -20,6 +20,7 @@ while {sunormoon < 1} do {
 	skiptime (random 0.5);
 };
 // Includes
+#include "crashprotection.sqf";
 #include "func\init.sqf";
 diag_log "hoblog init 24";
 #include "sys_controllers\init.sqf";

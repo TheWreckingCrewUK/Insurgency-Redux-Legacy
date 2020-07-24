@@ -24,9 +24,9 @@ if ((count _roads) < 4) exitwith {
 	//systemchat "civtraffclient 9";
 };
 
-_carcount = missionnamespace getvariable ["twc_civcars", []];
+_carcount = missionnamespace getvariable ["twc_civcars", 0];
 
-if ((count _carcount) > 20) exitwith {
+if ((_carcount) > 20) exitwith {
 	[twc_fnc_civtraffic_client, [_player], _timer] call CBA_fnc_waitAndExecute;
 	//systemchat "civtraffclient 16";
 };
