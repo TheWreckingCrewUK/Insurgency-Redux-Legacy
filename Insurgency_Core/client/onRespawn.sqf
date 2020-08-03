@@ -340,7 +340,7 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 };
 
 
-if (["uksf", typeof player] call BIS_fnc_inString) then {
+if ((["uksf", typeof player] call BIS_fnc_inString) || ((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])) then {
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
@@ -356,12 +356,15 @@ if (["uksf", typeof player] call BIS_fnc_inString) then {
 	};
 };
 
+
+
+
 if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
 		
-		_team = player getvariable ["twc_groupcountry", "baf"]; 
+		_team = (group player) getvariable ["twc_groupcountry", "baf"]; 
 		_role = player getvariable ["twc_loadoutrole", ""]; 
 		if (_role != "") then {
 			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
@@ -373,21 +376,6 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 };
 
 
-if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"]) then {
-	[] spawn {
-		_pos = getpos player;
-		waituntil {(player distance _pos) > 3};
-		
-		_team = player getvariable ["twc_groupcountry", "baf"]; 
-		_role = player getvariable ["twc_loadoutrole", ""]; 
-		if (_role != "") then {
-			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
-			_var call twc_loadout_switchloadout; 
-			[player] call twc_fnc_buildmagarray_set; 
-			[player] call twc_fnc_buildmagarray;
-		};
-	};
-};
 
 
 if (["fst", typeof player] call BIS_fnc_inString) then {
@@ -404,7 +392,7 @@ if (["fst", typeof player] call BIS_fnc_inString) then {
 
 
 		
-	_team = player getvariable ["twc_groupcountry", "baf"]; 
+	_team = (group player) getvariable ["twc_groupcountry", "baf"]; 
 	_role = player getvariable ["twc_loadoutrole", ""];
 	if (_role != "") then {
 		_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 

@@ -19,6 +19,9 @@ while {sunormoon < 1} do {
 	};
 	skiptime (random 0.5);
 };
+1 setOvercast 0.0;
+1 setfog 0.0;
+1 setrain 0.0;
 // Includes
 #include "crashprotection.sqf";
 #include "func\init.sqf";
@@ -79,22 +82,7 @@ if (!hasinterface) then {
 };
 */
 
-_daytimeonly = missionnamespace getvariable ["twc_daytimeonly", false];
-if (_daytimeonly || (["90", twc_missionname] call BIS_fnc_inString) || (["70", twc_missionname] call BIS_fnc_inString)) then {
-	[]spawn{
-		//sleep 120;
-		while {true} do {
-			//checks if it's too dark for non-nvg eras every hour, then skips through to first light. Double while statement to get the extra .3 hour in because first light in sunormoon terms is often still too dark
-			while {sunormoon < 1} do {
-				while {sunormoon < 1} do {
-					skiptime 1;
-				};
-				skiptime 0.3;
-			};
-			sleep 3600;
-		};
-	};
-};
+
 
 //list of leaders that can do attachments without the slot system
 twc_goodeggs = [

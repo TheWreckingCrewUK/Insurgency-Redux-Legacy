@@ -7,6 +7,8 @@ if (((typeof cursorTarget) == "TargetBootcampHuman_F") && (cameraview == "GUNNER
 	_target = cursorTarget;
 };
 
+[_target, (owner player)] remoteexec ["setowner", _target];
+
 _checkarr = player getvariable ["twc_activecomptargets_prestart", []];
 
 //if (([_target, _dis] in _checkarr)) exitwith {systemchat "nope";};

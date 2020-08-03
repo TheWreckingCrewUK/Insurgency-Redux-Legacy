@@ -1,5 +1,7 @@
 params ["_player"];
 
+if (isserver) exitwith {};
+
 if (!alive _player) exitwith {
 	[twc_fnc_civtraffic_client, [_player], 30] call CBA_fnc_waitAndExecute;
 };

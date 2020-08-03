@@ -12,3 +12,8 @@ while {(!(sunormoon == _light))} do {
 	skiptime 3;
 };
 skiptime 0.5;
+
+1 setOvercast 0.0;
+1 setfog 0.0;
+1 setrain 0.0;
+forceweatherchange;

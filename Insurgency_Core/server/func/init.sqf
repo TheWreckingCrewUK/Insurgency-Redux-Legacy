@@ -79,6 +79,24 @@ twc_ailookat = {
 };
 
 
+addMissionEventHandler ["PlayerConnected",
+{
+	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+	_daytimeonly = missionnamespace getvariable ["twc_daytimeonly", false];
+	if (_daytimeonly || (["90", twc_missionname] call BIS_fnc_inString) || (["70", twc_missionname] call BIS_fnc_inString)) then {
+		[]spawn{
+			//checks if it's too dark for non-nvg eras every hour, then skips through to first light. Double while statement to get the extra .3 hour in because first light in sunormoon terms is often still too dark
+			while {sunormoon < 1} do {
+				skiptime 1;
+			};
+			skiptime 0.3;
+			3 setOvercast 0;
+			3 setRain 0;
+			3 setFog 0;
+			forceweatherchange;
+		};
+	};
+}];
 
 twc_fnc_findnearestblufor = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestblufor.sqf";
 
