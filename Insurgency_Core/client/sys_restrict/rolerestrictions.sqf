@@ -120,8 +120,6 @@ execvm "Insurgency_Core\client\sys_restrict\fulljetteam.sqf";
 
 //blacklist for griefers to keep them out of roles where they commonly cause damage to other players' experiences
 twc_blacklist = [
-"76561198175442753",
-"76561198139434614"
 ];
 
 if (((getPlayerUID player) in twc_blacklist)) then {
