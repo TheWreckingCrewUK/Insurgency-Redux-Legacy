@@ -21,8 +21,61 @@ private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _
 
 _veh setVariable ["ace_pylons_magazineWhitelist", ["CUP_PylonPod_19Rnd_CRV7_FAT_plane_M","CUP_PylonPod_19Rnd_CRV7_HE_plane_M","CUP_PylonPod_1Rnd_GBU12_M","PylonMissile_1Rnd_Mk82_F","ace_maverick_L_pylonRack_1Rnd","CUP_PylonPod_ANAAQ_28","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"], true];
 
+
+_team = (group player) getvariable ["twc_groupcountry", "baf"];
+
+if (_team == "usaf") then {
+	[
+		_veh,
+		["USMCDark",1], 
+		true
+	] call BIS_fnc_initVehicle;
+};
 };
 
+if (typeof _veh == "CUP_B_C130J_Cargo_GB") then {
+
+
+
+_team = (group player) getvariable ["twc_groupcountry", "baf"];
+
+if (_team == "usaf") then {
+	[
+	_veh,
+	["USMCGrey",1], 
+	true
+	] call BIS_fnc_initVehicle;
+
+};
+};
+
+if (typeof _veh == "twc_c5_hercules") then {
+
+
+
+_team = (group player) getvariable ["twc_groupcountry", "baf"];
+
+if (_team == "usaf") then {
+	[
+	_veh,
+	["USMCGrey",1], 
+	true
+	] call BIS_fnc_initVehicle;
+
+};
+};
+
+
+if (typeof _veh == "RHSGREF_A29B_HIDF") then {
+_veh setVariable ["ace_pylons_magazineWhitelist", ["rhs_mag_FFAR_7_USAF","rhs_mag_M257_7_USAF_LAU131","rhs_mag_mk82","rhs_mag_gbu12","rhs_mag_M151_7_USAF_LAU131","rhsusf_ANALE40_CMFlare_Magazine_x2"], true];
+
+[
+	_veh,
+	["Standard",1], 
+	true
+] call BIS_fnc_initVehicle;
+
+};
 
 if (typeof _veh == "RHS_AH64D") then {
 

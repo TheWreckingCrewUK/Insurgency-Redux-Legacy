@@ -12,8 +12,8 @@
     [
         ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
 		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
-        ["rhsusf_mag_17Rnd_9x19_JHP",40],
-        ["rhsusf_mag_15Rnd_9x19_JHP",40],
+        ["rhsusf_mag_17Rnd_9x19_FMJ",40],
+        ["rhsusf_mag_15Rnd_9x19_FMJ",40],
 		["SmokeShellBlue",5],
 		["SmokeShellGreen",5],
 		["SmokeShellRed",5],
@@ -28,8 +28,10 @@
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15A",1],
 		["ACE_DAGR",1],
+		["rhs_Booniehat_ocp",1],
 		["ACRE_PRC117F",1],
 		["twc_acc_nt4_black",0],
 		["ACE_IR_Strobe_Item",1]
@@ -60,8 +62,8 @@
 	    ["1Rnd_SmokePurple_Grenade_shell", 10],
         ["1Rnd_SmokeBlue_Grenade_shell", 10],
 		["UGL_FlareWhite_F", 20],
-        ["rhsusf_mag_17Rnd_9x19_JHP",40],
-        ["rhsusf_mag_15Rnd_9x19_JHP",40],
+        ["rhsusf_mag_17Rnd_9x19_FMJ",40],
+        ["rhsusf_mag_15Rnd_9x19_FMJ",40],
 		["SmokeShellBlue",5],
 		["SmokeShellGreen",5],
 		["SmokeShellRed",5],
@@ -74,11 +76,13 @@
 		["ACE_microDAGR",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
 		["twc_acc_nt4_black",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
+		["rhs_Booniehat_ocp",1],
 		["ACE_IR_Strobe_Item",1]
 		
 	];
@@ -112,7 +116,9 @@
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
+		["rhs_Booniehat_ocp",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -141,7 +147,9 @@
         ["ACE_MapTools",1],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
+		["rhs_Booniehat_ocp",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -171,6 +179,7 @@
 	[
         ["ACE_MapTools",1],
 		["rhsusf_acc_anpeq15A",1],
+		["rhs_Booniehat_ocp",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -210,7 +219,9 @@
 		["ACE_tourniquet", 5],
 		["rhsusf_acc_ACOG",1],
 		["rhsusf_acc_compm4",1],
+		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
+		["rhs_Booniehat_ocp",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 

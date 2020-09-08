@@ -40,7 +40,6 @@ clearitemCargoGlobal _veh;
 
 
 _veh AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
-_veh AddWeaponCargoGlobal ["UK3CB_BAF_Javelin_Slung_Tube",2];
 
 _veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",2];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",7];
@@ -60,16 +59,7 @@ _veh addItemCargoGlobal ["SmokeShell",3];
 _veh addItemCargoGlobal ["SmokeShellRed",3];
 
 
-_fsgun = ["twc_rhs_weap_m240G_mdo_lazer",1];
-_fsmag = ["UK3CB_BAF_762_100Rnd_T",4];
-
-_grouptype = (group player) getvariable ["twc_groupcountry", "baf"];
-if (_grouptype == "st6") then {
-	_fsgun = ["TWC_CUP_lmg_Mk48_nohg_tan_optics",1];
-};
 
 
 
-_veh AddWeaponCargoGlobal _fsgun;
-_veh AddMagazineCargoGlobal _fsmag;
 [_veh, player, 5] call twc_fnc_genericfillvehicle;

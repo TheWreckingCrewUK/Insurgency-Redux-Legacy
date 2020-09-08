@@ -1,11 +1,16 @@
 params [["_iscomplex", false]];
 
+
+_playercheck = false;
 {
-	if ((getpos _x) inarea "cqbrange") exitwith {
-		hint "There are players already on the course. Unable to reset";
+	if ((getpos _x) inarea "cqbrange") then {
+		_playercheck = true;
 	};
 } foreach allplayers;
 
+if (_playercheck) exitwith {
+		hint "There are players already on the course. Unable to reset";
+};
 
 {
 	if (!isnull _x) then {

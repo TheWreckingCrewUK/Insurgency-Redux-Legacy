@@ -70,7 +70,11 @@ _truck setdir _direction;
 
 	
 _truck addEventHandler ["Killed",{
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	["TWC_Insurgency_adjustInsurgentMorale", -1] call CBA_fnc_serverEvent;
 	["TWC_Insurgency_adjustCivilianMorale", 1] call CBA_fnc_serverEvent;
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+	{
+		_x setdamage 1;
+	} foreach (attachedobjects _unit);
 }];

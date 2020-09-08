@@ -65,6 +65,7 @@ _truck addEventHandler ["Fired", {
 
 _truck setdir _direction;
 	
+	_pos = getpos _truck;
 	
 
 [_pos, _truck, _group] spawn {
@@ -86,9 +87,39 @@ _truck setdir _direction;
 	_unit moveIngunner _truck;
 };
 
+
+_groupcount = 3 + (random 5);
+	
+	for "_i" from 1 to _groupcount do {
+	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), _pos,[], 5,"NONE"];
+	_unit addEventHandler ["Killed",{
+		[(_this select 0)] call twc_fnc_deleteDead;
+		if (side (_this select 1) == WEST) then{
+			["TWC_Insurgency_adjustInsurgentMorale", -0.25] call CBA_fnc_serverEvent;
+			["TWC_Insurgency_adjustCivilianMorale", 0.25] call CBA_fnc_serverEvent;
+		};
+	}];
+	_group selectleader _unit;
+
+//[_unit, getpos _unit,150, 2, true] spawn TWC_fnc_Defend;
+//[_unit,getpos _unit,150,"LIMITED","COLUMN","SAFE"] call twc_fnc_patrol;
+//[_group,getpos _unit, 150, 7, "MOVE", "SAFE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+
+
+	_unit setpos ([_pos, 3, 50, 3, 0, 20, 0] call BIS_fnc_findSafePos);
+
+	
+	};
+		[leader _group, 1] spawn TWC_fnc_aiscramble;
+		[_group, _pos, 50, 3, 0.3] call CBA_fnc_taskDefend;
+
 	
 _truck addEventHandler ["Killed",{
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	["TWC_Insurgency_adjustInsurgentMorale", -1] call CBA_fnc_serverEvent;
 	["TWC_Insurgency_adjustCivilianMorale", 1] call CBA_fnc_serverEvent;
 	["TWC_Insurgency_adjustPoints", 20] call CBA_fnc_serverEvent;
+	{
+		_x setdamage 1;
+	} foreach (attachedobjects _unit);
 }];

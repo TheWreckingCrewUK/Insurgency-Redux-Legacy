@@ -84,7 +84,7 @@ _final = [];
 		
 		
 		
-		_objarray = [typeof _x, getpos _x, getdir _x, getitemcargo _x, getweaponcargo _x, getmagazinecargo _x, _cargoarray, _vivarray, _vector];
+		_objarray = [typeof _x, getposasl _x, getdir _x, getitemcargo _x, getweaponcargo _x, getmagazinecargo _x, _cargoarray, _vivarray, _vector];
 		_final pushback _objarray;
 	};
 } foreach _primary;

@@ -26,7 +26,7 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 	{
 		//Cache cannot cause near to Blufor respawn
 		_x allowdamage false;
- 		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 1500 } do {			
+ 		while {(_x distance (getMarkerPos "cacheSpawn")) <500 || (_x distance (getmarkerpos "base")) < 1500 || (_x distance (getmarkerpos "respawn_west_forwardbase")) < 1500 } do {			
 			_cacheMarker = "";
 	
 			
@@ -63,6 +63,14 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 2];
 		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 2];
 		
+		if (isserver && hasinterface) then {
+			_intelPos = getpos _x;
+			_marker = createMarker [(str (random 1000)), _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor "ColorOrange";
+			_marker setMarkerText "Cache";
+			_marker setMarkerSize [0.5,0.5];
+		};
 		
 		[_x] spawn {
 		params ["_cache"];
@@ -128,10 +136,15 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 };
 };
 
-	//[_pos, nil, units _group, 10, 2, true, true] call ace_ai_fnc_garrison;
+	_units = [_pos, nil, units _group, 40, 2, true, true] call ace_ai_fnc_garrison;
+	
+	[_group, _pos, 100, 3, 0.9] call CBA_fnc_taskDefend;
+	
+	/*
 {
 	[_x, 10] call twc_fnc_aispreadout;
 } foreach units _group;
 		_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
+		*/
 	} forEach InsP_cacheGroup;
 };

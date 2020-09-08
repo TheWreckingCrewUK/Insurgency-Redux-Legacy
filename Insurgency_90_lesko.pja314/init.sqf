@@ -13,3 +13,4 @@ iedTypes = ["ACE_IEDLandSmall_Range_Ammo", "ACE_IEDUrbanSmall_Range_Ammo", "ACE_
     if (side _unit != WEST) exitWith { false };
     true
 }] call ace_explosives_fnc_addDetonateHandler;
+

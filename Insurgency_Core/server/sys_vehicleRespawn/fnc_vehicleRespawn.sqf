@@ -60,19 +60,32 @@ _veh addEventHandler ["GetOut",{
 		
 		_true = true;
 		_time = time + vehicleRespawnDelay;
-		while{_true}do{
-			waitUntil {str (fullCrew _veh) != "[]" || _time < time};
+		while{(str (fullCrew _veh) == "[]") && (_time > time)}do{
+		
+			sleep 20;
+		};
+		//	waitUntil {str (fullCrew _veh) != "[]" || _time < time};
 			if(str (fullCrew _veh) != "[]")exitWith{};
-			if(_time < time)then{
-				if([_veh,vehicleRespawnDistancePlayers] call CBA_fnc_nearPlayer)then{
-					_time = time + vehicleRespawnDelay;
-				}else{
+			
+				while {(str (fullCrew _veh) == "[]") && ([_veh,vehicleRespawnDistancePlayers] call CBA_fnc_nearPlayer)} do {
+					sleep 30;
+				};
+			if(str (fullCrew _veh) != "[]")exitWith{};
+				
 					_respawnInfo = _veh getVariable "respawnInfo";
-					waituntil {basemode == 0};
+					
+					while {basemode > 0} do {
+						sleep 30;
+					};
 					_veh remoteExecCall ["deleteVehicle",_veh];
 					sleep 20;
 		_checkpos = [(_respawnInfo select 1) select 0, (_respawnInfo select 1) select 1, 0];
-		waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
+		//waituntil {(count(_checkpos nearobjects ["all", 4]) ==0)};
+		while {(str (fullCrew _veh) == "[]") && (count(_checkpos nearobjects ["all", 4]) > 0)} do {
+					sleep 30;
+				};
+		if(str (fullCrew _veh) != "[]")exitWith{};
+		
 					_veh = (_respawnInfo select 0) createVehicle [0,0,(200 + (random 1000))];
 		
 					_veh allowdamage false;
@@ -134,9 +147,9 @@ _veh addEventHandler ["GetOut",{
 					_veh setVariable ["respawnInfo",_respawnInfo];
 					[_veh] call twc_fnc_vehicleRespawn;
 					_true = false;
-				};			
-			};
-		};
+					
+			
+		
 	};
 }];
 
@@ -149,7 +162,12 @@ _veh addEventHandler ["Killed",{
 		_respawnInfo = _veh getVariable "respawnInfo";
 		[_veh]spawn{
 		params ["_veh"];
-		waitUntil {!([_veh,500] call CBA_fnc_nearPlayer)};
+		
+		
+				while {([_veh,vehicleRespawnDistancePlayers] call CBA_fnc_nearPlayer)} do {
+					sleep 30;
+				};
+		
 		_veh remoteExecCall ["deleteVehicle",_veh];
 		};
 		sleep 10;
@@ -160,7 +178,10 @@ _veh addEventHandler ["Killed",{
 		waituntil {(count(_checkpos nearobjects [typeof _veh, 3]) ==0)};
 		sleep (2+ (random 10)); //reason for sleep and double check is so that mass casualty events don't cause the cookoff to instantly injure the new vehicle
 		*/
-		waituntil {basemode == 0};
+		
+					while {basemode > 0} do {
+						sleep 30;
+					};
 		while {(count(_checkpos nearobjects [typeof _veh, 3]) >0)} do {
 		{if ((damage _x) == 1) then {deletevehicle _x}} foreach (_checkpos nearobjects [typeof _veh, 4]);sleep 1;};
 		sleep (10 + (random 10));

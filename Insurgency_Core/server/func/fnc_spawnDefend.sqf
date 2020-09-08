@@ -30,7 +30,6 @@ _spawnPos = _pos;
 //_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 
 _num = 0;
-_total = (([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10;
 
 _spawnposarray = [];
 _buildings = nearestObjects [_pos, ["House"], 800];
@@ -54,6 +53,7 @@ if ((count _buildings) == 0) exitwith {
 	twc_lastcompletion = time;
 };
 
+_total = (((([_pos] call twc_fnc_calculateSpawnAmount) * 1) max 10)  min (count _buildings));
 if (_total > 0) then {
 	_side = "east";
 	[_pos, (str _side)] execvm "Insurgency_Core\server\sys_terp\fnc_terp_enemy.sqf";
@@ -61,7 +61,8 @@ if (_total > 0) then {
 
 
 _group = createGroup East;
-for "_i" from 1 to (_total min (count _buildings)) do{
+_hastripped = false;
+for "_i" from 1 to (_total) do{
 	_unit = _group createUnit [(townSpawn select (floor random (count townspawn))), ([getpos (_buildings call bis_fnc_selectrandom), 2, 50, 2, true] call twc_fnc_findsneakypos),[], 0,"NONE"];
 	_spawnpos = [_pos, 20, 250, 3, true] call twc_fnc_findsneakypos;
 	_unit addEventHandler ["Killed",{
@@ -76,12 +77,23 @@ for "_i" from 1 to (_total min (count _buildings)) do{
 	_num = _num + 1;
 	//sleep 0.1;
 	
-	
+	//randomly create more groups so that the whole population isn't on a single patrol
+	if (((random 1) < 0.3) || ((count (units _group)) > (_total / 4))) then {
+		_hastripped = true;
+		[_group, _pos, 400, 3, 0.9] call CBA_fnc_taskDefend;
+		[leader _group] spawn TWC_fnc_aiscramble;
+		_group = createGroup East;
+	};
+};
+
+if (!_hastripped) then {
+	[_group, _pos, 400, 3, 0.9] call CBA_fnc_taskDefend;
+	[leader _group] spawn TWC_fnc_aiscramble;
 };
 _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
-[leader _group] spawn TWC_fnc_aiscramble;
+
 
 _gopos = [_pos select 0, _pos select 1, 0];
 
@@ -99,9 +111,9 @@ _gopos = [_pos select 0, _pos select 1, 0];
 	} foreach _rem;
 	*/
 	
-{
-	[_x] call twc_fnc_aispreadout;
-} foreach units _group;
+//{
+//	[_x] call twc_fnc_aispreadout;
+//} foreach units _group;
 //_null = [leader _group, leader _group,150] spawn TWC_fnc_Defend;
 
 /*
@@ -114,10 +126,10 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 
 	sleep 5;
 	//[_gopos, nil, units _group, 600, 2, true, false] call ace_ai_fnc_garrison;
-{
-	[_x] call twc_fnc_aispreadout;
-} foreach units _group;
-	
+//{
+//	[_x] call twc_fnc_aispreadout;
+//} foreach units _group;
+	//[_group, _pos, 400, 3, 0.9] call CBA_fnc_taskDefend;
 	_array1 = [];
 	_array2 = [];
 	
@@ -129,17 +141,17 @@ _group createUnit ["CUP_O_TK_INS_Soldier_AA", _pos,[], 25,"NONE"];
 	sleep (120 + _randtime);
 	
 	//[_gopos, nil, , 600, 2, true, false] call ace_ai_fnc_garrison;
-{
-	[_x] call twc_fnc_aispreadout;
-} foreach _array1;
+//{
+//	[_x] call twc_fnc_aispreadout;
+//} foreach _array1;
 	
 	_randtime = random 120;
 	sleep (120 + _randtime);
 	
 	//[_gopos, nil, _array2, 600, 2, true, false] call ace_ai_fnc_garrison;
-{
-	[_x] call twc_fnc_aispreadout;
-} foreach _array2;
+//{
+//	[_x] call twc_fnc_aispreadout;
+//} foreach _array2;
 	};
 	
 	

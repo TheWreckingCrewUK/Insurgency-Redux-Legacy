@@ -1,258 +1,329 @@
 
+twc_loadout_baf_fstsl = [
+	//uniform
+	(["UK3CB_BAF_U_CombatUniform_MTP"] call bis_fnc_selectrandom),
+
+	//uniformitems
+	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
+
+	//helmet
+
+	"UK3CB_BAF_H_Mk7_Camo_B",
+
+	//vest
+	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
+
+	//vestitems
+
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["CUP_H_PMC_EP_Headset", 1], ["HandGrenade", 1], ["SmokeShell", 2], ["SmokeShellRed", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3]],
+
+	//backpack
+	"UK3CB_BAF_B_Bergen_MTP_SL_L_A",
+
+	//backpackitems
+
+	[["ACRE_PRC117F", 1], ["1Rnd_HE_Grenade_shell", 15], ["1Rnd_SmokeRed_Grenade_shell", 10], ["1Rnd_SmokeBlue_Grenade_shell", 10], ["1Rnd_SmokeGreen_Grenade_shell", 10]],
+
+	//night kit
+	["UK3CB_BAF_U_Smock_MTP", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+
+	//weapons
+
+	[[(["UK3CB_BAF_L85A2_UGL_ELCAN3D"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", []], ["ACE_Vector", []]],
+
+	//linkeditems
+
+	(["itemcTab"] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], [["CUP_B_Bergen_BAF", 2]]]
+
+];
+
+
+twc_loadout_baf_fstassistant = [
+	//uniform
+	(["UK3CB_BAF_U_CombatUniform_MTP", "UK3CB_BAF_U_CombatUniform_MTP", "UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM", "U_B_CombatUniform_mcam_tshirt"] call bis_fnc_selectrandom),
+
+	//uniformitems
+	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
+
+	//helmet
+
+	"UK3CB_BAF_H_Mk7_Camo_D",
+
+	//vest
+	(["UK3CB_BAF_V_Osprey_MG_B"] call bis_fnc_selectrandom),
+
+	//vestitems
+
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["CUP_H_PMC_EP_Headset", 1], ["HandGrenade", 1], ["SmokeShell", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 6], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3]],
+
+	//backpack
+	"UK3CB_BAF_B_Bergen_MTP_Engineer_L_A",
+
+	//backpackitems
+
+	[["ACE_EntrenchingTool", 1], ["ACE_wirecutter", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4]],
+
+	//night kit
+	["UK3CB_BAF_U_Smock_MTP", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+
+	//weapons
+
+	[[(["UK3CB_BAF_L85A2_RIS_ELCAN3D"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", []]],
+
+	//linkeditems
+
+	([] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
+
+];
+
+twc_loadout_baf_fstobserver = [
+	//uniform
+	(["UK3CB_BAF_U_CombatUniform_MTP", "UK3CB_BAF_U_CombatUniform_MTP", "UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM", "U_B_CombatUniform_mcam_tshirt"] call bis_fnc_selectrandom),
+
+	//uniformitems
+	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
+
+	//helmet
+
+	"UK3CB_BAF_H_Mk7_Camo_B",
+
+	//vest
+	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
+
+	//vestitems
+
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["CUP_H_PMC_EP_Headset", 1], ["HandGrenade", 1], ["SmokeShell", 2], ["SmokeShellRed", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3]],
+
+	//backpack
+	"CUP_B_Motherlode_MTP",
+
+	//backpackitems
+
+	[["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 10], ["1Rnd_SmokeBlue_Grenade_shell", 10], ["1Rnd_SmokeGreen_Grenade_shell", 10]],
+
+	//night kit
+	["UK3CB_BAF_U_Smock_MTP", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+
+	//weapons
+
+	[[(["UK3CB_BAF_L85A2_UGL_ELCAN3D"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", []], ["ACE_Vector", []]],
+
+	//linkeditems
+
+	([] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "rhs_beanie_green", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
+
+];
 
 
 
-twc_loadout_fstus_sl = {params ["_unit"];
+twc_loadout_us_fstsl = [
+	//uniform
+	(["rhs_uniform_cu_ocp_10th"] call bis_fnc_selectrandom),
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	//uniformitems
+	([["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
-	_unit forceAddUniform "rhs_uniform_cu_ocp_10th";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC148";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_teamleader";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	_unit addHeadgear "rhsusf_ach_helmet_ESS_ocp";
+	//helmet
 
-	_unit addWeapon "twc_m4_acog_lazer";
-	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addWeapon "ACE_Vector";
-	_unit addBackpack "UK3CB_BAF_B_Bergen_TAN_SL_A";
-	for "_i" from 1 to 7 do {_unit addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	_unit addItemToBackpack "ACRE_PRC117F";
+	"rhsusf_ach_helmet_headset_ocp_alt",
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-	_unit linkItem "ItemcTab";
-};
+	//vest
+	(["CUP_V_B_Ciras_MCam"] call bis_fnc_selectrandom),
 
-twc_loadout_fstus_assistant = {params ["_unit"];
+	//vestitems
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["HandGrenade", 1], ["SmokeShell", 2], ["SmokeShellRed", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3]],
 
-	_unit forceAddUniform "rhs_uniform_cu_ocp_10th";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC148";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_spcs_ocp_saw";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	//for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	//_unit addItemToVest "SmokeShell";
-	//_unit addItemToVest "UK3CB_BAF_762_200Rnd_T";
-	//_unit addItemToVest "B_IR_Grenade";
-	_unit addHeadgear "rhsusf_ach_helmet_ESS_ocp";
+	//backpack
+	"UK3CB_BAF_B_Bergen_TAN_SL_A",
 
-	_unit addBackpack "B_Carryall_cbr";
-	_unit addItemToVest "UK3CB_BAF_762_200Rnd_T";
-	for "_i" from 1 to 2 do {_unit addItemToBackpack "UK3CB_BAF_762_200Rnd_T";};
-	_unit addWeapon "twc_rhs_weap_m240B_mgo_lazer";
-	_unit addWeapon "rhsusf_weap_glock17g4";
+	//backpackitems
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-};
+	[["ACRE_PRC117F", 1], ["1Rnd_HE_Grenade_shell", 15], ["1Rnd_SmokeRed_Grenade_shell", 10], ["1Rnd_SmokeBlue_Grenade_shell", 10], ["1Rnd_SmokeGreen_Grenade_shell", 10]],
+
+	//night kit
+	["rhs_uniform_cu_ocp_10th", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+
+	//weapons
+
+	[[(["twc_rhs_weap_m4a1_m203_acog_lazer"] call bis_fnc_selectrandom), []], ["rhsusf_weap_m9", []], ["ACE_Vector", []]],
+
+	//linkeditems
+
+	(["itemcTab"] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([["twc_m4_cco_vfg", 1]] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "H_Cap_usblack", "H_Cap_tan_specops_US"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], []]
+
+];
 
 
-twc_loadout_fstus_observer = {params ["_unit"];
+twc_loadout_us_fstassistant = [
+	//uniform
+	(["rhs_uniform_cu_ocp_10th", "rhs_uniform_cu_ocp_10th", "U_I_G_Story_Protagonist_F", "U_B_CombatUniform_mcam_tshirt"] call bis_fnc_selectrandom),
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	//uniformitems
+	([["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
-	_unit forceAddUniform "rhs_uniform_cu_ocp_10th";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC148";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "rhsusf_iotv_ocp_Rifleman";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 2 do {_unit addItemToVest "rhs_mag_30Rnd_556x45_M855A1_PMAG";};
-	for "_i" from 1 to 8 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
-	for "_i" from 1 to 6 do {_unit addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell";};
-	_unit addHeadgear "rhsusf_ach_helmet_ESS_ocp";
+	//helmet
 
-	_unit addWeapon "twc_rhs_weap_m4a1_m203_acog_lazer";
-	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addBackpack "B_Kitbag_mcamo";
+	"rhsusf_ach_helmet_headset_ocp_alt",
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-};
+	//vest
+	(["rhsusf_spcs_ocp_saw"] call bis_fnc_selectrandom),
 
+	//vestitems
 
+	[["UK3CB_BAF_762_200Rnd_T", 1], ["rhsusf_mag_15Rnd_9x19_FMJ", 2]],
 
+	//backpack
+	"B_Carryall_cbr",
 
-twc_loadout_fstbaf_sl = {params ["_unit"];
+	//backpackitems
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	[["ACE_EntrenchingTool", 1], ["ACE_wirecutter", 1], ["UK3CB_BAF_762_200Rnd_T", 4]],
 
-	_unit forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC343";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "UK3CB_BAF_V_Osprey_Lite";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 7 do {_unit addItemToVest "UK3CB_BAF_556_30Rnd";};
-	_unit addHeadgear "UK3CB_BAF_H_Mk7_Net_D";
+	//night kit
+	["rhs_uniform_cu_ocp_10th", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
-	_unit addWeapon "UK3CB_BAF_L85A2_RIS_ELCAN3D";
-	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addWeapon "ACE_Vector";
-	_unit addBackpack "TWC_Backpack_Modern_Sectionlead";
+	//weapons
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-	_unit linkItem "ItemcTab";
-};
+	[[(["twc_rhs_weap_m240B_mgo_lazer"] call bis_fnc_selectrandom), []], ["rhsusf_weap_m9", []]],
 
-twc_loadout_fstbaf_assistant = {params ["_unit"];
+	//linkeditems
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	([] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([["twc_m4_cco_vfg", 1], ["twc_m14_ebr_lazer_bipod", 1]] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhsusf_20Rnd_762x51_m62_Mag", 30], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "H_Cap_usblack", "H_Cap_tan_specops_US"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
 
-	_unit forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC343";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "UK3CB_BAF_V_Osprey_Lite";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 8 do {_unit addItemToBackpack "UK3CB_BAF_556_30Rnd";};
-	_unit addHeadgear "UK3CB_BAF_H_Mk7_Net_D";
+];
 
-	_unit addWeapon "UK3CB_BAF_L85A2_RIS_ELCAN3D";
-	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addBackpack "UK3CB_BAF_B_Carryall_MTP";
+twc_loadout_us_fstobserver = [
+	//uniform
+	(["rhs_uniform_cu_ocp_10th", "rhs_uniform_cu_ocp_10th", "U_I_G_Story_Protagonist_F", "U_B_CombatUniform_mcam_tshirt"] call bis_fnc_selectrandom),
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-};
+	//uniformitems
+	([["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
+	//helmet
 
-twc_loadout_fstbaf_observer = {params ["_unit"];
+	"rhsusf_ach_helmet_headset_ocp_alt",
 
-	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	removeUniform _unit;
-	removeVest _unit;
-	removeBackpack _unit;
-	removeHeadgear _unit;
+	//vest
+	(["CUP_V_B_Ciras_MCam"] call bis_fnc_selectrandom),
 
-	_unit forceAddUniform "UK3CB_BAF_U_CombatUniform_MTP_ShortSleeve";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
-	_unit addItemToUniform "ACE_EarPlugs";
-	_unit addItemToUniform "ACRE_PRC343";
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_packingBandage";};
-	for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_elasticBandage";};
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_quikclot";};
-	_unit addItemToUniform "ACE_morphine";
-	_unit addItemToUniform "ACE_epinephrine";
-	for "_i" from 1 to 2 do {_unit addItemToUniform "ACE_tourniquet";};
-	_unit addItemToUniform "ACE_MapTools";
-	_unit addVest "UK3CB_BAF_V_Osprey_Grenadier_A";
-	_unit addItemToVest "rhsusf_mag_17Rnd_9x19_JHP";
-	_unit addItemToVest "Laserbatteries";
-	for "_i" from 1 to 2 do {_unit addItemToVest "HandGrenade";};
-	_unit addItemToVest "SmokeShell";
-	_unit addItemToVest "B_IR_Grenade";
-	for "_i" from 1 to 2 do {_unit addItemToVest "UK3CB_BAF_556_30Rnd";};
-	for "_i" from 1 to 8 do {_unit addItemToBackpack "1Rnd_HE_Grenade_shell";};
-	for "_i" from 1 to 6 do {_unit addItemToBackpack "1Rnd_SmokeBlue_Grenade_shell";};
-	_unit addHeadgear "UK3CB_BAF_H_Mk7_Net_D";
+	//vestitems
 
-	_unit addWeapon "UK3CB_BAF_L85A2_UGL_ELCAN3D";
-	_unit addWeapon "UK3CB_BAF_Soflam_Laserdesignator";
-	_unit addWeapon "rhsusf_weap_glock17g4";
-	_unit addBackpack "TWC_Backpack_Modern_FSTForwardObserver";
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["HandGrenade", 1], ["SmokeShell", 2], ["SmokeShellRed", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3]],
 
-	comment "Add items";
-	_unit linkItem "ItemMap";
-	_unit linkItem "ItemCompass";
-	_unit linkItem "ItemWatch";
-};
+	//backpack
+	"rhsusf_assault_eagleaiii_ocp",
 
+	//backpackitems
+
+	[["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 10], ["1Rnd_SmokeBlue_Grenade_shell", 10], ["1Rnd_SmokeGreen_Grenade_shell", 10]],
+
+	//night kit
+	["rhs_uniform_cu_ocp_10th", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+
+	//weapons
+
+	[[(["twc_rhs_weap_m4a1_m203_acog_lazer"] call bis_fnc_selectrandom), []], ["rhsusf_weap_m9", []], ["ACE_Vector", []]],
+
+	//linkeditems
+
+	([] + twc_loadout_basiclinkeditems),
+	
+	//weapons to remove from crate, weapons to add
+	
+	[["all"], ([["twc_m4_cco_vfg", 1]] + twc_crateweapons)],
+	
+	//mags to remove from crate, mags to add
+	
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	
+	//items to remove from crate, mags to add
+	
+	[["all"], ([["DemoCharge_Remote_Mag", 3], ["ACE_M26_Clacker", 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "rhs_Booniehat_ocp", "H_Booniehat_tan", "rhs_beanie_green", "H_Cap_usblack", "H_Cap_tan_specops_US"]), 1]] + twc_crateitems)],
+	
+	//backpacks to remove from crate, backpacks to add
+	
+	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
+
+];
 

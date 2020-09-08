@@ -6,7 +6,7 @@ Once they have enough, then it runs itself again to wait until the situation cha
 
 */
 
-if(isserver)exitWith{};
+//if(isserver)exitWith{};
 waitUntil {!isNull player};
 
 if ((count (units group player)) > 3) exitwith {};
@@ -27,7 +27,8 @@ cutText ["", "Black", 0.001];
     [
         "<t size='1.2'>SAS Section</t><br/><t size='0.6'>You need at least 4 people in the SF Section before you can proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
-	sleep 5;
+	sleep 1;
+	closeDialog 602;
 	if ((player distance twc_basepos) > 10) then {
 		player setpos twc_basepos;
 	};

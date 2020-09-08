@@ -5,13 +5,6 @@ _vehtype = "CUP_O_Hilux_unarmed_TK_INS";
 	
  _car = _vehtype createvehicle _spawnpos;  
 _veh = _car;
-	
-_colour = (["White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);
-[
-	_veh,
-	[_colour,1], 
-	true
-] call BIS_fnc_initVehicle;
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>"; 
 
@@ -21,7 +14,10 @@ hint _spawntext;
 
 
 
-_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+_boxaction = ["deleteCreate","Return Vehicle","",{
+{deletevehicle _x} foreach (attachedobjects this);
+
+deleteVehicle this;
 
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
@@ -59,3 +55,11 @@ _a setVectorDirAndUp [
 
 [_veh, player, 6] call twc_fnc_genericfillvehicle;
 
+	
+_colour = (["White", "White", "White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);
+
+[
+	_veh,
+	[_colour,1], 
+	true
+] call BIS_fnc_initVehicle;

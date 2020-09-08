@@ -9,10 +9,7 @@ Once they have enough, then it runs itself again to wait until the situation cha
 
 waitUntil {!isNull player};
 
-if ((count (units group player)) == 2) exitwith {};
-
-//if it's been more than half an hour since they last respawned, and they're more than 1km from base then they can have it
-//if (((twc_lastspawned < (time - 1800)) && ((player distance twc_basepos) > 1000))||((twc_lastspawned < (time - 60)) && ((player distance twc_basepos) > 4000))) exitwith {};
+if ((count (units group player)) > 1) exitwith {};
 
 if(!isMultiplayer)exitWith{};
 cutText ["", "Black", 0.001];
@@ -27,7 +24,8 @@ cutText ["", "Black", 0.001];
     [
         "<t size='1.2'>Sniper Team</t><br/><t size='0.6'>You need both members of the sniper team online to proceed</t>", 0, 0.22, 5, 0, 0, 2
     ] spawn bis_fnc_dynamictext;
-	sleep 5;
+	sleep 0.5;
+	closeDialog 602;
 	if ((player distance twc_basepos) > 10) then {
 		player setpos twc_basepos;
 	};
@@ -35,12 +33,5 @@ cutText ["", "Black", 0.001];
 cutText ["","Black IN",5];
 player forceWalk false;
 
-//legit group system
-(group player) setvariable ["twc_teamrestrictedgrp", 0, true];
 
-if (((group player) getVariable ["twc_attachrestrictedgrp",1]) == 0) then {
-	(group player) setvariable ["twc_legitgrp", time, true];
-};
-
-
-//execvm "Insurgency_Core\client\sys_restrict\fullsniperteam.sqf";
+[player] call twc_fnc_legitgroup;

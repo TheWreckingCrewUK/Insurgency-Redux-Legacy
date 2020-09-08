@@ -9,10 +9,7 @@ if ((twc_sfmraptimeout > (time)) && !isserver) exitwith {
 	_title ="<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>";
 	_text1 = format ["<br />The Heavy Vehicle spawner is on cooldown currently. %1 minutes remaining.<br /><br />Note: The M-ATV's are not restricted in this way.", (ceil ( (twc_sfmraptimeout-time) / 60))];
 	hint parsetext (_title + _text1);
-	while {(twc_sfmraptimeout-time) > 0} do {
-		sleep 20;
-	};
-	hint "Another Heavy Vehicle is now available from the spawner";
+	
 	
 };
 twc_sfmraptimeout = time + 3600;
@@ -33,9 +30,10 @@ hint _spawntext;
 
 _veh setammocargo 0;
 
-_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
+_boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;twc_sfmraptimeout = - 3600;
+ publicVariable "twc_sfmraptimeout";
 
-},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0) && (twc_sfmraptimeout < time)}] call ace_interact_menu_fnc_createAction;
+},{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 
 
@@ -54,7 +52,6 @@ if ((missionnamespace getvariable ["twc_wdveh", 0]) == 0) then {
 };
 
 _veh setAmmoCargo 0;
-[_veh, 7] call ace_cargo_fnc_setSpace;
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
@@ -109,4 +106,5 @@ _veh AddMagazineCargoGlobal _fsmag;
 
 [_veh, player, 5] call twc_fnc_genericfillvehicle;
 
-_veh setvariable ["ace_cargo_loaded", ["ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel"]];
+[_veh, 8] call ace_cargo_fnc_setSpace;
+_veh setvariable ["ace_cargo_loaded", ["ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel"], true];

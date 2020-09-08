@@ -17,7 +17,7 @@ _car1 = "CUP_O_Hilux_unarmed_TK_INS";
 _car2 = "CUP_O_Hilux_M2_TK_INS";
 };
 
-if (["usmc", typeof player] call BIS_fnc_inString) then {
+if ((["usmc", typeof player] call BIS_fnc_inString) || (["us_army", typeof player] call BIS_fnc_inString)) then {
 
 _car1 = "rhsusf_m1025_d";
 
@@ -71,7 +71,7 @@ _car2 = "rhsusf_m1043_d_m2";
 
 };
 
-_playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.1) +2) max 2;
+_playercount = (((count(allPlayers - entities "HeadlessClient_F"))/1.4) +2) max 2;
 if (count (_boxpos nearentities [_car2, 200]) >_playercount) exitwith {
 	if (_showhint) then {
 		hint "there are already enough vehicles here";
@@ -84,7 +84,7 @@ if (count (_boxpos nearobjects ["Vysilacka", 200]) == 0) exitwith {
 };
 
 _vehicle = createvehicle [_car1, [0,0,0]];
-_total = (ceil (((_playercount * 0.5)-(count (_boxpos nearentities [_car1, 200])))* 1.5) max 1) min 4;
+_total = (ceil (((_playercount * 0.5)-(count (_boxpos nearentities [_car1, 200])))* 1.5) max 1) min 2;
 if (_showhint) then {
 	hint format ["Spawning %1 Vehicles", _total *2];
 };

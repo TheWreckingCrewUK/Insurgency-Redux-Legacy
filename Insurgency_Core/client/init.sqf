@@ -12,6 +12,7 @@
 "iedRestrictionZone" setMarkerAlpha 0;
 
 
+
 InsP_fnc_deleteMarkers = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fn_deleteMarkers.sqf";
 InsP_fnc_deadCache = compile preProcessFileLineNumbers "Insurgency_Core\server\sys_cache\fnc_deadCache.sqf";
 
@@ -50,14 +51,7 @@ player addEventHandler ["InventoryOpened", {
 }];
 
 
-twc_pubcamo = 500;
-waituntil {!isnil "twc_missionname"};
-if (["70", twc_missionname] call BIS_fnc_inString) then {
-	twc_pubcamo = 2;
-};
-if (["90", twc_missionname] call BIS_fnc_inString) then {
-	twc_pubcamo = 20;
-};
+
 
 player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];

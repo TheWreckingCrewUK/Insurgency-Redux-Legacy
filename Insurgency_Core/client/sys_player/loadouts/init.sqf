@@ -11,7 +11,7 @@ if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coi
 	_snaction1 = ["Spawnsnipbox","USMC FORECON","",{call twc_loadout_snipergroup_usmc},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usmc")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","US Army","",{call twc_loadout_snipergroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","US Army","",{call twc_loadout_snipergroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usarmysniper")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","Rangers","",{call twc_loadout_snipergroup_cag},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "rangersniper")}] call ace_interact_menu_fnc_createAction;
@@ -37,15 +37,18 @@ if((typeOf player) in ["Modern_British_FSTCommander"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
-if((typeOf player) in ["Modern_British_FAC"])then{
+if((typeOf player) in ["Modern_British_FAC", "Modern_British_JetPilot"])then{
 
 	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_snaction1 = ["Spawnsnipbox","USAF","",{call twc_loadout_facgroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "us")}] call ace_interact_menu_fnc_createAction;
+	_snaction1 = ["Spawnsnipbox","USAF","",{call twc_loadout_facgroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usaf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_facgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_snaction1 = ["Spawnsnipbox","ANAF","",{call twc_loadout_facgroup_ana},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "ana")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
@@ -247,10 +250,10 @@ twc_loadout_sfgroup_ace = {
 
 twc_loadout_sfgroup_baf = {
 
-	_teamstring = "uksf";
+	_teamstring = "baf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
-	_last = (group player) getvariable ["twc_groupcountry", "baf"];
+	_last = (group player) getvariable ["twc_groupcountry", _teamstring];
 	if ((_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
 		missionnamespace setvariable ["twc_iscagactive", _iscag - 1, true];
@@ -267,7 +270,7 @@ twc_loadout_sfgroup_baf = {
 		} foreach (units group player);
 	};
 	
-	(group player) setvariable ["twc_groupcountry", "uksf", true];
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
 	
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
@@ -359,22 +362,22 @@ twc_loadout_sfgroup_ana = {
 };
 twc_loadout_fstgroup_us = {
 
-	_teamstring = "fstus";
+	_teamstring = "us";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "fstus", true];
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
-	{[_x] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
 
 twc_loadout_fstgroup_baf = {
 
-	_teamstring = "fstbaf";
+	_teamstring = "baf";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "fstbaf", true];
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
@@ -385,7 +388,23 @@ twc_loadout_facgroup_us = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "usaf", true];
+	
+	_last = (group player) getvariable ["twc_groupcountry", _teamstring];
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
+	
+	
+	
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
 };
@@ -397,9 +416,47 @@ twc_loadout_facgroup_baf = {
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
-	(group player) setvariable ["twc_groupcountry", "baf", true];
+	
+	
+	_last = (group player) getvariable ["twc_groupcountry", _teamstring];
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
+	
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
 	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
+};
+
+twc_loadout_facgroup_ana = {
+
+	_teamstring = "ana";
+	
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	_unit = player;
+	_face = face _unit;
+	
+	_unit setvariable ["twc_origface", _face];
+	
+	[_unit, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _unit];
+	
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
+	
+	{
+		[_teamstring] remoteexec ["twc_loadout_generic_switch", _x];
+		"Notice: The Super Tucano can be crewed by both players or just the pilot" remoteexec ["hint", _x];
+		
+	} foreach (units group player);
 };
 
 twc_loadout_snipergroup_us = {
@@ -442,13 +499,13 @@ twc_loadout_snipergroup_usmc = {
 
 twc_loadout_snipergroup_baf = {
 
-	_teamstring = "bafsniper";
+	_teamstring = "baf";
 	
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "bafsniper", true];
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
 	
 	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];
@@ -467,7 +524,7 @@ twc_loadout_snipergroup_uksf = {
 	if (!_check) exitwith {};
 	
 	_last = (group player) getvariable ["twc_groupcountry", "baf"];
-	(group player) setvariable ["twc_groupcountry", "uksfsniper", true];
+	(group player) setvariable ["twc_groupcountry", "uksf", true];
 	
 	if (!(_last in twc_snowflakeunits)) then {
 		_iscag = missionnamespace getvariable ["twc_iscagactive", 0];

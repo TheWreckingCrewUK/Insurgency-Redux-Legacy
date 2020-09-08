@@ -120,6 +120,7 @@ if((typeOf player) in _helicrew)then{
 
 };
 	
+	
 if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 
@@ -138,18 +139,34 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Super Tucano","",{
+	
+	["RHSGREF_A29B_HIDF"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
+	
+	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "ana")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+
+/* the L39 is missing the other seat and its pylons don't work right
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn L-39","",{
+	
+	["rhs_l39_cdf_b_cdf"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
+	
+	},{(((group player) getvariable ["twc_groupcountry", "baf"]) == "ana")}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+*/
+
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Harrier","",{
 	
 	["CUP_B_GR9_DYN_GB"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
-	},_planecondmid] call ace_interact_menu_fnc_createAction;
+	},{(!(((group player) getvariable ["twc_groupcountry", "baf"]) == "ana"))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn A-10","",{
 	
 	["CUP_B_A10_DYN_USA"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
-	},_planecondhi] call ace_interact_menu_fnc_createAction;
+	},{(!(((group player) getvariable ["twc_groupcountry", "baf"]) == "ana"))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
@@ -165,11 +182,11 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	
 	_action1 = ["SpawnCharlieCreate","Spawn Large US Crate","",{"twc_forwardBase_CharlieAmmoBox" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_action1,true] call ace_interact_menu_fnc_addActionToClass;
-/*
-	_actionempty = ["SpawnemptyCreate","Spawn Large Empty Crate","",{"TWC_AmmoBox_Other_Pallet_pub" createVehicle (getPos AmmoBoxSpawner)},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_actionempty,true] call ace_interact_menu_fnc_addActionToClass;
+
+	_actionempty = ["SpawnemptyCreate","Spawn Large Empty Crate","",{execvm "Insurgency_Core\client\sys_player\boxes\supply_boxes\largeemptycrate.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_actionempty,true] call ace_interact_menu_fnc_addActionToClass;
 	
-*/
+
 	
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnlight"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
@@ -209,7 +226,7 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_hfstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	_hfstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo_mix.sqf"},_condition] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
@@ -417,17 +434,22 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hfstaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\50calammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_hfstaction3,true] call ace_interact_menu_fnc_addActionToClass;
 
 	_hfstaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_hfstaction4,true] call ace_interact_menu_fnc_addActionToClass;
 	
-	_hfstaction5 = ["spawnm6","Spawn M6 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	_hfstaction5 = ["spawnm6","Spawn 60mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMortarAmmo_mix.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_hfstaction5,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_hfstaction5 = ["spawn82","Spawn 82mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\staticL16_mix.sqf"},_condition] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_hfstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	_hfstaction6 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},_condition] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnsupport"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
-
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_hfstaction6,true] call ace_interact_menu_fnc_addActionToClass;
+	
+_fstaction5 = ["l16ammo","Spawn Javelin Tube","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratejav_tube.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_fstaction5,true] call ace_interact_menu_fnc_addActionToClass;
 	
 
 	

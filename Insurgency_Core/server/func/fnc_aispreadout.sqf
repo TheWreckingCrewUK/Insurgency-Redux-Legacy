@@ -1,5 +1,9 @@
 params ["_unit", ["_radius", 100], "_origin"];
 
+//hobbs to hobbs: this is too intensive, the sleep 40 is done too much
+if (true) exitwith {};
+
+
 if (isnil "_origin") then {
 	_origin = getpos _unit;
 };

@@ -61,7 +61,7 @@ if (!isnull _wp) then {
 };
 
 
-while {((count _waypoints < 3) && (_attempts < 10))} do {
+while {((count _waypoints < 3) && (_attempts < 3))} do {
 	_wp = [(_wp getpos [800, ((_gop getdir _wp) + (random 40) - 20)]), 1000] call twc_fnc_findnearestroad;
 
 	if (((_gop distance _player) > 3500) || (([_gop,300] call twc_fnc_posNearPlayers))) then {
@@ -72,7 +72,7 @@ while {((count _waypoints < 3) && (_attempts < 10))} do {
 	};
 };
 
-if (_attempts == 10) exitwith {
+if (_attempts == 3) exitwith {
 	//systemchat "civtraffclient 43";
 	[twc_fnc_civtraffic_client, [_player], _timer] call CBA_fnc_waitAndExecute;
 };
@@ -81,4 +81,4 @@ if (_attempts == 10) exitwith {
 
 
 // if spawn was successful, do it again with a lesser timer
-[twc_fnc_civtraffic_client, [_player], _timer * 0.3] call CBA_fnc_waitAndExecute;
+[twc_fnc_civtraffic_client, [_player], (_timer * 0.3)] call CBA_fnc_waitAndExecute;

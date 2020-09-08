@@ -40,7 +40,7 @@ _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",7];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",5];
+_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_FMJ",5];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",5];
 _box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets",8];
 _box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug",8];

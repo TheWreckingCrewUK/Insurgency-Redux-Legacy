@@ -28,7 +28,7 @@ if (_mancount > (((count _buildings) * 1)min 20)) exitwith {
 
 _gop = [(getpos (selectrandom _buildings)), 2, 50, 3, false] call twc_fnc_findsneakypos;
 
-if ((((_gop distance _player) < 10) || ((_gop distance _player) > 250) || (([_gop,50] call twc_fnc_posNearPlayers)))) exitwith {
+if ((((_gop distance _player) < 10) || ((_gop distance _player) > 250) || ((_gop) inarea "cqbrange") || (([_gop,50] call twc_fnc_posNearPlayers)))) exitwith {
 	[twc_fnc_civfluff_client, [_player], _timer] call CBA_fnc_waitAndExecute;
 	//systemchat "civfluffclient 23";
 };
@@ -38,7 +38,7 @@ if ((((_gop distance _player) < 10) || ((_gop distance _player) > 250) || (([_go
 _waypoints = [];
 _attempts = 0;
 
-while {((count _waypoints < 2) && (_attempts < 10))} do {
+while {((count _waypoints < 2) && (_attempts < 3))} do {
 	_wp = [(getpos (selectrandom _buildings)), 2, 30, 3, false] call twc_fnc_findsneakypos;
 
 	if ((((_gop distance _player) < 10) || ((_gop distance _player) > 250) || (([_gop,50] call twc_fnc_posNearPlayers)))) then {
@@ -49,13 +49,13 @@ while {((count _waypoints < 2) && (_attempts < 10))} do {
 	};
 };
 
-if (_attempts == 10) exitwith {
+if (_attempts == 3) exitwith {
 	//systemchat "civfluffclient 43";
 	[twc_fnc_civfluff_client, [_player], _timer] call CBA_fnc_waitAndExecute;
 };
 
 // if spawn was successful, do it again with a lesser timer
-[twc_fnc_civfluff_client, [_player], 5] call CBA_fnc_waitAndExecute;
+[twc_fnc_civfluff_client, [_player], (_timer * 0.3)] call CBA_fnc_waitAndExecute;
 
 //systemchat (str [_gop, _waypoints]);
 [_gop, _waypoints] remoteExec ["twc_fnc_civfluff_server", 2];

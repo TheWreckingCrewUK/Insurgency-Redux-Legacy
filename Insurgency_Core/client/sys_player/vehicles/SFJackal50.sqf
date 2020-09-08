@@ -114,3 +114,7 @@ if (_is00 == 1) then {
 _veh AddWeaponCargoGlobal _fsgun;
 _veh AddMagazineCargoGlobal _fsmag;
 [_veh, player, 5] call twc_fnc_genericfillvehicle;
+
+
+[_veh, 8] call ace_cargo_fnc_setSpace;
+_veh setvariable ["ace_cargo_loaded", ["ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel","ACE_Wheel"], true];

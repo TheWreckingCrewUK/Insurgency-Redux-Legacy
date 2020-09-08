@@ -21,10 +21,11 @@ params ["_objType"];
 
 //Finding a position that is far enough from base and not near players
 _pos = [0,0,0];
-while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 500 || ([_pos,500] call twc_fnc_posNearPlayers)} do {			
+_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
+while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 1000 || (_pos distance (getmarkerpos "respawn_west_forwardbase")) < 1000 || ([_pos,500] call twc_fnc_posNearPlayers)} do {			
 
-	_houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(worldSize / 2))];
-	sleep .25;
+	
+	sleep 2;
 	_c = 0;
 	_house = _houseList call BIS_fnc_selectRandom;
 	while { format ["%1", _house buildingPos _c] != "[0,0,0]" } do {_c = _c + 1};
@@ -108,10 +109,9 @@ for "_i" from 1 to _total do{
 	sleep 0.2;
 };
 
-//_nil = [_pos, nil, (units _group), 50, 2, false, true] call ace_ai_fnc_garrison;
-{
-	[_x, 40] call twc_fnc_aispreadout;
-} foreach units _group;
+//{
+//	[_x, 40] call twc_fnc_aispreadout;
+//} foreach units _group;
 
 _id = [_pos, "HVT"];
 twc_activemissions pushback _id;
@@ -142,6 +142,9 @@ _group createUnit [twc_aaman, _pos,[], 25,"NONE"];
 //[_group, _group, 150, 3, false] call CBA_fnc_TaskDefend;
 [leader _group, 1] spawn TWC_fnc_aiscramble;
 
+_units = [_pos, nil, units _group, 40, 2, false, true] call ace_ai_fnc_garrison;
+
+[_group, _pos, 100, 3, 0.9] call CBA_fnc_taskDefend;
 
 sleep 10;
 _hvt allowdamage true;

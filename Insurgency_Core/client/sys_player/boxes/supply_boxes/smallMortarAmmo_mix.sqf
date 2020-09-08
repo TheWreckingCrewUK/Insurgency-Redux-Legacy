@@ -24,9 +24,9 @@ clearitemCargoGlobal _box;
 
 //Ammo
 
-_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",10];
-//_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Flare_White",8];
-//_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",8];
+_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",9];
+_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Flare_White",4];
+_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",4];
 
 
 

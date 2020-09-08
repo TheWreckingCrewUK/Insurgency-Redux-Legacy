@@ -127,7 +127,14 @@ publicVariable "twc_mortar_targetlist";
 };
 };
 */
-
+twc_pubcamo = 500;
+waituntil {!isnil "twc_missionname"};
+if (["70", twc_missionname] call BIS_fnc_inString) then {
+	twc_pubcamo = 2;
+};
+if (["90", twc_missionname] call BIS_fnc_inString) then {
+	twc_pubcamo = 20;
+};
 	if ((!(["sniper", typeof player] call BIS_fnc_inString)) && (!(["spotter", typeof player] call BIS_fnc_inString)) && (!(["uksf", typeof player] call BIS_fnc_inString))) then {
 		player setunittrait ["camouflageCoef", twc_pubcamo];
 	};
@@ -340,26 +347,7 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 };
 
 
-if ((["uksf", typeof player] call BIS_fnc_inString) || ((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])) then {
-	[] spawn {
-		_pos = getpos player;
-		waituntil {(player distance _pos) > 3};
-		
-		_team = (group player) getvariable ["twc_groupcountry", "uksf"]; 
-		_role = player getvariable ["twc_loadoutrole", ""]; 
-		if (_role != "") then {
-			_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
-			_var call twc_loadout_switchloadout; 
-			[player] call twc_fnc_buildmagarray_set; 
-			[player] call twc_fnc_buildmagarray;
-		};
-	};
-};
-
-
-
-
-if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])then{
+if (((["uksf", typeof player] call BIS_fnc_inString) && (!(["70", twc_missionname] call BIS_fnc_inString)) && (!(["90", twc_missionname] call BIS_fnc_inString)) && (!(["00", twc_missionname] call BIS_fnc_inString))) || ((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin", "Modern_British_FAC", "Modern_British_JetPilot", "Modern_British_HeliPilot","Modern_British_crewchief", "Modern_British_FSTAssistant","Modern_British_FSTForwardObserver","Modern_British_FSTCommander"])) then {
 	[] spawn {
 		_pos = getpos player;
 		waituntil {(player distance _pos) > 3};
@@ -378,6 +366,10 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief"])th
 
 
 
+
+
+
+
 if (["fst", typeof player] call BIS_fnc_inString) then {
 	{
 		_returnvehicle = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
@@ -391,15 +383,7 @@ if (["fst", typeof player] call BIS_fnc_inString) then {
 	} foreach ["UK3CB_BAF_Coyote_L111A1_Base_D","UK3CB_BAF_Coyote_L111A1_Base_W","UK3CB_BAF_Coyote_L134A1_Base_D","UK3CB_BAF_Coyote_L134A1_Base_W"];
 
 
-		
-	_team = (group player) getvariable ["twc_groupcountry", "baf"]; 
-	_role = player getvariable ["twc_loadoutrole", ""];
-	if (_role != "") then {
-		_var = missionnamespace getvariable [("twc_loadout_" + _team + "_" + _role), []]; 
-		_var call twc_loadout_switchloadout; 
-		[player] call twc_fnc_buildmagarray_set; 
-		[player] call twc_fnc_buildmagarray;
-	};
+	
 };
 
 
@@ -454,7 +438,7 @@ The large vehicles require a full crew of 3 to operate, but the vehicles without
 
 _suntime = date call BIS_fnc_sunriseSunsetTime;
 
-if ((daytime < ((_suntime select 0) - 0.5)) || (daytime > ((_suntime select 1) - 1))) then {
+if ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) - 1))) then {
 	player addweapon "rhsusf_ANPVS_14";
 };
 

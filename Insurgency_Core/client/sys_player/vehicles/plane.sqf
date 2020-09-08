@@ -9,13 +9,20 @@ if(isNil "twc_planecount") then{
 	publicVariable "twc_planecount";
 };
 
+if (!(isnull (getConnectedUAV player))) exitwith {
+	_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>UAV Active</t>"; 
 
-if (twc_planecount >= 2) exitwith {
+	 _text1 = format ["<br />You cannot fly a plane while controlling a UAV",0];
+	_spawntext = parsetext (_title + _text1);
+	hint _spawntext;
+};
+
+if (twc_planecount >= 3) exitwith {
 	
 	
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Too Many Planes</t>"; 
 
- _text1 = format ["<br />There Are Already 2 Planes In The AO. You Can Return Them To Base To Have Access to Another",0];
+ _text1 = format ["<br />You have already spawned 3 aircraft. You can return them to base to get more",0];
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 	
@@ -40,7 +47,7 @@ _veh setVariable ["ace_pylons_magazineWhitelist", [], true];
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Plane Spawner</t>"; 
 
- _text1 =  "<br />The Plane has been spawned on the Taxiway.";
+ _text1 =  "<br />The Plane has been spawned on the Taxiway. Your supply of airframes is limited, do not waste it and return it when you are done";
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 

@@ -9,7 +9,7 @@ new line = <br />
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>TWC NEWS</t>"; 
 
- _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />FST now has access to 81mm mortars from the spawner, and the 60mm mortar ammo can now be spawned by type<br /><br />You can now interact with vehicles to prep them with relevant ammo when parked on the spawn pad.";
+ _text1 = "<br />The latest changelogs on major and minor issues are displayed here.<br /><br />If you don't wear a helmet civs will be nicer, but you can also be instakilled by a shot to the head<br /><br />You can now interact with vehicles to prep them with relevant ammo when parked on the spawn pad.";
  
  _titlemem = "";
  _textmem = "";

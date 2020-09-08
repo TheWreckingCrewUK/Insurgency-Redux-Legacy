@@ -5,7 +5,8 @@ params ["_spawnpos", "_waypoints"];
 _side = civilian;
 _type = missionnamespace getvariable ["civilianType", []];
 
-_isblufor = (((_spawnpos distance twc_basepos ) < 300) || ((_spawnpos distance (getmarkerpos "respawn_west_forwardbase") ) < 300));
+_basepos = missionnamespace getvariable ["twc_basepos", _spawnpos];
+_isblufor = (((_spawnpos distance _basepos ) < 300) || ((_spawnpos distance (getmarkerpos "respawn_west_forwardbase") ) < 300));
 //systemchat "civfluffserver 7";
 if (_isblufor) then {
 	_side = west;

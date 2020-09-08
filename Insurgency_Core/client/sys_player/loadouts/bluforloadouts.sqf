@@ -16,112 +16,6 @@ waituntil {!isnil "twc_crateitems"};
 #include "sniper.sqf";
 #include "sf.sqf";
 
-twc_loadout_usaf_jtac = [
-	//uniform
-	(["rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
-
-	//uniformitems
-	([["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
-
-	//helmet
-
-	"CUP_H_PMC_Cap_EP_Grey",
-
-	//vest
-	(["CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
-
-	//vestitems
-
-	[["ACRE_PRC152", 1], ["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 5], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 3], ["HandGrenade", 2], ["SmokeShell", 2]],
-
-	//backpack
-	"UK3CB_BAF_B_Bergen_TAN_JTAC_H_A",
-
-	//backpackitems
-
-	[["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 6], ["rhsusf_opscore_ut_pelt", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
-
-	//night kit
-	["rhs_uniform_g3_mc", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
-
-	//weapons
-
-	[["twc_mk17_elcan", []], ["rhs_weap_M320", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
-
-	//linkeditems
-
-	(["itemcTab"] + twc_loadout_basiclinkeditems),
-	
-	//weapons to remove from crate, weapons to add
-	
-	[["all"], ([] + twc_crateweapons)],
-	
-	//mags to remove from crate, mags to add
-	
-	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
-	
-	//items to remove from crate, mags to add
-	
-	[["UK3CB_BAF_Kite"], ([["ACE_SpraypaintGreen", 1]])],
-	
-	//backpacks to remove from crate, backpacks to add
-	
-	[["all"], []]
-
-];
-twc_loadout_baf_jtac = [
-	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM"] call bis_fnc_selectrandom),
-
-	//uniformitems
-	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
-
-	//helmet
-
-	"UK3CB_BAF_H_Mk7_Camo_ESS_B",
-
-	//vest
-	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
-
-	//vestitems
-
-	[["ACRE_PRC152", 2], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["UK3CB_BAF_556_30Rnd", 8], ["UK3CB_BAF_556_30Rnd_T", 3], ["HandGrenade", 2], ["SmokeShell", 2]],
-
-	//backpack
-	"UK3CB_BAF_B_Bergen_MTP_JTAC_H_A",
-
-	//backpackitems
-
-	[["UK3CB_BAF_556_30Rnd", 6], ["UK3CB_BAF_556_30Rnd_T", 3], ["CUP_H_PMC_Cap_Back_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
-
-	//night kit
-	["UK3CB_BAF_U_CombatUniform_MTP", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
-
-	//weapons
-
-	[["UK3CB_BAF_L85A2_UGL_ELCAN3D", []], ["rhsusf_weap_glock17g4", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
-
-	//linkeditems
-
-	(["itemcTab"] + twc_loadout_basiclinkeditems),
-	
-	//weapons to remove from crate, weapons to add
-	
-	[["all"], ([] + twc_crateweapons)],
-	
-	//mags to remove from crate, mags to add
-	
-	[["all"], ([["UK3CB_BAF_556_30Rnd", 50], ["UK3CB_BAF_556_30Rnd_T", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
-	
-	//items to remove from crate, mags to add
-	
-	[["UK3CB_BAF_Kite"], ([["ACE_SpraypaintGreen", 1]])],
-	
-	//backpacks to remove from crate, backpacks to add
-	
-	[["all"], []]
-
-];
 
 
 twc_loadout_switchloadout = {
@@ -141,7 +35,7 @@ twc_loadout_switchloadout = {
 	
 	_suntime = date call BIS_fnc_sunriseSunsetTime;
 	
-	_isnighttime = ((daytime < ((_suntime select 0) - 0.5)) || (daytime > ((_suntime select 1) - 1)));
+	_isnighttime = ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) - 1)));
 	
 	if (_isnighttime) then {
 		if (_nightuniform != "") then {
@@ -162,13 +56,21 @@ twc_loadout_switchloadout = {
 	
 	player addvest _vest;
 	
+	player addbackpack _backpack;
+	
+	if (_isnighttime) then {
+		{
+			for "_i" from 1 to (_x select 1) do {
+				player additem (_x select 0);
+			};
+		} foreach _nightitems;
+	};
+	
 	{
 		for "_i" from 1 to (_x select 1) do {
 			player additemtovest (_x select 0);
 		};
 	} foreach _vestitems;
-	
-	player addbackpack _backpack;
 	
 	_newload = [(configFile >> "CfgVehicles" >> _backpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
 	missionnamespace setvariable ["twc_maxbagload", _newload];
@@ -202,14 +104,6 @@ twc_loadout_switchloadout = {
 	
 	group player setvariable ["twc_magazinearray", []];
 	group player setvariable ["twc_itemarray", []];
-	
-	if (_isnighttime) then {
-		{
-			for "_i" from 1 to (_x select 1) do {
-				player additem (_x select 0);
-			};
-		} foreach _nightitems;
-	};
 	
 	{
 		player linkitem _x;
@@ -308,6 +202,7 @@ twc_loadout_switchloadout = {
 			} foreach _addweps;
 		};
 	};
+	player allowsprint true;
 	[] spawn {
 		sleep (random 3);
 		[player] call twc_fnc_buildmagarray;

@@ -42,7 +42,7 @@ twc_loadout_usarmysniper_shooter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -90,7 +90,7 @@ twc_loadout_usarmysniper_spotter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -138,7 +138,7 @@ twc_loadout_usmcsniper_shooter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_booniehat2_marpatd", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_booniehat2_marpatd", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -186,7 +186,7 @@ twc_loadout_usmcsniper_spotter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_booniehat2_marpatd", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_booniehat2_marpatd", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -212,16 +212,16 @@ twc_loadout_rangersniper_shooter = [
 	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["SmokeShell", 1], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 6], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 3]],
 
 	//backpack
-	"twc_mtp_belt",
+	"rhsusf_falconii_mc",
 
 	//backpackitems
 	[["rhsusf_20Rnd_762x51_SR25_m993_Mag", 2], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 5]],
 
 	//night kit
-	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_MX2A", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["cup_optic_goshawk_ris", 1], ["rhsusf_acc_premier_anpvs27", 1], ["ACE_MX2A", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
-	[[(["twc_sr25_us_marksman"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", []], ["ACE_Yardage450", []]],
+	[[(["rhs_weap_sr25_ec_d"] call bis_fnc_selectrandom), ["rhsusf_acc_leupoldmk4_2_d", "cup_acc_anpeq_15_flashlight_tan_l", "cup_bipod_harris_1a2_l", "rhsgref_sdn6_suppressor"]], ["rhsusf_weap_glock17g4", []], ["ACE_Yardage450", []]],
 
 	//linkeditems
 	([""] + twc_loadout_basiclinkeditems),
@@ -236,7 +236,7 @@ twc_loadout_rangersniper_shooter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_beanie_green", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey", "rhs_Booniehat_m81", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_beanie_green", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey", "rhs_Booniehat_m81", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -260,7 +260,7 @@ twc_loadout_rangersniper_spotter = [
 	[["ACRE_PRC152", 1], ["ACE_ATragMX", 1], ["ACE_Kestrel4500", 1], ["ACE_Tripod", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 4], ["SmokeShell", 1], ["rhsusf_5Rnd_300winmag_xm2010", 40]],
 
 	//backpack
-	"twc_mtp_belt",
+	"rhsusf_falconii_mc",
 
 	//backpackitems
 	[["rhsusf_20Rnd_762x51_SR25_m62_Mag", 4], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 3]],
@@ -284,7 +284,7 @@ twc_loadout_rangersniper_spotter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_beanie_green", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey", "rhs_Booniehat_m81", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1], [(selectrandom ["rhs_beanie_green", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey", "rhs_Booniehat_m81", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -293,7 +293,7 @@ twc_loadout_rangersniper_spotter = [
 
 
 
-twc_loadout_bafsniper_shooter = [
+twc_loadout_baf_shooter = [
 	//uniform
 	(["UK3CB_BAF_U_CombatUniform_MTP"] call bis_fnc_selectrandom),
 
@@ -334,14 +334,14 @@ twc_loadout_bafsniper_shooter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "UK3CB_BAF_H_Headset_PRR"]), 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "UK3CB_BAF_H_Headset_PRR"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
 	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
 ];
 
-twc_loadout_bafsniper_spotter = [
+twc_loadout_baf_spotter = [
 	//uniform
 	(["UK3CB_BAF_U_CombatUniform_MTP"] call bis_fnc_selectrandom),
 
@@ -374,7 +374,7 @@ twc_loadout_bafsniper_spotter = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["twc_l115a3_wd_covered", 1], ["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	
@@ -382,7 +382,7 @@ twc_loadout_bafsniper_spotter = [
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["UK3CB_BAF_MaxiKite", 1]] + twc_crateitems)],
+	[["all"], ([["UK3CB_BAF_MaxiKite", 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "UK3CB_BAF_H_Headset_PRR"]), 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "UK3CB_BAF_H_Headset_PRR"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -392,7 +392,7 @@ twc_loadout_bafsniper_spotter = [
 
 twc_loadout_uksfsniper_shooter = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM"] call bis_fnc_selectrandom),
+	(["UK3CB_BAF_U_Smock_DPMW_MTP"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -401,22 +401,22 @@ twc_loadout_uksfsniper_shooter = [
 	"rhsusf_opscore_mc_cover_pelt",
 
 	//vest
-	(["CUP_V_OI_TKI_Jacket4_06"] call bis_fnc_selectrandom),
+	(["twc_rhs_6sh92_dpm"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["SmokeShell", 1], ["ACE_7Rnd_408_305gr_Mag", 15]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_beanie_green", 1], ["SmokeShell", 1], ["ACE_10Rnd_338_300gr_HPBT_Mag", 8], ["ACE_10Rnd_338_API526_Mag", 4]],
 
 	//backpack
-	"twc_tan_belt",
+	"twc_oli_belt",
 
 	//backpackitems
-	[["ACE_7Rnd_408_305gr_Mag", 6]],
-
+	[["ACE_10Rnd_338_300gr_HPBT_Mag", 6], ["ACE_10Rnd_338_API526_Mag", 4]],
+//
 	//night kit
-	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["cup_optic_goshawk_ris", 1], ["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["optic_tws", 1], ["uk3cb_baf_maxikite", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
-	[[(["srifle_LRR_F"] call bis_fnc_selectrandom), ["RKSL_optic_PMII_525"]], ["twc_g17_optics_laser", []], ["ACE_Yardage450", []]],
+	[[(["UK3CB_BAF_L115_pub_Base"] call bis_fnc_selectrandom), ["RKSL_optic_PMII_525", "uk3cb_baf_silencer_l115a3"]], ["twc_g17_optics_laser", []], ["ACE_Yardage450", []]],
 
 	//linkeditems
 	([""] + twc_loadout_basiclinkeditems),
@@ -427,15 +427,15 @@ twc_loadout_uksfsniper_shooter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["ACE_7Rnd_408_305gr_Mag", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 3], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 2], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	[["all"], ([["ACE_10Rnd_338_300gr_HPBT_Mag", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 3], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 2], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], ["UK3CB_BAF_H_Beret_SAS_PRR", 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey"]), 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
-	[["all"], [["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
+	[["all"], [["UK3CB_BAF_B_Bergen_OLI_Rifleman_A", 2], ["TWC_BAF_B_Bergen_OLI_Rifleman_XL_A", 2]]]
 ];
 
 twc_loadout_uksfsniper_spotter = [
@@ -452,16 +452,16 @@ twc_loadout_uksfsniper_spotter = [
 	(["CUP_V_O_SLA_M23_1_OD"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["ACRE_PRC152", 1], ["ACE_ATragMX", 1], ["ACE_Kestrel4500", 1], ["ACE_Tripod", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 4], ["SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
+	[["ACRE_PRC152", 1], ["rhs_beanie_green", 1], ["ACE_ATragMX", 1], ["ACE_Kestrel4500", 1], ["ACE_Tripod", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 4], ["SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_OLI_Rifleman_A",
 
 	//backpackitems
-	[["ACE_7Rnd_408_305gr_Mag", 8], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
+	[["ACE_10Rnd_338_300gr_HPBT_Mag", 8], ["ACE_10Rnd_338_API526_Mag", 4], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
 
 	//night kit
-	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["ACE_MX2A", 1], ["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["twc_halfghillie_desert", "rhsusf_ANPVS_15", [["UK3CB_BAF_Soflam_Laserdesignator", 1], ["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 	[[(["TWC_HK417_scope_bipod"] call bis_fnc_selectrandom), ["twc_acc_nt4_tan"]], ["twc_g17_optics_laser", []], ["ACE_Vector", []]],
@@ -475,11 +475,11 @@ twc_loadout_uksfsniper_spotter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["UK3CB_BAF_762_L42A1_20Rnd", 50], ["UK3CB_BAF_762_L42A1_20Rnd_T", 10], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	[["all"], ([["UK3CB_BAF_762_L42A1_20Rnd", 50], ["UK3CB_BAF_762_L42A1_20Rnd_T", 10], ["ACE_10Rnd_338_300gr_HPBT_Mag", 20], ["ACE_10Rnd_338_API526_Mag", 20], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
-	[["all"], ([["UK3CB_BAF_MaxiKite", 1]] + twc_crateitems)],
+	[["all"], ([["UK3CB_BAF_MaxiKite", 1], ["UK3CB_BAF_H_Beret_SAS_PRR", 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey"]), 1], [(selectrandom ["rhs_beanie_green", "UK3CB_BAF_H_Boonie_MTP_PRR", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_Back_EP_Tan", "CUP_H_PMC_Cap_Back_EP_Grey"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	

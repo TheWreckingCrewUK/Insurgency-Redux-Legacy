@@ -3,7 +3,7 @@ _civilianQuestioned = (_this select 0) select 1;
 //adding in 100% certainty for the interpreter to weasle info out of someone, unless they've been questioned already
 _isterp = player getvariable ["twc_isterp",0];
 _hasmoney = (_civilianQuestioned getVariable ["twc_hasmoney",0]);
-if ((_isterp == 1) || ((_hasmoney == 1) && ((random 1) > 0.5)) || ((("beret" in (headgear player)) || ("Beret" in (headgear player))) && ((random 1) > 0.5))) then {
+if ((_isterp == 1) || ((_hasmoney == 1) && ((random 1) > 0.5)) || (((getNumber (configFile >> "CfgWeapons" >> headgear player >> "iteminfo" >> "HitpointsProtectionInfo" >> "head" >> "armor")) == 0) && ((random 1) > 0.5))) then {
 _givenNumber = 0};
 //systemChat str _givenNumber;
 //[_civilianQuestioned] execvm "Insurgency_Core\server\sys_civ\evilCiv.sqf";

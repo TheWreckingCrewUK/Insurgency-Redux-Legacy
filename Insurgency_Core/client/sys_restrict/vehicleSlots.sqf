@@ -22,7 +22,7 @@ _list=[
 	],
 		["B_APC_Wheeled_01_cannon_F",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -33,20 +33,20 @@ _list=[
 	],
 		["rhs_btr70_msv",[ 
 		["gunner", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		]],5
 	],
 		["CUP_O_MTLB_pk_WDL_RU",[ 
 		["gunner", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		]],5
 	],
 		["rhs_bmp1_msv",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		]],5
 	],
 	
@@ -58,7 +58,7 @@ _list=[
 	
 		["rhsusf_m1a2sep1wd_usarmy",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -69,7 +69,7 @@ _list=[
 	],
 		["rhsusf_m1a2sep1tuskiid_usarmy",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -80,7 +80,7 @@ _list=[
 	],
 		["rhsusf_m1a2sep1tuskiiwd_usarmy",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -91,7 +91,7 @@ _list=[
 	],
 		["rhsusf_m1a2sep1d_usarmy",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -132,7 +132,7 @@ _list=[
 	
 		["CUP_B_MCV80_GB_W_SLAT",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -144,7 +144,7 @@ _list=[
 	
 			["CUP_B_AAV_USMC",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -155,7 +155,7 @@ _list=[
 	],	
 			["RHS_M2A2",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -166,7 +166,7 @@ _list=[
 	],	
 			["RHS_M2A2_wd",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -177,7 +177,7 @@ _list=[
 	],	
 			["RHS_M2A3_BUSKIII",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -189,7 +189,7 @@ _list=[
 	
 			["CUP_B_MCV80_GB_D_SLAT",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -276,7 +276,7 @@ _list=[
 	
 		["CUP_B_LAV25_USMC",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -288,7 +288,7 @@ _list=[
 		
 		["CUP_B_LAV25_desert_USMC",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -453,9 +453,17 @@ _list=[
 
 		["CUP_B_CH47F_GB",[
 		["driver", 
-			_pilots
+			_pilots + _crewchiefs
 		],
 		[[3], 
+			_crewchiefs
+		]],3
+	],
+		["CUP_B_MH47E_GB",[
+		["driver", 
+			_pilots
+		],
+		[[2], 
 			_crewchiefs
 		]],3
 	],
@@ -497,7 +505,7 @@ _list=[
 		["driver", 
 			_pilots
 		],
-		["gunner", 
+		[[1], 
 			_crewchiefs
 		]],3
 	],	
@@ -668,6 +676,20 @@ _list=[
 		]],3
 	],
 	
+				["RHSGREF_A29B_HIDF", [
+		["driver", 
+			["Modern_British_JetPilot"]
+		], ["gunner", 
+			["Modern_British_FAC"]
+		]],10
+	],
+				["rhs_l39_cdf_b_cdf", [
+		["driver", 
+			["Modern_British_JetPilot"]
+		], ["gunner", 
+			["Modern_British_FAC"]
+		]],10
+	],
 				["CUP_B_A10_DYN_USA", [
 		["driver", 
 			["Modern_British_JetPilot"]
@@ -705,7 +727,7 @@ _list=[
 	],
 		["rhsusf_m1a1aimwd_usarmy",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -746,7 +768,7 @@ _list=[
 	],
 			["RHS_M6_wd",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -757,7 +779,7 @@ _list=[
 	],
 			["RHS_M6",[ 
 		["driver", 
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -769,7 +791,7 @@ _list=[
 	
 		["ukcw_cvrt_Scim_d",[
 		["driver",
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -781,7 +803,7 @@ _list=[
 	
 		["ukcw_cvrt_Scim_d_L1",[
 		["driver",
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -793,7 +815,7 @@ _list=[
 	
 		["ukcw_cvrt_Scim_w_L1",[
 		["driver",
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -806,7 +828,7 @@ _list=[
 	
 		["ukcw_cvrt_Scim_w",[
 		["driver",
-			_armourcrew
+			_armourcrew + _armourcommanders
 		],
 		["gunner", 
 			_armourcrew
@@ -857,6 +879,7 @@ TWC_fnc_notAllowedInSeat = {
 	[_playerUnit] spawn {
 	params ["_playerUnit"];
 	sleep 1;
+	if (isserver) exitwith {hint "Seat restrict triggered, but not enforcing on singleplayer"};
 	_freePassengerSpace = (vehicle _playerUnit) emptyPositions "cargo";
 	_title  = "<t color='#ff0000' size='1.2' shadow='1' shadowColor='#000000' align='center'>RESTRICTED</t>";
 

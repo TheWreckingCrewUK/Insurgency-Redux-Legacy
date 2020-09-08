@@ -19,6 +19,8 @@
         ["cup_optic_g36optics_holo",1],
         ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
@@ -58,6 +60,8 @@
 		["ACE_salineIV_500", 50],
 		["ACE_salineIV_250", 50],
 		["ACE_personalAidKit", 1],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["ACE_bodyBag", 10]
 	];
 };
@@ -88,6 +92,8 @@
         ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
 		["ACRE_PRC148",0],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -120,6 +126,8 @@
         ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
 		["ACRE_PRC148",0],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -149,6 +157,8 @@
         ["cup_optic_g36optics",1],
         ["ACE_MapTools",1],
 		["ACRE_PRC148",0],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["rhsusf_ANPVS_14",1]
 	];
 	_tmp_backpacks = 
@@ -186,6 +196,8 @@
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_microDAGR",1],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
+        ["CUP_H_Ger_Beret_INF_Grn",1],
 		["ACRE_PRC117F",1]
 	];
 };
@@ -219,6 +231,7 @@
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
+        [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
 		["ACE_microDAGR",1]
 	];
 	_tmp_backpacks = 

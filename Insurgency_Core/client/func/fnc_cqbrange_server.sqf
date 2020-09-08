@@ -12,10 +12,15 @@ _group = creategroup east;
 
 _num = ((count allplayers * 2) + 8) min 20;
 
-_hardmode = missionnamespace getvariable ["twc_hardcqb", false];
-if (hasinterface || _hardmode) then {
+_hardmode = missionnamespace getvariable ["twc_hardcqb", true];
+
+if (!hasinterface) then {
+	_hardmode = missionnamespace getvariable ["twc_hardcqb", false];
+};
+
+if (_hardmode) then {
 	_num = 30;
-	systemchat "hard mode";
+	systemchat "twc_hardcqb is on";
 };
 
 {
@@ -47,8 +52,11 @@ for "_i" from 1 to _num do {
 	_newpos = [(getpos _unit), 2] call cba_fnc_randpos;
 	
 };
-//[leader _group, 1] call twc_fnc_aiscramble;
 
+
+if (_hardmode) then {
+	[leader _group, 1] call twc_fnc_aiscramble;
+};
 if (_iscomplex) then {
 	for "_i" from 1 to (_num / 2) do {
 		_unit = _group createUnit [(civilianType call bis_fnc_selectrandom), ["cqbrange"] call CBA_fnc_randPosArea, [], 0, "NONE"]; 

@@ -30,21 +30,22 @@ diwako_ragdoll_fnc_animChangedEH = compile preprocessfilelinenumbers "Insurgency
   params [["_unit", objNull],["_state", false]];
   // if(!local _unit || {!diwako_ragdoll_ragdolling}) exitWith {}; // ragdolling if it's active and unit local
   if(!diwako_ragdoll_ragdolling) exitWith {}; // ragdolling if it's active
-  
-  if (isPlayer _unit) exitwith {};
-  
+  if(isPlayer _unit) exitWith {}; // hobbs: don't ragdoll players
   if((!(isPlayer _unit) && {!diwako_ragdoll_ai})) exitWith {}; // only ragdoll players and only ragdolling AI if that option is set active
   if(_state && {(isNull objectParent _unit) && {!([_unit] call ace_medical_fnc_isBeingCarried) && {!([_unit] call ace_medical_fnc_isBeingDragged)}}}) then {
     // ragdoll unit
     _unit setUnconscious true;
   };
   if(!_state) then {
-    // unit woke up before ragdolling was finished
+   
+   // unit woke up before ragdolling was finished
     _unit setUnconscious false;
   };
 }] call CBA_fnc_addEventHandler;
 
+
 ["CAManBase", "AnimChanged", {
+	if(isPlayer (_this select 0)) exitWith {};
 	_this call diwako_ragdoll_fnc_animChangedEH;
 }] call CBA_fnc_addClassEventHandler;
 

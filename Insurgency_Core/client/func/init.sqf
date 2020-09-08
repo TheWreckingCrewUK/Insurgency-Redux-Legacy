@@ -33,6 +33,7 @@ twc_fnc_findoutsideblufor = compile preprocessfilelinenumbers "Insurgency_Core\s
 twc_fnc_stopcivs = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_stopcivs.sqf";
 twc_fnc_bluforreport = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_bluforreport.sqf";
 
+twc_fnc_playerheadshot = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_playerheadshot.sqf";
 
 twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
 

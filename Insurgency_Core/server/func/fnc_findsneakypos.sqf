@@ -74,7 +74,7 @@ if ((!_checkvis) && ((_checkpos distance _pos) > _min) && (!([_pos,50] call twc_
 	_fncreturn = _checkpos;
 } else {
 
-	while {((_checkvis) || ((_checkpos distance _pos) < _min)) && (_checkcount < 100)} do {
+	while {((_checkvis) || ((_checkpos distance _pos) < _min)) && (_checkcount < 10)} do {
 		
 		_checkpos = ([_pos, _min, _max, _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		if ((count _checkpos) == 2) then {

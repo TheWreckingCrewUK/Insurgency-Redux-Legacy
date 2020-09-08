@@ -52,6 +52,7 @@ independent setFriend [EAST, 0];
 east setFriend [independent, 0];
 independent setFriend [west, 1];
 
+//execvm "insurgency_core\client\sys_ragdoll\fn_initRagdoll.sqf";
 
 twc_fortifyobjectsbudget = [["twc_Land_BagFence_Long_F", 20], ["twc_Land_BagFence_Round_F", 20], ["twc_Land_BagFence_End_F", 10], ["Land_Shed_06_F", 50],["Land_PortableLight_single_F", 25],["twc_Land_HBarrier_Big_F", 25], ["twc_Land_HBarrier_5_F", 25], ["twc_Land_HBarrierTower_F", 35]];
 
@@ -83,21 +84,20 @@ if (!hasinterface) then {
 */
 
 
+addMissionEventHandler ["EntityKilled", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	if (!isplayer _unit) exitwith {};
+	if ((_unit distance (missionnamespace getvariable ["twc_basepos", [0,0,0]])) > 150) exitwith {};
+	[(vehicle _unit)] spawn {
+		params ["_unit"];
+		while {isplayer _unit} do {
+			sleep 1;
+		};
+		deletevehicle _unit;
+	};
+}];
 
-//list of leaders that can do attachments without the slot system
-twc_goodeggs = [
-"76561198018609662", //sarge
-"76561198050512686", //patty
-"76561198034730503", //cuck
-"76561198053960783", //crow
-"76561198042520910", //aleyboy
-"76561198035067970", //martingw
-"76561198157816526", //nubben
-"76561198005456546", //bosenator
-"76561198030665694" //hobbs
 
-];
-publicVariable "twc_goodeggs";
 
 publicvariable "townspawn";
 

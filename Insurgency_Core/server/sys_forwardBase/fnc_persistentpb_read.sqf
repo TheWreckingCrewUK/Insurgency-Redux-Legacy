@@ -22,7 +22,7 @@ _table = objnull;
 	_vector = _x select 8;
 	
 	//create the object at the defined position but raised up, because setdir is mean)
-	_obj = _type createvehicle (_pos vectoradd [0,0, 30 + (random 1000)]);
+	_obj = _type createvehicle ([0,0,0] vectoradd [0,0, 3000 + (random 1000)]);
 	
 	//if it's the table, mark it to run the pb script on it when we're done
 	if (_type == "twc_radiotable") then {
@@ -37,10 +37,17 @@ _table = objnull;
 	//set the direction
 	
 	_obj setdir _dir;
+	
+	//if it's on the old atl pos, convert it
+	
+	if ((_pos select 2) < 5) then {
+	//	_pos = ATLToASL _pos;
+	};
+	
 	//set the final position
-	_obj setpos (_pos vectoradd [0,0,1]);
+	_obj setposasl (_pos vectoradd [0,0,0.2]);
 	if (_type in twc_fortifyobjects) then {
-		_obj setpos _pos;
+		_obj setposasl _pos;
 		
 		if (!isnil "_vector") then {
 			_obj setvectordirandup _vector;

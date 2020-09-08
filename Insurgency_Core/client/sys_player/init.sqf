@@ -18,8 +18,23 @@ if ((getPlayerUID player) in twc_approvedenemies) then {
 	systemchat "You are whitelisted to the enemy switcher. You can use it when you are occupying a blank unit at the bottom of the rolesheet and there are more than 13 people online to become an aggressor";
 };
 
-_arr = missionnamespace getvariable ["twc_goodeggs", []];
-if ((getPlayerUID player) in _arr) then {
+//list of leaders that can do attachments without the slot system
+_goodeggs = [
+"76561198078276836", //pbthunder
+"76561198018609662", //sarge
+"76561198050512686", //patty
+"76561198034730503", //cuck
+"76561198053960783", //crow
+"76561198042520910", //aleyboy
+"76561198035067970", //martingw
+"76561198157816526", //nubben
+"76561198020915407", //vieira
+"76561198005456546", //bosenator
+"76561197996981388", //spine
+"76561198030665694" //hobbs
+
+];
+if ((getPlayerUID player) in _goodeggs) then {
 	systemchat "You have commanded sections in the past. You can now form attachments without being affected by the total server playercount. Individual attachment size restrictions still apply";
 } else {
 	systemchat "You have not taken command of a section recently. Players that have done so can form attachments without playercount restrictions";
@@ -42,6 +57,71 @@ if ((getPlayerUID player) in _arr) then {
 	};
     _return
 }] call acex_fortify_fnc_addDeployHandler;
+
+//headshot instakill. must run on server as well
+
+//isserver check for offline testing
+//if (isserver) then {
+/*
+twc_playerheadshoteh = {
+	params ["_target"];
+	_target addEventHandler ["HitPart", {
+		_testing = missionnamespace getvariable ["twc_testmode", false];
+		if (!_testing) exitwith {};
+		if ((random 1) < 0.5) exitwith {};
+		{
+			_x params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+			if (!_direct) exitwith {};
+			if (!("head" in _selection)) exitwith {};
+			if ((getNumber (configFile >> "CfgWeapons" >> headgear _target >> "iteminfo" >> "HitpointsProtectionInfo" >> "head" >> "armor")) > 0) exitwith {};
+			_target setdamage 1;
+		} foreach _this;
+	}];
+};
+
+
+[player] call twc_playerheadshoteh;
+[player] remoteExec ["twc_playerheadshoteh", 2, true];
+
+*/
+
+twc_playerbfaeh = {
+	params ["_target"];
+	_target addEventHandler ["HitPart", {
+		_testing = missionnamespace getvariable ["twc_testmode", false];
+		if (!_testing) exitwith {};
+		{
+			_x params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+			
+			if (!(isplayer _target)) exitwith {};
+			if (!(isplayer _shooter)) exitwith {};
+			if (!(_isDirect)) exitwith {};
+			
+			_items = primaryweaponitems _shooter;
+			_hasbfa = false;
+			
+			{
+				if (_x in ["UK3CB_BAF_BFA_L85", "UK3CB_BAF_BFA_L110", "UK3CB_BAF_BFA_L7", "UK3CB_BAF_BFA_L129"]) then {
+					_hasbfa = true;
+				};
+			} foreach _items;
+			if (_hasbfa) exitwith {
+				_target call ace_hitreactions_fnc_throwWeapon;
+				
+				if (currentweapon _target in (_target getVariable ["ace_safemode_safedweapons", []])) then {
+					[_target, currentWeapon _target, currentMuzzle _target] call ace_safemode_fnc_lockSafety;
+				};
+				[_target, true] call ACE_captives_fnc_setSurrendered;
+			};
+			
+		} foreach _this;
+	}];
+};
+[player] call twc_playerbfaeh;
+[player] remoteExec ["twc_playerbfaeh", -2, true];
+
+
+//};
 
 
 //gas blowback simulation for firing with suppressors
@@ -109,14 +189,26 @@ player addEventHandler ["Fired", {
 	};
 }];
 
+if (false) then {
 player addEventHandler ["Fired", { 
  params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 if (!(_unit == player)) exitwith {};
 if (!((vehicle player) == player)) exitwith {}; 
-if ((speed _projectile) < 1350) exitwith {};[_projectile] spawn {params ["_projectile"];waituntil {((((speed _projectile) < 1300) && ((speed _projectile) > 1200))) || (!alive _projectile)};if (!alive _projectile) exitwith {}; 
-//systemchat ("transonic at " + (str(player distance _projectile)) + "m");
-_mult = 0.2;if ((_projectile distance player) < 300) then {_mult = 0.05;};while {alive _projectile} do {
-_projectile setvelocity [(velocity _projectile select 0) + (((random 8) - 4) * _mult), (velocity _projectile select 1) + (((random 8) - 4) * _mult), 	(velocity _projectile select 2) + (((random 4) - 2) * _mult)];sleep (random 1)};}}];
+if ((speed _projectile) < 950) exitwith {};[_projectile] spawn {params ["_projectile"];waituntil {((((speed _projectile) < 1450))) || (!alive _projectile)};if (!alive _projectile) exitwith {}; 
+
+//_mult = (((player distance _projectile) * -1) + 2000) * 0.0003;
+_mult = (((((player distance _projectile) * -1) + 2000) * 0.0003) max 0.01) min 0.4;
+
+if (isserver) then {
+	
+	systemchat ("transonic at " + (str(player distance _projectile)) + "m with a mult of " + (str _mult));
+};
+
+while {alive _projectile} do {
+if ((speed _projectile) < 900) exitwith {};_projectile setvelocity [(velocity _projectile select 0) + (((random 8) - 4) * _mult), (velocity _projectile select 1) + (((random 8) - 4) * _mult), 	(velocity _projectile select 2) + (((random 4) - 2) * _mult)];sleep (random 1)};}}];
+
+	
+};
 
 player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
@@ -140,9 +232,9 @@ player addEventHandler ["InventoryClosed", {
 	_msgdone = player getvariable ["twc_hassuppmessage", false];
 	
 	if (!_hassuppressor) exitwith {
-		if (_msgdone) then {
-			player setvariable ["twc_hassuppmessage", false];
-		};
+	//	if (_msgdone) then {
+	//		player setvariable ["twc_hassuppmessage", false];
+	//	};
 	};
 	
 	
@@ -150,5 +242,23 @@ player addEventHandler ["InventoryClosed", {
 	
 	hint "You have a suppressor attached. Your shots will be harder to locate but you will suffer gas blowback under sustained fire, making it hard to see";
 	player setvariable ["twc_hassuppmessage", true];
+	
+}];
+
+player addEventHandler ["InventoryClosed", {
+	params ["_unit", "_container"];
+	
+		//_testing = missionnamespace getvariable ["twc_testmode", false];
+		//if (!_testing) exitwith {};
+	_msgdone = player getvariable ["twc_hasheadgearmessage", false];
+	
+	if (_msgdone) exitwith {};
+	
+	if ((getNumber (configFile >> "CfgWeapons" >> headgear player >> "iteminfo" >> "HitpointsProtectionInfo" >> "head" >> "armor")) > 0) exitwith {};
+	
+	
+	
+	hint "Civs are more likely to help you when you're not wearing a helmet but you can be instakilled";
+	player setvariable ["twc_hasheadgearmessage", true];
 	
 }];

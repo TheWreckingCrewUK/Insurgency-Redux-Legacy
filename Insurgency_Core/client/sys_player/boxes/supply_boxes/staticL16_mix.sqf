@@ -19,15 +19,8 @@ clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
-//1 Mortar and Tripod
-//_box AddWeaponCargoGlobal ["UK3CB_BAF_M6",1];
-
-//Ammo
-
-//_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",8];
-//_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Flare_White",8];
-_box addItemCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White",20];
-
-
+_box addItemCargoGlobal ["ACE_1Rnd_82mm_Mo_HE",2];
+_box addItemCargoGlobal ["ACE_1Rnd_82mm_Mo_Illum",2];
+_box addItemCargoGlobal ["ACE_1Rnd_82mm_Mo_Smoke",2];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

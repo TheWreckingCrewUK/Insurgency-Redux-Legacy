@@ -38,6 +38,10 @@ if (typeof player == "Modern_British_HeliPilot") then {
 	player setvariable ["twc_loadoutrole", "helipilot"];
 };
 
+if (typeof player == "Modern_British_JetPilot") then {
+	player setvariable ["twc_loadoutrole", "jetpilot"];
+};
+
 if (typeof player == "Modern_British_crewchief") then {
 	player setvariable ["twc_loadoutrole", "crewchief"];
 };
@@ -45,15 +49,15 @@ if (typeof player == "Modern_British_crewchief") then {
 //FST
 
 if (typeof player == "Modern_British_FSTCommander") then {
-	player setvariable ["twc_loadoutrole", "sl"];
+	player setvariable ["twc_loadoutrole", "fstsl"];
 };
 
 if (typeof player == "Modern_British_FSTAssistant") then {
-	player setvariable ["twc_loadoutrole", "assistant"];
+	player setvariable ["twc_loadoutrole", "fstassistant"];
 };
 
 if (typeof player == "Modern_British_FSTForwardObserver") then {
-	player setvariable ["twc_loadoutrole", "observer"];
+	player setvariable ["twc_loadoutrole", "fstobserver"];
 };
 
 //fixed wing

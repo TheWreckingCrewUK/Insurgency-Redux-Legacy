@@ -16,6 +16,8 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
@@ -51,6 +53,8 @@
 		["ACE_salineIV_500", 50],
 		["ACE_salineIV_250", 50],
 		["ACE_personalAidKit", 1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACE_bodyBag", 10]
 	];
 };
@@ -76,6 +80,8 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
@@ -101,6 +107,8 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
@@ -128,6 +136,8 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1]
 	];
@@ -163,6 +173,8 @@
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
 		["ACE_microDAGR",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACRE_PRC117F",1]
 	];
 };
@@ -197,6 +209,8 @@
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",0],
 		["rhsusf_ANPVS_14",1],
+        ["rhs_beanie_green",1],
+        ["H_Booniehat_tan",1],
 		["ACE_microDAGR",1]
 	];
 	_tmp_backpacks = 

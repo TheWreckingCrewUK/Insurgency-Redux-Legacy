@@ -41,6 +41,7 @@ if(isNil "idfGuns") then{
 };
 if(isNil "twc_cram_targetlist") then {twc_cram_targetlist = [];};
 
+/*
 twc_fnc_idf = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_Alarmfire.sqf";
 twc_fnc_cram_init = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_cram_init.sqf";
 twc_fnc_cram_init_2 = compile preprocessfilelinenumbers "insurgency_Core\server\sys_basedefence\IDF_cram_init_2.sqf";
@@ -49,6 +50,11 @@ twc_fnc_cram_init_2 = compile preprocessfilelinenumbers "insurgency_Core\server\
 waituntil {(!(isnil "twc_basepos"))};
 {[_x] spawn twc_fnc_cram_init} foreach (twc_basepos nearobjects ["B_AAA_System_01_F", 5000]);
 };
+
+
+*/
+
+
 /*
 [] spawn {
 waituntil {(!(isnil "twc_basepos"))};

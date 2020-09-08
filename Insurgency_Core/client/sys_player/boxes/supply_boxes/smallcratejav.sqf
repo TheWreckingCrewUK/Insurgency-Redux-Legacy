@@ -40,3 +40,6 @@ _box AddWeaponCargoGlobal ["UK3CB_BAF_Javelin_Slung_Tube",1];
 
 _box AddWeaponCargoGlobal ["UK3CB_BAF_Javelin_CLU",1];
 
+_title ="<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Ammo Spawner</t>";
+_text1 = "<br />The Javelin has been spawned. Look after it, you won't get another. Spawn extra tubes from the ammo section";
+hint parsetext (_title + _text1);

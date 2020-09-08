@@ -60,9 +60,10 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 	sleep 0.2;
 };
 	[leader _group] spawn TWC_fnc_aiscramble;
-{
-	[_x] call twc_fnc_aispreadout;
-} foreach units _group;
+//{
+//	[_x] call twc_fnc_aispreadout;
+//} foreach units _group;
+[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
 
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
@@ -93,9 +94,12 @@ for "_i" from 1 to 6 do{
 		sleep 0.2;
 	};
 	[leader _group] spawn TWC_fnc_aiscramble;
-{
-	[_x, 400] call twc_fnc_aispreadout;
-} foreach units _group;
+//{
+//	[_x, 400] call twc_fnc_aispreadout;
+//} foreach units _group;
+
+[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
+
 _group setbehaviour "safe";
 _group setspeedmode "limited";
 	if (random 1 > 2) then {

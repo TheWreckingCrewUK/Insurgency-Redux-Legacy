@@ -24,6 +24,7 @@ twc_fnc_civfluff_server = compile preprocessfilelinenumbers "Insurgency_Core\ser
 twc_fnc_townmarker = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_townmarker.sqf";
 twc_fnc_counterattack = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_counterattack.sqf";
 twc_fnc_findnearestroad = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_findnearestroad.sqf";
+twc_fnc_playerheadshot = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_playerheadshot.sqf";
 
 twc_fnc_civtraffic_server = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_civ\fnc_civtraffic_server.sqf";
 
@@ -65,6 +66,7 @@ twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\
 twc_terp_timer = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";
 twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_msgcheck.sqf";
 
+
 [] spawn {
 	waituntil {(!(isnil "townLocationArray" ))};
 	waituntil {(!(isnil "twc_basepos" ))};
@@ -76,6 +78,27 @@ twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sy
 twc_ailookat = {
 	params ["_ai", "_player"];
 	_ai lookat _player;
+};
+
+
+//headshot instakill. must run on server as well
+
+//hasinterface check for offline testing
+if (hasinterface) then {
+
+twc_playerheadshoteh = {
+	params ["_target"];
+	_target addEventHandler ["HitPart", {
+		if ((random 1) < 0.5) exitwith {};
+		{
+			_x params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo", "_vector", "_radius", "_surfaceType", "_isDirect"];
+			if (!_direct) exitwith {};
+			if (!("head" in _selection)) exitwith {};
+			if ((getNumber (configFile >> "CfgWeapons" >> headgear _target >> "iteminfo" >> "HitpointsProtectionInfo" >> "head" >> "armor")) > 0) exitwith {};
+			_target setdamage 1;
+		} foreach _this;
+	}];
+};
 };
 
 
