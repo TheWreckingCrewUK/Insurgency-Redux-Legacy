@@ -23,7 +23,7 @@ twc_loadout_switchloadout = {
 	
 	(group player) setvariable ["twc_nopersistentloadout", true, true];
 	
-	_nightkit params ["_nightuniform", "_nightNVGs", "_nightitems"];
+	_nightkit params ["_nightuniform", "_nightNVGs", "_nightitems", ["_nightweapons", []]];
 	
 	removeAllWeapons player;
 	removeAllItems player;
@@ -102,6 +102,28 @@ twc_loadout_switchloadout = {
 		};
 	} foreach _weapons;
 	
+	if (_isnighttime) then {
+		{
+			player addweapon (_x select 0);
+			if ((count (_x select 1)) > 0) then {
+				if ((_x select 0) == primaryweapon player) then {
+					{
+						player addprimaryweaponitem _x;
+					} foreach (_x select 1);
+				};
+				if ((_x select 0) == secondaryweapon player) then {
+					{
+						player addsecondaryweaponitem _x;
+					} foreach (_x select 1);
+				};
+				if ((_x select 0) == handgunweapon player) then {
+					{
+						player addHandgunItem _x;
+					} foreach (_x select 1);
+				};
+			};
+		} foreach _nightweapons;
+	};
 	group player setvariable ["twc_magazinearray", []];
 	group player setvariable ["twc_itemarray", []];
 	

@@ -135,6 +135,7 @@ player addEventHandler ["Fired", {
 	_suppressors = [
 	"twc_l85_suppressor",
 	"twc_acc_rotex5_grey",
+	"rhsusf_acc_rotex_mp7_desert",
 	"rhsusf_acc_aac_762sd_silencer",
 	"rhsusf_acc_SR25S_d",
 	"twc_acc_nt4_tan",
@@ -204,8 +205,12 @@ if (isserver) then {
 	systemchat ("transonic at " + (str(player distance _projectile)) + "m with a mult of " + (str _mult));
 };
 
+if (false) then {
 while {alive _projectile} do {
-if ((speed _projectile) < 900) exitwith {};_projectile setvelocity [(velocity _projectile select 0) + (((random 8) - 4) * _mult), (velocity _projectile select 1) + (((random 8) - 4) * _mult), 	(velocity _projectile select 2) + (((random 4) - 2) * _mult)];sleep (random 1)};}}];
+if ((speed _projectile) < 900) exitwith {};_projectile setvelocity [(velocity _projectile select 0) + (((random 8) - 4) * _mult), (velocity _projectile select 1) + (((random 8) - 4) * _mult), 	(velocity _projectile select 2) + (((random 4) - 2) * _mult)];sleep (random 1)};
+};
+
+}}];
 
 	
 };
@@ -214,6 +219,7 @@ player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 	_suppressors = [
 	"twc_l85_suppressor",
+	"rhsusf_acc_rotex_mp7_desert",
 	"twc_acc_rotex5_grey",
 	"rhsusf_acc_aac_762sd_silencer",
 	"rhsusf_acc_SR25S_d",

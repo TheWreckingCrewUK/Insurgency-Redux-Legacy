@@ -16,7 +16,7 @@ twc_loadout_ana_sl = [
 
 	//vestitems
 
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
 
 	//backpack
 	"",
@@ -25,8 +25,8 @@ twc_loadout_ana_sl = [
 
 	[],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -70,7 +70,7 @@ twc_loadout_ana_2ic = [
 
 	//vestitems
 
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
 
 	//backpack
 	"twc_genbackPack_oli",
@@ -79,8 +79,8 @@ twc_loadout_ana_2ic = [
 
 	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 14], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1]],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -125,7 +125,7 @@ twc_loadout_ana_pointman = [
 
 	//vestitems
 
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_grenade_mkiiia1_mag", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_grenade_mkiiia1_mag", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
 
 	//backpack
 	"",
@@ -134,8 +134,8 @@ twc_loadout_ana_pointman = [
 
 	[],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -181,7 +181,7 @@ twc_loadout_ana_rifleman = [
 
 	//vestitems
 
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
 
 	//backpack
 	"",
@@ -190,8 +190,8 @@ twc_loadout_ana_rifleman = [
 
 	[],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -237,7 +237,7 @@ twc_loadout_ana_grenadier = [
 
 	//vestitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 20], ["HandGrenade", 1], ["SmokeShell", 1], ["1Rnd_SmokeRed_Grenade_shell", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 20], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["1Rnd_SmokeRed_Grenade_shell", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 11]],
 
 	//backpack
 	"",
@@ -246,8 +246,8 @@ twc_loadout_ana_grenadier = [
 
 	[],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -293,7 +293,7 @@ twc_loadout_ana_marksman = [
 
 	//vestitems
 
-	[["HandGrenade", 1], ["SmokeShell", 1], ["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 15]],
+	[["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 15]],
 
 	//backpack
 	"",
@@ -302,8 +302,8 @@ twc_loadout_ana_marksman = [
 
 	[],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -357,8 +357,8 @@ twc_loadout_ana_medic = [
 
 	[["ACE_fieldDressing", 25], ["ACE_packingBandage", 25], ["ACE_elasticBandage", 25], ["ACE_quikclot", 25], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 10], ["ACE_epinephrine", 10], ["ACE_morphine", 10]],
 
-	//night kit
-	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_m81", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -385,7 +385,7 @@ twc_loadout_ana_medic = [
 	[["all"], [["B_TacticalPack_blk", 2]]]
 
 ];
-
+//seals
 
 twc_loadout_st6_sl = [
 	//uniform
@@ -403,7 +403,7 @@ twc_loadout_st6_sl = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[["UK3CB_BAF_9_15Rnd", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"rhsusf_falconii",
@@ -412,12 +412,12 @@ twc_loadout_st6_sl = [
 
 	[["DemoCharge_Remote_Mag", 2], ["ACE_DefusalKit", 1], ["ACE_M26_Clacker", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]], ["ACE_Vector", []]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]], ["ACE_Vector", []]],
 
 	//linkeditems
 
@@ -429,7 +429,7 @@ twc_loadout_st6_sl = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -457,21 +457,21 @@ twc_loadout_st6_2ic = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[["UK3CB_BAF_9_15Rnd", 2], ["ItemcTabHCam", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 4], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 3], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_genbackPack_tan",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 14], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 5], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1], ["ACE_CableTie", 5]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["rhsusf_weap_MP7A2_desert_night", []], ["UK3CB_BAF_L105A2",["uk3cb_baf_l105a1_llm_ir_r", "muzzle_snds_l"]]]],
 
 	//weapons
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]], ["ACE_MX2A", []]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]], ["ACE_MX2A", []]],
 
 	//linkeditems
 
@@ -483,7 +483,7 @@ twc_loadout_st6_2ic = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -512,21 +512,21 @@ twc_loadout_st6_pointman = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[["UK3CB_BAF_9_15Rnd", 3], ["ItemcTabHCam", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5], ["rhsusf_mag_40Rnd_46x30_AP", 7], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
-	"twc_scoutpack_tan",
+	"rhsusf_falconii",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 2]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_AP", 3]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["rhsusf_weap_MP7A2_desert_night", []], ["UK3CB_BAF_L105A2",["uk3cb_baf_l105a1_llm_ir_r", "muzzle_snds_l"]]]],
 
 	//weapons
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
+	[["rhsusf_weap_MP7A2_desert", ["twc_acc_rotex5_grey"]], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]]],
 
 	//linkeditems
 
@@ -534,11 +534,11 @@ twc_loadout_st6_pointman = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), 1], ["UK3CB_BAF_L105A2", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -568,21 +568,21 @@ twc_loadout_st6_rifleman = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[["UK3CB_BAF_9_15Rnd", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_scoutpack_tan",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 2]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
 
 	//weapons
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), []], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]]],
 
 	//linkeditems
 
@@ -590,11 +590,11 @@ twc_loadout_st6_rifleman = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["UK3CB_BAF_L105A2", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -624,7 +624,7 @@ twc_loadout_st6_grenadier = [
 
 	//vestitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_ussf_scoutpack",
@@ -633,8 +633,8 @@ twc_loadout_st6_grenadier = [
 
 	[["CUP_1Rnd_Smoke_M203", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -646,11 +646,11 @@ twc_loadout_st6_grenadier = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["UK3CB_BAF_L105A2", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -680,21 +680,21 @@ twc_loadout_st6_marksman = [
 
 	//vestitems
 
-	[["HandGrenade", 1], ["SmokeShell", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 9]],
+	[["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_9_15Rnd", 2], ["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 9]],
 
 	//backpack
 	"twc_scoutpack_tan",
 
 	//backpackitems
 
-	[["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 10]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["CUP_optic_CWS", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [[("rhs_weap_hk416d145_d_2"), ["CUP_optic_CWS", "cup_acc_anpeq_15_flashlight_tan_l", "cup_muzzle_snds_m16_desert", "cup_bipod_harris_1a2_l"]]]],
 
 	//weapons
 
-	[[("twc_mk17_elcan"), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
+	[[("rhs_weap_hk416d145_d_2"), ["rhsusf_acc_m8541_mrds", "cup_acc_anpeq_15_flashlight_tan_l", "cup_muzzle_snds_m16_desert", "cup_bipod_harris_1a2_l"]], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]]],
 
 	//linkeditems
 
@@ -706,11 +706,11 @@ twc_loadout_st6_marksman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
-	[["all"], ([["ACE_SpraypaintGreen", 1], [(selectrandom ["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan", "rhs_booniehat2_marpatd", "rhs_booniehat2_marpatd"]), 1], [(selectrandom ["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan", "rhs_booniehat2_marpatd", "rhs_booniehat2_marpatd"]), 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1], [(selectrandom ["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan", "rhs_booniehat2_marpatd", "rhs_booniehat2_marpatd"]), 1], [(selectrandom ["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan", "rhs_booniehat2_marpatd", "rhs_booniehat2_marpatd"]), 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -735,7 +735,7 @@ twc_loadout_st6_medic = [
 
 	//vestitems
 
-	[["TWC_Item_Medical_SutureKit_20", 1], ["ACE_tourniquet", 3], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8]],
+	[["TWC_Item_Medical_SutureKit_20", 1], ["ACE_tourniquet", 3], ["UK3CB_BAF_9_15Rnd", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8]],
 
 	//backpack
 	"UK3CB_BAF_B_Kitbag_OLI",
@@ -744,12 +744,12 @@ twc_loadout_st6_medic = [
 
 	[["ACE_fieldDressing", 25], ["ACE_packingBandage", 25], ["ACE_elasticBandage", 25], ["ACE_quikclot", 25], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 10], ["ACE_epinephrine", 10], ["ACE_morphine", 10]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["uk3cb_baf_kite", 1],  ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag"] call bis_fnc_selectrandom), []], ["UK3CB_BAF_L105A2", ["uk3cb_baf_l105a1_llm_ir_r"]]],
 
 	//linkeditems
 
@@ -757,11 +757,11 @@ twc_loadout_st6_medic = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([["rhsusf_weap_MP7A2_desert", 1], ["UK3CB_BAF_L105A2", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -791,7 +791,7 @@ twc_loadout_ace_sl = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4]],
 
 	//backpack
 	"rhsusf_falconii",
@@ -800,8 +800,8 @@ twc_loadout_ace_sl = [
 
 	[["DemoCharge_Remote_Mag", 2], ["ACE_DefusalKit", 1], ["ACE_M26_Clacker", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_m4b2_us_mag",[]]]],
 
 	//weapons
 
@@ -845,7 +845,7 @@ twc_loadout_ace_2ic = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["ItemcTabHCam", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_genbackPack_oli",
@@ -854,8 +854,8 @@ twc_loadout_ace_2ic = [
 
 	[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 7], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_m4b2_us_mag",[]]]],
 
 	//weapons
 
@@ -900,17 +900,17 @@ twc_loadout_ace_pointman = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_AP", 3], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_AP", 3], ["ItemcTabHCam", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"B_AssaultPack_rgr",
 
 	//backpackitems 
 
-	[["twc_mk18_shortdot", 1], ["rhsusf_mag_40Rnd_46x30_AP", 4], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 2], ["ACE_M84", 2]],
+	[["twc_mk18_shortdot", 1], ["rhsusf_mag_40Rnd_46x30_AP", 4], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 2]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["rhsusf_weap_MP7A2_desert_night",[]]]],
 
 	//weapons
 
@@ -956,17 +956,17 @@ twc_loadout_ace_rifleman = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_scoutpack_tan",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 2]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["twc_m4b2_us_mag",[]]]],
 
 	//weapons
 
@@ -1012,7 +1012,7 @@ twc_loadout_ace_grenadier = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_ussf_scoutpack",
@@ -1021,8 +1021,8 @@ twc_loadout_ace_grenadier = [
 
 	[["CUP_1Rnd_Smoke_M203", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_m4b2_us_mag",[]]]],
 
 	//weapons
 
@@ -1068,7 +1068,7 @@ twc_loadout_ace_marksman = [
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["HandGrenade", 1], ["SmokeShell", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 9]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 9]],
 
 	//backpack
 	"twc_scoutpack_tan",
@@ -1077,8 +1077,8 @@ twc_loadout_ace_marksman = [
 
 	[["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_sr25_us_marksman",["CUP_optic_CWS"]]]],
 
 	//weapons
 
@@ -1094,11 +1094,11 @@ twc_loadout_ace_marksman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 15], ["rhs_mag_20Rnd_556x45_Mk262_Stanag", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 15], ["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
-	[["all"], ([["cup_optic_an_pvs_10", 1]] + twc_crateitems)],
+	[["all"], ([["rhsusf_acc_premier_anpvs27", 1]] + twc_crateitems)],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -1132,8 +1132,8 @@ twc_loadout_ace_medic = [
 
 	[["ACE_fieldDressing", 25], ["ACE_packingBandage", 25], ["ACE_elasticBandage", 25], ["ACE_quikclot", 25], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 10], ["ACE_epinephrine", 10], ["ACE_morphine", 10]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_m4b2_us_mag",[]]]],
 
 	//weapons
 
@@ -1180,7 +1180,7 @@ twc_loadout_ussf_sl = [
 
 	//vestitems
 
-	[["ACRE_PRC152", 1], ["ACRE_PRC148", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4]],
+	[["ACRE_PRC152", 1], ["ACRE_PRC148", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4]],
 
 	//backpack
 	"rhsusf_falconii",
@@ -1189,8 +1189,8 @@ twc_loadout_ussf_sl = [
 
 	[["DemoCharge_Remote_Mag", 2], ["ACE_DefusalKit", 1], ["ACE_M26_Clacker", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -1234,17 +1234,17 @@ twc_loadout_ussf_2ic = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_genbackPack_oli",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 7], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["ACE_M84", 2], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 7], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 7], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 1], ["ACE_M26_Clacker", 1]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["rhsusf_acc_eotech_xps3", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
 
 	//weapons
 
@@ -1289,17 +1289,17 @@ twc_loadout_ussf_pointman = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["ACE_M84", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"B_AssaultPack_khk",
 
 	//backpackitems 
 
-	[["CUP_sgun_M1014_Entry_vfg", 1], ["CUP_6Rnd_B_Beneli_74Pellets", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 2]],
+	[["CUP_sgun_M1014_Entry_vfg", 1], ["CUP_6Rnd_B_Beneli_74Pellets", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 3]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
 
 	//weapons
 
@@ -1345,17 +1345,17 @@ twc_loadout_ussf_rifleman = [
 
 	//vestitems
 
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["SmokeShell", 1]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_scoutpack_tan",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3], ["ACE_M84", 2]],
+	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
 
 	//weapons
 
@@ -1401,7 +1401,7 @@ twc_loadout_ussf_grenadier = [
 
 	//vestitems
 
-	[["twc_acc_rotex5_grey", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["SmokeShell", 1]],
+	[["twc_acc_rotex5_grey", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["1Rnd_HE_Grenade_shell", 15], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"twc_ussf_scoutpack",
@@ -1410,8 +1410,8 @@ twc_loadout_ussf_grenadier = [
 
 	[["CUP_1Rnd_Smoke_M203", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -1457,7 +1457,7 @@ twc_loadout_ussf_marksman = [
 
 	//vestitems
 
-	[["HandGrenade", 1], ["SmokeShell", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 9],["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10]],
+	[["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 9],["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10]],
 
 	//backpack
 	"twc_ussf_scoutpack",
@@ -1466,8 +1466,8 @@ twc_loadout_ussf_marksman = [
 
 	[["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 	[[("twc_sr25_us_marksman"), []], ["twc_g17_optics_laser", []]],
@@ -1520,8 +1520,8 @@ twc_loadout_ussf_medic = [
 
 	[["ACE_fieldDressing", 25], ["ACE_packingBandage", 25], ["ACE_elasticBandage", 25], ["ACE_quikclot", 25], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 10], ["ACE_epinephrine", 10], ["ACE_morphine", 10]],
 
-	//night kit
-	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	[(["CUP_U_CRYEG3_V2", "CUP_U_CRYEG3_V1", "CUP_U_CRYE_V1_Full", "CUP_U_CRYE_V2_Full", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom), "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -1566,7 +1566,7 @@ twc_loadout_baf_sl = [
 	(["twc_mtp_spc_squadleader"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
 
 	//backpack
 	"",
@@ -1574,8 +1574,8 @@ twc_loadout_baf_sl = [
 	//backpackitems
 	[["ACE_fieldDressing", 0]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_UK3CB_BAF_L119A2_14_ACOG_black", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
 	[[(["TWC_UK3CB_BAF_L119A2_14_ACOG_black"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]], ["ACE_Vector", []]],
@@ -1599,7 +1599,7 @@ twc_loadout_baf_2ic = [
 	(["twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
 
 	//backpack
 	"TWC_Backpack_UKSF_2IC",
@@ -1607,8 +1607,8 @@ twc_loadout_baf_2ic = [
 	//backpackitems
 	[],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_UK3CB_BAF_L119A2_14_ACOG_black", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
 	[[(["TWC_UK3CB_BAF_L119A2_14_ACOG_black"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]], ["ACE_MX2A", []]],
@@ -1632,19 +1632,19 @@ twc_loadout_baf_pointman = [
 	(["CUP_V_B_Ciras_Olive"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 4], ["twc_acc_rotex5_grey", 1], ["HandGrenade", 2], ["ACE_M84", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["CUP_6Rnd_B_Beneli_74Pellets", 15]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["CUP_6Rnd_B_Beneli_74Pellets", 15]],
 
 	//backpack
 	"B_AssaultPack_rgr",
 
 	//backpackitems
-	[["TWC_UK3CB_BAF_L119A2_10_LDS", 1], ["CUP_6Rnd_B_Benelli_74Slug", 5]],
+	[["CUP_sgun_M1014_Entry_vfg", 1], ["CUP_6Rnd_B_Benelli_74Slug", 5]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["TWC_UK3CB_BAF_L119A2_10_LDS", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
-	[[(["CUP_sgun_M1014_Entry_vfg"] call bis_fnc_selectrandom), ["rhsusf_acc_t1_low"]], ["twc_g17_optics_laser", []]],
+	[[(["TWC_UK3CB_BAF_L119A2_10_LDS"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["twc_g17_optics_laser", []]],
 
 	//linkeditems
 	([""] + twc_loadout_basiclinkeditems)
@@ -1664,7 +1664,7 @@ twc_loadout_baf_rifleman = [
 	(["twc_mtp_spc_rifleman_alt"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
 
 	//backpack
 	"",
@@ -1672,8 +1672,8 @@ twc_loadout_baf_rifleman = [
 	//backpackitems
 	[],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_UK3CB_BAF_L119A2_14_ACOG_black", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
 	[[(["TWC_UK3CB_BAF_L119A2_14_ACOG_black"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["twc_g17_optics_laser", []]],
@@ -1696,7 +1696,7 @@ twc_loadout_baf_grenadier = [
 	(["rhsusf_plateframe_grenadier"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["1Rnd_HE_Grenade_shell", 16], ["HandGrenade", 2], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8]],
+	[["1Rnd_HE_Grenade_shell", 16], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8]],
 
 	//backpack
 	"",
@@ -1704,8 +1704,8 @@ twc_loadout_baf_grenadier = [
 	//backpackitems
 	[],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_UK3CB_BAF_L119A2_10_LDS", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
 	[[(["TWC_UK3CB_BAF_L119A2_10_LDS"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["rhs_weap_M320", []]],
@@ -1728,7 +1728,7 @@ twc_loadout_baf_marksman = [
 	(["rhsusf_spcs_ocp_rifleman"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["twc_acc_nt4_tan", 1], ["HandGrenade", 1], ["SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 4]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 4]],
 
 	//backpack
 	"",
@@ -1736,8 +1736,8 @@ twc_loadout_baf_marksman = [
 	//backpackitems
 	[],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["rhsusf_acc_premier_anpvs27", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_HK417_scope_bipod", ["rhsusf_acc_premier_anpvs27", "twc_acc_nt4_tan"]]]],
 
 	//weapons
 	[[(["TWC_HK417_scope_bipod"] call bis_fnc_selectrandom), []], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
@@ -1760,7 +1760,7 @@ twc_loadout_baf_medic = [
 	(["rhsusf_spcs_ocp_rifleman"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["TWC_Item_Medical_SutureKit_20", 1], ["SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["TWC_Item_Medical_SutureKit_20", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
 
 	//backpack
 	"TWC_Backpack_USMC2000_Medic",
@@ -1768,8 +1768,8 @@ twc_loadout_baf_medic = [
 	//backpackitems
 	[["ACE_salineIV_250", 10]],
 
-	//night kit
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["TWC_UK3CB_BAF_L119A2_10_LDS", ["twc_acc_rotex5_grey", "CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L", "UK3CB_BAF_Kite"]]]],
 
 	//weapons
 	[[(["TWC_UK3CB_BAF_L119A2_10_LDS"] call bis_fnc_selectrandom), ["twc_acc_rotex5_grey"]], ["rhsusf_weap_glock17g4", ["cup_acc_cz_m3x"]]],
@@ -1779,7 +1779,7 @@ twc_loadout_baf_medic = [
 ];
 
 
-erre_nightkit = ["CUP_U_B_BDUv2_roll2_dirty_CEU", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]];
+erre_nightkit = ["CUP_U_B_BDUv2_roll2_dirty_CEU", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]];
 
 
 twc_loadout_1erre_sl = [
@@ -1796,7 +1796,7 @@ twc_loadout_1erre_sl = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_OLI_SL_A",
@@ -1804,7 +1804,7 @@ twc_loadout_1erre_sl = [
 	//backpackitems
 	[["ACRE_PRC117F", 1], ["CUP_25Rnd_556x45_Famas_Tracer_Red", 7]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -1845,7 +1845,7 @@ twc_loadout_1erre_2ic = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 2], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas_Tracer_Red", 7]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas_Tracer_Red", 7]],
 
 	//backpack
 	"UK3CB_BAF_B_Carryall_OLI",
@@ -1853,7 +1853,7 @@ twc_loadout_1erre_2ic = [
 	//backpackitems
 	[["CUP_25Rnd_556x45_Famas", 20], ["ACE_EntrenchingTool", 1], ["DemoCharge_Remote_Mag", 2], ["ACE_M26_Clacker", 1]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -1894,7 +1894,7 @@ twc_loadout_1erre_pointman = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["ACE_M84", 2], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
 
 	//backpack
 	"B_Kitbag_rgr",
@@ -1902,7 +1902,7 @@ twc_loadout_1erre_pointman = [
 	//backpackitems
 	[["CUP_sgun_M1014_Entry_vfg", 1], ["CUP_6Rnd_B_Beneli_74Pellets", 25], ["CUP_25Rnd_556x45_Famas_Tracer_Red", 5]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -1943,7 +1943,7 @@ twc_loadout_1erre_rifleman = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["ACE_M84", 2], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
 
 	//backpack
 	"B_TacticalPack_blk",
@@ -1951,7 +1951,7 @@ twc_loadout_1erre_rifleman = [
 	//backpackitems
 	[["CUP_25Rnd_556x45_Famas_Tracer_Red", 9]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -1992,7 +1992,7 @@ twc_loadout_1erre_grenadier = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["HandGrenade", 1], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
+	[["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
 
 	//backpack
 	"B_TacticalPack_blk",
@@ -2000,7 +2000,7 @@ twc_loadout_1erre_grenadier = [
 	//backpackitems
 	[["CUP_25Rnd_556x45_Famas_Tracer_Red", 9],["1Rnd_Smoke_Grenade_shell", 4],["1Rnd_HE_Grenade_shell", 25]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -2046,9 +2046,9 @@ twc_loadout_1erre_marksman = [
 	"UK3CB_BAF_B_Carryall_OLI",
 
 	//backpackitems
-	[["rhsusf_20Rnd_762x51_m118_special_Mag", 4], ["SmokeShell", 1]],
+	[["rhsusf_20Rnd_762x51_m118_special_Mag", 4], ["UK3CB_BAF_SmokeShell", 1]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons
@@ -2089,7 +2089,7 @@ twc_loadout_1erre_medic = [
 	(["CUP_V_B_Ciras_Olive", "CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
+	[["rhsusf_mag_15Rnd_9x19_FMJ", 3], ["UK3CB_BAF_SmokeShell", 1], ["CUP_25Rnd_556x45_Famas", 14]],
 
 	//backpack
 	"TWC_Backpack_USMC2000_Medic",
@@ -2097,7 +2097,7 @@ twc_loadout_1erre_medic = [
 	//backpackitems
 	[["ACE_salineIV_250", 10]],
 
-	//night kit
+	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	erre_nightkit,
 
 	//weapons

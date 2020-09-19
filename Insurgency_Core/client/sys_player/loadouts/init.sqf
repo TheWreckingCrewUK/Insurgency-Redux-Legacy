@@ -45,6 +45,9 @@ if((typeOf player) in ["Modern_British_FAC", "Modern_British_JetPilot"])then{
 	_snaction1 = ["Spawnsnipbox","USAF","",{call twc_loadout_facgroup_us},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "usaf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
+	_snaction1 = ["Spawnsnipbox","USASOC","",{call twc_loadout_facgroup_usasoc},{(((((group player) getvariable ["twc_groupcountry", "baf"])) != "usasoc") && ((missionnamespace getvariable ["twc_iscagactive", 0]) > 0))}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_snaction1 = ["Spawnsnipbox","BAF","",{call twc_loadout_facgroup_baf},{((((group player) getvariable ["twc_groupcountry", "baf"])) != "baf")}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "teamswitch"],_snaction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
@@ -385,6 +388,33 @@ twc_loadout_fstgroup_baf = {
 twc_loadout_facgroup_us = {
 
 	_teamstring = "usaf";
+	_check = call twc_loadout_canswitch;
+	if (!_check) exitwith {};
+	
+	
+	_last = (group player) getvariable ["twc_groupcountry", _teamstring];
+	if ((_last == "ana")) then {
+		{
+			_unit = _x;
+			_face = face _unit;
+			
+			_lastface = _unit getvariable ["twc_origface", _face];
+			
+			[_unit, _lastface] remoteExec ["setFace", 0, _unit];
+		} foreach (units group player);
+	};
+	
+	
+	
+	
+	(group player) setvariable ["twc_groupcountry", _teamstring, true];
+	
+	{[_teamstring] remoteexec ["twc_loadout_generic_switch", _x]} foreach (units group player);
+};
+
+twc_loadout_facgroup_usasoc = {
+
+	_teamstring = "usasoc";
 	_check = call twc_loadout_canswitch;
 	if (!_check) exitwith {};
 	

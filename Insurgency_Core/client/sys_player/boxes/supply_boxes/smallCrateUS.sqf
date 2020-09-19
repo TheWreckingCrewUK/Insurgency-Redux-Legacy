@@ -28,9 +28,6 @@ _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 _box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_PMAG",30];
 _box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",5];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M441_HE",7];
-_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M714_white",2];
-
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",20];
 _box AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5];

@@ -19,6 +19,9 @@
 //Recieved Parameters
 params ["_total"];
 
+//early sleep, to make sure the patrol base is good to go
+sleep 120;
+
 //if(_pos distance (getmarkerpos "base") < 1000) exitwith {};
 
 
@@ -64,6 +67,16 @@ _techtype = (_technicallist call bis_fnc_selectrandom);
 	[_spawnpos, _group, 0] execVM _chosentechnical;
 	
 	if (_techtype != "t_zu23.sqf") then {
+	
+	
+		if (isserver && hasinterface) then {
+			_intelPos = _spawnpos;
+			_marker = createMarker [(str (random 1000)), _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor "coloryellow";
+			_marker setMarkerText "Technical";
+			_marker setMarkerSize [0.2,0.2];
+		};
 		_groupcount = 3 + (random 5);
 			_infpos = _spawnpos;
 		

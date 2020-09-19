@@ -27,6 +27,8 @@ _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 //supplies
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",7];
 
+_box AddMagazineCargoGlobal ["CUP_30Rnd_9x19_MP5",30];
+
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd",10];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_10Rnd_T",4];
 

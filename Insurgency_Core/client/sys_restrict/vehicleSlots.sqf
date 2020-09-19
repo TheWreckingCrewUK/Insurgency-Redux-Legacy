@@ -676,6 +676,15 @@ _list=[
 		]],3
 	],
 	
+				["USAF_AC130U", [
+		["driver", 
+			["Modern_British_JetPilot"]
+		], [[0], 
+			["Modern_British_JetPilot"]
+		], ["gunner", 
+			["Modern_British_FAC", "Modern_British_JetPilot"]
+		]],10
+	],
 				["RHSGREF_A29B_HIDF", [
 		["driver", 
 			["Modern_British_JetPilot"]

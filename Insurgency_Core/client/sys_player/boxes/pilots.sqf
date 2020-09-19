@@ -171,6 +171,16 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 	
 
 	
+
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn AC-130","",{
+	
+	["USAF_AC130U"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
+	
+	},{((((group player) getvariable ["twc_groupcountry", "baf"]) == "usasoc"))}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+
+	
 	////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////

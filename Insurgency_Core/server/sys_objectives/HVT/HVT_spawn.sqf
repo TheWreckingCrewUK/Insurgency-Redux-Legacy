@@ -72,6 +72,19 @@ _hvtveh setvehiclelock "locked";
 _taskID = str (random 1000);
 
 _markerPos = [_pos, 300] call CBA_fnc_randPos;
+
+
+
+		
+		if (isserver && hasinterface) then {
+			_intelPos = _pos;
+			_marker = createMarker [(str (random 1000)), _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor "colorWest";
+			_marker setMarkerText "HVT";
+			_marker setMarkerSize [0.5,0.5];
+		};
+
 /*
 _markerstr = createMarker [str (random 1000),_markerPos];
 _markerstr setMarkerColor "colorEAST";
@@ -105,6 +118,7 @@ for "_i" from 1 to _total do{
 	_unit addMagazines ["handGrenade",2];
 	_unit setVariable ["unitsHome",_pos,false];
 	_unit setVariable ["twc_isenemy",1];
+	_unit setUnitPos "UP";
 	//_num = _num + 1;
 	sleep 0.2;
 };
@@ -148,7 +162,7 @@ _units = [_pos, nil, units _group, 40, 2, false, true] call ace_ai_fnc_garrison;
 
 sleep 10;
 _hvt allowdamage true;
-
+_hvt setUnitPos "UP";
 
 
 

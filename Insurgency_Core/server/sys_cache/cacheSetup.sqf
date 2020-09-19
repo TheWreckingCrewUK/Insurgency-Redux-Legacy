@@ -123,6 +123,7 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 			}];
 			_unit addMagazines ["handGrenade",2];
 			_unit setVariable ["unitsHome",_pos,false];
+			_unit setUnitPos "UP";
 			//_num = _num + 1;
 			sleep 0.2;
 		};

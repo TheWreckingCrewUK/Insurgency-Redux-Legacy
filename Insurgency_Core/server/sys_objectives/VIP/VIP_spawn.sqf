@@ -40,7 +40,15 @@ while {_pos distance [0,0,0] < 100 || (_pos distance (getmarkerpos "base")) < 10
 _group = createGroup civilian;
 _vip = _group createUnit ["C_journalist_F",_pos,[],0,"NONE"];
 
-_vip setidentity (["vip_1", "vip_2", "vip_3", "vip_4", "vip_5"] call bis_fnc_selectrandom);
+/*
+_name = (["vip_1", "vip_2", "vip_3", "vip_4", "vip_5"] call bis_fnc_selectrandom);
+
+[_vip, _name] remoteExec ["setIdentity", 0];
+*/
+_name = selectrandom ["Ross Kemp", "Jeremy Corbyn", "Jay Man", "Brad Pitt", "Robert Paulson", "John Lennon", "Mike Wazowski", "Uvuvwevwevwe Onyetenyevwe Ugwemuhwem Osas"];
+_vip setVariable ["ace_nameraw", _name, true];
+_vip setVariable ["ace_name", _name, true];
+
 
 _vip allowdamage false;
 [_vip, true] call ACE_captives_fnc_setHandcuffed;
@@ -50,6 +58,16 @@ _vip setVariable ["twc_isenemy",0, true];
 
 //Adds a Marker with a bit of an offset so players know where to go
 _markerPos = [_pos, 2] call CBA_fnc_randPos;
+
+
+		if (isserver && hasinterface) then {
+			_intelPos = _pos;
+			_marker = createMarker [(str (random 1000)), _intelPos];
+			_marker setMarkerType "hd_join";
+			_marker setMarkerColor "colorWest";
+			_marker setMarkerText "Hostage";
+			_marker setMarkerSize [0.5,0.5];
+		};
 
 _id = [_markerpos, "Hostage"];
 
@@ -99,12 +117,13 @@ _group = createGroup East;
 //		_unit addMagazines ["handGrenade",2];
 		_unit setVariable ["unitsHome",_pos,false];
 		_unit setVariable ["twc_isenemy",1];
+		_unit setUnitPos "UP";
 		//_num = _num + 1;
 		sleep 0.2;
 	};
-	[leader _group, 1] spawn TWC_fnc_aiscramble;
+//	[leader _group, 1] spawn TWC_fnc_aiscramble;
 	
-	_units = [_pos, nil, units _group, 5, 2, false, true] call ace_ai_fnc_garrison;
+	_units = [_pos, nil, units _group, 5, 1, false, true] call ace_ai_fnc_garrison;
 
 	[_group, _pos, 100, 3, 0.1] call CBA_fnc_taskDefend;
 };

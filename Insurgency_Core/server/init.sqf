@@ -9,6 +9,8 @@ if (isNil "twc_aaman") then {
 twc_aaman = "CUP_O_TK_INS_Soldier_AA";
 };
 
+//also run in client init
+twc_pubaiuncon = true;
 
 while {sunormoon > 0} do {
 	skiptime 2;
