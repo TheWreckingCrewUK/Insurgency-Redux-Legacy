@@ -150,6 +150,7 @@ for "_i" from 1 to (_total) do {
 	if (((random 1) < 0.3) || ((count (units _group)) > (_total / 4))) then {
 		_hastripped = true;
 		[_group, _pos, 400, 3, 0.9] call CBA_fnc_taskDefend;
+		[leader _group] spawn TWC_fnc_aiscramble;
 		_group = createGroup _side;
 	};
 };

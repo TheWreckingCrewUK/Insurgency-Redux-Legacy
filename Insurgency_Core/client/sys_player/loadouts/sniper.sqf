@@ -1,4 +1,5 @@
-
+//by hobbs
+//example: twc_loadout_usaf_jtac call twc_loadout_switchloadout
 
 
 twc_loadout_usarmysniper_shooter = [

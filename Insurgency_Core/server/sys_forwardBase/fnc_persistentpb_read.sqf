@@ -10,6 +10,8 @@ if ((count _primary) == 0) exitwith {};
 
 _table = objnull;
 
+_blacklist = ["ACE_friesAnchorBar", "ace_fastroping_helper"];
+
 {
 	_type = _x select 0;
 	_pos = _x select 1;
@@ -20,7 +22,7 @@ _table = objnull;
 	_cargo = _x select 6;
 	_vivcargo = _x select 7;
 	_vector = _x select 8;
-	
+	if (!(_type in _blacklist)) then {
 	//create the object at the defined position but raised up, because setdir is mean)
 	_obj = _type createvehicle ([0,0,0] vectoradd [0,0, 3000 + (random 1000)]);
 	
@@ -179,7 +181,7 @@ _table = objnull;
 		
 		_obj setvehiclecargo _vobj;
 	} foreach _vivcargo;
-	
+	};
 } foreach _primary;
 
 [_table] call twc_fnc_setUpForwardBase;

@@ -1,7 +1,7 @@
 if (typeof _veh == "CUP_B_A10_DYN_USA") then {
 
 
-private _pylons = ["CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_ANAAQ_28","CUP_PylonPod_1Rnd_GBU12_M","ace_maverick_L_pylonRack_1Rnd","CUP_PylonPod_1Rnd_Mk82_M","PylonMissile_1Rnd_BombCluster_01_F","CUP_PylonPod_1Rnd_Mk82_M","ace_maverick_L_pylonRack_1Rnd","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_19Rnd_Rocket_FFAR_plane_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M"];
+private _pylons = ["CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M","CUP_PylonPod_ANAAQ_28","CUP_PylonPod_1Rnd_GBU12_M","ace_maverick_L_pylonRack_1Rnd","CUP_PylonPod_1Rnd_GBU12_M","PylonMissile_1Rnd_BombCluster_01_F","CUP_PylonPod_1Rnd_GBU12_M","ace_maverick_L_pylonRack_1Rnd","CUP_PylonPod_1Rnd_GBU12_M","CUP_PylonPod_19Rnd_Rocket_FFAR_plane_M","CUP_PylonPod_1Rnd_AIM_9L_LAU_Sidewinder_M"];
 private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {getArray (_x >> "turret")};
 { _veh removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon") } forEach getPylonMagazines _veh;
 { _veh setPylonLoadOut [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex] } forEach _pylons;

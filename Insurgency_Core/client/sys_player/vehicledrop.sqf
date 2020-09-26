@@ -1,14 +1,16 @@
 // add vehicles to forward base, requestable by leaders
 params ["_boxpos", ["_showhint", false]];
 
-_car1 = "UK3CB_BAF_LandRover_Soft_Sand_A";
+_car1 = "rhsusf_m1043_d";
+
+_car2 = "rhsusf_m1043_d_m2";
 
 	if (twc_wdveh == 1) then {
-_car1 = "UK3CB_BAF_LandRover_Soft_Green_A";};
+_car1 = "rhsusf_m1043_w_s";
+_car2 = "rhsusf_m1043_w_m2";
+};
 
 
-//car2 stays green because a later script turns it sandy coloured in a different way to differentiate it from base vehicles
-_car2 = "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A";
 
 if (["twc_ana", typeof player] call BIS_fnc_inString) then {
 
@@ -17,11 +19,14 @@ _car1 = "CUP_O_Hilux_unarmed_TK_INS";
 _car2 = "CUP_O_Hilux_M2_TK_INS";
 };
 
-if ((["usmc", typeof player] call BIS_fnc_inString) || (["us_army", typeof player] call BIS_fnc_inString)) then {
+if ((["Modern_Brit", typeof player] call BIS_fnc_inString)) then {
 
-_car1 = "rhsusf_m1025_d";
+_car1 = "UK3CB_BAF_LandRover_Soft_Sand_A";
 
-_car2 = "rhsusf_m1043_d_m2";
+if (twc_wdveh == 1) then {
+	_car1 = "UK3CB_BAF_LandRover_Soft_Green_A";
+};
+_car2 = "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A";
 };
 
 
@@ -62,7 +67,7 @@ _car2 = "CUP_I_Datsun_PK_TK_Random";
 
 if (["usmc", typeof player] call BIS_fnc_inString) then {
 
-_car1 = "rhsusf_m1025_d";
+_car1 = "rhsusf_m1043_d";
 
 _car2 = "rhsusf_m1043_d_m2";
 };
@@ -164,7 +169,7 @@ if (typeof _wmik == "I_G_Offroad_01_armed_F") then {
 _wmik setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"];
 };
 
-if (typeof _wmik == "rhsusf_m1043_d_m2") then {
+if (typeof _wmik in ["rhsusf_m1043_d_m2", "rhsusf_m1043_w_m2"]) then {
 	_wmik addmagazinecargoglobal ["UK3CB_BAF_127_100Rnd", 3];
 };
 
@@ -213,7 +218,7 @@ _car
 ] call BIS_fnc_initVehicle;
 };
 
-if (typeof _car == "rhsusf_m1025_d") then {
+if (typeof _car == "rhsusf_m1043_d") then {
 
 };
 

@@ -67,7 +67,7 @@
 	[
         ["ACE_MapTools",1],
 		["ACE_microDAGR",1],
-		["rhsusf_acc_ACOG",1],
+		["rhsusf_acc_ACOG",0],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
@@ -107,7 +107,7 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ACOG",1],
+		["rhsusf_acc_ACOG",0],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
@@ -138,7 +138,7 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ACOG",1],
+		["rhsusf_acc_ACOG",0],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],
@@ -210,7 +210,7 @@
 		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_tourniquet", 5],
-		["rhsusf_acc_ACOG",1],
+		["rhsusf_acc_ACOG",0],
 		["rhsusf_acc_compm4",1],
 		["rhsusf_acc_eotech_552",1],
 		["rhsusf_acc_anpeq15_bk_light",1],

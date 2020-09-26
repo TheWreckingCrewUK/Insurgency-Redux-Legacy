@@ -39,7 +39,7 @@ _veh setPos (getPos _veh);
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
-//clearMagazineCargoGlobal _veh;
+clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 _veh setVariable ["ace_pylons_magazineWhitelist", [], true];

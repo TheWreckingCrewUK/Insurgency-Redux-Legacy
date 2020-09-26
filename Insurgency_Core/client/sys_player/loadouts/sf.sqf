@@ -1,3 +1,5 @@
+//by hobbs
+//example: twc_loadout_usaf_jtac call twc_loadout_switchloadout
 
 
 twc_loadout_ana_sl = [
@@ -374,7 +376,7 @@ twc_loadout_ana_medic = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -389,7 +391,7 @@ twc_loadout_ana_medic = [
 
 twc_loadout_st6_sl = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1], ["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
@@ -399,7 +401,7 @@ twc_loadout_st6_sl = [
 	"rhsusf_opscore_aor1_pelt_nsw",
 
 	//vest
-	(["twc_aor1_spc_squadleader", "twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "rhsusf_plateframe_teamleader", "twc_rhsusf_plateframe_SL_aor1", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_B_JPC_MCam", "CUP_V_B_JPC_Tan"] call bis_fnc_selectrandom),
+	(["twc_aor1_spc_squadleader", "twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "rhsusf_plateframe_teamleader", "twc_rhsusf_plateframe_SL_aor1", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -413,7 +415,7 @@ twc_loadout_st6_sl = [
 	[["DemoCharge_Remote_Mag", 2], ["ACE_DefusalKit", 1], ["ACE_M26_Clacker", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -429,7 +431,7 @@ twc_loadout_st6_sl = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -443,7 +445,7 @@ twc_loadout_st6_sl = [
 
 twc_loadout_st6_2ic = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
@@ -453,7 +455,7 @@ twc_loadout_st6_2ic = [
 	"rhsusf_opscore_aor1_pelt_nsw",
 
 	//vest
-	"twc_rhsusf_plateframe_rifleman_aor1",
+	(selectrandom ["twc_rhsusf_plateframe_rifleman_aor1", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc"]),
 
 	//vestitems
 
@@ -483,7 +485,7 @@ twc_loadout_st6_2ic = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -498,7 +500,7 @@ twc_loadout_st6_2ic = [
 
 twc_loadout_st6_pointman = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -508,18 +510,18 @@ twc_loadout_st6_pointman = [
 	"rhsusf_opscore_aor1_pelt_nsw",
 
 	//vest
-	(["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["UK3CB_BAF_9_15Rnd", 3], ["ItemcTabHCam", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5], ["rhsusf_mag_40Rnd_46x30_AP", 7], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
+	[["UK3CB_BAF_9_15Rnd", 3], ["ItemcTabHCam", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5], ["rhsusf_mag_40Rnd_46x30_FMJ", 7], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"rhsusf_falconii",
 
 	//backpackitems
 
-	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_AP", 3]],
+	[[(["twc_hk416_mag_desert", "twc_hk416_mag", "twc_hk416_mag_desert"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_FMJ", 6]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["rhsusf_weap_MP7A2_desert_night", []], ["UK3CB_BAF_L105A2",["uk3cb_baf_l105a1_llm_ir_r", "muzzle_snds_l"]]]],
@@ -538,7 +540,7 @@ twc_loadout_st6_pointman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -554,7 +556,7 @@ twc_loadout_st6_pointman = [
 
 twc_loadout_st6_rifleman = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -564,7 +566,7 @@ twc_loadout_st6_rifleman = [
 	"rhsusf_opscore_aor1_pelt_nsw",
 
 	//vest
-	(["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_pointman_aor1", "twc_rhsusf_plateframe_rifleman_aor1", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -578,7 +580,7 @@ twc_loadout_st6_rifleman = [
 	[["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]]],
 
 	//weapons
 
@@ -594,7 +596,7 @@ twc_loadout_st6_rifleman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -610,7 +612,7 @@ twc_loadout_st6_rifleman = [
 
 twc_loadout_st6_grenadier = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -620,7 +622,7 @@ twc_loadout_st6_grenadier = [
 	"rhsusf_opscore_aor1_pelt_nsw",
 
 	//vest
-	(["twc_rhsusf_plateframe_grenadier_mtp"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_grenadier_mtp", "CUP_V_CPC_weaponsbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -634,7 +636,7 @@ twc_loadout_st6_grenadier = [
 	[["CUP_1Rnd_Smoke_M203", 5], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 3]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
-	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["uk3cb_baf_kite", 1], ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -650,7 +652,7 @@ twc_loadout_st6_grenadier = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -666,7 +668,7 @@ twc_loadout_st6_grenadier = [
 
 twc_loadout_st6_marksman = [
 	//uniform
-	(["rhs_uniform_FROG01_d", "rhs_uniform_FROG01_d", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_AOR1", "CUP_U_CRYE_G3C_AOR1", "rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -706,7 +708,7 @@ twc_loadout_st6_marksman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -731,7 +733,7 @@ twc_loadout_st6_medic = [
 	"H_HelmetB_light_sand",
 
 	//vest
-	(["twc_rhsusf_mbav_medic_aor1", "twc_aor1_spc_squadleader"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_mbav_medic_aor1", "twc_aor1_spc_squadleader", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -745,7 +747,7 @@ twc_loadout_st6_medic = [
 	[["ACE_fieldDressing", 25], ["ACE_packingBandage", 25], ["ACE_elasticBandage", 25], ["ACE_quikclot", 25], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 10], ["ACE_epinephrine", 10], ["ACE_morphine", 10]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
-	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["uk3cb_baf_kite", 1],  ["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
+	["rhs_uniform_g3_blk", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]]],
 
 	//weapons
 
@@ -761,7 +763,7 @@ twc_loadout_st6_medic = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_AP", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["UK3CB_BAF_9_15Rnd", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -787,7 +789,7 @@ twc_loadout_ace_sl = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "twc_rhsusf_plateframe_SL_mtp", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_B_JPC_MCam", "CUP_V_B_JPC_Tan"] call bis_fnc_selectrandom),
+	(["twc_oli_spc_squadleader", "twc_mtp_spc_squadleader", "twc_rhsusf_plateframe_SL_mtp", "CUP_V_B_Ciras_Khaki", "CUP_V_B_Ciras_MCam", "CUP_V_B_Ciras_Olive", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -841,7 +843,7 @@ twc_loadout_ace_2ic = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	"twc_rhsusf_plateframe_rifleman_mtp",
+	(selectrandom ["twc_rhsusf_plateframe_rifleman_mtp", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"]),
 
 	//vestitems
 
@@ -896,18 +898,18 @@ twc_loadout_ace_pointman = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["CUP_V_B_Ciras_MCam"] call bis_fnc_selectrandom),
+	(["CUP_V_B_Ciras_MCam", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_AP", 3], ["ItemcTabHCam", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
+	[[(["UK3CB_BAF_H_Earphone", "CUP_H_PMC_Cap_EP_Tan", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Grey", "CUP_H_PMC_Cap_Back_EP_Tan"] call bis_fnc_selectrandom), 1], ["rhsusf_mag_40Rnd_46x30_FMJ", 3], ["ItemcTabHCam", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1]],
 
 	//backpack
 	"B_AssaultPack_rgr",
 
 	//backpackitems 
 
-	[["twc_mk18_shortdot", 1], ["rhsusf_mag_40Rnd_46x30_AP", 4], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 2]],
+	[["twc_mk18_shortdot", 1], ["rhsusf_mag_40Rnd_46x30_FMJ", 4], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 2]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	["rhs_uniform_g3_blk", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1],  ["ACE_HandFlare_Red", 3],["ACE_Chemlight_IR", 3], ["Chemlight_red", 3], ["ACE_M84", 3]], [["rhsusf_weap_MP7A2_desert_night",[]]]],
@@ -926,7 +928,7 @@ twc_loadout_ace_pointman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 20]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 20]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -952,7 +954,7 @@ twc_loadout_ace_rifleman = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["CUP_V_B_JPC_MCam", "twc_rhsusf_plateframe_rifleman_mtp"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_rifleman_mtp", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1008,7 +1010,7 @@ twc_loadout_ace_grenadier = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_rhsusf_plateframe_grenadier_mtp"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_grenadier_mtp", "CUP_V_JPC_weaponsbelt_rngr", "CUP_V_JPC_weaponsbelt_mc", "CUP_V_CPC_weaponsbelt_rngr", "CUP_V_CPC_weaponsbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1038,7 +1040,7 @@ twc_loadout_ace_grenadier = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 15], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 15], ["1Rnd_HE_Grenade_shell", 50]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -1064,7 +1066,7 @@ twc_loadout_ace_marksman = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["CUP_V_B_JPC_MCam"] call bis_fnc_selectrandom),
+	(["CUP_V_B_Ciras_MCam"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1094,7 +1096,7 @@ twc_loadout_ace_marksman = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_AP", 15], ["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["rhsusf_mag_40Rnd_46x30_FMJ", 15], ["rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan", 10], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -1119,7 +1121,7 @@ twc_loadout_ace_medic = [
 	(["CUP_H_OpsCore_Covered_MCAM_US_SF", "rhsusf_opscore_mc_cover_pelt_cam", "CUP_H_OpsCore_Spray_US_SF", "CUP_H_OpsCore_Covered_MCAM_US", "CUP_H_OpsCore_Spray_US", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "H_HelmetB_light"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_mbav_rifleman_mtp", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1230,7 +1232,7 @@ twc_loadout_ussf_2ic = [
 	(["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom),
 
 	//vest
-	"twc_rhsusf_plateframe_rifleman_mtp",
+	(selectrandom ["twc_rhsusf_plateframe_rifleman_mtp", "CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"]),
 
 	//vestitems
 
@@ -1341,7 +1343,7 @@ twc_loadout_ussf_rifleman = [
 	(["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom),
 
 	//vest
-	(["CUP_V_B_JPC_MCam", "twc_rhsusf_plateframe_rifleman_mtp"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr", "twc_rhsusf_plateframe_rifleman_mtp"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1397,7 +1399,7 @@ twc_loadout_ussf_grenadier = [
 	(["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_rhsusf_plateframe_grenadier_mtp"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_grenadier_mtp", "CUP_V_JPC_weaponsbelt_rngr", "CUP_V_JPC_weaponsbelt_mc", "CUP_V_CPC_weaponsbelt_rngr", "CUP_V_CPC_weaponsbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1453,7 +1455,7 @@ twc_loadout_ussf_marksman = [
 	(["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
+	(["CUP_V_B_Ciras_MCam"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1507,7 +1509,7 @@ twc_loadout_ussf_medic = [
 	(["rhsusf_opscore_ut_pelt", "H_HelmetB_light_snakeskin", "H_HelmetB_light_sand", "H_HelmetB_light_desert", "rhsusf_opscore_mc_cover_pelt_cam"] call bis_fnc_selectrandom),
 
 	//vest
-	(["twc_rhsusf_mbav_rifleman_mtp"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 
@@ -1554,7 +1556,7 @@ twc_loadout_ussf_medic = [
 
 twc_loadout_baf_sl = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1], ["ACE_MapTools", 1], ["ACRE_PRC152", 1]] + twc_loadout_basicuniformitems),
@@ -1563,7 +1565,7 @@ twc_loadout_baf_sl = [
 	"rhsusf_opscore_mc_cover_pelt_cam",
 
 	//vest
-	(["twc_mtp_spc_squadleader"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
@@ -1587,7 +1589,7 @@ twc_loadout_baf_sl = [
 
 twc_loadout_baf_2ic = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
@@ -1620,7 +1622,7 @@ twc_loadout_baf_2ic = [
 
 twc_loadout_baf_pointman = [
 	//uniform
-	(["UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM"] call bis_fnc_selectrandom),
+	(["UK3CB_BAF_U_CombatUniform_MTP_TShirt_RM", "U_I_G_Story_Protagonist_F"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1629,7 +1631,7 @@ twc_loadout_baf_pointman = [
 	"rhsusf_opscore_mc_cover_pelt_cam",
 
 	//vest
-	(["CUP_V_B_Ciras_Olive"] call bis_fnc_selectrandom),
+	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["rhsusf_mag_17Rnd_9x19_JHP", 4], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["CUP_6Rnd_B_Beneli_74Pellets", 15]],
@@ -1652,7 +1654,7 @@ twc_loadout_baf_pointman = [
 
 twc_loadout_baf_rifleman = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1661,7 +1663,7 @@ twc_loadout_baf_rifleman = [
 	"rhsusf_opscore_mc_cover_pelt",
 
 	//vest
-	(["twc_mtp_spc_rifleman_alt"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
@@ -1684,7 +1686,7 @@ twc_loadout_baf_rifleman = [
 
 twc_loadout_baf_grenadier = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1693,7 +1695,7 @@ twc_loadout_baf_grenadier = [
 	"rhsusf_opscore_mc_cover_pelt",
 
 	//vest
-	(["rhsusf_plateframe_grenadier"] call bis_fnc_selectrandom),
+	(["twc_rhsusf_plateframe_grenadier_mtp", "CUP_V_JPC_weaponsbelt_rngr", "CUP_V_JPC_weaponsbelt_mc", "CUP_V_CPC_weaponsbelt_rngr", "CUP_V_CPC_weaponsbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["1Rnd_HE_Grenade_shell", 16], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8]],
@@ -1716,7 +1718,7 @@ twc_loadout_baf_grenadier = [
 
 twc_loadout_baf_marksman = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1725,7 +1727,7 @@ twc_loadout_baf_marksman = [
 	"rhsusf_opscore_mc_cover_pelt",
 
 	//vest
-	(["rhsusf_spcs_ocp_rifleman"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["rhsusf_mag_17Rnd_9x19_JHP", 2], ["HandGrenade", 1], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 4]],
@@ -1748,7 +1750,7 @@ twc_loadout_baf_marksman = [
 
 twc_loadout_baf_medic = [
 	//uniform
-	(selectrandom ["CUP_U_CRYE_MCAM_NP2_Roll", "CUP_U_CRYE_MCAM_NP2_Full", "CUP_U_CRYE_MCAM_NP_Roll", "CUP_U_CRYE_MCAM_NP_Full"]),
+	(selectrandom ["CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC_V3", "CUP_U_CRYE_MCAM_NP2_Roll"]),
 
 	//uniformitems
 	([["ACRE_PRC343", 1]] + twc_loadout_basicuniformitems),
@@ -1757,7 +1759,7 @@ twc_loadout_baf_medic = [
 	"rhsusf_opscore_mc_cover_pelt",
 
 	//vest
-	(["rhsusf_spcs_ocp_rifleman"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_communicationsbelt_mc", "CUP_V_JPC_Fastbelt_mc", "CUP_V_JPC_tlbelt_mc", "CUP_V_JPC_medicalbelt_mc", "CUP_V_JPC_communicationsbelt_rngr", "CUP_V_JPC_Fastbelt_rngr", "CUP_V_JPC_medicalbelt_rngr", "CUP_V_JPC_tlbelt_rngr", "CUP_V_CPC_communicationsbelt_mc", "CUP_V_CPC_Fastbelt_mc", "CUP_V_CPC_medicalbelt_mc", "CUP_V_CPC_tlbelt_mc", "CUP_V_CPC_tlbelt_rngr", "CUP_V_CPC_medicalbelt_rngr", "CUP_V_CPC_Fastbelt_rngr", "CUP_V_CPC_communicationsbelt_rngr"] call bis_fnc_selectrandom),
 
 	//vestitems
 	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["TWC_Item_Medical_SutureKit_20", 1], ["UK3CB_BAF_SmokeShell", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 8], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 8]],
