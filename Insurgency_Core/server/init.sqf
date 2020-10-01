@@ -24,6 +24,10 @@ while {sunormoon < 1} do {
 1 setOvercast 0.0;
 1 setfog 0.0;
 1 setrain 0.0;
+
+_cram = missionnamespace getvariable ["cram", objnull];
+_cram setvehicleammo 0;
+
 // Includes
 #include "crashprotection.sqf";
 #include "func\init.sqf";

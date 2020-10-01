@@ -198,7 +198,7 @@ if (!((vehicle player) == player)) exitwith {};
 if ((speed _projectile) < 950) exitwith {};[_projectile] spawn {params ["_projectile"];waituntil {((((speed _projectile) < 1450))) || (!alive _projectile)};if (!alive _projectile) exitwith {}; 
 
 //_mult = (((player distance _projectile) * -1) + 2000) * 0.0003;
-_mult = (((((player distance _projectile) * -1) + 2000) * 0.0003) max 0.01) min 0.4;
+_mult = (((((player distance _projectile) * -1) + 2000) * 0.0002) max 0.01) min 0.4;
 
 if (isserver) then {
 	

@@ -39,7 +39,7 @@ twc_loadout_usarmysniper_shooter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_5Rnd_762x51_m993_Mag", 50], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_5Rnd_762x51_m993_Mag", 50], ["ACE_20Rnd_762x51_M118LR_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -87,7 +87,7 @@ twc_loadout_usarmysniper_spotter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_PMAG", 50], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_PMAG", 50], ["ACE_20Rnd_762x51_M118LR_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -135,7 +135,7 @@ twc_loadout_usmcsniper_shooter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["9Rnd_45ACP_Mag", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["ACE_20Rnd_762x51_M118LR_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["9Rnd_45ACP_Mag", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -183,7 +183,7 @@ twc_loadout_usmcsniper_spotter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["9Rnd_45ACP_Mag", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["ACE_20Rnd_762x51_M118LR_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["9Rnd_45ACP_Mag", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -210,13 +210,13 @@ twc_loadout_rangersniper_shooter = [
 	(["CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["UK3CB_BAF_SmokeShell", 1], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 6], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 3]],
+	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["UK3CB_BAF_SmokeShell", 1], ["ACE_20Rnd_762x51_Mk319_Mod_0_Mag", 6], ["ACE_20Rnd_762x51_Mag_Tracer", 3]],
 
 	//backpack
 	"rhsusf_falconii_mc",
 
 	//backpackitems
-	[["rhsusf_20Rnd_762x51_SR25_m993_Mag", 2], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 5]],
+	[["ACE_20Rnd_762x51_Mk319_Mod_0_Mag", 2], ["ACE_20Rnd_762x51_Mag_Tracer", 5]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	["CUP_U_I_Ghillie_Top", "rhsusf_ANPVS_15", [["cup_optic_goshawk_ris", 1], ["ACE_MX2A", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["rhs_weap_sr25_ec_d", ["rhsusf_acc_premier_anpvs27", "cup_acc_anpeq_15_flashlight_tan_l", "cup_bipod_harris_1a2_l", "rhsgref_sdn6_suppressor"]]]],
@@ -233,7 +233,7 @@ twc_loadout_rangersniper_shooter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["ACE_20Rnd_762x51_Mk319_Mod_0_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -264,7 +264,7 @@ twc_loadout_rangersniper_spotter = [
 	"rhsusf_falconii_mc",
 
 	//backpackitems
-	[["rhsusf_20Rnd_762x51_SR25_m62_Mag", 4], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 3]],
+	[["ACE_20Rnd_762x51_Mag_Tracer", 4], ["ACE_20Rnd_762x51_Mk319_Mod_0_Mag", 3]],
 
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
 	["CUP_U_I_Ghillie_Top", "rhsusf_ANPVS_15", [["cup_optic_goshawk_ris", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_m2010_scope", ["rhsusf_acc_premier_anpvs27"]]]],
@@ -281,7 +281,7 @@ twc_loadout_rangersniper_spotter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["rhsusf_20Rnd_762x51_SR25_m993_Mag", 20], ["rhsusf_20Rnd_762x51_SR25_m62_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	[["all"], ([["rhsusf_5Rnd_300winmag_xm2010", 50], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["ACE_20Rnd_762x51_Mk319_Mod_0_Mag", 20], ["ACE_20Rnd_762x51_Mag_Tracer", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -417,7 +417,7 @@ twc_loadout_uksfsniper_shooter = [
 	["CUP_U_I_Ghillie_Top", "rhsusf_ANPVS_15", [["uk3cb_baf_maxikite", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["UK3CB_BAF_L115_pub_Base", ["optic_tws", "uk3cb_baf_silencer_l115a3"]]]],
 
 	//weapons
-	[[(["UK3CB_BAF_L115_pub_Base"] call bis_fnc_selectrandom), ["RKSL_optic_PMII_525", "uk3cb_baf_silencer_l115a3"]], ["twc_g17_optics_laser", []], ["ACE_Yardage450", []]],
+	[[(["twc_l115a3_wd_covered"] call bis_fnc_selectrandom), []], ["twc_g17_optics_laser", []], ["ACE_Yardage450", []]],
 
 	//linkeditems
 	([""] + twc_loadout_basiclinkeditems),
@@ -472,7 +472,7 @@ twc_loadout_uksfsniper_spotter = [
 	
 	//weapons to remove from crate, weapons to add
 	
-	[["all"], ([["rhsusf_weap_glock17g4", 1]] + twc_crateweapons)],
+	[["all"], ([["rhsusf_weap_glock17g4", 1], ["twc_l115a3_wd_covered", 1]] + twc_crateweapons)],
 	
 	//mags to remove from crate, mags to add
 	

@@ -113,7 +113,19 @@ if ((group player getvariable ["twc_ismechanised", 0]) == 1) then {
 	
 };
  
-//sleep 10;
+//set radios again
+_radio = player getvariable ["twc_radio", ""];
+if (_radio != "") then {
+	_channelNumber = (group player) getvariable ["twc_groupradchannel", -1];
+	if (_channelnumber == -1) then {
+		_channelNumber = (floor (random 20));
+		(group player) setvariable ["twc_groupradchannel", _channelNumber, true];
+	};
+	_radioID = [_radio] call acre_api_fnc_getRadioByType; 
+	_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
+	Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",_radioID,_channelNumber];
+	
+};
 
 
 /*
@@ -147,7 +159,7 @@ twc_client_nightcamo = {
 	};
 	if (((["uksf", typeof player] call BIS_fnc_inString))) then {
 		_namount = 1;
-		_damount = 5;
+		_damount = 1;
 	};
 	player setunittrait ["camouflageCoef", _damount];
 	while {(sunOrMoon == 1)} do {
@@ -297,6 +309,9 @@ vehicle player setVariable ["twc_isenemy",0, true];
 
 #include "sys_restrict\init.sqf";
 
+	
+
+
 if (!(["infantry", str (group player)] call BIS_fnc_inString)) then {
 execvm "insurgency_core\client\sys_restrict\attachmentcount.sqf" 
 };
@@ -444,13 +459,7 @@ if ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) -
 
 if (time > 200) then {[] spawn twc_fnc_enemyspawnpos;};
 
-//Set Radios Correctly
-_radioID = [getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")] call acre_api_fnc_getRadioByType; 
- if (!isNil "_radioID") then { 
-_channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioChannel"); 
- _switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
- Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",getText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType"),_channelNumber]; 
- };
+
  
  _newstextold = profilenamespace getvariable ["twc_newstext", ""];
  _newstextnew = missionnamespace getvariable ["twc_newstext", ""];

@@ -13,7 +13,7 @@ player addEventHandler ["InventoryOpened", {
 	};
 }];
 */
-twc_enemymags = ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_30Rnd_545x39_AK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_556x45_Stanag"];
+twc_enemymags = ["ACE_20Rnd_762x51_Mag_SD", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", "CUP_30Rnd_545x39_AK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_556x45_Stanag"];
 
 
 twc_restrictedSecondaryWeapons = ["CUP_launch_RPG7V"];

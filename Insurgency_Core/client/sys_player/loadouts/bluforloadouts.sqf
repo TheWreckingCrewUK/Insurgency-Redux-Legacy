@@ -1,7 +1,7 @@
-/*
-by hobbs
-example: twc_loadout_usaf_jtac call twc_loadout_switchloadout
-*/
+
+//by hobbs
+//example: twc_loadout_usaf_jtac call twc_loadout_switchloadout
+
 
 twc_loadout_basicmedicitems = [["ACE_fieldDressing", 30], ["ACE_elasticBandage", 15], ["ACE_quikclot", 20], ["ACE_tourniquet", 8], ["ACE_morphine", 15], ["ACE_epinephrine", 10], ["ACE_salineIV_500", 15], ["ACE_salineIV_250", 15]];
 
@@ -33,6 +33,10 @@ twc_loadout_switchloadout = {
 	removeBackpack player;
 	removeHeadgear player;
 	
+	
+	_uniformradios = [];
+	_vestradios = [];
+	
 	_suntime = date call BIS_fnc_sunriseSunsetTime;
 	
 	_isnighttime = ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) - 1)));
@@ -49,6 +53,9 @@ twc_loadout_switchloadout = {
 	{
 		for "_i" from 1 to (_x select 1) do {
 			player additemtouniform (_x select 0);
+		};
+		if ("ACRE" in (_x select 0)) then {
+			_uniformradios pushback (_x select 0);
 		};
 	} foreach _uniformitems;
 	
@@ -69,6 +76,9 @@ twc_loadout_switchloadout = {
 	{
 		for "_i" from 1 to (_x select 1) do {
 			player additemtovest (_x select 0);
+		};
+		if ("ACRE" in (_x select 0)) then {
+			_vestradios pushback (_x select 0);
 		};
 	} foreach _vestitems;
 	
@@ -225,8 +235,42 @@ twc_loadout_switchloadout = {
 		};
 	};
 	player allowsprint true;
-	[] spawn {
+	
+	_radios = _uniformradios + _vestradios;
+	[_radios] spawn {
+		params ["_radios"];
 		sleep (random 3);
 		[player] call twc_fnc_buildmagarray;
+			
+			_list = ["pilot", "_fac", "crew", "vehicle", "1970"];
+			
+			_needsradio = true;
+			{
+				if ([_x, typeof player] call BIS_fnc_inString) then {
+					_needsradio = false;
+				};
+			} foreach _list;
+			
+			if ((count _radios) == 0) then {
+				_needsradio = false;
+			};
+			
+			if (!_needsradio) exitwith {};
+			
+			_channelNumber = (group player) getvariable ["twc_groupradchannel", -1];
+			if (_channelnumber == -1) then {
+				_channelNumber = (floor (random 20));
+				(group player) setvariable ["twc_groupradchannel", _channelNumber, true];
+			};
+			
+			//_radioID = [(_radios select 0)] call acre_api_fnc_getRadioByType; 
+			_radioID = [(_radios select 0)] call acre_api_fnc_getRadioByType; 
+			
+			player setvariable ["twc_radio", (_radios select 0)];
+			_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
+			Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",(_radios select 0),_channelNumber];
+			 
+		
 	};
+	
 };
