@@ -383,8 +383,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
@@ -408,8 +408,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",80],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",30],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",80],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",30],
 		["UK3CB_BAF_12G_Slugs",50],
 		["UK3CB_BAF_12G_Pellets",50],
 		["1Rnd_HE_Grenade_shell",40],
@@ -447,8 +447,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["UK3CB_BAF_12G_Slugs",50],
 		["UK3CB_BAF_12G_Pellets",50],
 		["HandGrenade",5]
@@ -468,8 +468,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
@@ -489,8 +489,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell",20],
 		["UGL_FlareGreen_F",20],
 		["UGL_FlareRed_F",20],
@@ -541,8 +541,8 @@
 	_tmp_magazines =
    [            
 		["rhs_200rnd_556x45_T_SAW",50],
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
@@ -563,7 +563,7 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",40],
+		["rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull",40],
 		["HandGrenade",5]
     ];
 
@@ -583,8 +583,8 @@
 
 	_tmp_magazines =
    [            
-		["CUP_30Rnd_556x45_Stanag",50],
-		["CUP_30Rnd_556x45_Stanag_Tracer_Red",10],
+		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 

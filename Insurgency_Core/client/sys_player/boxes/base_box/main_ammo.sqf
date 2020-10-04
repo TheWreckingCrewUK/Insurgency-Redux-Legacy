@@ -3878,7 +3878,7 @@ if ("1990_RM_British" in (typeOf player)) then {
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
+		["rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull",50],
 		["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",10],
 		["HandGrenade",2]
     ];

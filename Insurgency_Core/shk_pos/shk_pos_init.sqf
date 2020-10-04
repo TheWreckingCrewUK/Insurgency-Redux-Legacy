@@ -62,6 +62,7 @@
       pos = [parameters] call SHK_pos;
 */
 // Functions
+/*
 SHK_pos_getPos = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_getpos.sqf";
 
 // Sub functions
@@ -79,11 +80,14 @@ SHK_pos_fnc_isInEllipse = compile preprocessfilelinenumbers "Insurgency_Core\shk
 SHK_pos_fnc_isInRectangle = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_isinrectangle.sqf";
 SHK_pos_fnc_isSamePosition = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_issameposition.sqf";
 SHK_pos_fnc_rotatePosition = compile preprocessfilelinenumbers "Insurgency_Core\shk_pos\shk_pos_fnc_rotateposition.sqf";
-
+*/
 // Wrapper function
 // Decide which function to call based on parameters.
 SHK_pos = {
-  private ["_pos"];
+//  private ["_pos"];
+  params ["_pos"];
+  
+  /*
   _pos = [];
 
   // Only marker is given as parameter
@@ -98,7 +102,7 @@ SHK_pos = {
       _pos = _this call SHK_pos_getPos;
     };
   };
-
+*/
   // Return position
   _pos
 };

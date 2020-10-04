@@ -115,7 +115,7 @@ if (isText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")) 
 		//_channelNumber = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioChannel"); 
 		_channelNumber = (group player) getvariable ["twc_groupradchannel", -1];
 		if (_channelnumber == -1) then {
-			_channelNumber = (floor (random 20));
+			_channelNumber = (ceil (random 20)) + 1;
 			(group player) setvariable ["twc_groupradchannel", _channelNumber, true];
 		};
 		_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
@@ -125,7 +125,7 @@ if (isText (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_radioType")) 
 	_radios = _uniformradios + _vestradios;
 	_channelNumber = (group player) getvariable ["twc_groupradchannel", -1];
 	if (_channelnumber == -1) then {
-		_channelNumber = (floor (random 20));
+		_channelNumber = (ceil (random 20)) + 1;
 		(group player) setvariable ["twc_groupradchannel", _channelNumber, true];
 	};
 	player setvariable ["twc_radio", (_radios select 0)];

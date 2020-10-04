@@ -62,7 +62,7 @@ vehicleList = ["CUP_C_UAZ_Unarmed_TK_CIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Datsun
 enemyTechnical = ["CUP_O_LR_MG_TKM", "CUP_O_LR_SPG9_TKM"];
 
 _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
-waitUntil{scriptDone _script};
+//waitUntil{scriptDone _script};
 
 
 badTownArray = ["Airport north","Loymanara","Jaza","sultansafe","loy manara oilfield","iedrestrictionzone","Novy Lug","Faro","Guran","Feas"];
