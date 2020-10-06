@@ -2,11 +2,11 @@ params ["_pos"];
 
 if (isnil "_pos") exitwith {0};
 if ((count _pos) == 0) exitwith {0};
-
 _return = 0;
 if (((count _pos) == 2)) then {
 	_pos = [(_pos select 0), (_pos select 1), 0];
 };
+_pos = ATLToASL _pos;
 
 {
 
@@ -27,7 +27,7 @@ if (((count _pos) == 2)) then {
 			//_return = _check;
 			_return = 1;
 			if (isserver) then {
-				systemchat ("seenbyplayers " + (str _return));
+			//	systemchat ("seenbyplayers " + (str _return));
 			};
 		};
 	};

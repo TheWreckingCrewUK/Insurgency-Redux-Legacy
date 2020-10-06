@@ -7,7 +7,7 @@ if (!alive _player) exitwith {
 _timer = 30;
 
 if (isserver) then {
-	_timer = missionnamespace getvariable ["twc_diag_civtimer", 3];
+	_timer = missionnamespace getvariable ["twc_diag_civtimer", 120];
 };
 
 //systemchat "civfluffclient start";
@@ -21,7 +21,7 @@ if ((count _buildings) < 4) exitwith {
 
 _mancount = (count (_player nearEntities ["Man", 400]));
 
-if (_mancount > (((count _buildings) * 1)min 20)) exitwith {
+if (_mancount > (((count _buildings) * 1)min 15)) exitwith {
 	[twc_fnc_civfluff_client, [_player], _timer] call CBA_fnc_waitAndExecute;
 	//systemchat "civfluffclient 16";
 };

@@ -6,7 +6,7 @@ spawns enemies consistently around the player until they are dead.
 */
 twc_fnc_deleteDead = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_deleteDead.sqf";
 
-params [["_amount", 10]];
+params [["_radius", 100], ["_interval", 10], ["_max", 20]];
 
 twc_fnc_newhellwp = {
 	params ["_unit"];
@@ -29,26 +29,31 @@ twc_fnc_newhellwp = {
 		[_unit] call twc_fnc_newhellwp;
 	};
 };
-systemchat "hellwalker start";
-while {alive player} do {
+systemchat ("hellwalker start with " + (str _max) + " guys at a radius of " + (str _radius) + " with an interval of " + (str _interval) + " seconds");
+_count = 0;
+while {(alive player) && (_count < _max)} do {
 	_pos = getpos player;
-	_spawnpos = [_pos, 100, 500, 5, true] call twc_fnc_findsneakypos;
+	_spawnpos = [_pos, _radius] call cba_fnc_randpos;
 	//systemchat (str _spawnpos);
 	if ((str _spawnpos) != (str _pos)) then {
 		//systemchat "unit spawn";
 		_group = creategroup east;
 		for "_i" from 0 to (random 5) do {
-			_spawnpos = [_spawnpos, 1, 20, 1, true] call twc_fnc_findsneakypos;
-			_unit = _group createUnit [(selectRandom townSpawn), _spawnpos, [], 0, "NONE"];
-			_unit addEventHandler ["Killed",{
-				[(_this select 0)] call twc_fnc_deleteDead;
-			}];
+			_uspawnpos = [_spawnpos, 2, 20, 1, false] call twc_fnc_findsneakypos;
+			if ((str _uspawnpos) != (str _spawnpos)) then {
+				_unit = _group createUnit [(selectRandom townSpawn), _uspawnpos, [], 0, "NONE"];
+				_count = _count + 1;
+			};
+		//	_unit addEventHandler ["Killed",{
+		//		[(_this select 0)] call twc_fnc_deleteDead;
+		//	}];
 		};
 		_wp = _group addwaypoint [_pos, 20];
 		_wp setwaypointstatements ["true", "[this] call twc_fnc_newhellwp;"];
 		[_group] spawn TWC_fnc_aiscramble;
-		sleep _amount;
+		sleep _interval;
 	};
 	
 	sleep 5;
 };
+systemchat "That'll do pig";

@@ -33,12 +33,15 @@ _checkvis = ([_checkpos] call twc_fnc_seenbyplayers);
 //systemchat ("a" + (str _checkvis));
 _checkcount = 0;
 
+//more players means more eyepos checks, so do less of them. More players are doing the checks, so you should get a similar amount of successful spawns
+_maxchecks = (5 - ((count allplayers) * 0.5));
+
 if ((_checkvis == 0) && ((_checkpos distance _pos) < _max) && (!([_checkpos,50] call twc_fnc_posNearPlayers))) then {
 	_fncreturn = _checkpos;
 } else {
 
 	_newmax = ((_max - _min) / 80);
-	while {(_checkvis > 0) && (_checkcount < 5)} do {
+	while {(_checkvis > 0) && (_checkcount < _maxchecks)} do {
 		_checkpos = ([_pos, _min, (_min + (_newmax * _checkcount)), _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		
 		
@@ -74,7 +77,7 @@ if ((!_checkvis) && ((_checkpos distance _pos) > _min) && (!([_pos,50] call twc_
 	_fncreturn = _checkpos;
 } else {
 
-	while {((_checkvis) || ((_checkpos distance _pos) < _min)) && (_checkcount < 10)} do {
+	while {((_checkvis) || ((_checkpos distance _pos) < _min)) && (_checkcount < _maxchecks)} do {
 		
 		_checkpos = ([_pos, _min, _max, _size, 0, 1, 0] call BIS_fnc_findSafePos);
 		if ((count _checkpos) == 2) then {

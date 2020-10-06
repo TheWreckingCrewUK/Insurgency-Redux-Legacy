@@ -308,7 +308,7 @@ twc_loadout_baf_shooter = [
 	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["rhsusf_mag_17Rnd_9x19_JHP", 3], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_556_30Rnd", 2], ["TWC_5Rnd_338_300gr_HPBT_Mag", 15], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10]],
+	[["rhsusf_mag_17Rnd_9x19_FMJ", 3], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_556_30Rnd", 2], ["TWC_5Rnd_338_300gr_HPBT_Mag", 15], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C",
@@ -331,7 +331,7 @@ twc_loadout_baf_shooter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["TWC_5Rnd_338_300gr_HPBT_Mag", 50], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 3], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 2], ["rhsusf_mag_17Rnd_9x19_JHP", 10]] + twc_cratemagazines)],
+	[["all"], ([["TWC_5Rnd_338_300gr_HPBT_Mag", 50], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 3], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 2], ["rhsusf_mag_17Rnd_9x19_FMJ", 10]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
@@ -356,7 +356,7 @@ twc_loadout_baf_spotter = [
 	(["twc_warriorvest_dcs"] call bis_fnc_selectrandom),
 
 	//vestitems
-	[["ACRE_PRC152", 1], ["ACE_ATragMX", 1], ["ACE_Kestrel4500", 1], ["ACE_Tripod", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 4], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
+	[["ACRE_PRC152", 1], ["ACE_ATragMX", 1], ["ACE_Kestrel4500", 1], ["ACE_Tripod", 1], ["rhsusf_mag_17Rnd_9x19_FMJ", 4], ["UK3CB_BAF_SmokeShell", 1], ["UK3CB_BAF_762_L42A1_20Rnd", 6], ["UK3CB_BAF_762_L42A1_20Rnd_T", 3]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_MTP_Rifleman_L_C",
@@ -379,7 +379,7 @@ twc_loadout_baf_spotter = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["UK3CB_BAF_762_L42A1_20Rnd", 50], ["UK3CB_BAF_762_L42A1_20Rnd_T", 10], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["TWC_5Rnd_338_300gr_HPBT_Mag", 20], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10], ["rhsusf_mag_17Rnd_9x19_JHP", 10], ["APERSTripMine_Wire_Mag", 2]] + twc_cratemagazines)],
+	[["all"], ([["UK3CB_BAF_762_L42A1_20Rnd", 50], ["UK3CB_BAF_762_L42A1_20Rnd_T", 10], ["rhsusf_mag_10Rnd_STD_50BMG_M33", 50], ["rhsusf_mag_10Rnd_STD_50BMG_mk211", 20], ["rhsusf_mag_10Rnd_STD_50BMG_AMAX", 20], ["TWC_5Rnd_338_300gr_HPBT_Mag", 20], ["TWC_5Rnd_338_300gr_HPBT_Mag", 10], ["rhsusf_mag_17Rnd_9x19_FMJ", 10], ["APERSTripMine_Wire_Mag", 2]] + twc_cratemagazines)],
 	
 	//items to remove from crate, items to add
 	
