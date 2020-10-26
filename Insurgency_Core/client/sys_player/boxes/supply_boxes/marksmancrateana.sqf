@@ -36,12 +36,10 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_svdp_pso1",1];
+_box AddWeaponCargoGlobal ["twc_rus_svd",1];
 
 
 //supplies
 _box AddMagazineCargoGlobal ["rhs_10Rnd_762x54mmR_7N1",25];
 _box AddMagazineCargoGlobal ["twc_10Rnd_762x54mmR_7N1_P",5];
 
-
-_box addItemCargoGlobal ["ACE_RangeCard",1];

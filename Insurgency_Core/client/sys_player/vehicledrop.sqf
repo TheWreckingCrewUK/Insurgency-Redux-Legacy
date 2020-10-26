@@ -1,6 +1,11 @@
 // add vehicles to forward base, requestable by leaders
 params ["_boxpos", ["_showhint", false]];
 
+
+_basepos = missionnamespace getvariable ["twc_basepos", _boxpos];
+
+if ((_basepos distance _boxpos) < 400) exitwith {};
+
 _car1 = "rhsusf_m1043_d";
 
 _car2 = "rhsusf_m1043_d_m2";
@@ -135,7 +140,6 @@ clearweaponcargoglobal _wmik;
 clearitemcargoglobal _wmik; 
 clearmagazinecargoglobal _wmik; 
 clearbackpackcargoglobal _wmik;
-[_wmik, player, 0.5] call twc_fnc_genericfillvehicle;
 
 if (typeof _wmik == "UK3CB_BAF_LandRover_WMIK_GPMG_Green_A") then {
 [ 
@@ -173,6 +177,7 @@ if (typeof _wmik in ["rhsusf_m1043_d_m2", "rhsusf_m1043_w_m2"]) then {
 	_wmik addmagazinecargoglobal ["UK3CB_BAF_127_100Rnd", 3];
 };
 
+[_wmik, player, 0.5] call twc_fnc_genericfillvehicle;
 //_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
 _spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
 _car = createvehicle [_car1, _spawnPos];
@@ -198,7 +203,6 @@ clearweaponcargoglobal _car;
 clearitemcargoglobal _car; 
 clearmagazinecargoglobal _car; 
 clearbackpackcargoglobal _car;
-[_car, player, 0.5] call twc_fnc_genericfillvehicle;
 
 if ((typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A") || (typeof _car == "UK3CB_BAF_LandRover_Soft_Green_A")) then {[ 
 _car, 
@@ -225,6 +229,7 @@ if (typeof _car == "rhsusf_m1043_d") then {
 
 
 
+[_car, player, 0.5] call twc_fnc_genericfillvehicle;
 
 
 };

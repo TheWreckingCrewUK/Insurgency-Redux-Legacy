@@ -19,16 +19,20 @@ hint _spawntext;
  twc_specvehcount = 1;
  publicVariable "twc_specvehcount";
  
+
+_class = "rhsusf_m1151_m2crows_usarmy_wd";
+
+if (twc_wdveh == 0) then {
+	_class = "rhsusf_m1151_m2crows_usarmy_d";
+};
  
- _veh = "CUP_B_HMMWV_Crows_M2_USA" createvehicle _spawnpos;  
-  
- 
+ _veh = _class createvehicle _spawnpos;  
   
 
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;
-clearMagazineCargoGlobal _veh;
+//clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>"; 
@@ -41,7 +45,6 @@ hint _spawntext;
 
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
-deleteVehicle (nearestObject [this, "CUP_O_ZU23_TK_INS"]);
 
  twc_specvehcount = 0;
  publicVariable "twc_specvehcount";

@@ -414,7 +414,7 @@ twc_loadout_uksfsniper_shooter = [
 	[["ACE_10Rnd_338_300gr_HPBT_Mag", 6], ["ACE_10Rnd_338_API526_Mag", 4]],
 ////twc_halfghillie_desert
 	//night kit: night uniform, nvg class, night items, night weapons if required (can be blank)
-	["CUP_U_I_Ghillie_Top", "rhsusf_ANPVS_15", [["uk3cb_baf_maxikite", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["UK3CB_BAF_L115_pub_Base", ["optic_tws", "uk3cb_baf_silencer_l115a3"]]]],
+	["CUP_U_I_Ghillie_Top", "rhsusf_ANPVS_15", [["uk3cb_baf_maxikite", 1], ["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 3], ["Chemlight_red", 3]], [["twc_l115a3_wd_covered", ["optic_tws", "uk3cb_baf_silencer_l115a3"]]]],
 
 	//weapons
 	[[(["twc_l115a3_wd_covered"] call bis_fnc_selectrandom), []], ["twc_g17_optics_laser", []], ["ACE_Yardage450", []]],

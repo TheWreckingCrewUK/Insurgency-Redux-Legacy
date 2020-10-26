@@ -47,6 +47,9 @@ twc_fnc_pubstartingloadout = compile preprocessfilelinenumbers "Insurgency_Core\
 twc_terp_timer = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_timer.sqf";
 twc_terp_msgcheck = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_terp\fnc_terp_msgcheck.sqf";
 
+
+twc_fnc_vehicledrop = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_player\vehicledrop.sqf";
+
 twc_ailookat = {
 	params ["_ai", "_player"];
 	_ai lookat _player;
