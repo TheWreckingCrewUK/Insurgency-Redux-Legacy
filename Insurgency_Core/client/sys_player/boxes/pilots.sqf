@@ -345,6 +345,13 @@ if((typeOf player) in ["Modern_British_HeliPilot","Modern_British_crewchief", "M
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
 
 
+	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Wildcat (Unarmed)","",{
+	
+	["UK3CB_BAF_Wildcat_AH1_TRN_8A"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
+	
+	},_transportcond2] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn", "vehiclespawntransport"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Mi-8","",{
 	
 	["CUP_O_Mi8_CHDKZ"] execvm "insurgency_core\client\sys_player\vehicles\heli.sqf"
