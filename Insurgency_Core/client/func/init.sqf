@@ -37,6 +37,8 @@ twc_fnc_playerheadshot = compile preprocessfilelinenumbers "Insurgency_Core\clie
 
 twc_fnc_posNearPlayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_posNearPlayers.sqf";
 
+twc_fnc_setradio = compile preprocessfilelinenumbers "Insurgency_Core\client\func\fnc_setradio.sqf";
+
 
 twc_fnc_seenbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_seenbyplayers.sqf";
 twc_fnc_lookedatbyplayers = compile preprocessfilelinenumbers "Insurgency_Core\server\func\fnc_lookedatbyplayers.sqf";

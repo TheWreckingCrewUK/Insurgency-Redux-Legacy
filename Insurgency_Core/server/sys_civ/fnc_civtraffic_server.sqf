@@ -131,7 +131,7 @@ clearbackpackcargoglobal _car;
 
 _car addEventHandler ["Killed", {
 	params ["_car", "_killer", "_instigator", "_useEffects"];
-	if ((!([getpos _car, 2000] call twc_fnc_posNearPlayers)) || ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getposasl _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0))) then {
+	if ((!([getpos _car, 2000] call twc_fnc_posNearPlayers)) || ((!([getpos _car, 150] call twc_fnc_posNearPlayers)) && (([getpos _car vectoradd [0,0,(sizeof (typeof _car)) * 0.7]] call twc_fnc_seenbyplayers) == 0))) then {
 		deletevehicle _car;
 	};
 		_count = missionnamespace getvariable ["twc_civcars", 0];

@@ -48,6 +48,15 @@ if (typeof _vehicle == "UK3CB_BAF_MAN_HX58_Container_Green") then {
 };
 
 if (typeof _vehicle == "Land_InfoStand_V1_F") then {
+{
+	if ((_x distance _vehicle) < 40) then {
+		_me = _x;
+		["twc_medical_evh_fullHeal", [_me], _me] call CBA_fnc_targetEvent;
+		"You have been healed" remoteExec ["hint", _me];
+	};
+} foreach allplayers;
+
+
 _list = (_vehicle nearentities [["car", "helicopter", "plane", "tank"], 40]); 
 	{
 		if ((!(_x isKindOf "Car")) && (!((typeof _x) in _excemptlist))) then {

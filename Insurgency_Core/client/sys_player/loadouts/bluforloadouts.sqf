@@ -241,36 +241,7 @@ twc_loadout_switchloadout = {
 		params ["_radios"];
 		sleep (random 3);
 		[player] call twc_fnc_buildmagarray;
-			
-			_list = ["pilot", "_fac", "crew", "vehicle", "1970"];
-			
-			_needsradio = true;
-			{
-				if ([_x, typeof player] call BIS_fnc_inString) then {
-					_needsradio = false;
-				};
-			} foreach _list;
-			
-			if ((count _radios) == 0) then {
-				_needsradio = false;
-			};
-			
-			if (!_needsradio) exitwith {};
-			
-			_channelNumber = (group player) getvariable ["twc_groupradchannel", -1];
-			if (_channelnumber == -1) then {
-				_channelNumber = (floor (random 20));
-				(group player) setvariable ["twc_groupradchannel", _channelNumber, true];
-			};
-			
-			//_radioID = [(_radios select 0)] call acre_api_fnc_getRadioByType; 
-			_radioID = [(_radios select 0)] call acre_api_fnc_getRadioByType; 
-			
-			player setvariable ["twc_radio", (_radios select 0)];
-			_switchChannel = [_radioID, _channelNumber] call acre_api_fnc_setRadioChannel; 
-			Hint parseText format ["<t color='#d0dd00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Radio Set</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Radio:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%1</t><br/><t color='#d0dd00' size='0.8' shadow='1' shadowColor='#565656' align='left'>Channel:</t><t color='##013bb6' size='0.8' shadow='1' shadowColor='#565656' align='right'>%2</t>",(_radios select 0),_channelNumber];
-			 
-		
+		call twc_fnc_setradio;
 	};
 	
 };

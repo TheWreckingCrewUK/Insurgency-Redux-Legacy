@@ -184,4 +184,13 @@ _blacklist = ["ACE_friesAnchorBar", "ace_fastroping_helper"];
 	};
 } foreach _primary;
 
-[_table] call twc_fnc_setUpForwardBase;
+_fakegroup = creategroup west;
+_fakeunit = _fakegroup createUnit ["B_RangeMaster_F", [0,0,0], [], 0, "FORM"];
+
+[_table, _fakeunit] call twc_fnc_setUpForwardBase;
+
+[_fakeunit] spawn {
+	params ["_fakeunit"];
+	sleep 60;
+	deletevehicle _fakeunit;
+};

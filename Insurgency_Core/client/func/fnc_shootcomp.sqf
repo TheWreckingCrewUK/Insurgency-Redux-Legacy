@@ -245,7 +245,7 @@ _eh2 = player addEventHandler ["FiredMan", {
 		
 		_target setvariable ["twcshootcomp_total" + (str _dis) + (name player), ((floor ((_1 + _2 + _3) * 100)) / 100)];
 		
-		_text = format ["%8 - %1m || Total: %2s || Run: %3s || Reaction: %4s || Shoot: %7s || Shots: %9|| Hits: %5 || Firemode: %6 || FPS &10", _dis, _target getvariable ["twcshootcomp_total" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_run" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_rtime" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_hits" + (str _dis) + (name player), 0], _target getvariable ["twc_compfires" + (str _dis) + (name player), (str ["Single"])], _target getvariable ["twcshootcomp_time" + (str _dis) + (name player), 0], name player,  ((_target getvariable ["twcshootcomp_shots" + (str _dis) + (name player), 0]) + 1), diag_fps];
+		_text = format ["%8 - %1m || Total: %2s || Run: %3s || Reaction: %4s || Shoot: %7s || Shots: %9|| Hits: %5 || Firemode: %6 || FPS %10", _dis, _target getvariable ["twcshootcomp_total" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_run" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_rtime" + (str _dis) + (name player), 0], _target getvariable ["twcshootcomp_hits" + (str _dis) + (name player), 0], _target getvariable ["twc_compfires" + (str _dis) + (name player), (str ["Single"])], _target getvariable ["twcshootcomp_time" + (str _dis) + (name player), 0], name player,  ((_target getvariable ["twcshootcomp_shots" + (str _dis) + (name player), 0]) + 1), diag_fps];
 		
 		_shooter = player;
 		[_text, _shooter] remoteexec ["twc_hintnearbyshootcomp"];

@@ -1113,6 +1113,7 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["ACE_fieldDressing",20],
 		["ACE_morphine",10],
 		["ACRE_PRC343",0],
+		["ACE_RangeCard",1],
 		["rhsusf_ANPVS_14",1],
 		["ACE_IR_Strobe_Item",5],
 		["rhsusf_acc_premier_anpvs27",1],
@@ -1165,7 +1166,6 @@ if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squa
 		["ACE_SpottingScope",1],
 		["ACRE_PRC117F_ID_1",1],
 		["UK3CB_BAF_MaxiKite",1],
-		["ACE_ATragMX",1],
 		["UK3CB_BAF_H_Beret_PWRR_PRR", 1],
 		[(selectrandom ["UK3CB_BAF_H_Boonie_MTP_PRR", "rhs_beanie_green", "UK3CB_BAF_H_Headset_PRR", "UK3CB_BAF_H_Headset_PRR"]), 1],
 		["ACE_Tripod",1]
