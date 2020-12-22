@@ -1,5 +1,4 @@
 params ["_iedpos"];
-
 if ((count (_iedpos nearobjects ['pipebombbase', 5])) ==0) exitwith {};
 {
 _isterp = _x getvariable ["twc_isterp",0];
@@ -18,7 +17,7 @@ while {(((vehicle _unit) distance _iedpos) < (_terpdis + 50)) && (_channel != tw
 [] call twc_terp_msgcheck;
 
 
-sleep 5;
+sleep 3;
 
 _channel = _unit getvariable ["twc_terpchannel", -5];
 };

@@ -73,7 +73,7 @@ if (typeof player == "Modern_British_Sniper_coin") then {
 };
 
 if (typeof player == "Modern_British_Spotter_coin") then {
-	//player setvariable ["twc_loadoutrole", "spotter"];
+	player setvariable ["twc_loadoutrole", "spotter"];
 };
 
 _isdone = player getvariable ["twc_loadoutrole", ""];

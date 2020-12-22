@@ -13,6 +13,7 @@ _boxType = "CUP_BAF_VehicleBox";  // the type of ammobox used.
 crateBox = _boxType createVehicleLocal (getMarkerPos _marker);
 crateBox setPosATL ((getMarkerPos _marker) vectoradd [0,0,2]);
 crateBox allowDamage false;
+crateBox setammocargo -1;
 [crateBox] execVM "Insurgency_Core\client\sys_player\boxes\base_box\main_ammo.sqf";
 
 /*
@@ -32,8 +33,42 @@ player addEventHandler ["InventoryClosed", {
 	_condition = {(count (player nearobjects ["Vysilacka", 100]) > 0) || (count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)};
 	
 	
+	
+
+	
+	_ammoaction = ["weaponspawn","Spawn Heavy Weapons","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+//	, "weaponspawn"
+
+	_ammoaction = ["ammospawn","Spawn Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn"
+
+	_ammoaction2 = ["ammospawnlight","Light Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction2,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnlight"
+	
+	_ammoaction3 = ["ammospawnsupport","Support Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction3,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnsupport"
+	
+	_ammoaction4 = ["ammospawnheavy","Heavy Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction4,true] call ace_interact_menu_fnc_addActionToClass;
+
+//	, "ammospawn", "ammospawnheavy"
+	
+	_vehaction = ["vehiclespawn","Spawn Vehicles","",{},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
+	
+//	, "vehiclespawn"
+	
 #include "pilots.sqf";
 
+#include "supply_boxes\1970_rus.sqf";
 #include "supply_boxes\1970_baf.sqf";
 #include "supply_boxes\modern_ger.sqf";
 #include "supply_boxes\modern_pol.sqf";
@@ -70,8 +105,12 @@ deleteVehicle _target;
 
 	
 
-	_infaction1 = ["clearbox","Clear Boxes","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},{(["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)}] call ace_interact_menu_fnc_createAction;
+	_infaction1 = ["clearbox","Clear Empty Boxes","",{[true] execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},{(["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
+	_infaction1 = ["clearbox","Clear ALL Boxes","",{[false] execvm "insurgency_core\client\sys_player\boxes\supply_boxes\clearboxes.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "clearbox"],_infaction1,true] call ace_interact_menu_fnc_addActionToClass;
+	
 	
 
 	_infaction1 = ["clearbox","Wait Until Night","",{_cond = call twc_issidenearby;if (!_cond) exitwith {};[0] remoteExec ["twc_fnc_changedaynight", 2];},{((["lead", typeof player] call BIS_fnc_inString) || (["command", typeof player] call BIS_fnc_inString) || (["2ic", typeof player] call BIS_fnc_inString) || (["pilot", typeof player] call BIS_fnc_inString) || (["crew", typeof player] call BIS_fnc_inString) || ((count units group player) < 3)) && (sunormoon != 0)}] call ace_interact_menu_fnc_createAction;
@@ -90,37 +129,6 @@ deleteVehicle _target;
 
 } foreach ["Land_InfoStand_V1_F", "twc_SuppliesBox", "UK3CB_BAF_MAN_HX58_Container_Green"];
 
-
-	
-	_ammoaction = ["weaponspawn","Spawn Heavy Weapons","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
-	
-//	, "weaponspawn"
-
-	_ammoaction = ["ammospawn","Spawn Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_ammoaction,true] call ace_interact_menu_fnc_addActionToClass;
-
-//	, "ammospawn"
-
-	_ammoaction2 = ["ammospawnlight","Light Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction2,true] call ace_interact_menu_fnc_addActionToClass;
-
-//	, "ammospawn", "ammospawnlight"
-	
-	_ammoaction3 = ["ammospawnsupport","Support Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction3,true] call ace_interact_menu_fnc_addActionToClass;
-
-//	, "ammospawn", "ammospawnsupport"
-	
-	_ammoaction4 = ["ammospawnheavy","Heavy Ammo","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions","ammospawn"],_ammoaction4,true] call ace_interact_menu_fnc_addActionToClass;
-
-//	, "ammospawn", "ammospawnheavy"
-	
-	_vehaction = ["vehiclespawn","Spawn Vehicles","",{},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
-	
-//	, "vehiclespawn"
 
 if((typeOf player) in ["Modern_British_Squadleader","Modern_British_2IC_COIN","Modern_British_Squadleader_Light","Modern_British_2IC_COIN_Light","Modern_UKSF_Squadleader","Modern_UKSF_2IC"])then{
 

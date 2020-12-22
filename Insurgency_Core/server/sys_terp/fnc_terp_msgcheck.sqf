@@ -11,7 +11,7 @@
 	 
 	[{
 	params ["_unit"];
-	_terpradio = ["ACRE_PRC152", [player]] call acre_api_fnc_getRadioByType;   
+	_terpradio = ["ACRE_PRC152"] call acre_api_fnc_getRadioByType;   
 	 if (isnil "_terpradio") exitwith {}; 
 	_terpChannel = [_terpradio] call acre_api_fnc_getRadioChannel; 
 

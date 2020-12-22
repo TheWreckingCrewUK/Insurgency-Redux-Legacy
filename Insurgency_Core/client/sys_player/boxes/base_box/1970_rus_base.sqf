@@ -10,16 +10,6 @@
 
 //crewmen
 if((typeOf player) in ["CUP_O_RU_Crew_VDV_EMR"])then{
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn MT-LB","",{_veh = "CUP_O_MTLB_pk_WDL_RU" createvehicle (getpos ammoboxspawner); clearweaponcargoglobal _veh;},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn BTR-70","",{_veh = "rhs_btr70_msv" createvehicle (getpos ammoboxspawner); clearweaponcargoglobal _veh;},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn BMP-1","",{_veh = "rhs_bmp1_msv" createvehicle (getpos ammoboxspawner); clearweaponcargoglobal _veh;},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-
 	_tmp_magazines = [
 		["rhs_30Rnd_545x39_7N6_AK",10]
 	];
@@ -29,12 +19,6 @@ if((typeOf player) in ["CUP_O_RU_Crew_VDV_EMR"])then{
 //pilots
 if((typeOf player) in ["CUP_O_RU_Pilot_VDV_EMR", "CUP_O_RU_Pilot_VDV"])then{
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Mi-8","",{["RHS_Mi8T_vvsc"] execvm "Insurgency_Core\client\sys_player\vehicles\heli.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Mi-24","",{["RHS_Mi24P_vvsc"] execvm "Insurgency_Core\client\sys_player\vehicles\heli.sqf"},{(count units group player) >= 2}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-
 	_tmp_magazines = [
 		["rhs_30Rnd_545x39_7N6_AK",10]
 	];
@@ -56,9 +40,6 @@ if((typeOf player) in ["CUP_O_RUS_SpecOps"])then{
 	[
 		["ACRE_SEM52SL", 1]
     ];
-	
-	_UKaction5 = ["SpawnmedCreate","Spawn Ammo","",{execvm "Insurgency_Core\client\sys_player\boxes\supply_boxes\smallCraterus70.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 //autorifleman
@@ -102,8 +83,6 @@ if((typeOf player) in ["CUP_O_RU_Soldier_MG_VDV_EMR"])then{
 	];
 	
 	
-	_UKaction5 = ["SpawnmedCreate","Spawn Ammo","",{execvm "Insurgency_Core\client\sys_player\boxes\supply_boxes\smallCraterus70.sqf"},{true}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 //rifleman

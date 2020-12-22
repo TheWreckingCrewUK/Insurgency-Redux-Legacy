@@ -6,6 +6,9 @@ this will count the current number of groups, disregarding any groups that have 
 
 if (( count(allPlayers - entities "HeadlessClient_F")) > 28) exitwith {};
 
+//retrying no restriction
+if (( count(allPlayers - entities "HeadlessClient_F")) > 0) exitwith {};
+
 if (["HQ", str (group player)] call BIS_fnc_inString) exitwith {
 execvm "Insurgency_Core\client\sys_restrict\platoonhq.sqf";
 };

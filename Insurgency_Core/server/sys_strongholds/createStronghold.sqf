@@ -2,7 +2,7 @@
 
 params["_pos"];
 
-if (hasinterface) exitwith {};
+//if (hasinterface) exitwith {};
 
 //Trigger to identify town
 //_pos = getPos _town;
@@ -63,7 +63,9 @@ _infpos = [_pos, 300] call CBA_fnc_randPos;
 //{
 //	[_x] call twc_fnc_aispreadout;
 //} foreach units _group;
-[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
+//[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
+[_group, _pos, 400, 5, "MOVE", "SAFE", "RED", "LIMITED", "FILE"] call CBA_fnc_taskPatrol;
+
 
 if (!(["90", twc_missionname] call BIS_fnc_inString)) then {
 for "_i" from 1 to 2 do{
@@ -98,7 +100,8 @@ for "_i" from 1 to 6 do{
 //	[_x, 400] call twc_fnc_aispreadout;
 //} foreach units _group;
 
-[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
+//[_group, _pos, 400, 3, 0.4] call CBA_fnc_taskDefend;
+[_group, _pos, 400, 5, "MOVE", "SAFE", "RED", "LIMITED", "FILE"] call CBA_fnc_taskPatrol;
 
 _group setbehaviour "safe";
 _group setspeedmode "limited";

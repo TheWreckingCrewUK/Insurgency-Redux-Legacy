@@ -48,11 +48,6 @@ if (!("ACE_EarPlugs" in (_profile select 0))) then {
 if (!("ACE_Canteen" in (_profile select 0))) then {
 //	player additemtouniform "ACE_Canteen";
 };
-player removeitem "ACE_Canteen_Empty";
-player removeitem "ACE_Canteen_Half";
-player removeitem "ACE_Canteen";
-
-	
 {
 		player additemtouniform _x;
 
@@ -93,6 +88,11 @@ player removeitem "ACE_Canteen";
 		player additemtobackpack _x;
 	};
 } foreach (_profile select 2);
+player removeitem "ACE_Canteen_Empty";
+player removeitem "ACE_Canteen_Half";
+player removeitem "ACE_Canteen";
+
+	
 
 //systemchat "loaded loadout";
 

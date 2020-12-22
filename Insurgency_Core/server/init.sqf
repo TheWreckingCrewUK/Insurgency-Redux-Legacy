@@ -5,6 +5,9 @@ publicVariable "twc_missionname";
 twc_mortarchance = 0.01;
 publicVariable "twc_mortarchance";
 
+vehicleRespawnDelay = 600;
+vehicleRespawnDistancePlayers = 2000;
+
 if (isNil "twc_aaman") then {
 twc_aaman = "CUP_O_TK_INS_Soldier_AA";
 };
@@ -47,6 +50,7 @@ diag_log "hoblog init 38";
 #include "sys_objectives\init.sqf";
 //#include "sys_chat\init.sqf";
 #include "sys_basedefence\init.sqf";
+#include "sys_vehicleRespawn\init.sqf";
 #include "sys_terp\init.sqf";
 #include "sys_mechanised\init.sqf";
 execVM "Insurgency_Core\server\sys_strongholds\init.sqf";
@@ -241,7 +245,7 @@ publicvariable "basemode";
 if (isNil "twc_strongholdcount") then {
 twc_strongholdcount = 1;
 };
-
+twc_strongholdcount = twc_strongholdcount min 1;
 
 
 _trg = createTrigger ["EmptyDetector", twc_basepos];
@@ -318,7 +322,7 @@ _found = 0;
 
 if ((random 1) < 10.3) then {
 // do the while again, so that if there are less strongholds in the persistent array then create a new one
-while{count _strongholdArray <= twc_strongholdcount}do{
+while{count _strongholdArray < twc_strongholdcount}do{
 
 	_town = townLocationArray call bis_fnc_selectRandom;
 	if(!((str _town) in badTownArray))then{
@@ -341,20 +345,16 @@ _p1 pushback _perstrongholds;
 profilenamespace setvariable ["twc_perstrongholds", _p1];
 
 saveprofilenamespace;
-/*
-if(isNil "customlocations") then{
-	customlocations = [worldSize/2,worldSize/2,0] nearEntities ["Land_Can_Rusty_F", (sqrt 2 *(worldSize / 2))];
-	};
-	{
-	//_location = createLocation [ "NameVillage" , getpos _x, 100, 100];
-//townLocationArray = townLocationArray + (nearestLocations [getpos _x, ["NameVillage","NameCity","NameCityCapital","nameLocal"], 2]);} foreach customlocations;
-townLocationArray = townLocationArray + (_x);} foreach customlocations;
-*/
-//Strongholds
+
+_activestrongholds = 0;
 {
-	[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
+	if (_activestrongholds < twc_strongholdcount) then {
+		[_x] execVM "Insurgency_Core\server\sys_strongholds\createStronghold.sqf";
+		_activestrongholds = _activestrongholds + 1;
+	};
 }forEach _strongholdArray;
 townLocationArray = townLocationArray - _strongholdArray;
+
 execVM "Insurgency_Core\server\sys_townLocations\getLocations.sqf";
 
 publicVariable "townLocationArray";

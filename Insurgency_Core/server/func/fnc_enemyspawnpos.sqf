@@ -9,8 +9,11 @@ while {(count _loc == 0) && (_amount < worldsize)} do {
 
 	{
 		if ((!([_x, 2000, 1] call twc_fnc_isnearblufor)) && ([_x, _amount, 1] call twc_fnc_isnearblufor) && (((_x) distance twc_basepos) > 2000) && (((_x) distance getmarkerpos "respawn_west_forwardBase") > 2000)) then {
-			_loc = _x;
-			_name = str _x;
+			_townside = profilenamespace getvariable ['twcenemytown' + (str _x), 0];
+			if (_townside == 0) then {
+				_loc = _x;
+				_name = str _x;
+			};
 		};
 	} foreach townLocationArray;
 	_amount = _amount + 500;

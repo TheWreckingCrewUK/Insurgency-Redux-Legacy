@@ -711,8 +711,8 @@ twc_loadout_insurgentswitch = {
 		twc_fn_getcivcar = ["getcivcar","Spawn Car","",{execvm "insurgency_core\client\sys_player\vehicles\civcar.sqf"},{(!([getpos player, 2000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;
 	
-		twc_fn_getarmedcar = ["getcivcar","Spawn Technical","",{execvm "insurgency_core\client\sys_player\vehicles\enemytechnical.sqf"},{(!([getpos player, 8000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 8000)}] call ace_interact_menu_fnc_createAction;
-		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getarmedcar] call ace_interact_menu_fnc_addActionToObject;
+		twc_fn_getarmedcar = ["getarmedcar","Spawn Technical","",{execvm "insurgency_core\client\sys_player\vehicles\enemytechnical.sqf"},{(!([getpos player, 4000] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 4000)}] call ace_interact_menu_fnc_createAction;
+		[player, 1, ["ACE_SelfActions", "enemy_Interact", "getcivcar"], twc_fn_getarmedcar] call ace_interact_menu_fnc_addActionToObject;
 	
 		twc_fn_getcivcar = ["getcivcar","Find Enemy","",{call twc_fnc_findnearestblufor},{(!([getpos player, 500] call twc_fnc_isnearblufor)) && ((player distance twc_basepos) > 2000) && (call twc_fnc_checkenemyradio)}] call ace_interact_menu_fnc_createAction;
 		[player, 1, ["ACE_SelfActions", "enemy_Interact"], twc_fn_getcivcar] call ace_interact_menu_fnc_addActionToObject;

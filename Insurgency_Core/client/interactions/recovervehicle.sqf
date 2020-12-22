@@ -29,8 +29,8 @@ twc_fnc_flipvehicle = {
 			
 			_vehicle setpos [((getpos _vehicle) select 0), ((getpos _vehicle) select 1), 0];
 			sleep 5;
-			_vehicle allowdamage true;
 			("Recovery complete.") remoteExec ["hint", _caller];
+			_vehicle allowdamage true;
 		} else {
 			(format ["You need %1 players nearby to recover this vehicle", _neededhelpers]) remoteExec ["hint", _caller];
 		};

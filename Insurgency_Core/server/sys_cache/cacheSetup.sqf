@@ -53,7 +53,7 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 		_trg2 setTriggerArea [_randsize, _randsize, 30, false];
 		_trg2 setTriggerActivation ["west", "PRESENT", True];
 		_trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-		_trg2 setTriggerStatements ["({(_x getvariable ['twc_isterp', 0] == 1)} count thislist) > 0","[getpos thistrigger, (thistrigger getvariable ['twc_cache', objnull])] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
+		_trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} count (crew _x)) > 0)} count thislist) > 0)","[getpos thistrigger, (thistrigger getvariable ['twc_cache', objnull])] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
 				diag_log "hoblog cachesetup 58";
 		
 		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 5];

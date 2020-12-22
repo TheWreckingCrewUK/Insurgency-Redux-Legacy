@@ -37,21 +37,19 @@ _marker setMarkerColor "colorOpfor";
 _randsize = random 20;
 _randtime = random 2;
 _trg = createTrigger ["EmptyDetector", getpos _ied];
-_trg setTriggerArea [_randsize, _randsize, 30, false];
+_trg setTriggerArea [_randsize, _randsize, 0, false];
 _trg setTriggerActivation ["west", "PRESENT", True];
 _trg setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg setTriggerStatements ["{((getposatl _x) select 2) < 15} foreach thislist && {speed _x > 10} foreach thislist && {side _x == west} foreach thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {}; [getpos thistrigger] call INS_fnc_iedcounterattack;'ammo_Bomb_SDB' createvehicle getpos thistrigger; 
+_trg setTriggerStatements ["(({(((getposatl _x) select 2) < 15) && (speed _x > 10)} count thislist) > 0) && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","if (count (thistrigger nearobjects ['CUP_Wolfhound_Base', (100 + (random 100))]) > 0) exitwith {}; [getpos thistrigger] call INS_fnc_iedcounterattack;'ammo_Bomb_SDB' createvehicle getpos thistrigger; 
 deleteVehicle thisTrigger;",""];
 
 _randsize = 150 + (random 200);
 _randtime = random 2;
 _trg2 = createTrigger ["EmptyDetector", getpos _ied];
-_trg2 setTriggerArea [_randsize, _randsize, 30, false];
+_trg2 setTriggerArea [_randsize, _randsize, 0, false];
 _trg2 setTriggerActivation ["west", "PRESENT", True];
 _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
-_trg2 setTriggerStatements ["twc_terp in thislist && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","execvm 'Insurgency_Core\server\sys_terp\fnc_terp_ied.sqf'",""];
-
-
+_trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} count (crew _x)) > 0)} count thislist) > 0) && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_ied.sqf'",""];
 
 
 

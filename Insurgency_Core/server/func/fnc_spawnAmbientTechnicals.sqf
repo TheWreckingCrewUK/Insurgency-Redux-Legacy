@@ -101,7 +101,8 @@ _techtype = (_technicallist call bis_fnc_selectrandom);
 		
 		};
 			[leader _group, 1] spawn TWC_fnc_aiscramble;
-			[_group, _spawnpos, 50, 3, 0.3] call CBA_fnc_taskDefend;
+			//[_group, _spawnpos, 50, 3, 0.3] call CBA_fnc_taskDefend;
+			[_group, _spawnpos, 100, 4, "MOVE", "SAFE", "RED", "LIMITED", "FILE"] call CBA_fnc_taskPatrol;
 	};
 	/////////////////////////////////////////////////////////////////////////////////////////
 };
