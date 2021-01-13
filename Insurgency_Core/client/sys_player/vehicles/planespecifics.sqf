@@ -49,7 +49,7 @@ if (_team == "usaf") then {
 };
 };
 
-if (typeof _veh == "twc_c5_hercules") then {
+if (typeof _veh == "CUP_B_C130J_GB") then {
 
 
 

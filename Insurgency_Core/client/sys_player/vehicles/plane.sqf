@@ -3,6 +3,15 @@ params["_plane"];
 
 if(isNil "_plane")exitWith{hint "No plane was given to the spawn system, please notify management"};
 
+_nightonly = ["USAF_AC130U"];
+
+if ((_plane in _nightonly) && (!((daytime < (((date call BIS_fnc_sunriseSunsetTime) select 0) - 0.8)) || (daytime > (((date call BIS_fnc_sunriseSunsetTime) select 1) - 1))))) exitwith {
+	_title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>USASOC Aircraft</t>"; 
+
+	 _text1 = format ["<br />This aircraft is only permitted to fly at night",0];
+	_spawntext = parsetext (_title + _text1);
+	hint _spawntext;
+};
 
 if(isNil "twc_planecount") then{
 	twc_planecount = 0;

@@ -19,21 +19,24 @@ _backpackradios = [];
 
 {
 	if ("ACRE" in _x) then {
-		_uniformradios pushback _x;
+		_radio = [_x] call twc_fnc_getradiotype;
+		_uniformradios pushback _radio;
 		//systemchat _x;
 	};
 } foreach uniformitems player;
 
 {
 	if ("ACRE" in _x) then {
-		_vestradios pushback _x;
+		_radio = [_x] call twc_fnc_getradiotype;
+		_vestradios pushback _radio;
 		//systemchat _x;
 	};
 } foreach vestitems player;
 
 {
 	if ("ACRE" in _x) then {
-		_backpackradios pushback _x;
+		_radio = [_x] call twc_fnc_getradiotype;
+		_backpackradios pushback _radio;
 		//systemchat _x;
 	};
 } foreach backpackitems player;

@@ -121,7 +121,7 @@ if((typeOf player) in ["Modern_British_JetPilot"])then{
 
 	_helispawn1 = ["SpawnsmallcharlieCreate","Spawn Hercules","",{
 	
-	["twc_c5_hercules"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
+	["CUP_B_C130J_GB"] execvm "insurgency_core\client\sys_player\vehicles\plane.sqf"
 	
 	},_planecondlow] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawn"],_helispawn1,true] call ace_interact_menu_fnc_addActionToClass;

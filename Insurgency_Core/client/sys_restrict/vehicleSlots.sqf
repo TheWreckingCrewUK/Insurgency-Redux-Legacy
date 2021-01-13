@@ -705,7 +705,7 @@ _list=[
 		]],10
 	],
 	
-				["twc_c5_hercules", [
+				["CUP_B_C130J_GB", [
 		["driver", 
 			["Modern_British_JetPilot"]
 		]],5
@@ -884,11 +884,11 @@ twc_fullvehicles = [
 
 
 TWC_fnc_notAllowedInSeat = {
-	params ["_playerUnit"];
-	[_playerUnit] spawn {
-	params ["_playerUnit"];
+	params ["_playerUnit", ["_nightonly", false]];
+	[_playerUnit, _nightonly] spawn {
+	params ["_playerUnit", "_nightonly"];
 	sleep 1;
-	if (isserver) exitwith {hint "Seat restrict triggered, but not enforcing on singleplayer"};
+	//if (isserver) exitwith {hint "Seat restrict triggered, but not enforcing on singleplayer"};
 	_freePassengerSpace = (vehicle _playerUnit) emptyPositions "cargo";
 	_title  = "<t color='#ff0000' size='1.2' shadow='1' shadowColor='#000000' align='center'>RESTRICTED</t>";
 
@@ -897,9 +897,15 @@ TWC_fnc_notAllowedInSeat = {
 		_veh = vehicle _playerUnit;
 		moveOut _playerUnit;
 		_text = "<br />You are not qualified for that slot.";
+		if (_nightonly) then {
+			_text = "<br />This aircraft is only permitted to fly at night.";
+		};
 		if ((player getvariable ["twc_lastkickedfromveh", -999]) < (time -5)) then {
 			_playerUnit moveInCargo _veh;
 			_text = "<br />You are not qualified for that slot. Take a seat in back.";
+			if (_nightonly) then {
+				_text = "<br />This aircraft is only permitted to fly at night. Take a seat in back.";
+			};
 		};
 		player setvariable ["twc_lastkickedfromveh", time];
 		hint parseText (_title + _text);
@@ -907,6 +913,9 @@ TWC_fnc_notAllowedInSeat = {
 	
 	moveOut _playerUnit;
 	_text = "<br />You are not qualified for that slot.";
+	if (_nightonly) then {
+		_text = "<br />This aircraft is only permitted to fly at night.";
+	};
 	hint parseText (_title + _text);
 };
 };
@@ -980,12 +989,22 @@ TWC_fnc_checkVehicleSlot = {
 			{
 				_slot = (_x select 0);
 				_roles = (_x select 1);
-
+				
+				
+				
 				_checkWith = _currentSeat;
 				if (typeName _slot == "ARRAY") then { _checkWith = _currentSeatTurretPath select 0; _slot= _slot select 0;};
 			
 				if (_checkWith == _slot) then {
+				
+					_nightonly = ["USAF_AC130U"];
+					if ((_vehicle in _nightonly) && (!((daytime < (((date call BIS_fnc_sunriseSunsetTime) select 0) - 0.8)) || (daytime > (((date call BIS_fnc_sunriseSunsetTime) select 1) - 1))))) then {
+						[_playerUnit, true] call TWC_fnc_notAllowedInSeat;
+					};
+				
 					if (!(typeOf _playerUnit in _roles)) then {
+					
+								
 						[_playerUnit] call TWC_fnc_notAllowedInSeat;
 				
 

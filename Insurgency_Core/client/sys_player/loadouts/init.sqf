@@ -1,5 +1,8 @@
 #include "bluforloadouts.sqf";
 
+twc_fnc_getradiotype = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_player\loadouts\fn_getradiotype.sqf";
+
+
 if((typeOf player) in ["Modern_British_Sniper_coin", "Modern_British_Spotter_coin"])then{
 
 	_ammoaction = ["teamswitch","Switch Team","",{},{true}] call ace_interact_menu_fnc_createAction;
