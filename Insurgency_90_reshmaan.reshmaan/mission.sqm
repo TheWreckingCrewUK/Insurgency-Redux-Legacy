@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2234;
+		nextID=2244;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13335.422,31.64871,10588.271};
-		dir[]={-0.91511613,-0.40133286,-0.041769035};
-		up[]={-0.40103358,0.91588378,-0.018305499};
-		aside[]={-0.045611963,-4.7466165e-007,0.99904615};
+		pos[]={13326.138,41.278088,10576.041};
+		dir[]={-0.007359745,-0.61584133,0.78799945};
+		up[]={-0.0057535227,0.78781855,0.61588258};
+		aside[]={1.0000427,-3.3892909e-006,0.009351505};
 	};
 };
 binarizationWanted=0;
@@ -55,7 +55,7 @@ addons[]=
 	"twc_modern",
 	"twc_1990",
 	"UK3CB_BAF_Vehicles_MAN",
-	"rhsusf_vehicles"
+	"CUP_WheeledVehicles_UpHMMWV"
 };
 class AddonsMetaData
 {
@@ -202,8 +202,8 @@ class AddonsMetaData
 		};
 		class Item23
 		{
-			className="rhsusf_vehicles";
-			name="rhsusf_vehicles";
+			className="CUP_WheeledVehicles_UpHMMWV";
+			name="CUP_WheeledVehicles_UpHMMWV";
 		};
 	};
 };
@@ -26218,7 +26218,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13279.482,27.704226,10620.929};
+				position[]={13279.466,28.049631,10620.896};
 				angles[]={6.2560883,1.6370846,0.02926535};
 			};
 			side="Empty";
@@ -26227,58 +26227,16 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2228;
-			type="rhsusf_m1043_d_m2";
+			id=2238;
+			type="CUP_B_M1151_M2_USA";
 			atlOffset=-0.00077819824;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
 		};
 		class Item352
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13278.134,27.795778,10625.735};
+				position[]={13278.117,28.141184,10625.702};
 				angles[]={6.2560883,1.6370846,0.02926535};
 			};
 			side="Empty";
@@ -26287,57 +26245,15 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2229;
-			type="rhsusf_m1043_d_m2";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
+			id=2239;
+			type="CUP_B_M1151_M2_USA";
 		};
 		class Item353
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13277.344,27.901726,10630.497};
+				position[]={13277.327,28.247131,10630.464};
 				angles[]={6.2560883,1.6370846,0.02926535};
 			};
 			side="Empty";
@@ -26346,57 +26262,15 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2230;
-			type="rhsusf_m1043_d_m2";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
+			id=2240;
+			type="CUP_B_M1151_M2_USA";
 		};
 		class Item354
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13280.944,27.672272,10610.961};
+				position[]={13280.946,28.018841,10610.938};
 				angles[]={0,1.6370846,6.2604237};
 			};
 			side="Empty";
@@ -26405,57 +26279,15 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2231;
-			type="rhsusf_m1043_d_m2";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
+			id=2241;
+			type="CUP_B_M1151_M2_USA";
 		};
 		class Item355
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13282.185,27.540243,10606.159};
+				position[]={13282.187,27.886076,10606.127};
 				angles[]={6.2571702,1.6370846,6.2582536};
 			};
 			side="Empty";
@@ -26464,58 +26296,16 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2232;
-			type="rhsusf_m1043_d_m2";
+			id=2242;
+			type="CUP_B_M1151_M2_USA";
 			atlOffset=-1.9073486e-006;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
 		};
 		class Item356
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={13282.97,27.410551,10601.929};
+				position[]={13282.972,27.756384,10601.896};
 				angles[]={6.2571702,1.6370846,6.2582536};
 			};
 			side="Empty";
@@ -26524,51 +26314,9 @@ class Mission
 			{
 				init="call{if(!isServer)exitWith{};[this] execVM ""Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf"";}";
 			};
-			id=2233;
-			type="rhsusf_m1043_d_m2";
+			id=2243;
+			type="CUP_B_M1151_M2_USA";
 			atlOffset=-1.9073486e-006;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalMask";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalDoors";
-					expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
 		};
 	};
 };
