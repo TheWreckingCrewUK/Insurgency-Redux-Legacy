@@ -4,7 +4,7 @@
     _tmp_weapons =
     [
         ["twc_G36A_acog",0],
-        ["rhs_weap_M136_hedp",2]
+        ["CUP_launch_M136",2]
     ];
 
 	_tmp_magazines =
@@ -22,7 +22,7 @@
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
         ["CUP_H_Ger_Beret_INF_Grn",1],
 		["ACRE_PRC148",0],
-		["rhsusf_ANPVS_14",1]
+		["CUP_NVG_PVS14",1]
 	];
 	_tmp_backpacks = 
 	[ 
@@ -94,7 +94,7 @@
 		["ACRE_PRC148",0],
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
         ["CUP_H_Ger_Beret_INF_Grn",1],
-		["rhsusf_ANPVS_14",1]
+		["CUP_NVG_PVS14",1]
 	];
 	_tmp_backpacks = 
 	[ 
@@ -116,7 +116,7 @@
         ["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",60],
         ["CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag",5],
 		["UK3CB_BAF_762_200Rnd_T",30],
-		["rhs_200rnd_556x45_T_SAW",30],
+		["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",30],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
@@ -128,7 +128,7 @@
 		["ACRE_PRC148",0],
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
         ["CUP_H_Ger_Beret_INF_Grn",1],
-		["rhsusf_ANPVS_14",1]
+		["CUP_NVG_PVS14",1]
 	];
 	_tmp_backpacks = 
 	[ 
@@ -147,7 +147,7 @@
     [
         ["CUP_30Rnd_556x45_G36",50],
 		["CUP_30Rnd_TE1_Red_Tracer_556x45_G36",10],
-		["rhs_mag_maaws_HE",6],
+		["CUP_MAAWS_HEDP_M",6],
 		["HandGrenade",5]
     ];
 	_tmp_items =
@@ -159,7 +159,7 @@
 		["ACRE_PRC148",0],
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
         ["CUP_H_Ger_Beret_INF_Grn",1],
-		["rhsusf_ANPVS_14",1]
+		["CUP_NVG_PVS14",1]
 	];
 	_tmp_backpacks = 
 	[ 
@@ -194,7 +194,7 @@
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",0],
-		["rhsusf_ANPVS_14",1],
+		["CUP_NVG_PVS14",1],
 		["ACE_microDAGR",1],
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
         ["CUP_H_Ger_Beret_INF_Grn",1],
@@ -230,13 +230,13 @@
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
 		["ACRE_PRC148",0],
-		["rhsusf_ANPVS_14",1],
+		["CUP_NVG_PVS14",1],
         [(selectrandom [ "CUP_H_Ger_Cap_Grn2", "CUP_H_Ger_Cap_Tan2"]),1],
 		["ACE_microDAGR",1]
 	];
 	_tmp_backpacks = 
 	[ 
-		["rhsgref_hidf_alicepack",1]
+		["CUP_B_AlicePack_OD",1]
 	];
 };
 

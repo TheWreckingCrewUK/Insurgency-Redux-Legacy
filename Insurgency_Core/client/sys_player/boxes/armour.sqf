@@ -106,22 +106,14 @@ if((typeOf player) in ["Modern_British_VehicleCommander"])then{
 */
 
 
-	_armouraction1 = ["spawnl111","Spawn M1A2","",{["rhsusf_m1a2sep1tuskiid_usarmy"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn M1A2","",{["CUP_B_M1A2_TUSK_MG_US_Army"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
 
 
-	_armouraction1 = ["spawnl111","Spawn Bradley","",{["RHS_M2A3_BUSKIII"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn Bradley","",{["CUP_B_M2A3Bradley_USA_W"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
-	
-	_armouraction1 = ["spawnl111","Spawn Guardian","",{["rhsusf_M1117_D"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(twc_wdveh == 0) && (((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
-	
-	
-
 
 	_armouraction1 = ["spawnl111","Spawn Stryker","",{["CUP_B_M1130_CV_M2_Woodland_Slat"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 2) == (floor ((group player getvariable ["armourcount", 1])/ 2)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
@@ -156,7 +148,7 @@ if((typeOf player) in ["Modern_British_VehicleCommander"])then{
 	
 
 
-	_armouraction1 = ["spawnl111","Spawn M113","",{["rhsusf_m113d_usarmy_M240"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"}, {((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn M113","",{["CUP_B_M113_desert_USA"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"}, {((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 	
 	
@@ -191,11 +183,11 @@ if((typeOf player) in ["1990_British_Tank_Commander_Desert", "2000_British_Vehic
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_vehaction,true] call ace_interact_menu_fnc_addActionToClass;
 
 
-	_armouraction1 = ["spawnl111","Spawn Bradley","",{["RHS_M2A2_wd"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn Bradley","",{["CUP_B_M2Bradley_USA_W"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3)) && ((!(["infantry", str (group player)] call BIS_fnc_inString))))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 
 
-	_armouraction1 = ["spawnl111","Spawn Abrams","",{["rhsusf_m1a1aimwd_usarmy"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
+	_armouraction1 = ["spawnl111","Spawn Abrams","",{["CUP_B_M1A1_Woodland_US_Army"] execvm "insurgency_core\client\sys_player\vehicles\spawnarmour.sqf"},{(((group player getvariable ["armourcount", 1])/ 3) == (floor ((group player getvariable ["armourcount", 1])/ 3))) && ((count units group player) <= 3) && ((!(["infantry", str (group player)] call BIS_fnc_inString)))}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions", "vehiclespawnwoodland"],_armouraction1,true] call ace_interact_menu_fnc_addActionToClass;
 
 	

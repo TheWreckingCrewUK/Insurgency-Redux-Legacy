@@ -40,17 +40,17 @@ twc_loadout_insurgent_rifleman = {
 	
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
-	_wep = [["CUP_arifle_AK47_Early", "rhs_75Rnd_762x39mm_tracer"], 
-	["CUP_arifle_AK47_Early", "rhs_30Rnd_762x39mm"], 
+	_wep = [["CUP_arifle_AK47_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
+	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_M"], 
 	["CUP_arifle_AK47_Early", "CUP_20Rnd_762x39_AMD63_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm"], 
-	["CUP_arifle_AKMS_Early", "rhs_75Rnd_762x39mm_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M"], 
+	["CUP_arifle_AKMS_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
 	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_TK_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm_polymer_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M_polymer_tracer"], 
 	["CUP_arifle_AK47_Early", "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"]
 	] call bis_fnc_selectrandom;
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"twc_lightcarrier_tan",
@@ -115,13 +115,13 @@ twc_loadout_insurgent_grenadier = {
 	
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
-	_wep = [["CUP_arifle_AK47_GL_Early", "rhs_30Rnd_762x39mm_89"], 
-	["CUP_arifle_AKM_GL_Early", "rhs_30Rnd_762x39mm"], 
-	["CUP_arifle_AKMS_GL_Early", "rhs_30Rnd_762x39mm"]
+	_wep = [["CUP_arifle_AK47_GL_Early", "CUP_30Rnd_762x39_AK47_M_89"], 
+	["CUP_arifle_AKM_GL_Early", "CUP_30Rnd_762x39_AK47_M"], 
+	["CUP_arifle_AKMS_GL_Early", "CUP_30Rnd_762x39_AK47_M"]
 	] call bis_fnc_selectrandom;
 	
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"CUP_V_OI_TKI_Jacket1_01",
@@ -170,7 +170,7 @@ twc_loadout_insurgent_grenadier = {
 	for "_i" from 1 to 6 do {_unit addItemToUniform "ACE_fieldDressing";};
 	_unit addItemToUniform "ACE_EarPlugs";
 	for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_quikclot";};
-	for "_i" from 1 to 8 do {_unit addItemToUniform "rhs_VOG25";};
+	for "_i" from 1 to 8 do {_unit addItemToUniform "CUP_1Rnd_HE_GP25_M";};
 	_unit addItemToUniform "ACE_morphine";
 	_unit addItemToUniform "ACE_epinephrine";
 	_unit addVest _vest;
@@ -208,10 +208,10 @@ twc_loadout_insurgent_sniper = {
 	
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
-	_wep = ["rhs_weap_svdp_pso1", "rhs_10Rnd_762x54mmR_7N1"];
+	_wep = ["CUP_srifle_SVD_pso", "CUP_10Rnd_762x54_SVD_M"];
 	
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"CUP_V_OI_TKI_Jacket1_01",
@@ -327,9 +327,9 @@ twc_loadout_insurgent_heavysniper = {
 	
 	_unit addbackpack "twc_oli_belt_2";
 	for "_i" from 1 to 20 do {_unit addItemToBackpack (_wep select 1);};
-	for "_i" from 1 to 8 do {_unit addItemToBackpack "rhs_mag_9x18_8_57N181S";};
+	for "_i" from 1 to 8 do {_unit addItemToBackpack "CUP_8Rnd_9x18_Makarov_M";};
 	_unit addWeapon (_wep select 0);
-	_unit addWeapon "rhs_weap_makarov_pm";
+	_unit addWeapon "CUP_hgun_Makarov";
 	_unit addItemToVest (_wep select 1);
 	
 
@@ -360,12 +360,12 @@ twc_loadout_insurgent_MG = {
 	
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
-	_wep = [["rhs_weap_pkm", "rhs_100Rnd_762x54mmR_green"], 
-	["CUP_arifle_RPK74", "rhs_75Rnd_762x39mm_tracer"]
+	_wep = [["CUP_lmg_PKM", "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"], 
+	["CUP_arifle_RPK74", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"]
 	] call bis_fnc_selectrandom;
 	
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"CUP_V_OI_TKI_Jacket1_01",
@@ -454,13 +454,13 @@ twc_loadout_insurgent_heavygunner = {
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
 	
-	_wep = [["CUP_arifle_AK47_Early", "rhs_75Rnd_762x39mm_tracer"], 
-	["CUP_arifle_AK47_Early", "rhs_30Rnd_762x39mm"], 
+	_wep = [["CUP_arifle_AK47_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
+	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_M"], 
 	["CUP_arifle_AK47_Early", "CUP_20Rnd_762x39_AMD63_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm"], 
-	["CUP_arifle_AKMS_Early", "rhs_75Rnd_762x39mm_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M"], 
+	["CUP_arifle_AKMS_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
 	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_TK_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm_polymer_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M_polymer_tracer"], 
 	["CUP_arifle_AK47_Early", "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"]
 	] call bis_fnc_selectrandom;
 	
@@ -516,14 +516,13 @@ twc_loadout_insurgent_heavygunner = {
 	_unit addVest _vest;
 	
 	for "_i" from 1 to 7 do {_unit addItemToVest (_wep select 1);};
-	_backpack = (["RHS_NSV_Gun_Bag", "CUP_B_RUS_Backpack"] call bis_fnc_selectrandom);
+	_backpack = (["CUP_B_RUS_Backpack"] call bis_fnc_selectrandom);
 	_unit addbackpack _backpack;
-	for "_i" from 1 to 2 do {_unit addItemToBackpack "rhs_fim92_mag";};
 	
 	_unit addWeapon (_wep select 0);
 	_unit addItemToVest (_wep select 1);
 	if (_backpack == "CUP_B_RUS_Backpack") then {
-		_unit addweapon "rhs_weap_fim92";
+		_unit addweapon "CUP_launch_FIM92Stinger";
 	};
 	
 	
@@ -556,17 +555,17 @@ twc_loadout_insurgent_RPG = {
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
 	
-	_wep = [["CUP_arifle_AK47_Early", "rhs_75Rnd_762x39mm_tracer"], 
-	["CUP_arifle_AK47_Early", "rhs_30Rnd_762x39mm"], 
+	_wep = [["CUP_arifle_AK47_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
+	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_M"], 
 	["CUP_arifle_AK47_Early", "CUP_20Rnd_762x39_AMD63_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm"], 
-	["CUP_arifle_AKMS_Early", "rhs_75Rnd_762x39mm_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M"], 
+	["CUP_arifle_AKMS_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
 	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_TK_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm_polymer_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M_polymer_tracer"], 
 	["CUP_arifle_AK47_Early", "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"]
 	] call bis_fnc_selectrandom;
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"CUP_V_OI_TKI_Jacket1_01",
@@ -620,14 +619,14 @@ twc_loadout_insurgent_RPG = {
 	_unit addVest _vest;
 	
 	for "_i" from 1 to 7 do {_unit addItemToVest (_wep select 1);};
-	_unit addbackpack "rhs_rpg_empty";
-	for "_i" from 1 to 2 do {_unit addItemToBackpack "rhs_rpg7_PG7VL_mag";};
-	for "_i" from 1 to 2 do {_unit addItemToBackpack "rhs_rpg7_OG7V_mag";};
+	_unit addbackpack "CUP_B_RPGPack_Khaki";
+	for "_i" from 1 to 2 do {_unit addItemToBackpack "CUP_PG7VL_M";};
+	for "_i" from 1 to 2 do {_unit addItemToBackpack "CUP_OG7_M";};
 	_unit addWeapon (_wep select 0);
 	_unit addItemToVest (_wep select 1);
 	
 	
-	_unit addWeapon "rhs_weap_rpg7";
+	_unit addWeapon "CUP_launch_RPG7V";
 	
 
 	_unit linkItem "ItemMap";
@@ -659,17 +658,17 @@ twc_loadout_insurgent_medic = {
 	_uniform = ["CUP_O_TKI_Khet_Partug_01","CUP_O_TKI_Khet_Partug_02","CUP_O_TKI_Khet_Partug_03","CUP_O_TKI_Khet_Partug_04","CUP_O_TKI_Khet_Partug_05","CUP_O_TKI_Khet_Partug_06","CUP_O_TKI_Khet_Partug_07","CUP_O_TKI_Khet_Partug_08"] call bis_fnc_selectrandom;
 	
 	
-	_wep = [["CUP_arifle_AK47_Early", "rhs_75Rnd_762x39mm_tracer"], 
-	["CUP_arifle_AK47_Early", "rhs_30Rnd_762x39mm"], 
+	_wep = [["CUP_arifle_AK47_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
+	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_M"], 
 	["CUP_arifle_AK47_Early", "CUP_20Rnd_762x39_AMD63_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm"], 
-	["CUP_arifle_AKMS_Early", "rhs_75Rnd_762x39mm_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M"], 
+	["CUP_arifle_AKMS_Early", "CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], 
 	["CUP_arifle_AK47_Early", "CUP_30Rnd_762x39_AK47_TK_M"], 
-	["CUP_arifle_AKM_Early", "rhs_30Rnd_762x39mm_polymer_tracer"], 
+	["CUP_arifle_AKM_Early", "CUP_30Rnd_762x39_AK47_M_polymer_tracer"], 
 	["CUP_arifle_AK47_Early", "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"]
 	] call bis_fnc_selectrandom;
 	
-	_vest = ["rhsgref_chestrig", 
+	_vest = ["CUP_V_O_SLA_M23_1_OD", 
 	"twc_lightcarrier_oli",
 	"CUP_V_B_ALICE",
 	"CUP_V_OI_TKI_Jacket1_01",

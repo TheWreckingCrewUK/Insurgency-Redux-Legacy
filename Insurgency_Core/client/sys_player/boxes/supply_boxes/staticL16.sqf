@@ -17,7 +17,7 @@ _box = _boxClass createVehicle (if (count (player nearobjects ["Land_InfoStand_V
 
 //_box addWeaponCargoGlobal ["UK3CB_BAF_L16",1];
 //_box addWeaponCargoGlobal ["UK3CB_BAF_L16_Tripod",1];
-_box addWeaponCargoGlobal ["ace_compat_rhs_usf3_m252_carry",1];
+_box addWeaponCargoGlobal ["CUP_m252_carry",1];
 _box addWeaponCargoGlobal ["ace_csw_carryMortarBaseplate",1];
 
 _boxClass = "TWC_Public_AmmoBox_medium";
@@ -36,4 +36,4 @@ _box addItemCargoGlobal ["ACE_1Rnd_82mm_Mo_HE",6];
 //ACE_1Rnd_82mm_Mo_Illum
 //ACE_1Rnd_82mm_Mo_HE
 //ace_csw_carryMortarBaseplate
-//ace_compat_rhs_usf3_m252_carry
+//CUP_m252_carry

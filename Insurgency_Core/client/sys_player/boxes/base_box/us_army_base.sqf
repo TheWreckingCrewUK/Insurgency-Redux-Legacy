@@ -4,14 +4,14 @@
     [
         ["twc_m4_acog_lazer",1],
         ["ACE_Vector",1],
-        ["rhsusf_weap_m9",1]
+        ["CUP_hgun_M9",1]
     ];
 
     _tmp_magazines =
     [
-        ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
-		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
-        ["rhsusf_mag_15Rnd_9x19_FMJ",40],
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
+        ["CUP_15Rnd_9x19_M9",40],
 		["SmokeShellBlue",5],
 		["SmokeShellGreen",5],
 		["SmokeShellRed",5],
@@ -25,11 +25,11 @@
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_eotech_552",1],
-		["rhsusf_acc_anpeq15A",1],
+		["CUP_optic_CompM4",1],
+		["CUP_optic_HoloBlack",1],
+		["CUP_acc_ANPEQ_15_Black",1],
 		["ACE_DAGR",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["ACRE_PRC117F",1],
 		["twc_acc_nt4_black",0],
 		["ACE_IR_Strobe_Item",1]
@@ -40,14 +40,14 @@
     _tmp_weapons =
     [
         ["twc_m4_320_lds_lazer",1],
-		["rhs_weap_M136_hedp",2],
-        ["rhsusf_weap_m9",1]
+		["CUP_launch_M136",2],
+        ["CUP_hgun_M9",1]
     ];
 
     _tmp_magazines =
     [
-        ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
-		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell", 30],
 	    ["1Rnd_Smoke_Grenade_shell", 10],
 	    ["1Rnd_SmokeRed_Grenade_shell", 10],
@@ -56,7 +56,7 @@
 	    ["1Rnd_SmokePurple_Grenade_shell", 10],
         ["1Rnd_SmokeBlue_Grenade_shell", 10],
 		["UGL_FlareWhite_F", 20],
-        ["rhsusf_mag_15Rnd_9x19_FMJ",40],
+        ["CUP_15Rnd_9x19_M9",40],
 		["SmokeShellBlue",5],
 		["SmokeShellGreen",5],
 		["SmokeShellRed",5],
@@ -67,15 +67,15 @@
 	[
         ["ACE_MapTools",1],
 		["ACE_microDAGR",1],
-		["rhsusf_acc_ACOG",0],
-		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_eotech_552",1],
-		["rhsusf_acc_anpeq15_bk_light",1],
+		["CUP_optic_ACOG",0],
+		["CUP_optic_CompM4",1],
+		["CUP_optic_HoloBlack",1],
+		["CUP_acc_ANPEQ_15_Flashlight_Black_L",1],
 		["twc_acc_nt4_black",0],
 		["SatchelCharge_Remote_Mag",1],
 		["DemoCharge_Remote_Mag",3],
 		["ACE_M26_Clacker",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["ACE_IR_Strobe_Item",1]
 		
 	];
@@ -91,27 +91,24 @@
     [
         ["twc_m4_acog_lazer",1],
 		["ACE_VMM3",1],
-		["rhs_weap_M590_8RD",1],
-		["rhs_weap_m72a7",2]
+		["CUP_launch_M72A6",2]
 	];
 
     _tmp_magazines =
     [
-        ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
-		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
-		["rhsusf_8Rnd_00Buck",40],
-		["rhsusf_8Rnd_Slug",40],
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ACOG",0],
-		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_eotech_552",1],
-		["rhsusf_acc_anpeq15_bk_light",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_optic_ACOG",0],
+		["CUP_optic_CompM4",1],
+		["CUP_optic_HoloBlack",1],
+		["CUP_acc_ANPEQ_15_Flashlight_Black_L",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -129,8 +126,8 @@
 
     _tmp_magazines =
     [
-        ["rhs_mag_30Rnd_556x45_M855A1_PMAG",50],
-		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10],
+        ["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell",30],
 		["HandGrenade",5]
     ];
@@ -138,11 +135,11 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_ACOG",0],
-		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_eotech_552",1],
-		["rhsusf_acc_anpeq15_bk_light",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_optic_ACOG",0],
+		["CUP_optic_CompM4",1],
+		["CUP_optic_HoloBlack",1],
+		["CUP_acc_ANPEQ_15_Flashlight_Black_L",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -162,8 +159,8 @@
 
     _tmp_magazines =
     [
-        ["rhsusf_100Rnd_556x45_mixed_soft_pouch",50],
-		["rhs_200rnd_556x45_T_SAW",20],
+        ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",50],
+		["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",20],
 		["ACE_SpareBarrel",2],
 		["HandGrenade",5]
     ];
@@ -171,8 +168,8 @@
 	_tmp_items =
 	[
         ["ACE_MapTools",1],
-		["rhsusf_acc_anpeq15A",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_acc_ANPEQ_15_Black",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -190,8 +187,8 @@
 
     _tmp_magazines =
     [
-        ["rhs_mag_30Rnd_556x45_M855A1_PMAG",30],
-		["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red",10]
+        ["30Rnd_556x45_Stanag",30],
+		["30Rnd_556x45_Stanag_Tracer_Red",10]
     ];
 
 	_tmp_items =
@@ -210,11 +207,11 @@
 		["ACE_salineIV_250", 50],
 		["ACE_bodyBag",10],
 		["ACE_tourniquet", 5],
-		["rhsusf_acc_ACOG",0],
-		["rhsusf_acc_compm4",1],
-		["rhsusf_acc_eotech_552",1],
-		["rhsusf_acc_anpeq15_bk_light",1],
-		["rhs_Booniehat_ocp",1],
+		["CUP_optic_ACOG",0],
+		["CUP_optic_CompM4",1],
+		["CUP_optic_HoloBlack",1],
+		["CUP_acc_ANPEQ_15_Flashlight_Black_L",1],
+		["CUP_H_USArmy_Boonie_OCP",1],
 		["twc_acc_nt4_black",0]
 	];
 	_tmp_backpacks = 
@@ -233,7 +230,7 @@
     [
         ["30Rnd_556x45_Stanag",50],
 		["30Rnd_556x45_Stanag_Tracer_Red",20],
-        ["rhsusf_mag_7x45acp_MHP",40],
+        ["CUP_7Rnd_45ACP_1911",40],
 		["1Rnd_HE_Grenade_shell", 20],
 	    ["1Rnd_Smoke_Grenade_shell", 10],
 	    ["1Rnd_SmokeRed_Grenade_shell", 10],
@@ -308,7 +305,7 @@
   if ((typeOf vehicle player) in ["twc_men_1990_us_w_rifleman_at", "twc_men_1990_us_d_rifleman_at"]) then {
     _tmp_weapons =
     [
-		["rhs_weap_M136",4]
+		["CUP_launch_M136",4]
 	];
 
     _tmp_magazines =
@@ -332,8 +329,8 @@
     _tmp_magazines =
     [
         ["ACE_SpareBarrel",1],
-        ["rhs_200rnd_556x45_T_SAW",50],
-		["rhsusf_100Rnd_556x45_soft_pouch",20]
+        ["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",50],
+		["CUP_100Rnd_TE4_Red_Tracer_556x45_M249",20]
     ];
 
 	_tmp_items =
@@ -383,8 +380,8 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
@@ -408,8 +405,8 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",80],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",30],
+		["30Rnd_556x45_Stanag",80],
+		["30Rnd_556x45_Stanag_Tracer_Red",30],
 		["UK3CB_BAF_12G_Slugs",50],
 		["UK3CB_BAF_12G_Pellets",50],
 		["1Rnd_HE_Grenade_shell",40],
@@ -447,8 +444,8 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["UK3CB_BAF_12G_Slugs",50],
 		["UK3CB_BAF_12G_Pellets",50],
 		["HandGrenade",5]
@@ -463,13 +460,13 @@
  if((typeOf player) in ["2000_USMC_Base_d"])then{
     _tmp_weapons =
     [
-        ["rhs_weap_M136",1]
+        ["CUP_launch_M136",1]
 	];
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
@@ -489,8 +486,8 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["1Rnd_HE_Grenade_shell",20],
 		["UGL_FlareGreen_F",20],
 		["UGL_FlareRed_F",20],
@@ -522,7 +519,7 @@
 
 	_tmp_magazines =
    [            
-		["rhs_200rnd_556x45_T_SAW",50],
+		["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",50],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
@@ -540,9 +537,9 @@
 
 	_tmp_magazines =
    [            
-		["rhs_200rnd_556x45_T_SAW",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["CUP_200Rnd_TE4_Red_Tracer_556x45_M249",50],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["ACE_SpareBarrel",1],
 		["HandGrenade",5]
     ];
@@ -563,7 +560,7 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull",40],
+		["ACE_30Rnd_556x45_Stanag_Mk262_mag_Pull",40],
 		["HandGrenade",5]
     ];
 
@@ -583,8 +580,8 @@
 
 	_tmp_magazines =
    [            
-		["rhs_mag_30Rnd_556x45_M855_Stanag",50],
-		["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",10],
+		["30Rnd_556x45_Stanag",50],
+		["30Rnd_556x45_Stanag_Tracer_Red",10],
 		["HandGrenade",5]
     ];
 
@@ -603,7 +600,7 @@
 		["ACE_bodyBag", 10],
 		["ACE_tourniquet", 10],
 		["ACE_personalAidKit", 1],
-		["rhsusf_spc_corpsman",1],
+		["CUP_V_B_IOTV_UCP_Medic_USArmy",1],
 		["twc_acc_nt4_black",0]
 	];
 };

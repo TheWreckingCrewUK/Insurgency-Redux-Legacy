@@ -15,14 +15,6 @@ _veh = _heli createvehicle getpos ammoboxspawner;
 twc_armourcount = twc_armourcount +1;
 publicVariable "twc_armourcount";
 
-	
-	if (typeof _veh == "rhsusf_M1117_D") then {
-[
-	_veh,
-	["desert",1], 
-	["DUKE_Hide",1]
-] call BIS_fnc_initVehicle;
-};
 
  _armourcrew = ["Modern_British_VehicleCrew","Modern_USMC_VehicleCrew","1990_British_Tank_Crew_Desert","2000_British_Vehicle_Crew","Modern_British_VehicleCommander","Modern_USMC_VehicleCommander","1990_British_Tank_Commander_Desert","2000_British_Vehicle_Commander"];
 	_crewcount = 0;

@@ -2,10 +2,10 @@
 
 */
 
-if (_heli == "rhsusf_m1a2sep1tuskid_usarmy") then {
+if (_heli == "CUP_B_M1A2_TUSK_MG_US_Army") then {
 
 if (twc_wdveh == 1) then {
-_heli = "rhsusf_m1a2sep1tuskiwd_usarmy";
+_heli = "CUP_B_M1A2_TUSK_MG_US_Army";
 };
 };
 
@@ -18,10 +18,10 @@ _heli = "CUP_B_LAV25_USMC";
 };
 
 
-if ( _heli == "RHS_M6") then {
+if ( _heli == "CUP_B_M6LineBacker_USA_W") then {
 
 if (twc_wdveh == 1) then {
-_heli = "RHS_M6_wd";
+_heli = "CUP_B_M6LineBacker_USA_W_wd";
 };
 };
 
@@ -55,10 +55,10 @@ _heli = "ukcw_cvrt_Scim_d_L1";
 };
 
 
-if ( _heli == "rhsusf_m113d_usarmy_M240") then {
+if ( _heli == "CUP_B_M113_desert_USA") then {
 
 if (twc_wdveh == 1) then {
-_heli = "rhsusf_m113_usarmy_M240";
+_heli = "CUP_B_M113_USA";
 };
 };
 

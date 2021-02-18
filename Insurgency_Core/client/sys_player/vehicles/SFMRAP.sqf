@@ -36,21 +36,6 @@ _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;twc_sfmrapt
 },{(count (player nearobjects ["Land_InfoStand_V1_F", 200]) > 0)}] call ace_interact_menu_fnc_createAction;
 [_veh,0,["ACE_MainActions"],_boxaction] call ace_interact_menu_fnc_addActionToobject;
 
-
-if ((missionnamespace getvariable ["twc_wdveh", 0]) == 0) then {
-	[
-		_veh,
-		["rhs_desert",1], 
-		["DUKE_Hide",1]
-	] call BIS_fnc_initVehicle;
-} else {
-	[
-		_veh,
-		["rhs_woodland",1], 
-		["DUKE_Hide",1]
-	] call BIS_fnc_initVehicle;
-};
-
 _veh setAmmoCargo 0;
 
 clearWeaponCargoGlobal _veh;
@@ -61,11 +46,10 @@ _mult = 1;
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",5];
 
 _veh AddWeaponCargoGlobal ["UK3CB_BAF_M6",1];
-_veh AddWeaponCargoGlobal ["rhs_weap_maaws_optic",1];
+_veh AddWeaponCargoGlobal ["CUP_launch_MAAWS_optic",1];
 _veh AddWeaponCargoGlobal ["ACE_Yardage450",1];
 
-_veh AddMagazineCargoGlobal ["rhs_mag_maaws_HEAT",4];
-_veh AddMagazineCargoGlobal ["rhs_mag_maaws_flechette",2];
+_veh AddMagazineCargoGlobal ["CUP_MAAWS_HEDP_MAT",4];
 
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells",15];

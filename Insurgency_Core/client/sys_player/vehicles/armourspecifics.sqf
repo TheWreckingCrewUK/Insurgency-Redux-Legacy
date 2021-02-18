@@ -96,7 +96,7 @@ if (typeof _veh == "ukcw_fv432_gpmg") then {
 	};
 };
 
-if (typeof _veh == "RHS_M2A3_BUSKIII_wd") then {
+if (typeof _veh == "CUP_B_M2A3Bradley_USA_W_wd") then {
 
 if (twc_wdveh == 1) then {
 	[
@@ -115,7 +115,7 @@ if (twc_wdveh == 1) then {
 
 
 
-if (typeof _veh == "RHS_M2A2_wd") then {
+if (typeof _veh == "CUP_B_M2Bradley_USA_W") then {
 
 if (twc_wdveh == 1) then {
 	[
@@ -213,7 +213,7 @@ if (typeof _veh == "CUP_B_MCV80_GB_D_SLAT") then {
 
 
 
-if (typeof _veh == "rhsusf_m1a2sep1tuskiid_usarmy") then {
+if (typeof _veh == "CUP_B_M1A2_TUSK_MG_US_Army") then {
 
 if (twc_wdveh == 1) then {
 	[
@@ -231,7 +231,7 @@ if (twc_wdveh == 1) then {
 	};
 };
 
-if (typeof _veh == "rhsusf_m1a2sep1tuskid_usarmy") then {
+if (typeof _veh == "CUP_B_M1A2_TUSK_MG_US_Army") then {
 
 if (twc_wdveh == 1) then {
 	[
@@ -249,7 +249,7 @@ if (twc_wdveh == 1) then {
 	};
 };
 
-if (typeof _veh == "rhsusf_m1a1aimwd_usarmy") then {
+if (typeof _veh == "CUP_B_M1A1_Woodland_US_Army") then {
 
 if (twc_wdveh == 1) then {
 	[
@@ -300,7 +300,7 @@ _box = _veh;
 		if (["90", twc_missionname] call BIS_fnc_inString) then {
 			// 1990
 			//Weapons
-			_box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
+			_box AddWeaponCargoGlobal ["CUP_launch_M72A6",2];
 
 
 
@@ -328,7 +328,7 @@ _box = _veh;
 			// 2000
 			
 			//Weapons
-			_box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
+			_box AddWeaponCargoGlobal ["CUP_launch_M72A6",2];
 
 			//supplies
 
@@ -363,7 +363,7 @@ _box = _veh;
 
 
 //Weapons
-	_box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
+	_box AddWeaponCargoGlobal ["CUP_launch_M72A6",2];
 
 
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_556_30Rnd",30];
@@ -377,7 +377,7 @@ _box = _veh;
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",4];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10];
 
-	_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",3];
+	_box AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",3];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",5];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",5];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",5];
@@ -415,7 +415,7 @@ _box = _veh;
 		if (["90", twc_missionname] call BIS_fnc_inString) then {
 			// 1990
 			//Weapons
-			_box AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+			_box AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 
 
 			//supplies
@@ -442,7 +442,7 @@ _box = _veh;
 			// 2000
 			
 			//Weapons
-			_box AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+			_box AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 
 
 			//supplies
@@ -478,7 +478,7 @@ _box = _veh;
 
 
 //Weapons
-	_box AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+	_box AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 
 
 
@@ -496,7 +496,7 @@ _box = _veh;
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",4];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10];
 
-	_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",3];
+	_box AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",3];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",3];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",3];
 	_box AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",3];

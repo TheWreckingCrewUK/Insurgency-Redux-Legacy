@@ -36,11 +36,11 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_m14ebrri_leu",1];
+_box AddWeaponCargoGlobal ["CUP_srifle_M14_DMR_leu",1];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["rhsusf_20Rnd_762x51_m118_special_Mag",30];
+_box AddMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR",30];
 
 
 _box addItemCargoGlobal ["ACE_RangeCard",1];

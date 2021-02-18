@@ -26,41 +26,4 @@ clearBackpackCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
-if (totalpoints > (pointlimit * 0.3)) then {
-	_veh addbackpackcargoglobal ["RHS_NSV_Tripod_Bag", 1];
-};
 hint "A car has been spawned within 30m of your position";
-
-
-if (_vehtype in [
-"CUP_O_Hilux_SPG9_TK_INS"]) then {
-	_veh addEventHandler ["Fired", {
-		params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-		[_unit, _projectile] call twc_fnc_idf;
-		_mult = 0.5; _projectile setvelocity [(velocity _projectile select 0) + (((random 16) - 8) * _mult), (velocity _projectile select 1) + (((random 16) - 8) * _mult), 	(velocity _projectile select 2) + (((random 8) - 3) * _mult)];;
-		
-	}];
-} else {
-
-	if (_vehtype in ["CUP_O_Hilux_UB32_TK_INS"]) then {
-		_veh addEventHandler ["Fired", {
-		  params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-		  _mult = 1; 
-		  if (_ammo == "rhs_B_762x54_Ball") then  {_mult = 0.5;};[_mult, _projectile, _unit] spawn {params ["_mult", "_projectile", "_unit"];waituntil {(_projectile distance _unit) > 3};
-		  _mods = 0;
-		 while {alive _projectile} do {
-			  _projectile setvelocity [(velocity _projectile select 0) + (((random 16) - 8) * (_mult * _mods)), (velocity _projectile select 1) + (((random 16) - 8) * (_mult * _mods)),  (velocity _projectile select 2) + (((random 8) - 4) * (_mult * _mods))]; 
-			  sleep 0.5;
-			};
-		  };
-		 }];
-	} else {
-
-		_veh addEventHandler ["Fired", {
-			params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-			
-			_mult = 0.5; _projectile setvelocity [(velocity _projectile select 0) + (((random 16) - 8) * _mult), (velocity _projectile select 1) + (((random 16) - 8) * _mult), 	(velocity _projectile select 2) + (((random 8) - 3) * _mult)];;
-			
-		}];
-	};
-};

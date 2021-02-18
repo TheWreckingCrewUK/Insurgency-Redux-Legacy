@@ -18,14 +18,14 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_m32",2];
+_box AddWeaponCargoGlobal ["CUP_glaunch_M32",2];
 
 
 //supplies
-_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M441_HE",10];
-_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M715_green",10];
+_box AddMagazineCargoGlobal ["CUP_6Rnd_HE_M203",10];
+_box AddMagazineCargoGlobal ["CUP_6Rnd_SmokeGreen_M203",10];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M715_white",10];
-//_box AddMagazineCargoGlobal ["rhsusf_mag_6Rnd_M715_red",10];
+_box AddMagazineCargoGlobal ["CUP_6Rnd_Smoke_M203",10];
+//_box AddMagazineCargoGlobal ["CUP_6Rnd_SmokeRed_M203",10];
 
 [player, _box] call ace_cargo_fnc_startLoadIn;

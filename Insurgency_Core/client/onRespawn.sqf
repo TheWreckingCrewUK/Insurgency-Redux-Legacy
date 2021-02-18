@@ -443,7 +443,7 @@ The large vehicles require a full crew of 3 to operate, but the vehicles without
 _suntime = date call BIS_fnc_sunriseSunsetTime;
 
 if ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) - 1))) then {
-	player addweapon "rhsusf_ANPVS_14";
+	player addweapon "CUP_NVG_PVS14";
 };
 
 if (time > 200) then {[] spawn twc_fnc_enemyspawnpos;};
@@ -458,7 +458,6 @@ if (time > 200) then {[] spawn twc_fnc_enemyspawnpos;};
 	sleep 1;
 	_pos = getpos player;
 	waituntil {(_pos distance player) > 5};
-	playSound "RHS_APS_Warning";
 	hint _newstextnew;
 	profilenamespace setvariable ["twc_newstext", _newstextnew];
 };

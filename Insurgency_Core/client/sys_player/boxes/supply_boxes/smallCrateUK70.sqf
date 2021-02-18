@@ -22,7 +22,7 @@ clearitemCargoGlobal _box;
 //supplies
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_20Rnd",40];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_20Rnd_T",20];
-_box AddMagazineCargoGlobal ["rhsusf_100Rnd_762x51_m62_tracer",7];
+_box AddMagazineCargoGlobal ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",7];
 _box AddMagazineCargoGlobal ["ukcw_l42_10rnd_mag",15];
 
 _box addItemCargoGlobal ["ACE_fieldDressing",20];

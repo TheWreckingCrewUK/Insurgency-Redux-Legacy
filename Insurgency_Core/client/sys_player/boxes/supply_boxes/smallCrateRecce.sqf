@@ -15,13 +15,13 @@ clearBackpackCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag",20];
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",5];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",20];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",5];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd",6];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8];
+_box AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",8];
 _box AddMagazineCargoGlobal ["1Rnd_SmokeBlue_Grenade_shell",5];
 _box AddMagazineCargoGlobal ["1Rnd_SmokeGreen_Grenade_shell",5];
 _box AddMagazineCargoGlobal ["1Rnd_SmokeRed_Grenade_shell",5];

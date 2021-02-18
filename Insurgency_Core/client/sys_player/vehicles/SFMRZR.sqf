@@ -1,8 +1,5 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
-_vehtype = "rhsusf_mrzr4_d";
-
- 
  _veh = _vehtype createvehicle _spawnpos;   
 
 _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align='center'>Vehicle Spawner</t>"; 
@@ -39,7 +36,7 @@ clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",2];
 
 _veh AddMagazineCargoGlobal ["UGL_FlareWhite_F",2];
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",7];

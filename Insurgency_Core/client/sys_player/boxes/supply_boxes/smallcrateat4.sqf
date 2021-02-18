@@ -17,7 +17,7 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_M136",5];
+_box AddWeaponCargoGlobal ["CUP_launch_M136",5];
 
 
 

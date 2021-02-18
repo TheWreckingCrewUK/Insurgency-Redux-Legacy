@@ -20,15 +20,15 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+_box AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 
 //supplies
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",7];
 
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",25];
-_box AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",5];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",25];
+_box AddMagazineCargoGlobal ["30Rnd_556x45_Stanag_Tracer_Red",5];
 
 _box AddMagazineCargoGlobal ["UGL_FlareWhite_F",5];
 _box AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10];
@@ -40,7 +40,7 @@ _box AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",2];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",7];
 
-_box AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_FMJ",5];
+_box AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",5];
 _box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",5];
 _box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets",8];
 _box AddMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug",8];

@@ -18,8 +18,8 @@ clearitemCargoGlobal _box;
 //Weapons
 
 //supplies
-_box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_M33",5];
-_box AddMagazineCargoGlobal ["rhsusf_mag_10Rnd_STD_50BMG_mk211",3];
+_box AddMagazineCargoGlobal ["UK3CB_BAF_127_10Rnd",5];
+_box AddMagazineCargoGlobal ["CUP_10Rnd_127x99_m107",3];
 
 _box AddMagazineCargoGlobal ["UK3CB_BAF_9_15Rnd",10];
 

@@ -29,7 +29,4 @@ clearBackpackCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
-if (totalpoints > (pointlimit * 0.3)) then {
-	_veh addbackpackcargoglobal ["RHS_NSV_Tripod_Bag", 1];
-};
 hint "A car has been spawned within 30m of your position";

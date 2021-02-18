@@ -20,7 +20,7 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["rhs_weap_m72a7",2];
+_box AddWeaponCargoGlobal ["CUP_launch_M72A6",2];
 
 _box AddMagazineCargoGlobal ["ACE_SpareBarrel",1];
 

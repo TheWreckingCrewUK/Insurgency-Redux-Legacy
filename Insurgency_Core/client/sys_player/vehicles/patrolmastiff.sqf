@@ -28,7 +28,7 @@ clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 //Weapons
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 _veh AddWeaponCargoGlobal ["UK3CB_BAF_L128A1_Eotech",1];
 _veh AddWeaponCargoGlobal ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1];
 _veh AddWeaponCargoGlobal ["ACE_VMM3",1];
@@ -51,7 +51,7 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",3];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",10];
 
-_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8];
+_veh AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",8];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",8];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
 

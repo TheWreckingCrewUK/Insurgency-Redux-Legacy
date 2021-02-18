@@ -6,17 +6,6 @@ _basepos = missionnamespace getvariable ["twc_basepos", _boxpos];
 
 if ((_basepos distance _boxpos) < 400) exitwith {};
 
-_car1 = "rhsusf_m1043_d";
-
-_car2 = "rhsusf_m1043_d_m2";
-
-	if (twc_wdveh == 1) then {
-_car1 = "rhsusf_m1043_w_s";
-_car2 = "rhsusf_m1043_w_m2";
-};
-
-
-
 if (["twc_ana", typeof player] call BIS_fnc_inString) then {
 
 _car1 = "CUP_O_Hilux_unarmed_TK_INS";
@@ -69,14 +58,6 @@ _car1 = "CUP_I_Datsun_4seat_TK";
 
 _car2 = "CUP_I_Datsun_PK_TK_Random";
 };
-
-if (["usmc", typeof player] call BIS_fnc_inString) then {
-
-_car1 = "rhsusf_m1043_d";
-
-_car2 = "rhsusf_m1043_d_m2";
-};
-
 
 
 };
@@ -173,10 +154,6 @@ if (typeof _wmik == "I_G_Offroad_01_armed_F") then {
 _wmik setObjectTextureGlobal [0, "a3\soft_f\offroad_01\data\offroad_01_ext_base01_co.paa"];
 };
 
-if (typeof _wmik in ["rhsusf_m1043_d_m2", "rhsusf_m1043_w_m2"]) then {
-	_wmik addmagazinecargoglobal ["UK3CB_BAF_127_100Rnd", 3];
-};
-
 [_wmik, player, 0.5] call twc_fnc_genericfillvehicle;
 //_spawnPos = [_pos,[5,50],random 360,0, [1,50], [50,(typeof _vehicle)]] call SHK_pos; 
 _spawnPos = [_pos, 5, 50, 10, 0, 1, 0, [], [_pos, _pos]] call BIS_fnc_findSafePos;
@@ -221,11 +198,6 @@ _car
  ["HideDoor1",0,"HideDoor2",0,"HideDoor3",1,"HideBackpacks",1,"HideBumper1",1,"HideBumper2",0,"HideConstruction",1,"hidePolice",1,"HideServices",1,"BeaconsStart",0,"BeaconsServicesStart",0] 
 ] call BIS_fnc_initVehicle;
 };
-
-if (typeof _car == "rhsusf_m1043_d") then {
-
-};
-
 
 
 

@@ -18,12 +18,6 @@ hint _spawntext;
  
  twc_specvehcount = 1;
  publicVariable "twc_specvehcount";
- 
- 
- _veh = "rhsgref_cdf_b_gaz66_zu23" createvehicle _spawnpos;  
-  
- 
- 
 
 clearWeaponCargoGlobal _veh;
 clearBackpackCargoGlobal _veh;

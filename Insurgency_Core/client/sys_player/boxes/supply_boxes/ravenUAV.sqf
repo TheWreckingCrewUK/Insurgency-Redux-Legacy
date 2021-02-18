@@ -35,4 +35,4 @@ clearitemCargoGlobal _box;
 
 
 //supplies
-_box AddBackpackCargoGlobal ["B_rhsusf_B_BACKPACK",1];
+_box AddBackpackCargoGlobal ["B_UAV_01_backpack_F",1];

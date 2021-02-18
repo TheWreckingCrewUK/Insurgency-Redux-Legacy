@@ -65,7 +65,7 @@ _veh AddMagazineCargoGlobal ["UK3CB_BAF_556_200Rnd_T",5];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd_T",3];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_L42A1_20Rnd",7];
 
-_veh AddMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_JHP",8];
+_veh AddMagazineCargoGlobal ["CUP_17Rnd_9x19_glock17",8];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Pellets",6];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_12G_Slugs",8];
 

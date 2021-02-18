@@ -1,10 +1,10 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
-_vehtype = "twc_rhsusf_m1240a1_m2crows_usarmy_d";
+_vehtype = "CUP_B_HMMWV_Crows_M2_USA";
 	
 
 if (twc_wdveh == 1) then {
-	_vehtype = "rhsusf_M1220_M153_M2_usarmy_wd";
+	_vehtype = "CUP_B_M1151_M2_USA";
 };
 	
  _car = _vehtype createvehicle _spawnpos;  
@@ -34,9 +34,9 @@ _mult = 1;
 _veh setammocargo 0;
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",7];
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",8];
-_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_PMAG",6];
+_veh AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",6];
 
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",3];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",3];
 _veh AddWeaponCargoGlobal ["twc_m4_acog_lazer",2];
 
 

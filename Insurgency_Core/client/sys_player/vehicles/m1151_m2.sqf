@@ -1,10 +1,10 @@
  _spawnpos = getpos AmmoBoxSpawner;
  
  
-_class = "rhsusf_m1151_m2_v2_usarmy_wd";
+_class = "CUP_B_M1151_M2_WDL_USA";
 
 if (twc_wdveh == 0) then {
-	_class = "rhsusf_m1151_m2_v2_usarmy_d";
+	_class = "CUP_B_M1151_M2_USA";
 };
  
  _veh = _class createvehicle _spawnpos;  

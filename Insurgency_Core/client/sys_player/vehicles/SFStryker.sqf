@@ -68,7 +68,7 @@ _mult = 1;
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",6];
 
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1*_mult];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",1*_mult];
 
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10*_mult];
 _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5*_mult];

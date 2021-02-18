@@ -2,7 +2,7 @@
 
 if((typeOf player) in ["1970_British_MachineGunner", "1970_British_mg_assistant"])then{
 	_tmp_magazines = [
-		["rhsusf_100Rnd_762x51_m62_tracer",50]
+		["UK3CB_BAF_762_100Rnd",50]
 	];
 };
 

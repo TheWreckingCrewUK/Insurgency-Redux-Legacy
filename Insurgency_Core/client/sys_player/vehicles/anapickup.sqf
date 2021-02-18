@@ -75,31 +75,6 @@ if (_heli == "CUP_O_Hilux_M2_TK_INS") then {
 	[_a, 20] call ace_refuel_fnc_makeSource;
 	[_a, true, [0, 1, 0], 10] call ace_dragging_fnc_setCarryable;	
 
-
-	_a = "rhsusf_ammocan_M2A1" createvehicle [0,0,1000];
-	_a attachto [_veh, [-0.91,-1,-0.5]];_y = 90; _p = -4; _r = 0;  
-	_a setVectorDirAndUp [  
-	 [sin _y * cos _p,cos _y * cos _p,sin _p],  
-	 [[sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D  
-	]; 
-
-	_a = "rhsusf_ammocan_M2A1" createvehicle [0,0,1000];
-	_a attachto [_veh, [-0.91,-1.33,-0.5]];_y = 90; _p = -4; _r = 0;  
-	_a setVectorDirAndUp [  
-	 [sin _y * cos _p,cos _y * cos _p,sin _p],  
-	 [[sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D  
-	]; 
-
-
-
-	_a = "rhsusf_ammocan_M2A1" createvehicle [0,0,1000];
-	_a attachto [_veh, [-0.91,-1.66,-0.5]];_y = 90; _p = -4; _r = 0;  
-	_a setVectorDirAndUp [  
-	 [sin _y * cos _p,cos _y * cos _p,sin _p],  
-	 [[sin _r,-sin _p,cos _r * cos _p],-_y] call BIS_fnc_rotateVector2D  
-	]; 
-
-
 	_a = "Land_WoodenWall_03_s_d_pole_F" createvehicle [0,0,1000];
 	_a attachto [_veh, [-0.92,-0.9,-0.52]];_y = 0; _p = 90; _r = 0;  
 	_a setVectorDirAndUp [  
@@ -151,8 +126,8 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
-_veh addweaponcargoglobal ["rhs_weap_pkm", 1];
-_veh addmagazinecargoglobal ["rhs_100Rnd_762x54mmR_green", 1];
+_veh addweaponcargoglobal ["CUP_lmg_PKM", 1];
+_veh addmagazinecargoglobal ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", 1];
 
 [_veh, player, 2] call twc_fnc_genericfillvehicle;
 

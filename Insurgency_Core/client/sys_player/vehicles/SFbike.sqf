@@ -25,9 +25,9 @@ clearMagazineCargoGlobal _veh;
 clearitemCargoGlobal _veh;
 
 
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",1];
 
-_veh AddMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855A1_Stanag",5];
+_veh AddMagazineCargoGlobal ["30Rnd_556x45_Stanag",5];
 
 _veh addItemCargoGlobal ["ACE_EntrenchingTool",1];
 _veh addItemCargoGlobal ["ACE_fieldDressing",25];

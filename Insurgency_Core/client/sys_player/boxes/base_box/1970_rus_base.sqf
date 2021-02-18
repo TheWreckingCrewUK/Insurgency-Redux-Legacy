@@ -1,6 +1,6 @@
 
 
-	if((typeOf player) in ["CUP_O_RUS_SpecOps", "CUP_O_RU_Soldier_AR_EMR", "CUP_O_RU_Soldier_AR_VDV_EMR", "CUP_O_RU_Soldier_AT_VDV_EMR", "CUP_O_RU_Soldier_MG_VDV_EMR", "CUP_O_RU_Soldier_EMR", "CUP_O_RU_Crew_VDV_EMR"])then{_magazines = [["rhs_mag_rdg2_white",10], ["CUP_HandGrenade_RGD5",2]];
+	if((typeOf player) in ["CUP_O_RUS_SpecOps", "CUP_O_RU_Soldier_AR_EMR", "CUP_O_RU_Soldier_AR_VDV_EMR", "CUP_O_RU_Soldier_AT_VDV_EMR", "CUP_O_RU_Soldier_MG_VDV_EMR", "CUP_O_RU_Soldier_EMR", "CUP_O_RU_Crew_VDV_EMR"])then{_magazines = [["SmokeShell",10], ["CUP_HandGrenade_RGD5",2]];
 	_items = [["ACE_EarPlugs",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",20],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20],["ACE_packingBandage",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 	
 	player removeItem "ACRE_PRC343";
@@ -11,7 +11,7 @@
 //crewmen
 if((typeOf player) in ["CUP_O_RU_Crew_VDV_EMR"])then{
 	_tmp_magazines = [
-		["rhs_30Rnd_545x39_7N6_AK",10]
+		["CUP_30Rnd_545x39_AK74_plum_M",10]
 	];
 	
 };
@@ -20,7 +20,7 @@ if((typeOf player) in ["CUP_O_RU_Crew_VDV_EMR"])then{
 if((typeOf player) in ["CUP_O_RU_Pilot_VDV_EMR", "CUP_O_RU_Pilot_VDV"])then{
 	
 	_tmp_magazines = [
-		["rhs_30Rnd_545x39_7N6_AK",10]
+		["CUP_30Rnd_545x39_AK74_plum_M",10]
 	];
 	
 };
@@ -29,12 +29,12 @@ if((typeOf player) in ["CUP_O_RU_Pilot_VDV_EMR", "CUP_O_RU_Pilot_VDV"])then{
 //section commander, names don't match
 if((typeOf player) in ["CUP_O_RUS_SpecOps"])then{
 	_tmp_magazines = [
-		["rhs_VOG25",20],
-		["rhs_GRD40_White",10],
-		["rhs_GRD40_Green",10],
-		["rhs_GRD40_Red",10],
-		["rhs_mag_9x18_8_57N181S",30],
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_1Rnd_HE_GP25_M",20],
+		["CUP_1Rnd_SMOKE_GP25_M",10],
+		["CUP_1Rnd_SMOKEGREEN_GP25_M",10],
+		["CUP_1Rnd_SMOKERED_GP25_M",10],
+		["CUP_8Rnd_9x18_Makarov_M",30],
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
     _tmp_items = 
 	[
@@ -45,8 +45,8 @@ if((typeOf player) in ["CUP_O_RUS_SpecOps"])then{
 //autorifleman
 if((typeOf player) in ["CUP_O_RU_Soldier_AR_EMR"])then{
 	_tmp_magazines = [
-		["rhs_45Rnd_545X39_AK_Green",30],
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M",30],
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 };
 
@@ -54,13 +54,13 @@ if((typeOf player) in ["CUP_O_RU_Soldier_AR_EMR"])then{
 //grenadier
 if((typeOf player) in ["CUP_O_RU_Soldier_AR_VDV_EMR"])then{
 	_tmp_weapons = [
-		["rhs_weap_aks74u",1]
+		["CUP_arifle_AKS74U",1]
 	];
 	_tmp_magazines = [
-		["rhs_rpg7_PG7V_mag",20],
-		["rhs_rpg7_OG7V_mag",20],
-		["rhs_mag_9x18_8_57N181S",50],
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_PG7V_M",20],
+		["CUP_OG7_M",20],
+		["CUP_8Rnd_9x18_Makarov_M",50],
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 };
 
@@ -68,9 +68,9 @@ if((typeOf player) in ["CUP_O_RU_Soldier_AR_VDV_EMR"])then{
 //grenadier assistant
 if((typeOf player) in ["CUP_O_RU_Soldier_AT_VDV_EMR"])then{
 	_tmp_magazines = [
-		["rhs_rpg7_PG7V_mag",20],
-		["rhs_rpg7_OG7V_mag",20],
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_PG7V_M",20],
+		["CUP_OG7_M",20],
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 };
 
@@ -78,8 +78,8 @@ if((typeOf player) in ["CUP_O_RU_Soldier_AT_VDV_EMR"])then{
 //senior rifleman
 if((typeOf player) in ["CUP_O_RU_Soldier_MG_VDV_EMR"])then{
 	_tmp_magazines = [
-		["rhs_30Rnd_545x39_AK_green",50],
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_30Rnd_TE1_Green_Tracer_545x39_AK74_plum_M",50],
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 	
 	
@@ -88,14 +88,14 @@ if((typeOf player) in ["CUP_O_RU_Soldier_MG_VDV_EMR"])then{
 //rifleman
 if((typeOf player) in ["CUP_O_RU_Soldier_EMR"])then{
 	_tmp_magazines = [
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 };
 
 //medic
 if((typeOf player) in ["CUP_O_RU_Medic_VDV_EMR"])then{
 	_tmp_magazines = [
-		["rhs_30Rnd_545x39_7N6_AK",50]
+		["CUP_30Rnd_545x39_AK74_plum_M",50]
 	];
 	_tmp_items =
 	[

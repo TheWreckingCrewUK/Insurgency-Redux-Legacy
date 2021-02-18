@@ -1,20 +1,20 @@
 twc_loadout_usaf_helipilot = [
 	//uniform
-	(["rhs_uniform_cu_ocp_1stcav"] call bis_fnc_selectrandom),
+	(["CUP_U_B_USArmy_ACU_OCP"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
 	//helmet
 
-	"rhsusf_hgu56p_visor_green",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["CUP_V_B_PilotVest"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855_Stanag", 2]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 2], ["30Rnd_556x45_Stanag", 2]],
 
 	//backpack
 	"",
@@ -24,11 +24,11 @@ twc_loadout_usaf_helipilot = [
 	[],
 
 	//night kit
-	["rhs_uniform_cu_ocp_1stcav", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["CUP_U_B_USArmy_ACU_OCP", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhs_weap_m4a1", []], ["rhsusf_weap_glock17g4", []]],
+	[["CUP_arifle_M4A1", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -40,7 +40,7 @@ twc_loadout_usaf_helipilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -53,21 +53,21 @@ twc_loadout_usaf_helipilot = [
 ];
 twc_loadout_usaf_crewchief = [
 	//uniform
-	(["rhs_uniform_cu_ocp_1stcav"] call bis_fnc_selectrandom),
+	(["CUP_U_B_USArmy_ACU_OCP"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
 	//helmet
 
-	"rhsusf_hgu56p_visor_mask_green",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["CUP_V_B_PilotVest"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855_Stanag", 2]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 2], ["30Rnd_556x45_Stanag", 2]],
 
 	//backpack
 	"",
@@ -77,11 +77,11 @@ twc_loadout_usaf_crewchief = [
 	[],
 
 	//night kit
-	["rhs_uniform_cu_ocp_1stcav", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["CUP_U_B_USArmy_ACU_OCP", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhs_weap_m4a1", []], ["rhsusf_weap_glock17g4", []]],
+	[["CUP_arifle_M4A1", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -93,7 +93,7 @@ twc_loadout_usaf_crewchief = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -107,21 +107,21 @@ twc_loadout_usaf_crewchief = [
 
 twc_loadout_soar_helipilot = [
 	//uniform
-	(["rhs_uniform_cu_ocp_1stcav"] call bis_fnc_selectrandom),
+	(["CUP_U_B_USArmy_ACU_OCP"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
 	//helmet
 
-	"rhsusf_hgu56p_black",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["CUP_V_B_Ciras_Olive3"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855_Stanag", 5]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 3], ["30Rnd_556x45_Stanag", 5]],
 
 	//backpack
 	"",
@@ -131,11 +131,11 @@ twc_loadout_soar_helipilot = [
 	[],
 
 	//night kit
-	["rhs_uniform_cu_ocp_1stcav", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["CUP_U_B_USArmy_ACU_OCP", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhs_weap_m4a1", []], ["rhsusf_weap_glock17g4", []]],
+	[["CUP_arifle_M4A1", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -147,7 +147,7 @@ twc_loadout_soar_helipilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -161,21 +161,21 @@ twc_loadout_soar_helipilot = [
 
 twc_loadout_soar_crewchief = [
 	//uniform
-	(["rhs_uniform_cu_ocp_1stcav"] call bis_fnc_selectrandom),
+	(["CUP_U_B_USArmy_ACU_OCP"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
 	//helmet
 
-	"rhsusf_hgu56p_visor_mask_black",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["CUP_V_B_Ciras_Olive3"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 3], ["rhs_mag_30Rnd_556x45_M855_Stanag", 5]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 3], ["30Rnd_556x45_Stanag", 5]],
 
 	//backpack
 	"",
@@ -185,11 +185,11 @@ twc_loadout_soar_crewchief = [
 	[],
 
 	//night kit
-	["rhs_uniform_cu_ocp_1stcav", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["CUP_U_B_USArmy_ACU_OCP", "CUP_NVG_GPNVG_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhs_weap_m4a1", []], ["rhsusf_weap_glock17g4", []]],
+	[["CUP_arifle_M4A1", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -201,7 +201,7 @@ twc_loadout_soar_crewchief = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -222,14 +222,14 @@ twc_loadout_baf_helipilot = [
 
 	//helmet
 
-	"rhsusf_hgu56p",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["UK3CB_BAF_V_Pilot_A"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855_Stanag", 2]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 2], ["30Rnd_556x45_Stanag", 2]],
 
 	//backpack
 	"",
@@ -239,11 +239,11 @@ twc_loadout_baf_helipilot = [
 	[],
 
 	//night kit
-	["UK3CB_BAF_U_Smock_MTP", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["UK3CB_BAF_U_Smock_MTP", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["TWC_BAF_L22A2_SUSAT", []], ["rhsusf_weap_glock17g4", []]],
+	[["TWC_BAF_L22A2_SUSAT", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -255,7 +255,7 @@ twc_loadout_baf_helipilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -276,14 +276,14 @@ twc_loadout_baf_crewchief = [
 
 	//helmet
 
-	"rhsusf_hgu56p_visor_mask",
+	"CUP_H_USMC_Helmet_Pilot_visor_mask",
 
 	//vest
 	(["UK3CB_BAF_V_Pilot_A"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["rhs_mag_30Rnd_556x45_M855_Stanag", 2]],
+	[["ACRE_PRC148", 1], ["amp_slingload_CargoSling", 1], ["CUP_17Rnd_9x19_glock17", 2], ["30Rnd_556x45_Stanag", 2]],
 
 	//backpack
 	"",
@@ -293,11 +293,11 @@ twc_loadout_baf_crewchief = [
 	[],
 
 	//night kit
-	["UK3CB_BAF_U_Smock_MTP", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["UK3CB_BAF_U_Smock_MTP", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["TWC_BAF_L22A2_SUSAT", []], ["rhsusf_weap_glock17g4", []]],
+	[["TWC_BAF_L22A2_SUSAT", []], ["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -309,7 +309,7 @@ twc_loadout_baf_crewchief = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855_Stanag", 5], ["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 5], ["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -337,7 +337,7 @@ twc_loadout_baf_jetpilot = [
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2]],
+	[["ACRE_PRC148", 1], ["CUP_17Rnd_9x19_glock17", 2]],
 
 	//backpack
 	"",
@@ -347,11 +347,11 @@ twc_loadout_baf_jetpilot = [
 	[],
 
 	//night kit
-	["UK3CB_BAF_U_HeliPilotCoveralls_Army", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["UK3CB_BAF_U_HeliPilotCoveralls_Army", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhsusf_weap_glock17g4", []]],
+	[["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -363,7 +363,7 @@ twc_loadout_baf_jetpilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -392,7 +392,7 @@ twc_loadout_baf_jtac = [
 
 	//vestitems
 
-	[["ACRE_PRC152", 2], ["rhsusf_mag_17Rnd_9x19_JHP", 2], ["UK3CB_BAF_556_30Rnd", 8], ["UK3CB_BAF_556_30Rnd_T", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
+	[["ACRE_PRC152", 2], ["CUP_17Rnd_9x19_glock17", 2], ["UK3CB_BAF_556_30Rnd", 8], ["UK3CB_BAF_556_30Rnd_T", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_MTP_JTAC_H_A",
@@ -402,11 +402,11 @@ twc_loadout_baf_jtac = [
 	[["UK3CB_BAF_556_30Rnd", 6], ["UK3CB_BAF_556_30Rnd_T", 3], ["CUP_H_PMC_Cap_Back_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
 
 	//night kit
-	["UK3CB_BAF_U_CombatUniform_MTP", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
+	["UK3CB_BAF_U_CombatUniform_MTP", "CUP_NVG_PVS14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
 
 	//weapons
 
-	[["UK3CB_BAF_L85A2_UGL_ELCAN3D", []], ["rhsusf_weap_glock17g4", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
+	[["UK3CB_BAF_L85A2_UGL_ELCAN3D", []], ["CUP_hgun_Glock17", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
 
 	//linkeditems
 
@@ -441,14 +441,14 @@ twc_loadout_usaf_jetpilot = [
 
 	//helmet
 
-	"RHS_jetpilot_usaf",
+	"CUP_H_USMC_Helmet_Pilot",
 
 	//vest
 	(["CUP_V_CDF_CrewBelt"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["rhsusf_mag_17Rnd_9x19_JHP", 2]],
+	[["ACRE_PRC148", 1], ["CUP_17Rnd_9x19_glock17", 2]],
 
 	//backpack
 	"",
@@ -458,11 +458,11 @@ twc_loadout_usaf_jetpilot = [
 	[],
 
 	//night kit
-	["UK3CB_BAF_U_HeliPilotCoveralls_Army", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["UK3CB_BAF_U_HeliPilotCoveralls_Army", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhsusf_weap_glock17g4", []]],
+	[["CUP_hgun_Glock17", []]],
 
 	//linkeditems
 
@@ -474,7 +474,7 @@ twc_loadout_usaf_jetpilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_mag_17Rnd_9x19_JHP", 5]] + twc_cratemagazines)],
+	[["all"], ([["CUP_17Rnd_9x19_glock17", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -489,35 +489,35 @@ twc_loadout_usaf_jetpilot = [
 
 twc_loadout_usaf_jtac = [
 	//uniform
-	(["rhs_uniform_g3_mc"] call bis_fnc_selectrandom),
+	(["CUP_U_CRYE_G3C_M81"] call bis_fnc_selectrandom),
 
 	//uniformitems
 	([["ACRE_PRC148", 1], ["ACE_MapTools", 1]] + twc_loadout_basicuniformitems),
 
 	//helmet
 
-	"rhsusf_opscore_ut_pelt",
+	"CUP_H_OpsCore_Covered_MTP",
 
 	//vest
 	(["CUP_V_B_Ciras_Khaki"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC152", 1], ["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 5], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
+	[["ACRE_PRC152", 1], ["CUP_20Rnd_762x51_B_SCAR", 5], ["CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_TAN_JTAC_H_A",
 
 	//backpackitems
 
-	[["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 6], ["CUP_H_PMC_Cap_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
+	[["CUP_20Rnd_762x51_B_SCAR", 6], ["CUP_H_PMC_Cap_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
 
 	//night kit
-	["rhs_uniform_g3_mc", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
+	["CUP_U_CRYE_G3C_M81", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
 
 	//weapons
 
-	[["twc_mk17_elcan", []], ["rhs_weap_M320", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
+	[["twc_mk17_elcan", []], ["", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
 
 	//linkeditems
 
@@ -529,11 +529,11 @@ twc_loadout_usaf_jtac = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_20Rnd_SCAR_762x51_m80a1_epr", 50], ["rhs_mag_20Rnd_SCAR_762x51_m62_tracer", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	[["all"], ([["CUP_20Rnd_762x51_B_SCAR", 50], ["CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
-	[["all"], [[(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1]] + twc_crateitems],
+	[["all"], [[(selectrandom ["CUP_H_USArmy_Boonie_OCP", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1], [(selectrandom ["CUP_H_USArmy_Boonie_OCP", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1]] + twc_crateitems],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -553,28 +553,28 @@ twc_loadout_usasoc_jtac = [
 
 	//helmet
 
-	"rhsusf_opscore_mc_cover_pelt",
+	"CUP_H_OpsCore_Green",
 
 	//vest
-	(["twc_rhsusf_plateframe_SL_mtp"] call bis_fnc_selectrandom),
+	(["CUP_V_JPC_tlbelt_mc"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC152", 1], ["ItemcTabHCam", 1], ["rhsusf_acc_eotech", 1], ["rhs_mag_30Rnd_556x45_M855A1_PMAG", 5], ["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
+	[["ACRE_PRC152", 1], ["ItemcTabHCam", 1], ["CUP_optic_HoloBlack", 1], ["30Rnd_556x45_Stanag", 5], ["30Rnd_556x45_Stanag_Tracer_Red", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_TAN_JTAC_H_A",
 
 	//backpackitems
 
-	[["rhs_mag_30Rnd_556x45_M855A1_PMAG", 6], ["CUP_H_PMC_Cap_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
+	[["30Rnd_556x45_Stanag", 6], ["CUP_H_PMC_Cap_EP_Grey", 1], ["Laserbatteries", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
 
 	//night kit
-	["CUP_U_CRYEG3_V1", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
+	["CUP_U_CRYEG3_V1", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
 
 	//weapons
 
-	[["twc_m4b2_us_shortdot", []], ["rhs_weap_M320", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
+	[["twc_m4b2_us_shortdot", []], ["", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
 
 	//linkeditems
 
@@ -586,11 +586,11 @@ twc_loadout_usasoc_jtac = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_PMAG", 50], ["rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 50], ["30Rnd_556x45_Stanag_Tracer_Red", 10], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
-	[["all"], [[(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1], [(selectrandom ["rhs_Booniehat_ocp", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1]] + twc_crateitems],
+	[["all"], [[(selectrandom ["CUP_H_USArmy_Boonie_OCP", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1], [(selectrandom ["CUP_H_USArmy_Boonie_OCP", "H_Booniehat_tan", "CUP_H_PMC_EP_Headset", "CUP_H_PMC_Cap_EP_Grey", "CUP_H_PMC_Cap_EP_Tan"]), 1]] + twc_crateitems],
 	
 	//backpacks to remove from crate, backpacks to add
 	
@@ -607,14 +607,14 @@ twc_loadout_ana_jetpilot = [
 
 	//helmet
 
-	"rhs_zsh7a_mike",
+	"CUP_H_RUS_ZSH_Shield_Down",
 
 	//vest
-	(["rhs_vest_commander"] call bis_fnc_selectrandom),
+	(["CUP_V_O_TK_CrewBelt"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC148", 1], ["rhsusf_mag_15Rnd_9x19_FMJ", 2]],
+	[["ACRE_PRC148", 1], ["CUP_15Rnd_9x19_M9", 2]],
 
 	//backpack
 	"",
@@ -624,11 +624,11 @@ twc_loadout_ana_jetpilot = [
 	[],
 
 	//night kit
-	["CUP_U_B_CZ_Pilot_WDL", "rhsusf_ANPVS_14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
+	["CUP_U_B_CZ_Pilot_WDL", "CUP_NVG_PVS14", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["B_IR_Grenade", 6]]],
 
 	//weapons
 
-	[["rhsusf_weap_m9", []]],
+	[["CUP_hgun_M9", []]],
 
 	//linkeditems
 
@@ -640,7 +640,7 @@ twc_loadout_ana_jetpilot = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhsusf_mag_15Rnd_9x19_FMJ", 5]] + twc_cratemagazines)],
+	[["all"], ([["CUP_15Rnd_9x19_M9", 5]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	
@@ -661,28 +661,28 @@ twc_loadout_ana_jtac = [
 
 	//helmet
 
-	"rhsusf_opscore_paint_pelt",
+	"CUP_H_OpsCore_Spray",
 
 	//vest
 	(["twc_oli_spc_squadleader"] call bis_fnc_selectrandom),
 
 	//vestitems
 
-	[["ACRE_PRC152", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5], ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
+	[["ACRE_PRC152", 1], ["30Rnd_556x45_Stanag", 5], ["30Rnd_556x45_Stanag_Tracer_Red", 3], ["HandGrenade", 2], ["UK3CB_BAF_SmokeShell", 2]],
 
 	//backpack
 	"UK3CB_BAF_B_Bergen_OLI_JTAC_H_A",
 
 	//backpackitems
 
-	[["CUP_H_PMC_Cap_EP_Tan", 1], ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 6], ["Laserbatteries", 2], ["rhsusf_mag_15Rnd_9x19_FMJ", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
+	[["CUP_H_PMC_Cap_EP_Tan", 1], ["30Rnd_556x45_Stanag", 6], ["Laserbatteries", 2], ["CUP_15Rnd_9x19_M9", 2], ["1Rnd_HE_Grenade_shell", 10], ["1Rnd_SmokeRed_Grenade_shell", 5], ["1Rnd_SmokeBlue_Grenade_shell", 5], ["1Rnd_SmokeGreen_Grenade_shell", 5]],
 
 	//night kit
-	["CUP_U_B_BDUv2_roll_dirty_M81", "rhsusf_ANPVS_15", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
+	["CUP_U_B_BDUv2_roll_dirty_M81", "CUP_NVG_PVS15_black", [["ACE_Flashlight_KSF1", 1], ["ACE_Chemlight_IR", 6], ["Chemlight_red", 6], ["Chemlight_blue", 6]]],
 
 	//weapons
 
-	[["twc_rhs_weap_m4a1_m203_acog_lazer", []], ["rhsusf_weap_m9", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
+	[["twc_CUP_arifle_M4A1_m203_acog_lazer", []], ["CUP_hgun_M9", []], ["UK3CB_BAF_Soflam_Laserdesignator", []]],
 
 	//linkeditems
 
@@ -694,7 +694,7 @@ twc_loadout_ana_jtac = [
 	
 	//mags to remove from crate, mags to add
 	
-	[["all"], ([["rhs_mag_30Rnd_556x45_M855A1_Stanag", 50], ["rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red", 10], ["rhsusf_mag_15Rnd_9x19_FMJ", 30], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
+	[["all"], ([["30Rnd_556x45_Stanag", 50], ["30Rnd_556x45_Stanag_Tracer_Red", 10], ["CUP_15Rnd_9x19_M9", 30], ["1Rnd_HE_Grenade_shell", 30], ["1Rnd_SmokeRed_Grenade_shell", 30], ["1Rnd_SmokeBlue_Grenade_shell", 30], ["1Rnd_SmokeGreen_Grenade_shell", 30]] + twc_cratemagazines)],
 	
 	//items to remove from crate, mags to add
 	

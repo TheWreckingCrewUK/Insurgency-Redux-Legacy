@@ -135,11 +135,7 @@ player addEventHandler ["Fired", {
 	_suppressors = [
 	"twc_l85_suppressor",
 	"twc_acc_rotex5_grey",
-	"rhsusf_acc_rotex_mp7_desert",
-	"rhsusf_acc_aac_762sd_silencer",
-	"rhsusf_acc_SR25S_d",
 	"twc_acc_nt4_tan",
-	"rhsusf_acc_omega9k"
 	];
 	
 	_hassuppressor = false;
@@ -219,12 +215,8 @@ player addEventHandler ["InventoryClosed", {
 	params ["_unit", "_container"];
 	_suppressors = [
 	"twc_l85_suppressor",
-	"rhsusf_acc_rotex_mp7_desert",
 	"twc_acc_rotex5_grey",
-	"rhsusf_acc_aac_762sd_silencer",
-	"rhsusf_acc_SR25S_d",
 	"twc_acc_nt4_tan",
-	"rhsusf_acc_omega9k"
 	];
 	
 	_hassuppressor = false;

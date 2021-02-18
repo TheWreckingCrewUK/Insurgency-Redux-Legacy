@@ -2,7 +2,6 @@
  
 
 //_vehtype = "twc_M1238A1_M2_socom_d";
-_vehtype = "twc_rhsusf_m1245_m2crows_socom_deploy";
 
 
  
@@ -15,27 +14,6 @@ _title  = "<t color='#ffbf00' size='1.2' shadow='1' shadowColor='#000000' align=
 _spawntext = parsetext (_title + _text1);
 hint _spawntext;
 
-if (twc_wdveh == 1) then {
-	[
-		_veh,
-		["rhs_olive",1], 
-		["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",0,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-	] call BIS_fnc_initVehicle;
-} else {
-	if ((random 1) < 0.2) then {
-		[
-			_veh,
-			["rhs_sofdeploy",1], 
-			["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",1,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-		] call BIS_fnc_initVehicle;
-	} else {
-		[
-			_veh,
-			["rhs_desert",1], 
-			["DoorB",0,"hide_sfammo",0,"hide_rhino",1,"DoorLF",1,"DoorRF",0,"DoorLB",0,"DoorRB",0,"DUKE_Hide",0,"hide_spare",0]
-		] call BIS_fnc_initVehicle;
-	};
-};
 _veh setammocargo 0;
 
 _boxaction = ["deleteCreate","Return Vehicle","",{deleteVehicle this;
@@ -53,7 +31,7 @@ _mult = 1;
 
 _veh AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",6];
 
-_veh AddWeaponCargoGlobal ["rhs_weap_m72a7",1*_mult];
+_veh AddWeaponCargoGlobal ["CUP_launch_M72A6",1*_mult];
 
 _veh AddMagazineCargoGlobal ["1Rnd_HE_Grenade_shell",10*_mult];
 _veh AddMagazineCargoGlobal ["1Rnd_Smoke_Grenade_shell",5*_mult];

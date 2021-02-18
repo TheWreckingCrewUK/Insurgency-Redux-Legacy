@@ -20,10 +20,10 @@ hint _spawntext;
  publicVariable "twc_specvehcount";
  
 
-_class = "rhsusf_m1151_m2crows_usarmy_wd";
+_class = "CUP_B_HMMWV_Crows_M2_NATO_T";
 
 if (twc_wdveh == 0) then {
-	_class = "rhsusf_m1151_m2crows_usarmy_d";
+	_class = "CUP_B_HMMWV_Crows_M2_USA";
 };
  
  _veh = _class createvehicle _spawnpos;  

@@ -1,7 +1,5 @@
 _vehicle = _this select 0;
 
-_excemptlist = ["rhsusf_m1045_d", "rhsusf_m1045_w"];
-
 if(isNil "twc_repairtickets") then{
 	twc_repairtickets = 5;
 	publicvariable "twc_repairtickets";
