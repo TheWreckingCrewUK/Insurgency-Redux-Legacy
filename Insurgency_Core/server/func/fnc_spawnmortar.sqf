@@ -3,7 +3,7 @@ if (true) exitwith {};
 
 //////////
 //spawn a mortar truck kinda near base that players sometimes trip with the onplayerrespawn system
-_mortartruck = "RHS_Ural_Open_Civ_01" createvehicle [0,0,0];
+_mortartruck = "CUP_C_Ural_Open_Civ_03" createvehicle [0,0,0];
 
 //_pos = [getmarkerpos "base",[1000,3500],random 360,0, [1,250], [50,(typeof _mortartruck)]] call SHK_pos;
 
@@ -18,7 +18,7 @@ while {!(_pos inarea maptrg)} do {
 
 _mortartruck setpos _pos;
 
- _mortar = "Rhs_2b14_82mm_ins" createvehicle _pos; 
+ _mortar = "CUP_O_2b14_82mm_TK_INS" createvehicle _pos; 
  
  _mortar attachto [_mortartruck, [-0.053,-2.7,0.6]]; 
  

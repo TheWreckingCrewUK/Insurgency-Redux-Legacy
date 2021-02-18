@@ -18,7 +18,7 @@ _civ setVariable ["twc_isenemy",1, true];
  if ((primaryweapon _civ) != "") exitwith {};
  
 sleep 0.2;
-_weapon = [["rhs_weap_savz61_folded", "rhsgref_20rnd_765x17_vz61"],["rhs_weap_aks74u_folded","rhs_30Rnd_545x39_AK"],["CUP_hgun_Mac10","CUP_30Rnd_45ACP_MAC10_M"],["rhs_weap_makarov_pm","rhs_mag_9x18_8_57N181S"],["rhs_weap_makarov_pm","rhs_mag_9x18_8_57N181S"]];
+_weapon = [["CUP_hgun_SA61", "CUP_20Rnd_B_765x17_Ball_M"],["CUP_arifle_AKS74U","CUP_30Rnd_545x39_AK74_plum_M"],["CUP_hgun_Mac10","CUP_30Rnd_45ACP_MAC10_M"],["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"],["CUP_hgun_Makarov","CUP_8Rnd_9x18_Makarov_M"]];
 _choice = _weapon call BIS_fnc_selectRandom;
 _civ addMagazines [(_choice select 1), 4]; 
 _gun = (_choice select 0);

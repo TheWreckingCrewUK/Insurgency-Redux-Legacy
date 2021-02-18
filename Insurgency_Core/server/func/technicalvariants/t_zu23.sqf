@@ -17,18 +17,11 @@
 */
 params ["_pos", "_group", "_flag"];
 
-_type = selectrandom ["RHS_Ural_Zu23_MSV_01", "CUP_O_Hilux_zu23_TK_INS", "RHS_ZU23_MSV"];
-
-if (_type == "RHS_ZU23_MSV") then {
-	_pos = [_pos, 2000, 50, 10] call BIS_fnc_findOverwatch;
-};
+_type = selectrandom ["CUP_I_Ural_ZU23_TK_Gue", "CUP_O_Hilux_zu23_TK_INS"];
 
 _truck = _type createvehicle _pos; 
 _truck setVehicleLock "LOCKEDPLAYER";
 _truck setfuel 0;
-if (_type == "RHS_Ural_Zu23_MSV_01") then {
-	_truck setobjecttextureglobal [0, "rhsafrf\addons\rhs_a2port_car\ural\data\ural_kabina_civil_co.paa"];
-};
 
 if (_type == "CUP_O_Hilux_zu23_TK_INS") then {
 	_colour = (["White", "Red", "Olive", "Grey", "Black", "Camo", "DarkBlue", "DarkGrey"] call bis_fnc_selectrandom);

@@ -71,8 +71,6 @@ if (_team == "usaf") then {
 	true
 ] call BIS_fnc_initVehicle;
 
-};
-
 
 if (typeof _veh == "ukcw_Gazelle") then {
 

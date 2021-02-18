@@ -215,7 +215,7 @@ if(isNil "enemyTechnical") then{
 
 
 if(isNil "twc_mineType") then{
-	twc_mineType = ["APERSMine", "rhs_mine_ptm1", "rhs_mine_pmn2", "rhs_mine_pfm1", "ATMine"];
+	twc_mineType = ["APERSMine","ATMine"];
 	publicVariable "twc_mineType";
 };
 

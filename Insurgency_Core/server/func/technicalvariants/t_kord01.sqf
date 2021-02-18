@@ -22,7 +22,7 @@ _truck = "CUP_C_Datsun" createvehicle _pos;
 _truck setVehicleLock "LOCKEDPLAYER";
 _truck setfuel 0;
 
-_gun = "rhs_KORD_high_MSV" createvehicle _pos;
+_gun = "CUP_O_KORD_high_TK" createvehicle _pos;
 _gun setVehicleLock "LOCKEDPLAYER";
 _gun attachto [_truck, [0.2,-1.5,0.4]];
 _gun setPos (getpos _gun);

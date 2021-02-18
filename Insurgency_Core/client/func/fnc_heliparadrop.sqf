@@ -8,7 +8,7 @@ if (((getposatl player) select 2) > 50) then {
 	sleep 1;
 
 	waituntil {(time > _time) || (((getposatl player) select 2) < 140)};
-	_para = createVehicle ["rhs_d6_Parachute", [0,0,1000], [], 0, "FLY"];
+	_para = createVehicle ["NonSteerable_Parachute_F", [0,0,1000], [], 0, "FLY"];
 
 	_para setdir (random 360);
 };	

@@ -56,10 +56,10 @@ _houseList = [(worldSize / 2),(worldSize / 2)] nearObjects ["House",(sqrt 2 *(wo
 		_trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} count (crew _x)) > 0)} count thislist) > 0)","[getpos thistrigger, (thistrigger getvariable ['twc_cache', objnull])] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_cache.sqf'",""];
 				diag_log "hoblog cachesetup 58";
 		
-		_x AddMagazineCargoGlobal ["rhs_rpg7_PG7V_mag",random 5];
-		_x AddMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",random 5];
-		_x AddMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",random 10];
-		_x AddMagazineCargoGlobal ["rhs_30Rnd_762x39mm",random 10];
+		_x AddMagazineCargoGlobal ["CUP_PG7V_M",random 5];
+		_x AddMagazineCargoGlobal ["CUP_OG7_M",random 5];
+		_x AddMagazineCargoGlobal ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M",random 10];
+		_x AddMagazineCargoGlobal ["CUP_30Rnd_762x39_AK47_M",random 10];
 		_x AddMagazineCargoGlobal ["IEDLandBig_Remote_Mag",random 2];
 		_x AddMagazineCargoGlobal ["IEDUrbanBig_Remote_Mag",random 2];
 		

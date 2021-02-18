@@ -20,7 +20,7 @@ while{([_pos,1000] call twc_fnc_posNearPlayers) || _pos distance2D (getMarkerPos
 	_pos = [[worldSize/2,worldSize/2,0],[0,5000],[0,360],0] call SHK_pos;
 };
 //Spawning the random helicopter
-_heloString = ["RHS_UH60M","UK3CB_BAF_Wildcat_Ah1_CAS_8A","CUP_B_UH1Y_UNA_USMC"] call bis_fnc_selectRandom;
+_heloString = ["CUP_B_UH60M_US","UK3CB_BAF_Wildcat_Ah1_CAS_8A","CUP_B_UH1Y_UNA_USMC"] call bis_fnc_selectRandom;
 _helo = _heloString createVehicle _pos;
 _helo setFuel 0;
 _helo setHit ["motor",1];

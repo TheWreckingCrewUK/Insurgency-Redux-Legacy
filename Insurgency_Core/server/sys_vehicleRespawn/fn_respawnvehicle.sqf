@@ -8,7 +8,7 @@ if ((count _respawnInfo) == 0) exitwith {
 	diag_log "no respawninfo, exiting";
 };
 
-if {(count((ASLToATL (_respawnInfo select 1)) nearobjects ["all", 4]) > 0)} exitwith {
+if ((count((ASLToATL (_respawnInfo select 1)) nearobjects ["all", 4]) > 0)) exitwith {
 	[_veh] call twc_fnc_addvehtorespawnlist;
 };
 
