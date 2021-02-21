@@ -19,7 +19,7 @@ _textmgmt  = "";
  //#include "membernews.sqf";
  //only do the management include if the player is management, so that it only CTD's management if the mission has been built without the file
   if ([player] call twc_core_fnc_ismanagement) then {
- #include "managementnews.sqf";
+ //#include "managementnews.sqf";
  };
  _news = parsetext (_title + _text1 + _titlemem + _textmem + _titlemgmt + _textmgmt);
  
