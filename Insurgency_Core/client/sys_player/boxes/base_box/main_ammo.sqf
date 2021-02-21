@@ -14,7 +14,7 @@
 				This reduces players lag as it no longer fills every 240 seconds.
 */ 
 
-_weapons = [["twc_L5A4_white",1], ["ACE_Flashlight_Maglite_ML300L",1]];
+_weapons = [["ACE_Flashlight_Maglite_ML300L",1]];
 _magazines = [["UK3CB_BAF_SmokeShell",10], ["UK3CB_BAF_SmokeShellYellow",5], ["UK3CB_BAF_SmokeShellRed",5], ["UK3CB_BAF_SmokeShellGreen",5], ["UK3CB_BAF_SmokeShellPurple",5], ["UK3CB_BAF_SmokeShellBlue",5], ["UK3CB_BAF_SmokeShellOrange",5], ["Chemlight_green",20], ["Chemlight_yellow",20], ["Chemlight_red",20], ["Chemlight_blue",20],["ACE_Chemlight_IR",10],["twc_l5a4_w",15]];
 _items = [["ACE_EarPlugs",1],["ACE_MapTools",1],["ACE_Flashlight_KSF1", 1],["ACE_HandFlare_White",5],["ACE_HandFlare_Green",5],["ACE_CableTie",20],["ACE_fieldDressing",40],["ACE_morphine",20],["ACE_elasticBandage",20],["ACE_quikclot",20], ["ACE_tourniquet", 4],["ACE_SpraypaintGreen",1],["Toolkit",0],["ACE_DefusalKit",1],["ACE_EntrenchingTool",1],["twc_l5a4_w",25]];
 twc_crateweapons = [];

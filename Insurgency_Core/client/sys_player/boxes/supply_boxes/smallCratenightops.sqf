@@ -18,8 +18,6 @@ clearMagazineCargoGlobal _box;
 clearitemCargoGlobal _box;
 
 //Weapons
-_box AddWeaponCargoGlobal ["twc_L5A4_white",4];
-
 
 //supplies
 //_box AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",1];
