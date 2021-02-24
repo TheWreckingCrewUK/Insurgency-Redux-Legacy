@@ -128,7 +128,7 @@ twc_playerbfaeh = {
 
 twc_suppressgasblowback = ppEffectCreate ["DynamicBlur", 401];
 
-player addEventHandler ["Fired", { 
+/*player addEventHandler ["Fired", { 
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 	if ((vehicle player) != player) exitwith {};
 	if ((_weapon != (primaryweapon player)) && (_weapon != (handgunweapon player))) exitwith {};
@@ -259,4 +259,4 @@ player addEventHandler ["InventoryClosed", {
 	hint "Civs are more likely to help you when you're not wearing a helmet but you can be instakilled";
 	player setvariable ["twc_hasheadgearmessage", true];
 	
-}];
+}];*/
