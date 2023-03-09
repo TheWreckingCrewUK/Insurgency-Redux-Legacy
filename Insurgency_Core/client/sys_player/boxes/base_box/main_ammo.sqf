@@ -2800,7 +2800,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 };
 
 //BAF Armour
- if (typeOf vehicle player == "TWC_Infantry_Modern_Regular_Woodland_Vehicle_Crew" , "TWC_Infantry_2020_Regular_Woodland_Vehicle_Crew") then {
+ if (typeOf vehicle player == "TWC_Infantry_Modern_Regular_Woodland_Vehicle_Crew", "TWC_Infantry_2020_Regular_Woodland_Vehicle_Crew") then {
     _tmp_weapons =
     [
 		["CUP_hgun_Glock17",1]
