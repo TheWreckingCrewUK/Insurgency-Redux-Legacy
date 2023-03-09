@@ -1,5 +1,5 @@
 
- if ((typeOf vehicle player) in ["TWC_Modern_US_Army_SectionCommander"]) then {
+ if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_SquadLeader"]) then {
     _tmp_weapons =
     [
         ["twc_m4_acog_lazer",1],
@@ -35,8 +35,8 @@
 		["ACE_IR_Strobe_Item",1]
 	];
 };
-//USMC Team Leader
- if ((typeOf vehicle player) in ["TWC_Modern_US_Army_TeamLeader"]) then {
+//US Army Team Leader
+ if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_TeamLeader"]) then {
     _tmp_weapons =
     [
         ["twc_m4_320_lds_lazer",1],
@@ -86,7 +86,7 @@
 };
 
 //USMC breacher
-  if ((typeOf vehicle player) in ["TWC_Modern_US_Army_Rifleman"]) then {
+  if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_Rifleman"]) then {
     _tmp_weapons =
     [
         ["twc_m4_acog_lazer",1],
@@ -118,7 +118,7 @@
 };
 
 //USMC Rifleman
-  if ((typeOf vehicle player) in ["TWC_Modern_US_Army_Grenadier"]) then {
+  if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_Grenadier"]) then {
     _tmp_weapons =
     [
         ["twc_m4_203_acog_lazer",1]
@@ -151,7 +151,7 @@
 
 
 //USMC Auto Rifleman
-  if ((typeOf vehicle player) in ["TWC_Modern_US_Army_AutomaticRifleman"]) then {
+  if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_AutoRifleman"]) then {
     _tmp_weapons =
     [
         ["twc_m249_mgo_lazer",1]
@@ -179,7 +179,7 @@
 };
 
 //USMC Medic
-  if ((typeOf vehicle player) in ["TWC_Modern_US_Army_Medic"]) then {
+  if ((typeOf vehicle player) in ["TWC_Infantry_USA_Modern_Medic"]) then {
     _tmp_weapons =
     [
         ["twc_m4_acog_lazer",1]
