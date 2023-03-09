@@ -628,7 +628,7 @@ if (typeOf vehicle player in ["2000_UKSF_Medic"]) then {
 };
 
 //BAF Section Leader
-if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_SectionCommander", "TWC_Infantry_Modern_COIN_Dismounted_Woodland_SectionCommander"]) then {
+if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squadleader_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -673,7 +673,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF Rifleman Pointman
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_Pointman", "TWC_Infantry_2020_COIN_Dismounted_Woodland_Pointman"]) then {
+ if (typeOf vehicle player in ["Modern_British_Pointman", "Modern_British_Pointman_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -715,7 +715,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF Grenadier
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_Grenadier", "TWC_Infantry_2020_COIN_Dismounted_Woodland_Grenadier"]) then {
+ if (typeOf vehicle player in ["Modern_British_Grenadier_COIN", "Modern_British_Grenadier_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_UGL_ELCAN3D",1],
@@ -759,7 +759,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF Automatic Rifleman
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_Autorifleman"]) then {
+ if (typeOf vehicle player in ["Modern_British_Autorifleman_COIN", "Modern_British_Autorifleman_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L110A2_ELCAN3D",1],
@@ -795,7 +795,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF 2IC
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_2iC", "TWC_Infantry_2020_COIN_Dismounted_Woodland_2iC"]) then {
+ if (typeOf vehicle player in ["Modern_British_2IC_COIN", "Modern_British_2IC_COIN_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -857,7 +857,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF Machine Gunner
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_MG", "TWC_Infantry_2020_COIN_Dismounted_Woodland_MG"]) then {
+ if (typeOf vehicle player in ["Modern_British_Machinegunner", "Modern_British_Machinegunner_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L7A2",1],
@@ -889,7 +889,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
  
 //BAF Marksman
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_Marksman", "TWC_Infantry_2020_COIN_Dismounted_Woodland_Marksman"]) then {
+ if (typeOf vehicle player in ["Modern_British_Marksman_COIN", "Modern_British_Marksman_COIN_Light"]) then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L129A1_FGrip_Bipod",1],
@@ -959,7 +959,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 	];
 };
 
- if (typeOf vehicle player in ["TWC_Infantry_Modern_COIN_Dismounted_Woodland_Platoon_Medic", "TWC_Infantry_2020_COIN_Dismounted_Woodland_Platoon_Medic"]) then {
+ if (typeOf vehicle player in ["Modern_British_Medic", "Modern_British_Medic_Light"]) then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -1087,7 +1087,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 
 
 //BAF Sniper
- if (typeOf vehicle player == "TWC_Infantry_Modern_COIN_Woodland_Sniper", "TWC_Infantry_2020_COIN_Woodland_Sniper") then {
+ if (typeOf vehicle player == "Modern_British_Sniper_coin") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L107A1",1],
@@ -1128,7 +1128,7 @@ if (typeOf vehicle player in ["TWC_Infantry_2020_COIN_Dismounted_Woodland_Sectio
 };
 
 //BAF Spotter
- if (typeOf vehicle player == "TWC_Infantry_Modern_COIN_Woodland_Spotter", "TWC_Infantry_2020_COIN_Woodland_Spotter") then {
+ if (typeOf vehicle player == "Modern_British_Spotter_coin") then {
     _tmp_weapons =
     [
 		["ACE_Vector",1],
@@ -1335,7 +1335,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 };
 
 //FST Forward Observer
- if (typeOf vehicle player == "TWC_Infantry_Modern_COIN_Woodland_FO" , "TWC_Infantry_2020_COIN_Woodland_FO") then {
+ if (typeOf vehicle player == "Modern_British_FSTForwardObserver") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L85A2_UGL_ELCAN3D",1],
@@ -1418,7 +1418,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 };
 
 //Fac
- if (typeOf vehicle player == "TWC_Infantry_Modern_COIN_Woodland_FAC", "TWC_Infantry_2020_COIN_Woodland_FAC") then {
+ if (typeOf vehicle player == "Modern_British_FAC") then {
     _tmp_weapons =
     [
 		["UK3CB_BAF_L85A2_RIS_ELCAN3D",1],
@@ -1529,7 +1529,7 @@ if (typeOf vehicle player == "Modern_British_FSTCommander") then {
 if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_SectionCommander_Desert"])
 */
 //USMC Squad Leader
- if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_SquadLeader", "TWC_Infantry_USMC_Modern_SquadLeader_W"]) then {
+ if ((typeOf vehicle player) in ["Modern_USMC_Squadleader", "Modern_USMC_Squadleader_d"]) then {
     _tmp_weapons =
     [
         ["twc_CUP_arifle_M4A1_m203_acog_lazer",1],
@@ -1574,7 +1574,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	];
 };
 //USMC Team Leader
- if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_TeamLeader", "TWC_Infantry_USMC_Modern_TeamLeader_W"]) then {
+ if ((typeOf vehicle player) in ["Modern_USMC_Teamleader", "Modern_USMC_Teamleader_d"]) then {
     _tmp_weapons =
     [
         ["twc_CUP_arifle_M4A1_m203_acog_lazer",1],
@@ -1627,7 +1627,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 //USMC breacher
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_Breacher", "TWC_Infantry_USMC_Modern_Breacher_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Breacher", "Modern_USMC_Breacher_d"]) then {
     _tmp_weapons =
     [
         ["CUP_arifle_M4A1_ACOG_Laser",1],
@@ -1662,7 +1662,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 //USMC Rifleman
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_Rifleman", "TWC_Infantry_USMC_Modern_Rifleman_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Rifleman", "Modern_USMC_Rifleman_d"]) then {
     _tmp_weapons =
     [
         ["CUP_arifle_M4A1_ACOG_Laser",1],
@@ -1702,7 +1702,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 
 
 //USMC Auto Rifleman
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_AutoRifleman", "TWC_Infantry_USMC_Modern_AutoRifleman_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Autorifleman", "Modern_USMC_Autorifleman_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m249_pip_L_mgo_lazer",1],
@@ -1737,7 +1737,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 //USMC Auto Rifleman Assistant
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_AAR", "TWC_Infantry_USMC_Modern_AAR_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_AsstAutorifleman", "Modern_USMC_AsstAutorifleman_d"]) then {
     _tmp_weapons =
     [
         ["CUP_arifle_M4A1_ACOG_Laser",1],     
@@ -1769,7 +1769,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 	];
 };
 //USMC Machine Gunner
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_MG", "TWC_Infantry_USMC_Modern_MG_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_MachineGunner", "Modern_USMC_MachineGunner_d"]) then {
     _tmp_weapons =
     [
         ["twc_rhs_weap_m240B_mgo_lazer",1],
@@ -1798,7 +1798,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 //USMC Machine Gunner Assistant
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_AMG", "TWC_Infantry_USMC_Modern_AMG_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_AsstMachineGunner", "Modern_USMC_AsstMachineGunner_d"]) then {
     _tmp_weapons =
     [
         ["CUP_arifle_M4A1_ACOG_Laser",1],
@@ -1834,7 +1834,7 @@ if((typeOf player) in ["1990_RM_British_SectionCommander_Mix","1990_British_Sect
 };
 
 //USMC Medic
-  if ((typeOf vehicle player) in ["TWC_Infantry_USMC_Modern_Medic", "TWC_Infantry_USMC_Modern_Medic_W"]) then {
+  if ((typeOf vehicle player) in ["Modern_USMC_Medic", "Modern_USMC_Medic_d"]) then {
     _tmp_weapons =
     [
         ["CUP_arifle_M4A1_ACOG_Laser",1],
@@ -2693,8 +2693,8 @@ if (typeOf vehicle player == "twc_nac_interpreter") then {
 
 
 
-//BAF PilotTWC_Infantry_2020_Regular_Woodland_Helicopter_Pilot
- if (typeOf vehicle player == "TWC_Infantry_Modern_Regular_Woodland_Helicopter_Pilot", "TWC_Infantry_2020_Regular_Woodland_Helicopter_Pilot") then {
+//BAF Pilot
+ if (typeOf vehicle player == "Modern_British_heliPilot") then {
     _tmp_weapons =
     [
         ["UK3CB_BAF_L22A2",1],
@@ -2800,7 +2800,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 };
 
 //BAF Armour
- if (typeOf vehicle player == "TWC_Infantry_Modern_Regular_Woodland_Vehicle_Crew" , "TWC_Infantry_2020_Regular_Woodland_Vehicle_Crew") then {
+ if (typeOf vehicle player == "Modern_British_VehicleCrew") then {
     _tmp_weapons =
     [
 		["CUP_hgun_Glock17",1]
@@ -2825,7 +2825,7 @@ if (typeOf vehicle player == "Modern_British_Logitech") then {
 };
 
 //BAF Armour
- if (typeOf vehicle player == "TWC_Infantry_Modern_Regular_Woodland_Vehicle_Commander", "TWC_Infantry_2020_Regular_Woodland_Vehicle_Commander") then {
+ if (typeOf vehicle player == "Modern_British_VehicleCommander") then {
     _tmp_weapons =
     [
         ["ACE_Vector",0],
