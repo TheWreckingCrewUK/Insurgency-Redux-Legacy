@@ -2,22 +2,60 @@
 [arsenalAmmoBox,["FirstAidKit","HandGrenade","SmokeShell","SmokeShellRed","SmokeShellGreen","SmokeShellYellow","SmokeShellPurple","SmokeShellPurple","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_red","Chemlight_yellow","Chemlight_blue"],false] call BIS_fnc_addVirtualMagazineCargo;
 [arsenalAmmoBox,["ItemMap","ItemCompass","ItemWatch","NVGoggles"],false] call Bis_fnc_addVirtualItemCargo;
 
+//British Section
 if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squadleader_Light"]) then {
 	execVM "client\arsenal\BAF_SC.sqf";
 };
-if (!isNil "armour2" && {player == armour2}) then {
-	execVM "client\arsenal\armour_cr.sqf";
-	[armour1 customChat [joinCustomChat, format["%1 has joined as Armour Crewman", name armour2]]] remoteExec ["bis_fnc_call", armour1, false];
+if (typeOf vehicle player in ["Modern_British_Pointman", "Modern_British_Pointman_Light"]) then {
+	execVM "client\arsenal\BAF_PM.sqf";
 };
-if (!isNil "armour3" && {player == armour3}) then {
-	execVM "client\arsenal\armour_cr.sqf";
-	[armour1 customChat [joinCustomChat, format["%1 has joined as Armour Crewman", name armour3]]] remoteExec ["bis_fnc_call", armour1, false];
+if (typeOf vehicle player in ["Modern_British_Grenadier_COIN", "Modern_British_Grenadier_COIN_Light"]) then {
+	execVM "client\arsenal\BAF_Gren.sqf";
+};
+if (typeOf vehicle player in ["Modern_British_Autorifleman_COIN", "Modern_British_Autorifleman_COIN_Light"]) then {
+	execVM "client\arsenal\BAF_AR.sqf";
+};
+if (typeOf vehicle player in ["Modern_British_Machinegunner", "Modern_British_Machinegunner_Light"]) then {
+	execVM "client\arsenal\BAF_MG.sqf";
+};
+if (typeOf vehicle player in ["Modern_British_Marksman_COIN", "Modern_British_Marksman_COIN_Light"]) then {
+	execVM "client\arsenal\BAF_MK.sqf";
+};
+if (typeOf vehicle player in ["Modern_British_2IC_COIN", "Modern_British_2IC_COIN_Light"]) then {
+	execVM "client\arsenal\BAF_2IC.sqf";
+};
+if (typeOf vehicle player in ["Modern_British_Medic", "Modern_British_Medic_Light"]) then {
+	execVM "client\arsenal\BAF_Med.sqf";
 };
 
-if (!isNil "helo1" && {player == helo1}) then {
-	execVM "client\arsenal\helo.sqf";
+//ANA Section
+if (typeOf vehicle player in ["twc_ana_commander"]) then {
+	execVM "client\arsenal\ANA_SC.sqf";
 };
-if (!isNil "helo2" && {player == helo2}) then {
+if (typeOf vehicle player in ["twc_ana_base", "twc_ana_mg_as"]) then {
+	execVM "client\arsenal\ANA_RF.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_rifleman_at"]) then {
+	execVM "client\arsenal\ANA_AT.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_mg"]) then {
+	execVM "client\arsenal\ANA_MG.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_marksman"]) then {
+	execVM "client\arsenal\ANA_MK.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_subcommander"]) then {
+	execVM "client\arsenal\ANA_2IC.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_interpreter"]) then {
+	execVM "client\arsenal\ANA_Terp.sqf";
+};
+if (typeOf vehicle player in ["twc_ana_medic"]) then {
+	execVM "client\arsenal\ANA_Med.sqf";
+};
+
+
+helo2" && {player == helo2}) then {
 	execVM "client\arsenal\helo.sqf";
 };
 if (!isNil "helo3" && {player == helo3}) then {
