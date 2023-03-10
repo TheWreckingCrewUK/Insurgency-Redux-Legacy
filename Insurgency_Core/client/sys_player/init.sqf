@@ -18,29 +18,6 @@ if ((getPlayerUID player) in twc_approvedenemies) then {
 	systemchat "You are whitelisted to the enemy switcher. You can use it when you are occupying a blank unit at the bottom of the rolesheet and there are more than 13 people online to become an aggressor";
 };
 
-//list of leaders that can do attachments without the slot system
-_goodeggs = [
-"76561198078276836", //pbthunder
-"76561198018609662", //sarge
-"76561198050512686", //patty
-"76561198034730503", //cuck
-"76561198053960783", //crow
-"76561198042520910", //aleyboy
-"76561198035067970", //martingw
-"76561198157816526", //nubben
-"76561198020915407", //vieira
-"76561198005456546", //bosenator
-"76561197996981388", //spine
-"76561198030665694" //hobbs
-
-];
-if ((getPlayerUID player) in _goodeggs) then {
-	systemchat "You have commanded sections in the past. You can now form attachments without being affected by the total server playercount. Individual attachment size restrictions still apply";
-} else {
-	systemchat "You have not taken command of a section recently. Players that have done so can form attachments without playercount restrictions";
-};
-
-
 ["ace_interactMenuOpened", {_forwardbase = getmarkerpos "respawn_west_forwardbase"; if (!((getplayeruid player) in twc_approvedenemies)) exitwith {};if ((player distance _forwardbase) < 300) then {if (!("ACE_Fortify" in ((uniformitems player) + (vestitems player) + (backpackitems player)))) then {[player, "ACE_Fortify"] call twc_core_fnc_additem;};} else {while {("ACE_Fortify" in (items player))} do {player removeitem "ACE_Fortify";};};}] call CBA_fnc_addEventHandler;
 
 ["acex_fortify_objectPlaced", {player removeitem "ACE_Fortify";}] call CBA_fnc_addEventHandler;
