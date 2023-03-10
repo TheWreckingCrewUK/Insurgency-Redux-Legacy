@@ -38,7 +38,7 @@ class CfgIdentities
 	};
 	class vip_5
 	{
-		name		= "Robert Paulson";
+		name		= "Rik";
 		nameSound	= "Givens"; // Arma 3 only!
 		face		= "whiteHead_02";
 		glasses		= "None";
