@@ -1,5 +1,5 @@
-[arsenalAmmoBox,["UK3CB_BAF_L85A2_RIS_ELCAN3D_TAN","UK3CB_BAF_L131A1","ACE_Vector"],false] call BIS_fnc_addVirtualWeaponCargo;
+[arsenalAmmoBox,["UK3CB_BAF_L85A2_RIS_ELCAN3D_TAN","UK3CB_BAF_L85A3","UK3CB_BAF_L131A1","ACE_Vector"],false] call BIS_fnc_addVirtualWeaponCargo;
 [arsenalAmmoBox,["UK3CB_BAF_556_30Rnd", "UK3CB_BAF_556_30Rnd_T","UK3CB_BAF_9_17Rnd","UK3CB_BAF_762_L42A1_20Rnd","UK3CB_BAF_762_L42A1_20Rnd_T","CUP_8Rnd_B_Beneli_74Slug","CUP_8Rnd_B_Beneli_74Pellets","UK3CB_BAF_762_100Rnd_T","UK3CB_BAF_556_200Rnd_T","1Rnd_HE_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeRed_Grenade_shell"],false] call BIS_fnc_addVirtualMagazineCargo;
-[arsenalAmmoBox,["UK3CB_BAF_V_Osprey_SL_B","UK3CB_BAF_H_Mk7_Scrim_ESS_B","UK3CB_BAF_H_Mk7_Camo_D","ACE_salineIV"_500,"ACE_salineIV","ACE_personalAidKit","ACE_surgicalKit"],false] call Bis_fnc_addVirtualItemCargo;
+[arsenalAmmoBox,["UK3CB_BAF_V_Osprey_SL_B","UK3CB_BAF_H_Mk7_Scrim_ESS_B","UK3CB_BAF_H_Mk7_Camo_D","ACE_salineIV"_500,"ACE_salineIV","ACE_personalAidKit","ACE_surgicalKit","RKSL_optic_LDS","cup_acc_llm_black","UK3CB_underbarrel_acc_grippod","UK3CB_BAF_Bayonet_L3A1"],false] call Bis_fnc_addVirtualItemCargo;
 [arsenalAmmoBox,["UK3CB_BAF_V_Osprey_Rifleman_F"],false] call Bis_fnc_addVirtualBackpackCargo;
 "ACE_salineIV"_500,"ACE_salineIV","ACE_personalAidKit","ACE_surgicalKit",
