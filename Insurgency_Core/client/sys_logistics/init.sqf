@@ -4,12 +4,12 @@
 [arsenalAmmoBox,["ACE_EarPlugs","ACRE_PRC343","ACE_CableTie","ACE_fieldDressing","ACE_packingBandage","ACE_elasticBandage","ACE_quikclot","ACE_morphine","ACE_epinephrine","ACE_tourniquet","ACE_splint","ACE_MapTools","ACE_SpareBarrel_Item","B_IR_Grenade","HandGrenade","SmokeShell","SmokeShellRed","SmokeShellGreen","SmokeShellYellow","SmokeShellPurple","SmokeShellPurple","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_red","Chemlight_yellow","Chemlight_blue"],false] call BIS_fnc_addVirtualMagazineCargo;
 [arsenalAmmoBox,["ItemMap","ItemCompass","ItemWatch","twc_nightvision_gen3"],false] call Bis_fnc_addVirtualItemCargo;
 
-//Role specific items, defined in .sqf files e.g BAF_SC.sqf
+//Role specific items, defined in .sqf files e.g BAF_SC.sqf. Crates that can be spawned by each role are also defined here.
 
 //British Section
 if (typeOf vehicle player in ["Modern_British_Squadleader", "Modern_British_Squadleader_Light", "Modern_British_FSTCommander", "Modern_Artillery_Commander"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\BAF_SC.sqf";
-	_UKaction = ["SpawnsmallUKCrate","Spawn Small German Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrateUK.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_UKaction = ["SpawnsmallUKCrate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrateUK.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
@@ -37,9 +37,23 @@ if (typeOf vehicle player in ["Modern_British_Marksman_COIN", "Modern_British_Ma
 };
 if (typeOf vehicle player in ["Modern_British_2IC_COIN", "Modern_British_2IC_COIN_Light"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\BAF_2IC.sqf";
+	_UKaction = ["SpawnsmallUKCrate","Spawn Small UK Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCrateUK.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction3 = ["spawn50","Spawn .50 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\50calammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction5 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction6 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 if (typeOf vehicle player in ["Modern_British_Medic", "Modern_British_Medic_Light"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\BAF_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 
 //ANA Section
@@ -66,6 +80,8 @@ if (typeOf vehicle player in ["twc_ana_interpreter"]) then {
 };
 if (typeOf vehicle player in ["twc_ana_medic"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\ANA_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 
 //Bundeswehr Section
@@ -79,7 +95,9 @@ if (typeOf vehicle player in ["Modern_ger_commander", "Modern_ger_commander_d"])
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
-	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction6 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 if (typeOf vehicle player in ["Modern_ger_Base", "Modern_ger_Base_d"]) then {
@@ -99,6 +117,8 @@ if (typeOf vehicle player in ["Modern_ger_subcommander", "Modern_ger_subcommande
 };
 if (typeOf vehicle player in ["Modern_ger_medic", "Modern_ger_medic_d"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\GER_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 //US Army
 if (typeOf vehicle player in ["TWC_Modern_US_Army_SectionCommander"]) then {
@@ -121,6 +141,8 @@ if (typeOf vehicle player in ["TWC_Modern_US_Army_TeamLeader"]) then {
 };
 if (typeOf vehicle player in ["TWC_Modern_US_Army_Medic"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\US_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 //USMC Squad
 if (typeOf vehicle player in ["Modern_USMC_Squadleader", "Modern_USMC_Squadleader_d"]) then {
@@ -143,11 +165,13 @@ if (typeOf vehicle player in ["Modern_USMC_Teamleader", "Modern_USMC_Teamleader_
 };
 if (typeOf vehicle player in ["Modern_USMC_Medic", "Modern_USMC_Medic_d"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\USMC_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 //Polish Land Forces Squad
 if (typeOf vehicle player in ["Modern_pol_commander", "Modern_pol_commander_d"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\POL_SC.sqf";
-	_UKaction = ["SpawnsmallanaCreate","Spawn Small Polish Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratepol.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_UKaction = ["SpawnsmallPolCreate","Spawn Small Polish Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallcratepol.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction,true] call ace_interact_menu_fnc_addActionToClass;
 	_UKaction3 = ["spawn50","Spawn Night Ops Box","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallCratenightops.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
@@ -155,12 +179,10 @@ if (typeOf vehicle player in ["Modern_pol_commander", "Modern_pol_commander_d"])
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction3,true] call ace_interact_menu_fnc_addActionToClass;
 	_UKaction4 = ["spawn762","Spawn 7.62 Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\762ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction4,true] call ace_interact_menu_fnc_addActionToClass;
-	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	_UKaction5 = ["spawn40","Spawn 40mm Ammo","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\40ammo.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions", "ammospawn", "ammospawnheavy"],_alphaaction6,true] call ace_interact_menu_fnc_addActionToClass;
+	_UKaction6 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
 	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;
-	_UKaction5 = ["SpawnmedCreate","Spawn ZSU GAZ","",{execvm "insurgency_core\client\sys_player\vehicles\specveh_pol.sqf"},{(count units group player) >= 6}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
-		_artaction3 = ["SpawnrepCreate","Spawn Marksman Rifle","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\marksmancratepol.sqf"},{(count units group player) >= 8}] call ace_interact_menu_fnc_createAction;
-	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_artaction3,true] call ace_interact_menu_fnc_addActionToClass;
 };
 if (typeOf vehicle player in ["Modern_pol_Base", "Modern_pol_Base_d"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\POL_RF.sqf";
@@ -179,6 +201,8 @@ if (typeOf vehicle player in ["Modern_pol_subcommander", "Modern_pol_subcommande
 };
 if (typeOf vehicle player in ["Modern_pol_medic", "Modern_pol_medic_d"]) then {
 	execVM "Insurgency_Core\client\sys_logistics\POL_Med.sqf";
+	_UKaction5 = ["SpawnmedCreate","Spawn Medical Crate","",{execvm "insurgency_core\client\sys_player\boxes\supply_boxes\smallMedical.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_UKaction5,true] call ace_interact_menu_fnc_addActionToClass;	
 };
 
 //Attachments
