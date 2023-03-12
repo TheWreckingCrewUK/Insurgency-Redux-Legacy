@@ -1,3 +1,4 @@
+execVM "Insurgency_Core\client\sys_logistics\init.sqf";
 #include "func\init.sqf";
 [player] call twc_fnc_buildmagarray_set;
 #include "sys_cleanup\init.sqf";

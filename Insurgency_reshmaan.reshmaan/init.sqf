@@ -3,6 +3,16 @@ vehicleRespawnDistancePlayers = 1500;
 vehicleRespawnDistanceForwardBase = 300;
 vehicleRespawnDelay = 6000;
 
+//SHK POS
+_script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
+waitUntil {scriptDone _script};
+if(isServer)then{
+	#include "Insurgency_Core\server\arsenal\arsenal.sqf";
+};
+
+//setting for arsenal or TWC ammobox
+useArsenal = 1;
+
 twc_fnc_vehicleRespawn = compile preprocessfilelinenumbers "Insurgency_Core\server\sys_vehicleRespawn\fnc_vehicleRespawn.sqf";
 
 // list of IEDs and Spoof Objects
