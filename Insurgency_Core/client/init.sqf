@@ -9,7 +9,6 @@ execVM "Insurgency_Core\client\sys_logistics\init.sqf";
 #include "sys_basedefence\init.sqf";
 #include "sys_intel\init.sqf";
 #include "interactions\init.sqf";
-//#include "sys_ragdoll\init.sqf";
 "iedRestrictionZone" setMarkerAlpha 0;
 
 //also run in server init
