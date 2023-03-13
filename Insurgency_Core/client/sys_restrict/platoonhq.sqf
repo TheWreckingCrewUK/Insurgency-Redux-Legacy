@@ -1,19 +1,3 @@
-
-
-if (twc_skipsectionsystem == 1) exitwith {};
-
-systemchat "Starting Deployment";
-
-_groups = [];
-
-_snowflakes = 0;
-
-
-if(isNil "twc_campaignmode") then{
-	twc_campaignmode = 0;
-	publicVariable "twc_campaignmode";
-};
-
 //now find out what groups we're dealing with. looking for regular infantry groups and adding exemptions for any non-infantry groups that are allowed at low playercounts, like snipers, heli pilots and quartermasters
 {if (_x == leader _x) then {
 	
