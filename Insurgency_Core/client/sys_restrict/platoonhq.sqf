@@ -29,15 +29,6 @@
 //quick sleep because instring is a bit slow
 sleep 3;
 
-
-if ((count _groups) > 2) exitwith {if (twc_campaignmode == 0) then {
-	twc_pltcmd = player;
-	publicVariable "twc_pltcmd";
-	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";
-};};
-
-
-
 //now use the standard spawn restriction system to let the player know what's up
 systemchat "gonna restrict you now";
 cutText ["", "Black", 0.001];
