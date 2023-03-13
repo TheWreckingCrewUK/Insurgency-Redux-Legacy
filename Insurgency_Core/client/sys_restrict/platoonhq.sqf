@@ -96,10 +96,3 @@ _snowflakes = 0;
 	
 cutText ["","Black IN",5];
 player forceWalk false;
-
-
-if (twc_campaignmode == 0) then {
-	twc_pltcmd = player;
-	publicVariable "twc_pltcmd";
-	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";
-};
