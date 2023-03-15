@@ -8,6 +8,9 @@ _script = execVM "Insurgency_Core\SHK_pos\shk_pos_init.sqf";
 waitUntil {scriptDone _script};
 if(isServer)then{
 	#include "Insurgency_Core\server\arsenal\arsenal.sqf";
+	call compile preprocessFile "Insurgency_Core\server\HAS\userConfig.sqf";
+	call compile preprocessFile "Insurgency_Core\server\HAS\HAS_fnc.sqf";
+	[] call RYD_HAS_Init;
 };
 
 //setting for arsenal or TWC ammobox
