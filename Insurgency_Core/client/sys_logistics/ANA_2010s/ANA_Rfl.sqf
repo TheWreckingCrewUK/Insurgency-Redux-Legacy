@@ -9,6 +9,8 @@
 [arsenalAmmoBox,
 	[
 		"CUP_30Rnd_762x39_AK47_M",
+		"CUP_OG7_M",
+		"CUP_PG7V_M",
 		"SmokeShell",
 		"HandGrenade"
 	],false] call BIS_fnc_addVirtualMagazineCargo;

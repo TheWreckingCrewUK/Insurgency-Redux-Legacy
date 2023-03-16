@@ -51,6 +51,7 @@
 		"ACE_SpareBarrel",
 		"UK3CB_underbarrel_acc_grippod",
 		"ACE_wirecutter",
+		"ACRE_PRC343",
 		"UK3CB_BAF_Bayonet_L3A1"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	

@@ -10,6 +10,7 @@
 		"CUP_launch_M136",
 		"CUP_launch_M72A6",
 		"RW_Launch_ASM_AS_Loaded",
+		"twc_nightvision_gen3",
 		"TWC_L128A1_Eotech"
 	],false] call BIS_fnc_addVirtualWeaponCargo;
 
@@ -35,6 +36,7 @@
 		"UK3CB_BAF_Eotech",
 		"cup_acc_llm_black",
 		"UK3CB_underbarrel_acc_grippod",
+		"ACRE_PRC343",
 		"UK3CB_BAF_Bayonet_L3A1"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	

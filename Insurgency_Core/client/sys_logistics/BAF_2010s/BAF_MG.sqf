@@ -27,6 +27,7 @@
 		"UK3CB_BAF_V_Osprey_MG_A",
 		"UK3CB_BAF_H_Mk7_Scrim_ESS_B",
 		"UK3CB_BAF_H_Mk7_Scrim_F",
+		"ACRE_PRC343",
 		"UK3CB_BAF_H_Mk7_Camo_D"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	

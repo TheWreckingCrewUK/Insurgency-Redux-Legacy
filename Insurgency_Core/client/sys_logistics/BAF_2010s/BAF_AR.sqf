@@ -29,6 +29,7 @@
 		"UK3CB_BAF_H_Mk7_Camo_D",
 		"RKSL_optic_LDS",
 		"cup_acc_llm_black",
+		"ACRE_PRC343",
 		"UK3CB_underbarrel_acc_grippod"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	
