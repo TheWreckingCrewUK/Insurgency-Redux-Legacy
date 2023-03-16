@@ -141,8 +141,8 @@ RYD_HAS_CAS_reammo = true;//if true, designated CAS helicopter will have ammunit
 //sentences for "no voice chat" option (will be chosen random line from each array):
 RYD_HAS_sent_Request = //at airlift request, by the caller, %1 refers to caller's name (RYD_HAS_CallerName)
 	[
-	"HQ, this is %1. We need heli transport, how copy?",
-	"HQ, this is %1. Airlift requested, over."
+	"Hello Sunray, this is TWC Platoon. We need heli transport, over",
+	"Hello Sunray, this is TWC Platoon. Airlift requested, over."
 	];
 	
 RYD_HAS_sent_Request_sc = //at supply drop request, by the caller, %1 refers to caller's name (RYD_HAS_CallerName)
@@ -159,8 +159,8 @@ RYD_HAS_sent_Request_cas = //at CAS request, by the caller, %1 refers to caller'
 	
 RYD_HAS_sent_Confirmation = //transport assignment confirmation, by HQ
 	[
-	"This is HQ, heli en route, over.",
-	"This is HQ, airlift inbound, sit tight, over."
+	"Sunray, Starlight en route, over.",
+	"Sunray, Starlight inbound, sit tight, over."
 	];
 	
 RYD_HAS_sent_Confirmation_sc = //supply drop assignment confirmation, by HQ
@@ -177,8 +177,8 @@ RYD_HAS_sent_Confirmation_cas = //CAS assignment confirmation, CAS coords reques
 	
 RYD_HAS_sent_SignalReq = //when heli is close enough to request a signal, by pilot
 	[
-	"We're closing. Mark your position!",
-	"We're inbound. Signal your position!"
+	"This is Sunray. Mark your position!",
+	"This is Sunray. Signal your position!"
 	];
 	
 RYD_HAS_sent_SignalReq_sc = //when heli is close enough to request a signal, by pilot (supply drop)
@@ -243,7 +243,7 @@ RYD_HAS_sent_CASEnd_cas = //when CAS heli is completed
 		
 RYD_HAS_sent_AirliftCancelled = //by caller to pilot, at airlift cancelling
 	[
-	"This is %1. Abort the airlift."
+	"This is TWC Platoon. Abort the airlift. Over"
 	];
 	
 RYD_HAS_sent_AirliftCancelled_sc = //by caller to pilot, at supply drop cancelling
