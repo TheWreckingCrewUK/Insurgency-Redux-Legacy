@@ -237,8 +237,8 @@ if (typeOf vehicle player in ["Modern_British_FAC", "Modern_British_FSTForwardOb
 	execVM "Insurgency_Core\client\sys_logistics\BAF_2010s\BAF_FAC.sqf";
 };
 if (typeOf vehicle player in ["Modern_British_VehicleCrew"]) then {
-	execVM "Insurgency_Core\client\sys_logistics\BAF_2010s\BAF_VComm.sqf";
+	execVM "Insurgency_Core\client\sys_logistics\BAF_2010s\BAF_VCrew.sqf";
 };
 if (typeOf vehicle player in ["Modern_British_VehicleCommander"]) then {
-	execVM "Insurgency_Core\client\sys_logistics\BAF_2010s\BAF_VCrew.sqf";
+	execVM "Insurgency_Core\client\sys_logistics\BAF_2010s\BAF_VComm.sqf";
 };

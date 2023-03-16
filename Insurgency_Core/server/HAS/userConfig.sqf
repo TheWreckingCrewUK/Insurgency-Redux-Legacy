@@ -57,6 +57,7 @@ RYD_HAS_SignalClassesDay = //parent classes of ammo shot, that will be considere
 	"1Rnd_SmokeBlue_Grenade_shell",
 	"1Rnd_SmokeRed_Grenade_shell",
 	"1Rnd_SmokePurple_Grenade_shell",
+	"1Rnd_SmokeYellow_Grenade_shell",
 	"FlareBase"
 	];
 	
