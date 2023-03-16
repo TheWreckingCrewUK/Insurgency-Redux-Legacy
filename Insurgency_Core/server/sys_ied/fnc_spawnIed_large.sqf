@@ -25,6 +25,7 @@ if ((_position distance (getmarkerpos "base")) < 2000) exitwith {};
 _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], 1, "NONE"];
+if (isNull _ied) then { systemChat "fuck";
 _ied setDir (random 360);
 
 if (!isnil "_vehicle") then {_ied attachto [_vehicle]};
