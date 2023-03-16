@@ -54,7 +54,7 @@ _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} count (crew _x)) > 0)} count thislist) > 0) && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_ied.sqf'",""];
 
 
-_ied addEventHandler ["Killed", {
+_ied addMPEventHandler ["MPKilled", { 
 	params ["_exp", "_killer", "_instigator", "_useEffects"];
 	
 	

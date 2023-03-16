@@ -53,7 +53,7 @@ _trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} co
 
 
 
-_ied addEventHandler ["Killed", {
+_ied addMPEventHandler ["MPKilled", {
 	params ["_exp", "_killer", "_instigator", "_useEffects"];
 	
 	
