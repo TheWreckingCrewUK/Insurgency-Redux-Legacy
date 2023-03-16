@@ -18,22 +18,17 @@
 //Equipment
 [arsenalAmmoBox,
 	[
-		"CUP_U_B_USArmy_ACU_OCP",
-		"CUP_V_B_IOTV_OCP_SL_USArmy",
-		"CUP_V_B_IOTV_OCP_Grenadier_USArmy",
-		"CUP_V_B_IOTV_OCP_SAW_USArmy",
-		"CUP_V_B_IOTV_OCP_Rifleman_USArmy",
-		"CUP_V_B_IOTV_OCP_Medic_USArmy",
-		"CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP",
-		"CUP_H_USArmy_Boonie_OCP",
-		"CUP_optic_CompM4",
-        "CUP_optic_HoloBlack",
-        "CUP_acc_ANPEQ_15_Black",
+		"CUP_U_B_USMC_FROG1_DMARPAT",
+		"CUP_H_LWHv2_MARPAT_des",
+		"CUP_V_B_Eagle_SPC_SL",
+		"CUP_V_B_Eagle_SPC_Rifleman",
+		"CUP_V_B_Eagle_SPC_Corpsman",
+		"CUP_V_B_Eagle_SPC_MG",
 		"ACRE_PRC148"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	
 //Backpacks
 [arsenalAmmoBox,
 	[
-		"CUP_B_US_IIID_OCP"
+		"CUP_B_AssaultPack_Coyote"
 	],false] call Bis_fnc_addVirtualBackpackCargo;
