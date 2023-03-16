@@ -7087,8 +7087,8 @@ RYD_HAS_doFire =
 												_tPos3B = _tPos3 getPos [2,_toDir - 90];
 												_tPos3B set [2,0.5];
 												
-												if ((not (terrainIntersect [_vehPos,_tPos2]) and {not (lineIntersects [ATLtoASL _vehPos, ATLtoASL _tPos3, _veh, _tgt])}); or 
-													{not (terrainIntersect [_vehPos,_tPos2A]) and {not (lineIntersects [ATLtoASL _vehPos, ATLtoASL _tPos3A, _veh, _tgt])}; or 
+												if ((not (terrainIntersect [_vehPos,_tPos2]) and {not (lineIntersects [ATLtoASL _vehPos, ATLtoASL _tPos3, _veh, _tgt])}) or 
+													{not (terrainIntersect [_vehPos,_tPos2A]) and {not (lineIntersects [ATLtoASL _vehPos, ATLtoASL _tPos3A, _veh, _tgt])} or 
 														{not (terrainIntersect [_vehPos,_tPos2B]) and {not (lineIntersects [ATLtoASL _vehPos, ATLtoASL _tPos3B, _veh, _tgt])}}}) then																					
 													{
 													if (_wasMiss) then
