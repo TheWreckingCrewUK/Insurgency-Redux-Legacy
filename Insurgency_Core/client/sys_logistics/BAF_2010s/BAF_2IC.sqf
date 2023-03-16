@@ -6,6 +6,7 @@
 		"UK3CB_BAF_L85A3_UGL",
 		"CUP_hgun_Glock17",
 		"UK3CB_BAF_L131A1",
+		"twc_nightvision_gen3",
 		"ACE_Vector"
 	],false] call BIS_fnc_addVirtualWeaponCargo;
 
@@ -23,12 +24,18 @@
 		"UK3CB_BAF_556_200Rnd",
 		"UK3CB_BAF_762_100Rnd_T",
 		"UK3CB_BAF_556_200Rnd_T",
+		"SmokeShell",
+		"SmokeShellBlue",
+		"SmokeShellGreen",
+		"SmokeShellRed",
+		"SmokeShellOrange",
+		"SmokeShellPurple",
+		"SmokeShellYellow",
+		"F_Signal_Green",
+		"F_Signal_Red",
+		"HandGrenade",
 		"1Rnd_HE_Grenade_shell",
-		"1Rnd_Smoke_Grenade_shell",
-		"1Rnd_SmokeGreen_Grenade_shell",
-		"1Rnd_SmokeRed_Grenade_shell",
-		"1Rnd_SmokeBlue_Grenade_shell",
-		"1Rnd_SmokeRed_Grenade_shell"
+		"1Rnd_Smoke_Grenade_shell"
 	],false] call BIS_fnc_addVirtualMagazineCargo;
 	
 //Equipment

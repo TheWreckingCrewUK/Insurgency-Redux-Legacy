@@ -4,6 +4,7 @@
 		"UK3CB_BAF_L7A2",
 		"UK3CB_BAF_Tripod",
 		"CUP_hgun_Glock17",
+		"twc_nightvision_gen3",
 		"UK3CB_BAF_L131A1"
 	],false] call BIS_fnc_addVirtualWeaponCargo;
 	
@@ -14,7 +15,9 @@
 		"ACE_SpareBarrel",
 		"CUP_hgun_Glock17",
 		"CUP_17Rnd_9x19_glock17",
-		"UK3CB_BAF_9_17Rnd"
+		"UK3CB_BAF_9_17Rnd",
+		"SmokeShell",
+		"HandGrenade"
 	],false] call BIS_fnc_addVirtualMagazineCargo;
 
 //Equipment

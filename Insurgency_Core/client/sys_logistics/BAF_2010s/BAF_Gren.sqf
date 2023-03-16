@@ -1,15 +1,15 @@
 //Weapons, Binocular Devices etc.
 [arsenalAmmoBox,
 	[
-		"UK3CB_BAF_L85A2_RIS_ELCAN3D_TAN",
-		"UK3CB_BAF_L85A3",
+		"UK3CB_BAF_L85A2_UGL_ELCAN3D",
 		"CUP_hgun_Glock17",
 		"UK3CB_BAF_L131A1",
-		"ACE_VMM3",
-		"launch_NLAW_F",
-		"CUP_launch_M136",
+		"UK3CB_BAF_L85A3_UGL",
 		"CUP_launch_M72A6",
-		"TWC_L128A1_Eotech"
+		"CUP_launch_M136",
+		"RW_Launch_ASM_AS_Loaded",
+		"twc_nightvision_gen3",
+		"ACE_Vector"
 	],false] call BIS_fnc_addVirtualWeaponCargo;
 
 //Ammunition, Grenades, Etc
@@ -19,27 +19,28 @@
 		"UK3CB_BAF_556_30Rnd_T",
 		"UK3CB_BAF_9_17Rnd",
 		"CUP_17Rnd_9x19_glock17",
-		"CUP_8Rnd_B_Beneli_74Slug",
-		"CUP_8Rnd_B_Beneli_74Pellets"
+		"1Rnd_HE_Grenade_shell",
+		"UGL_FlareWhite_F",
+		"SmokeShell",
+		"HandGrenade",
+		"1Rnd_Smoke_Grenade_shell"
 	],false] call BIS_fnc_addVirtualMagazineCargo;
 
 //Equipment
 [arsenalAmmoBox,
 	[
 		"UK3CB_BAF_H_Boonie_MTP_PRR",
-		"twc_warriorvest_dcs",
+		"UK3CB_BAF_V_Osprey_Grenadier_B",
 		"UK3CB_BAF_H_Mk7_Scrim_ESS_B",
 		"UK3CB_BAF_H_Mk7_Camo_D",
 		"RKSL_optic_LDS",
-		"UK3CB_BAF_Eotech",
 		"cup_acc_llm_black",
 		"UK3CB_underbarrel_acc_grippod",
 		"UK3CB_BAF_Bayonet_L3A1"
 	],false] call Bis_fnc_addVirtualItemCargo;
 	
-//Backpacks
+//Backpacks	
 [arsenalAmmoBox,
 	[
-		"UK3CB_BAF_B_Bergen_MTP_PointMan_L_A",
-		"UK3CB_BAF_B_Bergen_MTP_Rifleman_XL_A"
+		"UK3CB_BAF_B_Bergen_MTP_Rifleman_H_B"
 	],false] call Bis_fnc_addVirtualBackpackCargo;
