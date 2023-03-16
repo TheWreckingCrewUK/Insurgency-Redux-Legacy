@@ -6,10 +6,7 @@
 //to add new units to the RYD_HAS_STT pool run this code when no airlift is pending: [newUnit1,newUnit2,newUnit3] call RYD_HAS_NewUnits;
 
 //User Config///////////////////////////////////////////////////////////////
-RYD_HAS_STT = //names of the units to be transported
-	[
-	leader1
-	];
+RYD_HAS_STT = allPlayers - entities "HeadlessClient_F"; 
 	
 RYD_HAS_Limit = -1;//uses limit of airlift support. Set negative value for unlimited uses
 RYD_HAS_RadioReq = "";//calls available, if any assigned unit's item (including weapons in use and backpack) classname contains this string. Leave empty for no item restriction.
