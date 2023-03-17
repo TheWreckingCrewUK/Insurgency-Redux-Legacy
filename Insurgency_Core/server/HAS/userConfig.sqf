@@ -1,7 +1,7 @@
 //Hermes Airlift Services by Rydygier
 
 //RYD_HAS_Chopper - fixed name for an helicopter vehicle to be used. 
-//RYD_HAS_Base - fixed name of HQ Game Logic object
+//RYD_HAS_Base - fixed name of SUNRAY Game Logic object
 //to add new helicopter run this code when no airlift is pending, after assigning the crew for new helicopter: myNewHeliWithCrewName call RYD_HAS_NewChopper;
 //to add new units to the RYD_HAS_STT pool run this code when no airlift is pending: [newUnit1,newUnit2,newUnit3] call RYD_HAS_NewUnits;
 
@@ -12,24 +12,23 @@ RYD_HAS_Limit = -1;//uses limit of airlift support. Set negative value for unlim
 RYD_HAS_RadioReq = "";//calls available, if any assigned unit's item (including weapons in use and backpack) classname contains this string. Leave empty for no item restriction.
 RYD_HAS_VoiceChat = false;//if there should be played kbTell sentences (if available). If false - sidechat text sentences will be used instead (no voice, but better coverage). Ignored for supply drop - text chat only
 RYD_HAS_whenInside = true;//if new airlift task should begin also when there is no airlift pending and at least one RYD_HAS_STT unit get in RYD_HAS_Chopper
-RYD_HAS_CallerName = "";//name of the unit calling for airlift. Leave empty string for default: actual unit's name
+RYD_HAS_CallerName = "TWC Platoon";//name of the unit calling for airlift. Leave empty string for default: actual unit's name
 RYD_HAS_AddHints = false;//if additional hint messsages should be displayed
 RYD_HAS_SignalSearchRadius = 150;//how far around call position heli should search for proper signal to land. Avoid too big values (CPU heavy)
 RYD_HAS_signalTimeLimit = 600;//how long (seconds) helicopter should loiter waiting for the signal before task fail/RTB (set 0 for unlimited)
 RYD_HAS_AutoInOut = true;//if all RYD_HAS_STT units should be sent to embark/disembark RYD_HAS_Chopper automatically. Doesn't affect fast roping, which is always automatic
 RYD_HAS_RemoveAtLimit = true;//if ability to call airlift should be permanently removed from RYD_HAS_STT units after limit of call is reached. If false - this action will be only hidden and will show up, if calls limit raised
 RYD_HAS_ForceDescent = false;//should additional code enforce heli descent at last landing stage at destination until all disembark. May be useful, if heli's AI tend to go up too early. Use only, if necessary.
-RYD_HAS_AlternativeLanding = true;//experimental, scripted solution instead of vanilla getin/getout landings at pickup and disembark spots
+RYD_HAS_AlternativeLanding = false;//experimental, scripted solution instead of vanilla getin/getout landings at pickup and disembark spots
 RYD_HAS_UseSupportsMenu = false;//if false = mouse actions will be used to call transport, supply, to cancel request or to change flight ceiling. When true - these actions will be available via supports menu (0-8). Destination choice actions will be always under mouse action menu. 
 RYD_HAS_IgnoreAbilityCheck = false;//if true, in mouse actions variant there will be no check, if heli is able to lift given container before accepting the task. 
 RYD_HAS_CruisingSpeed = 400;//maximal expected cruising speed for helicopters. Set below 10 for unlimited cruising speed and disabling slowing down at turning.
-RYD_HAS_ContourFlightMode = false;//if enabled, new, lowest flight ceiling is added: "contour flight", where heli will try to fly as low, as possible.
-RYD_HAS_RespawnHelis = -1;//if positive, destroyed/immobilized HAS helicopter will be after 60 seconds replaced by new one, placed, where destroyed was placed when was added to HAS. Old one will be deleted along with the crew. Value represents number of respawns. 0 - disabled, -1 - unlimited
+RYD_HAS_RespawnHelis = 0;//if positive, destroyed/immobilized HAS helicopter will be after 60 seconds replaced by new one, placed, where destroyed was placed when was added to HAS. Old one will be deleted along with the crew. Value represents number of respawns. 0 - disabled, -1 - unlimited
 
-RYD_HAS_FastReady = false;//if true, helicopter will be ready for another task at begining of RTB, not at the end of it. 
+RYD_HAS_FastReady = true;//if true, helicopter will be ready for another task at begining of RTB, not at the end of it. 
 
 RYD_HAS_Switch_Taxi = true;//global switch for troops transportation support availability
-RYD_HAS_Switch_Supply = false;//global switch for supply drops support availability
+RYD_HAS_Switch_Supply = true;//global switch for supply drops support availability
 RYD_HAS_Switch_CAS = false;//global switch for close air support availability
 
 RYD_HAS_addJIPs = true;//if true, JIP-ing players will automatically get access to HAS calls
@@ -60,13 +59,14 @@ RYD_HAS_SignalClassesDay = //parent classes of ammo shot, that will be considere
 	
 RYD_HAS_SignalClassesNight = //parent classes of ammo shot, that will be considered as proper position marker for pick up spot. Leave empty if no signal should be required - night
 	[
-	"B_IR_Grenade",
 	"FlareBase"
+	//"F_Signal_Green",
+	//"F_Signal_Red"
 	];
 	
 RYD_HAS_SignReqDst = 1000;//2D distance in meters from the position of the calling unit, at which inbound helicopter will ask for LZ mark signal 
 
-RYD_HAS_ChopperLvl = 30;//optimal chopper's flight ceiling
+RYD_HAS_ChopperLvl = 80;//optimal chopper's flight ceiling
 
 RYD_HAS_SafetyMargin = 10;//part of the radius for flat and empty area search for safe landing. Biiger - safer. Lower - closer to the chosen position. 10 - reasonable minimum (default). 8 - slightly risky. Big, negative number (like -100) - maximal accuracy and collision risk. 	
 //RYD_HAS_FastRoping = true;//if fast rope should be used for disembarking instead of landing at destination. Does not apply to the disembarking at base (RTB option)
@@ -87,8 +87,8 @@ RYD_HAS_RopeAttachPoints = ////optional setting of rope attachement points in mo
 	//[heli2,[[-5,0,0],[5,0,0]]]
 	];
 	
-RYD_HAS_SupplyDrop_SlingLoad = false;//should the supply call be performed using slingload. If not - parachute drop will be used instead.
-RYD_HAS_SupplyDrop_onMapClick = true;//set to true to mark drop position with map click. If false - by default usual smoke/flare etc. signal required by the pilot, unless no signal is defined - in that case supply will be dropped at caller's initial position
+RYD_HAS_SupplyDrop_SlingLoad = true;//should the supply call be performed using slingload. If not - parachute drop will be used instead.
+RYD_HAS_SupplyDrop_onMapClick = false;//set to true to mark drop position with map click. If false - by default usual smoke/flare etc. signal required by the pilot, unless no signal is defined - in that case supply will be dropped at caller's initial position
 RYD_HAS_SupplyDrop_attachFlareAndSmoke = true;//if landed supply container should be marked with light and smoke
 RYD_HAS_SupplyDrop_Arsenal = false;//if true, Virtual Arsenal access will be added to the supply box
 
@@ -96,11 +96,11 @@ RYD_HAS_SupplyDrop_Arsenal = false;//if true, Virtual Arsenal access will be add
 RYD_HAS_SupplyCall_ContainerClass = "B_supplyCrate_F";//in fact, can be also any vehicle, but heli must be able to lift its weight. 
 RYD_HAS_SupplyCall_ContainerPositions = //where, in relation to appointed heli ([x-axis (meters),y-axis (metes),z-axis (will be reduced to ground level)]), supply box should be spawned (area should be optimally free of obstacles and, for slingload mode: ahead of the heli, not closer, than 50 meters from it, reasonably flat and accessible from above). Leave empty for default - somewhere safe ahead of each of appointed helis. 
 	[
-	//[heli1,[0,80,0]],
+	[heli1,[0,80,0]]
 	//[heli2,[0,80,0]]
 	];
 
-RYD_HAS_SupplyCall_MagCount = -12;//amount of each compatible magazine per each piece of weaponry used by chosen units. Use negative number to randomize amount of each from 0 to positive opposition of this number. 
+RYD_HAS_SupplyCall_MagCount = 20;//amount of each compatible magazine per each piece of weaponry used by chosen units. Use negative number to randomize amount of each from 0 to positive opposition of this number. 
 
 RYD_HAS_SupplyCall_AddBackPack = 
 	[
@@ -138,44 +138,44 @@ RYD_HAS_CAS_reammo = true;//if true, designated CAS helicopter will have ammunit
 //sentences for "no voice chat" option (will be chosen random line from each array):
 RYD_HAS_sent_Request = //at airlift request, by the caller, %1 refers to caller's name (RYD_HAS_CallerName)
 	[
-	"Hello Sunray, this is TWC Platoon. We need heli transport, over",
-	"Hello Sunray, this is TWC Platoon. Airlift requested, over."
+	"SUNRAY, this is %1. Request heli transport, Over",
+	"SUNRAY, this is %1. Airlift requested, over."
 	];
 	
 RYD_HAS_sent_Request_sc = //at supply drop request, by the caller, %1 refers to caller's name (RYD_HAS_CallerName)
 	[
-	"HQ, this is %1. We need the supplies, how copy?",
-	"HQ, this is %1. Supplies airlift requested, over."
+	"SUNRAY, this is %1. Request resupply, Over",
+	"SUNRAY, this is %1. Supplies airlift requested, over."
 	];
 	
 RYD_HAS_sent_Request_cas = //at CAS request, by the caller, %1 refers to caller's name (RYD_HAS_CallerName)
 	[
-	"HQ, this is %1. We need CAS, how copy?",
-	"HQ, this is %1. Immediate CAS requested, over."
+	"SUNRAY, this is %1. CAS Requested, Over?",
+	"SUNRAY, this is %1. Immediate CAS requested, over."
 	];
 	
-RYD_HAS_sent_Confirmation = //transport assignment confirmation, by HQ
+RYD_HAS_sent_Confirmation = //transport assignment confirmation, by SUNRAY
 	[
-	"Sunray, Starlight en route, over.",
-	"Sunray, Starlight inbound, sit tight, over."
+	"This is SUNRAY, heli en route, over.",
+	"This is SUNRAY, airlift inbound, sit tight, over."
 	];
 	
-RYD_HAS_sent_Confirmation_sc = //supply drop assignment confirmation, by HQ
+RYD_HAS_sent_Confirmation_sc = //supply drop assignment confirmation, by SUNRAY
 	[
-	"This is HQ, heli en route, over.",
-	"This is HQ, airlift inbound, sit tight, over."
+	"This is SUNRAY, heli en route, over.",
+	"This is SUNRAY, airlift inbound, sit tight, over."
 	];
 	
-RYD_HAS_sent_Confirmation_cas = //CAS assignment confirmation, CAS coords request by HQ
+RYD_HAS_sent_Confirmation_cas = //CAS assignment confirmation, CAS coords request by SUNRAY
 	[
-	"This is HQ, gunship ready, provide CAS coordinates, over.",
-	"This is HQ, CAS heli awaits, transmit target position, over."
+	"This is SUNRAY, gunship ready, provide CAS coordinates, over.",
+	"This is SUNRAY, CAS heli awaits, transmit target position, over."
 	];
 	
 RYD_HAS_sent_SignalReq = //when heli is close enough to request a signal, by pilot
 	[
-	"This is Sunray. Mark your position!",
-	"This is Sunray. Signal your position!"
+	"We're closing. Mark your position!",
+	"We're inbound. Signal your position!"
 	];
 	
 RYD_HAS_sent_SignalReq_sc = //when heli is close enough to request a signal, by pilot (supply drop)
@@ -240,7 +240,7 @@ RYD_HAS_sent_CASEnd_cas = //when CAS heli is completed
 		
 RYD_HAS_sent_AirliftCancelled = //by caller to pilot, at airlift cancelling
 	[
-	"This is TWC Platoon. Abort the airlift. Over"
+	"This is %1. Abort the airlift."
 	];
 	
 RYD_HAS_sent_AirliftCancelled_sc = //by caller to pilot, at supply drop cancelling
@@ -294,12 +294,12 @@ RYD_HAS_sent_Accomplished_sc = //after supply drop, by pilot
 	
 RYD_HAS_sent_Destroyed = //at heli destroyed or unable to fly due to damage
 	[
-	"This is HQ, heli is gone, I repeat, heli is gone.",
-	"This is HQ, we lost helicopter."
+	"This is SUNRAY, heli is gone, I repeat, heli is gone.",
+	"This is SUNRAY, we lost helicopter."
 	];
 	
 RYD_HAS_sent_Destroyed_sc = //at heli destroyed or unable to fly due to damage (supply drop)
 	[
-	"This is HQ, heli is gone, I repeat, heli is gone.",
-	"This is HQ, we lost helicopter."
+	"This is SUNRAY, heli is gone, I repeat, heli is gone.",
+	"This is SUNRAY, we lost helicopter."
 	];
