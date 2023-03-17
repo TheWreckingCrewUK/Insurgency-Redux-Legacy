@@ -29,7 +29,7 @@
 		"CUP_V_B_GER_PVest_Trop_RFL",
 		"CUP_H_Ger_M92_Cover_Trop",
 		"CUP_U_B_GER_Tropentarn_1",
-		"cup_optic_g36optics15x",1],
+		"cup_optic_g36optics15x",
         "cup_optic_g36optics_holo",
         "cup_optic_g36optics",
 		"ACRE_PRC148"
