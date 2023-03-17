@@ -11,10 +11,7 @@ _me = player;
 if ((faction player == "ana_units") || ((side player) == east)) then {
 [_me, ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]call bis_fnc_selectrandom] remoteExec ["setFace", 0, _me] 
 };
-if ((side player) == east) then {
-	player setVariable ["twc_isenemy",1, true];
-	[player] call ([twc_loadout_insurgent_rifleman,twc_loadout_insurgent_rifleman,twc_loadout_insurgent_medic,twc_loadout_insurgent_grenadier,twc_loadout_insurgent_sniper,twc_loadout_insurgent_MG,twc_loadout_insurgent_RPG] call bis_fnc_selectrandom);
-};
+
 /*
 _nobackpack = getNumber (configFile >> "cfgVehicles" >> (typeOf player) >> "twc_nobackpack");
 
@@ -30,55 +27,6 @@ if (!isnil "_nobackpack") then {
 */
 
 [player, false] execvm "insurgency_core\client\sys_player\vehicledrop.sqf";
-
-if (!(["70", twc_missionname] call BIS_fnc_inString)) then {
-if (!((backpack player) == "")) then {
-	_playerbackpack = [(configFile >> "CfgVehicles" >> typeof player), "backpack", ""] call BIS_fnc_returnConfigEntry;
-	_unit = player;
-	
-	_conplayerload = [(configFile >> "CfgVehicles" >> _playerbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
-		
-	_playerload = missionnamespace getvariable ["twc_maxbagload", _conplayerload];
-
-	if (!((backpack player) == (_playerbackpack))) then {
-			
-		if (((backpack player) isKindOf ["twc_dpm_belt", configFile >> "CfgVehicles"]) || ((backpack player) isKindOf ["CUP_B_ACRScout_m95", configFile >> "CfgVehicles"])) exitwith {
-			_unit allowsprint true;
-		};
-		if ((_playerload == 0) || ((side player) == east)) then {
-			_unit allowsprint false;
-			//hint "This Role is unable to fight with a Backpack. You cannot Sprint";
-		};
-		
-		
-
-		_newbackpack = backpack player;
-		
-		_newload = [(configFile >> "CfgVehicles" >> _newbackpack), "maximumload", 0] call BIS_fnc_returnConfigEntry;
-		
-		if (_newload < (130)) then {
-			_unit allowsprint true;
-		} else {
-		
-		if (_newload > (_playerload * 1.1)) then {
-			//hint "This Backpack is bigger that what this role is used to fighting with. You are unable to Sprint";
-			_unit allowsprint false;
-		};
-			
-		if (_newload < (_playerload * 1.1)) then {
-			_unit allowsprint true;
-		};
-		};
-	};
-};
-} else {
-	[] spawn {
-		sleep 5;
-		{
-			if ("PRC343" in _x) then {player removeItem  _x};
-		} foreach ((vestitems player) + (uniformitems player) + (backpackitems player));
-	};
-};
 
 [] spawn {
 	waituntil {(!(isnil "twc_missionname"))};
@@ -448,8 +396,6 @@ if ((daytime < ((_suntime select 0) - 0.8)) || (daytime > ((_suntime select 1) -
 
 if (time > 200) then {[] spawn twc_fnc_enemyspawnpos;};
 
-
- 
  _newstextold = profilenamespace getvariable ["twc_newstext", ""];
  _newstextnew = missionnamespace getvariable ["twc_newstext", ""];
  if (!(str _newstextold == str _newstextnew)) then {

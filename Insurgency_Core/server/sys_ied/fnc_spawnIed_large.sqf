@@ -25,6 +25,7 @@ if ((_position distance (getmarkerpos "base")) < 2000) exitwith {};
 _ied = "Arma is Retarded";
 // Create visible explosive object
 _ied = createVehicle [_iedType, _position, [], 1, "NONE"];
+if (isNull _ied) then { systemChat "fuck" };
 _ied setDir (random 360);
 
 if (!isnil "_vehicle") then {_ied attachto [_vehicle]};
@@ -53,7 +54,7 @@ _trg2 setTriggerTimeout [_randtime,_randtime,_randtime, false];
 _trg2 setTriggerStatements ["(({(({((_x getvariable ['twc_isterp', 0]) == 1)} count (crew _x)) > 0)} count thislist) > 0) && (count (thistrigger nearobjects ['pipebombbase', 1])>0)","[getpos thistrigger] execvm 'Insurgency_Core\server\sys_terp\fnc_terp_ied.sqf'",""];
 
 
-_ied addEventHandler ["Killed", {
+_ied addMPEventHandler ["MPKilled", { 
 	params ["_exp", "_killer", "_instigator", "_useEffects"];
 	
 	

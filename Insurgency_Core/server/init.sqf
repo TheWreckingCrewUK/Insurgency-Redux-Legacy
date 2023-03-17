@@ -116,11 +116,6 @@ if(isNil "twc_attachmentgap") then{
 	publicVariable "twc_attachmentgap";
 };
 
-if(isNil "twc_campaignmode") then{
-	twc_campaignmode = 0;
-	publicVariable "twc_campaignmode";
-};
-
 if(isNil "twc_basepos") then{
 	twc_basepos = getmarkerpos "base";
 	publicVariable "twc_basepos";
@@ -167,11 +162,6 @@ if (twc_ismini == 1) then {
 if(isNil "twc_convoyallowed") then{
 	twc_convoyallowed = 1;
 };
-
-//diwako_ragdoll_fnc_initRagdoll = compile preprocessfilelinenumbers "Insurgency_Core\client\sys_ragdoll\fn_initRagdoll.sqf";
-
-//[] call diwako_ragdoll_fnc_initRagdoll;
-
 
 ["ace_captiveStatusChanged", {
 	params ["_unit", "_state", "_reason"];
@@ -243,9 +233,9 @@ publicvariable "basemode";
 };
 
 if (isNil "twc_strongholdcount") then {
-twc_strongholdcount = 1;
+twc_strongholdcount = 2;
 };
-twc_strongholdcount = twc_strongholdcount min 1;
+twc_strongholdcount = twc_strongholdcount min 2;
 
 
 _trg = createTrigger ["EmptyDetector", twc_basepos];

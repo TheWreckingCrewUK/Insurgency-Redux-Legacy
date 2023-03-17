@@ -1,19 +1,3 @@
-
-
-if (twc_skipsectionsystem == 1) exitwith {};
-
-systemchat "Starting Deployment";
-
-_groups = [];
-
-_snowflakes = 0;
-
-
-if(isNil "twc_campaignmode") then{
-	twc_campaignmode = 0;
-	publicVariable "twc_campaignmode";
-};
-
 //now find out what groups we're dealing with. looking for regular infantry groups and adding exemptions for any non-infantry groups that are allowed at low playercounts, like snipers, heli pilots and quartermasters
 {if (_x == leader _x) then {
 	
@@ -44,15 +28,6 @@ if(isNil "twc_campaignmode") then{
  
 //quick sleep because instring is a bit slow
 sleep 3;
-
-
-if ((count _groups) > 2) exitwith {if (twc_campaignmode == 0) then {
-	twc_pltcmd = player;
-	publicVariable "twc_pltcmd";
-	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";
-};};
-
-
 
 //now use the standard spawn restriction system to let the player know what's up
 systemchat "gonna restrict you now";
@@ -96,10 +71,3 @@ _snowflakes = 0;
 	
 cutText ["","Black IN",5];
 player forceWalk false;
-
-
-if (twc_campaignmode == 0) then {
-	twc_pltcmd = player;
-	publicVariable "twc_pltcmd";
-	execvm "Insurgency_Core\server\sys_objectives\operation\operation_start.sqf";
-};
